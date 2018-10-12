@@ -1,0 +1,14 @@
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\Calrton.Identity\Calrton.Identity\bin\Debug\netcoreapp2.1\Calrton.Identity.deps.json
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\Calrton.Identity\Calrton.Identity\bin\Debug\netcoreapp2.1\Calrton.Identity.runtimeconfig.json
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\Calrton.Identity\Calrton.Identity\bin\Debug\netcoreapp2.1\Calrton.Identity.runtimeconfig.dev.json
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\Calrton.Identity\Calrton.Identity\bin\Debug\netcoreapp2.1\Calrton.Identity.dll
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\Calrton.Identity\Calrton.Identity\obj\Debug\netcoreapp2.1\Calrton.Identity.csproj.CoreCompileInputs.cache
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\Calrton.Identity\Calrton.Identity\obj\Debug\netcoreapp2.1\Calrton.Identity.RazorAssemblyInfo.cache
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\Calrton.Identity\Calrton.Identity\obj\Debug\netcoreapp2.1\Calrton.Identity.RazorAssemblyInfo.cs
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\Calrton.Identity\Calrton.Identity\obj\Debug\netcoreapp2.1\Calrton.Identity.AssemblyInfoInputs.cache
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\Calrton.Identity\Calrton.Identity\obj\Debug\netcoreapp2.1\Calrton.Identity.AssemblyInfo.cs
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\Calrton.Identity\Calrton.Identity\obj\Debug\netcoreapp2.1\Calrton.Identity.RazorTargetAssemblyInfo.cache
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\Calrton.Identity\Calrton.Identity\bin\Debug\netcoreapp2.1\Calrton.Identity.pdb
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\Calrton.Identity\Calrton.Identity\obj\Debug\netcoreapp2.1\Calrton.Identity.dll
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\Calrton.Identity\Calrton.Identity\obj\Debug\netcoreapp2.1\Calrton.Identity.pdb
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\Calrton.Identity\Calrton.Identity\obj\Debug\netcoreapp2.1\Calrton.Identity.csprojAssemblyReference.cache

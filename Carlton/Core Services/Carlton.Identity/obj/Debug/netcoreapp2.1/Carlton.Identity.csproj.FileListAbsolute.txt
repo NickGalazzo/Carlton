@@ -1,0 +1,28 @@
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\bin\Debug\netcoreapp2.1\Carlton.Identity.deps.json
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\bin\Debug\netcoreapp2.1\Carlton.Identity.runtimeconfig.json
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\bin\Debug\netcoreapp2.1\Carlton.Identity.runtimeconfig.dev.json
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\bin\Debug\netcoreapp2.1\Carlton.Identity.dll
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\bin\Debug\netcoreapp2.1\Carlton.Identity.pdb
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.csproj.CoreCompileInputs.cache
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.RazorAssemblyInfo.cache
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.RazorAssemblyInfo.cs
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.AssemblyInfoInputs.cache
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.AssemblyInfo.cs
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.RazorTargetAssemblyInfo.cache
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.dll
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.pdb
+C:\Users\nicho\Documents\code\Carlton\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.csprojAssemblyReference.cache
+C:\Users\nicho\Documents\code\Carlton\Core Services\Carlton.Identity\bin\Debug\netcoreapp2.1\Carlton.Identity.deps.json
+C:\Users\nicho\Documents\code\Carlton\Core Services\Carlton.Identity\bin\Debug\netcoreapp2.1\Carlton.Identity.runtimeconfig.json
+C:\Users\nicho\Documents\code\Carlton\Core Services\Carlton.Identity\bin\Debug\netcoreapp2.1\Carlton.Identity.runtimeconfig.dev.json
+C:\Users\nicho\Documents\code\Carlton\Core Services\Carlton.Identity\bin\Debug\netcoreapp2.1\Carlton.Identity.dll
+C:\Users\nicho\Documents\code\Carlton\Core Services\Carlton.Identity\bin\Debug\netcoreapp2.1\Carlton.Identity.pdb
+C:\Users\nicho\Documents\code\Carlton\Core Services\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.csprojAssemblyReference.cache
+C:\Users\nicho\Documents\code\Carlton\Core Services\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.csproj.CoreCompileInputs.cache
+C:\Users\nicho\Documents\code\Carlton\Core Services\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.RazorAssemblyInfo.cache
+C:\Users\nicho\Documents\code\Carlton\Core Services\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.RazorAssemblyInfo.cs
+C:\Users\nicho\Documents\code\Carlton\Core Services\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.AssemblyInfoInputs.cache
+C:\Users\nicho\Documents\code\Carlton\Core Services\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.AssemblyInfo.cs
+C:\Users\nicho\Documents\code\Carlton\Core Services\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.RazorTargetAssemblyInfo.cache
+C:\Users\nicho\Documents\code\Carlton\Core Services\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.dll
+C:\Users\nicho\Documents\code\Carlton\Core Services\Carlton.Identity\obj\Debug\netcoreapp2.1\Carlton.Identity.pdb
