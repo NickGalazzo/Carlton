@@ -37,13 +37,13 @@ namespace Calrton.Identity
 
             //configure identity server with in-memory stores, keys, clients and scopes
             services.AddIdentityServer()
-                .AddDeveloperSigningCredential() //Development Settings, No need for real cert      
-                .AddInMemoryIdentityResources(IdentityServerConfig.GetIdentityResources())
-                .AddInMemoryApiResources(IdentityServerConfig.GetApiResources())
-                .AddInMemoryClients(IdentityServerConfig.GetClients())
-                .AddAspNetIdentity<CarltonUser>();
+                    .AddDeveloperSigningCredential() //Development Settings, No need for real cert      
+                    .AddInMemoryIdentityResources(IdentityServerConfig.GetIdentityResources())
+                    .AddInMemoryApiResources(IdentityServerConfig.GetApiResources())
+                    .AddInMemoryClients(IdentityServerConfig.GetClients())
+                    .AddAspNetIdentity<CarltonUser>();
 
-            //Conver the Container to AutoFac
+            //Convert the Container to AutoFac
             return AutofacBuilder.Build(services);
         }
 

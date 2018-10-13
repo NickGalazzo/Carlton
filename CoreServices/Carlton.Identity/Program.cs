@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore;
+﻿using Carlton.Infrastructure.Configurations;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
 
 namespace Calrton.Identity
 {
@@ -14,13 +13,7 @@ namespace Calrton.Identity
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                 .UseSentry()
-                 .ConfigureLogging((hostingContext, logging) =>
-                 {
-                     logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
-                     logging.AddSentry();
-                     logging.AddFile(o => o.RootPath = AppContext.BaseDirectory);
-                 })
-                .UseStartup<Startup>();
+                   .ConfigureLogging(LoggingConfiguration.CarltonLoggingConfig)
+                   .UseStartup<Startup>();
     }
 }
