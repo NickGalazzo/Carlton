@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Configuration;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -10,7 +6,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Npgsql.EntityFrameworkCore.PostgreSQL;
+using Carlton.Identity;
+using Carlton.Infrastructure.Containers;
 
 namespace Calrton.Identity
 {
@@ -20,32 +17,34 @@ namespace Calrton.Identity
 
         public Startup(IConfiguration configuration)
         {
-            _configuration = configuration;        
+            _configuration = configuration;
         }
 
 
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             //Add EF with Postgres
             services.AddEntityFrameworkNpgsql()
                     .AddDbContext<CarltonIdentityContext>(options => options.UseNpgsql(_configuration.GetConnectionString("CaltonIdentityDatabase")));
 
             //Add Identity Core          
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<CarltonUser, IdentityRole>()
                     .AddEntityFrameworkStores<CarltonIdentityContext>()
                     .AddDefaultTokenProviders();
 
             //Add MVC
             services.AddMvc();
 
-            // configure identity server with in-memory stores, keys, clients and scopes
-            //services.AddIdentityServer()
-            //    .AddDeveloperSigningCredential() //Development Settings, No need for real cert
-            //    .AddInMemoryPersistedGrants()
-            //    .AddInMemoryIdentityResources()
-            //    .AddInMemoryApiResources(Config.GetApiResources())
-            //    //.AddInMemoryClients(Config.GetClients())
-            //    .AddAspNetIdentity<CarltonIdentityContext>();
+            //configure identity server with in-memory stores, keys, clients and scopes
+            services.AddIdentityServer()
+                .AddDeveloperSigningCredential() //Development Settings, No need for real cert      
+                .AddInMemoryIdentityResources(IdentityServerConfig.GetIdentityResources())
+                .AddInMemoryApiResources(IdentityServerConfig.GetApiResources())
+                .AddInMemoryClients(IdentityServerConfig.GetClients())
+                .AddAspNetIdentity<CarltonUser>();
+
+            //Conver the Container to AutoFac
+            return AutofacBuilder.Build(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +54,8 @@ namespace Calrton.Identity
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseIdentityServer();
 
             app.Run(async (context) =>
             {

@@ -5,6 +5,13 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Identity", "Carlton.Identity\Carlton.Identity.csproj", "{3B2F0A44-9C01-4F57-ABBB-1E239DFD7801}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Infrastructure", "Carlton.Infrastructure\Carlton.Infrastructure.csproj", "{FF86A3C2-A974-4EE3-BA67-4A61FAC72A3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C9DB2359-F317-4CBC-9369-99045C5608CE}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet.config = NuGet.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +22,10 @@ Global
 		{3B2F0A44-9C01-4F57-ABBB-1E239DFD7801}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B2F0A44-9C01-4F57-ABBB-1E239DFD7801}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B2F0A44-9C01-4F57-ABBB-1E239DFD7801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF86A3C2-A974-4EE3-BA67-4A61FAC72A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF86A3C2-A974-4EE3-BA67-4A61FAC72A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF86A3C2-A974-4EE3-BA67-4A61FAC72A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF86A3C2-A974-4EE3-BA67-4A61FAC72A3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

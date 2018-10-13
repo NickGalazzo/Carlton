@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Carlton.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Calrton.Identity
 {
-    public class CarltonIdentityContext : IdentityDbContext<IdentityUser>
+    public class CarltonIdentityContext : IdentityDbContext<CarltonUser>
     {
         public CarltonIdentityContext(DbContextOptions<CarltonIdentityContext> options)
             : base(options)
