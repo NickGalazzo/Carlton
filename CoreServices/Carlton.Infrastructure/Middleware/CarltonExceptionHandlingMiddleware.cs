@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Carlton.Infrastructure.Middleware
 {
-    public class ExceptionMiddleware
+    public class CarltonExceptionHandlingMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger _logger;
 
-        public ExceptionMiddleware(RequestDelegate next, ILogger logger)
+        public CarltonExceptionHandlingMiddleware(RequestDelegate next, ILogger logger)
         {
             _logger = logger;
             _next = next;

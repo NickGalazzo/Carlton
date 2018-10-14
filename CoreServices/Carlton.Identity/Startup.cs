@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Carlton.Identity;
-using Carlton.Infrastructure.Containers;
+using Carlton.Infrastructure.Extensions;
 
 namespace Calrton.Identity
 {
@@ -44,12 +44,14 @@ namespace Calrton.Identity
                     .AddAspNetIdentity<CarltonUser>();
 
             //Convert the Container to AutoFac
-            return AutofacBuilder.Build(services);
+            return services.ConvertToAutofac();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseCarltonExceptionHandling();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

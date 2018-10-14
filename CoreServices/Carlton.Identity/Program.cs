@@ -1,4 +1,4 @@
-﻿using Carlton.Infrastructure.Configurations;
+﻿using Carlton.Infrastructure.Extensions;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
@@ -13,7 +13,7 @@ namespace Calrton.Identity
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                   .ConfigureLogging(LoggingConfiguration.CarltonLoggingConfig)
+                   .ConfigureCarltonLogging()
                    .UseStartup<Startup>();
     }
 }

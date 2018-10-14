@@ -10,16 +10,17 @@
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="4.5.0" />
     <PackageReference Include="FluentValidation" Version="8.0.100" />
     <PackageReference Include="Karambolo.Extensions.Logging.File" Version="2.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="2.1.1" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="2.1.1" />
     <PackageReference Include="Sentry" Version="1.0.0" />
     <PackageReference Include="Sentry.Extensions.Logging" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Containers\" />
     <Folder Include="DomainEvents\" />
   </ItemGroup>
 

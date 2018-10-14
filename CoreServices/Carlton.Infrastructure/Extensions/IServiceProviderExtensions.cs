@@ -1,28 +1,21 @@
-﻿using Autofac;
+﻿using System;
+using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
+using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Carlton.Infrastructure.Commands;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Linq;
-using System.Reflection;
 
-namespace Carlton.Infrastructure.Containers
+namespace Carlton.Infrastructure.Extensions
 {
-    public class AutofacBuilder
+    public static class IServiceProviderExtensions
     {
-        public static IServiceProvider Build(IServiceCollection services)
+        public static IServiceProvider ConvertToAutofac(this IServiceCollection services)
         {
             var builder = new ContainerBuilder();
           
-
             builder.Populate(services);
        
-
             var dataAccess = Assembly.GetEntryAssembly();
-
-            // builder.Register<ICommand, TestCommand>();
-
-           var xx =  dataAccess.GetTypes().Where(o => o.Name.Contains("Test"));
 
             builder.RegisterAssemblyTypes(dataAccess)
                    .AsClosedTypesOf(typeof(ICommandHandler<>));
@@ -30,10 +23,9 @@ namespace Carlton.Infrastructure.Containers
 
             var container = builder.Build();
 
-        //    var x = container.Resolve<ICommandHandler<>();
 
             //Create the IServiceProvider based on the container.
             return new AutofacServiceProvider(container);
-        }
+        } 
     }
 }
