@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Carlton.Infrastructure.Commands;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Carlton.Infrastructure.HealthChecks.Database;
 
 namespace Carlton.Infrastructure.Extensions
 {
@@ -27,5 +29,17 @@ namespace Carlton.Infrastructure.Extensions
             //Create the IServiceProvider based on the container.
             return new AutofacServiceProvider(container);
         } 
+
+        public static IServiceCollection AddCarltonHealthChecks(this IServiceCollection services, params IHealthCheck[] dependencyHealthChecks)
+        {
+            var builder = services.AddHealthChecks();
+
+            foreach(var healthCheck in dependencyHealthChecks)
+            {
+                builder.AddCheck(healthCheck);
+            }
+
+            return services;
+        }
     }
 }

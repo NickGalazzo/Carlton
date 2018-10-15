@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Carlton.Identity;
 using Carlton.Infrastructure.Extensions;
+using Carlton.Infrastructure.HealthChecks.Database;
 
 namespace Calrton.Identity
 {
@@ -43,14 +44,20 @@ namespace Calrton.Identity
                     .AddInMemoryClients(IdentityServerConfig.GetClients())
                     .AddAspNetIdentity<CarltonUser>();
 
+
+            var x = _configuration.GetConnectionString("CaltonIdentityDatabase");
+            services.AddCarltonHealthChecks(new PostgresConnectionHealthCheck("MyDB", x));
+
             //Convert the Container to AutoFac
             return services.ConvertToAutofac();
         }
 
+ 
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseCarltonExceptionHandling();
+            app.UseCarltonHealthChecking();
 
             if (env.IsDevelopment())
             {
@@ -63,6 +70,11 @@ namespace Calrton.Identity
             {
                 await context.Response.WriteAsync("Hello World!");
             });
+
+
+
+            app.UseCarltonExceptionHandling();
+
         }
     }
 }
