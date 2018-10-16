@@ -13,10 +13,11 @@ namespace Carlton.Identity
     {
         // GET: api/<controller>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            throw new Exception();
-            return new string[] { "value1", "value2" };
+            return Content("test");
+            //throw new Exception();
+           // return new string[] { "value1", "value2" };
         }
 
         // GET api/<controller>/5

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Carlton.Identity;
 using Carlton.Infrastructure.Extensions;
 using Carlton.Infrastructure.HealthChecks.Database;
+using Carlton.Infrastructure.MvcFilters;
 
 namespace Calrton.Identity
 {
