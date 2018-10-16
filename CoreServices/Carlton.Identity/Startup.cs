@@ -34,7 +34,10 @@ namespace Calrton.Identity
                     .AddDefaultTokenProviders();
 
             //Add MVC
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new CarltonStandardResultFilter());
+            });
 
             //configure identity server with in-memory stores, keys, clients and scopes
             services.AddIdentityServer()
@@ -47,34 +50,40 @@ namespace Calrton.Identity
 
             var x = _configuration.GetConnectionString("CaltonIdentityDatabase");
             services.AddCarltonHealthChecks(new PostgresConnectionHealthCheck("MyDB", x));
+            services.AddElm();
+
 
             //Convert the Container to AutoFac
             return services.ConvertToAutofac();
         }
 
- 
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseCarltonHealthChecking();
-
-            if (env.IsDevelopment())
+            if (!env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseCarltonApiExceptionResponseMessage();
+            }
+
+            app.UseCarltonExceptionHandling();
+
+            app.UseElmCapture();
+            app.UseElmPage();
 
             app.UseIdentityServer();
+
+
+            app.UseMvc();
+
 
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
             });
-
-
-
-            app.UseCarltonExceptionHandling();
-
         }
     }
 }

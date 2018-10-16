@@ -1,5 +1,4 @@
-﻿using Carlton.Infrastructure.Exceptions;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Sentry;
 using System;
@@ -30,8 +29,8 @@ namespace Carlton.Infrastructure.Middleware
                 //Set the Status Code to 501
                 httpContext.Response.ContentType = "application/json";
                 httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                
-                 //Set CORS headers
+
+                //Set CORS headers
                 httpContext.Response.Headers.Add("Access-Control-Expose-HEaders", "Application-Error");
                 httpContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");
 
@@ -41,12 +40,8 @@ namespace Carlton.Infrastructure.Middleware
                 //Log the error to sentry
                 SentrySdk.CaptureException(ex);
 
-                //Write output
-                await httpContext.Response.WriteAsync(new ErrorDetails()
-                {
-                    StatusCode = httpContext.Response.StatusCode,
-                    Message = "Internal Server Error from the custom middleware."
-                }.ToString());
+                //Rethrow exception so it can be handled for display by other Middleware 
+                throw;
             }
         }
     }
