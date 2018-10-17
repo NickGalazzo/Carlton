@@ -61,17 +61,18 @@ namespace Calrton.Identity
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (!env.IsDevelopment())
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseCarltonApiExceptionResponseMessage();
-            }
+            //else
+            //{
+            //    app.UseCarltonApiExceptionResponseMessage();
+            //}
 
-            app.UseCarltonExceptionHandling();
-
+            //app.UseCarltonExceptionHandling();
+            app.UseCarltonCorelationId();
+            app.UseCalrtonMetadata("/metadata");
             app.UseElmCapture();
             app.UseElmPage();
 

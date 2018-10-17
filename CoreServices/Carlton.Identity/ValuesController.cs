@@ -15,8 +15,8 @@ namespace Carlton.Identity
         [HttpGet]
         public IActionResult Get()
         {
-            return Content("test");
-            //throw new Exception();
+           // return Content("test");
+            throw new Exception();
            // return new string[] { "value1", "value2" };
         }
 

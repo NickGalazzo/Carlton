@@ -14,6 +14,7 @@ namespace Calrton.Identity
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                    .ConfigureCarltonLogging()
+                   .UseSentry()
                    .UseStartup<Startup>();
     }
 }

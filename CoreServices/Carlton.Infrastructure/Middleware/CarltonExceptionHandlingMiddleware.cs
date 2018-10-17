@@ -16,6 +16,8 @@ namespace Carlton.Infrastructure.Middleware
         {
             _logger = logger;
             _next = next;
+
+        
         }
 
         public async Task InvokeAsync(HttpContext httpContext)
