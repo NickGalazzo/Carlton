@@ -10,6 +10,7 @@ using Carlton.Identity;
 using Carlton.Infrastructure.Extensions;
 using Carlton.Infrastructure.HealthChecks.Database;
 using Carlton.Infrastructure.MvcFilters;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Calrton.Identity
 {
@@ -40,6 +41,16 @@ namespace Calrton.Identity
                 options.Filters.Add(new CarltonStandardResultFilter());
             });
 
+            services.AddApiVersioning(o =>
+            {
+                o.AssumeDefaultVersionWhenUnspecified = true;
+            });
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+            });
+
             //configure identity server with in-memory stores, keys, clients and scopes
             services.AddIdentityServer()
                     .AddDeveloperSigningCredential() //Development Settings, No need for real cert      
@@ -50,7 +61,7 @@ namespace Calrton.Identity
 
 
             var x = _configuration.GetConnectionString("CaltonIdentityDatabase");
-            services.AddCarltonHealthChecks(new PostgresConnectionHealthCheck("MyDB", x));
+services.AddCarltonHealthChecks(new PostgresConnectionHealthCheck("MyDB", x));
             services.AddElm();
 
 
@@ -60,32 +71,41 @@ namespace Calrton.Identity
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            //else
-            //{
-            //    app.UseCarltonApiExceptionResponseMessage();
-            //}
+{
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+    //else
+    //{
+    //    app.UseCarltonApiExceptionResponseMessage();
+    //}
 
-            //app.UseCarltonExceptionHandling();
-            app.UseCarltonCorelationId();
-            app.UseCalrtonMetadata("/metadata");
-            app.UseElmCapture();
-            app.UseElmPage();
+    //app.UseCarltonExceptionHandling();
+    app.UseCarltonCorelationId();
+    app.UseCalrtonMetadata("/metadata");
+    app.UseElmCapture();
+    app.UseElmPage();
 
-            app.UseIdentityServer();
+    app.UseIdentityServer();
+
+    // Enable middleware to serve generated Swagger as a JSON endpoint.
+    app.UseSwagger();
+
+    // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 
+    // specifying the Swagger JSON endpoint.
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+    });
+
+    app.UseMvc();
 
 
-            app.UseMvc();
-
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
-        }
+    app.Run(async (context) =>
+    {
+        await context.Response.WriteAsync("Hello World!");
+    });
+}
     }
 }

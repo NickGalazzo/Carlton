@@ -8,16 +8,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Carlton.Identity
 {
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class ValuesController : Controller
     {
         // GET: api/<controller>
         [HttpGet]
         public IActionResult Get()
         {
-           // return Content("test");
-            throw new Exception();
-           // return new string[] { "value1", "value2" };
+            return Content("test");
+            //throw new Exception();
+            //return new string[] { "value1", "value2" };
         }
 
         // GET api/<controller>/5
