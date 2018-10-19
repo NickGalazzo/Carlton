@@ -30,7 +30,10 @@
 
   <ItemGroup>
     <Folder Include="Containers\" />
-    <Folder Include="DomainEvents\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Carlton.Domain\Carlton.Domain.csproj" />
   </ItemGroup>
 
 </Project>

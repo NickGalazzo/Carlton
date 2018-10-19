@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Carlton.Infrastructure
+namespace Carlton.Domain.Base
 {
     public abstract class BaseDispatcher
     {

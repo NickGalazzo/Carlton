@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Carlton.Infrastructure.Exceptions
 {
-    public class BaseCarltonException : Exception
+    public class RemoteServiceException : Exception
     {
     }
 }

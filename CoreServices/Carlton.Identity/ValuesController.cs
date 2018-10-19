@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,10 +13,19 @@ namespace Carlton.Identity
     [Route("api/v{version:apiVersion}/[controller]")]
     public class ValuesController : Controller
     {
+        private readonly ILogger<ValuesController>  _logger;
+
+        public ValuesController(ILogger<ValuesController> logger)
+        {
+            _logger = logger;
+        }
+
         // GET: api/<controller>
         [HttpGet]
         public IActionResult Get()
         {
+
+            _logger.LogWarning(new EventId(12), "test");
             return Content("test");
             //throw new Exception();
             //return new string[] { "value1", "value2" };

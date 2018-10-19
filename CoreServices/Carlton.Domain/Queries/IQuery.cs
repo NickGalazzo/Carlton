@@ -1,4 +1,4 @@
-﻿namespace Carlton.Infrastructure.Queries
+﻿namespace Carlton.Domain.Queries
 {
     public interface IQuery 
     {

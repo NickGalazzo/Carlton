@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Carlton.Domain.Base;
+using System;
 using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.Commands
+namespace Carlton.Domain.Commands
 {
     public class CommandDispatcher : BaseDispatcher
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Carlton.Infrastructure.Commands
+namespace Carlton.Infrastructure.Configuration
 {
-    public interface ICommand
+    public class CarltonConfiguration
     {
     }
 }

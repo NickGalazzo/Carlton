@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Carlton.Infrastructure.Commands
+namespace Carlton.Domain.Commands
 {
     public interface ICommandResult
     {

@@ -1,4 +1,4 @@
-﻿using Carlton.Infrastructure.Queries;
+﻿using Carlton.Domain.Queries;
 using System;
 
 namespace Carlton.Infrastructure.Exceptions

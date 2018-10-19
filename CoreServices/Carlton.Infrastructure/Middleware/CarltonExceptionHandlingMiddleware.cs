@@ -31,7 +31,7 @@ namespace Carlton.Infrastructure.Middleware
                 //Set the Status Code to 501
                 httpContext.Response.ContentType = "application/json";
                 httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-
+         
                 //Set CORS headers
                 httpContext.Response.Headers.Add("Access-Control-Expose-HEaders", "Application-Error");
                 httpContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");

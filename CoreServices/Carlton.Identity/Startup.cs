@@ -11,6 +11,8 @@ using Carlton.Infrastructure.Extensions;
 using Carlton.Infrastructure.HealthChecks.Database;
 using Carlton.Infrastructure.MvcFilters;
 using Swashbuckle.AspNetCore.Swagger;
+using Carlton.Infrastructure.Configuration;
+using Carlton.Infrastructure.Correlation;
 
 namespace Calrton.Identity
 {
@@ -23,9 +25,23 @@ namespace Calrton.Identity
             _configuration = configuration;
         }
 
-
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            //Add Logging
+            services.AddCarltonLogging(_configuration);
+
+            //Add TraceIdentifier
+            services.AddScoped<TraceIdentifier>();
+
+            //Add Base Carlton Configuration
+            services.Configure<CarltonConfiguration>(_configuration.GetSection("CarltonConfiguration"));
+
+            //Add Services for Health Checks
+            services.AddCarltonHealthChecks(new PostgresConnectionHealthCheck("MyDB", _configuration.GetConnectionString("CaltonIdentityDatabase")));
+
+            //Add Services for ELM
+            services.AddElm();
+
             //Add EF with Postgres
             services.AddEntityFrameworkNpgsql()
                     .AddDbContext<CarltonIdentityContext>(options => options.UseNpgsql(_configuration.GetConnectionString("CaltonIdentityDatabase")));
@@ -41,11 +57,13 @@ namespace Calrton.Identity
                 options.Filters.Add(new CarltonStandardResultFilter());
             });
 
+            //Add WebAPI Versioning
             services.AddApiVersioning(o =>
             {
                 o.AssumeDefaultVersionWhenUnspecified = true;
             });
 
+            //Add Swagger
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
@@ -59,53 +77,47 @@ namespace Calrton.Identity
                     .AddInMemoryClients(IdentityServerConfig.GetClients())
                     .AddAspNetIdentity<CarltonUser>();
 
-
-            var x = _configuration.GetConnectionString("CaltonIdentityDatabase");
-services.AddCarltonHealthChecks(new PostgresConnectionHealthCheck("MyDB", x));
-            services.AddElm();
-
-
             //Convert the Container to AutoFac
             return services.ConvertToAutofac();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-{
-    if (env.IsDevelopment())
-    {
-        app.UseDeveloperExceptionPage();
-    }
-    //else
-    //{
-    //    app.UseCarltonApiExceptionResponseMessage();
-    //}
+        {
+            AddExceptionMiddleware(app, env);
+            app.UseElmCapture();
+            app.UseElmPage();
+            app.UseCarltonHealthChecking();
+            app.UseCalrtonMetadata("/metadata");
+            app.UseCarltonCorelationId();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1"); });
+            app.UseIdentityServer();
+            app.UseMvc();
 
-    //app.UseCarltonExceptionHandling();
-    app.UseCarltonCorelationId();
-    app.UseCalrtonMetadata("/metadata");
-    app.UseElmCapture();
-    app.UseElmPage();
+            app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync("Hello World!");
+            });
+        }
 
-    app.UseIdentityServer();
+        private static void AddSpecialEndpointMiddleware(IApplicationBuilder app)
+        {
+           
+        }
 
-    // Enable middleware to serve generated Swagger as a JSON endpoint.
-    app.UseSwagger();
+        private static void AddExceptionMiddleware(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseCarltonApiExceptionResponseMessage();
+            }
 
-    // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 
-    // specifying the Swagger JSON endpoint.
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-    });
-
-    app.UseMvc();
-
-
-    app.Run(async (context) =>
-    {
-        await context.Response.WriteAsync("Hello World!");
-    });
-}
+            app.UseCarltonExceptionHandling();
+        }
     }
 }

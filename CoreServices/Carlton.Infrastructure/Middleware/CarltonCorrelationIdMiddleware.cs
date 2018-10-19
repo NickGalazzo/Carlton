@@ -29,6 +29,8 @@ namespace Carlton.Infrastructure.Middleware
                 context.TraceIdentifier = correlationId;
             }
 
+            context.Request.Headers.Add(_options.Header, context.TraceIdentifier);
+
             if(_options.IncludeInResponse)
             {
                 //apply the correlation ID to the response header for client side tracking

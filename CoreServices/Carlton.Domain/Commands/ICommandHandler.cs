@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.Commands
+namespace Carlton.Domain.Commands
 {
     public interface ICommandHandler<in TCommand> where TCommand : ICommand
     {

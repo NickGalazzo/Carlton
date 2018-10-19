@@ -1,7 +1,7 @@
-﻿using Carlton.Infrastructure.Commands;
+﻿using Carlton.Domain.Commands;
 using System;
 
-namespace Carlton.Infrastructure.Exceptions
+namespace Carlton.Domain.Exceptions
 {
     public class CommandException : Exception
     {
@@ -17,7 +17,7 @@ namespace Carlton.Infrastructure.Exceptions
             Command = command;
         }
 
-        public CommandException(ICommand command, string message, RemoteServiceException innerException) : base(message, innerException)
+        public CommandException(ICommand command, string message, Exception innerException) : base(message, innerException)
         {
             Command = command;
         }

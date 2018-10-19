@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.Queries
+namespace Carlton.Domain.Queries
 {
     public interface IQueryHandler<in T, TResult> where T : IQuery
                                                   where TResult : IQueryResult
