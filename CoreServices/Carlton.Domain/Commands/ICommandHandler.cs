@@ -1,9 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using MediatR;
 
 namespace Carlton.Domain.Commands
 {
-    public interface ICommandHandler<in TCommand> where TCommand : ICommand
+    public interface ICommandHandler<TCommand> : IRequestHandler<TCommand, ICommandResult> where TCommand : ICommand 
     {
-        Task<ICommandResult> ExecuteAsync(ICommand command);
     }
 }

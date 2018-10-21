@@ -1,6 +1,8 @@
-﻿namespace Carlton.Domain.Commands
+﻿using MediatR;
+
+namespace Carlton.Domain.Commands
 {
-    public interface ICommand
+    public interface ICommand : IRequest<ICommandResult>
     {
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace Carlton.Domain.Queries
+﻿using MediatR;
+
+namespace Carlton.Domain.Queries
 {
-    public interface IQuery 
+    public interface IQuery : IRequest<IQueryResult> 
     {
     }
 }
