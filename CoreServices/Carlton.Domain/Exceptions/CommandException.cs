@@ -1,9 +1,10 @@
 ﻿using Carlton.Domain.Commands;
+using Carlton.Infrastructure.Exceptions;
 using System;
 
 namespace Carlton.Domain.Exceptions
 {
-    public class CommandException : Exception
+    public class CommandException : BaseCarltonException
     {
         ICommand Command { get; }
 

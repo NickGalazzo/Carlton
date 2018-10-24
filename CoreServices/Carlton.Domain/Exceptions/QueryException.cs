@@ -1,9 +1,10 @@
 ﻿using Carlton.Domain.Queries;
+using Carlton.Infrastructure.Exceptions;
 using System;
 
-namespace Carlton.Infrastructure.Exceptions
+namespace Carlton.Domain.Exceptions
 {
-    public class QueryException : Exception
+    public class QueryException : BaseCarltonException
     {
         public IQuery Query { get; }
 
@@ -17,7 +18,7 @@ namespace Carlton.Infrastructure.Exceptions
             Query = query;
         }
 
-        public QueryException(string message, RemoteServiceException innerException) : base(message, innerException)
+        public QueryException(IQuery query, string message, Exception innerException) : base(message, innerException)
         {
             Query = Query;
         }

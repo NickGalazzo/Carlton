@@ -1,16 +1,33 @@
-﻿using System;
+﻿
+using Carlton.Domain.DomainEvents;
+using System;
+using System.Collections.Generic;
 
 namespace Carlton.Domain.DDD
 {
     public abstract class EntityBase<IdType> : IEquatable<EntityBase<IdType>>
     {
+        private List<IDomainEvent> _domainEvents;
+
+        public IdType Id { get; }
+        private List<IDomainEvent> DomainEvents {get;}
+
         public EntityBase(IdType id)
         {
             Id = id;
         }
 
-        public IdType Id { get; }
+        public void AddDomainEvent(IDomainEvent eventItem)
+        {
+            _domainEvents = _domainEvents ?? new List<IDomainEvent>();
+            _domainEvents.Add(eventItem);
+        }
 
+        public void RemoveDomainEvent(IDomainEvent eventItem)
+        {
+            if (_domainEvents is null) return;
+            _domainEvents.Remove(eventItem);
+        }
 
         public override int GetHashCode()
         {
@@ -50,7 +67,6 @@ namespace Carlton.Domain.DDD
             }
             return this.Id.Equals(other.Id);
         }
-
 
         public override bool Equals(object entity)
         {

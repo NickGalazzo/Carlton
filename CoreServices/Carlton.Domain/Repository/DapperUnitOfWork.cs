@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Data;
 using System.Transactions;
 
@@ -8,10 +9,12 @@ namespace Carlton.Domain.Repository
     {
         private IDbConnection _connection;
         private TransactionScope _scope;
+        private ILogger<DapperUnitOfWork> _logger;
 
-        public DapperUnitOfWork(IDbConnection connection, IServiceProvider serviceProvider) : base(serviceProvider)
+        public DapperUnitOfWork(IDbConnection connection, IServiceProvider serviceProvider, ILogger<DapperUnitOfWork> logger) : base(serviceProvider)
         {
             _connection = connection;
+            _logger = logger;
         }
 
         public override void BeginTransaction()
@@ -25,6 +28,10 @@ namespace Carlton.Domain.Repository
             try
             {
                 _scope.Complete();
+            }
+            catch(Exception ex)
+            {
+                _logger.LogWarning(ex, "Exception was thrown and transaction will be rolled back.");
             }
             finally
             {

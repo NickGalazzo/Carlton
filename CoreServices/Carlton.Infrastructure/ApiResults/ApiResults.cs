@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Converters;
 using System;
 
-namespace Carlton.Infrastructure.MvcFilters
+namespace Carlton.Infrastructure.ApiResults
 {
     public class ApiResult
     {
@@ -19,7 +19,7 @@ namespace Carlton.Infrastructure.MvcFilters
         {
             get
             {
-                return ((int)Code >= 200) && ((int)Code <= 299) 
+                return ((int)Code >= 200) && ((int)Code <= 299)
                     ? ApiResultStatus.OK : ApiResultStatus.ERROR;
             }
         }
@@ -29,7 +29,9 @@ namespace Carlton.Infrastructure.MvcFilters
         public string Message { get; set; }
 
         public object Result { get; set; }
-        public DateTimeOffset Timestamp { get
+        public DateTimeOffset Timestamp
+        {
+            get
             {
                 return DateTimeOffset.Now;
             }
@@ -37,10 +39,5 @@ namespace Carlton.Infrastructure.MvcFilters
 
         public long? Size { get; set; }
     }
-
-    public enum ApiResultStatus
-    {
-        OK = 0,
-        ERROR = 1
-    }
 }
+
