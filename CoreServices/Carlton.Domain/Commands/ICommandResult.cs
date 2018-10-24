@@ -3,6 +3,5 @@
     public interface ICommandResult
     {
         bool IsSuccess { get; set; } 
-        ICommand Command { get; set; }
     }
 }

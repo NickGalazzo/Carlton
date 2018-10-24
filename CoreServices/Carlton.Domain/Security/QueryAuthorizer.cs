@@ -3,12 +3,10 @@ using Microsoft.AspNetCore.Http;
 
 namespace Carlton.Domain.Security
 {
-    public abstract class BaseQueryAuthorizer<T> : BaseAuthorizer where T : IQuery
+    public abstract class BaseQueryAuthorizer<T> : BaseAuthorizer<T> where T : IQuery
     {
-        public BaseQueryAuthorizer(IHttpContextAccessor context) : base(context)
+        protected BaseQueryAuthorizer(IHttpContextAccessor context) : base(context)
         {
         }
-
-        public abstract bool IsAuthorized(IQuery query);
     }
 }

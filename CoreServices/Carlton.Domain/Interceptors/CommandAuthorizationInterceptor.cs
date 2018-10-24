@@ -1,17 +1,16 @@
-﻿using Carlton.Domain.Commands;
-using Carlton.Domain.Security;
+﻿using Carlton.Domain.Security;
 using Castle.DynamicProxy;
 using Microsoft.Extensions.Logging;
 using System;
 
 namespace Carlton.Domain.Interceptors
 {
-    public class CommandAuthorizationInterceptor 
+    public class AuthorizationInterceptor : IInterceptor
     {
-        private readonly ILogger<CommandAuthorizationInterceptor> _logger;
+        private readonly ILogger<AuthorizationInterceptor> _logger;
         private readonly IServiceProvider _provider;
 
-        public CommandAuthorizationInterceptor(ILogger<CommandAuthorizationInterceptor> logger, IServiceProvider provider)
+        public AuthorizationInterceptor(ILogger<AuthorizationInterceptor> logger, IServiceProvider provider)
         {
             _logger = logger;
             _provider = provider;
@@ -19,24 +18,27 @@ namespace Carlton.Domain.Interceptors
 
         public void Intercept(IInvocation invocation)
         {
-            var command = invocation.Arguments[0];
-            var commandType = command.GetType();
+            var arg = invocation.Arguments[0];
+            var argType = arg.GetType();
 
-            var closedType = typeof(BaseCommandAuthorizer<>).MakeGenericType(commandType);
-            var authorizer = (BaseCommandAuthorizer<ICommand>) _provider.GetService(closedType);
+            var closedType = typeof(BaseAuthorizer<>).MakeGenericType(argType);
+            var authorizer = (IAuthorizer)_provider.GetService(closedType);
 
-            if (!authorizer.IsAuthorized((ICommand)command))
+            _logger.LogWarning($"Attempting to authorize user accessing: {argType}");
+
+            if (!authorizer.IsAuthorized(arg))
             {
-                _logger.LogInformation($"Unauthorized access attempt on command {commandType}");
+                _logger.LogWarning($"Unauthorized access attempt on {argType}");
                 throw new UnauthorizedAccessException("User attempting to access resource they are not authorized to");
             }
 
-            invocation.Proceed();
+            _logger.LogDebug($"Access to {argType} granted");
 
-            _logger.LogDebug($"Access to command {commandType} granted");
+            invocation.Proceed();
         }
     }
 }
+
 
 
 

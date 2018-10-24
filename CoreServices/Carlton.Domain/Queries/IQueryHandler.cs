@@ -1,9 +1,10 @@
 ﻿using MediatR;
-using System.Threading.Tasks;
 
 namespace Carlton.Domain.Queries
 {
-    public interface IQueryHandler : IRequestHandler<IQuery, IQueryResult>
+    public interface IQueryHandler<TQuery> : IRequestHandler<TQuery, TQueryResult>
+        where TQuery : IQuery
+        where TQueryResult : IQueryResult
     {
     }
 }

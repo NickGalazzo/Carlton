@@ -3,12 +3,10 @@ using Microsoft.AspNetCore.Http;
 
 namespace Carlton.Domain.Security
 {
-    public abstract class BaseCommandAuthorizer<T> : BaseAuthorizer where T : ICommand
+    public abstract class BaseCommandAuthorizer<T> : BaseAuthorizer<T> where T : ICommand 
     {
-        public BaseCommandAuthorizer(IHttpContextAccessor context) : base(context)
+        protected BaseCommandAuthorizer(IHttpContextAccessor context) : base(context)
         {
         }
-
-        public abstract bool IsAuthorized(ICommand command);
     }
 }

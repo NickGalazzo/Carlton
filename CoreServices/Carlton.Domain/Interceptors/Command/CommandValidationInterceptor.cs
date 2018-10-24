@@ -1,9 +1,10 @@
-﻿using Castle.DynamicProxy;
+﻿using Carlton.Domain.Security;
+using Castle.DynamicProxy;
 using FluentValidation;
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace Carlton.Domain.Interceptors
+namespace Carlton.Domain.Interceptors.Command
 {
     public class CommandValidationInterceptor : IInterceptor
     {

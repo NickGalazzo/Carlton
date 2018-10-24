@@ -2,7 +2,8 @@
 
 namespace Carlton.Domain.Commands
 {
-    public interface ICommand : IRequest<ICommandResult>
+    public interface ICommand<T> : IRequest<T>
+        where T : ICommandResult
     {
     }
 }
