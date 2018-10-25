@@ -1,13 +1,6 @@
-﻿using Carlton.Domain.DDD;
-
-namespace Carlton.Domain.Repository
+﻿namespace Carlton.Domain.Repository
 {
-    public interface IRepository<AggregateType, IdType>
-            : IReadOnlyRepository<AggregateType, IdType> where AggregateType
-            : IAggregateRoot
+    public interface IRepository
     {
-        void Update(AggregateType aggregate);
-        void Insert(AggregateType aggregate);
-        void Delete(AggregateType aggregate);
     }
 }

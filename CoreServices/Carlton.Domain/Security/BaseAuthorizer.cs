@@ -1,6 +1,4 @@
-﻿using Carlton.Domain.Commands;
-using Microsoft.AspNetCore.Http;
-using System;
+﻿using Microsoft.AspNetCore.Http;
 
 namespace Carlton.Domain.Security
 {
@@ -15,10 +13,7 @@ namespace Carlton.Domain.Security
 
         public bool IsAuthorized(object instance)
         {
-            if (!(instance is ICommand command))
-                throw new ArgumentException("Argument is not a Command");
-
-            return IsAuthorized(command);
+            return IsAuthorized((T) instance);
         }
 
         public abstract bool IsAuthorized(T instance);
@@ -26,14 +21,3 @@ namespace Carlton.Domain.Security
 }
 
 
-var requstType = request.GetType();
-
-            if (!_authorizer.IsAuthorized(request))
-            {
-                _logger.LogInformation($"Unauthorized access attempt on {requstType}");
-                throw new UnauthorizedAccessException("User attempting to access resource they are not authorized to");
-            }
-
-            _logger.LogDebug($"Access to {requstType} granted");
-
-            return await next();

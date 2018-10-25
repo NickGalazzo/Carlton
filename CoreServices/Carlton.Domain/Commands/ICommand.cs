@@ -1,9 +1,10 @@
-﻿using MediatR;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Carlton.Domain.Commands
 {
-    public interface ICommand<T> : IRequest<T>
-        where T : ICommandResult
+    public interface ICommand
     {
     }
 }

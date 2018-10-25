@@ -1,4 +1,5 @@
 ﻿using Carlton.Domain.Commands;
+using Carlton.Domain.DDD;
 using Carlton.Domain.Exceptions;
 using Carlton.Domain.Queries;
 using Carlton.Domain.Repository;
@@ -19,9 +20,9 @@ namespace Carlton.Domain.Interceptors
 
         public void Intercept(IInvocation invocation)
         {
-            var scope = GetScopeText(invocation.TargetType);
+           var typeName = nameof(invocation.TargetType);
 
-            using (_logger.BeginScope(scope))
+            using (_logger.BeginScope(typeName))
                 try
                 {
                     _logger.LogInformation($"Entering Handler of type: {invocation.TargetType}");
@@ -30,36 +31,20 @@ namespace Carlton.Domain.Interceptors
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError($"Error occured in Repository of type: {requestType}");
+                    _logger.LogError($"Error occured in Repository of type: {typeName}");
 
-                    switch (request)
+                    switch (invocation.InvocationTarget)
                     {
-                        case  c:
-                            throw new CommandException(c, $"Error occured while executing command {requestType}", ex);
+                        case ICommandHandler c:
+                            throw new CommandException(invocation.Arguments[0] as ICommand, $"Error occured while executing command {typeName}", ex);
                         case IQuery q:
-                            throw new QueryException(q, $"Error occured while executing query {requestType}", ex);
+                            throw new QueryException(invocation.Arguments[0] as IQuery, $"Error occured while executing query {typeName}", ex);
+                        case IRepository r:
+                            throw new RepositoryException(invocation.Arguments[0] as IAggregateRoot, $"Error occured while accessing repository {typeName}", ex);
                         default:
                             throw new ArgumentException("Request is neither a command nor query; this should never happen");
                     }
                 }
-        }
-
-        private string GetScopeText(Type type)
-        {
-            if(nameof(type) typename)
-
-
-            switch(nameof(type) typeName)
-            {
-                case typeName.Contains(""):
-                    return "Command";
-                case IQueryHandler q:
-                    return "Query";
-                case IRepository:
-                    return "Repository";
-                default
-                    return string.Empty;
-            }
         }
     }
 }

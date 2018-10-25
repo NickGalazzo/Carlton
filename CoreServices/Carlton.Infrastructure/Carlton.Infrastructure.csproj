@@ -8,13 +8,13 @@
     <PackageReference Include="Autofac" Version="4.8.1" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.0" />
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="4.5.0" />
-    <PackageReference Include="FluentValidation" Version="8.0.100" />
     <PackageReference Include="Karambolo.Extensions.Logging.File" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.Elm" Version="0.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.HealthChecks" Version="2.2.0-preview2-35157" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="2.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.1.2" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="2.2.0-preview2-35157" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="2.1.1" />

@@ -25,15 +25,19 @@ namespace Carlton.Domain.Behaviors
 
             var result = _validator.Validate(request);
 
+            _logger.LogDebug($"{requestType} is about to be validated");
+
             if (!result.IsValid)
             {
                 _logger.LogWarning($"{requestType} failed validation");
                 throw new ValidationException(result.Errors);
             }
 
+            var response = await next();
+
             _logger.LogDebug($"{requestType} passed validation");
 
-            return await next();
+            return response;
         }
     }
 }
