@@ -1,8 +1,8 @@
-﻿using Castle.DynamicProxy;
+﻿using Carlton.Infrastructure.Caching;
+using Castle.DynamicProxy;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using System;
 
 namespace Carlton.Domain.Interceptors
 {
@@ -10,16 +10,21 @@ namespace Carlton.Domain.Interceptors
     {
         private readonly ILogger<CachingInterceptor> _logger;
         private readonly IMemoryCache _cache;
+        private readonly ICacheKeyGenerator _cacheKeyGenerator;
+        private readonly ICacheDurationGenerator _cacheDurationGenerator;
 
-        public CachingInterceptor(ILogger<CachingInterceptor> logger, IMemoryCache cache)
+        public CachingInterceptor(ILogger<CachingInterceptor> logger, IMemoryCache cache,
+            ICacheKeyGenerator cacheKeyGenerator, ICacheDurationGenerator cacheDurationGenerator)
         {
             _logger = logger;
             _cache = cache;
+            _cacheKeyGenerator = cacheKeyGenerator;
+            _cacheDurationGenerator = cacheDurationGenerator;
         }
 
         public void Intercept(IInvocation invocation)
         {
-            var key = GenerateKey(JsonConvert.SerializeObject(invocation.Arguments));
+            var key = _cacheKeyGenerator.GenerateCacheKey(JsonConvert.SerializeObject(invocation.Arguments));
             
             var returnValue = _cache.Get(key);
 
@@ -33,20 +38,9 @@ namespace Carlton.Domain.Interceptors
 
             if (invocation.ReturnValue != null)
             {
-                var cacheExpiresIn = GetCacheObjectDuration(invocation);
-
-                _cache.Set(key, invocation.ReturnValue, new TimeSpan(0, 0, cacheExpiresIn));
+                var cacheExpiresIn = _cacheDurationGenerator.GetCacheDuration(invocation);
+                _cache.Set(key, invocation.ReturnValue, cacheExpiresIn);
             }
-        }
-
-        private object GetCacheObjectDuration(IInvocation invocation)
-        {
-            throw new NotImplementedException();
-        }
-
-        private object GenerateKey(object p)
-        {
-            throw new NotImplementedException();
         }
     }
 }

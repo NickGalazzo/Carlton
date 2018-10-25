@@ -20,7 +20,7 @@ namespace Carlton.Domain.Interceptors
 
         public void Intercept(IInvocation invocation)
         {
-           var typeName = nameof(invocation.TargetType);
+            var typeName = nameof(invocation.TargetType);
 
             using (_logger.BeginScope(typeName))
                 try
