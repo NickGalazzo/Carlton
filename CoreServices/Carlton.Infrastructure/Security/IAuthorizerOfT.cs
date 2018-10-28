@@ -1,4 +1,4 @@
-﻿namespace Carlton.Domain.Security
+﻿namespace Carlton.Infrastructure.Security
 {
     public interface IAuthorizer<in T> : IAuthorizer
     {

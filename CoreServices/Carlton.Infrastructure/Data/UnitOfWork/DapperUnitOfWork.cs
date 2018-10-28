@@ -3,7 +3,7 @@ using System;
 using System.Data;
 using System.Transactions;
 
-namespace Carlton.Domain.Repository
+namespace Carlton.Infrastructure.Data.UnitOfWork
 {
     public class DapperUnitOfWork : BaseUnitOfWork
     {

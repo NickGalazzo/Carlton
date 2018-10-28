@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace Carlton.Domain.Security
+namespace Carlton.Infrastructure.Security
 {
     public abstract class BaseAuthorizer<T> : IAuthorizer<T>
     {

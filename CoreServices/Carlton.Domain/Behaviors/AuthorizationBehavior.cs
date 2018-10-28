@@ -1,4 +1,5 @@
 ﻿using Carlton.Domain.Security;
+using Carlton.Infrastructure.Security;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 using System;
 using System.Reflection;
 using System.Runtime.Versioning;
@@ -6,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Carlton.Infrastructure.Middleware
 {
-    public class CarltonMetadataMiddleware
+    public class ServerInfoMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly string _path;
 
-        public CarltonMetadataMiddleware(RequestDelegate next, string path)
+        public ServerInfoMiddleware(RequestDelegate next, string path)
         {
             _next = next;
             _path = path ?? throw new ArgumentNullException(nameof(path));
@@ -30,21 +31,19 @@ namespace Carlton.Infrastructure.Middleware
                                         .GetCustomAttribute<TargetFrameworkAttribute>()?
                                         .FrameworkName;
                 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-   
+
 
                 var hostname = context.Request.Host.Value;
 
-                await context.Response.WriteAsync(
-                    $"Name: {applicationName}" +
-                    $"{Environment.NewLine}" +
-                    $"Version: {version}" +
-                    $"{Environment.NewLine}" +
-                    $"HostName: {hostname}" +
-                    $"{Environment.NewLine}" +
-                    $"Dotnet Version: {framework}" +
-                    $"{Environment.NewLine}" +
-                    $"Enviornment: {environment}"
-                    );
+                await context.Response.WriteAsync(JsonConvert.SerializeObject
+                    (new
+                        {
+                            Name = applicationName,
+                            Version = version,
+                            HostName = hostname,
+                            DotnetVersion = framework,
+                            Enviornment = environment
+                        }));
             }
             else
             {

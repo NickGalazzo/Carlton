@@ -1,4 +1,4 @@
-﻿namespace Carlton.Domain.Repository
+﻿namespace Carlton.Infrastructure.Data.UnitOfWork
 {
     public interface IUnitOfWork
     {

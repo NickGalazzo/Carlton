@@ -3,7 +3,7 @@ using FluentValidation;
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace Carlton.Domain.Interceptors
+namespace Carlton.Infrastructure.Interceptors
 {
     public class ValidationInterceptor : IInterceptor
     {
@@ -30,9 +30,11 @@ namespace Carlton.Domain.Interceptors
 
             if (!result.IsValid)
             {
-                _logger.LogWarning($"{argType} failed validation");
+                _logger.LogInformation($"{argType} failed validation");
                 throw new ValidationException(result.Errors);
             }
+
+            _logger.LogDebug($"{argType} passed validation");
 
             invocation.Proceed();
         }

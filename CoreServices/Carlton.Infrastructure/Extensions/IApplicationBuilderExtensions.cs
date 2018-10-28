@@ -11,12 +11,12 @@ namespace Carlton.Infrastructure.Extensions
     {
         public static IApplicationBuilder UseCarltonExceptionHandling(this IApplicationBuilder builder)
         {
-            return builder.UseMiddleware<CarltonExceptionHandlingMiddleware>();
+            return builder.UseMiddleware<ExceptionHandlingMiddleware>();
         }
 
         public static IApplicationBuilder UseCarltonApiExceptionResponseMessage(this IApplicationBuilder app)
         {
-            return app.UseMiddleware<CarltonApiExceptionResponseMiddleware>();
+            return app.UseMiddleware<ApiExceptionResponseMiddleware>();
         }
 
         public static IApplicationBuilder UseCarltonCorelationId(this IApplicationBuilder app)
@@ -26,7 +26,7 @@ namespace Carlton.Infrastructure.Extensions
                 throw new ArgumentNullException(nameof(app));
             }
 
-            return app.UseMiddleware<CarltonCorrelationIdMiddleware>();
+            return app.UseMiddleware<CorrelationIdMiddleware>();
         }
 
         public static IApplicationBuilder UseCarltonCorelationId(this IApplicationBuilder app, string header)
@@ -36,7 +36,7 @@ namespace Carlton.Infrastructure.Extensions
                 throw new ArgumentNullException(nameof(app));
             }
 
-            return app.UseMiddleware<CarltonCorrelationIdMiddleware>(new CorrelationIdOptions
+            return app.UseMiddleware<CorrelationIdMiddleware>(new CorrelationIdOptions
             {
                 Header = header
             });
@@ -54,7 +54,7 @@ namespace Carlton.Infrastructure.Extensions
                 throw new ArgumentNullException(nameof(options));
             }
 
-            return app.UseMiddleware<CarltonCorrelationIdMiddleware>(options);
+            return app.UseMiddleware<CorrelationIdMiddleware>(options);
         }
 
         public static IApplicationBuilder UseCarltonHealthChecking(this IApplicationBuilder app)
@@ -71,7 +71,7 @@ namespace Carlton.Infrastructure.Extensions
 
         public static IApplicationBuilder UseCalrtonMetadata(this IApplicationBuilder app, string path)
         {
-            return app.UseMiddleware<CarltonMetadataMiddleware>(path);
+            return app.UseMiddleware<ServerInfoMiddleware>(path);
         }
     }
 }

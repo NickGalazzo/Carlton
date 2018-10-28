@@ -1,9 +1,9 @@
-﻿using Carlton.Domain.Security;
+﻿using Carlton.Infrastructure.Security;
 using Castle.DynamicProxy;
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace Carlton.Domain.Interceptors
+namespace Carlton.Infrastructure.Interceptors
 {
     public class AuthorizationInterceptor : IInterceptor
     {
@@ -24,11 +24,11 @@ namespace Carlton.Domain.Interceptors
             var closedType = typeof(BaseAuthorizer<>).MakeGenericType(argType);
             var authorizer = (IAuthorizer)_provider.GetService(closedType);
 
-            _logger.LogWarning($"Attempting to authorize user accessing: {argType}");
+            _logger.LogDebug($"Attempting to authorize user accessing: {argType}");
 
             if (!authorizer.IsAuthorized(arg))
             {
-                _logger.LogWarning($"Unauthorized access attempt on {argType}");
+                _logger.LogInformation($"Unauthorized access attempt on {argType}");
                 throw new UnauthorizedAccessException("User attempting to access resource they are not authorized to");
             }
 

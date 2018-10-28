@@ -3,9 +3,9 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace Carlton.Domain.Interceptors
+namespace Carlton.Infrastructure.Interceptors
 {
-    public abstract class CarltonBaseInterceptor : IInterceptor
+    public abstract class BaseInterceptor : IInterceptor
     {
         public void Intercept(IInvocation invocation)
         {

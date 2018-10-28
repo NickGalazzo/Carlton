@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
-namespace Carlton.Domain.Interceptors
+namespace Carlton.Infrastructure.Interceptors
 {
     public class AuditInterceptor : IInterceptor
     {
@@ -20,7 +20,7 @@ namespace Carlton.Domain.Interceptors
             _stopwatch.Start();
             invocation.Proceed();
             _stopwatch.Stop();
-            _logger.LogInformation($"Method: {invocation.Method.Name} finished with elapsed time of {_stopwatch.Elapsed.TotalMilliseconds}");
+            _logger.LogTrace($"Method: {invocation.Method.Name} finished with elapsed time of {_stopwatch.Elapsed.TotalMilliseconds}");
             _stopwatch.Reset();
         }
     }

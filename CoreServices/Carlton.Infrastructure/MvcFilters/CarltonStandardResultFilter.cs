@@ -8,19 +8,25 @@ namespace Carlton.Infrastructure.MvcFilters
     {
         public void OnResultExecuting(ResultExecutingContext context)
         {
+            var statusCode = context.HttpContext.Response.StatusCode;
 
             switch (context.Result)
             {
                 case ObjectResult objResult:
-                    objResult.Value = new ApiResult(context.HttpContext.Response.StatusCode, "", objResult.Value);
+                    objResult.Value = new JsonResult(
+                        new ApiResult(statusCode, "", objResult.Value));
                     break;
                 case StatusCodeResult statusCodeResult:
-                    context.Result = new ObjectResult(
-                        new ApiResult(context.HttpContext.Response.StatusCode, "", null));
+                    context.Result = new JsonResult(
+                        new ApiResult(statusCode, "", null));
                     break;
                 case ContentResult contentResult:
-                    context.Result = new ObjectResult(
-                        new ApiResult(context.HttpContext.Response.StatusCode, "", contentResult.Content));
+                    context.Result = new JsonResult(
+                        new ApiResult(statusCode, "", contentResult.Content));
+                    break;
+                case JsonResult jsonResult:
+                    context.Result = new JsonResult(
+                        new ApiResult(statusCode, "", jsonResult.Value));
                     break;
                 default:
                     break;

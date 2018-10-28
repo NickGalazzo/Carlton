@@ -1,4 +1,5 @@
 ﻿using Carlton.Domain.Queries;
+using Carlton.Infrastructure.Security;
 using Microsoft.AspNetCore.Http;
 
 namespace Carlton.Domain.Security

@@ -1,6 +1,6 @@
 ﻿namespace Carlton.Domain.Repository
 {
-    public interface IRepository
+    public interface IDomainRepository
     {
     }
 }

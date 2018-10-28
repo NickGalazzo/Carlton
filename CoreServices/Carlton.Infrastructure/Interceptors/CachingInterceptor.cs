@@ -4,7 +4,7 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace Carlton.Domain.Interceptors
+namespace Carlton.Infrastructure.Interceptors
 {
     public class CachingInterceptor : IInterceptor
     {
@@ -30,14 +30,20 @@ namespace Carlton.Domain.Interceptors
 
             if (returnValue != null)
             {
+                _logger.LogInformation($"{invocation.Method.Name} is retrieving value from Memory Cache");
                 invocation.ReturnValue = returnValue;
                 return;
+            }
+            else
+            {
+                _logger.LogInformation($"{invocation.Method.Name} is unable to retrieve value from Memory Cache");
             }
 
             invocation.Proceed();
 
             if (invocation.ReturnValue != null)
             {
+                _logger.LogInformation($"{nameof(invocation.ReturnValue)} is being placed in memory cache");
                 var cacheExpiresIn = _cacheDurationGenerator.GetCacheDuration(invocation);
                 _cache.Set(key, invocation.ReturnValue, cacheExpiresIn);
             }

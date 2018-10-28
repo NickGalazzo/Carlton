@@ -1,7 +1,7 @@
-﻿using Carlton.Domain.DDD;
+﻿using Carlton.Infrastructure.Data.Repository;
 using System;
 
-namespace Carlton.Domain.Repository
+namespace Carlton.Infrastructure.Data.UnitOfWork
 {
     public abstract class BaseUnitOfWork : IUnitOfWork, IDisposable
     {
@@ -11,9 +11,9 @@ namespace Carlton.Domain.Repository
             _provider = provider; 
         }
 
-        public IRepository<TAggregateRoot, IdType> GetRepository<TAggregateRoot, IdType>() where TAggregateRoot : IAggregateRoot
+        public IRepository<T, IdType> GetRepository<T, IdType>() 
         {
-           var repository =  (IRepository<TAggregateRoot, IdType>)_provider.GetService(typeof(IRepository<TAggregateRoot, IdType>));
+           var repository =  (IRepository<T, IdType>)_provider.GetService(typeof(IRepository<T, IdType>));
            return repository;
         }
 

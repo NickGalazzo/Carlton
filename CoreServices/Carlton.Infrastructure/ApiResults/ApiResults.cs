@@ -36,8 +36,6 @@ namespace Carlton.Infrastructure.ApiResults
                 return DateTimeOffset.Now;
             }
         }
-
-        public long? Size { get; set; }
     }
 }
 

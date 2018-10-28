@@ -7,17 +7,15 @@ using System.Threading.Tasks;
 
 namespace Carlton.Infrastructure.Middleware
 {
-    public class CarltonExceptionHandlingMiddleware
+    public class ExceptionHandlingMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger _logger;
 
-        public CarltonExceptionHandlingMiddleware(RequestDelegate next, ILogger<CarltonExceptionHandlingMiddleware> logger)
+        public ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
         {
             _logger = logger;
             _next = next;
-
-        
         }
 
         public async Task InvokeAsync(HttpContext httpContext)
@@ -37,7 +35,7 @@ namespace Carlton.Infrastructure.Middleware
                 httpContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");
 
                 //Log the error to all providers
-                _logger.LogError(ex, $"Something went wrong");
+                _logger.LogError(ex, $"An unhandled exception has occured");
 
                 //Log the error to sentry
                 SentrySdk.CaptureException(ex);

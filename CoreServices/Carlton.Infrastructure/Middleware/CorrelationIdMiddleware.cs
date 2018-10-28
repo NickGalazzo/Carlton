@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Carlton.Infrastructure.Middleware
 {
-    public class CarltonCorrelationIdMiddleware
+    public class CorrelationIdMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly CorrelationIdOptions _options;
 
-        public CarltonCorrelationIdMiddleware(RequestDelegate next, IOptions<CorrelationIdOptions> options)
+        public CorrelationIdMiddleware(RequestDelegate next, IOptions<CorrelationIdOptions> options)
         {
             if(options == null)
             {

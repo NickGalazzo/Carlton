@@ -1,5 +1,4 @@
 ﻿using Carlton.Infrastructure.ApiResults;
-using Carlton.Infrastructure.MvcFilters;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System;
@@ -8,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Carlton.Infrastructure.Middleware
 {
-    public class CarltonApiExceptionResponseMiddleware
+    public class ApiExceptionResponseMiddleware
     {
         private readonly RequestDelegate _next;
 
-        public CarltonApiExceptionResponseMiddleware(RequestDelegate next)
+        public ApiExceptionResponseMiddleware(RequestDelegate next)
         {
             _next = next;
         }

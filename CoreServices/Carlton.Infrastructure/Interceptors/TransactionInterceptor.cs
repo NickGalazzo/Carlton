@@ -1,8 +1,8 @@
-﻿using Carlton.Domain.Repository;
+﻿using Carlton.Infrastructure.Data.UnitOfWork;
 using Castle.DynamicProxy;
 using Microsoft.Extensions.Logging;
 
-namespace Carlton.Domain.Interceptors
+namespace Carlton.Infrastructure.Interceptors
 {
     public class TransactionInterceptor : IInterceptor
     {
@@ -17,11 +17,11 @@ namespace Carlton.Domain.Interceptors
 
         public void Intercept(IInvocation invocation)
         {
-            _logger.LogDebug("Begining Transaction");
+            _logger.LogInformation("Begining Transaction");
             _unitOfWork.BeginTransaction();
             invocation.Proceed();
             _unitOfWork.Commit();
-            _logger.LogDebug("Transaction Committed");
+            _logger.LogInformation("Transaction Committed");
         }
     }
 }
