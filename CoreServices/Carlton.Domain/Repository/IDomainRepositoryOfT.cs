@@ -1,4 +1,4 @@
-﻿using Carlton.Domain.DDD;
+﻿using Carlton.Domain.BusinessObjects;
 using Carlton.Infrastructure.Data.Repository;
 
 namespace Carlton.Domain.Repository

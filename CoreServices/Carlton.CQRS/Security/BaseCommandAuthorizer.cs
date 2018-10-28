@@ -1,8 +1,8 @@
-﻿using Carlton.Domain.Commands;
+﻿using Carlton.CQRS.Commands;
 using Carlton.Infrastructure.Security;
 using Microsoft.AspNetCore.Http;
 
-namespace Carlton.Domain.Security
+namespace Carlton.CQRS.Security
 {
     public abstract class BaseCommandAuthorizer<T> : BaseAuthorizer<T> where T : class, ICommand
     {

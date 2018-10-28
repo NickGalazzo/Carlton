@@ -3,9 +3,9 @@ using Carlton.Domain.DomainEvents;
 using System;
 using System.Collections.Generic;
 
-namespace Carlton.Domain.DDD
+namespace Carlton.Domain.BusinessObjects
 {
-    public abstract class EntityBase<IdType> : IEquatable<EntityBase<IdType>>
+    public abstract class EntityBase<IdType> : IDomainObject, IEquatable<EntityBase<IdType>>
     {
         private List<IDomainEvent> _domainEvents;
 

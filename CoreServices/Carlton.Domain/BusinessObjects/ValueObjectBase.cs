@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Reflection;
 
-namespace Carlton.Domain.DDD
+namespace Carlton.Domain.BusinessObjects
 {
-    public abstract class ValueObjectBase
+    public abstract class ValueObjectBase : IDomainObject
     {
         public static bool operator ==(ValueObjectBase left, ValueObjectBase right)
         {

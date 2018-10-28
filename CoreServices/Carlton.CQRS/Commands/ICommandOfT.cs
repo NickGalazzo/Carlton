@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Carlton.Domain.Commands
+namespace Carlton.CQRS.Commands
 {
     public interface ICommand<T> : ICommand, IRequest<T>
         where T : ICommandResult
