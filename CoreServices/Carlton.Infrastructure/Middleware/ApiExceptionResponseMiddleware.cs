@@ -1,8 +1,6 @@
-﻿using Carlton.Infrastructure.ApiResults;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace Carlton.Infrastructure.Middleware
@@ -30,7 +28,7 @@ namespace Carlton.Infrastructure.Middleware
                 //Write output
                 await httpContext.Response.WriteAsync(
                     JsonConvert.SerializeObject(
-                        new ApiResult((int)HttpStatusCode.InternalServerError, ex.Message, null)
+                        ApiResponse.CarltonApiResponse.CreateInternalServerErrorResponse()
                    ));
             }
         }
