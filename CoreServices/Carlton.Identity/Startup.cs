@@ -54,7 +54,7 @@ namespace Calrton.Identity
             //Add MVC
             services.AddMvc(options =>
             {
-                options.Filters.Add(new CarltonStandardResultFilter());
+                options.Filters.Add(new StandardResultFilter());
             });
 
             //Add WebAPI Versioning

@@ -4,7 +4,7 @@ using System;
 
 namespace Carlton.CQRS.Exceptions
 {
-    public class CommandException : BaseCarltonException
+    public class CommandException : CarltonBaseException
     {
         private const string ErrMessage = "An error occured in Command {0}";
 

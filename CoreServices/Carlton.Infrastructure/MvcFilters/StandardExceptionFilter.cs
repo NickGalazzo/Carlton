@@ -7,11 +7,11 @@ using System;
 
 namespace Carlton.Infrastructure.MvcFilters
 {
-    public class CarltonStandardExceptionFilter : IExceptionFilter
+    public class StandardExceptionFilter : IExceptionFilter
     {
-        private readonly ILogger<CarltonStandardExceptionFilter> _logger;
+        private readonly ILogger<StandardExceptionFilter> _logger;
 
-        public CarltonStandardExceptionFilter(ILogger<CarltonStandardExceptionFilter> logger)
+        public StandardExceptionFilter(ILogger<StandardExceptionFilter> logger)
         {
             _logger = logger;
         }
@@ -23,27 +23,27 @@ namespace Carlton.Infrastructure.MvcFilters
             switch(exception)
             {
                 case ValidationException e:
-                    context.Result = new JsonResult(ApiResponse.CarltonApiResponse.CreateForbiddenResponse(e.Errors));
+                    context.Result = new JsonResult(ApiResponse.StandardApiResponse.CreateForbiddenResponse(e.Errors));
                     _logger.LogWarning("Handled Exception", e);
                     break;
                 case HttpConflictException e:
-                    context.Result = new JsonResult(ApiResponse.CarltonApiResponse.CreateConflictResponse());
+                    context.Result = new JsonResult(ApiResponse.StandardApiResponse.CreateConflictResponse());
                     _logger.LogWarning("Handled Exception", e);
                     break;
                 case HttpResourceNotFoundException e:
-                    context.Result = new JsonResult(ApiResponse.CarltonApiResponse.CreateNotFoundResponse());
+                    context.Result = new JsonResult(ApiResponse.StandardApiResponse.CreateNotFoundResponse());
                     _logger.LogWarning("Handled Exception", e);
                     break;
                 case UnauthorizedAccessException e:
-                    context.Result = new JsonResult(ApiResponse.CarltonApiResponse.CreateUnauthorizedResponse());
+                    context.Result = new JsonResult(ApiResponse.StandardApiResponse.CreateUnauthorizedResponse());
                     _logger.LogWarning("Handled Exception", e);
                     break;
-                case CarltonRemoteServerException e:
-                    context.Result = new JsonResult(ApiResponse.CarltonApiResponse.CreateServiceUnavailableResponse());
+                case RemoteServerException e:
+                    context.Result = new JsonResult(ApiResponse.StandardApiResponse.CreateServiceUnavailableResponse());
                     _logger.LogWarning("Handled Exception", e);
                     break;
                 default:
-                    throw new BaseCarltonException("Unhandled exception", exception);
+                    throw new CarltonBaseException("Unhandled exception", exception);
             }
         }
     }

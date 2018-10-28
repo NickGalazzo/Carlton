@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Carlton.Infrastructure.MvcFilters
 {
-    public class CarltonStandardResultFilter : IResultFilter
+    public class StandardResultFilter : IResultFilter
     {
         public void OnResultExecuting(ResultExecutingContext context)
         {
@@ -14,19 +14,19 @@ namespace Carlton.Infrastructure.MvcFilters
             {
                 case ObjectResult objResult:
                     objResult.Value = new JsonResult(
-                        CarltonApiResponse.CreateSuccessResponse(statusCode, "", objResult.Value));
+                        StandardApiResponse.CreateSuccessResponse(statusCode, "", objResult.Value));
                     break;
                 case StatusCodeResult statusCodeResult:
                     context.Result = new JsonResult(
-                       CarltonApiResponse.CreateSuccessResponse(statusCode, "", null));
+                       StandardApiResponse.CreateSuccessResponse(statusCode, "", null));
                     break;
                 case ContentResult contentResult:
                     context.Result = new JsonResult(
-                        CarltonApiResponse.CreateSuccessResponse(statusCode, "", contentResult.Content));
+                        StandardApiResponse.CreateSuccessResponse(statusCode, "", contentResult.Content));
                     break;
                 case JsonResult jsonResult:
                     context.Result = new JsonResult(
-                        CarltonApiResponse.CreateSuccessResponse(statusCode, "", jsonResult.Value));
+                        StandardApiResponse.CreateSuccessResponse(statusCode, "", jsonResult.Value));
                     break;
                 default:
                     break;

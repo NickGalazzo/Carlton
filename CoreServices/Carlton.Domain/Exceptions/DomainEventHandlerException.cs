@@ -4,7 +4,7 @@ using System;
 
 namespace Carlton.Domain.Exceptions
 {
-    public class DomainEventException : BaseCarltonException
+    public class DomainEventException : CarltonBaseException
     {
         private const string ErrMessage = "An error occured inside a domain event handler {0}";
         public IDomainEvent DomainEvent { get; }

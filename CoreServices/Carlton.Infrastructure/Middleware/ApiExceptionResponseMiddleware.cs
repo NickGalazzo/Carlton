@@ -28,7 +28,7 @@ namespace Carlton.Infrastructure.Middleware
                 //Write output
                 await httpContext.Response.WriteAsync(
                     JsonConvert.SerializeObject(
-                        ApiResponse.CarltonApiResponse.CreateInternalServerErrorResponse()
+                        ApiResponse.StandardApiResponse.CreateInternalServerErrorResponse()
                    ));
             }
         }

@@ -69,7 +69,7 @@ namespace Carlton.Infrastructure.Extensions
             });
         }
 
-        public static IApplicationBuilder UseCalrtonMetadata(this IApplicationBuilder app, string path)
+        public static IApplicationBuilder UseCalrtonServerInfo(this IApplicationBuilder app, string path)
         {
             return app.UseMiddleware<ServerInfoMiddleware>(path);
         }

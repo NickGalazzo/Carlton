@@ -4,7 +4,7 @@ using System;
 
 namespace Carlton.CQRS.Exceptions
 {
-    public class QueryException : BaseCarltonException
+    public class QueryException : CarltonBaseException
     {
         public IQuery Query { get; }
 

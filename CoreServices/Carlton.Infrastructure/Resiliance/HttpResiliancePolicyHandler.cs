@@ -9,11 +9,11 @@ using System.Net.Http;
 
 namespace Carlton.Infrastructure.Resiliance
 {
-    public class HttpResponseResiliancePolicyHandler : IResiliancePolicyHandler<HttpResponseMessage>
+    public class HttpResiliancePolicyHandler : IResiliancePolicyHandler<HttpResponseMessage>
     {
-        private readonly ILogger<HttpResponseResiliancePolicyHandler> _logger;
+        private readonly ILogger<HttpResiliancePolicyHandler> _logger;
 
-        public HttpResponseResiliancePolicyHandler(ILogger<HttpResponseResiliancePolicyHandler> logger)
+        public HttpResiliancePolicyHandler(ILogger<HttpResiliancePolicyHandler> logger)
         {
             _logger = logger;
         }
@@ -44,7 +44,7 @@ namespace Carlton.Infrastructure.Resiliance
             {
                 var requestUrl = policyResult.Result.RequestMessage.RequestUri;
                 _logger.LogWarning($"Failed to reach remote server: {requestUrl} with resiliance policy, throwing exception");
-                throw new CarltonRemoteServerException(policyResult.Result, policyResult.FinalException);
+                throw new RemoteServerException(policyResult.Result, policyResult.FinalException);
             }
         }
     }

@@ -4,7 +4,7 @@ using System;
 
 namespace Carlton.Domain.Exceptions
 {
-    public class DomainException : BaseCarltonException
+    public class DomainException : CarltonBaseException
     {
         private const string ErrMessage = "An error occured inside a business domain object {0}";
         public IDomainObject Obj {get;}

@@ -4,7 +4,7 @@ using System;
 
 namespace Carlton.Domain.Exceptions
 {
-    public class DomainRepositoryException : BaseCarltonException
+    public class DomainRepositoryException : CarltonBaseException
     {
         private const string ErrMessage = "An error occured inside a {0} repository";
 
