@@ -6,8 +6,8 @@ namespace Carlton.Infrastructure.Data.Repository
 {
     public interface IReadOnlyRepository<T, IdType>
     {
-        T FindBy(IdType id);
+        T FindById(IdType id);
         IEnumerable<T> FindAll();
-        IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate);
+        IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
     }
 }

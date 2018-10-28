@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Carlton.Infrastructure.Interceptors
 {
-    public class TransactionInterceptor : IInterceptor
+    public class TransactionInterceptor : BaseInterceptor
     {
         private readonly ILogger<TransactionInterceptor> _logger;
         private readonly IUnitOfWork _unitOfWork;
@@ -15,7 +15,7 @@ namespace Carlton.Infrastructure.Interceptors
             _unitOfWork = unitOfWork;
         }
 
-        public void Intercept(IInvocation invocation)
+        public override void InterceptBehavior(IInvocation invocation)
         {
             _logger.LogInformation("Begining Transaction");
             _unitOfWork.BeginTransaction();

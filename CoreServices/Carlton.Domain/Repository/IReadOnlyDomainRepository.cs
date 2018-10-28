@@ -11,8 +11,8 @@ namespace Carlton.Domain.Repository
         IReadOnlyRepository<AggregateType, IdType>
         where AggregateType : IAggregateRoot
     {
-        new AggregateType FindBy(IdType id);
+        new AggregateType FindById(IdType id);
         new IEnumerable<AggregateType> FindAll();
-        new IEnumerable<AggregateType> FindBy(Expression<Func<AggregateType, bool>> predicate);
+        new IEnumerable<AggregateType> Find(Expression<Func<AggregateType, bool>> predicate);
     }
 }

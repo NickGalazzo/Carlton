@@ -88,7 +88,7 @@ namespace Calrton.Identity
             app.UseElmCapture();
             app.UseElmPage();
             app.UseCarltonHealthChecking();
-            app.UseCalrtonMetadata("/metadata");
+            app.UseCalrtonServerInfo("/metadata");
             app.UseCarltonCorelationId();
             app.UseSwagger();
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1"); });

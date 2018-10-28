@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace Carlton.Infrastructure.Interceptors
 {
-    public class AuditInterceptor : IInterceptor
+    public class AuditInterceptor : BaseInterceptor
     {
         private readonly ILogger<AuditInterceptor> _logger;
         private readonly Stopwatch _stopwatch;
@@ -15,7 +15,7 @@ namespace Carlton.Infrastructure.Interceptors
             _stopwatch = new Stopwatch();
         }
 
-        public void Intercept(IInvocation invocation)
+        public override void InterceptBehavior(IInvocation invocation)
         {
             _stopwatch.Start();
             invocation.Proceed();

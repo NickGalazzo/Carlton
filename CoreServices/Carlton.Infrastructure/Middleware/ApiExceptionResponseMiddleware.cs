@@ -20,7 +20,7 @@ namespace Carlton.Infrastructure.Middleware
             {
                 await _next(httpContext);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //All exceptions that make it to this point 
                 //are unhandled exceptions

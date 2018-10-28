@@ -5,7 +5,7 @@ using System;
 
 namespace Carlton.Infrastructure.Interceptors
 {
-    public class AuthorizationInterceptor : IInterceptor
+    public class AuthorizationInterceptor : BaseInterceptor
     {
         private readonly ILogger<AuthorizationInterceptor> _logger;
         private readonly IServiceProvider _provider;
@@ -16,7 +16,7 @@ namespace Carlton.Infrastructure.Interceptors
             _provider = provider;
         }
 
-        public void Intercept(IInvocation invocation)
+        public override void InterceptBehavior(IInvocation invocation)
         {
             var arg = invocation.Arguments[0];
             var argType = arg.GetType();

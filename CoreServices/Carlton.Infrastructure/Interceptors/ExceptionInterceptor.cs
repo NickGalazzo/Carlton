@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Carlton.Infrastructure.Interceptors
 {
-    public class ExceptionInterceptor
+    public class ExceptionInterceptor : BaseInterceptor
     {
         private readonly ILogger<ExceptionInterceptor> _logger;
         private readonly IExceptionHandler _handler;
@@ -17,7 +17,7 @@ namespace Carlton.Infrastructure.Interceptors
             _handler = handler;
         }
 
-        public void Intercept(IInvocation invocation)
+        public override void InterceptBehavior(IInvocation invocation)
         {
             var typeName = nameof(invocation.TargetType);
             var requestObj = invocation.Arguments.First();
@@ -32,7 +32,7 @@ namespace Carlton.Infrastructure.Interceptors
                 catch (Exception ex)
                 {
                     _logger.LogError($"Error occured in handler of type: {typeName}");
-                    _handler.HandleException(ex, requestObj);             
+                    _handler.HandleException(ex, requestObj);
                 }
         }
     }

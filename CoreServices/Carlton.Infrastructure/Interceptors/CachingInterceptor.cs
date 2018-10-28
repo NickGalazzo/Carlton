@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Carlton.Infrastructure.Interceptors
 {
-    public class CachingInterceptor : IInterceptor
+    public class CachingInterceptor : BaseInterceptor
     {
         private readonly ILogger<CachingInterceptor> _logger;
         private readonly IMemoryCache _cache;
@@ -22,10 +22,10 @@ namespace Carlton.Infrastructure.Interceptors
             _cacheDurationGenerator = cacheDurationGenerator;
         }
 
-        public void Intercept(IInvocation invocation)
+        public override void InterceptBehavior(IInvocation invocation)
         {
             var key = _cacheKeyGenerator.GenerateCacheKey(JsonConvert.SerializeObject(invocation.Arguments));
-            
+
             var returnValue = _cache.Get(key);
 
             if (returnValue != null)
