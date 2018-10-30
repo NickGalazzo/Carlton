@@ -16,9 +16,5 @@ namespace Carlton.Infrastructure.Exceptions
         public CarltonBaseException(string message, Exception innerException) : base(message, innerException)
         {
         }
-
-        protected CarltonBaseException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
     }
 }

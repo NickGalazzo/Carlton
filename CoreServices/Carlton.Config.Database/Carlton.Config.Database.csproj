@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Improving.DbUp.QuickStart" Version="1.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Scripts\BeforeMigration\" />
+    <Folder Include="Scripts\Migration\" />
+    <Folder Include="Scripts\Hashed\" />
+    <Folder Include="Scripts\AlwaysRun\" />
+    <Folder Include="Scripts\SeedData\" />
+    <Folder Include="Scripts\Test\" />
+  </ItemGroup>
+
+</Project>
