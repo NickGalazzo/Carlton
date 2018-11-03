@@ -1,4 +1,4 @@
-﻿using Carlton.Infrastructure.Data.Repository;
+﻿using Carlton.Infrastructure.Data.Repository.Base;
 using System;
 
 namespace Carlton.Infrastructure.Data.UnitOfWork

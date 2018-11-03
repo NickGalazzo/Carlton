@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,16 +6,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Improving.DbUp.QuickStart" Version="1.0.6" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Scripts\BeforeMigration\" />
     <Folder Include="Scripts\Migration\" />
-    <Folder Include="Scripts\Hashed\" />
     <Folder Include="Scripts\AlwaysRun\" />
     <Folder Include="Scripts\SeedData\" />
     <Folder Include="Scripts\Test\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup-core" Version="4.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Carlton.Config.Data\Carlton.Config.Data.csproj" />
+    <ProjectReference Include="..\Carlton.Infrastructure\Carlton.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
