@@ -27,25 +27,29 @@ namespace Carlton.Infrastructure.Data.Repository.Dapper
             }
         }
 
-        public BaseDapperReadonlySprocRepository(IDbConnectionFactory factory, Dictionary<string, SprocInfo<T>> sprocs)
+        public BaseDapperReadonlySprocRepository(IDbConnectionFactory factory, IEnumerable<SprocInfo<T>> sprocs)
         {
             _factory = factory;
-            Sprocs = sprocs;
+            Sprocs = sprocs.ToList().ToDictionary(o => o.SprocName, o => o);
         }
 
-        public async Task<IEnumerable<T>> Find(ISprocSpecification<T> specification)
+        public async Task<PagedResult<T>> Find(ISprocSpecification<T> specification)
         {
-            var results = await ExecuteStoredProcedure(specification.SprocName, specification.Params);
-            return results;
+            return await Find(specification, null);
         }
 
         public async Task<PagedResult<T>> Find(ISprocSpecification<T> specification, IQueryConstraints<T> constraints)
         {
             var parameters = new DynamicParameters(specification.Params);
-            parameters.Add("@SortBy", constraints.SortPropertyName);
-            parameters.Add("@SortOrder", constraints.SortOrder);
-            parameters.Add("@PageNumber", constraints.PageNumber);
-            parameters.Add("@PageSize", constraints.PageSize);
+
+            if (constraints != null)
+            {
+                parameters.Add("@SortBy", constraints.SortPropertyName);
+                parameters.Add("@SortOrder", constraints.SortOrder);
+                parameters.Add("@PageNumber", constraints.PageNumber);
+                parameters.Add("@PageSize", constraints.PageSize);
+            }
+
             var results = await ExecuteStoredProcedure(specification.SprocName, parameters);
             return PagedResult<T>.Create(results, constraints.PageNumber);
         }
@@ -67,7 +71,7 @@ namespace Carlton.Infrastructure.Data.Repository.Dapper
             using (var cn = Connection)
             {
                 var querySproc = sproc as SprocInfo<T>;
-                var p = GetParameters(sproc, id);
+                var p = CreateDynamicParameters(sproc, id);
 
                 var result = await cn.QueryAsync(sproc.SprocName, querySproc.SprocMapping.Types, querySproc.SprocMapping.MappingFunc, p,
                                        commandType: CommandType.StoredProcedure,
@@ -99,22 +103,26 @@ namespace Carlton.Infrastructure.Data.Repository.Dapper
             }
         }
 
-        private DynamicParameters GetParameters(SprocInfo<T> sproc, IdType id)
+        private DynamicParameters CreateDynamicParameters(SprocInfo<T> sproc, IdType id)
         {
             var p = new DynamicParameters();
-            var idParam = sproc.ParamPropertyMappings.FirstOrDefault(o => o.Key.Contains("Id"));
-            p.Add(idParam.Key, id);
+            var idParameter = sproc.Parameters.FirstOrDefault(o => (string)o.Value == SprocConstants.ID_PLACE_HOLDER);
+            p.Add(idParameter.Key, id);
             return p;
         }
 
-        protected DynamicParameters GetParameters(SprocInfo<T> sproc, T entity)
+        protected DynamicParameters CreateDynamicParameters(SprocInfo<T> sproc, T entity)
         {
+            if (sproc.AnyParameterProperties())
+            {
+                sproc.ConvertEntityPropertiesToParams(entity);
+            }
+
             var p = new DynamicParameters();
 
-            foreach (var param in sproc.ParamPropertyMappings)
+            foreach (var param in sproc.Parameters)
             {
-                var value = GetPropertyValue(param.Value, entity);
-                p.Add(param.Key, value);
+                p.Add(param.Key, param.Value);
             }
 
             return p;
