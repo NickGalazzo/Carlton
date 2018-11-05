@@ -37,8 +37,4 @@
     <Folder Include="Utilities\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Carlton.Config.Data\Carlton.Config.Data.csproj" />
-  </ItemGroup>
-
 </Project>
