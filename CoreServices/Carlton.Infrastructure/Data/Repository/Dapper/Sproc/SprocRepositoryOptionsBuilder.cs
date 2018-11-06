@@ -1,19 +1,74 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 
 namespace Carlton.Infrastructure.Data.Repository.Dapper.Sproc
 {
     public class SprocRepositoryOptionsBuilder<T>
     {
-        private readonly IList<SprocInfo<T>> _sprocs = new List<SprocInfo<T>>();
+        private static readonly string FIND_BY_ID_SPROC = "{0}_GetById";
+        private static readonly string FIND_ALL_SPROC = "{0}_GetAll";
+        private static readonly string INSERT_SPROC = "{0}_Insert";
+        private static readonly string UPDATE_SPROC = "{0}_Update";
+        private static readonly string DELETE_SPROC = "{0}_Delete";
+
         private Delegate _map;
         private string _splitColumns;
-       
-        public SprocRepositoryOptionsBuilder<T> WithSproc(string sprocName, Action<SprocInfoBuilder<T>> action)
+        private readonly Dictionary<string, string> _crudSprocMap;
+        private string _idParameter;
+
+        public SprocRepositoryOptionsBuilder()
         {
-            var sprocBuilder = new SprocInfoBuilder<T>(sprocName);
-            action(sprocBuilder);
+            _crudSprocMap = new Dictionary<string, string>();
+        }
+
+        public SprocRepositoryOptionsBuilder<T> WithStandardCrudConventions()
+        {
+            var entityName = typeof(T).Name;
+
+            var insert = string.Format(INSERT_SPROC, entityName);
+            var update = string.Format(UPDATE_SPROC, entityName);
+            var delete = string.Format(DELETE_SPROC, entityName);
+            var findById = string.Format(FIND_BY_ID_SPROC, entityName);
+            var findAll = string.Format(FIND_ALL_SPROC, entityName);
+            var id = $"{entityName}Id";
+
+            WithInsertSproc(insert);
+            WithUpdateSproc(update);
+            WithDeleteSproc(delete);
+            WithFindByIdSproc(findById);
+            WithFindAllSproc(findAll);
+            WithIdParameter(id);
+
+            return this;
+        }
+
+        public SprocRepositoryOptionsBuilder<T> WithInsertSproc(string name)
+        {
+            _crudSprocMap.Add(SprocConstants.INSERT_SPROC, name);
+            return this;
+        }
+
+        public SprocRepositoryOptionsBuilder<T> WithUpdateSproc(string name)
+        {
+            _crudSprocMap.Add(SprocConstants.UPDATE_SPROC, name);
+            return this;
+        }
+
+        public SprocRepositoryOptionsBuilder<T> WithDeleteSproc(string name)
+        {
+            _crudSprocMap.Add(SprocConstants.DELETE_SPROC, name);
+            return this;
+        }
+
+        public SprocRepositoryOptionsBuilder<T> WithFindByIdSproc(string name)
+        {
+            _crudSprocMap.Add(SprocConstants.FIND_BY_ID_SPROC, name);
+            return this;
+        }
+
+        public SprocRepositoryOptionsBuilder<T> WithFindAllSproc(string name)
+        {
+            _crudSprocMap.Add(SprocConstants.FIND_ALL_SPROC, name);
             return this;
         }
 
@@ -59,43 +114,16 @@ namespace Carlton.Infrastructure.Data.Repository.Dapper.Sproc
             return this;
         }
 
+        public SprocRepositoryOptionsBuilder<T> WithIdParameter(string name)
+        {
+            _idParameter = name;
+            return this;
+        }
+
         public SprocRepositoryOptions<T> Build()
         {
-            var result = new SprocRepositoryOptions<T>(_sprocs, _map);
+            var result = new SprocRepositoryOptions<T>(_crudSprocMap, _idParameter, _map);
             return result;
-        }
-    }
-
-    public class SprocInfoBuilder<T>
-    {
-        private readonly SprocInfo<T> _sproc;
-
-        public SprocInfoBuilder(string sprocName)
-        {
-            _sproc = new SprocInfo<T>(sprocName);
-        }
-
-        public SprocInfoBuilder<T> WithIdParam(string idParamName)
-        {
-           _sproc.Parameters.Add(idParamName, SprocConstants.ID_PLACE_HOLDER);
-            return this;
-        }
-
-        public SprocInfoBuilder<T> WithParameter(string paramName, object value)
-        {
-            _sproc.Parameters.Add(paramName, value);
-            return this;
-        }
-
-        public SprocInfoBuilder<T> WithParameter(string paramName, Expression<Func<T, object>> propExpression)
-        {
-            _sproc.ParamToPropMap.Add(paramName, propExpression);
-            return this;
-        }
-
-        internal SprocInfo<T> Build()
-        {
-            return _sproc;
         }
     }
 }

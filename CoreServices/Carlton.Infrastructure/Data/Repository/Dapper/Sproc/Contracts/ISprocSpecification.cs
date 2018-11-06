@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-
-namespace Carlton.Infrastructure.Data.Repository.Dapper.Contracts
+﻿namespace Carlton.Infrastructure.Data.Repository.Dapper.Contracts
 {
-    public interface ISprocSpecification<T> 
+    public interface ISprocSpecification<T, TSprocParams> 
     {
         string SprocName { get; set; }
-        Dictionary<string, object> Params { get; set; }
+        TSprocParams Params { get; set; }
     }
 }

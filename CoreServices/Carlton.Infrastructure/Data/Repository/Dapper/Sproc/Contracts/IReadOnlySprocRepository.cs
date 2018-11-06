@@ -7,7 +7,7 @@ namespace Carlton.Infrastructure.Data.Repository.Dapper.Sproc.Contracts
 {
     public interface IReadOnlySprocRepository<T, IdType> : IReadOnlyRepository<T, IdType>
     {
-        Task<PagedResult<T>> Find(ISprocSpecification<T> specification);
-        Task<PagedResult<T>> Find(ISprocSpecification<T> specification, IQueryConstraints<T> constraints);
+        Task<PagedResult<T>> Find<TSprocParams>(ISprocSpecification<T, TSprocParams> specification);
+        Task<PagedResult<T>> Find<TSprocParams>(ISprocSpecification<T , TSprocParams> specification, IQueryConstraints<T> constraints);
     }
 }

@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Carlton.Infrastructure.Data.Repository.Dapper
 {
     public class SprocRepositoryOptions<T>
     {
-        public Dictionary<string, SprocInfo<T>> Sprocs { get; }
+        public Dictionary<string, string> CrudSprocMap { get; }
+        public string IdParameter { get; }
         public Delegate Map { get; }
      
 
-        public SprocRepositoryOptions(IEnumerable<SprocInfo<T>> sprocs, Delegate map)
+        public SprocRepositoryOptions(Dictionary<string, string> crud, string idParameter, Delegate map)
         {
-            Sprocs = sprocs.ToDictionary(o => o.SprocName, o => o);
+            CrudSprocMap = crud;
+            IdParameter = idParameter;
             Map = map;
         }
     }

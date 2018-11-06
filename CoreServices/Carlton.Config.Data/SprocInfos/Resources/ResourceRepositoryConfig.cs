@@ -15,16 +15,7 @@ namespace Carlton.Config.Data.SprocInfos.Resources
         {
             var options =
                 builder
-                .WithSproc("GetById", o =>
-                {
-                    o.WithIdParam("@ResourceId")
-                     .WithParameter("@IpAddress", r => r.IpAddress);
-                })
-                .WithSproc("GetBySomethingElse", o =>
-                {
-                    o.WithParameter("Test", 7)
-                     .WithParameter("Test2", 8);
-                })
+                .WithStandardCrudConventions()
                 .WithMap<Resource, ResourceType, ResourceStatus, Resource>((o, oo, ooo) =>
                 {
                     return new Resource();
