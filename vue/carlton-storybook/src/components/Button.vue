@@ -2,7 +2,7 @@
   <button class="button" :style="{color: color, borderColor: color}" @click="handleClick" :class="{rounded: rounded}"><slot></slot>!</button>
 </template>
 
-<script>
+<script lang="ts">
   export default {
     props: {
       rounded: Boolean,
