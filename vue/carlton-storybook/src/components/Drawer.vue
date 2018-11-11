@@ -1,4 +1,5 @@
 <template>
+
   <v-navigation-drawer
     id="app-drawer"
     app
@@ -16,16 +17,16 @@
       >    
       <v-list-tile avatar>
           <v-list-tile-avatar
-            color="white"
+            color="transparent"
           >
             <v-img
-              :src="logo"
-              height="34"
+              :src="'https://media.istockphoto.com/vectors/urban-family-home-classic-brownstone-building-vector-illustration-vector-id947577838'"
+              height="70"
               contain
             />
           </v-list-tile-avatar>
           <v-list-tile-title class="title">
-            Vuetify MD
+            <span>Carlton</span>
           </v-list-tile-title>
         </v-list-tile>
         
@@ -34,7 +35,7 @@
           :key="i"
           :to="link.to"
           :active-class="color"
-          class="v-list-item">
+          class="v-list-item active">
           <v-list-tile-action>
             <v-icon>{{ link.icon }}</v-icon>
           </v-list-tile-action>
@@ -46,6 +47,7 @@
       </v-layout>
 
   </v-navigation-drawer>
+
 </template>
 
 <script script lang="ts">
@@ -65,14 +67,15 @@ type Link = {
     logo: String
   }
 })
-export default class CoreDrawer extends Vue {
+export default class Drawer extends Vue {
   //Data
   links: Link[];
 
   message: string = "Hello!";
-  logo: "./img/vuetifylogo.png";
+  logo: "./assets/house.jpg";
 
   mounted() {
+    this.logo = "../../assets/house.jpg";
     this.links = [
       {
         to: "/dashboard",
@@ -86,28 +89,38 @@ export default class CoreDrawer extends Vue {
       },
       {
         to: "/table-list",
-        icon: "mdi-clipboard-outline",
-        text: "Table List"
+        icon: "mdi-clipboard-check",
+        text: "Todos"
+      },
+      {
+        to: "/",
+        icon: "mdi-spray-bottle",
+        text: "Apartment Cleaning"
+      },
+      {
+        to: "/table-list",
+        icon: "mdi-cart",
+        text: "Household Items"
+      },
+      {
+        to: "/table-list",
+        icon: "mdi-food-fork-drink",
+        text: "Home for Dinner"
+      },
+      {
+        to: "/table-list",
+        icon: "mdi-washing-machine",
+        text: "Laundry"
+      },
+      {
+        to: "/table-list",
+        icon: "mdi-delete",
+        text: "Garbage"
       },
       {
         to: "/typography",
-        icon: "mdi-format-font",
-        text: "Typography"
-      },
-      {
-        to: "/icons",
-        icon: "mdi-chart-bubble",
-        text: "Icons"
-      },
-      {
-        to: "/maps",
-        icon: "mdi-map-marker",
-        text: "Maps"
-      },
-      {
-        to: "/notifications",
-        icon: "mdi-bell",
-        text: "Notifications"
+        icon: "mdi-heart",
+        text: "Application Health"
       }
     ];
   }

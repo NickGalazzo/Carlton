@@ -19,7 +19,7 @@
         >
           <v-icon>mdi-view-list</v-icon>
         </v-btn>
-        Project Carlton
+        Project Carlton XXX
       </v-toolbar-title>
     </div>
 

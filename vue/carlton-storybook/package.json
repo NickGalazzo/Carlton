@@ -17,7 +17,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.5",
+    "@mdi/font": "^3.0.39",
     "@storybook/addon-actions": "^4.0.4",
+    "@storybook/addon-info": "^4.0.4",
     "@storybook/addon-knobs": "^4.0.4",
     "@storybook/addon-links": "^4.0.4",
     "@storybook/addon-notes": "^4.0.4",
@@ -33,6 +35,8 @@
     "babel-preset-vue": "^2.0.2",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "typescript": "^3.0.0",
