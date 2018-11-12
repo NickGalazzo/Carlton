@@ -1,5 +1,4 @@
 <template>
-
   <v-navigation-drawer
     id="app-drawer"
     app
@@ -9,7 +8,6 @@
     mobile-break-point="991"
     width="260"
   >
-
       <v-layout
         class="fill-height"
         tag="v-list"
@@ -26,10 +24,10 @@
             />
           </v-list-tile-avatar>
           <v-list-tile-title class="title">
-            <span>Carlton</span>
+            <span>Carlton UI</span>
           </v-list-tile-title>
         </v-list-tile>
-        
+
         <v-list-tile
           v-for="(link, i) in links"
           :key="i"
