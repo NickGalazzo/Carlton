@@ -11,10 +11,10 @@
     </v-toolbar>
 
     <v-tabs-items v-model="model">
-        <v-tab-item v-for="(environment, i) in environments" :id="`tab-${i}`" :key="i">
-            <v-card>
-                <v-container fluid grid-list-lg>
-                    <v-layout row wrap>
+        <v-tab-item v-for="(environment, i) in environments" :id="`tab-${i}`" :key="i" style="background-color:gray">
+            <v-card color="#f1eff0">
+                <v-container fluid grid-list-lg color="#f1eff0">
+                    <v-layout row wrap color="#f1eff0">
                         <v-flex xs3>
                             <v-card class="health-card">
 
@@ -181,6 +181,7 @@ body {
 
 .health-card {
     height: 200px;
+    border-radius:5px;
     .v-card__title {
         background-color: white;
         //color:white;

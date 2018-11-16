@@ -1,7 +1,104 @@
 <template>
 <v-container fluid grid-list-lg style="background-color:#eeeeee">
+
     <v-layout row wrap>
+
         <v-flex xs3>
+            <v-card>
+                <v-card-title primary-title>
+                    <v-layout>
+                        <v-flex xs4>
+                            <div style="height:50px;width:50px;background-color:#a48adb;border-radius:50px">
+                                <v-icon style="font-size: 25px;color:white;margin:12.5px">mdi-clipboard-check</v-icon>
+                            </div>
+                        </v-flex>
+                        <v-flex xs8>
+                            <v-subheader v-if="true">
+                                5 Open Tasks
+                            </v-subheader>
+                        </v-flex>
+                        <v-spacer></v-spacer>
+                    </v-layout>
+                </v-card-title>
+                <v-card-content>
+
+                </v-card-content>
+            </v-card>
+        </v-flex>
+
+        <v-flex xs3>
+            <v-card>
+                <v-card-title primary-title>
+                    <v-layout>
+                        <v-flex xs4>
+                            <div style="height:50px;width:50px;background-color:#1dbfd4;border-radius:50px">
+                                <v-icon style="font-size: 25px;color:white;margin:12.5px">mdi-home</v-icon>
+                            </div>
+                        </v-flex>
+                        <v-flex xs8>
+                            <v-subheader v-if="true">
+                                3 Statuses
+                            </v-subheader>
+                        </v-flex>
+                        <v-spacer></v-spacer>
+                    </v-layout>
+                </v-card-title>
+                <v-card-content>
+
+                </v-card-content>
+            </v-card>
+        </v-flex>
+
+        <v-flex xs3>
+            <v-card>
+                <v-card-title primary-title>
+                    <v-layout>
+                        <v-flex xs4>
+                            <div style="height:50px;width:50px;background-color:#fec00a;border-radius:50px">
+                                <v-icon style="font-size: 25px;color:white;margin:12.5px">mdi-cart</v-icon>
+                            </div>
+                        </v-flex>
+                        <v-flex xs8>
+                            <v-subheader v-if="true">
+                                5 Low Items
+                            </v-subheader>
+                        </v-flex>
+                        <v-spacer></v-spacer>
+                    </v-layout>
+                </v-card-title>
+                <v-card-content>
+
+                </v-card-content>
+            </v-card>
+        </v-flex>
+
+        <v-flex xs3>
+            <v-card>
+                <v-card-title primary-title>
+                    <v-layout>
+                        <v-flex xs4>
+                            <div style="height:50px;width:50px;background-color:#7ac29a;border-radius:50px">
+                                <v-icon style="font-size: 25px;color:white;margin:12.5px">mdi-silverware-fork-knife</v-icon>
+                            </div>
+                        </v-flex>
+                        <v-flex xs8>
+                            <v-subheader style="font-size:12">
+                                1 Person Home For Dinner
+                            </v-subheader>
+                        </v-flex>
+                        <v-spacer></v-spacer>
+                    </v-layout>
+                </v-card-title>
+                <v-card-content>
+
+                </v-card-content>
+            </v-card>
+        </v-flex>
+
+    </v-layout>
+
+    <v-layout row wrap>
+        <v-flex xs4>
             <v-card class="dashboard-card">
                 <v-card-title primary-title>
                     <div class="title">Home For Dinner</div>
@@ -49,7 +146,7 @@
                 </div>
             </v-card>
         </v-flex>
-        <v-flex xs3>
+        <v-flex xs4>
             <v-card class="dashboard-card">
 
                 <v-card-title primary-title>
@@ -136,8 +233,166 @@
 
             </v-card>
         </v-flex>
-        <v-flex xs6>
+        <v-flex xs4>
             <v-card class="dashboard-card">
+                <v-card-title primary-title>
+                    <div class="title">Household Items</div>
+                </v-card-title>
+                <div class="card-scroll-content">
+                    <v-container fluid>
+                        <v-list>
+
+                            <v-list-tile>
+
+                                <v-list-tile-content>
+                                    <v-subheader>Toilet Paper</v-subheader>
+                                    <v-progress-linear color="red" height="5" value="15"></v-progress-linear>
+                                </v-list-tile-content>
+
+                                <v-list-tile-action>
+                                    <v-btn icon ripple>
+                                        <v-btn flat small color="blue">view</v-btn>
+                                    </v-btn>
+                                </v-list-tile-action>
+                            </v-list-tile>
+
+                            <v-list-tile>
+
+                                <v-list-tile-content>
+                                    <v-subheader>Paper Towels</v-subheader>
+                                    <v-progress-linear color="yellow" height="5" value="50"></v-progress-linear>
+                                </v-list-tile-content>
+
+                                <v-list-tile-action>
+                                    <v-btn icon ripple>
+                                        <v-btn flat small color="blue">view</v-btn>
+                                    </v-btn>
+                                </v-list-tile-action>
+                            </v-list-tile>
+
+                            <v-list-tile>
+
+                                <v-list-tile-content>
+                                    <v-subheader>Dish Soap</v-subheader>
+                                    <v-progress-linear color="green" height="5" value="80"></v-progress-linear>
+                                </v-list-tile-content>
+
+                                <v-list-tile-action>
+                                    <v-btn icon ripple>
+                                        <v-btn flat small color="blue">view</v-btn>
+                                    </v-btn>
+                                </v-list-tile-action>
+                            </v-list-tile>
+
+                            <v-list-tile>
+
+                                <v-list-tile-content>
+                                    <v-subheader>Swiffers</v-subheader>
+                                    <v-progress-linear color="green" height="5" value="90"></v-progress-linear>
+                                </v-list-tile-content>
+
+                                <v-list-tile-action>
+                                    <v-btn icon ripple>
+                                        <v-btn flat small color="blue">view</v-btn>
+                                    </v-btn>
+                                </v-list-tile-action>
+                            </v-list-tile>
+
+                        </v-list>
+                    </v-container>
+
+                </div>
+
+            </v-card>
+        </v-flex>
+    </v-layout>
+
+    <v-layout row wrap>
+        <v-flex xs6>
+            <v-card class=" task-card">
+
+                <v-card-title primary-title>
+                    <div class="title">Tasks</div>
+                </v-card-title>
+                <div class="card-scroll-content">
+                    <v-container fluid>
+                        <v-list>
+                            <v-list-tile>
+                                <v-list-tile-title>
+                                    <v-checkbox :name="Test" :label="`Take out garbage.`"></v-checkbox>
+                                </v-list-tile-title>
+                                <v-list-tile-action>
+                                    <v-btn icon ripple>
+                                        <v-btn flat small color="blue">view</v-btn>
+                                    </v-btn>
+                                </v-list-tile-action>
+                            </v-list-tile>
+
+                            <v-list-tile>
+                                <v-list-tile-title>
+                                    <v-checkbox :name="Test" :label="`Go Shopping.`"></v-checkbox>
+                                </v-list-tile-title>
+                                <v-list-tile-action>
+                                    <v-btn icon ripple>
+                                        <v-btn flat small color="blue">view</v-btn>
+                                    </v-btn>
+                                </v-list-tile-action>
+                            </v-list-tile>
+
+                            <v-list-tile>
+                                <v-list-tile-title>
+                                    <v-checkbox :name="Test" :label="`Take out garbage.`"></v-checkbox>
+                                </v-list-tile-title>
+                                <v-list-tile-action>
+                                    <v-btn icon ripple>
+                                        <v-btn flat small color="blue">view</v-btn>
+                                    </v-btn>
+                                </v-list-tile-action>
+                            </v-list-tile>
+
+                            <v-list-tile>
+                                <v-list-tile-title>
+                                    <v-checkbox :name="Test" :label="`Go Shopping.`"></v-checkbox>
+                                </v-list-tile-title>
+                                <v-list-tile-action>
+                                    <v-btn icon ripple>
+                                        <v-btn flat small color="blue">view</v-btn>
+                                    </v-btn>
+                                </v-list-tile-action>
+                            </v-list-tile>
+
+                            <v-list-tile>
+                                <v-list-tile-title>
+                                    <v-checkbox :name="Test" :label="`Take out garbage.`"></v-checkbox>
+                                </v-list-tile-title>
+                                <v-list-tile-action>
+                                    <v-btn icon ripple>
+                                        <v-btn flat small color="blue">view</v-btn>
+                                    </v-btn>
+                                </v-list-tile-action>
+                            </v-list-tile>
+
+                            <v-list-tile>
+                                <v-list-tile-title>
+                                    <v-checkbox :name="Test" :label="`Go Shopping.`"></v-checkbox>
+                                </v-list-tile-title>
+                                <v-list-tile-action>
+                                    <v-btn icon ripple>
+                                        <v-btn flat small color="blue">view</v-btn>
+                                    </v-btn>
+                                </v-list-tile-action>
+                            </v-list-tile>
+
+                        </v-list>
+                    </v-container>
+
+                </div>
+
+            </v-card>
+        </v-flex>
+
+        <v-flex xs6>
+            <v-card >
                 <v-card-title primary-title>
                     <div class="title">Feed</div>
                 </v-card-title>
@@ -202,8 +457,10 @@
             </v-card>
 
         </v-flex>
+
     </v-layout>
-    <v-layout row>
+
+    <!-- <v-layout row>
         <v-flex xs12>
             <v-card class="dashboard-card">
                 <v-card-title primary-title>
@@ -307,11 +564,8 @@
             </v-card>
             <v-spaacer />
         </v-flex>
-    </v-layout>
+    </v-layout>-->
 
-    <v-layout xs8 row>
-
-    </v-layout>
 </v-container>
 </template>
 
@@ -346,27 +600,59 @@ export default class GarbageCard extends Vue {
             name: "Take out Garbage",
             status: "Open",
             expiration: "12/2/2018"
-        }, ];
+        }];
     }
 }
 </script>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons");
+
+.v-avatar {
+    /*  background: linear-gradient(to right, 
+	                              transparent 0%, 
+	                              transparent calc(50% - 0.81px), 
+	                              black calc(0% - 8.8px), 
+	                              black calc(0% + 0.8px), 
+	                              transparent calc(50% + 0.81px), 
+	                              transparent 100%); */
+}
+
 table .v-btn__content {
     color: white;
 }
 
 th {
-    color: #1dbfd4
+    color: #1dbfd4;
 }
 
 .v-input__control {
     margin: auto;
 }
 
+.task-card {
+
+    .v-list__tile__title {
+        height: 30px;
+
+    }
+
+    .v-list__tile__action button {
+        margin-left: 10px;
+    }
+
+    .v-input {
+
+        .v-input__control {
+
+            margin: inherit;
+        }
+    }
+}
+
 .v-card.dashboard-card {
     height: 350px;
-    font-family:"'Roboto', sans-serif !important";
+    font-family: "'Roboto', sans-serif !important";
 
     .v-card__title {
         // background-color:#5b5b60;
