@@ -7,7 +7,10 @@ import MyButton from "../components/Button.vue";
 import Welcome from "../components/Welcome.vue";
 import Drawer from "../components/Drawer.vue";
 import HealthCard from "../components/HealthCard.vue";
+import DashboardTile from "../components/DashboardTile.vue";
 import GarbageCard from "../components/GarbageCard.vue";
+import HomeForDinner from "../components/HomeForDinner.vue";
+import ApartmentStatus from "../components/ApartmentStatus.vue";
 
 storiesOf("Welcome", module).add("to Storybook", () => ({
   components: { Welcome },
@@ -37,6 +40,21 @@ storiesOf("Health Card", module).add("Default", () => ({
 }));
 
 storiesOf("Garbage Card", module).add("Defeault", () => ({
-  components: {GarbageCard},
+  components: { GarbageCard },
   template: "<garbage-card />"
+}));
+
+storiesOf("Dashboad Tile", module).add("Default", () => ({
+  components: { DashboardTile },
+  template: "<dashboard-tile/>"
+}));
+
+storiesOf("Home for Dinner", module).add("Default", () => ({
+  components: { HomeForDinner },
+  template: "<home-for-dinner/>"
+}));
+
+storiesOf("Apartment Status", module).add("Default", () => ({
+  components: {ApartmentStatus},
+  template: "<apartment-status/>"
 }));

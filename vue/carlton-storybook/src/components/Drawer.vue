@@ -10,7 +10,7 @@
             </v-list-tile-title>
         </v-list-tile>
 
-        <v-list-tile v-for="(link, i) in links" :key="i" :to="link.to" :active-class="color" class="v-list-item active">
+        <v-list-tile v-for="(link, i) in links" :key="i" :to="link.to" v-bind:class="[i===0 ? 'active' : '']" class="v-list-item">
             <v-list-tile-action>
                 <v-icon>{{ link.icon }}</v-icon>
             </v-list-tile-action>
@@ -101,11 +101,12 @@ export default class Drawer extends Vue {
 </script>
 
 <style lang="scss">
-body {
-    font-family: 'Roboto', sans-serif !important
-}
-
+@import "../styles/master.scss";
 #app-drawer {
+
+    .v-list-item.active{
+        background-color:$selected;
+    }
 
     .v-list__tile {
         border-radius: 4px;

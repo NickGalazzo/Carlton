@@ -650,19 +650,5 @@ th {
     }
 }
 
-.v-card.dashboard-card {
-    height: 350px;
-    font-family: "'Roboto', sans-serif !important";
 
-    .v-card__title {
-        // background-color:#5b5b60;
-        // color:white;
-    }
-
-    .card-scroll-content {
-        height: 290px;
-        overflow-y: scroll;
-        overflow-x: hidden;
-    }
-}
 </style>
