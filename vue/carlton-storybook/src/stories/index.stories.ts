@@ -11,6 +11,8 @@ import DashboardTile from "../components/DashboardTile.vue";
 import GarbageCard from "../components/GarbageCard.vue";
 import HomeForDinner from "../components/HomeForDinner.vue";
 import ApartmentStatus from "../components/ApartmentStatus.vue";
+import HouseHoldItems from "../components/HouseHoldItems.vue";
+import Todos from "../components/Todos.vue";
 
 storiesOf("Welcome", module).add("to Storybook", () => ({
   components: { Welcome },
@@ -57,4 +59,14 @@ storiesOf("Home for Dinner", module).add("Default", () => ({
 storiesOf("Apartment Status", module).add("Default", () => ({
   components: {ApartmentStatus},
   template: "<apartment-status/>"
+}));
+
+storiesOf("House Hold Items", module).add("Default", () => ({
+  components: {HouseHoldItems},
+  template: "<house-hold-items/>"
+}));
+
+storiesOf("Todos", module).add("Default", () => ({
+  components: {Todos},
+  template: "<todos/>"
 }));
