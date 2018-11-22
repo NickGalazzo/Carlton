@@ -1,14 +1,21 @@
 <template>
-<v-card class=" task-card">
-
+<v-card class="dashboard-card todo-card">
     <v-card-title primary-title>
-        <div class="title">Tasks</div>
+        <div class="title">Todos</div>
     </v-card-title>
     <div class="card-scroll-content">
         <v-container fluid>
             <v-list>
                 <v-list-tile>
-                   <v-checkbox :name="Test" :label="`Take out garbage.`"></v-checkbox>
+                    <v-icon class="todo-complete right" :color="true ? activeColor : 'grey'">mdi-checkbox-marked-circle</v-icon>
+                    <v-checkbox class="selected" :name="Test" :label="`Take out garbage.`"></v-checkbox>
+                    <v-list-tile-action>
+                        <v-btn flat small color="blue">View</v-btn>
+                    </v-list-tile-action>
+                </v-list-tile>
+
+                <v-list-tile>
+                    <v-checkbox :name="Test" :label="`Take out garbage.`"></v-checkbox>
                     <v-list-tile-action>
                         <v-btn flat small color="blue">View</v-btn>
                     </v-list-tile-action>
@@ -52,9 +59,7 @@
 
             </v-list>
         </v-container>
-
     </div>
-
 </v-card>
 </template>
 
@@ -79,8 +84,11 @@ export default class Todos extends Vue {
     todos: TodoItem[] = [];
     message: string = "Hello!";
     activeColor;
+    stuff: boolean[] = [];
+    activeColor: string = "";
 
     mounted() {
+
         this.activeColor = colors.selected;
         this.logo = "../../assets/house.jpg";
         this.todos = [{
@@ -93,8 +101,10 @@ export default class Todos extends Vue {
 </script>
 
 <style lang="scss">
-.task-card {
-    min-width: 400px;
+@import "../styles/master.scss";
+
+.todo-card {
+    min-width: 350px;
 
     .v-list__tile__title {
         height: 30px;
@@ -110,24 +120,25 @@ export default class Todos extends Vue {
         .v-input__control {
 
             margin: inherit;
+
+            .v-input__slot {
+                margin: auto;
+            }
         }
     }
 
-    .container {
-        padding-top: 5px;
-
-        .v-subheader {
-            padding: 0px;
+    .v-input.selected {
+        .v-input--selection-controls__input {
+            display: none;
         }
 
-        .v-btn--flat {
-            min-width: 50px;
+        label {
+            text-decoration: line-through;
         }
+    }
 
-        .v-list__tile {
-            padding: 0px;
-        }
-
+    i.todo-complete {
+        padding-right: 8px;
     }
 }
 </style>

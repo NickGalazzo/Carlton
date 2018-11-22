@@ -13,6 +13,9 @@ import HomeForDinner from "../components/HomeForDinner.vue";
 import ApartmentStatus from "../components/ApartmentStatus.vue";
 import HouseHoldItems from "../components/HouseHoldItems.vue";
 import Todos from "../components/Todos.vue";
+import Feed from "../components/Feed.vue";
+
+import xxx from "../components/HealthCardX.vue";
 
 storiesOf("Welcome", module).add("to Storybook", () => ({
   components: { Welcome },
@@ -69,4 +72,14 @@ storiesOf("House Hold Items", module).add("Default", () => ({
 storiesOf("Todos", module).add("Default", () => ({
   components: {Todos},
   template: "<todos/>"
+}));
+
+storiesOf("Feed", module).add("Default", () => ({
+  components: {Feed},
+  template: "<feed/>"
+}));
+
+storiesOf("Health 2", module).add("Default", () => ({
+  components: {xxx},
+  template: "<xxx/>"
 }));

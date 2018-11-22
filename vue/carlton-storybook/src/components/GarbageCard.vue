@@ -392,7 +392,7 @@
         </v-flex>
 
         <v-flex xs6>
-            <v-card >
+            <v-card>
                 <v-card-title primary-title>
                     <div class="title">Feed</div>
                 </v-card-title>
@@ -649,6 +649,4 @@ th {
         }
     }
 }
-
-
 </style>

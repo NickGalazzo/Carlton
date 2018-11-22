@@ -1,5 +1,5 @@
 <template>
-<v-card class="dashboard-card dinner-card">
+<v-card class="dashboard-card house-hold-items-card">
     <v-card-title primary-title>
         <div class="title">Household Items</div>
     </v-card-title>
@@ -9,18 +9,18 @@
                 <v-list-tile>
                     <v-list-tile-content>
                         <v-subheader>Toilet&nbsp;Paper</v-subheader>
-                        <v-progress-linear color="red" height="10" value="15"></v-progress-linear>
+                        <v-progress-linear color="red" height="5" value="15"></v-progress-linear>
                     </v-list-tile-content>
 
                     <v-list-tile-action>
-                         <v-btn flat small color="blue">View</v-btn>
+                        <v-btn flat small color="blue">View</v-btn>
                     </v-list-tile-action>
                 </v-list-tile>
 
                 <v-list-tile>
                     <v-list-tile-content>
                         <v-subheader>Paper&nbsp;Towels</v-subheader>
-                        <v-progress-linear color="yellow" height="10" value="50"></v-progress-linear>
+                        <v-progress-linear color="yellow" height="5" value="50"></v-progress-linear>
                     </v-list-tile-content>
 
                     <v-list-tile-action>
@@ -31,7 +31,7 @@
                 <v-list-tile>
                     <v-list-tile-content>
                         <v-subheader>Dish&nbsp;Soap</v-subheader>
-                        <v-progress-linear color="green" height="10" value="80"></v-progress-linear>
+                        <v-progress-linear color="green" height="5" value="80"></v-progress-linear>
                     </v-list-tile-content>
 
                     <v-list-tile-action>
@@ -43,7 +43,7 @@
 
                     <v-list-tile-content>
                         <v-subheader>Swiffers</v-subheader>
-                        <v-progress-linear color="green" height="10" value="90"></v-progress-linear>
+                        <v-progress-linear color="green" height="5" value="90"></v-progress-linear>
                     </v-list-tile-content>
 
                     <v-list-tile-action>
@@ -55,7 +55,7 @@
 
                     <v-list-tile-content>
                         <v-subheader>Swiffers</v-subheader>
-                        <v-progress-linear color="green" height="10" value="90"></v-progress-linear>
+                        <v-progress-linear color="green" height="5" value="90"></v-progress-linear>
                     </v-list-tile-content>
 
                     <v-list-tile-action>
@@ -67,7 +67,7 @@
 
                     <v-list-tile-content>
                         <v-subheader>Swiffers</v-subheader>
-                        <v-progress-linear color="green" height="10" value="90"></v-progress-linear>
+                        <v-progress-linear color="green" height="5" value="90"></v-progress-linear>
                     </v-list-tile-content>
 
                     <v-list-tile-action>
@@ -79,7 +79,7 @@
 
                     <v-list-tile-content>
                         <v-subheader>Swiffers</v-subheader>
-                        <v-progress-linear color="green" height="10" value="90"></v-progress-linear>
+                        <v-progress-linear color="green" height="5" value="90"></v-progress-linear>
                     </v-list-tile-content>
 
                     <v-list-tile-action>
@@ -91,7 +91,7 @@
 
                     <v-list-tile-content>
                         <v-subheader>Swiffers</v-subheader>
-                        <v-progress-linear color="green" height="10" value="90"></v-progress-linear>
+                        <v-progress-linear color="green" height="5" value="90"></v-progress-linear>
                     </v-list-tile-content>
 
                     <v-list-tile-action>
@@ -146,22 +146,9 @@ export default class GarbageCard extends Vue {
 <style lang="scss">
 @import "../styles/master.scss";
 
-.dinner-card {
-    .container {
-        padding-top: 5px;
-
-        .v-subheader {
-            padding: 0px;
-        }
-
-        .v-btn--flat {
-            min-width: 50px;
-        }
-
-        .v-list__tile {
-            padding: 0px;
-        }
-
+.house-hold-items-card {
+    .v-progress-linear {
+        margin-top: 0px;
     }
 }
 </style>

@@ -61,7 +61,6 @@ export default class DashboardTile extends Vue {
             height: 50px;
             width: 50px;
             background-color: #a48adb;
-            border-radius: 50px;
 
             i {
                 font-size: 25px;

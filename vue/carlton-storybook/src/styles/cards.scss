@@ -1,16 +1,32 @@
 .v-card.dashboard-card {
-    height: 350px;
-    font-family: $main-font;
-  
-    .v-card__title {
-      // background-color:#5b5b60;
-      // color:white;
+  height: 350px;
+  font-family: $main-font;
+
+  .v-card__title {
+    // background-color:#5b5b60;
+    // color:white;
+  }
+
+  .card-scroll-content {
+    height: 290px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding-top: 5px;
+
+    .v-subheader {
+      padding: 0px;
+      height: 20px;
     }
-  
-    .card-scroll-content {
-      height: 290px;
-      overflow-y: scroll;
-      overflow-x: hidden;
+
+    .v-btn--flat {
+      min-width: 50px;
+    }
+
+    .v-list__tile {
+      padding: 0px;
     }
   }
-  
+}

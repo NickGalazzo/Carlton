@@ -1,88 +1,87 @@
 <template>
 <v-card class="dashboard-card">
-
     <v-card-title primary-title>
         <div class="title">Apartment Status</div>
     </v-card-title>
+    <v-container fluid>
+        <v-layout row>
+            <v-flex xs4>
+                <v-icon :color="neutralIconColor" class="right">mdi-delete</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
+            <v-flex xs4>
+                <v-icon :color="true ? activeColor : 'grey'" class="right">mdi-checkbox-marked-circle</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
+        </v-layout>
 
-    <v-layout row>
-        <v-flex xs4>
-            <v-icon :color="neutralIconColor" class="right">mdi-delete</v-icon>
-        </v-flex>
-        <v-spacer></v-spacer>
-        <v-flex xs4>
-            <v-icon :color="true ? activeColor : 'grey'" class="right">mdi-checkbox-marked-circle</v-icon>
-        </v-flex>
-        <v-spacer></v-spacer>
-    </v-layout>
+        <v-layout row>
+            <v-flex xs4>
+                <v-icon :color="neutralIconColor" class="right">mdi-recycle</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
+            <v-flex xs4>
+                <v-icon :color="true ? activeColor : 'grey'" class="right">mdi-checkbox-marked-circle</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
+        </v-layout>
 
-    <v-layout row>
-        <v-flex xs4>
-            <v-icon :color="neutralIconColor" class="right">mdi-recycle</v-icon>
-        </v-flex>
-        <v-spacer></v-spacer>
-        <v-flex xs4>
-            <v-icon :color="true ? activeColor : 'grey'" class="right">mdi-checkbox-marked-circle</v-icon>
-        </v-flex>
-        <v-spacer></v-spacer>
-    </v-layout>
+        <v-layout row>
+            <v-flex xs4>
+                <v-icon :color="neutralIconColor" class="right">mdi-cart</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
+            <v-flex xs4>
+                <v-icon :color="true ? activeColor : 'grey'" class="right">mdi-checkbox-marked-circle</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
+        </v-layout>
 
-    <v-layout row>
-        <v-flex xs4>
-            <v-icon :color="neutralIconColor" class="right">mdi-cart</v-icon>
-        </v-flex>
-        <v-spacer></v-spacer>
-        <v-flex xs4>
-            <v-icon :color="true ? activeColor : 'grey'" class="right">mdi-checkbox-marked-circle</v-icon>
-        </v-flex>
-        <v-spacer></v-spacer>
-    </v-layout>
+        <v-layout row>
+            <v-flex xs4>
+                <v-icon :color="neutralIconColor" class="right">mdi-home</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
+            <v-flex xs4>
+                <v-icon :color="true ? activeColor : 'grey'" class="right">mdi-checkbox-marked-circle</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
+        </v-layout>
 
-    <v-layout row>
-        <v-flex xs4>
-            <v-icon :color="neutralIconColor" class="right">mdi-home</v-icon>
-        </v-flex>
-        <v-spacer></v-spacer>
-        <v-flex xs4>
-            <v-icon :color="true ? activeColor : 'grey'" class="right">mdi-checkbox-marked-circle</v-icon>
-        </v-flex>
-        <v-spacer></v-spacer>
-    </v-layout>
+        <v-layout row>
+            <v-flex xs4>
+                <v-icon :color="neutralIconColor" class="right">mdi-spray-bottle</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
+            <v-flex xs4>
+                <v-icon :color="true ? activeColor : 'grey'" class="right">mdi-checkbox-marked-circle</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
+        </v-layout>
 
-    <v-layout row>
-        <v-flex xs4>
-            <v-icon :color="neutralIconColor" class="right">mdi-spray-bottle</v-icon>
-        </v-flex>
-        <v-spacer></v-spacer>
-        <v-flex xs4>
-            <v-icon :color="true ? activeColor : 'grey'" class="right">mdi-checkbox-marked-circle</v-icon>
-        </v-flex>
-        <v-spacer></v-spacer>
-    </v-layout>
+        <v-layout row>
+            <v-flex xs4>
+                <v-icon :color="neutralIconColor" class="right">mdi-washing-machine</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
+            <v-flex xs4>
+                <v-icon :color="true ? activeColor : 'grey'" class="right">mdi-checkbox-marked-circle</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
+        </v-layout>
+        <v-layout row>
+            <v-flex xs4>
+                <v-icon :color="neutralIconColor" class="right">mdi-tie</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
 
-    <v-layout row>
-        <v-flex xs4>
-            <v-icon :color="neutralIconColor" class="right">mdi-washing-machine</v-icon>
-        </v-flex>
-        <v-spacer></v-spacer>
-        <v-flex xs4>
-            <v-icon :color="true ? activeColor : 'grey'" class="right">mdi-checkbox-marked-circle</v-icon>
-        </v-flex>
-        <v-spacer></v-spacer>
-    </v-layout>
-    <v-layout row>
-        <v-flex xs4>
-            <v-icon :color="neutralIconColor" class="right">mdi-tie</v-icon>
-        </v-flex>
-        <v-spacer></v-spacer>
+            <v-flex xs4>
+                <v-icon :color="true ? activeColor : 'grey'" class="right">mdi-checkbox-marked-circle</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
 
-        <v-flex xs4>
-            <v-icon :color="true ? activeColor : 'grey'" class="right">mdi-checkbox-marked-circle</v-icon>
-        </v-flex>
-        <v-spacer></v-spacer>
-
-    </v-layout>
-
+        </v-layout>
+    </v-container>
 </v-card>
 </template>
 
