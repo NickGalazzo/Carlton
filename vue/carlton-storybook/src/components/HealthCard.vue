@@ -1,18 +1,18 @@
 <template>
-<v-card>
+<v-card class="health-card dashboard-card-small">
+    <v-icon color="green" class="right status-icon">mdi-check-circle-outline</v-icon>
     <v-card-title primary-title>
-        <v-layout>
-            <v-flex xs4>
+        <v-layout row>
+            <v-flex xs2>
                 <div class="card-img">
-                    <v-icon size="35">mdi-account-circle</v-icon>
+                    <v-icon color="green" class="service-icon" size="50">mdi-account-circle</v-icon>
                 </div>
             </v-flex>
-            <v-flex xs8>
-                <v-subheader v-if="true">
+            <v-flex xs10>
+                <v-subheader>
                     Identity Service
                 </v-subheader>
             </v-flex>
-            <v-spacer></v-spacer>
         </v-layout>
     </v-card-title>
     <v-card-content>
@@ -26,7 +26,6 @@
         </v-card-actions>
 
         <v-slide-y-transition v-show="show">
-
             <v-list subheader two-line v-show="show">
                 <v-subheader>Dependencies</v-subheader>
 
@@ -96,18 +95,26 @@ export default class HealthCard extends Vue {
 }
 </script>
 
-<style lang="scss">
-body {
-    font-family: 'Roboto', sans-serif !important
-}
+<style lang="scss" scoped>
+@import "../styles/master.scss";
 
 .health-card {
-    height: 200px;
-    border-radius: 5px;
+    @extend %dashboard-card;
+
+    height: 150px;
+
+    i.status-icon {
+        padding: 5px;
+    }
 
     .v-card__title {
-        background-color: white;
-        //color:white;
+        .v-subheader {
+            margin-left: 20px;
+        }
+
+        i.service-icon {
+            margin: 0px;
+        }
     }
 }
 </style>

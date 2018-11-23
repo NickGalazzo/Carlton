@@ -108,7 +108,7 @@ body {
 
 .health-card {
     height: 200px;
-    border-radius:5px;
+  //  border-radius:5px;
     .v-card__title {
         background-color: white;
         //color:white;

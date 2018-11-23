@@ -8,49 +8,49 @@
             <v-list>
                 <v-list-tile>
                     <v-icon class="todo-complete right" :color="true ? activeColor : 'grey'">mdi-checkbox-marked-circle</v-icon>
-                    <v-checkbox class="selected" :name="Test" :label="`Take out garbage.`"></v-checkbox>
+                    <v-checkbox class="selected" :label="`Take out garbage.`"></v-checkbox>
                     <v-list-tile-action>
                         <v-btn flat small color="blue">View</v-btn>
                     </v-list-tile-action>
                 </v-list-tile>
 
                 <v-list-tile>
-                    <v-checkbox :name="Test" :label="`Take out garbage.`"></v-checkbox>
+                    <v-checkbox :label="`Take out garbage.`"></v-checkbox>
                     <v-list-tile-action>
                         <v-btn flat small color="blue">View</v-btn>
                     </v-list-tile-action>
                 </v-list-tile>
 
                 <v-list-tile>
-                    <v-checkbox :name="Test" :label="`Go Shopping.`"></v-checkbox>
+                    <v-checkbox :label="`Go Shopping.`"></v-checkbox>
                     <v-list-tile-action>
                         <v-btn flat small color="blue">View</v-btn>
                     </v-list-tile-action>
                 </v-list-tile>
 
                 <v-list-tile>
-                    <v-checkbox :name="Test" :label="`Take out garbage.`"></v-checkbox>
+                    <v-checkbox :label="`Take out garbage.`"></v-checkbox>
                     <v-list-tile-action>
                         <v-btn flat small color="blue">View</v-btn>
                     </v-list-tile-action>
                 </v-list-tile>
 
                 <v-list-tile>
-                    <v-checkbox :name="Test" :label="`Go Shopping.`"></v-checkbox>
+                    <v-checkbox :label="`Go Shopping.`"></v-checkbox>
                     <v-list-tile-action>
                         <v-btn flat small color="blue">View</v-btn>
                     </v-list-tile-action>
                 </v-list-tile>
 
                 <v-list-tile>
-                    <v-checkbox :name="Test" :label="`Take out garbage.`"></v-checkbox>
+                    <v-checkbox :label="`Take out garbage.`"></v-checkbox>
                     <v-list-tile-action>
                         <v-btn flat small color="blue">View</v-btn>
                     </v-list-tile-action>
                 </v-list-tile>
 
                 <v-list-tile>
-                    <v-checkbox :name="Test" :label="`Go Shopping.`"></v-checkbox>
+                    <v-checkbox :label="`Go Shopping.`"></v-checkbox>
 
                     <v-list-tile-action>
                         <v-btn flat small color="blue">View</v-btn>
@@ -100,45 +100,34 @@ export default class Todos extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../styles/master.scss";
 
 .todo-card {
-    min-width: 350px;
+    @extend %dashboard-card-wide;
 
-    .v-list__tile__title {
-        height: 30px;
-
+    i.todo-complete {
+        padding-right: 20px;
     }
 
     .v-list__tile__action button {
         margin-left: 10px;
     }
 
-    .v-input {
-
-        .v-input__control {
-
-            margin: inherit;
-
-            .v-input__slot {
-                margin: auto;
-            }
-        }
+    .v-input /deep/ .v-input--selection-controls__input {
+        margin-right: 20px;
     }
 
-    .v-input.selected {
-        .v-input--selection-controls__input {
-            display: none;
-        }
-
-        label {
-            text-decoration: line-through;
-        }
+    .v-input /deep/ .v-input__control {
+        width: 100%;
     }
 
-    i.todo-complete {
-        padding-right: 8px;
+    .v-input.selected /deep/ .v-input--selection-controls__input {
+        display: none;
+    }
+
+    .v-input.selected /deep/ label {
+        text-decoration: line-through;
     }
 }
 </style>

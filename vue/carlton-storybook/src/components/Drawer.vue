@@ -100,7 +100,7 @@ export default class Drawer extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../styles/master.scss";
 #app-drawer {
 

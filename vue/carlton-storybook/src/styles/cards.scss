@@ -1,6 +1,11 @@
-.v-card.dashboard-card {
-  height: 350px;
+%dashboard-card-small {
+  max-width: 250px;
   font-family: $main-font;
+}
+
+%dashboard-card {
+  height: 350px;
+  max-width: 300px;
 
   .v-card__title {
     // background-color:#5b5b60;
@@ -29,4 +34,9 @@
       padding: 0px;
     }
   }
+}
+
+%dashboard-card-wide {
+  @extend %dashboard-card;
+  min-width: 350px;
 }

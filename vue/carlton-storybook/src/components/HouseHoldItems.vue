@@ -1,5 +1,5 @@
 <template>
-<v-card class="dashboard-card house-hold-items-card">
+<v-card class="house-hold-items-card">
     <v-card-title primary-title>
         <div class="title">Household Items</div>
     </v-card-title>
@@ -143,10 +143,12 @@ export default class GarbageCard extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../styles/master.scss";
 
 .house-hold-items-card {
+     @extend %dashboard-card;
+
     .v-progress-linear {
         margin-top: 0px;
     }

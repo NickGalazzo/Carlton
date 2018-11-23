@@ -1,5 +1,5 @@
 <template>
-<v-card class="dashboard-card home-for-dinner-card">
+<v-card class="home-for-dinner-card">
     <v-card-title primary-title>
         <div class="title">Home For Dinner</div>
     </v-card-title>
@@ -93,10 +93,12 @@ export default class HomeForDinner extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../styles/master.scss";
 
 .home-for-dinner-card {
+    @extend %dashboard-card;
+
     .home-for-dinner-display {
         .v-list-tile-sub-title {
             font-size: 10px;
@@ -118,10 +120,14 @@ export default class HomeForDinner extends Vue {
 
         .layout.home-for-dinner-toggle{
             height:30px;
-            margin: 0px;
+            margin-top: 20px;
             .v-input--selection-controls{
                 margin-top: 0px;
             }
+        }
+
+        .v-text-field{
+            margin-top:15px;
         }
     }
 

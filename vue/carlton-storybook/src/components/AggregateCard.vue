@@ -1,10 +1,10 @@
 <template>
-<v-card>
+<v-card class="dashboard-card-small aggregate-card">
     <v-card-title primary-title>
         <v-layout>
             <v-flex xs4>
                 <div class="card-img">
-                    <v-icon>mdi-clipboard-check</v-icon>
+                    <v-icon size="25">mdi-clipboard-check</v-icon>
                 </div>
             </v-flex>
             <v-flex xs8>
@@ -34,7 +34,7 @@ import Component from "vue-class-component";
         logo: String
     }
 })
-export default class DashboardTile extends Vue {
+export default class AggregateCard extends Vue {
     //Data
     //Data
     todos: TodoItem[] = [];
@@ -52,21 +52,23 @@ export default class DashboardTile extends Vue {
 }
 </script>
 
-<style lang="scss">
-.v-card {
-    max-width: 250px;
+<style lang="scss" scoped>
+@import "../styles/master.scss";
+
+.v-card.aggregate-card {
+    @extend %dashboard-card-small;
 
     .v-card__title {
         .card-img {
+            background-color: #a48adb;
+            border-radius: 50px;
             height: 50px;
             width: 50px;
-            background-color: #a48adb;
+        }
 
-            i {
-                font-size: 25px;
-                color: white;
-                margin: 12.5px
-            }
+        i {
+            margin: 12.5px;
+            color: white;
         }
     }
 }

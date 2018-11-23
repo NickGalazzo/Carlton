@@ -1,5 +1,5 @@
 <template>
-<v-card class="dashboard-card">
+<v-card class="apartment-status-card">
     <v-card-title primary-title>
         <div class="title">Apartment Status</div>
     </v-card-title>
@@ -107,10 +107,11 @@ export default class ApartmentStatus extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../styles/master.scss";
 
-.dashboard-card {
+.apartment-status-card {
+    @extend %dashboard-card;
     .layout {
         margin: 12px;
     }
