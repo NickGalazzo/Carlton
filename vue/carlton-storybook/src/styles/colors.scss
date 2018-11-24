@@ -1,9 +1,19 @@
 $selected: #009688;
 $active: #7ac29a;
 $neutral-icon: #47a8f4;
+$dashboardCountAccentOne: #a48adb;
+$dashboardCountAccentTwo: #1dbfd4;
+$dashboardCountAccentThree: #fec00a;
+$dashboardCountAccentFour: #7ac29a;
 
 :export {
   selected: $selected;
   active: $active;
-  neutralIcon: $neutral-icon
+  neutralIcon: $neutral-icon;
+  dashboardCountAccentOne: $dashboardCountAccentOne;
+  dashboardCountAccentTwo: $dashboardCountAccentTwo;
+  dashboardCountAccentThree: $dashboardCountAccentThree;
+  dashboardCountAccentFour: $dashboardCountAccentFour;
 }
+
+
