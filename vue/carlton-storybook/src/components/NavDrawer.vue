@@ -3,7 +3,7 @@
     <v-layout class="fill-height" tag="v-list" column>
         <v-list-tile avatar>
             <v-list-tile-avatar color="transparent">
-                <v-img :src="'https://media.istockphoto.com/vectors/urban-family-home-classic-brownstone-building-vector-illustration-vector-id947577838'" height="70" contain />
+                <v-img :src="imageUrl" height="70" contain />
             </v-list-tile-avatar>
             <v-list-tile-title class="title">
                 <span>Carlton UI</span>
@@ -27,22 +27,31 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
+import {
+    Vue,
+    Component,
+    Prop
+} from 'vue-property-decorator'
 import NavLink from "../models/NavLink";
-import json from '../data/nav.json';
+import json from "../data/nav.json";
+import imgs from "../services/imgs.ts";
 
 @Component
 export default class NavDrawer extends Vue {
+    @Prop() logo!: String;
+
     //Data
     links: NavLink[] = json;
-    logo!: "";
     mini: boolean = false;
     active: number = 0;
+    imageUrl: string = imgs.logo;
 
     mounted() {
-        this.logo = "";
+        console.log(imgs);
+        console.log(imgs.logo);
     }
+
+   
 }
 </script>
 
