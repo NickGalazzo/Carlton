@@ -35,7 +35,7 @@ export default class BaseCountCard extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/master.scss";
+@import "../styles/master.scss";
 
 .v-card.base-count-card {
     @extend %dashboard-card-small;

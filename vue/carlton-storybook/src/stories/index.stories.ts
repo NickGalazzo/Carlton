@@ -4,13 +4,13 @@ import { storiesOf } from "@storybook/vue";
 import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
-import Drawer from "../components/Drawer.vue";
+import NavDrawer from "../components/NavDrawer.vue";
 import HealthCard from "../components/HealthCard.vue";
 
-import OpenTasksCount from "../components/DashboardCountCards/OpenTasksCount.vue";
-import ApartmentStatusesCount from "../components/DashboardCountCards/ApartmentStatusesCount.vue";
-import LowItemsCount from "../components/DashboardCountCards/LowItemsCount.vue";
-import HomeForDinnerCount from "../components/DashboardCountCards/HomeForDinnerCount.vue";
+import OpenTasksCount from "../components/OpenTasksCount.vue";
+import ApartmentStatusesCount from "../components/ApartmentStatusesCount.vue";
+import LowItemsCount from "../components/LowItemsCount.vue";
+import HomeForDinnerCount from "../components/HomeForDinnerCount.vue";
 
 import GarbageCard from "../components/GarbageCard.vue";
 import HomeForDinner from "../components/HomeForDinner.vue";
@@ -57,8 +57,8 @@ storiesOf("Count Cards", module)
   });
 
 storiesOf("Nav Drawer", module).add("Default", () => ({
-  components: { Drawer },
-  template: "<drawer/>"
+  components: { NavDrawer },
+  template: "<nav-drawer/>"
 }));
 
 storiesOf("Health Card", module).add("Default", () => ({
