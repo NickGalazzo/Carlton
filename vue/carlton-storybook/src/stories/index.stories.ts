@@ -17,12 +17,17 @@ import OpenTasksCount from "../components/OpenTasksCount.vue";
 import ApartmentStatusesCount from "../components/ApartmentStatusesCount.vue";
 import LowItemsCount from "../components/LowItemsCount.vue";
 import HomeForDinnerCount from "../components/HomeForDinnerCount.vue";
+import HomeForDinnerList from "../components/HomeForDinnerList.vue";
+import HomeForDinnerInput from "../components/HomeForDinnerInput.vue";
 
 import GarbageCard from "../components/GarbageCard.vue";
+import HomeForDinnerItem from "../components/HomeForDinnerItem.vue";
 import HomeForDinner from "../components/HomeForDinner.vue";
 import ApartmentStatus from "../components/ApartmentStatus.vue";
 import ApartmentStatusList from "../components/ApartmentStatusList.vue";
 import HouseHoldItemList from "../components/HouseHoldItemList.vue";
+
+import TodoItem from "../components/TodoItem.vue";
 import Todos from "../components/Todos.vue";
 import Feed from "../components/Feed.vue";
 
@@ -81,10 +86,68 @@ storiesOf("Garbage Card", module).add("Defeault", () => ({
   template: "<garbage-card />"
 }));
 
-storiesOf("Home for Dinner", module).add("Default", () => ({
-  components: { HomeForDinner },
-  template: "<home-for-dinner/>"
-}));
+storiesOf("Home for Dinner", module)
+  .add("Default", () => ({
+    components: { HomeForDinner },
+    template: "<home-for-dinner v-bind:items='items'/>",
+    data: () => ({
+      items: [
+        {
+          name: "Nick",
+          isHomeForDinner: true,
+          reason: ""
+        },
+        {
+          name: "Stephen",
+          isHomeForDinner: false,
+          reason: "Japneese class"
+        }
+      ]
+    })
+  }))
+  .addDecorator(withKnobs)
+  .add("Home", () => {
+    const isHome = boolean("Is Home?", true);
+    const reason = text("reason", "");
+
+    return {
+      components: { HomeForDinnerItem },
+      template: "<home-for-dinner-item v-bind:item='item'/>",
+      data: () => ({
+        item: {
+          name: "Nick",
+          isHomeForDinner: isHome,
+          reason: reason
+        }
+      })
+    };
+  })
+  .add("List", () => {
+    return {
+      components: { HomeForDinnerList },
+      template: "<home-for-dinner-list v-bind:items='items'/>",
+      data: () => ({
+        items: [
+          {
+            name: "Nick",
+            isHomeForDinner: true,
+            reason: ""
+          },
+          {
+            name: "Stephen",
+            isHomeForDinner: false,
+            reason: "Japneese class"
+          }
+        ]
+      })
+    };
+  })
+  .add("Input", () => {
+    return {
+      components: { HomeForDinnerInput },
+      template: "<home-for-dinner-input/>"
+    };
+  });
 
 storiesOf("Apartment Status/Single Item", module)
   .addDecorator(withKnobs)
@@ -121,7 +184,6 @@ storiesOf("Apartment Status/Single Item", module)
 storiesOf("Apartment Status/List")
   .addDecorator(withKnobs)
   .add("Default", () => {
-    
     const statusTypeOptions = {
       completed: 1,
       Pending: 2
@@ -132,36 +194,42 @@ storiesOf("Apartment Status/List")
     const shoppingStatus = select("Shopping Status", statusTypeOptions, 1);
     const cleaningStatus = select("Cleaning Status", statusTypeOptions, 1);
     const laundryStatus = select("Laundry Status", statusTypeOptions, 1);
-    const dryCleaningStatus = select("Dry-Cleaning Status", statusTypeOptions, 1);
+    const dryCleaningStatus = select(
+      "Dry-Cleaning Status",
+      statusTypeOptions,
+      1
+    );
 
     return {
       components: { ApartmentStatusList },
       template: "<apartment-status-list v-bind:statuses='statuses'/>",
       data: () => ({
-        statuses: [{
-          icon: "mdi-delete",
-          statusId: garbageStatus
-        },
-        {
-          icon: "mdi-recycle",
-          statusId: recycleStatus
-        },
-        {
-          icon: "mdi-cart",
-          statusId: shoppingStatus
-        },
-        {
-          icon: "mdi-spray-bottle",
-          statusId: cleaningStatus
-        },
-        {
-          icon: "mdi-washing-machine",
-          statusId: laundryStatus
-        },
-        {
-          icon: "mdi-tie",
-          statusId: dryCleaningStatus
-        }]
+        statuses: [
+          {
+            icon: "mdi-delete",
+            statusId: garbageStatus
+          },
+          {
+            icon: "mdi-recycle",
+            statusId: recycleStatus
+          },
+          {
+            icon: "mdi-cart",
+            statusId: shoppingStatus
+          },
+          {
+            icon: "mdi-spray-bottle",
+            statusId: cleaningStatus
+          },
+          {
+            icon: "mdi-washing-machine",
+            statusId: laundryStatus
+          },
+          {
+            icon: "mdi-tie",
+            statusId: dryCleaningStatus
+          }
+        ]
       })
     };
   });
@@ -263,10 +331,27 @@ storiesOf("House Hold Items/List", module)
     })
   }));
 
-storiesOf("Todos", module).add("Default", () => ({
-  components: { Todos },
-  template: "<todos/>"
-}));
+storiesOf("Todos", module)
+  .addDecorator(withKnobs)
+  .add("Item", () => {
+    const name = text("Task Name", "Take out garbage");
+    const isCompleted = boolean("completed", false);
+
+    return {
+      components: { TodoItem },
+      template: "<todo-item v-bind:item='item'/>",
+      data: () => ({
+        item: {
+          name: name,
+          completed: isCompleted
+        }
+      })
+    }
+  })
+  .add("Default", () => ({
+    components: { Todos },
+    template: "<todos/>"
+  }));
 
 storiesOf("Feed", module).add("Default", () => ({
   components: { Feed },

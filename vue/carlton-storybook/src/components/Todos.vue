@@ -82,21 +82,7 @@ type TodoItem = {
 export default class Todos extends Vue {
     //Data
     todos: TodoItem[] = [];
-    message: string = "Hello!";
-    activeColor;
-    stuff: boolean[] = [];
-    activeColor: string = "";
-
-    mounted() {
-
-        this.activeColor = colors.selected;
-        this.logo = "../../assets/house.jpg";
-        this.todos = [{
-            name: "Take out Garbage",
-            status: "Open",
-            expiration: "12/2/2018"
-        }];
-    }
+    activeColor: string = colors.selected;
 }
 </script>
 
