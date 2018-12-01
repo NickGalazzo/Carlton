@@ -8,7 +8,7 @@
         <v-container fluid>
             <v-list two-line>
                 <template v-for="(item, index) in todos">
-                    <v-subheader v-if="true">
+                    <v-subheader>
                         Today
                     </v-subheader>
 

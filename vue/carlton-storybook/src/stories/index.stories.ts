@@ -28,13 +28,15 @@ import ApartmentStatusList from "../components/ApartmentStatusList.vue";
 import HouseHoldItemList from "../components/HouseHoldItemList.vue";
 
 import TodoItem from "../components/TodoItem.vue";
-import Todos from "../components/Todos.vue";
+import TodoList from "../components/TodoList.vue";
 import Feed from "../components/Feed.vue";
+import FeedSubList from "../components/FeedSubList.vue";
+import FeedItem from "../components/FeedItem.vue";
+import FeedList from "../components/FeedList.vue";
 
 import xxx from "../components/HealthCardX.vue";
 
 import HouseHoldItem from "../components/HouseHoldItem.vue";
-import items from "../data/items.json";
 
 storiesOf("Count Cards", module)
   .addDecorator(withKnobs)
@@ -346,17 +348,108 @@ storiesOf("Todos", module)
           completed: isCompleted
         }
       })
-    }
+    };
   })
-  .add("Default", () => ({
-    components: { Todos },
-    template: "<todos/>"
+  .add("Todo List", () => ({
+    components: { TodoList },
+    template: "<todo-list v-bind:items='items'/>",
+    data: () => ({
+      items: [
+        {
+          name: "Test",
+          completed: true
+        },
+        {
+          name: "test 2",
+          completed: true
+        },
+        {
+          name: "test 3",
+          completed: false
+        }
+      ]
+    })
   }));
 
-storiesOf("Feed", module).add("Default", () => ({
-  components: { Feed },
-  template: "<feed/>"
-}));
+storiesOf("Feed", module)
+  .addDecorator(withKnobs)
+  .add("Default", () => ({
+    components: { Feed },
+    template: "<feed/>"
+  }))
+  .add("Feed Item", () => {
+    const avatarOptions = {
+      system:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/1200px-Microsoft_Cortana_transparent.svg.png",
+      user: "https://www.w3schools.com/w3images/avatar2.png"
+    };
+
+    const avatars = select("Status", avatarOptions, avatarOptions.system);
+    const title = text("Title", "Home for dinner");
+    const message = text("Message", "Stephen will be home for dinner");
+
+    return {
+      components: { FeedItem },
+      template: "<feed-item v-bind:item='item'/>",
+      data: () => ({
+        item: {
+          avatar: avatars,
+          title: title,
+          message: message
+        }
+      })
+    };
+  })
+  .add("Feed Sublist", () => {
+    return {
+      components: { FeedSubList },
+      template: "<feed-sub-list v-bind:items='items'/>",
+      data: () => ({
+        items: [
+          {
+            avatar: "https://www.w3schools.com/w3images/avatar2.png",
+            title: "Test",
+            message: "Test Test Test"
+          },
+          {
+            avatar: "https://www.w3schools.com/w3images/avatar2.png",
+            title: "Test 2",
+            message: "Test Test Test"
+          },
+          {
+            avatar: "https://www.w3schools.com/w3images/avatar2.png",
+            title: "Test 3",
+            message: "Test Test Test"
+          }
+        ]
+      })
+    };
+  })
+  .add("Feed List", () => {
+    return {
+      components: {FeedList},
+      template: "<feed-list v-bind:items='items'/>",
+      data:() => ({
+        items: [
+          {
+            avatar: "https://www.w3schools.com/w3images/avatar2.png",
+            title: "Test",
+            message: "Test Test Test"
+          },
+          {
+            avatar: "https://www.w3schools.com/w3images/avatar2.png",
+            title: "Test 2",
+            message: "Test Test Test"
+          },
+          {
+            avatar: "https://www.w3schools.com/w3images/avatar2.png",
+            title: "Test 3",
+            message: "Test Test Test"
+          }
+        ]
+      })
+    }
+  });
 
 storiesOf("Health 2", module).add("Default", () => ({
   components: { xxx },

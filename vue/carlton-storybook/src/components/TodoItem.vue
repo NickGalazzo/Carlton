@@ -1,8 +1,8 @@
 <template>
 <div class="todo">
     <v-list-tile>
-        <v-icon v-if="!item.completed"  class="completed right" :color="true ? activeColor : 'grey'">mdi-checkbox-marked-circle</v-icon>
-        <v-checkbox v-bind:class="{ 'completed': !item.completed }" :label="item.name" v-model="item.completed"></v-checkbox>
+        <v-icon v-if="item.completed"  class="completed right" :color="true ? activeColor : 'grey'">mdi-checkbox-marked-circle</v-icon>
+        <v-checkbox v-bind:class="{ 'completed': item.completed }" :label="item.name" v-model="item.completed"></v-checkbox>
         <v-list-tile-action>
             <v-btn flat small color="blue">View</v-btn>
         </v-list-tile-action>
@@ -19,7 +19,7 @@ import {
 } from 'vue-property-decorator'
 
 import colors from '../styles/master.scss';
-import TodoItemModel from '../models/TodoItemModel.ts';
+import TodoItemModel from '../models/TodoItemModel';
 
 @Component
 export default class TodoItem extends Vue {
