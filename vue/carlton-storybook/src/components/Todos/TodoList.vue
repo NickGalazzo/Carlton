@@ -1,4 +1,4 @@
-<template>
+<template functional>
 <v-card class="dashboard-card todo-card">
     <v-card-title primary-title>
         <div class="title">Todos</div>
@@ -6,7 +6,7 @@
     <div class="card-scroll-content">
         <v-container fluid>
             <v-list>
-                <todo-item v-for="(item, i) in items" v-bind:key="i" v-bind:item="item"></todo-item>
+                <todo-item v-for="(item, i) in props.items" v-bind:key="i" v-bind:item="item"></todo-item>
             </v-list>
         </v-container>
     </div>
@@ -20,23 +20,19 @@ import {
     Prop,
     Mixins
 } from 'vue-property-decorator'
-import colors from '../styles/master.scss';
-import TodoItem from '../components/TodoItem.vue';
-import TodoItemModel from '../models/TodoItemModel';
+import TodoItem from './TodoItem.vue';
+import TodoItemModel from '../../models/TodoItemModel';
 
-@Component({
-    components: {
-        TodoItem
-    }
-})
+Vue.component('todo-item', TodoItem);
+
+@Component
 export default class Todos extends Vue {
     @Prop() items!: TodoItemModel;
-    activeColor: string = colors.selected;
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/master.scss";
+@import "../../styles/master.scss";
 
 .todo-card {
     @extend %dashboard-card-wide;

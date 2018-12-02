@@ -32,9 +32,9 @@ import {
     Component,
     Prop
 } from 'vue-property-decorator'
-import NavLink from "../models/NavLink";
-import json from "../data/nav.json";
-import imgs from "../services/imgs.ts";
+import NavLink from "../../models/NavLink";
+import json from "../../data/nav.json";
+import imgs from "../../services/imgs.ts";
 
 @Component
 export default class NavDrawer extends Vue {
@@ -55,12 +55,12 @@ export default class NavDrawer extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
-@import "../styles/master.scss";
+<style lang="scss" >
+@import "../../styles/master.scss";
 
 #app-drawer {
     .v-list-item.active {
-        background-color: $selected;
+        background-color: $selectedColor;
     }
 
     .v-list__tile {

@@ -8,35 +8,44 @@ import {
   number,
   select
 } from "@storybook/addon-knobs";
-import { action, configureActions } from "@storybook/addon-actions";
 
-import NavDrawer from "../components/NavDrawer.vue";
-import HealthCard from "../components/HealthCard.vue";
+import { action } from "@storybook/addon-actions";
 
-import OpenTasksCount from "../components/OpenTasksCount.vue";
-import ApartmentStatusesCount from "../components/ApartmentStatusesCount.vue";
-import LowItemsCount from "../components/LowItemsCount.vue";
-import HomeForDinnerCount from "../components/HomeForDinnerCount.vue";
-import HomeForDinnerList from "../components/HomeForDinnerList.vue";
-import HomeForDinnerInput from "../components/HomeForDinnerInput.vue";
+import NavDrawer from "../components/Nav/NavDrawer.vue";
+import HealthCard from "../components/Health/HealthCard.vue";
 
+//Aggregations
+import OpenTasksCount from "../components/Aggregations/OpenTasksCount.vue";
+import ApartmentStatusesCount from "../components/Aggregations/ApartmentStatusesCount.vue";
+import LowItemsCount from "../components/Aggregations/LowItemsCount.vue";
+import HomeForDinnerCount from "../components/Aggregations/HomeForDinnerCount.vue";
+
+//Home For Dinner
+import HomeForDinnerItem from "../components/HomeForDinner/HomeForDinnerItem.vue";
+import HomeForDinnerList from "../components/HomeForDinner/HomeForDinnerList.vue";
+import HomeForDinnerInput from "../components/HomeForDinner/HomeForDinnerInput.vue";
+import HomeForDinner from "../components/HomeForDinner/HomeForDinner.vue";
+
+//Apartment Status
+import ApartmentStatusItem from "../components/ApartmentStatus/ApartmentStatusItem.vue";
+import ApartmentStatusList from "../components/ApartmentStatus/ApartmentStatusList.vue";
+
+//Household Items
+import HouseHoldItem from "../components/HouseHoldItems/HouseHoldItem.vue";
+import HouseHoldItemList from "../components/HouseHoldItems/HouseHoldItemList.vue";
+
+//Todos
+import TodoItem from "../components/Todos/TodoItem.vue";
+import TodoList from "../components/Todos/TodoList.vue";
+
+//Feed
+import FeedItem from "../components/Feed/FeedItem.vue";
+import FeedList from "../components/Feed/FeedList.vue";
+import FeedSubList from "../components/Feed/FeedSubList.vue";
+import Feed from "../components/Feed/Feed.vue";
+
+//Dashboard Page
 import GarbageCard from "../components/GarbageCard.vue";
-import HomeForDinnerItem from "../components/HomeForDinnerItem.vue";
-import HomeForDinner from "../components/HomeForDinner.vue";
-import ApartmentStatus from "../components/ApartmentStatus.vue";
-import ApartmentStatusList from "../components/ApartmentStatusList.vue";
-import HouseHoldItemList from "../components/HouseHoldItemList.vue";
-
-import TodoItem from "../components/TodoItem.vue";
-import TodoList from "../components/TodoList.vue";
-import Feed from "../components/Feed.vue";
-import FeedSubList from "../components/FeedSubList.vue";
-import FeedItem from "../components/FeedItem.vue";
-import FeedList from "../components/FeedList.vue";
-
-import xxx from "../components/HealthCardX.vue";
-
-import HouseHoldItem from "../components/HouseHoldItem.vue";
 
 storiesOf("Count Cards", module)
   .addDecorator(withKnobs)
@@ -78,17 +87,8 @@ storiesOf("Nav Drawer", module).add("Default", () => ({
   template: "<nav-drawer />"
 }));
 
-storiesOf("Health Card", module).add("Default", () => ({
-  components: { HealthCard },
-  template: "<health-card/>"
-}));
-
-storiesOf("Garbage Card", module).add("Defeault", () => ({
-  components: { GarbageCard },
-  template: "<garbage-card />"
-}));
-
 storiesOf("Home for Dinner", module)
+  .addDecorator(withKnobs)
   .add("Default", () => ({
     components: { HomeForDinner },
     template: "<home-for-dinner v-bind:items='items'/>",
@@ -106,9 +106,11 @@ storiesOf("Home for Dinner", module)
         }
       ]
     })
-  }))
+  }));
+
+storiesOf("Home for Dinner/Item")
   .addDecorator(withKnobs)
-  .add("Home", () => {
+  .add("Item", () => {
     const isHome = boolean("Is Home?", true);
     const reason = text("reason", "");
 
@@ -123,7 +125,10 @@ storiesOf("Home for Dinner", module)
         }
       })
     };
-  })
+  });
+
+storiesOf("Home for Dinner/List")
+  .addDecorator(withKnobs)
   .add("List", () => {
     return {
       components: { HomeForDinnerList },
@@ -143,7 +148,10 @@ storiesOf("Home for Dinner", module)
         ]
       })
     };
-  })
+  });
+
+storiesOf("Home for Dinner/Input")
+  .addDecorator(withKnobs)
   .add("Input", () => {
     return {
       components: { HomeForDinnerInput },
@@ -151,7 +159,7 @@ storiesOf("Home for Dinner", module)
     };
   });
 
-storiesOf("Apartment Status/Single Item", module)
+storiesOf("Apartment Status/Item", module)
   .addDecorator(withKnobs)
   .add("Default", () => {
     const statusContextOptions = {
@@ -172,8 +180,8 @@ storiesOf("Apartment Status/Single Item", module)
     const status = select("Status", statusTypeOptions, 1);
 
     return {
-      components: { ApartmentStatus },
-      template: "<apartment-status v-bind:status='status'/>",
+      components: { ApartmentStatusItem },
+      template: "<apartment-status-item v-bind:status='status'/>",
       data: () => ({
         status: {
           icon: statusIcon,
@@ -261,16 +269,9 @@ storiesOf("House Hold Items/Single Item", module)
   });
 
 storiesOf("House Hold Items/List", module)
-  .add("No Items", () => ({
-    components: { HouseHoldItemList },
-    template: `<house-hold-item-list v-bind:items="items"/>`,
-    data: () => ({
-      items: []
-    })
-  }))
   .add("Default", () => ({
     components: { HouseHoldItemList },
-    template: `<house-hold-item-list v-bind:items="items"/>`,
+    template: "<house-hold-item-list v-bind:items='items'/>",
     data: () => ({
       items: [
         {
@@ -331,6 +332,13 @@ storiesOf("House Hold Items/List", module)
         }
       ]
     })
+  }))
+  .add("No Items", () => ({
+    components: { HouseHoldItemList },
+    template: `<house-hold-item-list v-bind:items="items"/>`,
+    data: () => ({
+      items: []
+    })
   }));
 
 storiesOf("Todos", module)
@@ -357,27 +365,27 @@ storiesOf("Todos", module)
       items: [
         {
           name: "Test",
-          completed: true
+          isCompleted: true
         },
         {
           name: "test 2",
-          completed: true
+          isCompleted: true
         },
         {
           name: "test 3",
-          completed: false
+          isCompleted: false
         }
       ]
     })
   }));
 
-storiesOf("Feed", module)
+storiesOf("Feed/Item", module)
   .addDecorator(withKnobs)
   .add("Default", () => ({
     components: { Feed },
     template: "<feed/>"
   }))
-  .add("Feed Item", () => {
+  .add("Default", () => {
     const avatarOptions = {
       system:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/1200px-Microsoft_Cortana_transparent.svg.png",
@@ -399,8 +407,11 @@ storiesOf("Feed", module)
         }
       })
     };
-  })
-  .add("Feed Sublist", () => {
+  });
+
+  storiesOf("Feed/Sublist")
+  .addDecorator(withKnobs)
+  .add("Default", () => {
     return {
       components: { FeedSubList },
       template: "<feed-sub-list v-bind:items='items'/>",
@@ -424,12 +435,15 @@ storiesOf("Feed", module)
         ]
       })
     };
-  })
+  });
+
+  storiesOf("Feed/List")
+  .addDecorator(withKnobs)
   .add("Feed List", () => {
     return {
-      components: {FeedList},
+      components: { FeedList },
       template: "<feed-list v-bind:items='items'/>",
-      data:() => ({
+      data: () => ({
         items: [
           {
             avatar: "https://www.w3schools.com/w3images/avatar2.png",
@@ -448,10 +462,15 @@ storiesOf("Feed", module)
           }
         ]
       })
-    }
+    };
   });
 
-storiesOf("Health 2", module).add("Default", () => ({
-  components: { xxx },
-  template: "<xxx/>"
+storiesOf("Garbage Card", module).add("Defeault", () => ({
+  components: { GarbageCard },
+  template: "<garbage-card />"
+}));
+
+storiesOf("Health Card", module).add("Default", () => ({
+  components: { HealthCard },
+  template: "<health-card/>"
 }));

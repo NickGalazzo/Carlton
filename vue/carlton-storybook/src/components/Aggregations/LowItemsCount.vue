@@ -1,5 +1,5 @@
 <template>
-<base-count-card icon="mdi-cart" v-bind:accent-color="accentColor" v-bind:message="computedMsg" />
+<base-count-card icon="mdi-cart" v-bind:accent-color="$style.accentColor" v-bind:message="computedMsg" />
 </template>
 
 <script lang="ts">
@@ -11,8 +11,8 @@ import {
 } from 'vue-property-decorator'
 
 import BaseCountCard from "./BaseCountCard.vue";
-import CountCardMixin from '../mixins/CountCardMixin';
-import colors from "../styles/master.scss";
+import CountCardMixin from '../../mixins/CountCardMixin';
+import colors from "../../styles/master.scss";
 
 @Component({
     components: {
@@ -20,8 +20,16 @@ import colors from "../styles/master.scss";
     }
 })
 export default class LowItemsCount extends Mixins(CountCardMixin) {
-     //data
+    //data
     messageTemplate: string = "Low Items";
     accentColor = colors.dashboardCountAccentTwo;
 }
 </script>
+
+<style lang="scss" module>
+@import "../../styles/master.scss";
+
+:export {
+  accentColor: $dashboardCountAccentThree;
+}
+</style>

@@ -1,3 +1,3 @@
-export default class HouseHoldItem {
+export default class HouseHoldItemModel {
     constructor(public name: string, public percentRemaining: number) {}
   }

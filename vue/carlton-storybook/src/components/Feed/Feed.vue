@@ -143,7 +143,7 @@ export default class Feed extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/master.scss";
+@import "../../styles/master.scss";
 
 .feed-card {
     @extend %dashboard-card-wide;

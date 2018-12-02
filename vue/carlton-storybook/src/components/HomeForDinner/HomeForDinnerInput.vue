@@ -10,7 +10,7 @@
     <v-layout class="home-for-dinner-toggle">
         <v-spacer></v-spacer>
         <v-flex xs8>
-            <v-switch v-model="isHomeForDinner" :color="activeColor"></v-switch>
+            <v-switch v-model="isHomeForDinner" :color="$style.activeColor"></v-switch>
         </v-flex>
         <v-spacer></v-spacer>
     </v-layout>
@@ -29,18 +29,16 @@ import {
     Prop,
     Mixins
 } from 'vue-property-decorator'
-import colors from '../styles/master.scss';
-import HomeForDinner from '../models/HomeForDinner.ts';
+import HomeForDinner from '../../models/HomeForDinnerModel';
 
 @Component
 export default class HomeForDinnerInput extends Vue {
-    activeColor: string = colors.selected;
     isHomeForDinner: boolean = false;
 }
 </script>
 
-<style lang="scss" scoped>
-@import "../styles/master.scss";
+<style lang="scss" module>
+@import "../../styles/master.scss";
 
 .home-for-dinner-input {
     max-width: 300px;
@@ -61,5 +59,9 @@ export default class HomeForDinnerInput extends Vue {
     .v-text-field {
         margin-top: 15px;
     }
+}
+
+:export {
+    activeColor: $activeColor;
 }
 </style>

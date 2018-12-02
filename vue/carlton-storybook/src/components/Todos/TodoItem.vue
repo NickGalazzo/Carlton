@@ -1,10 +1,10 @@
 <template>
 <div class="todo">
     <v-list-tile>
-        <v-icon v-if="item.completed"  class="completed right" :color="true ? activeColor : 'grey'">mdi-checkbox-marked-circle</v-icon>
-        <v-checkbox v-bind:class="{ 'completed': item.completed }" :label="item.name" v-model="item.completed"></v-checkbox>
+        <v-icon v-if="item.isCompleted" class="completed right" :color="true ? $style.checkedColor : 'grey'">mdi-checkbox-marked-circle</v-icon>
+        <v-checkbox v-bind:class="{ 'completed': item.isCompleted }" :label="item.name" v-model="item.isCompleted"></v-checkbox>
         <v-list-tile-action>
-            <v-btn flat small color="blue">View</v-btn>
+            <v-btn flat small :color="$style.buttonColor">View</v-btn>
         </v-list-tile-action>
     </v-list-tile>
 </div>
@@ -18,18 +18,16 @@ import {
     Mixins
 } from 'vue-property-decorator'
 
-import colors from '../styles/master.scss';
-import TodoItemModel from '../models/TodoItemModel';
+import TodoItemModel from '../../models/TodoItemModel';
 
 @Component
 export default class TodoItem extends Vue {
     @Prop() item!: TodoItemModel;
-    activeColor = colors.selected;
 }
 </script>
 
-<style lang="scss" scoped>
-@import "../styles/master.scss";
+<style lang="scss" module>
+@import "../../styles/master.scss";
 
 .todo {
     max-width: 300px;
@@ -57,5 +55,10 @@ i.completed {
 
 .v-input.completed /deep/ label {
     text-decoration: line-through;
+}
+
+:export {
+    checkedColor: $checkedColor;
+    buttonColor: $buttonColor;
 }
 </style>

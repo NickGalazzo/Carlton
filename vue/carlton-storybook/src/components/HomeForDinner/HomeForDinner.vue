@@ -19,10 +19,10 @@ import {
     Mixins
 } from 'vue-property-decorator'
 
-import colors from '../styles/master.scss';
-import HomeForDinnerList from '../components/HomeForDinnerList.vue';
-import HomeForDinnerInput from '../components/HomeForDinnerInput.vue';
-import HomeForDinner from '../models/HomeForDinner.ts';
+import colors from '../../styles/master.scss';
+import HomeForDinnerList from './HomeForDinnerList.vue';
+import HomeForDinnerInput from './HomeForDinnerInput.vue';
+import HomeForDinnerModel from '../../models/HomeForDinnerModel';
 
 @Component({
     components: {
@@ -31,12 +31,12 @@ import HomeForDinner from '../models/HomeForDinner.ts';
     }
 })
 export default class HomeForDinner extends Vue {
-    @Prop() items!: HomeForDinner[];
+    @Prop() items!: HomeForDinnerModel[];
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/master.scss";
+@import "../../styles/master.scss";
 
 .home-for-dinner-card {
     @extend %dashboard-card;

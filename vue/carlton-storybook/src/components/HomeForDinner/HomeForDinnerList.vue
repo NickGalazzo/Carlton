@@ -1,8 +1,8 @@
-<template>
+<template functional>
 <v-list>
     <div class="home-for-dinner-display">
-        <template >
-           <home-for-dinner-item v-for="(item, i) in items" :key="i"  v-bind:item="item"/>
+        <template>
+            <home-for-dinner-item v-for="(item, i) in props.items" :key="i" v-bind:item="item" />
         </template>
     </div>
 </v-list>
@@ -16,25 +16,19 @@ import {
     Mixins
 } from 'vue-property-decorator'
 
-import HomeForDinnerItem from "../components/HomeForDinnerItem.vue";
-import HomeForDinner from "../models/HomeForDinner.ts";
-import colors from '../styles/master.scss';
+import HomeForDinnerItem from "./HomeForDinnerItem.vue";
+import HomeForDinnerModel from "../../models/HomeForDinnerModel";
 
+Vue.component("home-for-dinner-item", HomeForDinnerItem);
 
-@Component({
-    components:{
-        HomeForDinnerItem
-    }
-})
-export default class HomeForDinner extends Vue {
-    @Prop() items!: HomeForDinner[];
-    activeColor;
-
+@Component
+export default class HomeForDinnerList extends Vue {
+    @Prop() items!: HomeForDinnerModel[];
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/master.scss";
+@import "../../styles/master.scss";
 
 .home-for-dinner-card {
     @extend %dashboard-card;
@@ -71,6 +65,5 @@ export default class HomeForDinner extends Vue {
             margin-top: 15px;
         }
     }
-
 }
 </style>

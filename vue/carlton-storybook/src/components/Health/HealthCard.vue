@@ -96,7 +96,7 @@ export default class HealthCard extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/master.scss";
+@import "../../styles/master.scss";
 
 .health-card {
     @extend %dashboard-card;

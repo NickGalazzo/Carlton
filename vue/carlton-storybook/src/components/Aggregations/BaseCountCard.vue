@@ -1,15 +1,15 @@
-<template>
+<template functional>
 <v-card class="base-count-card">
     <v-card-title primary-title>
         <v-layout>
             <v-flex xs4>
-                <div class="card-img" v-bind:style="{ 'background-color': this.accentColor}">
-                    <v-icon size="25">{{icon}}</v-icon>
+                <div class="card-img" v-bind:style="{ 'background-color': props.accentColor}">
+                    <v-icon size="25">{{props.icon}}</v-icon>
                 </div>
             </v-flex>
             <v-flex xs8>
                 <v-subheader>
-                    <span>{{message}}</span>
+                    <span>{{props.message}}</span>
                 </v-subheader>
             </v-flex>
             <v-spacer></v-spacer>
@@ -25,7 +25,6 @@ import {
     Prop
 } from 'vue-property-decorator'
 
-// The @Component decorator indicates the class is a Vue component
 @Component
 export default class BaseCountCard extends Vue {
     @Prop() icon!: String;
@@ -35,7 +34,7 @@ export default class BaseCountCard extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/master.scss";
+@import "../../styles/master.scss";
 
 .v-card.base-count-card {
     @extend %dashboard-card-small;

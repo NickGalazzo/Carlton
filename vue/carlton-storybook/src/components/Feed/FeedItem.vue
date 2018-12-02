@@ -19,18 +19,16 @@ import {
     Mixins
 } from 'vue-property-decorator'
 
-import colors from '../styles/master.scss';
-import FeedItemModel from '../models/FeedItemModel';
+import FeedItemModel from '../../models/FeedItemModel';
 
 @Component
 export default class FeedItem extends Vue {
     @Prop() item!: FeedItemModel;
-    activeColor = colors.selected;
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/master.scss";
+@import "../../styles/master.scss";
 
 .subtitle{
     color:gray;
