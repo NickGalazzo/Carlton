@@ -1,10 +1,14 @@
-//import {mount} from '@vue/test-utils';
-//import Component from '../../src/components/Aggregations/';
+import { shallowMount } from '@vue/test-utils';
+import FeedItem from '../../src/components/Feed/FeedItem.vue';
+import FeedItemModel from '../../src/models/FeedItemModel';
 
-describe('Component', () => {
-    test('is a Vue instance', () => {
-        expect(true === true);
-       // const wrapper = mount(Component);
-       // expect(wrapper.isVueInstance()).toBeTruthy();
-    });
-});
+describe('FeedItem.vue', () => {
+  it('renders props.msg when passed', () => {
+    const wrapper = shallowMount(FeedItem, {
+        propsData:{
+            item: {avatar: "test", title: "test"}
+        }
+    })
+    expect(wrapper.isVueInstance()).toBeTruthy()
+  })
+})
