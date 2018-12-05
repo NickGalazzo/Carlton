@@ -4,7 +4,8 @@
   ],
   "env": {
     "test": {
-      "presets": ["@babel/preset-env"]
+      "presets": ["@vue/app"],
+      "plugins": ["require-context-hook"]
     }
   }
 }

@@ -1,6 +1,6 @@
-import logo from "../../assets/logo.jpg"
+//import logo from "../../assets/logo.jpg"
 
 export default {
-  logo: logo
+ // logo: logo
 }
 

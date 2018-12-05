@@ -1,11 +1,10 @@
 // mixin.js
 import { Vue, Component, Prop, Mixins } from "vue-property-decorator";
 
-// You can declare a mixin as the same style as components.
 @Component
 export default class CountCardMixin extends Vue {
   @Prop() count!: number;
-  @Prop() messageTempalte!: string;
+  @Prop() messageTemplate!: string;
 
   //Data
   accentColor: string = "";
