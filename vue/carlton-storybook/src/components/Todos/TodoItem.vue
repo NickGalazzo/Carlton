@@ -1,10 +1,10 @@
 <template>
 <div class="todo">
     <v-list-tile>
-        <v-icon v-if="item.isCompleted" class="completed right" :color="true ? $style.checkedColor : 'grey'">mdi-checkbox-marked-circle</v-icon>
+        <v-icon v-if="item.isCompleted" class="completed right" :color="true ? checkedColor : 'grey'">mdi-checkbox-marked-circle</v-icon>
         <v-checkbox v-bind:class="{ 'completed': item.isCompleted }" :label="item.name" v-model="item.isCompleted"></v-checkbox>
         <v-list-tile-action>
-            <v-btn flat small :color="$style.buttonColor">View</v-btn>
+            <v-btn flat small :color="buttonColor">View</v-btn>
         </v-list-tile-action>
     </v-list-tile>
 </div>
@@ -19,14 +19,19 @@ import {
 } from 'vue-property-decorator'
 
 import TodoItemModel from '../../models/TodoItemModel';
+import colors from '../../styles/colors.scss';
 
 @Component
 export default class TodoItem extends Vue {
     @Prop() item!: TodoItemModel;
+
+    //data
+    buttonColor: string =  colors.buttonColor;
+    checkedColor: string = colors.checkedColor;
 }
 </script>
 
-<style lang="scss" module>
+<style lang="scss" scoped>
 @import "../../styles/master.scss";
 
 .todo {
@@ -55,10 +60,5 @@ i.completed {
 
 .v-input.completed /deep/ label {
     text-decoration: line-through;
-}
-
-:export {
-    checkedColor: $checkedColor;
-    buttonColor: $buttonColor;
 }
 </style>

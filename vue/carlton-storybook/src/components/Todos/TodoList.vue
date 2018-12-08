@@ -1,16 +1,7 @@
 <template functional>
-<v-card class="dashboard-card todo-card">
-    <v-card-title primary-title>
-        <div class="title">Todos</div>
-    </v-card-title>
-    <div class="card-scroll-content">
-        <v-container fluid>
-            <v-list>
-                <todo-item v-for="(item, i) in props.items" v-bind:key="i" v-bind:item="item"></todo-item>
-            </v-list>
-        </v-container>
-    </div>
-</v-card>
+<v-list>
+    <todo-item v-for="(item, i) in props.items" v-bind:key="i" v-bind:item="item"></todo-item>
+</v-list>
 </template>
 
 <script lang="ts">

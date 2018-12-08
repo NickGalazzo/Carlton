@@ -10,13 +10,13 @@
     <v-layout class="home-for-dinner-toggle">
         <v-spacer></v-spacer>
         <v-flex xs8>
-            <v-switch v-model="isHomeForDinner" :color="$style.activeColor"></v-switch>
+            <v-switch v-model="isHomeForDinner" :color="activeColor"></v-switch>
         </v-flex>
         <v-spacer></v-spacer>
     </v-layout>
     <v-layout>
         <v-spacer></v-spacer>
-        <v-text-field :disabled="isHomeForDinner==true" label="Where will you be?"></v-text-field>
+        <v-text-field value="test" :disabled="isHomeForDinner==true" label="Where will you be?" v-model="reason"></v-text-field>
         <v-spacer></v-spacer>
     </v-layout>
 </div>
@@ -29,15 +29,25 @@ import {
     Prop,
     Mixins
 } from 'vue-property-decorator'
-import HomeForDinner from '../../models/HomeForDinnerModel';
+import HomeForDinnerModel from '../../models/HomeForDinnerModel';
+import colors from '../../styles/colors.scss';
 
 @Component
 export default class HomeForDinnerInput extends Vue {
-    isHomeForDinner: boolean = false;
+    @Prop({
+        default: {
+            isHomeForDinner: false,
+            reason: ""
+        }
+    }) model!: HomeForDinnerModel;
+
+    isHomeForDinner: boolean = this.model.isHomeForDinner;
+    reason: string = this.model.reason;
+    activeColor: string = colors.activeColor;
 }
 </script>
 
-<style lang="scss" module>
+<style lang="scss" scoped>
 @import "../../styles/master.scss";
 
 .home-for-dinner-input {
@@ -54,14 +64,16 @@ export default class HomeForDinnerInput extends Vue {
         .v-input--selection-controls {
             margin-top: 0px;
         }
+
+        /deep/ .v-input--selection-controls__input {
+            margin-right: auto;
+            margin-left: auto;
+            display: block;
+        }
     }
 
     .v-text-field {
         margin-top: 15px;
     }
-}
-
-:export {
-    activeColor: $activeColor;
 }
 </style>

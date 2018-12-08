@@ -1,16 +1,10 @@
-<template functional>
-<v-card class="house-hold-items-card">
-    <v-card-title primary-title>
-        <div class="title">Household Items</div>
-    </v-card-title>
-    
-    <div v-if="props.items.length > 0" class="card-scroll-content">
-        <house-hold-item v-for="(item, i) in props.items" :key="i" v-bind:item="item" />
+<template>
+<div v-if="items.length > 0" class="card-scroll-content">
+        <household-item v-for="(item, i) in items" :key="i" :item="item" />
     </div>
     <div v-else>
         <v-subheader>It looks like there are no items in the list.</v-subheader>
     </div>
-</v-card>
 </template>
 
 <script lang="ts">
@@ -20,14 +14,15 @@ import {
     Prop,
     Mixins
 } from 'vue-property-decorator'
-import HouseHoldItem from "./HouseHoldItem.vue";
-import HouseHoldItemModel from "../../models/HouseHoldItemModel";
+import HouseholdItem from "./HouseholdItem.vue";
+import HouseholdItemModel from "../../models/HouseolhdItemModel";
 
-Vue.component('house-hold-item', HouseHoldItem);
 
-@Component
-export default class HouseHoldItemList extends Vue {
-    @Prop() items!: HouseHoldItemModel[];
+@Component({
+    components: {HouseholdItem}
+})
+export default class HouseholdItemList extends Vue {
+    @Prop() items!: HouseholdItemModel[];
 }
 </script>
 

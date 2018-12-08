@@ -12,6 +12,5 @@ export default class CountCardMixin extends Vue {
   // computed
   get computedMsg(): string {
     return `${this.count} ${this.messageTemplate}`;
-
   }
 }

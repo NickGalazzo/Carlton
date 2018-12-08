@@ -1,5 +1,5 @@
 <template>
-<base-count-card icon="mdi-clipboard-check" v-bind:accent-color="$style.accentColor" v-bind:message="computedMsg" />
+<base-count-card icon="mdi-clipboard-check" :accent-color="accentColor" :message="computedMsg" />
 </template>
 
 <script lang="ts">
@@ -10,8 +10,9 @@ import {
     Mixins
 } from 'vue-property-decorator'
 
-import BaseCountCard from "./BaseCountCard.vue";
+import BaseCountCard from "../Base/BaseCountCard.vue";
 import CountCardMixin from '../../mixins/CountCardMixin';
+import colors from "../../styles/colors.scss";
 
 @Component({
     components: {
@@ -19,14 +20,8 @@ import CountCardMixin from '../../mixins/CountCardMixin';
     }
 })
 export default class OpenTasksCountCard extends Mixins(CountCardMixin) {
+     //data
+    messageTemplate: string = "Open Tasks";
+    accentColor: string = colors.dashboardCountAccentOne;
 }
 </script>
-
-<style lang="scss" module>
-@import "../../styles/master.scss";
-
-:export {
-  accentColor: $dashboardCountAccentOne;
-}
-</style>
-

@@ -34,7 +34,7 @@ import {
 } from 'vue-property-decorator'
 import NavLink from "../../models/NavLink";
 import json from "../../data/nav.json";
-import imgs from "../../services/imgs.ts";
+import imgs from "../../services/imgs";
 
 @Component
 export default class NavDrawer extends Vue {
@@ -44,14 +44,7 @@ export default class NavDrawer extends Vue {
     links: NavLink[] = json;
     mini: boolean = false;
     active: number = 0;
-    imageUrl: string = imgs.logo;
-
-    mounted() {
-        console.log(imgs);
-        console.log(imgs.logo);
-    }
-
-   
+    imageUrl: string = (imgs as any).logo;   
 }
 </script>
 

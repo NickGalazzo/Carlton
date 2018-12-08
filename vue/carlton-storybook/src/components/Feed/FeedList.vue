@@ -7,7 +7,7 @@
     <div class="card-scroll-content">
         <v-container fluid>
             <v-list two-line>
-               <feed-sub-list v-for="(item, i) in props.items" v-bind:key="i" v-bind:items="props.items"/>
+                <feed-sub-list v-for="(item, i) in props.items" :key="i" :items="props.items" />
             </v-list>
         </v-container>
     </div>
@@ -24,13 +24,13 @@ import {
 } from 'vue-property-decorator'
 
 import FeedSubList from './FeedSubList.vue';
-import FeedItemModel from '../../models/FeedItemModel';
+import {GroupedFeedItems} from '../../models/FeedItemModel';
 
 Vue.component('feed-sub-list', FeedSubList);
 
 @Component
 export default class FeedList extends Vue {
-    @Prop() items!: FeedItemModel[];
+    @Prop() items!: GroupedFeedItems[];
 }
 </script>
 

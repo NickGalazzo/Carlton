@@ -1,10 +1,10 @@
 <template>
 <base-dashboard-card>
     <template slot="title">
-        <span>Home for Dinner</span>
+        <span>Apartment Status</span>
     </template>
     <template slot="content">
-        <home-for-dinner-list :items="items" />
+        <apartment-status-list :statuses="statuses" />
     </template>
 
     <template slot="inputs">
@@ -22,18 +22,17 @@ import {
 } from 'vue-property-decorator'
 
 import BaseDashboardCard from '../Base/BaseDashboardCard.vue';
-import HomeForDinnerList from './HomeForDinnerList.vue';
-import HomeForDinnerInput from './HomeForDinnerInput.vue';
-import HomeForDinnerModel from '../../models/HomeForDinnerModel';
+import ApartmentStatusList from './ApartmentStatusList.vue';
+import ApartmentStatusModel from '../../models/ApartmentStatusModel';
 
 @Component({
     components: {
         BaseDashboardCard,
-        HomeForDinnerList,
-        HomeForDinnerInput
+        ApartmentStatusList
     }
 })
-export default class HomeForDinner extends Vue {
-    @Prop() items!: HomeForDinnerModel[];
+export default class ApartmentStatus extends Vue {
+    @Prop() statuses!: ApartmentStatusModel[];
 }
 </script>
+

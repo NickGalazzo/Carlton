@@ -1,5 +1,5 @@
 <template>
-<v-list-tile :key="item.title" avatar @click="">
+<v-list-tile :key="item.title" avatar>
     <v-list-tile-avatar>
         <img :src="item.avatar">
     </v-list-tile-avatar>
@@ -19,7 +19,7 @@ import {
     Mixins
 } from 'vue-property-decorator'
 
-import FeedItemModel from '../../models/FeedItemModel';
+import {FeedItemModel} from '../../models/FeedItemModel';
 
 @Component
 export default class FeedItem extends Vue {

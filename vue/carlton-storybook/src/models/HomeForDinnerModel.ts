@@ -4,4 +4,4 @@ export default class HomeForDinnerModel {
       public isHomeForDinner: boolean,
       public reason: string
     ) {}
-  }
+}

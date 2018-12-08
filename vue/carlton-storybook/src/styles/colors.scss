@@ -25,4 +25,15 @@ $checkedColor: #009688;
 $selectedColor : #009688;
 $active: #7ac29a;
 
+:export {
+   activeColor:#009688;
+
+   dashboardCountAccentOne: $dashboardCountAccentOne;
+   dashboardCountAccentTwo: $dashboardCountAccentTwo;
+   dashboardCountAccentThree: $dashboardCountAccentThree;
+   dashboardCountAccentFour: $dashboardCountAccentFour;
+
+   buttonColor: $buttonColor;
+   checkedColor: $checkedColor;
+}
 

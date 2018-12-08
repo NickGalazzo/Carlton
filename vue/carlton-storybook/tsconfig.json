@@ -13,6 +13,7 @@
     "sourceMap": true,
     "noImplicitAny": false,
     "baseUrl": "src",
+    "resolveJsonModule":  true,
     "types": [
       "webpack-env",
       "jest"

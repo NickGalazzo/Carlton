@@ -1,9 +1,9 @@
-<template functional>
+<template>
 <div>
     <v-subheader>
-        Today
+        {{items.timePeriod}}
     </v-subheader>
-    <feed-item v-for="(item, i) in props.items" v-bind:key="i" v-bind:item="item" />
+    <feed-item v-for="(item, i) in items.feedItems" :key="i" :item="item" />
 </div>
 </template>
 
@@ -16,20 +16,16 @@ import {
 } from 'vue-property-decorator'
 
 import FeedItem from './FeedItem.vue';
-import FeedItemModel from '../../models/FeedItemModel';
+import {
+    GroupedFeedItems
+} from '../../models/FeedItemModel';
 
-Vue.component('feed-item', FeedItem);
-
-@Component
+@Component({
+    components: {
+        FeedItem
+    }
+})
 export default class FeedSubList extends Vue {
     @Prop() items!: string;
 }
 </script>
-
-<style lang="scss" scoped>
-@import "../../styles/master.scss";
-
-.subtitle {
-    color: gray;
-}
-</style>

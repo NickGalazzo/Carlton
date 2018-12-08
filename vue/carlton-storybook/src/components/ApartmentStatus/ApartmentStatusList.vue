@@ -1,12 +1,11 @@
 <template functional>
-<v-card class="apartment-status-card">
-    <v-card-title primary-title>
-        <div class="title">Apartment Status</div>
-    </v-card-title>
-    <v-container fluid>
-        <apartment-status-item v-for="(status, i) in props.statuses" :key="i" :status="status" />
-    </v-container>
-</v-card>
+<v-list class="apartment-status-list">
+    <div>
+        <template>
+            <apartment-status-item v-for="(status, i) in props.statuses" :key="i" :status="status" />
+        </template>
+    </div>
+</v-list>
 </template>
 
 <script lang="ts">
@@ -34,9 +33,7 @@ export default class ApartmentStatusList extends Vue {
 <style lang="scss" scoped>
 @import "../../styles/master.scss";
 
-.apartment-status-card {
-    @extend %dashboard-card;
-
+.apartment-status-list {
     .layout {
         margin: 12px;
     }
