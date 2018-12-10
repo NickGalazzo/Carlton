@@ -26,6 +26,6 @@ import {
     }
 })
 export default class FeedSubList extends Vue {
-    @Prop() items!: string;
+    @Prop() items!: GroupedFeedItems;
 }
 </script>

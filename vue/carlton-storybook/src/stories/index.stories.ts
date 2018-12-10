@@ -10,7 +10,7 @@ import {
 import { action } from "@storybook/addon-actions";
 
 import NavDrawer from "../components/Nav/NavDrawer.vue";
-import HealthCard from "../components/Health/HealthCard.vue";
+
 
 
 
@@ -41,7 +41,3 @@ storiesOf("Garbage Card", module).add("Defeault", () => ({
   template: "<garbage-card />"
 }));
 
-storiesOf("Health Card", module).add("Default", () => ({
-  components: { HealthCard },
-  template: "<health-card/>"
-}));

@@ -35,5 +35,9 @@ $active: #7ac29a;
 
    buttonColor: $buttonColor;
    checkedColor: $checkedColor;
+
+   healthy: $highColor;
+   degraded: $mediumColor;
+   error: $lowColor;
 }
 

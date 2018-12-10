@@ -57,6 +57,13 @@ let data = {
   ]
 };
 
+storiesOf("Feed", module)
+.add("Default", () => ({
+  components: {Feed},
+  template: "<feed :items='items'/>",
+  data: () => (data)
+}))
+
 storiesOf("Feed/Item", module)
   .addDecorator(withKnobs)
   .add("Default", () => ({
@@ -104,25 +111,7 @@ storiesOf("Feed/List")
   .add("Feed List", () => {
     return {
       components: { FeedList },
-      template: "<feed-list v-bind:items='items'/>",
-      data: () => ({
-        items: [
-          {
-            avatar: "https://www.w3schools.com/w3images/avatar2.png",
-            title: "Test",
-            message: "Test Test Test"
-          },
-          {
-            avatar: "https://www.w3schools.com/w3images/avatar2.png",
-            title: "Test 2",
-            message: "Test Test Test"
-          },
-          {
-            avatar: "https://www.w3schools.com/w3images/avatar2.png",
-            title: "Test 3",
-            message: "Test Test Test"
-          }
-        ]
-      })
+      template: "<feed-list :items='items'/>",
+      data: () => (data)
     };
   });
