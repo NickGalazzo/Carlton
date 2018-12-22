@@ -1,4 +1,4 @@
 
 export default class TodoItemModel {
-    constructor(public name: string, public isCompleted: boolean, public expiration: Date) {}
+    constructor(public todoId: number, public name: string, public isCompleted: boolean, public expiration: Date) {}
   }

@@ -30,6 +30,10 @@ const data = {
   ]
 };
 
+export const methods = {
+  setHomeForDinnerStatus: action('setHomeForDinnerStatus')
+};
+
 
 storiesOf("Home for Dinner", module)
   .addDecorator(withKnobs)
@@ -114,8 +118,9 @@ storiesOf("Home for Dinner/Input")
 
     return {
       components: { HomeForDinnerInput },
-      template: "<home-for-dinner-input :model='model'/>",
-      data: () => ({model})
+      template: "<home-for-dinner-input :model='model' @setHomeForDinnerStatus='setHomeForDinnerStatus'/>",
+      data: () => ({model}),
+      methods
     };
   })
   .add("Not Home", () => {
@@ -128,7 +133,8 @@ storiesOf("Home for Dinner/Input")
 
     return {
       components: { HomeForDinnerInput },
-      template: "<home-for-dinner-input :model='model' />",
-      data: () => ({model})
+      template: "<home-for-dinner-input :model='model'  @setHomeForDinnerStatus='setHomeForDinnerStatus' />",
+      data: () => ({model}),
+      methods
     };
   });

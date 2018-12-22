@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/vue";
 import { withKnobs, select } from "@storybook/addon-knobs";
+import { withTests } from '@storybook/addon-jest';
 
 import ApartmentStatus from "../components/ApartmentStatus/ApartmentStatus.vue";
 import ApartmentStatusItem from "../components/ApartmentStatus/ApartmentStatusItem.vue";

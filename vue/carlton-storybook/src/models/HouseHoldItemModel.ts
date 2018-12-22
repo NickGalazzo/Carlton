@@ -1,3 +1,3 @@
 export default class HouseohldItemModel {
-    constructor(public name: string, public percentRemaining: number) {}
+    constructor(public householdItemId: number, public name: string, public percentRemaining: number) {}
   }

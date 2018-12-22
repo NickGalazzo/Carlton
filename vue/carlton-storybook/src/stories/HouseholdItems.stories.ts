@@ -1,6 +1,5 @@
 import { storiesOf } from "@storybook/vue";
 import { withKnobs, text, number } from "@storybook/addon-knobs";
-
 import { action } from "@storybook/addon-actions";
 
 import HouseholdItems from "../components/HouseholdItems/HouseholdItems.vue";
@@ -17,39 +16,52 @@ const options = {
 let data = {
   items: [
     {
+      id: 1,
       name: "Toilet Paper",
       percentRemaining: 15
     },
     {
+      id: 2,
       name: "Paper Towels",
       percentRemaining: 50
     },
     {
+      id: 3,
       name: "Dish Soap",
       percentRemaining: 80
     },
     {
+      id: 4,
       name: "Swiffers",
       percentRemaining: 90
     },
     {
+      id: 5,
       name: "Hand Soap",
       percentRemaining: 90
     },
     {
+      id: 6,
       name: "Tooth Paste",
       percentRemaining: 93
     },
     {
+      id: 1,
       name: "Razor Blades",
       percentRemaining: 100
     },
     {
+      id: 1,
       name: "Paper Plates",
       percentRemaining: 100
     }
   ]
 };
+
+export const methods = {
+  navigateToHouseholdItem: action('navigateToHouseholdItem')
+};
+
 
 storiesOf("House Hold Items", module).add("Default", () => {
   return {
@@ -67,13 +79,15 @@ storiesOf("House Hold Items/Single Item", module)
 
     return {
       components: { HouseholdItem },
-      template: "<household-item :item='item'/>",
+      template: "<household-item :item='item' @navigateToHouseholdItem='navigateToHouseholdItem'/>",
       data: () => ({
         item: {
+          id: 1,
           name: itemName,
           percentRemaining: percentRemaining
         }
-      })
+      }),
+      methods
     };
   })
   .add("Status Yellow", () => {
@@ -82,13 +96,15 @@ storiesOf("House Hold Items/Single Item", module)
 
     return {
       components: { HouseholdItem },
-      template: "<household-item :item='item'/>",
+      template: "<household-item :item='item' @navigateToHouseholdItem='navigateToHouseholdItem'/>",
       data: () => ({
         item: {
+          id: 1,
           name: itemName,
           percentRemaining: percentRemaining
         }
-      })
+      }),
+      methods
     };
   })
   .add("Status Red", () => {
@@ -97,13 +113,15 @@ storiesOf("House Hold Items/Single Item", module)
 
     return {
       components: { HouseholdItem },
-      template: "<household-item :item='item'/>",
+      template: "<household-item :item='item' @navigateToHouseholdItem='navigateToHouseholdItem'/>",
       data: () => ({
         item: {
+          id: 1,
           name: itemName,
           percentRemaining: percentRemaining
         }
-      })
+      }),
+      methods
     };
   });
 

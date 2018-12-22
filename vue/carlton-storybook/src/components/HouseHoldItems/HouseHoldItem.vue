@@ -1,14 +1,14 @@
-<template functional>
+<template>
 <v-list-tile class="v-list-item">
     <v-list-tile-content>
-        <v-subheader>{{props.item.name}}</v-subheader>
-        <v-progress-linear v-if="props.item.percentRemaining>=75" :color="$style.highColor" height="5" v-bind:value="props.item.percentRemaining"></v-progress-linear>
-        <v-progress-linear v-else-if="props.item.percentRemaining<50" :color="$style.lowColor" height="5" v-bind:value="props.item.percentRemaining"></v-progress-linear>
-        <v-progress-linear v-else :color="$style.mediumColor" height="5" v-bind:value="props.item.percentRemaining"></v-progress-linear>
+        <v-subheader>{{item.name}}</v-subheader>
+        <v-progress-linear v-if="item.percentRemaining>=75" :color="$style.highColor" height="5" v-bind:value="item.percentRemaining"></v-progress-linear>
+        <v-progress-linear v-else-if="item.percentRemaining<50" :color="$style.lowColor" height="5" v-bind:value="item.percentRemaining"></v-progress-linear>
+        <v-progress-linear v-else :color="$style.mediumColor" height="5" v-bind:value="item.percentRemaining"></v-progress-linear>
     </v-list-tile-content>
 
     <v-list-tile-action>
-        <v-btn flat small :color="$style.buttonColor">View</v-btn>
+        <v-btn flat small :color="$style.buttonColor" @click="$emit('navigateToHouseholdItem', item.id)">View</v-btn>
     </v-list-tile-action>
 </v-list-tile>
 </template>

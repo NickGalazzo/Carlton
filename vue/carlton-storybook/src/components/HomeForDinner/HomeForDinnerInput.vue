@@ -10,7 +10,7 @@
     <v-layout class="home-for-dinner-toggle">
         <v-spacer></v-spacer>
         <v-flex xs8>
-            <v-switch v-model="isHomeForDinner" :color="activeColor"></v-switch>
+            <v-switch v-model="isHomeForDinner" :color="activeColor" @change="$emit('setHomeForDinnerStatus', isHomeForDinner)"></v-switch>
         </v-flex>
         <v-spacer></v-spacer>
     </v-layout>

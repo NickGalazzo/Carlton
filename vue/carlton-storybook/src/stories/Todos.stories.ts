@@ -23,6 +23,10 @@ let data = {
   ]
 };
 
+export const methods = {
+  navigateToTodo: action('navigateToTodo')
+};
+
 storiesOf("Todos", module).add("Default", () => {
   return {
     components: { Todos },
@@ -39,13 +43,15 @@ storiesOf("Todos/Item", module)
 
     return {
       components: { TodoItem },
-      template: "<todo-item :item='item'/>",
+      template: "<todo-item :item='item' @navigateToTodo='navigateToTodo'/>",
       data: () => ({
         item: {
+          todoId: 1,
           name: name,
           isCompleted: isCompleted
         }
-      })
+      }),
+      methods
     };
   })
   .add("Completed", () => {
@@ -54,13 +60,15 @@ storiesOf("Todos/Item", module)
 
     return {
       components: { TodoItem },
-      template: "<todo-item :item='item'/>",
+      template: "<todo-item :item='item' @navigateToTodo='navigateToTodo'/>",
       data: () => ({
         item: {
+          todoId: 1,
           name: name,
           isCompleted: isCompleted
         }
-      })
+      }),
+      methods
     };
   });
 
