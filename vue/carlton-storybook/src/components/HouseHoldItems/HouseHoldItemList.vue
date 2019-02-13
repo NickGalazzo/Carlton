@@ -15,7 +15,7 @@ import {
     Mixins
 } from 'vue-property-decorator'
 import HouseholdItem from "./HouseholdItem.vue";
-import HouseholdItemModel from "../../models/HouseolhdItemModel";
+import HouseholdItemModel from "../../models/HouseHoldItemModel";
 
 
 @Component({

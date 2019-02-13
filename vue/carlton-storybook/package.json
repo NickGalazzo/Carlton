@@ -9,7 +9,7 @@
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
     "test:unit": "vue-cli-service test:unit",
-    "test:generate-output": "jest --json --outputFile=jest-test-results.json"
+    "test:generate-output": "jest --json --outputFile=./tests/jest-test-results.json"
   },
   "dependencies": {
     "vue": "^2.5.17",

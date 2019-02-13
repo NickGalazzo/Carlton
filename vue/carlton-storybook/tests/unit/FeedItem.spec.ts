@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import FeedItem from '../../src/components/Feed/FeedItem.vue';
-import FeedItemModel from '../../src/models/FeedItemModel';
+import {FeedItemModel} from '../../src/models/FeedItemModel';
 
 describe('FeedItem.vue', () => {
   it('renders props.msg when passed', () => {

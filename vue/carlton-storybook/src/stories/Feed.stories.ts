@@ -1,12 +1,13 @@
 import { storiesOf } from "@storybook/vue";
 import { withKnobs, text, select } from "@storybook/addon-knobs";
-
 import { action } from "@storybook/addon-actions";
+import { withTests } from "@storybook/addon-jest";
 
 import FeedItem from "../components/Feed/FeedItem.vue";
 import FeedList from "../components/Feed/FeedList.vue";
 import FeedSubList from "../components/Feed/FeedSubList.vue";
 import Feed from "../components/Feed/Feed.vue";
+import results from "../../tests/jest-test-results.json";
 
 let data = {
   items: [
@@ -115,3 +116,13 @@ storiesOf("Feed/List")
       data: () => (data)
     };
   });
+
+storiesOf("FeedItem Tests")
+  .addDecorator(withTests({results}))
+  .add(
+    "This story shows tests results from FeedItem.spec.js",
+    () => "<div>Jest results in storybook</div>",
+    {
+      jest: ["FeedItem.spec.js"]
+    }
+  );

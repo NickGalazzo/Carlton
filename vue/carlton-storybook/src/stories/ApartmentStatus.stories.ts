@@ -154,3 +154,4 @@ storiesOf("Apartment Status/List")
       data: () => data
     };
   });
+
