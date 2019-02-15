@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Nav Drawer Default 1`] = `
+<v-navigation-drawer
+  dark=""
+  id="app-drawer"
+  permanent=""
+>
+  <v-layout
+    class="fill-height"
+    column=""
+    tag="v-list"
+  >
+    <v-list-tile
+      avatar=""
+    >
+      <v-list-tile-avatar
+        color="transparent"
+      >
+        <v-img
+          contain=""
+          height="70"
+        />
+      </v-list-tile-avatar>
+       
+      <v-list-tile-title
+        class="title"
+      >
+        <span>
+          Carlton UI
+        </span>
+      </v-list-tile-title>
+       
+      <v-list-tile-action>
+        <v-btn
+          icon=""
+        >
+          <v-icon>
+            menu
+          </v-icon>
+        </v-btn>
+      </v-list-tile-action>
+    </v-list-tile>
+     
+    <v-list-tile
+      class="v-list-item active"
+      to="/dashboard"
+    >
+      <v-list-tile-action>
+        <v-icon>
+          mdi-view-dashboard
+        </v-icon>
+      </v-list-tile-action>
+       
+      <v-list-tile-title>
+        Dashboard
+      </v-list-tile-title>
+    </v-list-tile>
+    <v-list-tile
+      class="v-list-item"
+      to="/user-profile"
+    >
+      <v-list-tile-action>
+        <v-icon>
+          mdi-account
+        </v-icon>
+      </v-list-tile-action>
+       
+      <v-list-tile-title>
+        User Profile
+      </v-list-tile-title>
+    </v-list-tile>
+    <v-list-tile
+      class="v-list-item"
+      to="/table-list"
+    >
+      <v-list-tile-action>
+        <v-icon>
+          mdi-clipboard-check
+        </v-icon>
+      </v-list-tile-action>
+       
+      <v-list-tile-title>
+        Todos
+      </v-list-tile-title>
+    </v-list-tile>
+    <v-list-tile
+      class="v-list-item"
+      to="/"
+    >
+      <v-list-tile-action>
+        <v-icon>
+          mdi-spray-bottle
+        </v-icon>
+      </v-list-tile-action>
+       
+      <v-list-tile-title>
+        Apartment Cleaning
+      </v-list-tile-title>
+    </v-list-tile>
+    <v-list-tile
+      class="v-list-item"
+      to="/table-list"
+    >
+      <v-list-tile-action>
+        <v-icon>
+          mdi-cart
+        </v-icon>
+      </v-list-tile-action>
+       
+      <v-list-tile-title>
+        Household Items
+      </v-list-tile-title>
+    </v-list-tile>
+    <v-list-tile
+      class="v-list-item"
+      to="/table-list"
+    >
+      <v-list-tile-action>
+        <v-icon>
+          mdi-food-fork-drink
+        </v-icon>
+      </v-list-tile-action>
+       
+      <v-list-tile-title>
+        Home for Dinner
+      </v-list-tile-title>
+    </v-list-tile>
+    <v-list-tile
+      class="v-list-item"
+      to="/table-list"
+    >
+      <v-list-tile-action>
+        <v-icon>
+          mdi-washing-machine
+        </v-icon>
+      </v-list-tile-action>
+       
+      <v-list-tile-title>
+        Laundry
+      </v-list-tile-title>
+    </v-list-tile>
+    <v-list-tile
+      class="v-list-item"
+      to="/table-list"
+    >
+      <v-list-tile-action>
+        <v-icon>
+          mdi-delete
+        </v-icon>
+      </v-list-tile-action>
+       
+      <v-list-tile-title>
+        Garbage
+      </v-list-tile-title>
+    </v-list-tile>
+    <v-list-tile
+      class="v-list-item"
+      to="/typography"
+    >
+      <v-list-tile-action>
+        <v-icon>
+          mdi-heart
+        </v-icon>
+      </v-list-tile-action>
+       
+      <v-list-tile-title>
+        Application Health
+      </v-list-tile-title>
+    </v-list-tile>
+  </v-layout>
+</v-navigation-drawer>
+`;

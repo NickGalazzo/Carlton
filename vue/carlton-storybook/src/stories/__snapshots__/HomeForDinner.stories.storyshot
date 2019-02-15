@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Home for Dinner Default 1`] = `
+<v-card
+  class="dashboard-card feed-card"
+>
+  <v-card-title
+    primary-title=""
+  >
+    <div
+      class="title"
+    >
+      <span>
+        <span>
+          Home for Dinner
+        </span>
+      </span>
+    </div>
+  </v-card-title>
+   
+  <div
+    class="card-scroll-content"
+  >
+    <v-container
+      fluid=""
+    >
+      <v-list>
+        <div
+          class="home-for-dinner-display"
+        >
+          <v-list-tile
+            avatar=""
+            class="home-for-dinner-person"
+          >
+            <v-list-tile-avatar>
+              <img
+                src="https://www.w3schools.com/w3images/avatar2.png"
+              />
+            </v-list-tile-avatar>
+             
+            <v-list-tile-content>
+              <v-list-tile-title>
+                Nick
+              </v-list-tile-title>
+               
+              <!---->
+               
+              <v-list-tile-sub-title>
+                Working late
+              </v-list-tile-sub-title>
+            </v-list-tile-content>
+             
+            <v-list-tile-action>
+              <v-icon
+                color="grey"
+              >
+                mdi-food
+              </v-icon>
+            </v-list-tile-action>
+          </v-list-tile>
+          <v-list-tile
+            avatar=""
+            class="home-for-dinner-person"
+          >
+            <v-list-tile-avatar>
+              <img
+                src="https://www.w3schools.com/w3images/avatar2.png"
+              />
+            </v-list-tile-avatar>
+             
+            <v-list-tile-content>
+              <v-list-tile-title>
+                Stephen
+              </v-list-tile-title>
+               
+              <!---->
+               
+              <v-list-tile-sub-title>
+                Japneese Class
+              </v-list-tile-sub-title>
+            </v-list-tile-content>
+             
+            <v-list-tile-action>
+              <v-icon
+                color="grey"
+              >
+                mdi-food
+              </v-icon>
+            </v-list-tile-action>
+          </v-list-tile>
+        </div>
+      </v-list>
+       
+      <div
+        class="home-for-dinner-input"
+      >
+        <v-layout>
+          <v-spacer />
+           
+          <v-flex
+            class="heading-text"
+            xs12=""
+          >
+            <span>
+              Are you home for dinner?
+            </span>
+          </v-flex>
+           
+          <v-spacer />
+        </v-layout>
+         
+        <v-layout
+          class="home-for-dinner-toggle"
+        >
+          <v-spacer />
+           
+          <v-flex
+            xs8=""
+          >
+            <v-switch
+              color="activeColor"
+            />
+          </v-flex>
+           
+          <v-spacer />
+        </v-layout>
+         
+        <v-layout>
+          <v-spacer />
+           
+          <v-text-field
+            label="Where will you be?"
+            value="test"
+          />
+           
+          <v-spacer />
+        </v-layout>
+      </div>
+    </v-container>
+  </div>
+</v-card>
+`;

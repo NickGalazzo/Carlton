@@ -9,12 +9,14 @@
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
     "test:unit": "vue-cli-service test:unit",
-    "test:generate-output": "jest --json --outputFile=./tests/jest-test-results.json"
+    "test:generate-output": "jest --json --outputFile=./tests/jest-test-results.json",
+    "test:updateSnapshot": "jest --updateSnapshot"
   },
   "dependencies": {
     "vue": "^2.5.17",
     "vue-class-component": "^6.3.2",
     "vue-property-decorator": "^7.0.0",
+    "vue-router": "^3.0.2",
     "vuetify": "^1.3.0"
   },
   "devDependencies": {

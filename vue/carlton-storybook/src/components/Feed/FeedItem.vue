@@ -1,12 +1,12 @@
 <template>
 <v-list-tile :key="item.title" avatar>
     <v-list-tile-avatar>
-        <img :src="item.avatar">
+        <img class="avatar" :src="item.avatar">
     </v-list-tile-avatar>
 
         <v-list-tile-content>
             <v-list-tile-sub-title class="subtitle">{{item.title}}</v-list-tile-sub-title>
-            <v-list-tile-title>{{item.message}}</v-list-tile-title>
+            <v-list-tile-title class="msg">{{item.message}}</v-list-tile-title>
         </v-list-tile-content>
 </v-list-tile>
 </template>
