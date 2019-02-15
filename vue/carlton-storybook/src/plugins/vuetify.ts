@@ -1,7 +1,11 @@
 import Vue from 'vue'
-import Vuetify from 'vuetify/lib'
+import VueRouter from 'vue-router';
+import Vuetify, {VTextField, VListTile, VCard} from 'vuetify/lib'
 import 'vuetify/src/stylus/app.styl'
 
 Vue.use(Vuetify, {
+  components: {VTextField, VListTile, VCard},
   iconfont: 'md',
 })
+
+Vue.use(VueRouter);

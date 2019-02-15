@@ -7,12 +7,8 @@
         <apartment-status-list :statuses="statuses" />
     </template>
 
-    <template slot="inputs">
-        <home-for-dinner-input />
-    </template>
 </base-dashboard-card>
 </template>
-
 <script lang="ts">
 import {
     Vue,

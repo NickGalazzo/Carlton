@@ -117,7 +117,7 @@ storiesOf("Feed/List")
     };
   });
 
-storiesOf("FeedItem Tests")
+storiesOf("/Feed/Feed Tests")
   .addDecorator(withTests({results}))
   .add(
     "This story shows tests results from FeedItem.spec.js",

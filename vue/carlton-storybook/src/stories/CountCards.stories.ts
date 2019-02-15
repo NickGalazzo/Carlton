@@ -10,7 +10,7 @@ import {
 import { action } from "@storybook/addon-actions";
 
 
-import OpenTasksCount from "../components/CountCards/OpenTasksCount.vue";
+import OpenTasksCount from "../components/CountCards/OpenTasksCountCard.vue";
 import ApartmentStatusesCount from "../components/CountCards/ApartmentStatusesCount.vue";
 import LowItemsCount from "../components/CountCards/LowItemsCount.vue";
 import HomeForDinnerCount from "../components/CountCards/HomeForDinnerCount.vue";
