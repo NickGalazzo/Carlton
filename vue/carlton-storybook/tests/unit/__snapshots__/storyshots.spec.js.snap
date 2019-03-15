@@ -4674,55 +4674,208 @@ exports[`Storyshots Nav Drawer Default 1`] = `
       class="v-list-item active"
       role="listitem"
     >
-      <!---->
+      <a
+        class="v-list__tile v-list__tile--link theme--dark"
+      >
+        <div
+          class="v-list__tile__action"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon mdi mdi-view-dashboard theme--dark"
+          />
+        </div>
+         
+        <div
+          class="v-list__tile__title"
+        >
+          Dashboard
+        </div>
+      </a>
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <!---->
+      <a
+        class="v-list__tile v-list__tile--link theme--dark"
+      >
+        <div
+          class="v-list__tile__action"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon mdi mdi-account theme--dark"
+          />
+        </div>
+         
+        <div
+          class="v-list__tile__title"
+        >
+          User Profile
+        </div>
+      </a>
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <!---->
+      <a
+        class="v-list__tile v-list__tile--link theme--dark"
+      >
+        <div
+          class="v-list__tile__action"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon mdi mdi-clipboard-check theme--dark"
+          />
+        </div>
+         
+        <div
+          class="v-list__tile__title"
+        >
+          Todos
+        </div>
+      </a>
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <!---->
+      <a
+        class="v-list__tile v-list__tile--link theme--dark"
+      >
+        <div
+          class="v-list__tile__action"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon mdi mdi-spray-bottle theme--dark"
+          />
+        </div>
+         
+        <div
+          class="v-list__tile__title"
+        >
+          Apartment Cleaning
+        </div>
+      </a>
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <!---->
+      <a
+        class="v-list__tile v-list__tile--link theme--dark"
+      >
+        <div
+          class="v-list__tile__action"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon mdi mdi-cart theme--dark"
+          />
+        </div>
+         
+        <div
+          class="v-list__tile__title"
+        >
+          Household Items
+        </div>
+      </a>
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <!---->
+      <a
+        class="v-list__tile v-list__tile--link theme--dark"
+      >
+        <div
+          class="v-list__tile__action"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon mdi mdi-food-fork-drink theme--dark"
+          />
+        </div>
+         
+        <div
+          class="v-list__tile__title"
+        >
+          Home for Dinner
+        </div>
+      </a>
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <!---->
+      <a
+        class="v-list__tile v-list__tile--link theme--dark"
+      >
+        <div
+          class="v-list__tile__action"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon mdi mdi-washing-machine theme--dark"
+          />
+        </div>
+         
+        <div
+          class="v-list__tile__title"
+        >
+          Laundry
+        </div>
+      </a>
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <!---->
+      <a
+        class="v-list__tile v-list__tile--link theme--dark"
+      >
+        <div
+          class="v-list__tile__action"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon mdi mdi-delete theme--dark"
+          />
+        </div>
+         
+        <div
+          class="v-list__tile__title"
+        >
+          Garbage
+        </div>
+      </a>
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <!---->
+      <a
+        class="v-list__tile v-list__tile--link theme--dark"
+      >
+        <div
+          class="v-list__tile__action"
+        >
+          <i
+            aria-hidden="true"
+            class="v-icon mdi mdi-heart theme--dark"
+          />
+        </div>
+         
+        <div
+          class="v-list__tile__title"
+        >
+          Application Health
+        </div>
+      </a>
     </div>
   </div>
   <div
