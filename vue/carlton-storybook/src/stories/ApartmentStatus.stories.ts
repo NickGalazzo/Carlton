@@ -90,7 +90,7 @@ storiesOf("Apartment Status/Item", module)
     };
   });
 
-storiesOf("Apartment Status/List")
+storiesOf("Apartment Status/List", module)
   .addDecorator(withKnobs)
   .add("Default", () => {
     const garbageStatus = select("Garbage Status", statusTypeOptions, 1);

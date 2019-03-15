@@ -8,6 +8,7 @@
     "moduleResolution": "node",
     "rootDir": "src",
     "experimentalDecorators": true,
+    "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,

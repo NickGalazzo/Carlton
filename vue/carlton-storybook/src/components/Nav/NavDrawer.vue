@@ -32,11 +32,15 @@ import {
     Component,
     Prop
 } from 'vue-property-decorator'
+import VueRouter from 'vue-router';
 import NavLink from "../../models/NavLink";
 import json from "../../data/nav.json";
 import imgs from "../../services/imgs";
 
-@Component
+@Component({
+    components : {
+    }
+})
 export default class NavDrawer extends Vue {
     @Prop() logo!: String;
 

@@ -20,7 +20,7 @@
         </v-flex>
       </v-layout>
     </v-card-title>
-    <v-card-content>
+    <v-content>
       <v-card-actions>
         <v-btn flat>Details</v-btn>
         <v-spacer></v-spacer>
@@ -33,7 +33,7 @@
           <health-status-dependency-list :health-statuses="healthStatus.dependencies"/>
         </v-list>
       </v-slide-y-transition>
-    </v-card-content>
+    </v-content>
   </v-card>
 </template>
 

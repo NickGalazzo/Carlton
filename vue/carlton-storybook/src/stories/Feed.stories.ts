@@ -67,10 +67,6 @@ storiesOf("Feed", module)
 
 storiesOf("Feed/Item", module)
   .addDecorator(withKnobs)
-  .add("Default", () => ({
-    components: { Feed },
-    template: "<feed/>"
-  }))
   .add("Default", () => {
     const avatarOptions = {
       system:
@@ -95,7 +91,7 @@ storiesOf("Feed/Item", module)
     };
   });
 
-storiesOf("Feed/Sublist")
+storiesOf("Feed/Sublist", module)
   .addDecorator(withKnobs)
   .add("Default", () => {
     return {
@@ -107,7 +103,7 @@ storiesOf("Feed/Sublist")
     };
   });
 
-storiesOf("Feed/List")
+storiesOf("Feed/List", module)
   .addDecorator(withKnobs)
   .add("Feed List", () => {
     return {
@@ -117,7 +113,7 @@ storiesOf("Feed/List")
     };
   });
 
-storiesOf("/Feed/Feed Tests")
+storiesOf("/Feed/Feed Tests", module)
   .addDecorator(withTests({results}))
   .add(
     "This story shows tests results from FeedItem.spec.js",

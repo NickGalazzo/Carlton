@@ -8,4 +8,3 @@ Vue.use(Vuetify, {
   iconfont: 'md',
 })
 
-Vue.use(VueRouter);

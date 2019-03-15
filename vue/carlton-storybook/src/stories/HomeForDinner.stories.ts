@@ -43,7 +43,7 @@ storiesOf("Home for Dinner", module)
     data: () => (data)
   }));
 
-storiesOf("Home for Dinner/Item")
+storiesOf("Home for Dinner/Item", module)
   .addDecorator(withKnobs)
   .add("Home", () => {
     const isHome = boolean("Is Home?", true);
@@ -80,7 +80,7 @@ storiesOf("Home for Dinner/Item")
     };
   });
 
-storiesOf("Home for Dinner/List")
+storiesOf("Home for Dinner/List", module)
   .addDecorator(withKnobs)
   .add("Default", () => {
 
@@ -106,7 +106,7 @@ storiesOf("Home for Dinner/List")
     }
   });
 
-storiesOf("Home for Dinner/Input")
+storiesOf("Home for Dinner/Input", module)
   .addDecorator(withKnobs)
   .add("Home", () => {
     const isHome = boolean("Is Home?", true);

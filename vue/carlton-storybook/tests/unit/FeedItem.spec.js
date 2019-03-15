@@ -2,12 +2,17 @@ import { shallowMount, createLocalVue } from "@vue/test-utils";
 import VueRouter from "vue-router";
 import Vuetify from "vuetify";
 import FeedItem from "../../src/components/Feed/FeedItem.vue";
+import {SilenceWarnHack} from '../SilenceWarnHack'
 import { FeedItemModel } from "../../src/models/FeedItemModel";
 
 describe("FeedItem.vue", () => {
   let wrapper;
 
+  const silenceWarnHack = new SilenceWarnHack()
+
   beforeEach(() => {
+    silenceWarnHack.enable();
+
     const localVue = createLocalVue();
 
     localVue.use(Vuetify);
@@ -18,6 +23,9 @@ describe("FeedItem.vue", () => {
         item: { avatar: "avatar.png", title: "Feed Title", message: "Feed Message" }
       }
     });
+
+
+    silenceWarnHack.disable();
   });
 
   it("Is a valid Vue component", () => {

@@ -90,7 +90,7 @@ storiesOf("Health/Health Card", module)
     };
   });
 
-storiesOf("Health/Health Dependency Item")
+storiesOf("Health/Health Dependency Item", module)
   .addDecorator(withKnobs)
   .add("Healthy", () => {
     const serviceIcon = select(

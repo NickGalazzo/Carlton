@@ -34,15 +34,10 @@ import colors from '../../styles/colors.scss';
 
 @Component
 export default class HomeForDinnerInput extends Vue {
-    @Prop({
-        default: {
-            isHomeForDinner: false,
-            reason: ""
-        }
-    }) model!: HomeForDinnerModel;
+    @Prop() model!: HomeForDinnerModel;
 
-    isHomeForDinner: boolean = this.model.isHomeForDinner;
-    reason: string = this.model.reason;
+    isHomeForDinner: boolean = this.model ? this.model.isHomeForDinner : false;
+    reason: string = this.model ? this.model.reason : "";
     activeColor: string = colors.activeColor;
 }
 </script>

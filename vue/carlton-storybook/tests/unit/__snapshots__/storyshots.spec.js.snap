@@ -1898,157 +1898,164 @@ exports[`Storyshots Health/Health Card Degraded 1`] = `
     </div>
   </div>
    
-  <v-card-content>
+  <main
+    class="v-content"
+    style="padding: 0px 0px 0px 0px;"
+  >
     <div
-      class="v-card__actions"
+      class="v-content__wrap"
     >
-      <button
-        class="v-btn v-btn--flat theme--light"
-        type="button"
-      >
-        <div
-          class="v-btn__content"
-        >
-          Details
-        </div>
-      </button>
-       
       <div
-        class="spacer"
-      />
-       
-      <button
-        class="v-btn v-btn--icon theme--light"
-        type="button"
+        class="v-card__actions"
       >
-        <div
-          class="v-btn__content"
-        >
-          <i
-            aria-hidden="true"
-            class="v-icon mdi mdi-chevron-down theme--light"
-          />
-        </div>
-      </button>
-    </div>
-     
-    <div
-      class="v-list v-list--subheader v-list--two-line theme--light"
-      role="list"
-      style="display: none;"
-    >
-      <div>
-        <div
-          class="v-subheader theme--light"
-        >
-          Dependencies
-        </div>
-         
-        <div
-          role="listitem"
+        <button
+          class="v-btn v-btn--flat theme--light"
+          type="button"
         >
           <div
-            class="v-list__tile theme--light"
+            class="v-btn__content"
+          >
+            Details
+          </div>
+        </button>
+         
+        <div
+          class="spacer"
+        />
+         
+        <button
+          class="v-btn v-btn--icon theme--light"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon mdi mdi-chevron-down theme--light"
+            />
+          </div>
+        </button>
+      </div>
+       
+      <div
+        class="v-list v-list--subheader v-list--two-line theme--light"
+        role="list"
+        style="display: none;"
+      >
+        <div>
+          <div
+            class="v-subheader theme--light"
+          >
+            Dependencies
+          </div>
+           
+          <div
+            role="listitem"
           >
             <div
-              class="layout service-dependency-item row"
+              class="v-list__tile theme--light"
             >
               <div
-                class="flex xs3"
+                class="layout service-dependency-item row"
               >
                 <div
-                  class="v-responsive v-image"
-                  style="height: 50px;"
+                  class="flex xs3"
                 >
                   <div
-                    class="v-image__image v-image__image--preload v-image__image--contain"
-                    style="background-position: center center;"
-                  />
-                  <div
-                    class="v-responsive__content"
-                  />
-                </div>
-              </div>
-               
-              <div
-                class="flex xs6"
-              >
-                <div
-                  class="v-list__tile__content"
-                >
-                  <div
-                    class="v-list__tile__title"
+                    class="v-responsive v-image"
+                    style="height: 50px;"
                   >
-                    Postgres
+                    <div
+                      class="v-image__image v-image__image--preload v-image__image--contain"
+                      style="background-position: center center;"
+                    />
+                    <div
+                      class="v-responsive__content"
+                    />
                   </div>
                 </div>
-              </div>
-               
-              <div
-                class="flex health-status-indicator xs3"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon right mdi mdi-check-circle-outline theme--light healthy--text"
-                />
+                 
+                <div
+                  class="flex xs6"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Postgres
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex health-status-indicator xs3"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon right mdi mdi-check-circle-outline theme--light healthy--text"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          role="listitem"
-        >
           <div
-            class="v-list__tile theme--light"
+            role="listitem"
           >
             <div
-              class="layout service-dependency-item row"
+              class="v-list__tile theme--light"
             >
               <div
-                class="flex xs3"
+                class="layout service-dependency-item row"
               >
                 <div
-                  class="v-responsive v-image"
-                  style="height: 50px;"
+                  class="flex xs3"
                 >
                   <div
-                    class="v-image__image v-image__image--preload v-image__image--contain"
-                    style="background-position: center center;"
-                  />
-                  <div
-                    class="v-responsive__content"
-                  />
-                </div>
-              </div>
-               
-              <div
-                class="flex xs6"
-              >
-                <div
-                  class="v-list__tile__content"
-                >
-                  <div
-                    class="v-list__tile__title"
+                    class="v-responsive v-image"
+                    style="height: 50px;"
                   >
-                    RabbitMQ
+                    <div
+                      class="v-image__image v-image__image--preload v-image__image--contain"
+                      style="background-position: center center;"
+                    />
+                    <div
+                      class="v-responsive__content"
+                    />
                   </div>
                 </div>
-              </div>
-               
-              <div
-                class="flex health-status-indicator xs3"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon right mdi mdi-check-circle-outline theme--light healthy--text"
-                />
+                 
+                <div
+                  class="flex xs6"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      RabbitMQ
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex health-status-indicator xs3"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon right mdi mdi-check-circle-outline theme--light healthy--text"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </v-card-content>
+  </main>
 </div>
 `;
 
@@ -2095,157 +2102,164 @@ exports[`Storyshots Health/Health Card Error 1`] = `
     </div>
   </div>
    
-  <v-card-content>
+  <main
+    class="v-content"
+    style="padding: 0px 0px 0px 0px;"
+  >
     <div
-      class="v-card__actions"
+      class="v-content__wrap"
     >
-      <button
-        class="v-btn v-btn--flat theme--light"
-        type="button"
-      >
-        <div
-          class="v-btn__content"
-        >
-          Details
-        </div>
-      </button>
-       
       <div
-        class="spacer"
-      />
-       
-      <button
-        class="v-btn v-btn--icon theme--light"
-        type="button"
+        class="v-card__actions"
       >
-        <div
-          class="v-btn__content"
-        >
-          <i
-            aria-hidden="true"
-            class="v-icon mdi mdi-chevron-down theme--light"
-          />
-        </div>
-      </button>
-    </div>
-     
-    <div
-      class="v-list v-list--subheader v-list--two-line theme--light"
-      role="list"
-      style="display: none;"
-    >
-      <div>
-        <div
-          class="v-subheader theme--light"
-        >
-          Dependencies
-        </div>
-         
-        <div
-          role="listitem"
+        <button
+          class="v-btn v-btn--flat theme--light"
+          type="button"
         >
           <div
-            class="v-list__tile theme--light"
+            class="v-btn__content"
+          >
+            Details
+          </div>
+        </button>
+         
+        <div
+          class="spacer"
+        />
+         
+        <button
+          class="v-btn v-btn--icon theme--light"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon mdi mdi-chevron-down theme--light"
+            />
+          </div>
+        </button>
+      </div>
+       
+      <div
+        class="v-list v-list--subheader v-list--two-line theme--light"
+        role="list"
+        style="display: none;"
+      >
+        <div>
+          <div
+            class="v-subheader theme--light"
+          >
+            Dependencies
+          </div>
+           
+          <div
+            role="listitem"
           >
             <div
-              class="layout service-dependency-item row"
+              class="v-list__tile theme--light"
             >
               <div
-                class="flex xs3"
+                class="layout service-dependency-item row"
               >
                 <div
-                  class="v-responsive v-image"
-                  style="height: 50px;"
+                  class="flex xs3"
                 >
                   <div
-                    class="v-image__image v-image__image--preload v-image__image--contain"
-                    style="background-position: center center;"
-                  />
-                  <div
-                    class="v-responsive__content"
-                  />
-                </div>
-              </div>
-               
-              <div
-                class="flex xs6"
-              >
-                <div
-                  class="v-list__tile__content"
-                >
-                  <div
-                    class="v-list__tile__title"
+                    class="v-responsive v-image"
+                    style="height: 50px;"
                   >
-                    Postgres
+                    <div
+                      class="v-image__image v-image__image--preload v-image__image--contain"
+                      style="background-position: center center;"
+                    />
+                    <div
+                      class="v-responsive__content"
+                    />
                   </div>
                 </div>
-              </div>
-               
-              <div
-                class="flex health-status-indicator xs3"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon right mdi mdi-check-circle-outline theme--light healthy--text"
-                />
+                 
+                <div
+                  class="flex xs6"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Postgres
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex health-status-indicator xs3"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon right mdi mdi-check-circle-outline theme--light healthy--text"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          role="listitem"
-        >
           <div
-            class="v-list__tile theme--light"
+            role="listitem"
           >
             <div
-              class="layout service-dependency-item row"
+              class="v-list__tile theme--light"
             >
               <div
-                class="flex xs3"
+                class="layout service-dependency-item row"
               >
                 <div
-                  class="v-responsive v-image"
-                  style="height: 50px;"
+                  class="flex xs3"
                 >
                   <div
-                    class="v-image__image v-image__image--preload v-image__image--contain"
-                    style="background-position: center center;"
-                  />
-                  <div
-                    class="v-responsive__content"
-                  />
-                </div>
-              </div>
-               
-              <div
-                class="flex xs6"
-              >
-                <div
-                  class="v-list__tile__content"
-                >
-                  <div
-                    class="v-list__tile__title"
+                    class="v-responsive v-image"
+                    style="height: 50px;"
                   >
-                    RabbitMQ
+                    <div
+                      class="v-image__image v-image__image--preload v-image__image--contain"
+                      style="background-position: center center;"
+                    />
+                    <div
+                      class="v-responsive__content"
+                    />
                   </div>
                 </div>
-              </div>
-               
-              <div
-                class="flex health-status-indicator xs3"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon right mdi mdi-check-circle-outline theme--light healthy--text"
-                />
+                 
+                <div
+                  class="flex xs6"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      RabbitMQ
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex health-status-indicator xs3"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon right mdi mdi-check-circle-outline theme--light healthy--text"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </v-card-content>
+  </main>
 </div>
 `;
 
@@ -2290,157 +2304,164 @@ exports[`Storyshots Health/Health Card Healthy 1`] = `
     </div>
   </div>
    
-  <v-card-content>
+  <main
+    class="v-content"
+    style="padding: 0px 0px 0px 0px;"
+  >
     <div
-      class="v-card__actions"
+      class="v-content__wrap"
     >
-      <button
-        class="v-btn v-btn--flat theme--light"
-        type="button"
-      >
-        <div
-          class="v-btn__content"
-        >
-          Details
-        </div>
-      </button>
-       
       <div
-        class="spacer"
-      />
-       
-      <button
-        class="v-btn v-btn--icon theme--light"
-        type="button"
+        class="v-card__actions"
       >
-        <div
-          class="v-btn__content"
-        >
-          <i
-            aria-hidden="true"
-            class="v-icon mdi mdi-chevron-down theme--light"
-          />
-        </div>
-      </button>
-    </div>
-     
-    <div
-      class="v-list v-list--subheader v-list--two-line theme--light"
-      role="list"
-      style="display: none;"
-    >
-      <div>
-        <div
-          class="v-subheader theme--light"
-        >
-          Dependencies
-        </div>
-         
-        <div
-          role="listitem"
+        <button
+          class="v-btn v-btn--flat theme--light"
+          type="button"
         >
           <div
-            class="v-list__tile theme--light"
+            class="v-btn__content"
+          >
+            Details
+          </div>
+        </button>
+         
+        <div
+          class="spacer"
+        />
+         
+        <button
+          class="v-btn v-btn--icon theme--light"
+          type="button"
+        >
+          <div
+            class="v-btn__content"
+          >
+            <i
+              aria-hidden="true"
+              class="v-icon mdi mdi-chevron-down theme--light"
+            />
+          </div>
+        </button>
+      </div>
+       
+      <div
+        class="v-list v-list--subheader v-list--two-line theme--light"
+        role="list"
+        style="display: none;"
+      >
+        <div>
+          <div
+            class="v-subheader theme--light"
+          >
+            Dependencies
+          </div>
+           
+          <div
+            role="listitem"
           >
             <div
-              class="layout service-dependency-item row"
+              class="v-list__tile theme--light"
             >
               <div
-                class="flex xs3"
+                class="layout service-dependency-item row"
               >
                 <div
-                  class="v-responsive v-image"
-                  style="height: 50px;"
+                  class="flex xs3"
                 >
                   <div
-                    class="v-image__image v-image__image--preload v-image__image--contain"
-                    style="background-position: center center;"
-                  />
-                  <div
-                    class="v-responsive__content"
-                  />
-                </div>
-              </div>
-               
-              <div
-                class="flex xs6"
-              >
-                <div
-                  class="v-list__tile__content"
-                >
-                  <div
-                    class="v-list__tile__title"
+                    class="v-responsive v-image"
+                    style="height: 50px;"
                   >
-                    Postgres
+                    <div
+                      class="v-image__image v-image__image--preload v-image__image--contain"
+                      style="background-position: center center;"
+                    />
+                    <div
+                      class="v-responsive__content"
+                    />
                   </div>
                 </div>
-              </div>
-               
-              <div
-                class="flex health-status-indicator xs3"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon right mdi mdi-check-circle-outline theme--light healthy--text"
-                />
+                 
+                <div
+                  class="flex xs6"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      Postgres
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex health-status-indicator xs3"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon right mdi mdi-check-circle-outline theme--light healthy--text"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          role="listitem"
-        >
           <div
-            class="v-list__tile theme--light"
+            role="listitem"
           >
             <div
-              class="layout service-dependency-item row"
+              class="v-list__tile theme--light"
             >
               <div
-                class="flex xs3"
+                class="layout service-dependency-item row"
               >
                 <div
-                  class="v-responsive v-image"
-                  style="height: 50px;"
+                  class="flex xs3"
                 >
                   <div
-                    class="v-image__image v-image__image--preload v-image__image--contain"
-                    style="background-position: center center;"
-                  />
-                  <div
-                    class="v-responsive__content"
-                  />
-                </div>
-              </div>
-               
-              <div
-                class="flex xs6"
-              >
-                <div
-                  class="v-list__tile__content"
-                >
-                  <div
-                    class="v-list__tile__title"
+                    class="v-responsive v-image"
+                    style="height: 50px;"
                   >
-                    RabbitMQ
+                    <div
+                      class="v-image__image v-image__image--preload v-image__image--contain"
+                      style="background-position: center center;"
+                    />
+                    <div
+                      class="v-responsive__content"
+                    />
                   </div>
                 </div>
-              </div>
-               
-              <div
-                class="flex health-status-indicator xs3"
-              >
-                <i
-                  aria-hidden="true"
-                  class="v-icon right mdi mdi-check-circle-outline theme--light healthy--text"
-                />
+                 
+                <div
+                  class="flex xs6"
+                >
+                  <div
+                    class="v-list__tile__content"
+                  >
+                    <div
+                      class="v-list__tile__title"
+                    >
+                      RabbitMQ
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="flex health-status-indicator xs3"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="v-icon right mdi mdi-check-circle-outline theme--light healthy--text"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </v-card-content>
+  </main>
 </div>
 `;
 
@@ -4653,208 +4674,55 @@ exports[`Storyshots Nav Drawer Default 1`] = `
       class="v-list-item active"
       role="listitem"
     >
-      <router-link
-        class="v-list__tile v-list__tile--link theme--dark"
-      >
-        <div
-          class="v-list__tile__action"
-        >
-          <i
-            aria-hidden="true"
-            class="v-icon mdi mdi-view-dashboard theme--dark"
-          />
-        </div>
-         
-        <div
-          class="v-list__tile__title"
-        >
-          Dashboard
-        </div>
-      </router-link>
+      <!---->
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <router-link
-        class="v-list__tile v-list__tile--link theme--dark"
-      >
-        <div
-          class="v-list__tile__action"
-        >
-          <i
-            aria-hidden="true"
-            class="v-icon mdi mdi-account theme--dark"
-          />
-        </div>
-         
-        <div
-          class="v-list__tile__title"
-        >
-          User Profile
-        </div>
-      </router-link>
+      <!---->
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <router-link
-        class="v-list__tile v-list__tile--link theme--dark"
-      >
-        <div
-          class="v-list__tile__action"
-        >
-          <i
-            aria-hidden="true"
-            class="v-icon mdi mdi-clipboard-check theme--dark"
-          />
-        </div>
-         
-        <div
-          class="v-list__tile__title"
-        >
-          Todos
-        </div>
-      </router-link>
+      <!---->
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <router-link
-        class="v-list__tile v-list__tile--link theme--dark"
-      >
-        <div
-          class="v-list__tile__action"
-        >
-          <i
-            aria-hidden="true"
-            class="v-icon mdi mdi-spray-bottle theme--dark"
-          />
-        </div>
-         
-        <div
-          class="v-list__tile__title"
-        >
-          Apartment Cleaning
-        </div>
-      </router-link>
+      <!---->
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <router-link
-        class="v-list__tile v-list__tile--link theme--dark"
-      >
-        <div
-          class="v-list__tile__action"
-        >
-          <i
-            aria-hidden="true"
-            class="v-icon mdi mdi-cart theme--dark"
-          />
-        </div>
-         
-        <div
-          class="v-list__tile__title"
-        >
-          Household Items
-        </div>
-      </router-link>
+      <!---->
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <router-link
-        class="v-list__tile v-list__tile--link theme--dark"
-      >
-        <div
-          class="v-list__tile__action"
-        >
-          <i
-            aria-hidden="true"
-            class="v-icon mdi mdi-food-fork-drink theme--dark"
-          />
-        </div>
-         
-        <div
-          class="v-list__tile__title"
-        >
-          Home for Dinner
-        </div>
-      </router-link>
+      <!---->
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <router-link
-        class="v-list__tile v-list__tile--link theme--dark"
-      >
-        <div
-          class="v-list__tile__action"
-        >
-          <i
-            aria-hidden="true"
-            class="v-icon mdi mdi-washing-machine theme--dark"
-          />
-        </div>
-         
-        <div
-          class="v-list__tile__title"
-        >
-          Laundry
-        </div>
-      </router-link>
+      <!---->
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <router-link
-        class="v-list__tile v-list__tile--link theme--dark"
-      >
-        <div
-          class="v-list__tile__action"
-        >
-          <i
-            aria-hidden="true"
-            class="v-icon mdi mdi-delete theme--dark"
-          />
-        </div>
-         
-        <div
-          class="v-list__tile__title"
-        >
-          Garbage
-        </div>
-      </router-link>
+      <!---->
     </div>
     <div
       class="v-list-item"
       role="listitem"
     >
-      <router-link
-        class="v-list__tile v-list__tile--link theme--dark"
-      >
-        <div
-          class="v-list__tile__action"
-        >
-          <i
-            aria-hidden="true"
-            class="v-icon mdi mdi-heart theme--dark"
-          />
-        </div>
-         
-        <div
-          class="v-list__tile__title"
-        >
-          Application Health
-        </div>
-      </router-link>
+      <!---->
     </div>
   </div>
   <div

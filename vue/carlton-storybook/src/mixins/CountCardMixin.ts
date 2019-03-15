@@ -4,10 +4,10 @@ import { Vue, Component, Prop, Mixins } from "vue-property-decorator";
 @Component
 export default class CountCardMixin extends Vue {
   @Prop() count!: number;
-  @Prop() messageTemplate!: string;
 
   //Data
-  accentColor: string = "";
+  accentColor!: string;
+  messageTemplate!: string;
 
   // computed
   get computedMsg(): string {
