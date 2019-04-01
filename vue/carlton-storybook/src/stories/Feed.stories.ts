@@ -9,54 +9,7 @@ import FeedSubList from "../components/Feed/FeedSubList.vue";
 import Feed from "../components/Feed/Feed.vue";
 import results from "../../tests/jest-test-results.json";
 
-let data = {
-  items: [
-    {
-      timePeriod: "Today",
-      feedItems: [
-        {
-          avatar:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/1200px-Microsoft_Cortana_transparent.svg.png",
-          title: "Garbage",
-          message: "Nick took out the garbage."
-        },
-        {
-          avatar:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/1200px-Microsoft_Cortana_transparent.svg.png",
-          title: "Household Items",
-          message: "Nick purchased toilet paper."
-        },
-        {
-          avatar: "https://www.w3schools.com/w3images/avatar2.png",
-          title: "Nick",
-          message: "Steve, can you please order christmas gifts."
-        }
-      ]
-    },
-    {
-      timePeriod: "Yesterday",
-      feedItems: [
-        {
-          avatar:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/1200px-Microsoft_Cortana_transparent.svg.png",
-          title: "Garbage",
-          message: "Nick took out the garbage."
-        },
-        {
-          avatar:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/1200px-Microsoft_Cortana_transparent.svg.png",
-          title: "Household Items",
-          message: "Nick purchased toilet paper."
-        },
-        {
-          avatar: "https://www.w3schools.com/w3images/avatar2.png",
-          title: "Nick",
-          message: "Steve, can you please order christmas gifts."
-        }
-      ]
-    }
-  ]
-};
+import data from "../../tests/unit/Feed/TestData.json";
 
 storiesOf("Feed", module)
 .add("Default", () => ({

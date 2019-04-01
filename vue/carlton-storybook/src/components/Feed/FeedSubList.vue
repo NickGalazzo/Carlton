@@ -1,6 +1,6 @@
 <template>
 <div>
-    <v-subheader>
+    <v-subheader class="time-frame-header">
         {{items.timePeriod}}
     </v-subheader>
     <feed-item v-for="(item, i) in items.feedItems" :key="i" :item="item" />
