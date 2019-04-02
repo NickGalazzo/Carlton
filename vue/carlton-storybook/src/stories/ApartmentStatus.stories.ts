@@ -6,6 +6,9 @@ import ApartmentStatus from "../components/ApartmentStatus/ApartmentStatus.vue";
 import ApartmentStatusItem from "../components/ApartmentStatus/ApartmentStatusItem.vue";
 import ApartmentStatusList from "../components/ApartmentStatus/ApartmentStatusList.vue";
 
+import results from "../../tests/jest-test-results.json";
+import data from "../../tests/unit/ApartmentStatus/TestData.json";
+
 const statusContextOptions = {
   Garbage: "mdi-delete",
   Recycle: "mdi-recycle",
@@ -20,40 +23,13 @@ const statusTypeOptions = {
   Pending: 2
 };
 
-const data = {
-  statuses: [
-    {
-      icon: "mdi-delete",
-      statusId: 1
-    },
-    {
-      icon: "mdi-recycle",
-      statusId: 1
-    },
-    {
-      icon: "mdi-cart",
-      statusId: 1
-    },
-    {
-      icon: "mdi-spray-bottle",
-      statusId: 1
-    },
-    {
-      icon: "mdi-washing-machine",
-      statusId: 1
-    },
-    {
-      icon: "mdi-tie",
-      statusId: 1
-    }
-  ]
-};
+let model = Object.assign({}, data.statuses[0]);
 
 storiesOf("Apartment Status", module).add("Default", () => {
   return {
     components: {ApartmentStatus},
     template: "<apartment-status :statuses=statuses />",
-    data: () => data
+    data: () => ({statuses: data.statuses})
   };
 });
 
@@ -63,14 +39,14 @@ storiesOf("Apartment Status/Item", module)
     const statusIcon = select("Icon", statusContextOptions, "mdi-delete");
     const status = select("Status", statusTypeOptions, 1);
 
+    model.icon = statusIcon;
+    model.statusId = status;
+
     return {
       components: { ApartmentStatusItem },
       template: "<apartment-status-item :status='status'/>",
       data: () => ({
-        status: {
-          icon: statusIcon,
-          statusId: status
-        }
+        status: model
       })
     };
   })
@@ -78,14 +54,14 @@ storiesOf("Apartment Status/Item", module)
     const statusIcon = select("Icon", statusContextOptions, "mdi-delete");
     const status = select("Status", statusTypeOptions, 2);
 
+    model.icon = statusIcon;
+    model.statusId = status;
+
     return {
       components: { ApartmentStatusItem },
       template: "<apartment-status-item :status='status'/>",
       data: () => ({
-        status: {
-          icon: statusIcon,
-          statusId: status
-        }
+        status: model 
       })
     };
   });
@@ -154,4 +130,14 @@ storiesOf("Apartment Status/List", module)
       data: () => data
     };
   });
+
+  storiesOf("/Apartment Status/Apartment Status Tests", module)
+  .addDecorator(withTests({ results }))
+  .add(
+    "This story shows tests results from ApartmentStatus Components",
+    () => "<div>Jest results in storybook</div>",
+    {
+      jest: ["ApartmentStatusItem.spec.js", "ApartmentStatusList.spec.js"]
+    }
+  );
 

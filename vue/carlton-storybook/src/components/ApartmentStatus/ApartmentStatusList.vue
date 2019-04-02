@@ -1,8 +1,8 @@
-<template functional>
+<template>
 <v-list class="apartment-status-list">
     <div>
         <template>
-            <apartment-status-item v-for="(status, i) in props.statuses" :key="i" :status="status" />
+            <apartment-status-item v-for="(status, i) in statuses" :key="i" :status="status" />
         </template>
     </div>
 </v-list>
@@ -18,7 +18,6 @@ import {
 import ApartmentStatusItem from './ApartmentStatusItem.vue';
 import ApartmentStatusModel from '../../models/ApartmentStatusModel';
 
-Vue.component("apartment-status-item", ApartmentStatusItem);
 
 @Component({
     components: {

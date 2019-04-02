@@ -6,7 +6,6 @@
     <template slot="content">
         <apartment-status-list :statuses="statuses" />
     </template>
-
 </base-dashboard-card>
 </template>
 <script lang="ts">

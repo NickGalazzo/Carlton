@@ -1,15 +1,15 @@
-<template functional>
+<template>
 <v-card class="base-count-card">
     <v-card-title primary-title>
         <v-layout>
             <v-flex xs4>
-                <div class="card-img" v-bind:style="{ 'background-color': props.accentColor}">
-                    <v-icon size="25">{{props.icon}}</v-icon>
+                <div class="card-img" v-bind:style="{ 'background-color': accentColor}">
+                    <v-icon size="25" class="count-icon">{{icon}}</v-icon>
                 </div>
             </v-flex>
             <v-flex xs8>
                 <v-subheader>
-                    <span>{{props.message}}</span>
+                    <span class="msg">{{message}}</span>
                 </v-subheader>
             </v-flex>
             <v-spacer></v-spacer>

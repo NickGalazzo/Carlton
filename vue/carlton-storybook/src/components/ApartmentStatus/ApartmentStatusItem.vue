@@ -1,14 +1,14 @@
-<template functional>
+<template>
 <v-layout row class="status-row">
     <v-flex xs4>
-        <v-icon :color="$style.statusIconColor" class="right">{{props.status.icon}}</v-icon>
+        <v-icon :color="$style.statusIconColor" class="right domain-icon">{{status.icon}}</v-icon>
     </v-flex>
     <v-spacer></v-spacer>
-    <v-flex xs4 v-if="props.status.statusId === 1">
-        <v-icon :color="$style.completedColor" class="right">mdi-checkbox-marked-circle</v-icon>
+    <v-flex xs4 v-if="status.statusId === 1">
+        <v-icon :color="$style.completedColor" class="right status-icon">mdi-checkbox-marked-circle</v-icon>
     </v-flex>
       <v-flex xs4 v-else>
-        <v-icon :color="$style.pendingColor" class="right">mdi-alert</v-icon>
+        <v-icon :color="$style.pendingColor" class="right status-icon">mdi-alert</v-icon>
     </v-flex>
     <v-spacer></v-spacer>
 </v-layout>
