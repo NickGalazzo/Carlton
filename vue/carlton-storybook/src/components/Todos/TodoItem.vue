@@ -2,9 +2,9 @@
 <div class="todo">
     <v-list-tile>
         <v-icon v-if="item.isCompleted" class="completed right" :color="true ? checkedColor : 'grey'" v-on:click="item.isCompleted=false" >mdi-checkbox-marked-circle</v-icon>
-        <v-checkbox v-bind:class="{ 'completed': item.isCompleted }" :label="item.name" v-model="item.isCompleted"></v-checkbox>
+        <v-checkbox off-icon="mdi-checkbox-blank-outline" v-bind:class="{ 'completed': item.isCompleted }" :label="item.name" v-model="item.isCompleted"></v-checkbox>
         <v-list-tile-action>
-            <v-btn flat small :color="buttonColor" @click="$emit('navigateToTodo', item.todoId)">View</v-btn>
+            <v-btn class="view-btn" flat small :color="buttonColor" @click="$emit('navigateToTodo', item.todoId)">View</v-btn>
         </v-list-tile-action>
     </v-list-tile>
 </div>

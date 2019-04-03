@@ -1,0 +1,16 @@
+{
+    "items": [
+      {
+        "name": "Take out garbage.",
+        "isCompleted": false
+      },
+      {
+        "name": "Empty the dishwasher.",
+        "isCompleted": true
+      },
+      {
+        "name": "Pay the rent.",
+        "isCompleted": false
+      }
+    ]
+}

@@ -1,30 +1,17 @@
 import { storiesOf } from "@storybook/vue";
 import { withKnobs, text, boolean } from "@storybook/addon-knobs";
+import { withTests } from "@storybook/addon-jest";
 
 import { action } from "@storybook/addon-actions";
 import Todos from "../components/Todos/Todos.vue";
 import TodoItem from "../components/Todos/TodoItem.vue";
 import TodoList from "../components/Todos/TodoList.vue";
 
-let data = {
-  items: [
-    {
-      name: "Take out garbage.",
-      isCompleted: true
-    },
-    {
-      name: "Empty the dishwasher.",
-      isCompleted: true
-    },
-    {
-      name: "Pay the rent.",
-      isCompleted: false
-    }
-  ]
-};
+import results from "../../tests/jest-test-results.json";
+import data from "../../tests/unit/Todos/TestData.json";
 
 export const methods = {
-  navigateToTodo: action('navigateToTodo')
+  navigateToTodo: action("navigateToTodo")
 };
 
 storiesOf("Todos", module).add("Default", () => {
@@ -35,21 +22,22 @@ storiesOf("Todos", module).add("Default", () => {
   };
 });
 
+let model = Object.assign({}, data.items[0]);
+
 storiesOf("Todos/Item", module)
   .addDecorator(withKnobs)
   .add("Incomplete", () => {
     const name = text("Task Name", "Take out the garbage.");
     const isCompleted = boolean("completed", false);
 
+    model.name = name;
+    model.isCompleted = isCompleted;
+
     return {
       components: { TodoItem },
       template: "<todo-item :item='item' @navigateToTodo='navigateToTodo'/>",
       data: () => ({
-        item: {
-          todoId: 1,
-          name: name,
-          isCompleted: isCompleted
-        }
+        item: model
       }),
       methods
     };
@@ -58,22 +46,22 @@ storiesOf("Todos/Item", module)
     const name = text("Task Name", "Take out the garbage.");
     const isCompleted = boolean("completed", true);
 
+    model.name = name;
+    model.isCompleted = isCompleted;
+
     return {
       components: { TodoItem },
       template: "<todo-item :item='item' @navigateToTodo='navigateToTodo'/>",
       data: () => ({
-        item: {
-          todoId: 1,
-          name: name,
-          isCompleted: isCompleted
-        }
+        item: model
       }),
       methods
     };
   });
 
-storiesOf("Todos/List", module).add("Todo List", () => ({
-  components: { TodoList },
-  template: "<todo-list v-bind:items='items'/>",
-  data: () => data
-}));
+
+storiesOf("Todo/Tests", module)
+  .addDecorator(withTests({results}))
+  .add("Test Results ", () => "<div>Jest results in storybook</div>", {
+    jest: ["Todo.spec.js", "TodoList.spec.js"]
+  });

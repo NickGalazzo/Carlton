@@ -1,6 +1,6 @@
-<template functional>
+<template>
 <v-list>
-    <todo-item v-for="(item, i) in props.items" v-bind:key="i" v-bind:item="item"></todo-item>
+    <todo-item v-for="(item, i) in items" :key="i" :item="item"></todo-item>
 </v-list>
 </template>
 

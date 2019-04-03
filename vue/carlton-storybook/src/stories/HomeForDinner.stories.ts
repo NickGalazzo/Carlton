@@ -53,9 +53,6 @@ storiesOf("Home for Dinner/Item", module)
     model.isHomeForDinner = isHome;
     model.reason = reason;
 
-    console.log("testing:");
-    console.log(model);
-
     return {
       components: { HomeForDinnerItem },
       template: "<home-for-dinner-item v-bind:item='model'/>",
@@ -70,9 +67,6 @@ storiesOf("Home for Dinner/Item", module)
     model.isHomeForDinner = isHome;
     model.reason = reason;
 
-    console.log("testing:");
-    console.log(model);
-
     return {
       components: { HomeForDinnerItem },
       template: "<home-for-dinner-item v-bind:item='model'/>",
@@ -83,8 +77,6 @@ storiesOf("Home for Dinner/Item", module)
 storiesOf("Home for Dinner/List", module)
   .addDecorator(withKnobs)
   .add("Default", () => {
-
-    console.log(data)
 
     return {
       components: { HomeForDinnerList },
