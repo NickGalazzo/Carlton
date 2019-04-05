@@ -9,15 +9,15 @@
     </v-layout>
     <v-layout class="home-for-dinner-toggle">
         <v-spacer></v-spacer>
-        <v-flex xs8>
-            <v-switch v-model="isHomeForDinner" :color="activeColor" @change="$emit('setHomeForDinnerStatus', isHomeForDinner)"></v-switch>
+        <v-flex xs8 offset-xs5 >
+            <v-switch  v-model="isHomeForDinner" :color="activeColor" @change="$emit('setHomeForDinnerStatus', isHomeForDinner)"></v-switch>    
         </v-flex>
         <v-spacer></v-spacer>
     </v-layout>
     <v-layout>
-        <v-spacer></v-spacer>
-        <v-text-field value="test" :disabled="isHomeForDinner==true" label="Where will you be?" v-model="reason"></v-text-field>
-        <v-spacer></v-spacer>
+      <!--  <v-spacer></v-spacer> -->
+       <v-text-field  :disabled="isHomeForDinner==true" label="Where will you be?" v-model="reason"></v-text-field>
+      <!--  <v-spacer></v-spacer> -->
     </v-layout>
 </div>
 </template>
@@ -34,10 +34,10 @@ import colors from '../../styles/colors.scss';
 
 @Component
 export default class HomeForDinnerInput extends Vue {
-    @Prop() model!: HomeForDinnerModel;
+    @Prop() item!: HomeForDinnerModel;
 
-    isHomeForDinner: boolean = this.model ? this.model.isHomeForDinner : false;
-    reason: string = this.model ? this.model.reason : "";
+    isHomeForDinner: boolean = this.item ? this.item.isHomeForDinner : false;
+    reason: string = this.item ? this.item.reason : "";
     activeColor: string = colors.activeColor;
 }
 </script>

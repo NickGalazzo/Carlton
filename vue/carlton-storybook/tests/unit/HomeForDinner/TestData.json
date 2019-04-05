@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "name": "Nick",
+      "isHomeForDinner": true,
+      "reason": "Working late"
+    },
+    {
+      "name": "Stephen",
+      "isHomeForDinner": false,
+      "reason": "Japneese Class"
+    }
+  ]
+}

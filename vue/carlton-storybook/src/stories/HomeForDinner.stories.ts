@@ -8,6 +8,7 @@ import {
 } from "@storybook/addon-knobs";
 
 import { action } from "@storybook/addon-actions";
+import { withTests } from "@storybook/addon-jest";
 
 import HomeForDinnerItem from "../components/HomeForDinner/HomeForDinnerItem.vue";
 import HomeForDinnerList from "../components/HomeForDinner/HomeForDinnerList.vue";
@@ -15,31 +16,22 @@ import HomeForDinnerInput from "../components/HomeForDinner/HomeForDinnerInput.v
 import HomeForDinner from "../components/HomeForDinner/HomeForDinner.vue";
 import HomeForDinnerModel from "models/HomeForDinnerModel";
 
-const data = {
-  items: [
-    {
-      name: "Nick",
-      isHomeForDinner: false,
-      reason: "Working late"
-    },
-    {
-      name: "Stephen",
-      isHomeForDinner: false,
-      reason: "Japneese Class"
-    }
-  ]
-};
+import results from "../../tests/jest-test-results.json";
+import data from "../../tests/unit/HomeForDinner/TestData.json";
+
+
 
 export const methods = {
   setHomeForDinnerStatus: action('setHomeForDinnerStatus')
 };
 
+let model = Object.assign({}, data.items[0]);
 
 storiesOf("Home for Dinner", module)
   .addDecorator(withKnobs)
   .add("Default", () => ({
     components: { HomeForDinner },
-    template: "<home-for-dinner v-bind:items='items'/>",
+    template: "<home-for-dinner :items='items'/>",
     data: () => (data)
   }));
 
@@ -48,22 +40,20 @@ storiesOf("Home for Dinner/Item", module)
   .add("Home", () => {
     const isHome = boolean("Is Home?", true);
     const reason = text("reason", "");
-
-    const model: HomeForDinnerModel = Object.assign({}, data.items[1]);
+   
     model.isHomeForDinner = isHome;
     model.reason = reason;
 
     return {
       components: { HomeForDinnerItem },
-      template: "<home-for-dinner-item v-bind:item='model'/>",
-      data: () => ({ model })
+      template: "<home-for-dinner-item :item='model'/>",
+      data: () => ({model})
     };
   })
   .add("Not Home", () => {
     const isHome = boolean("Is Home?", false);
     const reason = text("reason", "Japaneese Class");
 
-    const model: HomeForDinnerModel = Object.assign({}, data.items[1]);
     model.isHomeForDinner = isHome;
     model.reason = reason;
 
@@ -104,7 +94,7 @@ storiesOf("Home for Dinner/Input", module)
     const isHome = boolean("Is Home?", true);
     const reason = text("reason", "");
 
-    const model : HomeForDinnerModel = Object.assign({}, data.items[1]);
+    const model = Object.assign({}, data.items[1]);
     model.isHomeForDinner = isHome;
     model.reason = reason;
 
@@ -119,7 +109,7 @@ storiesOf("Home for Dinner/Input", module)
     const isHome = boolean("Is Home?", false);
     const reason = text("reason", "Working Late");
 
-    const model : HomeForDinnerModel = Object.assign({}, data.items[1]);
+    const model = Object.assign({}, data.items[1]);
     model.isHomeForDinner = isHome;
     model.reason = reason;
 
@@ -130,3 +120,9 @@ storiesOf("Home for Dinner/Input", module)
       methods
     };
   });
+
+  storiesOf("Home for Dinner/Test Results", module)
+    .addDecorator(withTests({results}))
+    .add("Test Results ", () => "<div>Jest results in storybook</div>", {
+      jest: ["HomeForDinnerInput.spec.js", "HomeForDinnerItem.spec.js", "HomeForDinnerItemList.spec.js"]
+    });
