@@ -1,10 +1,13 @@
 import { storiesOf } from "@storybook/vue";
 import { withKnobs, text, number } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
+import { withTests } from "@storybook/addon-jest";
 
 import HouseholdItems from "../components/HouseholdItems/HouseholdItems.vue";
 import HouseholdItem from "../components/HouseholdItems/HouseholdItem.vue";
 import HouseholdItemList from "../components/HouseholdItems/HouseholdItemList.vue";
+import results from "../../tests/jest-test-results.json";
+import data from "../../tests/unit/HouseholdItem/TestData.json"; 
 
 const options = {
   range: true,
@@ -13,57 +16,12 @@ const options = {
   step: 1
 };
 
-let data = {
-  items: [
-    {
-      id: 1,
-      name: "Toilet Paper",
-      percentRemaining: 15
-    },
-    {
-      id: 2,
-      name: "Paper Towels",
-      percentRemaining: 50
-    },
-    {
-      id: 3,
-      name: "Dish Soap",
-      percentRemaining: 80
-    },
-    {
-      id: 4,
-      name: "Swiffers",
-      percentRemaining: 90
-    },
-    {
-      id: 5,
-      name: "Hand Soap",
-      percentRemaining: 90
-    },
-    {
-      id: 6,
-      name: "Tooth Paste",
-      percentRemaining: 93
-    },
-    {
-      id: 1,
-      name: "Razor Blades",
-      percentRemaining: 100
-    },
-    {
-      id: 1,
-      name: "Paper Plates",
-      percentRemaining: 100
-    }
-  ]
-};
-
 export const methods = {
   navigateToHouseholdItem: action('navigateToHouseholdItem')
 };
 
 
-storiesOf("House Hold Items", module).add("Default", () => {
+storiesOf("Household Items", module).add("Default", () => {
   return {
     components: { HouseholdItems },
     template: `<household-items :items="items"/>`,
@@ -71,7 +29,7 @@ storiesOf("House Hold Items", module).add("Default", () => {
   };
 });
 
-storiesOf("House Hold Items/Single Item", module)
+storiesOf("Household Items/Single Item", module)
   .addDecorator(withKnobs)
   .add("Status Green", () => {
     const itemName = text("Item Name", "Swiffer");
@@ -125,7 +83,7 @@ storiesOf("House Hold Items/Single Item", module)
     };
   });
 
-storiesOf("House Hold Items/List", module)
+storiesOf("Household Items/List", module)
   .add("Default", () => ({
     components: { HouseholdItemList },
     template: `<household-item-list :items="items"/>`,
@@ -138,3 +96,9 @@ storiesOf("House Hold Items/List", module)
       items: []
     })
   }));
+
+  storiesOf("Household Items/Test Results", module)
+    .addDecorator(withTests({results}))
+    .add("Test Results ", () => "<div>Jest results in storybook</div>", {
+      jest: ["HouseholdItem.spec.js", "HouseholdItemList.spec.js"]
+    });

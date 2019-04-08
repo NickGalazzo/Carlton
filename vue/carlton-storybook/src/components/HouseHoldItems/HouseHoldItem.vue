@@ -2,9 +2,9 @@
 <v-list-tile class="v-list-item">
     <v-list-tile-content>
         <v-subheader>{{item.name}}</v-subheader>
-        <v-progress-linear v-if="item.percentRemaining>=75" :color="$style.highColor" height="5" v-bind:value="item.percentRemaining"></v-progress-linear>
-        <v-progress-linear v-else-if="item.percentRemaining<50" :color="$style.lowColor" height="5" v-bind:value="item.percentRemaining"></v-progress-linear>
-        <v-progress-linear v-else :color="$style.mediumColor" height="5" v-bind:value="item.percentRemaining"></v-progress-linear>
+        <v-progress-linear class="high-item" v-if="item.percentRemaining>=75" :color="$style.highColor" height="5" v-bind:value="item.percentRemaining"></v-progress-linear>
+        <v-progress-linear class="low-item" v-else-if="item.percentRemaining<50" :color="$style.lowColor" height="5" v-bind:value="item.percentRemaining"></v-progress-linear>
+        <v-progress-linear class="medium-item" v-else :color="$style.mediumColor" height="5" v-bind:value="item.percentRemaining"></v-progress-linear>
     </v-list-tile-content>
 
     <v-list-tile-action>
