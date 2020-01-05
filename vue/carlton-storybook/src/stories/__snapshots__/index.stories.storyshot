@@ -1,0 +1,903 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Garbage Card Defeault 1`] = `
+<v-container
+  fluid=""
+  grid-list-lg=""
+  style="background-color: rgb(238, 238, 238);"
+>
+  <v-layout
+    row=""
+    wrap=""
+  >
+    <v-flex
+      xs3=""
+    >
+      <v-card>
+        <v-card-title
+          primary-title=""
+        >
+          <v-layout>
+            <v-flex
+              xs4=""
+            >
+              <div
+                style="height: 50px; width: 50px; background-color: rgb(164, 138, 219); border-radius: 50px;"
+              >
+                <v-icon
+                  style="font-size: 25px; color: white; margin: 12.5px;"
+                >
+                  mdi-clipboard-check
+                </v-icon>
+              </div>
+            </v-flex>
+             
+            <v-flex
+              xs8=""
+            >
+              <v-subheader>
+                
+                                5 Open Tasks
+                            
+              </v-subheader>
+            </v-flex>
+             
+            <v-spacer />
+          </v-layout>
+        </v-card-title>
+         
+        <v-card-content />
+      </v-card>
+    </v-flex>
+     
+    <v-flex
+      xs3=""
+    >
+      <v-card>
+        <v-card-title
+          primary-title=""
+        >
+          <v-layout>
+            <v-flex
+              xs4=""
+            >
+              <div
+                style="height: 50px; width: 50px; background-color: rgb(29, 191, 212); border-radius: 50px;"
+              >
+                <v-icon
+                  style="font-size: 25px; color: white; margin: 12.5px;"
+                >
+                  mdi-home
+                </v-icon>
+              </div>
+            </v-flex>
+             
+            <v-flex
+              xs8=""
+            >
+              <v-subheader>
+                
+                                3 Statuses
+                            
+              </v-subheader>
+            </v-flex>
+             
+            <v-spacer />
+          </v-layout>
+        </v-card-title>
+         
+        <v-card-content />
+      </v-card>
+    </v-flex>
+     
+    <v-flex
+      xs3=""
+    >
+      <v-card>
+        <v-card-title
+          primary-title=""
+        >
+          <v-layout>
+            <v-flex
+              xs4=""
+            >
+              <div
+                style="height: 50px; width: 50px; background-color: rgb(254, 192, 10); border-radius: 50px;"
+              >
+                <v-icon
+                  style="font-size: 25px; color: white; margin: 12.5px;"
+                >
+                  mdi-cart
+                </v-icon>
+              </div>
+            </v-flex>
+             
+            <v-flex
+              xs8=""
+            >
+              <v-subheader>
+                
+                                5 Low Items
+                            
+              </v-subheader>
+            </v-flex>
+             
+            <v-spacer />
+          </v-layout>
+        </v-card-title>
+         
+        <v-card-content />
+      </v-card>
+    </v-flex>
+     
+    <v-flex
+      xs3=""
+    >
+      <v-card>
+        <v-card-title
+          primary-title=""
+        >
+          <v-layout>
+            <v-flex
+              xs4=""
+            >
+              <div
+                style="height: 50px; width: 50px; background-color: rgb(122, 194, 154); border-radius: 50px;"
+              >
+                <v-icon
+                  style="font-size: 25px; color: white; margin: 12.5px;"
+                >
+                  mdi-silverware-fork-knife
+                </v-icon>
+              </div>
+            </v-flex>
+             
+            <v-flex
+              xs8=""
+            >
+              <v-subheader
+                style="font-size: 12;"
+              >
+                
+                                1 Person Home For Dinner
+                            
+              </v-subheader>
+            </v-flex>
+             
+            <v-spacer />
+          </v-layout>
+        </v-card-title>
+         
+        <v-card-content />
+      </v-card>
+    </v-flex>
+  </v-layout>
+   
+  <v-layout
+    row=""
+    wrap=""
+  >
+    <v-flex
+      xs4=""
+    >
+      <v-card
+        class="dashboard-card"
+      >
+        <v-card-title
+          primary-title=""
+        >
+          <div
+            class="title"
+          >
+            Home For Dinner
+          </div>
+        </v-card-title>
+         
+        <div>
+          <v-list>
+            <v-list-tile
+              avatar=""
+            >
+              <v-list-tile-avatar>
+                <img
+                  src="https://www.w3schools.com/w3images/avatar2.png"
+                />
+              </v-list-tile-avatar>
+               
+              <v-list-tile-content>
+                <v-list-tile-title>
+                  Stephen
+                </v-list-tile-title>
+                 
+                <v-list-tile-sub-title>
+                  Japaneese Class
+                </v-list-tile-sub-title>
+              </v-list-tile-content>
+               
+              <v-list-tile-action>
+                <v-icon
+                  color="teal"
+                >
+                  mdi-food
+                </v-icon>
+              </v-list-tile-action>
+            </v-list-tile>
+          </v-list>
+           
+          <v-layout>
+            <v-spacer />
+             
+            <v-flex
+              xs6=""
+            >
+              <span>
+                Are you home for dinner?
+              </span>
+            </v-flex>
+             
+            <v-spacer />
+          </v-layout>
+           
+          <v-layout>
+            <v-spacer />
+             
+            <v-flex
+              xs8=""
+            >
+              <v-switch
+                color="blue"
+              />
+               
+              <v-text-field
+                disabled="true"
+                label="Where will you be?"
+              />
+            </v-flex>
+             
+            <v-spacer />
+          </v-layout>
+        </div>
+      </v-card>
+    </v-flex>
+     
+    <v-flex
+      xs4=""
+    >
+      <v-card
+        class="dashboard-card"
+      >
+        <v-card-title
+          primary-title=""
+        >
+          <div
+            class="title"
+          >
+            Apartment Status
+          </div>
+        </v-card-title>
+         
+        <v-layout>
+          <v-flex
+            xs4=""
+          >
+            <v-icon
+              class="right"
+              color="blue"
+            >
+              mdi-delete
+            </v-icon>
+          </v-flex>
+           
+          <v-spacer />
+           
+          <v-flex
+            xs4=""
+          >
+            <v-icon
+              class="right"
+              color="green"
+            >
+              mdi-checkbox-marked-circle
+            </v-icon>
+          </v-flex>
+           
+          <v-spacer />
+        </v-layout>
+         
+        <v-layout>
+          <v-flex
+            xs4=""
+          >
+            <v-icon
+              class="right"
+              color="blue"
+            >
+              mdi-recycle
+            </v-icon>
+          </v-flex>
+           
+          <v-spacer />
+           
+          <v-flex
+            xs4=""
+          >
+            <v-icon
+              class="right"
+              color="green"
+            >
+              mdi-checkbox-marked-circle
+            </v-icon>
+          </v-flex>
+           
+          <v-spacer />
+        </v-layout>
+         
+        <v-layout>
+          <v-flex
+            xs4=""
+          >
+            <v-icon
+              class="right"
+              color="blue"
+            >
+              mdi-cart
+            </v-icon>
+          </v-flex>
+           
+          <v-spacer />
+           
+          <v-flex
+            xs4=""
+          >
+            <v-icon
+              class="right"
+              color="green"
+            >
+              mdi-checkbox-marked-circle
+            </v-icon>
+          </v-flex>
+           
+          <v-spacer />
+        </v-layout>
+         
+        <v-layout>
+          <v-flex
+            xs4=""
+          >
+            <v-icon
+              class="right"
+              color="blue"
+            >
+              mdi-home
+            </v-icon>
+          </v-flex>
+           
+          <v-spacer />
+           
+          <v-flex
+            xs4=""
+          >
+            <v-icon
+              class="right"
+              color="green"
+            >
+              mdi-checkbox-marked-circle
+            </v-icon>
+          </v-flex>
+           
+          <v-spacer />
+        </v-layout>
+         
+        <v-layout>
+          <v-flex
+            xs4=""
+          >
+            <v-icon
+              class="right"
+              color="blue"
+            >
+              mdi-spray-bottle
+            </v-icon>
+          </v-flex>
+           
+          <v-spacer />
+           
+          <v-flex
+            xs4=""
+          >
+            <v-icon
+              class="right"
+              color="green"
+            >
+              mdi-checkbox-marked-circle
+            </v-icon>
+          </v-flex>
+           
+          <v-spacer />
+        </v-layout>
+         
+        <v-layout>
+          <v-flex
+            xs4=""
+          >
+            <v-icon
+              class="right"
+              color="blue"
+            >
+              mdi-washing-machine
+            </v-icon>
+          </v-flex>
+           
+          <v-spacer />
+           
+          <v-flex
+            xs4=""
+          >
+            <v-icon
+              class="right"
+              color="green"
+            >
+              mdi-checkbox-marked-circle
+            </v-icon>
+          </v-flex>
+           
+          <v-spacer />
+        </v-layout>
+         
+        <v-layout>
+          <v-flex
+            xs4=""
+          >
+            <v-icon
+              class="right"
+              color="blue"
+            >
+              mdi-tie
+            </v-icon>
+          </v-flex>
+           
+          <v-spacer />
+           
+          <v-flex
+            xs4=""
+          >
+            <v-icon
+              class="right"
+              color="green"
+            >
+              mdi-checkbox-marked-circle
+            </v-icon>
+          </v-flex>
+           
+          <v-spacer />
+        </v-layout>
+      </v-card>
+    </v-flex>
+     
+    <v-flex
+      xs4=""
+    >
+      <v-card
+        class="dashboard-card"
+      >
+        <v-card-title
+          primary-title=""
+        >
+          <div
+            class="title"
+          >
+            Household Items
+          </div>
+        </v-card-title>
+         
+        <div
+          class="card-scroll-content"
+        >
+          <v-container
+            fluid=""
+          >
+            <v-list>
+              <v-list-tile>
+                <v-list-tile-content>
+                  <v-subheader>
+                    Toilet Paper
+                  </v-subheader>
+                   
+                  <v-progress-linear
+                    color="red"
+                    height="5"
+                    value="15"
+                  />
+                </v-list-tile-content>
+                 
+                <v-list-tile-action>
+                  <v-btn
+                    icon=""
+                    ripple=""
+                  >
+                    <v-btn
+                      color="blue"
+                      flat=""
+                      small=""
+                    >
+                      view
+                    </v-btn>
+                  </v-btn>
+                </v-list-tile-action>
+              </v-list-tile>
+               
+              <v-list-tile>
+                <v-list-tile-content>
+                  <v-subheader>
+                    Paper Towels
+                  </v-subheader>
+                   
+                  <v-progress-linear
+                    color="yellow"
+                    height="5"
+                    value="50"
+                  />
+                </v-list-tile-content>
+                 
+                <v-list-tile-action>
+                  <v-btn
+                    icon=""
+                    ripple=""
+                  >
+                    <v-btn
+                      color="blue"
+                      flat=""
+                      small=""
+                    >
+                      view
+                    </v-btn>
+                  </v-btn>
+                </v-list-tile-action>
+              </v-list-tile>
+               
+              <v-list-tile>
+                <v-list-tile-content>
+                  <v-subheader>
+                    Dish Soap
+                  </v-subheader>
+                   
+                  <v-progress-linear
+                    color="green"
+                    height="5"
+                    value="80"
+                  />
+                </v-list-tile-content>
+                 
+                <v-list-tile-action>
+                  <v-btn
+                    icon=""
+                    ripple=""
+                  >
+                    <v-btn
+                      color="blue"
+                      flat=""
+                      small=""
+                    >
+                      view
+                    </v-btn>
+                  </v-btn>
+                </v-list-tile-action>
+              </v-list-tile>
+               
+              <v-list-tile>
+                <v-list-tile-content>
+                  <v-subheader>
+                    Swiffers
+                  </v-subheader>
+                   
+                  <v-progress-linear
+                    color="green"
+                    height="5"
+                    value="90"
+                  />
+                </v-list-tile-content>
+                 
+                <v-list-tile-action>
+                  <v-btn
+                    icon=""
+                    ripple=""
+                  >
+                    <v-btn
+                      color="blue"
+                      flat=""
+                      small=""
+                    >
+                      view
+                    </v-btn>
+                  </v-btn>
+                </v-list-tile-action>
+              </v-list-tile>
+            </v-list>
+          </v-container>
+        </div>
+      </v-card>
+    </v-flex>
+  </v-layout>
+   
+  <v-layout
+    row=""
+    wrap=""
+  >
+    <v-flex
+      xs6=""
+    >
+      <v-card
+        class=" task-card"
+      >
+        <v-card-title
+          primary-title=""
+        >
+          <div
+            class="title"
+          >
+            Tasks
+          </div>
+        </v-card-title>
+         
+        <div
+          class="card-scroll-content"
+        >
+          <v-container
+            fluid=""
+          >
+            <v-list>
+              <v-list-tile>
+                <v-list-tile-title>
+                  <v-checkbox
+                    label="Take out garbage."
+                  />
+                </v-list-tile-title>
+                 
+                <v-list-tile-action>
+                  <v-btn
+                    icon=""
+                    ripple=""
+                  >
+                    <v-btn
+                      color="blue"
+                      flat=""
+                      small=""
+                    >
+                      view
+                    </v-btn>
+                  </v-btn>
+                </v-list-tile-action>
+              </v-list-tile>
+               
+              <v-list-tile>
+                <v-list-tile-title>
+                  <v-checkbox
+                    label="Go Shopping."
+                  />
+                </v-list-tile-title>
+                 
+                <v-list-tile-action>
+                  <v-btn
+                    icon=""
+                    ripple=""
+                  >
+                    <v-btn
+                      color="blue"
+                      flat=""
+                      small=""
+                    >
+                      view
+                    </v-btn>
+                  </v-btn>
+                </v-list-tile-action>
+              </v-list-tile>
+               
+              <v-list-tile>
+                <v-list-tile-title>
+                  <v-checkbox
+                    label="Take out garbage."
+                  />
+                </v-list-tile-title>
+                 
+                <v-list-tile-action>
+                  <v-btn
+                    icon=""
+                    ripple=""
+                  >
+                    <v-btn
+                      color="blue"
+                      flat=""
+                      small=""
+                    >
+                      view
+                    </v-btn>
+                  </v-btn>
+                </v-list-tile-action>
+              </v-list-tile>
+               
+              <v-list-tile>
+                <v-list-tile-title>
+                  <v-checkbox
+                    label="Go Shopping."
+                  />
+                </v-list-tile-title>
+                 
+                <v-list-tile-action>
+                  <v-btn
+                    icon=""
+                    ripple=""
+                  >
+                    <v-btn
+                      color="blue"
+                      flat=""
+                      small=""
+                    >
+                      view
+                    </v-btn>
+                  </v-btn>
+                </v-list-tile-action>
+              </v-list-tile>
+               
+              <v-list-tile>
+                <v-list-tile-title>
+                  <v-checkbox
+                    label="Take out garbage."
+                  />
+                </v-list-tile-title>
+                 
+                <v-list-tile-action>
+                  <v-btn
+                    icon=""
+                    ripple=""
+                  >
+                    <v-btn
+                      color="blue"
+                      flat=""
+                      small=""
+                    >
+                      view
+                    </v-btn>
+                  </v-btn>
+                </v-list-tile-action>
+              </v-list-tile>
+               
+              <v-list-tile>
+                <v-list-tile-title>
+                  <v-checkbox
+                    label="Go Shopping."
+                  />
+                </v-list-tile-title>
+                 
+                <v-list-tile-action>
+                  <v-btn
+                    icon=""
+                    ripple=""
+                  >
+                    <v-btn
+                      color="blue"
+                      flat=""
+                      small=""
+                    >
+                      view
+                    </v-btn>
+                  </v-btn>
+                </v-list-tile-action>
+              </v-list-tile>
+            </v-list>
+          </v-container>
+        </div>
+      </v-card>
+    </v-flex>
+     
+    <v-flex
+      xs6=""
+    >
+      <v-card>
+        <v-card-title
+          primary-title=""
+        >
+          <div
+            class="title"
+          >
+            Feed
+          </div>
+        </v-card-title>
+         
+        <div
+          class="card-scroll-content"
+        >
+          <v-list
+            two-line=""
+          >
+            <v-subheader>
+              
+                                Today
+                            
+            </v-subheader>
+             
+            <v-list-tile
+              avatar=""
+            >
+              <v-list-tile-avatar>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/1200px-Microsoft_Cortana_transparent.svg.png"
+                />
+              </v-list-tile-avatar>
+               
+              <v-list-tile-content>
+                <v-list-tile-sub-title>
+                  Home for dinner
+                </v-list-tile-sub-title>
+                 
+                <v-list-tile-title>
+                  Stephen will not be home for dinner tonight.
+                </v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+             
+            <v-list-tile
+              avatar=""
+            >
+              <v-list-tile-avatar>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/1200px-Microsoft_Cortana_transparent.svg.png"
+                />
+              </v-list-tile-avatar>
+               
+              <v-list-tile-content>
+                <v-list-tile-sub-title>
+                  Trash
+                </v-list-tile-sub-title>
+                 
+                <v-list-tile-title>
+                  Nick took out the trash.
+                </v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+             
+            <v-list-tile
+              avatar=""
+            >
+              <v-list-tile-avatar>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/1200px-Microsoft_Cortana_transparent.svg.png"
+                />
+              </v-list-tile-avatar>
+               
+              <v-list-tile-content>
+                <v-list-tile-sub-title>
+                  Trash
+                </v-list-tile-sub-title>
+                 
+                <v-list-tile-title>
+                  Nick cleaned the apartment.
+                </v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+             
+            <v-list-tile
+              avatar=""
+            >
+              <v-list-tile-avatar>
+                <img
+                  src="https://www.w3schools.com/w3images/avatar2.png"
+                />
+              </v-list-tile-avatar>
+               
+              <v-list-tile-content>
+                <v-list-tile-sub-title>
+                  Nicholas
+                </v-list-tile-sub-title>
+                 
+                <v-list-tile-title>
+                  Don't forget next week is thanksgiving.
+                </v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </div>
+      </v-card>
+    </v-flex>
+  </v-layout>
+</v-container>
+`;

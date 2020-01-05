@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Count Cards Home for Dinner 1`] = `
+<v-card
+  class="base-count-card"
+>
+  <v-card-title
+    primary-title=""
+  >
+    <v-layout>
+      <v-flex
+        xs4=""
+      >
+        <div
+          class="card-img"
+        >
+          <v-icon
+            size="25"
+          >
+            mdi-silverware-fork-knife
+          </v-icon>
+        </div>
+      </v-flex>
+       
+      <v-flex
+        xs8=""
+      >
+        <v-subheader>
+          <span>
+            5 People Home for Dinner
+          </span>
+        </v-subheader>
+      </v-flex>
+       
+      <v-spacer />
+    </v-layout>
+  </v-card-title>
+</v-card>
+`;
+
+exports[`Storyshots Count Cards Low Items 1`] = `
+<v-card
+  class="base-count-card"
+>
+  <v-card-title
+    primary-title=""
+  >
+    <v-layout>
+      <v-flex
+        xs4=""
+      >
+        <div
+          class="card-img"
+        >
+          <v-icon
+            size="25"
+          >
+            mdi-cart
+          </v-icon>
+        </div>
+      </v-flex>
+       
+      <v-flex
+        xs8=""
+      >
+        <v-subheader>
+          <span>
+            5 Low Items
+          </span>
+        </v-subheader>
+      </v-flex>
+       
+      <v-spacer />
+    </v-layout>
+  </v-card-title>
+</v-card>
+`;
+
+exports[`Storyshots Count Cards Open Tasks 1`] = `
+<v-card
+  class="base-count-card"
+>
+  <v-card-title
+    primary-title=""
+  >
+    <v-layout>
+      <v-flex
+        xs4=""
+      >
+        <div
+          class="card-img"
+        >
+          <v-icon
+            size="25"
+          >
+            mdi-clipboard-check
+          </v-icon>
+        </div>
+      </v-flex>
+       
+      <v-flex
+        xs8=""
+      >
+        <v-subheader>
+          <span>
+            5 Open Tasks
+          </span>
+        </v-subheader>
+      </v-flex>
+       
+      <v-spacer />
+    </v-layout>
+  </v-card-title>
+</v-card>
+`;
+
+exports[`Storyshots Count Cards Pending Statuses 1`] = `
+<v-card
+  class="base-count-card"
+>
+  <v-card-title
+    primary-title=""
+  >
+    <v-layout>
+      <v-flex
+        xs4=""
+      >
+        <div
+          class="card-img"
+        >
+          <v-icon
+            size="25"
+          >
+            mdi-home
+          </v-icon>
+        </div>
+      </v-flex>
+       
+      <v-flex
+        xs8=""
+      >
+        <v-subheader>
+          <span>
+            5 Pending Statuses
+          </span>
+        </v-subheader>
+      </v-flex>
+       
+      <v-spacer />
+    </v-layout>
+  </v-card-title>
+</v-card>
+`;

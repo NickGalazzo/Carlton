@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Feed Default 1`] = `
+<v-card
+  class="dashboard-card feed-card"
+>
+  <v-card-title
+    primary-title=""
+  >
+    <div
+      class="title"
+    >
+      <span>
+        <span>
+          Feed
+        </span>
+      </span>
+    </div>
+  </v-card-title>
+   
+  <div
+    class="card-scroll-content"
+  >
+    <v-container
+      fluid=""
+    >
+      <v-list
+        two-line=""
+      >
+        <div>
+          <v-subheader>
+            
+        Today
+    
+          </v-subheader>
+           
+          <v-list-tile
+            avatar=""
+          >
+            <v-list-tile-avatar>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/1200px-Microsoft_Cortana_transparent.svg.png"
+              />
+            </v-list-tile-avatar>
+             
+            <v-list-tile-content>
+              <v-list-tile-sub-title
+                class="subtitle"
+              >
+                Garbage
+              </v-list-tile-sub-title>
+               
+              <v-list-tile-title>
+                Nick took out the garbage.
+              </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <v-list-tile
+            avatar=""
+          >
+            <v-list-tile-avatar>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/1200px-Microsoft_Cortana_transparent.svg.png"
+              />
+            </v-list-tile-avatar>
+             
+            <v-list-tile-content>
+              <v-list-tile-sub-title
+                class="subtitle"
+              >
+                Household Items
+              </v-list-tile-sub-title>
+               
+              <v-list-tile-title>
+                Nick purchased toilet paper.
+              </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <v-list-tile
+            avatar=""
+          >
+            <v-list-tile-avatar>
+              <img
+                src="https://www.w3schools.com/w3images/avatar2.png"
+              />
+            </v-list-tile-avatar>
+             
+            <v-list-tile-content>
+              <v-list-tile-sub-title
+                class="subtitle"
+              >
+                Nick
+              </v-list-tile-sub-title>
+               
+              <v-list-tile-title>
+                Steve, can you please order christmas gifts.
+              </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </div>
+        <div>
+          <v-subheader>
+            
+        Yesterday
+    
+          </v-subheader>
+           
+          <v-list-tile
+            avatar=""
+          >
+            <v-list-tile-avatar>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/1200px-Microsoft_Cortana_transparent.svg.png"
+              />
+            </v-list-tile-avatar>
+             
+            <v-list-tile-content>
+              <v-list-tile-sub-title
+                class="subtitle"
+              >
+                Garbage
+              </v-list-tile-sub-title>
+               
+              <v-list-tile-title>
+                Nick took out the garbage.
+              </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <v-list-tile
+            avatar=""
+          >
+            <v-list-tile-avatar>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/1200px-Microsoft_Cortana_transparent.svg.png"
+              />
+            </v-list-tile-avatar>
+             
+            <v-list-tile-content>
+              <v-list-tile-sub-title
+                class="subtitle"
+              >
+                Household Items
+              </v-list-tile-sub-title>
+               
+              <v-list-tile-title>
+                Nick purchased toilet paper.
+              </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <v-list-tile
+            avatar=""
+          >
+            <v-list-tile-avatar>
+              <img
+                src="https://www.w3schools.com/w3images/avatar2.png"
+              />
+            </v-list-tile-avatar>
+             
+            <v-list-tile-content>
+              <v-list-tile-sub-title
+                class="subtitle"
+              >
+                Nick
+              </v-list-tile-sub-title>
+               
+              <v-list-tile-title>
+                Steve, can you please order christmas gifts.
+              </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </div>
+      </v-list>
+       
+    </v-container>
+  </div>
+</v-card>
+`;
+
+exports[`Storyshots Feed/Item Default 1`] = `
+<v-list-tile
+  avatar=""
+>
+  <v-list-tile-avatar>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/1200px-Microsoft_Cortana_transparent.svg.png"
+    />
+  </v-list-tile-avatar>
+   
+  <v-list-tile-content>
+    <v-list-tile-sub-title
+      class="subtitle"
+    >
+      Home for dinner
+    </v-list-tile-sub-title>
+     
+    <v-list-tile-title>
+      Stephen will be home for dinner
+    </v-list-tile-title>
+  </v-list-tile-content>
+</v-list-tile>
+`;
