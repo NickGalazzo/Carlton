@@ -5,6 +5,7 @@ import { withTests } from '@storybook/addon-jest';
 import ApartmentStatus from "../components/ApartmentStatus/ApartmentStatus.vue";
 import ApartmentStatusItem from "../components/ApartmentStatus/ApartmentStatusItem.vue";
 import ApartmentStatusList from "../components/ApartmentStatus/ApartmentStatusList.vue";
+import {ApartmentStatusData as data} from "../data/componentMockData";
 
 const statusContextOptions = {
   Garbage: "mdi-delete",
@@ -18,35 +19,6 @@ const statusContextOptions = {
 const statusTypeOptions = {
   completed: 1,
   Pending: 2
-};
-
-const data = {
-  statuses: [
-    {
-      icon: "mdi-delete",
-      statusId: 1
-    },
-    {
-      icon: "mdi-recycle",
-      statusId: 1
-    },
-    {
-      icon: "mdi-cart",
-      statusId: 1
-    },
-    {
-      icon: "mdi-spray-bottle",
-      statusId: 1
-    },
-    {
-      icon: "mdi-washing-machine",
-      statusId: 1
-    },
-    {
-      icon: "mdi-tie",
-      statusId: 1
-    }
-  ]
 };
 
 storiesOf("Apartment Status", module).add("Default", () => {

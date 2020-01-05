@@ -1,0 +1,33 @@
+﻿@namespace Carlton.Dashboard.Components.ToDos
+@using  Carlton.Dashboard.ViewModels.ToDos
+@using Carlton.Dashboard.Components.Base.Cards
+@using Carlton.Dashboard.Components.Base.Checkbox
+
+<link href="_content/Carlton.Dashboard.Components/styles.min.css" rel="stylesheet" />
+
+<div class="to-do-list-card">
+    <CarltonListCard CardTitle="To-Do's" Items="ViewModel.ToDoList">
+        <ItemTemplate Context="toDo">
+            <div class="row">
+                <div class="col-8">
+                    <Checkbox CheckboxLabel="@toDo.Name" IsChecked="toDo.IsCompleted" />
+                </div>
+                <div class="col-4">
+                    <a href="http://example.com/">
+                        <span class="to-do-link-btn glyphicon glyphicon-th-list">View</span>
+                    </a>
+                </div>
+            </div>
+        </ItemTemplate>
+    </CarltonListCard>
+</div>
+
+@code {
+    [Parameter]
+    public ToDoListViewModel ViewModel { get; set; }
+
+    private void OnCheck(int id)
+    {
+        this.ViewModel.ToDoList.SingleOrDefault(o => o.Id == id).IsCompleted = true;
+    }
+}

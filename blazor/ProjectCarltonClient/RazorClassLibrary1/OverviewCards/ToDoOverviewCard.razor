@@ -1,0 +1,13 @@
+﻿@namespace Carlton.Dashboard.Components.OverviewCards
+@using Carlton.Dashboard.Components.Base.Cards
+@using Carlton.Dashboard.ViewModels.OverviewCards
+
+<div class="to-do-overview-card">
+    <OverviewCard IconName="mdi-home" OverviewText=@($"The open task count is {ViewModel.OpenToDoCount}.")>
+    </OverviewCard>
+</div>
+
+@code {
+    [Parameter]
+    public ToDoOverviewCardViewModel ViewModel { get; set; }
+}

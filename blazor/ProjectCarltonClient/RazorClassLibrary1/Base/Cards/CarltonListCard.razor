@@ -1,0 +1,30 @@
+﻿@namespace Carlton.Dashboard.Components.Base.Cards
+@inherits CarltonCard
+@typeparam TItem
+
+
+<div class="carlton-list-card">
+    <CarltonCard CardTitle="@CardTitle">
+        <PrimaryCardContent>
+            <ul>
+                @foreach (var item in Items)
+                {
+                    @ItemTemplate(item)
+                }
+            </ul>
+        </PrimaryCardContent>
+        <SecondaryCardContent>
+            @SecondaryCardContent
+        </SecondaryCardContent>
+    </CarltonCard>
+</div>
+
+@code{
+    [Parameter]
+    public RenderFragment<TItem> ItemTemplate { get; set; }
+
+    [Parameter]
+    public IList<TItem> Items { get; set; }
+}
+
+

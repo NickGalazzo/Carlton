@@ -1,0 +1,30 @@
+﻿@namespace Carlton.Dashboard.Components.HomeForDinner
+@using Carlton.Dashboard.ViewModels.HomeForDinner
+@using Carlton.Dashboard.Components.Base.Cards
+
+<div class="home-for-dinner-card">
+    <CarltonListCard CardTitle="Home For Dinner" Items="ViewModel.DinnerGuests">
+        <ItemTemplate Context="guest">
+            <div class="row">
+                <div class="col-4">
+                    <img class="avatar-img" src="https://www.w3schools.com/w3images/avatar2.png" />
+                </div>
+                <div class="col-4">
+                    <div class="feed-title">@guest.Name</div>
+                    <div class="feed-message">@guest.Reason</div>
+                </div>
+                <div class="col-4">
+                    <span class="to-do-completed mdi mdi-24px mdi-food"></span>
+                </div>
+            </div>
+        </ItemTemplate>
+        <SecondaryCardContent>
+            <HomeForDinnerToggle />
+        </SecondaryCardContent>
+    </CarltonListCard>
+</div>
+
+@code {
+    [Parameter]
+    public HomeForDinnerViewModel ViewModel { get; set; }
+}

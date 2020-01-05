@@ -1,0 +1,18 @@
+﻿@import "colors.scss";
+
+.home-for-dinner-card {
+    img.avatar-img {
+        height: 40px;
+        width: 40px;
+        border-radius: 20px;
+    }
+
+    .feed-title {
+        color: $textColor;
+        font-weight: bold;
+    }
+
+    .feed-message {
+        color: $textColor;
+    }
+}

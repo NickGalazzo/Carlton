@@ -1,0 +1,37 @@
+﻿@namespace Carlton.Dashboard.Components.Base.Cards
+@typeparam TItem 
+@using Carlton.Dashboard.ViewModels.Contracts
+
+
+
+<div class="carlton-grouped-list-card">
+    <div class="to-do-list-card">
+        <CarltonListCard CardTitle="@CardTitle" Items="GroupedItems">
+            <ItemTemplate Context="groupedItem">
+                <div>
+                    <span><u>@groupedItem.GroupName</u></span>
+                </div>
+                <br />
+                <div>
+                    <ul>
+                        @foreach (var item in groupedItem.Items)
+                        {
+                            @ItemTemplate(item)
+                        }
+                    </ul>
+                </div>
+            </ItemTemplate>
+        </CarltonListCard>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string CardTitle { get; set; }
+
+    [Parameter]
+    public RenderFragment<TItem> ItemTemplate { get; set; }
+
+    [Parameter]
+    public IList<IGroupedItems<TItem>> GroupedItems { get; set; }
+}

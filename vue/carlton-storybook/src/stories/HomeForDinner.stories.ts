@@ -2,33 +2,17 @@ import { storiesOf } from "@storybook/vue";
 import {
   withKnobs,
   text,
-  boolean,
-  number,
-  select
+  boolean
 } from "@storybook/addon-knobs";
 
 import { action } from "@storybook/addon-actions";
 
-import HomeForDinnerItem from "../components/HomeForDinner/HomeForDinnerItem.vue";
+import HomeForDinnerListItem from "../components/HomeForDinner/HomeForDinnerListItem.vue";
 import HomeForDinnerList from "../components/HomeForDinner/HomeForDinnerList.vue";
 import HomeForDinnerInput from "../components/HomeForDinner/HomeForDinnerInput.vue";
 import HomeForDinner from "../components/HomeForDinner/HomeForDinner.vue";
 import HomeForDinnerModel from "models/HomeForDinnerModel";
-
-const data = {
-  items: [
-    {
-      name: "Nick",
-      isHomeForDinner: false,
-      reason: "Working late"
-    },
-    {
-      name: "Stephen",
-      isHomeForDinner: false,
-      reason: "Japneese Class"
-    }
-  ]
-};
+import {HomeForDinnerData as data} from "../../src/data/componentMockData"; 
 
 export const methods = {
   setHomeForDinnerStatus: action('setHomeForDinnerStatus')
@@ -57,8 +41,8 @@ storiesOf("Home for Dinner/Item")
     console.log(model);
 
     return {
-      components: { HomeForDinnerItem },
-      template: "<home-for-dinner-item v-bind:item='model'/>",
+      components: { HomeForDinnerListItem },
+      template: "<home-for-dinner-list-item v-bind:item='model'/>",
       data: () => ({ model })
     };
   })
@@ -74,8 +58,8 @@ storiesOf("Home for Dinner/Item")
     console.log(model);
 
     return {
-      components: { HomeForDinnerItem },
-      template: "<home-for-dinner-item v-bind:item='model'/>",
+      components: { HomeForDinnerListItem },
+      template: "<home-for-dinner-list-item v-bind:item='model'/>",
       data: () => ({ model })
     };
   });

@@ -1,0 +1,26 @@
+﻿@namespace Carlton.Dashboard.Components.Feed
+@using Carlton.Dashboard.Components.Base.Cards
+
+
+<link href="_content/Carlton.Dashboard.Components/styles.min.css" rel="stylesheet" />
+
+<div class="feed-list-card">
+    <CarltonGroupedListCard CardTitle="Feed" GroupedItems="ViewModel.GroupedFeedItems" >
+        <ItemTemplate Context="feedItem">
+            <div class="row">
+                <div class="col-4">
+                    <img class="avatar-img" src="https://www.w3schools.com/w3images/avatar2.png" />
+                </div>
+                <div class="col-8">
+                    <div class="feed-title">@feedItem.Title</div>
+                    <div class="feed-message">@feedItem.Message</div>
+                </div>
+            </div>
+        </ItemTemplate>
+    </CarltonGroupedListCard>
+</div>
+
+@code {
+    [Parameter]
+    public FeedViewModel ViewModel { get; set; }
+}

@@ -1,0 +1,21 @@
+﻿@import "colors.scss";
+
+.to-do-list-card {
+    label.to-do-label {
+        color: $textColor;
+        font-size: 10pt;
+    }
+
+    span.to-do-link-btn {
+        color: $neutralBlue;
+    }
+
+    span.to-do-name{
+        color: $textColor;
+        font-size:10pt;
+    }
+
+    span.to-do-completed {
+        color: $CompletedColor;
+    }
+}

@@ -27,7 +27,7 @@ import HomeForDinnerModel from '../../models/HomeForDinnerModel';
 import colors from '../../styles/colors.scss';
 
 @Component
-export default class HomeForDinnerItem extends Vue {
+export default class HomeForDinnerListItem extends Vue {
     @Prop() item!: HomeForDinnerModel;
     activeColor: string = colors.activeColor;
 }

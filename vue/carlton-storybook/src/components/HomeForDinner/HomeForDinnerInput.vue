@@ -16,7 +16,7 @@
     </v-layout>
     <v-layout>
         <v-spacer></v-spacer>
-        <v-text-field value="test" :disabled="isHomeForDinner==true" label="Where will you be?" v-model="reason"></v-text-field>
+        <v-text-field class="reason-label" value="test" :disabled="isHomeForDinner==true" label="Where will you be?" v-model="reason"></v-text-field>
         <v-spacer></v-spacer>
     </v-layout>
 </div>
