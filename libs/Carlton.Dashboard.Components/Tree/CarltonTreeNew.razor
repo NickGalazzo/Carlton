@@ -1,0 +1,23 @@
+﻿@namespace Carlton.Dashboard.Components.Tree
+@using Carlton.Dashboard.ViewModels.CarltonTree
+
+<div class="carlton-tree">
+    <BaseTree Nodes="ViewModel.TreeItems" 
+              ChildSelector="@(item => item.Children)"
+              @bind-SelectedNode="ViewModel.SelectedItem"
+              @bind-ExpandedNodes="ExpandedNodes"
+              HasChildNodes="@(item => item.Children?.Any() == true)"
+              Style="TreeStyle.DefaultTreeStyle">
+        <TitleTemplate>@context.Text</TitleTemplate>
+    </BaseTree>
+</div>
+
+
+@code {
+
+    [Parameter]
+    public CarltonTreeViewModel ViewModel { get; set; }
+
+    IList<TreeItem> ExpandedNodes = new List<TreeItem>();
+    TreeItem selectedNode;
+}

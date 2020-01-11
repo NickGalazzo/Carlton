@@ -1,11 +1,13 @@
 ﻿@page "/"
+@using Carlton.Dashboard.Client.TestBed
 
 @using Carlton.Dashboard.Components.ApartmentStatus;
 @using Carlton.Dashboard.Components.HomeForDinner;
 @using Carlton.Dashboard.Components.HouseholdItems;
-@using Carlton.Dashboard.Components.ToDos;
 @using Carlton.Dashboard.Components.Feed;
 @using Carlton.Dashboard.Components.OverviewCards;
+@using Carlton.Dashboard.Components.ToDos;
+@using Carlton.Dashboard.Components.Tree;
 
 
 @using Carlton.Dashboard.ViewModels.ApartmentStatus;
@@ -14,11 +16,13 @@
 @using Carlton.Dashboard.ViewModels.ToDos;
 @using Carlton.Dashboard.ViewModels.Feed;
 @using Carlton.Dashboard.ViewModels.OverviewCards;
+@using Carlton.Dashboard.ViewModels.CarltonTree;
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
+<Carlton.Dashboard.Components.Tree.CarltonTreeNew ViewModel="treeViewModel" />
 <ToDoOverviewCard ViewModel="toDoOverviewCardViewModel" />
 <HomeForDinnerCard ViewModel="homeForDinnerViewModel" />
 <FeedListCard ViewModel="feedViewModel" />
@@ -33,12 +37,24 @@ Welcome to your new app.
     public FeedViewModel feedViewModel { get; set; }
     public HomeForDinnerViewModel homeForDinnerViewModel { get; set; }
     public ToDoOverviewCardViewModel toDoOverviewCardViewModel { get; set; }
+    public CarltonTreeViewModel treeViewModel { get; set; }
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
 
+
+        var treeBuilder = new TestBedConfigurationBuilder();
+        var tree = treeBuilder.AddComponent<SurveyPrompt>("Test 1")
+                   .AddComponent<SurveyPrompt>("Test 2")
+                   .AddComponent<SurveyPrompt>("Test 3")
+                   .AddComponent<HomeForDinnerCard>("Whatever")
+                   .Build();
+
+        treeViewModel = new CarltonTreeViewModel(tree.ToList());
+
         toDoOverviewCardViewModel = new ToDoOverviewCardViewModel(7);
+
 
 
         apartmentStatusViewModel =
@@ -52,13 +68,13 @@ Welcome to your new app.
                     new ApartmentStatus("Cleaning", ApartmentStatuses.Complete, "mdi-spray-bottle"),
                     new ApartmentStatus("Laundry", ApartmentStatuses.Complete, "mdi-washing-machine"),
                     new ApartmentStatus("Dry Cleaning", ApartmentStatuses.Incomplete, "mdi-tie")
-               }
+                   }
            };
 
         householdItemsViewModel = new HouseholdItemsViewModel
         {
             Items = new List<HouseholdItem>
-            {
+        {
                 new HouseholdItem(1, "Toilet Paper", 25),
                 new HouseholdItem(2, "Paper Towels", 57),
                 new HouseholdItem(3, "Dish Soap", 92),
@@ -69,7 +85,7 @@ Welcome to your new app.
         toDoListViewModel = new ToDoListViewModel
         {
             ToDoList = new List<ToDo>
-            {
+        {
                 new ToDo(1, "Take Out Garbage", false),
                 new ToDo(2, "Go Shopping", false),
                 new ToDo(3, "Prepare Dinner", true)
@@ -88,7 +104,7 @@ Welcome to your new app.
                             new FeedUser("Nick", string.Empty)),
                         new FeedItem("Household Items", "Purchahsed Household Items",
                             new FeedUser("Nick", string.Empty))
-                    }
+                        }
                 });
 
         feedViewModel.GroupedFeedItems.Add(
@@ -101,13 +117,13 @@ Welcome to your new app.
                         new FeedUser("Nick", string.Empty)),
                     new FeedItem("Household Items", "Purchahsed Household Items",
                         new FeedUser("Nick", string.Empty))
-            }
+                }
         });
 
         homeForDinnerViewModel = new HomeForDinnerViewModel()
         {
             DinnerGuests = new List<DinnerGuests>()
-            {
+        {
                new DinnerGuests("Nick", true, string.Empty),
                new DinnerGuests("Steve", false, "Japaneese Class")
             }

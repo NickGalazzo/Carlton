@@ -1,0 +1,87 @@
+﻿@using MW.Blazor
+@using Carlton.Dashboard.ViewModels.CarltonTree 
+
+<div class="carlton-tree">
+    <Tree Nodes="Items" ChildSelector="@(item => item.Children)" @bind-SelectedNode="ViewModel.SelectedItem" 
+          @bind-ExpandedNodes="ExpandedNodes" HasChildNodes="@(item => item.Children?.Any() == true)"
+         >
+        <TitleTemplate>@context.Text</TitleTemplate>
+    </Tree>
+</div>
+
+<p style="margin-top: 2rem">
+    Selected: @ViewModel.SelectedItem?.Text<br />
+    Expanded: @string.Join(", ", ExpandedNodes.Select(i => i.Text))<br />
+</p>
+
+
+@code {
+
+    [Parameter]
+    public CarltonTreeViewModel ViewModel { get; set; }
+
+    IEnumerable<TreeItem> Items = new[]
+    {
+        new TreeItem {
+            Text = "Item 1",
+            //Children = new []
+            //{
+            //    new TreeItem {Text = "Item 1.1"}
+            //}
+        },
+        new TreeItem {
+            Text = "Item 2",
+            Children = new []
+            {
+                new TreeItem { Text = "Item 2.1" },
+                new TreeItem { Text = "Item 2.2", Children = new []
+                    {
+                        new TreeItem { Text = "Item 2.2.1" },
+                        new TreeItem { Text = "Item 2.2.2" },
+                        new TreeItem { Text = "Item 2.2.3" },
+                        new TreeItem { Text = "Item 2.2.4" }
+
+                    } },
+                new TreeItem { Text = "Item 2.3" },
+                new TreeItem { Text = "Item 2.4" }
+
+            }},
+        new TreeItem { Text = "Item 3", Children = new TreeItem[] { new TreeItem { Text = "sdfsd" } } },
+        //new TreeItem {
+        //    Text = "Item 4",
+        //    Children = new []
+        //    {
+        //        new TreeItem { Text = "Item 4.1" },
+        //        new TreeItem { Text = "Item 4.2", Children = new []
+        //        {
+        //            new TreeItem { Text = "Item 4.2.1" },
+        //            new TreeItem { Text = "Item 4.2.2" },
+        //            new TreeItem { Text = "Item 4.2.3" },
+        //            new TreeItem { Text = "Item 4.2.4" }
+        //        } },
+        //    new TreeItem { Text = "Item 4.3" },
+        //    new TreeItem { Text = "Item 4.4" }
+
+        //    } },
+        //new TreeItem { Text = "Item 5" },
+        //new TreeItem { Text = "Item 6" },
+    };
+
+    IList<TreeItem> ExpandedNodes = new List<TreeItem>();
+    TreeItem selectedNode;
+
+    private TreeStyle MDTreeStyle = new TreeStyle
+    {
+        ExpandNodeIconClass = "mdi mdi-plus-box-outline",
+        CollapseNodeIconClass = "mdi mdi-minus-box-outline",
+        NodeTitleClass = "p-1 curosr-pointer",
+        NodeTitleSelectedClass = "bg-primary text-white"
+    };
+
+    protected override void OnInitialized()
+    {
+        //  ExpandedNodes.Add(ViewModel.TreeItems.First());
+        //  ExpandedNodes.Add(ViewModel.TreeItems.ElementAt(1));
+        // ExpandedNodes.Add(ViewModel.TreeItems.Skip(1).Take(1).First().Children.Skip(1).First());
+    }
+}

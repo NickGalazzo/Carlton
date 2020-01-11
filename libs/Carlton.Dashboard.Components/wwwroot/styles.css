@@ -108,3 +108,17 @@ body {
 
 .home-for-dinner-toggle .reason-label {
   margin: auto; }
+
+.base-tree .base-tree {
+  margin-left: 1.25rem; }
+
+.base-tree .base-tree-hidden {
+  display: none; }
+
+.base-tree .base-tree-title {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 0px !important; }
+
+.base-tree .curosr-pointer {
+  cursor: pointer; }
