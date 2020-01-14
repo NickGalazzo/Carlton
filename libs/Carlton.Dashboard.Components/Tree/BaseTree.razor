@@ -75,8 +75,15 @@
 
     private void OnSelectNode(TNode node)
     {
-        SelectedNode = node;
-        SelectedNodeChanged.InvokeAsync(node);
+        if(HasChildNodes.Invoke(node))
+        {
+            OnToggleNode(node, !ExpandedNodes.Contains(node));
+        }
+        else
+        {
+            SelectedNode = node;
+            SelectedNodeChanged.InvokeAsync(node);
+        }
     }
 
 }

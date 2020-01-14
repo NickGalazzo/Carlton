@@ -22,6 +22,13 @@
 
 Welcome to your new app.
 
+<button type="button" @onclick="()=>
+                                {
+                                    testBedComponent = typeof(HomeForDinnerCard);
+                                    testBedViewModel = homeForDinnerViewModel;
+                                }"/>
+
+<Carlton.Dashboard.Components.TestBed.TestBed ComponentType="testBedComponent" ViewModel="testBedViewModel"/>
 <Carlton.Dashboard.Components.Tree.CarltonTreeNew ViewModel="treeViewModel" />
 <ToDoOverviewCard ViewModel="toDoOverviewCardViewModel" />
 <HomeForDinnerCard ViewModel="homeForDinnerViewModel" />
@@ -31,6 +38,9 @@ Welcome to your new app.
 <HouseholdItemsList ViewModel="householdItemsViewModel" />
 
 @code{
+    public Type testBedComponent { get; set; } = typeof(HouseholdItemsList);
+    public Object testBedViewModel { get; set; }
+
     public ApartmentStatusesViewModel apartmentStatusViewModel { get; set; }
     public HouseholdItemsViewModel householdItemsViewModel { get; set; }
     public ToDoListViewModel toDoListViewModel { get; set; }
@@ -43,6 +53,7 @@ Welcome to your new app.
     {
         base.OnInitialized();
 
+     
 
         var treeBuilder = new TestBedConfigurationBuilder();
         var tree = treeBuilder.AddComponent<SurveyPrompt>("Test 1")
@@ -128,5 +139,7 @@ Welcome to your new app.
                new DinnerGuests("Steve", false, "Japaneese Class")
             }
         };
+
+           testBedViewModel = householdItemsViewModel;
     }
 }

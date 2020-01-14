@@ -1,10 +1,41 @@
 ﻿
 <div class="test-bed">
     <span>Testing 123</span>
-    @TestComponent
+
+    <div class="component">
+        @TestComponentFragment
+    </div>
 </div>
 
 @code {
+
     [Parameter]
-    public RenderFragment TestComponent { get; set; }
+    public Type ComponentType
+    {
+        get { return componentType; }
+        set
+        {
+            if(!(typeof(ComponentBase).IsAssignableFrom(value)))
+                throw new InvalidOperationException("ComponentType is not a valid component type.");
+            componentType = value;
+        }
+    }
+    private Type componentType;
+
+    [Parameter]
+    public object ViewModel { get; set; }
+
+    private RenderFragment TestComponentFragment { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        TestComponentFragment = builder =>
+        {
+            builder.OpenElement(1, "div");
+            builder.OpenComponent(2, ComponentType);
+            builder.AddAttribute(1, "ViewModel", ViewModel);
+            builder.CloseComponent();
+            builder.CloseElement();
+        };
+    }
 }
