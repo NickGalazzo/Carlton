@@ -22,13 +22,19 @@
 
 Welcome to your new app.
 
+<Carlton.Client.Base.Components.DataWrapper TViewModel="HomeForDinnerViewModel">
+        <ChildComponent>
+            <HomeForDinnerCard ViewModel="@context.ViewModel" OnComponentEvent="@context.ComponentEventHandler"/>
+        </ChildComponent>
+    </Carlton.Client.Base.Components.DataWrapper>
+
 <button type="button" @onclick="()=>
                                 {
                                     testBedComponent = typeof(HomeForDinnerCard);
                                     testBedViewModel = homeForDinnerViewModel;
-                                }"/>
+                                }" />
 
-<Carlton.Dashboard.Components.TestBed.TestBed ComponentType="testBedComponent" ViewModel="testBedViewModel"/>
+<Carlton.Dashboard.Components.TestBed.TestBed ComponentType="testBedComponent" ViewModel="testBedViewModel" />
 <Carlton.Dashboard.Components.Tree.CarltonTreeNew ViewModel="treeViewModel" />
 <ToDoOverviewCard ViewModel="toDoOverviewCardViewModel" />
 <HomeForDinnerCard ViewModel="homeForDinnerViewModel" />
@@ -53,7 +59,7 @@ Welcome to your new app.
     {
         base.OnInitialized();
 
-     
+
 
         var treeBuilder = new TestBedConfigurationBuilder();
         var tree = treeBuilder.AddComponent<SurveyPrompt>("Test 1")
@@ -79,13 +85,13 @@ Welcome to your new app.
                     new ApartmentStatus("Cleaning", ApartmentStatuses.Complete, "mdi-spray-bottle"),
                     new ApartmentStatus("Laundry", ApartmentStatuses.Complete, "mdi-washing-machine"),
                     new ApartmentStatus("Dry Cleaning", ApartmentStatuses.Incomplete, "mdi-tie")
-                   }
+                       }
            };
 
         householdItemsViewModel = new HouseholdItemsViewModel
         {
             Items = new List<HouseholdItem>
-        {
+    {
                 new HouseholdItem(1, "Toilet Paper", 25),
                 new HouseholdItem(2, "Paper Towels", 57),
                 new HouseholdItem(3, "Dish Soap", 92),
@@ -96,7 +102,7 @@ Welcome to your new app.
         toDoListViewModel = new ToDoListViewModel
         {
             ToDoList = new List<ToDo>
-        {
+    {
                 new ToDo(1, "Take Out Garbage", false),
                 new ToDo(2, "Go Shopping", false),
                 new ToDo(3, "Prepare Dinner", true)
@@ -115,7 +121,7 @@ Welcome to your new app.
                             new FeedUser("Nick", string.Empty)),
                         new FeedItem("Household Items", "Purchahsed Household Items",
                             new FeedUser("Nick", string.Empty))
-                        }
+                            }
                 });
 
         feedViewModel.GroupedFeedItems.Add(
@@ -128,18 +134,18 @@ Welcome to your new app.
                         new FeedUser("Nick", string.Empty)),
                     new FeedItem("Household Items", "Purchahsed Household Items",
                         new FeedUser("Nick", string.Empty))
-                }
+                    }
         });
 
         homeForDinnerViewModel = new HomeForDinnerViewModel()
         {
             DinnerGuests = new List<DinnerGuests>()
-        {
+    {
                new DinnerGuests("Nick", true, string.Empty),
                new DinnerGuests("Steve", false, "Japaneese Class")
             }
         };
 
-           testBedViewModel = householdItemsViewModel;
+        testBedViewModel = householdItemsViewModel;
     }
 }

@@ -1,6 +1,9 @@
 ﻿@namespace Carlton.Dashboard.Components.HomeForDinner
 @using Carlton.Dashboard.ViewModels.HomeForDinner
 @using Carlton.Dashboard.Components.Base.Cards
+@using Carlton.Client.Base.Components
+@inherits CarltonParentComponent<HomeForDinnerViewModel>
+
 
 <div class="home-for-dinner-card">
     <CarltonListCard CardTitle="Home For Dinner" Items="ViewModel.DinnerGuests">
@@ -24,7 +27,4 @@
     </CarltonListCard>
 </div>
 
-@code {
-    [Parameter]
-    public HomeForDinnerViewModel ViewModel { get; set; }
-}
+

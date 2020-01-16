@@ -1,0 +1,29 @@
+﻿@inherits LayoutComponentBase
+@using Carlton.Dashboard.Components.Tree
+
+<div class="sidebar">
+    <CarltonTreeNew ViewModel="vm" />
+</div>
+
+<div class="main">
+    <div class="content px-4">
+        @Body
+    </div>
+</div>
+
+
+@code{ 
+
+    public Carlton.Dashboard.ViewModels.CarltonTree.CarltonTreeViewModel vm;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        var builder = new TestBed.Client.Code.TestBedConfigurationBuilder();
+        builder.AddComponent<SurveyPrompt>("Test")
+               .AddComponent<SurveyPrompt>("Test 2");
+        vm = new Dashboard.ViewModels.CarltonTree.CarltonTreeViewModel(builder.Build().ToList());
+
+    }
+}

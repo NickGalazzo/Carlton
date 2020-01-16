@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\libs\Carlton.Client.Base\Carlton.Client.Base.csproj" />
     <ProjectReference Include="..\..\libs\Carlton.Dashboard.Components\Carlton.Dashboard.Components.csproj" />
+    <ProjectReference Include="..\..\libs\Carlton.Dashboard.ViewModels\Carlton.Dashboard.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>
