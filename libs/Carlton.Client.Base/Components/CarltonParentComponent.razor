@@ -1,11 +1,12 @@
 ﻿@using Carlton.Client.Base.Events
-@using Carlton.Base.Data
 @typeparam TViewModel
 
 @code {
     [Parameter]
     public TViewModel ViewModel { get; set; }
-    
+
     [Parameter]
     public EventCallback<IComponentEvent<IComponentEventResult>> OnComponentEvent { get; set; }
+
+    public Type Test { get { return typeof(TViewModel); } }
 }

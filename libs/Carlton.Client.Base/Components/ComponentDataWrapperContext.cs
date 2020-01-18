@@ -1,5 +1,4 @@
-﻿using Carlton.Base.Data;
-using Carlton.Client.Base.Events;
+﻿using Carlton.Client.Base.Events;
 using System;
 
 namespace Carlton.Client.Base.Components

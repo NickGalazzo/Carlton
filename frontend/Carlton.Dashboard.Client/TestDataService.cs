@@ -1,11 +1,7 @@
-﻿using Carlton.Base.Data;
-using Carlton.Client.Base.Data;
-using Carlton.Dashboard.Components.HomeForDinner;
+﻿using Carlton.Client.Base.Data;
 using Carlton.Dashboard.ViewModels.HomeForDinner;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Carlton.Dashboard.Client
 {

@@ -11,8 +11,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Carlton.Base\Carlton.Base.csproj" />
-  </ItemGroup>
-
 </Project>

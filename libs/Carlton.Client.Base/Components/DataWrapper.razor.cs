@@ -1,5 +1,4 @@
 ﻿using System;
-using Carlton.Base.Data;
 using Carlton.Client.Base.Data;
 using Carlton.Client.Base.Events;
 using Microsoft.AspNetCore.Components;
@@ -7,7 +6,6 @@ using Microsoft.AspNetCore.Components;
 namespace Carlton.Client.Base.Components
 {
     public partial class DataWrapper<TViewModel>
-        where TViewModel : IViewModel
     {
         [Parameter]
         public RenderFragment<ComponentDataWrapperContext<TViewModel>> ChildComponent { get; set; }
@@ -27,6 +25,10 @@ namespace Carlton.Client.Base.Components
             ViewModel = DataService.GetViewModel();
             Context = new ComponentDataWrapperContext<TViewModel>(ViewModel, ComponentEventHandler);
             DataService.ViewModelChanged += DataService_ViewModelChanged;
+
+            //var x = new CarltonParentComponent<IViewModel>();
+
+            //var test = x.GetType().GetGenericArguments()[0];
         }
 
         private void DataService_ViewModelChanged(object sender, ViewModelChangedEventArgs e)
@@ -37,8 +39,8 @@ namespace Carlton.Client.Base.Components
 
         public void ComponentEventHandler(IComponentEvent<IComponentEventResult> evt)
         {
-            var handlerType = typeof(IComponentEventHandler<,>).MakeGenericType(evt.GetType(), typeof(IComponentEventResult));
-            dynamic handler = ServiceProvider.GetService(handlerType);
+          //  var handlerType = typeof(IComponentEventHandler<,>).MakeGenericType(evt.GetType(), typeof(IComponentEventResult));
+           // dynamic handler = ServiceProvider.GetService(handlerType);
            // handler.Handle((dynamic)evt);
         }
     }
