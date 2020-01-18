@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Carlton.Infrastructure\Carlton.Infrastructure.csproj" />
+    <ProjectReference Include="..\Carlton.Infrastructure\Carlton.Base.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

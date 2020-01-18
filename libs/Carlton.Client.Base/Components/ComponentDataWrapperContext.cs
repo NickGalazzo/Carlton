@@ -1,7 +1,7 @@
-﻿using Carlton.Client.Base.Events;
+﻿using Carlton.Base.Infastructure.Client.Events;
 using System;
 
-namespace Carlton.Client.Base.Components
+namespace Carlton.Base.Infastructure.Client.Components
 {
     public class ComponentDataWrapperContext<TViewModel>
     {

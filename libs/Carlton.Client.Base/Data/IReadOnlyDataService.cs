@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Carlton.Client.Base.Data
+namespace Carlton.Base.Infastructure.Client.Data
 {
     public interface IReadOnlyDataService<TViewModel> 
     {

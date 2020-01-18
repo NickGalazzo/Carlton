@@ -1,4 +1,9 @@
-﻿@namespace Carlton.Client.Base.Components
+﻿@namespace Carlton.Base.Infastructure.Client.Components
+@using System
+@using Carlton.Base.Infastructure.Client.Components
+@using Carlton.Base.Infastructure.Client.Data
+@using Carlton.Base.Infastructure.Client.Events
+@using Microsoft.AspNetCore.Components
 @typeparam TViewModel
 
 <div class="carlton-data-component">
@@ -6,3 +11,41 @@
 </div>
 
 
+@code{
+    [Parameter]
+    public RenderFragment<ComponentDataWrapperContext<TViewModel>> ChildComponent { get; set; }
+
+    [Inject]
+    private IDataService<TViewModel> DataService { get; set; }
+
+    [Inject]
+    private IServiceProvider ServiceProvider { get; set; }
+
+    private ComponentDataWrapperContext<TViewModel> Context { get; set; }
+    private TViewModel ViewModel { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        ViewModel = DataService.GetViewModel();
+        Context = new ComponentDataWrapperContext<TViewModel>(ViewModel, ComponentEventHandler);
+        DataService.ViewModelChanged += DataService_ViewModelChanged;
+
+        //var x = new CarltonParentComponent<IViewModel>();
+
+        //var test = x.GetType().GetGenericArguments()[0];
+    }
+
+    private void DataService_ViewModelChanged(object sender, ViewModelChangedEventArgs e)
+    {
+        ViewModel = DataService.GetViewModel();
+    }
+
+
+    public void ComponentEventHandler(IComponentEvent<IComponentEventResult> evt)
+    {
+        //  var handlerType = typeof(IComponentEventHandler<,>).MakeGenericType(evt.GetType(), typeof(IComponentEventResult));
+        // dynamic handler = ServiceProvider.GetService(handlerType);
+        // handler.Handle((dynamic)evt);
+    }
+}

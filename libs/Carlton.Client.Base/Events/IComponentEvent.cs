@@ -1,11 +1,8 @@
-﻿//using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MediatR;
 
-namespace Carlton.Client.Base.Events
+namespace Carlton.Base.Infastructure.Client.Events
 {
-    public interface IComponentEvent<T> //: IRequest<T>
+    public interface IComponentEvent<T> : IRequest<T>
         where T : IComponentEventResult
     {
     }

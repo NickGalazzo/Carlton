@@ -17,16 +17,17 @@
 @using Carlton.Dashboard.ViewModels.Feed;
 @using Carlton.Dashboard.ViewModels.OverviewCards;
 @using Carlton.Dashboard.ViewModels.CarltonTree;
+@using Carlton.Base.Infastructure.Client.Components
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
-<Carlton.Client.Base.Components.DataWrapper TViewModel="HomeForDinnerViewModel">
-        <ChildComponent>
+<DataWrapper TViewModel="HomeForDinnerViewModel">
+     <ChildComponent>
             <HomeForDinnerCard ViewModel="@context.ViewModel" OnComponentEvent="@context.ComponentEventHandler"/>
-        </ChildComponent>
-    </Carlton.Client.Base.Components.DataWrapper>
+     </ChildComponent>
+</DataWrapper>
 
 <button type="button" @onclick="()=>
                                 {

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Carlton.Client.Base.Events
+namespace Carlton.Base.Infastructure.Client.Events
 {
     public interface IComponentEventResult
     {

@@ -8,7 +8,6 @@
   <ItemGroup>
     <PackageReference Include="Dapper" Version="1.50.5" />
     <PackageReference Include="FluentValidation" Version="8.0.100" />
-    <PackageReference Include="Karambolo.Extensions.Logging.File" Version="2.1.1" />
     <PackageReference Include="MediatR" Version="8.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
