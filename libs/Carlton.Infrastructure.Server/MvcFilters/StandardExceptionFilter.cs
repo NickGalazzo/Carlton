@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Web.Http.Results;
 
 namespace Carlton.Infrastructure.MvcFilters
 {
@@ -25,23 +24,23 @@ namespace Carlton.Infrastructure.MvcFilters
             switch(exception)
             {
                 case ValidationException e:
-                    context.Result = new ObjectResult(ApiResponse.StandardApiResponse.CreateForbiddenResponse(e.Errors));
+                    context.Result = new ObjectResult(StandardApiResponse.CreateForbiddenResponse(e.Errors));
                     _logger.LogWarning("Handled Exception", e);
                     break;
                 case HttpConflictException e:
-                    context.Result = new ObjectResult(ApiResponse.StandardApiResponse.CreateConflictResponse());
+                    context.Result = new ObjectResult(StandardApiResponse.CreateConflictResponse());
                     _logger.LogWarning("Handled Exception", e);
                     break;
                 case HttpResourceNotFoundException e:
-                    context.Result = new ObjectResult(ApiResponse.StandardApiResponse.CreateNotFoundResponse());
+                    context.Result = new ObjectResult(StandardApiResponse.CreateNotFoundResponse());
                     _logger.LogWarning("Handled Exception", e);
                     break;
                 case UnauthorizedAccessException e:
-                    context.Result = new ObjectResult(ApiResponse.StandardApiResponse.CreateUnauthorizedResponse());
+                    context.Result = new ObjectResult(StandardApiResponse.CreateUnauthorizedResponse());
                     _logger.LogWarning("Handled Exception", e);
                     break;
                 case RemoteServerException e:
-                    context.Result = new ObjectResult(ApiResponse.StandardApiResponse.CreateServiceUnavailableResponse());
+                    context.Result = new ObjectResult(StandardApiResponse.CreateServiceUnavailableResponse());
                     _logger.LogWarning("Handled Exception", e);
                     break;
                 default:

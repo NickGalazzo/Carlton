@@ -70,7 +70,7 @@ namespace Carlton.Infrastructure.ApiResponse
         {
             get
             {
-                return ((int)Code >= 200) && ((int)Code <= 299)
+                return (Code >= 200) && (Code <= 299)
                     ? ApiResponseStatus.OK : ApiResponseStatus.ERROR;
             }
         }

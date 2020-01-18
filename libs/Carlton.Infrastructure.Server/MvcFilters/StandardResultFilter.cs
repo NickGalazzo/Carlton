@@ -1,7 +1,6 @@
 ﻿using Carlton.Infrastructure.ApiResponse;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System.Web.Http.Results;
 
 namespace Carlton.Infrastructure.MvcFilters
 {
@@ -11,13 +10,13 @@ namespace Carlton.Infrastructure.MvcFilters
         {
             var statusCode = context.HttpContext.Response.StatusCode;
 
-            switch (context.Result)
+            switch(context.Result)
             {
                 case ObjectResult objResult:
                     objResult.Value = new ObjectResult(
                         StandardApiResponse.CreateSuccessResponse(statusCode, "", objResult.Value));
                     break;
-                case Microsoft.AspNetCore.Mvc.StatusCodeResult statusCodeResult:
+                case StatusCodeResult statusCodeResult:
                     context.Result = new ObjectResult(
                        StandardApiResponse.CreateSuccessResponse(statusCode, "", null));
                     break;
@@ -25,10 +24,6 @@ namespace Carlton.Infrastructure.MvcFilters
                     context.Result = new ObjectResult(
                         StandardApiResponse.CreateSuccessResponse(statusCode, "", contentResult.Content));
                     break;
-                //case JsonResult jsonResult:
-                //    context.Result = new ObjectResult(
-                //        StandardApiResponse.CreateSuccessResponse(statusCode, "", jsonResult.Value));
-                 //   break;
                 default:
                     break;
             }

@@ -1,4 +1,5 @@
 ﻿using Carlton.Infrastructure.Middleware;
+using Carlton.Infrastructure.Server.Correlation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Http;

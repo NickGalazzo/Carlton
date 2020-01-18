@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Carlton.Infrastructure.Server.Correlation;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
 using System;
@@ -44,11 +45,5 @@ namespace Carlton.Infrastructure.Middleware
             return _next(context);
         }
     }
-
-    public class CorrelationIdOptions
-    {
-        private const string DefaultHeader = "X-Correlation-ID";
-        public string Header { get; set; } = DefaultHeader;
-        public bool IncludeInResponse { get; set; }
-    }
 }
+
