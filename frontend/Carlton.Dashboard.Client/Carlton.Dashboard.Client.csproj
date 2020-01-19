@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\libs\Carlton.Base.Infrastructure.Client\Carlton.Base.Infrastructure.Client.csproj" />
     <ProjectReference Include="..\..\libs\Carlton.Client.Base\Carlton.Base.Infrastructure.Client.csproj" />
     <ProjectReference Include="..\..\libs\Carlton.Dashboard.Components\Carlton.Dashboard.Components.csproj" />
   </ItemGroup>

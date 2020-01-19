@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Carlton.Base.Infrastructure\Carlton.Base.Infrastructure.csproj" />
     <ProjectReference Include="..\Carlton.Infrastructure\Carlton.Base.Infrastructure.csproj" />
   </ItemGroup>
 

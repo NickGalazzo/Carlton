@@ -12,15 +12,14 @@ namespace Carlton.CQRS.Exceptions
         {
             var type = ex.TargetSite.ReflectedType;
 
-            switch (type)
+
+
+            throw type switch
             {
-                case ICommandHandler c:
-                    throw new CommandException(requestObj as ICommand, ex);
-                case IQuery q:
-                    throw new QueryException(requestObj as IQuery, ex);
-                default:
-                    throw new InvalidOperationException("Request is neither a command nor query, this should never happen");
-            }
+                ICommandHandler _ => new CommandException(requestObj as ICommand, ex),
+                IQuery _ => new QueryException(requestObj as IQuery, ex),
+                _ => new InvalidOperationException("Request is neither a command nor query, this should never happen"),
+            };
         }
     }
 }

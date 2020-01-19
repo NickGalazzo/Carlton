@@ -1,6 +1,5 @@
 ﻿@namespace Carlton.Base.Infastructure.Client.Components
 @using System
-@using Carlton.Base.Infastructure.Client.Components
 @using Carlton.Base.Infastructure.Client.Data
 @using Carlton.Base.Infastructure.Client.Events
 @using Microsoft.AspNetCore.Components
@@ -44,8 +43,8 @@
 
     public void ComponentEventHandler(IComponentEvent<IComponentEventResult> evt)
     {
-        //  var handlerType = typeof(IComponentEventHandler<,>).MakeGenericType(evt.GetType(), typeof(IComponentEventResult));
-        // dynamic handler = ServiceProvider.GetService(handlerType);
-        // handler.Handle((dynamic)evt);
+        //var handlerType = typeof(IComponentEventHandler<TViewModel, IComponentEventResult>).MakeGenericType(evt.GetType(), typeof(IComponentEventResult));
+        //dynamic handler = ServiceProvider.GetService(handlerType);
+        //handler.Handle((dynamic)evt);
     }
 }
