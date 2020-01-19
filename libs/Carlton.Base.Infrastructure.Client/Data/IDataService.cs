@@ -1,6 +1,6 @@
 ﻿
 
-namespace Carlton.Base.Infastructure.Client.Data
+namespace Carlton.Base.Infrastructure.Client.Data
 {
     public interface IDataService<TViewModel> : IReadOnlyDataService<TViewModel>
     {

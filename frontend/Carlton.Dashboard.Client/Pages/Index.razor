@@ -17,7 +17,7 @@
 @using Carlton.Dashboard.ViewModels.Feed;
 @using Carlton.Dashboard.ViewModels.OverviewCards;
 @using Carlton.Dashboard.ViewModels.CarltonTree;
-@using Carlton.Base.Infastructure.Client.Components
+@using Carlton.Base.Infrastructure.Client.Components
 
 <h1>Hello, world!</h1>
 
@@ -25,11 +25,11 @@ Welcome to your new app.
 
 <DataComponent TComponent="HomeForDinnerCard"/>
 
-@*<DataWrapper TViewModel="HomeForDinnerViewModel">
+<DataWrapper TViewModel="HomeForDinnerViewModel">
      <ChildComponent>
             <HomeForDinnerCard ViewModel="@context.ViewModel" OnComponentEvent="@context.ComponentEventHandler"/>
      </ChildComponent>
-</DataWrapper>*@
+</DataWrapper>
 
 <button type="button" @onclick="()=>
                                 {

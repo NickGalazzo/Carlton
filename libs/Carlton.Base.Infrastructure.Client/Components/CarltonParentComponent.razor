@@ -1,5 +1,5 @@
-﻿@namespace Carlton.Base.Infastructure.Client.Components
-@using Carlton.Base.Infastructure.Client.Events
+﻿@using Carlton.Base.Infrastructure.Client.Events
+@namespace Carlton.Base.infrastructure.Client.Components
 @typeparam TViewModel
 
 @code {
@@ -8,9 +8,6 @@
 
     [Parameter]
     public EventCallback<IComponentEvent<IComponentEventResult>> OnComponentEvent { get; set; }
-
-    [Parameter]
-    public EventCallback OnComponentEvent2 { get; set; }
 
     public Type Test { get { return typeof(TViewModel); } }
 }

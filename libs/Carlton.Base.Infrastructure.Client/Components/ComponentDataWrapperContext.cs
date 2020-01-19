@@ -1,15 +1,15 @@
-﻿using Carlton.Base.Infastructure.Client.Events;
+﻿using Carlton.Base.Infrastructure.Client.Events;
 using System;
 using System.Threading.Tasks;
 
-namespace Carlton.Base.Infastructure.Client.Components
+namespace Carlton.Base.Infrastructure.Client.Components
 {
     public class ComponentDataWrapperContext<TViewModel>
     {
         public TViewModel ViewModel { get; }
-        public Func<IComponentEvent<IComponentEventResult>, Task<IComponentEventResult>> ComponentEventHandler { get; }
+        public Func<IComponentEvent<IComponentEventResult>, Task> ComponentEventHandler { get; }
         
-        public ComponentDataWrapperContext(TViewModel viewModel, Func<IComponentEvent<IComponentEventResult>, Task<IComponentEventResult>> componentEventHandler)
+        public ComponentDataWrapperContext(TViewModel viewModel, Func<IComponentEvent<IComponentEventResult>, Task> componentEventHandler)
         {
             ViewModel = viewModel;
             ComponentEventHandler = componentEventHandler;

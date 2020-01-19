@@ -1,7 +1,7 @@
-﻿@namespace Carlton.Base.Infastructure.Client.Components
+﻿@namespace Carlton.Base.Infrastructure.Client.Components
 @using MediatR
-@using Carlton.Base.Infastructure.Client.Data
-@using Carlton.Base.Infastructure.Client.Events
+@using Carlton.Base.Infrastructure.Client.Data
+@using Carlton.Base.Infrastructure.Client.Events
 @using Microsoft.AspNetCore.Components
 @typeparam TViewModel
 
@@ -37,8 +37,8 @@
     }
 
 
-    public async Task<IComponentEventResult> ComponentEventHandler(IComponentEvent<IComponentEventResult> evt)
+    public async Task ComponentEventHandler(IComponentEvent<IComponentEventResult> evt)
     {
-        return await Mediatr.Send(evt);
+        await Mediatr.Send(evt);
     }
 }

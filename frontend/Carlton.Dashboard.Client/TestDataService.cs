@@ -1,4 +1,4 @@
-﻿using Carlton.Base.Infastructure.Client.Data;
+﻿using Carlton.Base.Infrastructure.Client.Data;
 using Carlton.Dashboard.ViewModels.HomeForDinner;
 using System;
 using System.Collections.Generic;

@@ -1,8 +1,8 @@
-﻿@namespace Carlton.Base.Infastructure.Client.Components
+﻿@namespace Carlton.Base.Infrastructure.Client.Components
 @using System
 @using MediatR
-@using Carlton.Base.Infastructure.Client.Data
-@using Carlton.Base.Infastructure.Client.Events
+@using Carlton.Base.Infrastructure.Client.Data
+@using Carlton.Base.Infrastructure.Client.Events
 @using Microsoft.AspNetCore.Components
 @typeparam TComponent
 
@@ -24,7 +24,7 @@
 
     private object ViewModel { get; set; }
 
-    private delegate Task<IComponentEventResult> ComponentEventDel(IComponentEvent<IComponentEventResult> evt);
+    private delegate Task ComponentEventDel(IComponentEvent<IComponentEventResult> evt);
 
     protected override void OnInitialized()
     {
@@ -46,7 +46,7 @@
 
         //Wire-Up Child Event Callback
         ComponentEventDel del = ComponentEventHandler;
-        var eventCallback = new EventCallback(this, del);
+        var eventCallback = new EventCallback<IComponentEvent<IComponentEventResult>>(this, del);
 
         //Render Child Component
         DynamicChild = builder =>
@@ -54,16 +54,17 @@
             builder.OpenElement(1, "div");
             builder.OpenComponent(2, typeof(TComponent));
             builder.AddAttribute(1, "ViewModel", ViewModel);
-            builder.AddAttribute(2, "OnComponentEvent2", eventCallback);
+            builder.AddAttribute(2, "OnComponentEvent", eventCallback);
             builder.CloseComponent();
             builder.CloseElement();
         };
     }
 
 
-    private async Task<IComponentEventResult> ComponentEventHandler(IComponentEvent<IComponentEventResult> evt)
+    private async Task ComponentEventHandler(IComponentEvent<IComponentEventResult> evt)
     {
-        throw new Exception("This is a test");
-        return await Mediator.Send(evt);
+        var result = await Mediator.Send(evt);
+        
+        //Add Exception Handling Here
     }
 }

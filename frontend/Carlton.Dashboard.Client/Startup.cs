@@ -1,4 +1,4 @@
-using Carlton.Base.Infastructure.Client.Data;
+using Carlton.Base.Infrastructure.Client.Data;
 using Carlton.Dashboard.Components.HomeForDinner;
 using Carlton.Dashboard.ViewModels.HomeForDinner;
 using MediatR;

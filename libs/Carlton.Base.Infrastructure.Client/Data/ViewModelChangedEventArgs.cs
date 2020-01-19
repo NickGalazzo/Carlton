@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Carlton.Base.Infastructure.Client.Data
+namespace Carlton.Base.Infrastructure.Client.Data
 {
     public class ViewModelChangedEventArgs : EventArgs
     {
