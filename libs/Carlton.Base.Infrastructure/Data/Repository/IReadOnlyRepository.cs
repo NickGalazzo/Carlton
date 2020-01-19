@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.Data.Repository.Base
+namespace Carlton.Base.Infrastructure.Data.Repository
 {
     public interface IReadOnlyRepository<T, IdType>
     {

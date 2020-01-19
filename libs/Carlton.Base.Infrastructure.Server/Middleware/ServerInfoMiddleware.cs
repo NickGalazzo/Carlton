@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Runtime.Versioning;
 using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.Middleware
+namespace Carlton.Base.Infrastructure.Server.Middleware
 {
     public class ServerInfoMiddleware
     {

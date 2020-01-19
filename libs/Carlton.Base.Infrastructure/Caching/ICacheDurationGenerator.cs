@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Carlton.Infrastructure.Caching
+namespace Carlton.Base.Infrastructure.Caching
 {
     public interface ICacheDurationGenerator
     {

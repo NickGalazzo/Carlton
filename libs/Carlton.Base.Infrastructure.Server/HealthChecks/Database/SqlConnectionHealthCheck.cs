@@ -1,7 +1,7 @@
 ﻿using System.Data.Common;
 using System.Data.SqlClient;
 
-namespace Carlton.Infrastructure.HealthChecks.Database
+namespace Carlton.Base.Infrastructure.Server.HealthChecks.Database
 {
     public class SqlConnectionHealthCheck : DbConnectionHealthCheck
     {

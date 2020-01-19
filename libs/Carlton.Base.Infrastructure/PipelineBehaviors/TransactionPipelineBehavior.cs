@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Transactions;
 
-namespace Carlton.Infrastructure.PipelineBehaviors
+namespace Carlton.Base.Infrastructure.PipelineBehaviors
 {
     public class TransactionPipelineBehavior<TRequest, TResponse> : BasePipelineBehavior<TRequest, TResponse>
     {

@@ -1,4 +1,4 @@
-﻿namespace Carlton.Domain.BusinessObjects
+﻿namespace Carlton.Base.Domain.BusinessObjects
 {
     public interface IAggregateRoot : IDomainObject
     {

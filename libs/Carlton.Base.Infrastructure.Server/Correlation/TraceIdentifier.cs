@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace Carlton.Infrastructure.Correlation
+namespace Carlton.Base.Infrastructure.Server.Correlation
 {
     public class TraceIdentifier
     {

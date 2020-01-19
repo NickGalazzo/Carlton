@@ -1,6 +1,6 @@
-﻿using Carlton.Infrastructure.Data.Base;
-using Carlton.Infrastructure.Data.Connections;
-using Carlton.Infrastructure.Data.Repository.Base;
+﻿using Carlton.Base.Infrastructure.Data;
+using Carlton.Base.Infrastructure.Data.Connections;
+using Carlton.Base.Infrastructure.Data.Repository;
 using Carlton.Infrastructure.Data.Repository.Dapper.Contracts;
 using Carlton.Infrastructure.Data.Repository.Dapper.Sproc.Contracts;
 using Dapper;

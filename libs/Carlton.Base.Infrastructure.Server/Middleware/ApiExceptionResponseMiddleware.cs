@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.Middleware
+namespace Carlton.Base.Infrastructure.Server.Middleware
 {
     public class ApiExceptionResponseMiddleware
     {

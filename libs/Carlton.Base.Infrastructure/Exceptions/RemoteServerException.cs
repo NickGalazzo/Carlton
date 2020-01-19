@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 
-namespace Carlton.Infrastructure.Exceptions
+namespace Carlton.Base.Infrastructure.Exceptions
 {
     public class RemoteServerException : CarltonBaseException
     {

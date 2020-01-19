@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.PipelineBehaviors
+namespace Carlton.Base.Infrastructure.PipelineBehaviors
 {
     public abstract class BasePipelineBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {

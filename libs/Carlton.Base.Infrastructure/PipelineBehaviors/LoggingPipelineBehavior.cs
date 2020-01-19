@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.PipelineBehaviors
+namespace Carlton.Base.Infrastructure.PipelineBehaviors
 {
     public class LoggingPipelineBehavior<TRequest, TResponse> : BasePipelineBehavior<TRequest, TResponse>
     {

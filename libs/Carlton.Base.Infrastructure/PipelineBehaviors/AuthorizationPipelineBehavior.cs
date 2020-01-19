@@ -1,11 +1,11 @@
-﻿using Carlton.Infrastructure.Security;
+﻿using Carlton.Base.Infrastructure.Security;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.PipelineBehaviors
+namespace Carlton.Base.Infrastructure.PipelineBehaviors
 {
     public class AuthorizationPipelineBehavior<TRequest, TResponse> : BasePipelineBehavior<TRequest, TResponse>
     {

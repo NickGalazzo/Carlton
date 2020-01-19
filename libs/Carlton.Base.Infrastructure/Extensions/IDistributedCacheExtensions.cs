@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.Extensions
+namespace Carlton.Base.Infrastructure.Extensions
 {
     public static class DistributedCaching
     {

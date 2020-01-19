@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 
-namespace Carlton.Infrastructure.ApiResponse
+namespace Carlton.Base.Infrastructure.Server.ApiResponse
 {
     public class StandardApiResponse
     {

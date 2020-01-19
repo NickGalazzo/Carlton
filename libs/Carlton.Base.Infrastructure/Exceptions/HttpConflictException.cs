@@ -1,4 +1,4 @@
-﻿namespace Carlton.Infrastructure.Exceptions
+﻿namespace Carlton.Base.Infrastructure.Exceptions
 {
     public class HttpConflictException : CarltonBaseException
     {

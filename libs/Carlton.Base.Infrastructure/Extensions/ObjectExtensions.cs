@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace Carlton.Infrastructure.Extensions
+namespace Carlton.Base.Infrastructure.Extensions
 {
     public static class ObjectExtensions
     {

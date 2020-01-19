@@ -1,11 +1,11 @@
-﻿using Carlton.Infrastructure.Server.Correlation;
+﻿using Carlton.Base.Infrastructure.Server.Correlation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
 using System;
 using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.Middleware
+namespace Carlton.Base.Infrastructure.Server.Middleware
 {
     public class CorrelationIdMiddleware
     {

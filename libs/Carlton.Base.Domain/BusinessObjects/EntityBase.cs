@@ -1,9 +1,9 @@
 ﻿
-using Carlton.Domain.DomainEvents;
+using Carlton.Base.Domain.DomainEvents;
 using System;
 using System.Collections.Generic;
 
-namespace Carlton.Domain.BusinessObjects
+namespace Carlton.Base.Domain.BusinessObjects
 {
     public abstract class EntityBase<IdType> : IDomainObject, IEquatable<EntityBase<IdType>>
     {

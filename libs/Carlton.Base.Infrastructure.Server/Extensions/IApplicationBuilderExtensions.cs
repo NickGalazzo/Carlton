@@ -1,12 +1,12 @@
-﻿using Carlton.Infrastructure.Middleware;
-using Carlton.Infrastructure.Server.Correlation;
+﻿using Carlton.Base.Infrastructure.Server.Middleware;
+using Carlton.Base.Infrastructure.Server.Correlation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System;
 
-namespace Carlton.Infrastructure.Extensions
+namespace Carlton.Base.Infrastructure.Server.Extensions
 {
     public static class IApplicationBuilderExtensions
     {

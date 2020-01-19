@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace Carlton.Infrastructure.Data.Connections
+namespace Carlton.Base.Infrastructure.Data.Connections
 {
     public interface IDbConnectionFactory
     {

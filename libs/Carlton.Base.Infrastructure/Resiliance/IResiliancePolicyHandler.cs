@@ -1,7 +1,7 @@
 ﻿using Polly;
 using Polly.Wrap;
 
-namespace Carlton.Infrastructure.Resiliance
+namespace Carlton.Base.Infrastructure.Resiliance
 {
     public interface IResiliancePolicyHandler<T>
     {

@@ -3,7 +3,7 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.HealthChecks.Database
+namespace Carlton.Base.Infrastructure.Server.HealthChecks.Database
 {
     public class HealthCheckResponseWriter
     {

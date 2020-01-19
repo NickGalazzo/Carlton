@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Carlton.Infrastructure.Exceptions
+namespace Carlton.Base.Infrastructure.Exceptions
 {
     public class CarltonBaseException : Exception
     {

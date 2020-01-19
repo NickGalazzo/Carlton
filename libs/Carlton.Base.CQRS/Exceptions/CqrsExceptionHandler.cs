@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Carlton.CQRS.Commands;
-using Carlton.CQRS.Queries;
-using Carlton.Infrastructure.Exceptions;
+using Carlton.Base.CQRS.Commands;
+using Carlton.Base.CQRS.Queries;
+using Carlton.Base.Infrastructure.Exceptions;
 
-namespace Carlton.CQRS.Exceptions
+namespace Carlton.Base.CQRS.Exceptions
 {
     public class CqrsExceptionHandler : IExceptionHandler
     {

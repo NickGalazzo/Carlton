@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace Carlton.Infrastructure.Data.Base
+namespace Carlton.Base.Infrastructure.Data
 {
     public interface IQueryConstraints<T> 
     {

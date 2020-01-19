@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace Carlton.Infrastructure.HealthChecks.Database
+namespace Carlton.Base.Infrastructure.Server.HealthChecks.Database
 {
     public abstract class DbConnectionHealthCheck : IHealthCheck
     {

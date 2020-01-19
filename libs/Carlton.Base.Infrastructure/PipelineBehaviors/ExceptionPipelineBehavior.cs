@@ -1,11 +1,11 @@
-﻿using Carlton.Infrastructure.Exceptions;
+﻿using Carlton.Base.Infrastructure.Exceptions;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.PipelineBehaviors
+namespace Carlton.Base.Infrastructure.PipelineBehaviors
 {
     public class ExceptionPipelineBehavior<TRequest, TResponse> : BasePipelineBehavior<TRequest, TResponse>
     {

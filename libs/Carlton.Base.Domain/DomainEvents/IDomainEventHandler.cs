@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Carlton.Domain.DomainEvents
+namespace Carlton.Base.Domain.DomainEvents
 {
     public interface IDomainEventHandler : INotificationHandler<IDomainEvent>
     {

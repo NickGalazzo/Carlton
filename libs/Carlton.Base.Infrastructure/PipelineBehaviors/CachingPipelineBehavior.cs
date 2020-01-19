@@ -1,13 +1,13 @@
-﻿using Carlton.Infrastructure.Caching;
+﻿using Carlton.Base.Infrastructure.Caching;
 using MediatR;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using Carlton.Infrastructure.Extensions;
+using Carlton.Base.Infrastructure.Extensions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.PipelineBehaviors
+namespace Carlton.Base.Infrastructure.PipelineBehaviors
 {
     public class CachingPipelineBehavior<TRequest, TResponse> : BasePipelineBehavior<TRequest, TResponse>
         where TResponse : class

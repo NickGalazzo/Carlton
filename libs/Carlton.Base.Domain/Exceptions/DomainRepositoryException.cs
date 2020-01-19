@@ -1,8 +1,8 @@
-﻿using Carlton.Domain.BusinessObjects;
-using Carlton.Infrastructure.Exceptions;
+﻿using Carlton.Base.Domain.BusinessObjects;
+using Carlton.Base.Infrastructure.Exceptions;
 using System;
 
-namespace Carlton.Domain.Exceptions
+namespace Carlton.Base.Domain.Exceptions
 {
     public class DomainRepositoryException : CarltonBaseException
     {

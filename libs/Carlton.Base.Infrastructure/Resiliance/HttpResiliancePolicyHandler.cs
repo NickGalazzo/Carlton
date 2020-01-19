@@ -1,4 +1,4 @@
-﻿using Carlton.Infrastructure.Exceptions;
+﻿using Carlton.Base.Infrastructure.Exceptions;
 using Microsoft.Extensions.Logging;
 using Polly;
 using Polly.Wrap;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 
-namespace Carlton.Infrastructure.Resiliance
+namespace Carlton.Base.Infrastructure.Resiliance
 {
     public class HttpResiliancePolicyHandler : IResiliancePolicyHandler<HttpResponseMessage>
     {

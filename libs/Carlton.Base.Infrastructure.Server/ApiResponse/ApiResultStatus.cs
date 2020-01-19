@@ -1,4 +1,4 @@
-﻿namespace Carlton.Infrastructure.ApiResponse
+﻿namespace Carlton.Base.Infrastructure.Server.ApiResponse
 {
     public enum ApiResponseStatus
     {

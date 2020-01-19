@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Carlton.Infrastructure.Data.Repository.Base
+namespace Carlton.Base.Infrastructure.Data.Repository
 {
     public class PagedResult<T>
     {

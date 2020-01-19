@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.Data.Repository.Base
+namespace Carlton.Base.Infrastructure.Data.Repository
 {
     public interface IRepository<T, IdType> : IReadOnlyRepository<T, IdType>
     {

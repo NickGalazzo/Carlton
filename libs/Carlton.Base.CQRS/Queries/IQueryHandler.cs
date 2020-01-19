@@ -1,4 +1,4 @@
-﻿namespace Carlton.CQRS.Queries
+﻿namespace Carlton.Base.CQRS.Queries
 {
     public interface IQueryHandler
     {

@@ -1,10 +1,10 @@
-﻿using Carlton.Infrastructure.Resiliance;
+﻿using Carlton.Base.Infrastructure.Resiliance;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Carlton.Infrastructure.PipelineBehaviors
+namespace Carlton.Base.Infrastructure.PipelineBehaviors
 {
     public class ResiliancePipelineBehavior<TRequest, TResponse> : BasePipelineBehavior<TRequest, TResponse>
     {

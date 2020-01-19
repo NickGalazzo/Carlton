@@ -1,12 +1,12 @@
-﻿using Carlton.Infrastructure.ApiResponse;
-using Carlton.Infrastructure.Exceptions;
+﻿using Carlton.Base.Infrastructure.Exceptions;
+using Carlton.Base.Infrastructure.Server.ApiResponse;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace Carlton.Infrastructure.MvcFilters
+namespace Carlton.Base.Infrastructure.Server.MvcFilters
 {
     public class StandardExceptionFilter : IExceptionFilter
     {

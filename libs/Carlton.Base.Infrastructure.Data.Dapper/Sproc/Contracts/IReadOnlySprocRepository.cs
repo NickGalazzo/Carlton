@@ -1,5 +1,5 @@
-﻿using Carlton.Infrastructure.Data.Base;
-using Carlton.Infrastructure.Data.Repository.Base;
+﻿using Carlton.Base.Infrastructure.Data;
+using Carlton.Base.Infrastructure.Data.Repository;
 using Carlton.Infrastructure.Data.Repository.Dapper.Contracts;
 using System.Threading.Tasks;
 

@@ -1,4 +1,4 @@
-﻿using Carlton.Infrastructure.Data.Connections;
+﻿using Carlton.Base.Infrastructure.Data.Connections;
 using Carlton.Infrastructure.Data.Repository.Dapper;
 using Dapper;
 using System.Threading.Tasks;

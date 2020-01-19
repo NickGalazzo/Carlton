@@ -1,8 +1,8 @@
-﻿using Carlton.Infrastructure.ApiResponse;
+﻿using Carlton.Base.Infrastructure.Server.ApiResponse;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace Carlton.Infrastructure.MvcFilters
+namespace Carlton.Base.Infrastructure.Server.MvcFilters
 {
     public class StandardResultFilter : IResultFilter
     {

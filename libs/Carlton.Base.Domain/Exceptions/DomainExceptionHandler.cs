@@ -1,11 +1,11 @@
-﻿using Carlton.Domain.BusinessObjects;
-using Carlton.Domain.DomainEvents;
-using Carlton.Domain.Repository;
-using Carlton.Infrastructure.Exceptions;
+﻿using Carlton.Base.Domain.BusinessObjects;
+using Carlton.Base.Domain.DomainEvents;
+using Carlton.Base.Domain.Repository;
+using Carlton.Base.Infrastructure.Exceptions;
 using System;
 using System.Threading.Tasks;
 
-namespace Carlton.Domain.Exceptions
+namespace Carlton.Base.Domain.Exceptions
 {
     public class DomainExceptionHandler : IExceptionHandler
     {

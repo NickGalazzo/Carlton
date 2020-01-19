@@ -1,8 +1,8 @@
-﻿using Carlton.CQRS.Commands;
-using Carlton.Infrastructure.Exceptions;
+﻿using Carlton.Base.CQRS.Commands;
+using Carlton.Base.Infrastructure.Exceptions;
 using System;
 
-namespace Carlton.CQRS.Exceptions
+namespace Carlton.Base.CQRS.Exceptions
 {
     public class CommandException : CarltonBaseException
     {

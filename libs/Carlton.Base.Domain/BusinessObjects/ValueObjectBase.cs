@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace Carlton.Domain.BusinessObjects
+namespace Carlton.Base.Domain.BusinessObjects
 {
     public abstract class ValueObjectBase : IDomainObject
     {

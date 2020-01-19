@@ -1,8 +1,8 @@
-﻿using Carlton.Domain.BusinessObjects;
-using Carlton.Infrastructure.Data.Repository.Base;
+﻿using Carlton.Base.Domain.BusinessObjects;
+using Carlton.Base.Infrastructure.Data.Repository;
 using System.Collections.Generic;
 
-namespace Carlton.Domain.Repository
+namespace Carlton.Base.Domain.Repository
 {
     public interface IReadOnlyDomainRepository<AggregateType, IdType> :
         IDomainRepository,

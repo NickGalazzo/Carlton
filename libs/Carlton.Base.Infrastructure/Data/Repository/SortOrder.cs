@@ -1,4 +1,4 @@
-﻿namespace Carlton.Infrastructure.Data.Base
+﻿namespace Carlton.Base.Infrastructure.Data
 {
     public enum SortOrder
     {

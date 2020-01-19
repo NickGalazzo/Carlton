@@ -1,4 +1,4 @@
-﻿namespace Carlton.Infrastructure.Server.Correlation
+﻿namespace Carlton.Base.Infrastructure.Server.Correlation
 {
     public class CorrelationIdOptions
     {

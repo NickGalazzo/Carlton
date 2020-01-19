@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Carlton.Infrastructure.Data.Base
+namespace Carlton.Base.Infrastructure.Data
 {
     public class QueryConstraints<T> : IQueryConstraints<T> where T : class
     {

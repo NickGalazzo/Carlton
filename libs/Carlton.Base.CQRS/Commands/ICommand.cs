@@ -1,4 +1,4 @@
-﻿namespace Carlton.CQRS.Commands
+﻿namespace Carlton.Base.CQRS.Commands
 {
     public interface ICommand
     {
