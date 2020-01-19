@@ -1,0 +1,69 @@
+﻿@namespace Carlton.Base.Infastructure.Client.Components
+@using System
+@using MediatR
+@using Carlton.Base.Infastructure.Client.Data
+@using Carlton.Base.Infastructure.Client.Events
+@using Microsoft.AspNetCore.Components
+@typeparam TComponent
+
+<div class="carlton-data-component">
+    @DynamicChild
+</div>
+
+
+@code{
+
+    [Parameter]
+    public RenderFragment DynamicChild { get; set; }
+
+    [Inject]
+    private IServiceProvider ServiceProvider { get; set; }
+
+    [Inject]
+    private IMediator Mediator { get; set; }
+
+    private object ViewModel { get; set; }
+
+    private delegate Task<IComponentEventResult> ComponentEventDel(IComponentEvent<IComponentEventResult> evt);
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        //Get DataService
+        var viewModelType = typeof(TComponent).BaseType.GenericTypeArguments.First();
+        var dataServiceType = typeof(IDataService<>).MakeGenericType(viewModelType);
+        var dataService = (dynamic)ServiceProvider.GetService(dataServiceType);
+
+        //Initial Set of ViewModel
+        ViewModel = dataService.GetViewModel();
+
+        //Wire-Up ViewModel Changed Event
+        dataService.ViewModelChanged += new System.EventHandler<ViewModelChangedEventArgs>((object sender, ViewModelChangedEventArgs e) =>
+        {
+            dataService.GetViewModel();
+        });
+
+        //Wire-Up Child Event Callback
+        ComponentEventDel del = ComponentEventHandler;
+        var eventCallback = new EventCallback(this, del);
+
+        //Render Child Component
+        DynamicChild = builder =>
+        {
+            builder.OpenElement(1, "div");
+            builder.OpenComponent(2, typeof(TComponent));
+            builder.AddAttribute(1, "ViewModel", ViewModel);
+            builder.AddAttribute(2, "OnComponentEvent2", eventCallback);
+            builder.CloseComponent();
+            builder.CloseElement();
+        };
+    }
+
+
+    private async Task<IComponentEventResult> ComponentEventHandler(IComponentEvent<IComponentEventResult> evt)
+    {
+        throw new Exception("This is a test");
+        return await Mediator.Send(evt);
+    }
+}

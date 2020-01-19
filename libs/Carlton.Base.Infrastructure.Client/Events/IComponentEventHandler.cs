@@ -1,5 +1,4 @@
-﻿using Carlton.Base.Infastructure.Client.Events;
-using MediatR;
+﻿using MediatR;
 
 namespace Carlton.Base.Infastructure.Client.Events
 {

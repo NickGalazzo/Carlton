@@ -23,11 +23,13 @@
 
 Welcome to your new app.
 
-<DataWrapper TViewModel="HomeForDinnerViewModel">
+<DataComponent TComponent="HomeForDinnerCard"/>
+
+@*<DataWrapper TViewModel="HomeForDinnerViewModel">
      <ChildComponent>
             <HomeForDinnerCard ViewModel="@context.ViewModel" OnComponentEvent="@context.ComponentEventHandler"/>
      </ChildComponent>
-</DataWrapper>
+</DataWrapper>*@
 
 <button type="button" @onclick="()=>
                                 {

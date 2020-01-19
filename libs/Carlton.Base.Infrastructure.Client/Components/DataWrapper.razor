@@ -1,11 +1,11 @@
 ﻿@namespace Carlton.Base.Infastructure.Client.Components
-@using System
+@using MediatR
 @using Carlton.Base.Infastructure.Client.Data
 @using Carlton.Base.Infastructure.Client.Events
 @using Microsoft.AspNetCore.Components
 @typeparam TViewModel
 
-<div class="carlton-data-component">
+<div class="carlton-data-wrapper">
     @ChildComponent(Context)
 </div>
 
@@ -18,7 +18,7 @@
     private IDataService<TViewModel> DataService { get; set; }
 
     [Inject]
-    private IServiceProvider ServiceProvider { get; set; }
+    private IMediator Mediatr { get; set; }
 
     private ComponentDataWrapperContext<TViewModel> Context { get; set; }
     private TViewModel ViewModel { get; set; }
@@ -29,10 +29,6 @@
         ViewModel = DataService.GetViewModel();
         Context = new ComponentDataWrapperContext<TViewModel>(ViewModel, ComponentEventHandler);
         DataService.ViewModelChanged += DataService_ViewModelChanged;
-
-        //var x = new CarltonParentComponent<IViewModel>();
-
-        //var test = x.GetType().GetGenericArguments()[0];
     }
 
     private void DataService_ViewModelChanged(object sender, ViewModelChangedEventArgs e)
@@ -41,10 +37,8 @@
     }
 
 
-    public void ComponentEventHandler(IComponentEvent<IComponentEventResult> evt)
+    public async Task<IComponentEventResult> ComponentEventHandler(IComponentEvent<IComponentEventResult> evt)
     {
-        //var handlerType = typeof(IComponentEventHandler<TViewModel, IComponentEventResult>).MakeGenericType(evt.GetType(), typeof(IComponentEventResult));
-        //dynamic handler = ServiceProvider.GetService(handlerType);
-        //handler.Handle((dynamic)evt);
+        return await Mediatr.Send(evt);
     }
 }

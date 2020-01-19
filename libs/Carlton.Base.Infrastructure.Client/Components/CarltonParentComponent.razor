@@ -9,5 +9,8 @@
     [Parameter]
     public EventCallback<IComponentEvent<IComponentEventResult>> OnComponentEvent { get; set; }
 
+    [Parameter]
+    public EventCallback OnComponentEvent2 { get; set; }
+
     public Type Test { get { return typeof(TViewModel); } }
 }
