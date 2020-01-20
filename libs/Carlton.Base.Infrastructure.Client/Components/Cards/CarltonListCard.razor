@@ -1,5 +1,5 @@
-﻿@namespace Carlton.Dashboard.Components.Base.Cards
-@inherits CarltonCard
+﻿@namespace Carlton.Base.Infrastructure.Client.Components.Cards
+@inherits  CarltonCard
 @typeparam TItem
 
 
@@ -24,7 +24,7 @@
     public RenderFragment<TItem> ItemTemplate { get; set; }
 
     [Parameter]
-    public IList<TItem> Items { get; set; }
+    public IEnumerable<TItem> Items { get; set; }
 }
 
 

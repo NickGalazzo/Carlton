@@ -1,5 +1,5 @@
-﻿@namespace Carlton.Dashboard.Components.HomeForDinner
-@using Carlton.Dashboard.Components.Base.ToggleSwitch
+﻿@using Carlton.Base.Infrastructure.Client.Components.Toggle
+@namespace Carlton.Dashboard.Components.HomeForDinner
 
 <div class="home-for-dinner-toggle">
     <div class="row justify-content-center">
@@ -8,8 +8,8 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <ToggleSwitch  />
-        </div>
+        <ToggleSwitch />
+    </div>
     <div class="row">
         <input type="text" class="reason-label form-control col-8 justify-content-center" value="test" :disabled="isHomeForDinner==true" label="Where will you be?" v-model="reason" />
     </div>

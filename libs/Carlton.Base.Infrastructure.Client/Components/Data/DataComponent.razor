@@ -1,9 +1,10 @@
-﻿@namespace Carlton.Base.Infrastructure.Client.Components
-@using System
+﻿@using System
 @using MediatR
 @using Carlton.Base.Infrastructure.Client.Data
 @using Carlton.Base.Infrastructure.Client.Events
 @using Microsoft.AspNetCore.Components
+
+@namespace Carlton.Base.Infrastructure.Client.Components.Data
 @typeparam TComponent
 
 <div class="carlton-data-component">
@@ -64,7 +65,7 @@
     private async Task ComponentEventHandler(IComponentEvent<IComponentEventResult> evt)
     {
         var result = await Mediator.Send(evt);
-        
+
         //Add Exception Handling Here
     }
 }

@@ -1,25 +1,18 @@
-﻿using Carlton.Dashboard.ViewModels.Contracts;
-using Carlton.Dashboard.ViewModels.Feed;
+﻿using Carlton.Dashboard.ViewModels.Feed;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace Carlton.Dashboard.Components.Feed
 {
-    public class FeedViewModel
+    public class FeedViewModel 
     {
-        public IList<IGroupedItems<FeedItem>> GroupedFeedItems { get; set; }
+        public IList<GroupedFeedItems> GroupedFeedItems { get; set; }
 
         public FeedViewModel()
         {
-            GroupedFeedItems = new List<IGroupedItems<FeedItem>>();
+            GroupedFeedItems = new List<GroupedFeedItems>();
         }
     }
-
-
-
-
-
-
 }
 
 

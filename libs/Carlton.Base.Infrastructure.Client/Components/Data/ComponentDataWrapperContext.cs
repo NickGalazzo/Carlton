@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Carlton.Base.Infrastructure.Client.Components
+namespace Carlton.Base.Infrastructure.Client.Components.Data
 {
     public class ComponentDataWrapperContext<TViewModel>
     {

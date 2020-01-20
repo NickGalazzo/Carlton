@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace Carlton.Dashboard.ViewModels.CarltonTree
+namespace Carlton.Base.Infrastructure.Client.Components.Tree
 {
     public class CarltonTreeViewModel
     {

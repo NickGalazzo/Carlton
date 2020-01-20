@@ -1,4 +1,4 @@
-﻿@namespace Carlton.Dashboard.Components.Tree
+﻿@namespace Carlton.Base.Infrastructure.Client.Components.Tree
 
 @typeparam TNode
 
@@ -31,10 +31,8 @@
                           Visible="nodeExpanded"
                           HasChildNodes="HasChildNodes" />
             }
-
         </div>
     }
-
 </div>
 
 @code {
@@ -44,11 +42,13 @@
     [Parameter] public RenderFragment<TNode> TitleTemplate { get; set; }
 
     [Parameter] public TNode SelectedNode { get; set; }
+
     [Parameter] public EventCallback<TNode> SelectedNodeChanged { get; set; }
 
     [Parameter] public Func<TNode, IEnumerable<TNode>> ChildSelector { get; set; }
 
     [Parameter] public IList<TNode> ExpandedNodes { get; set; } = new List<TNode>();
+
     [Parameter] public EventCallback<IList<TNode>> ExpandedNodesChanged { get; set; }
 
     [Parameter] public TreeStyle Style { get; set; } = TreeStyle.DefaultTreeStyle;
@@ -85,5 +85,4 @@
             SelectedNodeChanged.InvokeAsync(node);
         }
     }
-
 }

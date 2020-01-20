@@ -1,5 +1,4 @@
-﻿@namespace Carlton.Dashboard.Components.Tree
-@using Carlton.Dashboard.ViewModels.CarltonTree
+﻿@namespace Carlton.Base.Infrastructure.Client.Components.Tree
 
 <div class="carlton-tree">
     <BaseTree Nodes="ViewModel.TreeItems" 
@@ -14,7 +13,6 @@
 
 
 @code {
-
     [Parameter]
     public CarltonTreeViewModel ViewModel { get; set; }
 
