@@ -24,7 +24,7 @@ namespace Carlton.Base.Infrastructure.PipelineBehaviors
                                        .ExecuteAndCaptureAsync(async () =>
                                        {
                                            return await next();
-                                       });
+                                       }).ConfigureAwait(false);
 
             _handler.HandleResult(policyResult);
 

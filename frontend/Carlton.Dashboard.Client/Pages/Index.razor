@@ -68,89 +68,21 @@ Welcome to your new app.
 
 
         var treeBuilder = new TreeItemsBuilder();
-        var tree = treeBuilder.AddTreeNode<SurveyPrompt>("Test 1")
-                   .AddTreeNode<SurveyPrompt>("Test 2")
-                   .AddTreeNode<SurveyPrompt>("Test 3")
-                   .AddTreeNode<HomeForDinnerCard>("Whatever")
-                   .Build();
+        //var tree = treeBuilder.AddTreeNode<SurveyPrompt>("Test 1")
+        //           .AddTreeNode<SurveyPrompt>("Test 2")
+        //           .AddTreeNode<SurveyPrompt>("Test 3")
+        //           .AddTreeNode<HomeForDinnerCard>("Whatever")
+        //           .Build();
 
-        treeViewModel = new CarltonTreeViewModel(tree.ToList());
+      //  treeViewModel = new CarltonTreeViewModel(tree.ToList());
 
-        toDoOverviewCardViewModel = new ToDoOverviewCardViewModel(7);
+      
 
+       
 
+     
 
-        apartmentStatusViewModel =
-           new ApartmentStatusesViewModel()
-           {
-               Statuses = new List<ApartmentStatus>
-               {
-                    new ApartmentStatus("Garbage", ApartmentStatuses.Complete, "mdi-delete"),
-                    new ApartmentStatus("Recycle", ApartmentStatuses.Complete, "mdi-recycle"),
-                    new ApartmentStatus("Shopping", ApartmentStatuses.Complete, "mdi-cart"),
-                    new ApartmentStatus("Cleaning", ApartmentStatuses.Complete, "mdi-spray-bottle"),
-                    new ApartmentStatus("Laundry", ApartmentStatuses.Complete, "mdi-washing-machine"),
-                    new ApartmentStatus("Dry Cleaning", ApartmentStatuses.Incomplete, "mdi-tie")
-                       }
-           };
-
-        householdItemsViewModel = new HouseholdItemsViewModel
-        {
-            Items = new List<HouseholdItem>
-    {
-                new HouseholdItem(1, "Toilet Paper", 25),
-                new HouseholdItem(2, "Paper Towels", 57),
-                new HouseholdItem(3, "Dish Soap", 92),
-                new HouseholdItem(4, "Swiffers", 36)
-            }.OrderBy(o => o.PercentRemaining).ToList()
-        };
-
-        toDoListViewModel = new ToDoListViewModel
-        {
-            ToDoList = new List<ToDo>
-    {
-                new ToDo(1, "Take Out Garbage", false),
-                new ToDo(2, "Go Shopping", false),
-                new ToDo(3, "Prepare Dinner", true)
-            }
-        };
-
-        feedViewModel = new FeedViewModel();
-
-        feedViewModel.GroupedFeedItems.Add(
-                new GroupedFeedItems
-                {
-                    GroupName = "Today",
-                    Items = new List<FeedItem>
-                    {
-                        new FeedItem("Garbage", "Took Out Garbage",
-                            new FeedUser("Nick", string.Empty)),
-                        new FeedItem("Household Items", "Purchahsed Household Items",
-                            new FeedUser("Nick", string.Empty))
-                            }
-                });
-
-        feedViewModel.GroupedFeedItems.Add(
-        new GroupedFeedItems
-        {
-            GroupName = "Yesterday",
-            Items = new List<FeedItem>
-            {
-                    new FeedItem("Garbage", "Took Out Garbage",
-                        new FeedUser("Nick", string.Empty)),
-                    new FeedItem("Household Items", "Purchahsed Household Items",
-                        new FeedUser("Nick", string.Empty))
-                    }
-        });
-
-        homeForDinnerViewModel = new HomeForDinnerViewModel()
-        {
-            DinnerGuests = new List<DinnerGuests>()
-    {
-               new DinnerGuests("Nick", true, string.Empty),
-               new DinnerGuests("Steve", false, "Japaneese Class")
-            }
-        };
+         
 
         testBedViewModel = householdItemsViewModel;
     }

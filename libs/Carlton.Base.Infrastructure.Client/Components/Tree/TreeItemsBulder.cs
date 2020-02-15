@@ -6,16 +6,17 @@ namespace Carlton.Base.Infrastructure.Client.Components.Tree
 {
     public class TreeItemsBuilder
     {
-        private readonly List<(Type type, string nodeTitle)> _componentTestStates;
+        private readonly List<(string nodeTitle, Type type, object viewModel)> _componentTestStates;
 
         public TreeItemsBuilder()
         {
-            _componentTestStates = new List<(Type, string)>();
+            _componentTestStates = new List<(string, Type, object viewModel)>();
         }
 
-        public TreeItemsBuilder AddTreeNode<T>(string nodeTitle)
+        public TreeItemsBuilder AddTreeNode<T>(string nodeTitle, object viewModel)
         {
-            _componentTestStates.Add((typeof(T), nodeTitle));
+            _componentTestStates.Add((nodeTitle, typeof(T), viewModel));
+            Console.WriteLine("TypeOf:" + typeof(T).FullName);
             return this;
         }
 
@@ -28,10 +29,17 @@ namespace Carlton.Base.Infrastructure.Client.Components.Tree
             statesGroupedByComponent.ToList().ForEach(group =>
             {
                 var children = new List<TreeItem>();
-                var treeItem = new TreeItem { Text = group.Key.Name, Children = children };
+                var treeItem = TreeItem.CreateParentNode(group.Key.Name, children);
 
-                group.ToList().ForEach(tup => children.Add(new TreeItem { Text = tup.nodeTitle }));
+                group.ToList().ForEach(tup =>
+                {
+                    children.Add(TreeItem.CreateChildNode(tup.nodeTitle, tup.type, tup.viewModel));
+                    System.Console.WriteLine(tup.type);
+                });
+                
                 treeItems.Add(treeItem);
+             //   Console.WriteLine(group.FirstOrDefault().nodeTitle);
+              //  Console.WriteLine(children.FirstOrDefault()?.DisplayName);
 
             });
             return treeItems;

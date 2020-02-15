@@ -1,7 +1,22 @@
 ﻿@page "/"
+@inject CarltonTreeViewModel vm
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
+<span>@vm.SelectedItem.DisplayName</span>
+<TestBed ComponentType="vm.SelectedItem.Type" ViewModel="vm.SelectedItem.ViewModel" />
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+
+
+@code{
+
+    public Type TestComponentType { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        vm.SelectedItemChanged += (sender, args) =>
+        {
+            this.StateHasChanged();
+        };
+    }
+}

@@ -1,13 +1,13 @@
 ﻿@namespace Carlton.Base.Infrastructure.Client.Components.Tree
 
 <div class="carlton-tree">
-    <BaseTree Nodes="ViewModel.TreeItems" 
+    <BaseTree Nodes="ViewModel.TreeItems"
               ChildSelector="@(item => item.Children)"
-              @bind-SelectedNode="ViewModel.SelectedItem"
+              @bind-SelectedNode="SelectedNode"
               @bind-ExpandedNodes="ExpandedNodes"
               HasChildNodes="@(item => item.Children?.Any() == true)"
               Style="TreeStyle.DefaultTreeStyle">
-        <TitleTemplate>@context.Text</TitleTemplate>
+        <TitleTemplate>@context.DisplayName</TitleTemplate>
     </BaseTree>
 </div>
 
@@ -17,5 +17,16 @@
     public CarltonTreeViewModel ViewModel { get; set; }
 
     IList<TreeItem> ExpandedNodes = new List<TreeItem>();
-    TreeItem selectedNode;
+
+    public TreeItem SelectedNode
+    {
+        set
+        {
+            ViewModel.SelectedItem = value;
+        }
+        get
+        {
+            return ViewModel.SelectedItem;
+        }
+    }
 }
