@@ -84,13 +84,7 @@ namespace Carlton.Base.Infrastructure.Server.ApiResponse
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string[] ValidationErrors {get;set;}
 
-        public DateTimeOffset Timestamp
-        {
-            get
-            {
-                return DateTimeOffset.Now;
-            }
-        }
+        public static DateTimeOffset Timestamp => DateTimeOffset.Now;
     }
 }
 

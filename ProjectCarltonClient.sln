@@ -19,11 +19,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.Infrastructure
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.Infrastructure.Server", "libs\Carlton.Base.Infrastructure.Server\Carlton.Base.Infrastructure.Server.csproj", "{E7D79411-CA20-4269-BC59-E835E87EC63F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carlton.Base.Infrastructure.Data.Dapper", "libs\Carlton.Base.Infrastructure.Data.Dapper\Carlton.Base.Infrastructure.Data.Dapper.csproj", "{74D37D00-A1A8-40F4-973E-074C3C6B9833}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.Infrastructure.Data.Dapper", "libs\Carlton.Base.Infrastructure.Data.Dapper\Carlton.Base.Infrastructure.Data.Dapper.csproj", "{74D37D00-A1A8-40F4-973E-074C3C6B9833}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.CQRS", "libs\Carlton.Base.CQRS\Carlton.Base.CQRS.csproj", "{D7FB34CF-7517-4A33-9F1A-AF8398106524}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.Domain", "libs\Carlton.Base.Domain\Carlton.Base.Domain.csproj", "{F3E1B498-CF25-4B38-8024-63B45989988F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3DB173AA-8173-4539-82D1-D4541B6CA350}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

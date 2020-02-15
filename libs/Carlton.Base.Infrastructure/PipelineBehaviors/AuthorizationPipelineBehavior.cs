@@ -27,7 +27,7 @@ namespace Carlton.Base.Infrastructure.PipelineBehaviors
             }
    
             Logger.LogInformation($"Access to {RequestType} granted");
-            return await next();
+            return await next().ConfigureAwait(false);
         }
     }
 

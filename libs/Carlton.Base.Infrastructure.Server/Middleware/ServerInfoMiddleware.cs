@@ -43,11 +43,11 @@ namespace Carlton.Base.Infrastructure.Server.Middleware
                             HostName = hostname,
                             DotnetVersion = framework,
                             Enviornment = environment
-                        }));
+                        })).ConfigureAwait(false);
             }
             else
             {
-                await _next(context);
+                await _next(context).ConfigureAwait(false);
             }
         }
     }

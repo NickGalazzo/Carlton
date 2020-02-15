@@ -37,9 +37,9 @@ namespace Carlton.Base.Infrastructure.Data
         public IQueryConstraints<T> Page(int pageNumber, int pageSize)
         {
             if (pageNumber < 1 || pageNumber > 1000)
-                throw new ArgumentOutOfRangeException("pageNumber", "Page number must be between 1 and 1000.");
+                throw new ArgumentOutOfRangeException(nameof(pageNumber), "Page number must be between 1 and 1000.");
             if (pageSize < 1 || pageNumber > 1000)
-                throw new ArgumentOutOfRangeException("pageSize", "Page size must be between 1 and 1000.");
+                throw new ArgumentOutOfRangeException(nameof(pageSize), "Page size must be between 1 and 1000.");
 
             PageSize = pageSize;
             PageNumber = pageNumber;
@@ -48,7 +48,7 @@ namespace Carlton.Base.Infrastructure.Data
 
         public IQueryConstraints<T> SortBy(string propertyName)
         {
-            if (propertyName == null) throw new ArgumentNullException("propertyName");
+            if (propertyName == null) throw new ArgumentNullException(nameof(propertyName));
             ValidatePropertyName(propertyName);
 
             SortOrder = SortOrder.Ascending;
@@ -58,7 +58,7 @@ namespace Carlton.Base.Infrastructure.Data
 
         public IQueryConstraints<T> SortByDescending(string propertyName)
         {
-            if (propertyName == null) throw new ArgumentNullException("propertyName");
+            if (propertyName == null) throw new ArgumentNullException(nameof(propertyName));
             ValidatePropertyName(propertyName);
 
             SortOrder = SortOrder.Descending;
@@ -68,7 +68,7 @@ namespace Carlton.Base.Infrastructure.Data
 
         public IQueryConstraints<T> SortBy(Expression<Func<T, object>> propExpression)
         {
-            if (propExpression == null) throw new ArgumentNullException("property");
+            if (propExpression == null) throw new ArgumentNullException(nameof(propExpression));
             var property = ((MemberExpression)propExpression.Body).Member as PropertyInfo;
             var name = property.Name;
             SortBy(name);
@@ -77,7 +77,7 @@ namespace Carlton.Base.Infrastructure.Data
 
         public IQueryConstraints<T> SortByDescending(Expression<Func<T, object>> propExpression)
         {
-            if (propExpression == null) throw new ArgumentNullException("property");
+            if (propExpression == null) throw new ArgumentNullException(nameof(propExpression));
             var property = ((MemberExpression)propExpression.Body).Member as PropertyInfo;
             var name = property.Name;
             SortByDescending(name);
@@ -86,10 +86,11 @@ namespace Carlton.Base.Infrastructure.Data
 
         protected virtual void ValidatePropertyName(string name)
         {
-            if (name == null) throw new ArgumentNullException("name");
+            if (name == null) throw new ArgumentNullException(nameof(name));
             if (ModelType.GetProperty(name) == null)
             {
-                throw new ArgumentException(string.Format("'{0}' is not a public property of '{1}'.", name,
+                throw new ArgumentException(string.Format(new System.Globalization.CultureInfo("en-US"), 
+                                                          "'{0}' is not a public property of '{1}'.", name,
                                                           ModelType.FullName));
             }
         }

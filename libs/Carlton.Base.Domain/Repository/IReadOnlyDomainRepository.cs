@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 namespace Carlton.Base.Domain.Repository
 {
-    public interface IReadOnlyDomainRepository<AggregateType, IdType> :
+    public interface IReadOnlyDomainRepository<TAggregate, TId> :
         IDomainRepository,
-        IReadOnlyRepository<AggregateType, IdType>
-        where AggregateType : IAggregateRoot
+        IReadOnlyRepository<TAggregate, TId>
+        where TAggregate : IAggregateRoot
     {
-        new AggregateType FindById(IdType id);
-        new IEnumerable<AggregateType> FindAll();
+        new TAggregate FindById(TId id);
+        new IEnumerable<TAggregate> FindAll();
     }
 }

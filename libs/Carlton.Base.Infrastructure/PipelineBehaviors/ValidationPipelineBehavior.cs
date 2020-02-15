@@ -32,7 +32,7 @@ namespace Carlton.Base.Infrastructure.PipelineBehaviors
 
             Logger.LogDebug($"{RequestType} passed validation");
 
-            return await next();
+            return await next().ConfigureAwait(false);
         }
     }
 }

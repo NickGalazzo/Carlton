@@ -21,14 +21,14 @@ namespace Carlton.Base.Infrastructure.PipelineBehaviors
                 {
                     Logger.LogInformation($"Begining Transaction for {RequestType}");
 
-                    var result = await next();
+                    var result = await next().ConfigureAwait(false);
                     transaction.Complete();
                     Logger.LogInformation($"End Transaction for {RequestType}");
                     return result;
                 }
             }catch(Exception ex)
             {
-                throw ex;
+                throw;
             }
         }
     }

@@ -5,11 +5,11 @@ namespace Carlton.Base.Infrastructure.Exceptions
 {
     public class RemoteServerException : CarltonBaseException
     {
-        private static readonly string ExceptionMessage = "Error occured while trying to reach remote microservice: {0}";
+        private const string ExceptionMessage = "Error occured while trying to reach remote microservice: {0}";
         public HttpResponseMessage ResponseMessage {get;}
 
         public RemoteServerException(HttpResponseMessage responseMessage, Exception innerException) : 
-            base(string.Format(ExceptionMessage, GetRemoteServer(responseMessage)), innerException)
+            base(string.Format(new System.Globalization.CultureInfo("en-US"), ExceptionMessage, GetRemoteServer(responseMessage)), innerException)
         {
             ResponseMessage = responseMessage;
         }

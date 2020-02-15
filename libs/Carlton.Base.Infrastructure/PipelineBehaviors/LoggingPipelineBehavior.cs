@@ -21,7 +21,7 @@ namespace Carlton.Base.Infrastructure.PipelineBehaviors
 
 
             _stopwatch.Start();
-            var response = await next();
+            var response = await next().ConfigureAwait(false);
             _stopwatch.Stop();
             Logger.LogDebug($"Method: {next.Method.Name} finished with elapsed time of {_stopwatch.Elapsed.TotalMilliseconds}");
             _stopwatch.Reset();

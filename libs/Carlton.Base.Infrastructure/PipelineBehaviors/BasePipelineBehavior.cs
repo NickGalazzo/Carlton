@@ -7,7 +7,7 @@ namespace Carlton.Base.Infrastructure.PipelineBehaviors
 {
     public abstract class BasePipelineBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
-        protected readonly ILogger Logger;
+        protected ILogger Logger { get; }
 
         protected string RequestType
         {

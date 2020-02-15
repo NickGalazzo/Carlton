@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Carlton.Infrastructure.Data.Repository.Dapper.Sproc.Contracts
 {
-    public interface IReadOnlySprocRepository<T, IdType> : IReadOnlyRepository<T, IdType>
+    public interface IReadOnlySprocRepository<T, TId> : IReadOnlyRepository<T, TId>
     {
         Task<PagedResult<T>> Find<TSprocParams>(ISprocSpecification<T, TSprocParams> specification);
         Task<PagedResult<T>> Find<TSprocParams>(ISprocSpecification<T , TSprocParams> specification, IQueryConstraints<T> constraints);

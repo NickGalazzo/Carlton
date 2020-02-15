@@ -3,7 +3,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Carlton.Base.Infrastructure.Extensions
 {
-    public static class Serialization
+    public static class SerializationExtensions
     {
         public static byte[] ToByteArray(this object obj)
         {

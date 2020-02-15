@@ -5,11 +5,11 @@ namespace Carlton.Infrastructure.Data.Repository.Dapper.Sproc
 {
     public class SprocRepositoryOptionsBuilder<T>
     {
-        private static readonly string FIND_BY_ID_SPROC = "{0}_GetById";
-        private static readonly string FIND_ALL_SPROC = "{0}_GetAll";
-        private static readonly string INSERT_SPROC = "{0}_Insert";
-        private static readonly string UPDATE_SPROC = "{0}_Update";
-        private static readonly string DELETE_SPROC = "{0}_Delete";
+        private const string FIND_BY_ID_SPROC = "{0}_GetById";
+        private const string FIND_ALL_SPROC = "{0}_GetAll";
+        private const string INSERT_SPROC = "{0}_Insert";
+        private const string UPDATE_SPROC = "{0}_Update";
+        private const string DELETE_SPROC = "{0}_Delete";
 
         private Delegate _map;
         private string _splitColumns;
@@ -25,11 +25,11 @@ namespace Carlton.Infrastructure.Data.Repository.Dapper.Sproc
         {
             var entityName = typeof(T).Name;
 
-            var insert = string.Format(INSERT_SPROC, entityName);
-            var update = string.Format(UPDATE_SPROC, entityName);
-            var delete = string.Format(DELETE_SPROC, entityName);
-            var findById = string.Format(FIND_BY_ID_SPROC, entityName);
-            var findAll = string.Format(FIND_ALL_SPROC, entityName);
+            var insert = string.Format(new System.Globalization.CultureInfo("en-US"), INSERT_SPROC, entityName);
+            var update = string.Format(new System.Globalization.CultureInfo("en-US"), UPDATE_SPROC, entityName);
+            var delete = string.Format(new System.Globalization.CultureInfo("en-US"), DELETE_SPROC, entityName);
+            var findById = string.Format(new System.Globalization.CultureInfo("en-US"), FIND_BY_ID_SPROC, entityName);
+            var findAll = string.Format(new System.Globalization.CultureInfo("en-US"), FIND_ALL_SPROC, entityName);
             var id = $"{entityName}Id";
 
             WithInsertSproc(insert);

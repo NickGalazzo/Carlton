@@ -5,7 +5,7 @@ namespace Carlton.Base.Infrastructure.Server.HealthChecks.Database
 {
     public class SqlConnectionHealthCheck : DbConnectionHealthCheck
     {
-        private static readonly string DefaultTestQuery = "Select 1";
+        private const string DefaultTestQuery = "Select 1";
 
         public SqlConnectionHealthCheck(string name, string connectionString)
             : this(name, connectionString, testQuery: DefaultTestQuery)

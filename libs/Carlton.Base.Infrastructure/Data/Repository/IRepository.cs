@@ -2,7 +2,7 @@
 
 namespace Carlton.Base.Infrastructure.Data.Repository
 {
-    public interface IRepository<T, IdType> : IReadOnlyRepository<T, IdType>
+    public interface IRepository<T, TId> : IReadOnlyRepository<T, TId>
     {
         Task Update(T entity);
         Task Insert(T entity);

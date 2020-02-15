@@ -11,7 +11,8 @@ namespace Carlton.Base.CQRS.Exceptions
         ICommand Command { get; }
 
         public CommandException(ICommand command, Exception innerException)
-            :base(string.Format(ErrMessage, nameof(command)), innerException)
+            :base(string.Format(new System.Globalization.CultureInfo("en-US"),
+                                ErrMessage, nameof(command)), innerException)
         {
             Command = command;
         }

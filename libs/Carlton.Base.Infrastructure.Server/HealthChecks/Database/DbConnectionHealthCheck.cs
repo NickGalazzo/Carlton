@@ -40,14 +40,14 @@ namespace Carlton.Base.Infrastructure.Server.HealthChecks.Database
             {
                 try
                 {
-                    await connection.OpenAsync(cancellationToken);
+                    await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
 
                     if (TestQuery != null)
                     {
                         var command = connection.CreateCommand();
                         command.CommandText = TestQuery;
 
-                        await command.ExecuteNonQueryAsync(cancellationToken);
+                        await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
                     }
                 }
                 catch (DbException ex)

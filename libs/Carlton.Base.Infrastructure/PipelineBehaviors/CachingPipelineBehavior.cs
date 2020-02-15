@@ -26,7 +26,7 @@ namespace Carlton.Base.Infrastructure.PipelineBehaviors
         public override async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
             var key = _cacheKeyGenerator.GenerateCacheKey(JsonConvert.SerializeObject(request));
-            var cachedValue = await _cache.GetAsync<TResponse>(key);
+            var cachedValue = await _cache.GetAsync<TResponse>(key).ConfigureAwait(false);
 
             if(cachedValue != null)
             {
@@ -39,14 +39,14 @@ namespace Carlton.Base.Infrastructure.PipelineBehaviors
                 Logger.LogInformation($"{RequestType} Request is unable to retrieve value from Memory Cache");
             }
 
-            var response = await next();
+            var response = await next().ConfigureAwait(false);
 
             if(response != null)
             {
                 Logger.LogInformation($"{nameof(response)} is being placed in memory cache");
                 Logger.LogDebug($"object being placed in cache: {JsonConvert.SerializeObject(response)}");
                 var cacheExpiresIn = _cacheDurationGenerator.GetCacheDuration(response);
-                await _cache.SetAsync(key, response.ToByteArray(), new DistributedCacheEntryOptions { AbsoluteExpirationRelativeToNow = cacheExpiresIn });
+                await _cache.SetAsync(key, response.ToByteArray(), new DistributedCacheEntryOptions { AbsoluteExpirationRelativeToNow = cacheExpiresIn }).ConfigureAwait(false);
             }
 
             return response;

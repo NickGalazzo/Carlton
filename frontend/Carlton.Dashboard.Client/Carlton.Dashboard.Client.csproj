@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="3.1.0-preview4.19579.2" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.1.0-preview4.19579.2" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.HttpClient" Version="3.1.0-preview4.19579.2" />
@@ -20,8 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\libs\Carlton.Base.Infrastructure.Client\Carlton.Base.Infrastructure.Client.csproj" />
-    <ProjectReference Include="..\..\libs\Carlton.Client.Base\Carlton.Base.Infrastructure.Client.csproj" />
-    <ProjectReference Include="..\..\libs\Carlton.Dashboard.Components\Carlton.Dashboard.Components.csproj" />
+    <ProjectReference Include="..\..\libs\Carlton.Dashboard.ViewModels\Carlton.Dashboard.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

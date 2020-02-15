@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Carlton.Infrastructure.Data.Repository.Dapper
 {
-    public abstract class BaseDapperReadonlySprocRepository<T, IdType> : IReadOnlySprocRepository<T, IdType>
+    public abstract class BaseDapperReadonlySprocRepository<T, TId> : IReadOnlySprocRepository<T, TId>
     {
         private static readonly Func<T, T> identityMap = o => o;
         private readonly IDbConnectionFactory _factory;
@@ -34,7 +34,7 @@ namespace Carlton.Infrastructure.Data.Repository.Dapper
 
         public async Task<PagedResult<T>> Find<TSprocParams>(ISprocSpecification<T, TSprocParams> specification)
         {
-            return await Find(specification, null);
+            return await Find(specification, null).ConfigureAwait(false);
         }
 
         public async Task<PagedResult<T>> Find<TSprocParams>(ISprocSpecification<T, TSprocParams> specification, IQueryConstraints<T> constraints)
@@ -49,38 +49,36 @@ namespace Carlton.Infrastructure.Data.Repository.Dapper
                 parameters.Add("@PageSize", constraints.PageSize);
             }
 
-            var results = await ExecuteStoredProcedure(specification.SprocName, parameters);
+            var results = await ExecuteStoredProcedure(specification.SprocName, parameters).ConfigureAwait(false);
             return PagedResult<T>.Create(results, constraints.PageNumber);
         }
 
-        public async Task<T> FindById(IdType id)
+        public async Task<T> FindById(TId id)
         {
             var sprocName = Options.CrudSprocMap[SprocConstants.FIND_BY_ID_SPROC];
             var parameters = new DynamicParameters(id);
-            var result = await ExecuteStoredProcedure(sprocName, parameters);
+            var result = await ExecuteStoredProcedure(sprocName, parameters).ConfigureAwait(false);
             return result.FirstOrDefault();
         }
 
         public async Task<IEnumerable<T>> FindAll()
         {
             var sprocName = Options.CrudSprocMap[SprocConstants.FIND_ALL_SPROC];
-            return await ExecuteStoredProcedure(sprocName);
+            return await ExecuteStoredProcedure(sprocName).ConfigureAwait(false);
         }
 
         private async Task<IEnumerable<T>> ExecuteStoredProcedure(string sprocName)
         {
-            return await ExecuteStoredProcedure(sprocName, null);
+            return await ExecuteStoredProcedure(sprocName, null).ConfigureAwait(false);
         }
 
         protected async Task<IEnumerable<T>> ExecuteStoredProcedure(string sproc, DynamicParameters parameters)
         {
             if (Options.Map == null)
             {
-                using (var cn = Connection)
-                {
-                    var results = await cn.QueryAsync<T>(sproc, parameters, commandType: CommandType.StoredProcedure);
-                    return results;
-                }
+                using var cn = Connection;
+                var results = await cn.QueryAsync<T>(sproc, parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
+                return results;
             }
             else
             {
@@ -90,56 +88,44 @@ namespace Carlton.Infrastructure.Data.Repository.Dapper
 
         private async Task<IEnumerable<TReturn>> ExecuteStoredProcedure<TFirst, TSecond, TReturn>(string sproc, DynamicParameters parameters, Func<TFirst, TSecond, TReturn> map)
         {
-            using (var cn = Connection)
-            {
-                var results = await cn.QueryAsync(sproc, map, parameters, commandType: CommandType.StoredProcedure);
-                return results;
-            }
+            using var cn = Connection;
+            var results = await cn.QueryAsync(sproc, map, parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
+            return results;
         }
 
         private async Task<IEnumerable<TReturn>> ExecuteStoredProcedure<TFirst, TSecond, TThird, TReturn>(string sproc, DynamicParameters parameters, Func<TFirst, TSecond, TThird, TReturn> map)
         {
-            using (var cn = Connection)
-            {
-                var results = await cn.QueryAsync(sproc, map, parameters, commandType: CommandType.StoredProcedure);
-                return results;
-            }
+            using var cn = Connection;
+            var results = await cn.QueryAsync(sproc, map, parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
+            return results;
         }
 
         private async Task<IEnumerable<TReturn>> ExecuteStoredProcedure<TFirst, TSecond, TThird, TFourth, TReturn>(string sproc, DynamicParameters parameters, Func<TFirst, TSecond, TThird, TFourth, TReturn> map)
         {
-            using (var cn = Connection)
-            {
-                var results = await cn.QueryAsync(sproc, map, parameters, commandType: CommandType.StoredProcedure);
-                return results;
-            }
+            using var cn = Connection;
+            var results = await cn.QueryAsync(sproc, map, parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
+            return results;
         }
 
         private async Task<IEnumerable<TReturn>> ExecuteStoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TReturn>(string sproc, DynamicParameters parameters, Func<TFirst, TSecond, TThird, TFourth, TFifth, TReturn> map)
         {
-            using (var cn = Connection)
-            {
-                var results = await cn.QueryAsync(sproc, map, parameters, commandType: CommandType.StoredProcedure);
-                return results;
-            }
+            using var cn = Connection;
+            var results = await cn.QueryAsync(sproc, map, parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
+            return results;
         }
 
         private async Task<IEnumerable<TReturn>> ExecuteStoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TReturn>(string sproc, DynamicParameters parameters, Func<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TReturn> map)
         {
-            using (var cn = Connection)
-            {
-                var results = await cn.QueryAsync(sproc, map, parameters, commandType: CommandType.StoredProcedure);
-                return results;
-            }
+            using var cn = Connection;
+            var results = await cn.QueryAsync(sproc, map, parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
+            return results;
         }
 
         private async Task<IEnumerable<TReturn>> ExecuteStoredProcedure<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TReturn>(string sproc, DynamicParameters parameters, Func<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh, TReturn> map)
         {
-            using (var cn = Connection)
-            {
-                var results = await cn.QueryAsync(sproc, map, parameters, commandType: CommandType.StoredProcedure);
-                return results;
-            }
+            using var cn = Connection;
+            var results = await cn.QueryAsync(sproc, map, parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
+            return results;
         }
     }
 }

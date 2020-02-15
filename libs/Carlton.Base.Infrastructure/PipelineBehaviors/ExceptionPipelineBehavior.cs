@@ -21,15 +21,15 @@ namespace Carlton.Base.Infrastructure.PipelineBehaviors
             try
             {
                 Logger.LogDebug($"Entering Handler of type: {RequestType}");
-                var result =  await next();
+                var result =  await next().ConfigureAwait(false);
                 Logger.LogDebug($"Handler handled without exception: {RequestType}");
                 return result;
             }
             catch(Exception ex)
             {
                 Logger.LogError($"Error occured in handler of type: {RequestType}");
-                await _exceptionHandler.HandleException(ex, request);
-                return await next();
+                await _exceptionHandler.HandleException(ex, request).ConfigureAwait(false);
+                return await next().ConfigureAwait(false);
             }
         }
     }

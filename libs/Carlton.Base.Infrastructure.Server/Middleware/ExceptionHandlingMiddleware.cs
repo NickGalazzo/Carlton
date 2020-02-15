@@ -22,7 +22,7 @@ namespace Carlton.Base.Infrastructure.Server.Middleware
         {
             try
             {
-                await _next(httpContext);
+                await _next(httpContext).ConfigureAwait(false);
             }
             catch (Exception ex)
             {
