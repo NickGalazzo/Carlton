@@ -2,7 +2,6 @@
 @inject CarltonTreeViewModel vm
 
 <div class="sidebar">
-    <span>selected item: @vm.SelectedItem.DisplayName</span>
     <CarltonTree ViewModel="vm" />
 </div>
 
@@ -10,7 +9,36 @@
     <div class="content px-4">
         @Body
     </div>
+    <footer class="footer"> 
+            <TabControl>
+                <Tab DisplayText="Component Events">
+                   <EventConsole></EventConsole>
+                </Tab>
+                <Tab DisplayText="JSON Payloads">
+                    <h1></h1>
+                </Tab>
+            </TabControl>
+    </footer>
 </div>
+
+<style>
+    .sidebar {
+        background-color: #263238;
+        color: white;
+    }
+
+    .main .content {
+            resize: vertical;
+            overflow-y: hidden;
+    }
+
+    textarea {
+        width: 100%;
+        background-color:black;
+        color: greenyellow;
+    }
+</style>
+
 
 
 @code{

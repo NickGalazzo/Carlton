@@ -1,0 +1,58 @@
+﻿<div class="tab-control">
+    <div class="container">
+        <div class="row">
+            <div class="nav col-12" role="group">
+                <ul class="nav nav-tabs">
+                    @foreach(Tab tab in Tabs)
+                    {
+                    <li class="nav-item">
+                        <a class="nav-link @(tab==this.ActiveTab ? "active" : "")" @onclick=@(()=>ActivateTab(tab)) href="#">@tab.DisplayText</a>
+                    </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    a.nav-link {
+        color: black;
+    }
+
+    a.nav-link:hover {
+        color: black;
+    }
+</style>
+
+<CascadingValue Value="this">
+    @ChildContent
+</CascadingValue>
+
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    public Tab ActiveTab { get; set; }
+
+    List<Tab> Tabs = new List<Tab>();
+
+    internal void AddTab(Tab tab)
+    {
+        Tabs.Add(tab);
+        if(Tabs.Count == 1)
+            ActiveTab = tab;
+        StateHasChanged();
+    }
+
+    string GetButtonClass(Tab tab)
+    {
+        return tab == ActiveTab ? "btn-primary" : "btn-secondary";
+    }
+
+    void ActivateTab(Tab tab)
+    {
+        ActiveTab = tab;
+    }
+}

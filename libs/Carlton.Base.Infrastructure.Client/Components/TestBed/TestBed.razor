@@ -1,15 +1,14 @@
 ﻿@namespace Carlton.Base.Infrastructure.Client.Components.TestBed
 
-<div class="test-bed">
-    <span>Testing 123</span>
+@using  Carlton.Base.Infrastructure.Client.Events
 
+<div class="test-bed">
     <div class="component">
         @TestComponentFragment
     </div>
 </div>
 
 @code {
-
     [Parameter]
     public Type ComponentType
     {
@@ -26,17 +25,55 @@
     [Parameter]
     public object ViewModel { get; set; }
 
+    [Parameter]
+    public Func<dynamic, Task> Func { get; set; }
+
     private RenderFragment TestComponentFragment { get; set; }
+
+    private delegate Task ComponentEventDel(IComponentEvent evt);
 
     protected override void OnParametersSet()
     {
         TestComponentFragment = builder =>
         {
+            var factory = new EventCallbackFactory();
+            var eventArgsProps = ComponentType.GetProperties().Where(
+                                    prop => Attribute.IsDefined(prop, typeof(ParameterAttribute)) &&
+                                            (prop.PropertyType == typeof(EventCallback)
+                                            ||
+                                            (prop.PropertyType.IsGenericType && prop.PropertyType.GetGenericTypeDefinition() == typeof(EventCallback<>))));
+
+
             builder.OpenElement(1, "div");
             builder.OpenComponent(2, ComponentType);
             builder.AddAttribute(1, "ViewModel", ViewModel);
+
+
+            var index = 2;
+            foreach(var prop in eventArgsProps)
+            {
+                ComponentEventDel del = Test;
+                var eventCallback = new EventCallback(this, del);
+                builder.AddAttribute(index, prop.Name, eventCallback);
+
+                index = index++;
+            }
+
             builder.CloseComponent();
             builder.CloseElement();
         };
+    }
+
+
+    private Task Test(IComponentEvent evt)
+    {
+        var x = new System.Text.StringBuilder();
+        x.Append("Checkbox was clicked yay");
+        x.Append("Payload: ");
+        x.Append(Newtonsoft.Json.JsonConvert.SerializeObject(evt));
+
+        System.Console.WriteLine(x.ToString());
+
+        return Task.CompletedTask;
     }
 }

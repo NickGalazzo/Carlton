@@ -2,21 +2,24 @@
 @inject CarltonTreeViewModel vm
 
 
-<span>@vm.SelectedItem.DisplayName</span>
 <TestBed ComponentType="vm.SelectedItem.Type" ViewModel="vm.SelectedItem.ViewModel" />
 
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+    </style>
 
 
-@code{
-
-    public Type TestComponentType { get; set; }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        vm.SelectedItemChanged += (sender, args) =>
+    @code{
+        public Type TestComponentType { get; set; }
+        
+        protected override void OnInitialized()
         {
-            this.StateHasChanged();
-        };
+            base.OnInitialized();
+            vm.SelectedItemChanged += (sender, args) =>
+            {
+                this.StateHasChanged();
+            };
+        }
     }
-}

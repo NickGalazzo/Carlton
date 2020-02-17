@@ -25,8 +25,19 @@
     [Parameter]
     public ToDoListViewModel ViewModel { get; set; }
 
-    private void OnCheck(int id)
+    [Parameter]
+    public EventCallback Test { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await Test.InvokeAsync(new Carlton.Dashboard.Components.ToDo.ToDoEvent("Testingxxx"));
+        await base.OnInitializedAsync();
+    }
+
+    private async Task OnCheck(int id)
     {
         this.ViewModel.ToDoList.SingleOrDefault(o => o.Id == id).IsCompleted = true;
     }
 }
+
+
