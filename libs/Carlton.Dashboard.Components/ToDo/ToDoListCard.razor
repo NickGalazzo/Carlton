@@ -2,6 +2,7 @@
 @using  Carlton.Dashboard.ViewModels.ToDos
 @using Carlton.Base.Infrastructure.Client.Components.Cards
 @using Carlton.Base.Infrastructure.Client.Components
+@using Carlton.Base.Infrastructure.Client.Events
 
 
 <div class="to-do-list-card">
@@ -12,7 +13,7 @@
                     <Checkbox CheckboxLabel="@toDo.Name" IsChecked="toDo.IsCompleted" />
                 </div>
                 <div class="col-4">
-                    <a href="http://example.com/">
+                    <a href="#" @onclick="OnClick">
                         <span class="to-do-link-btn glyphicon glyphicon-th-list">View</span>
                     </a>
                 </div>
@@ -26,17 +27,22 @@
     public ToDoListViewModel ViewModel { get; set; }
 
     [Parameter]
-    public EventCallback Test { get; set; }
+    public EventCallback<IComponentEvent> Test { get; set; }
 
     protected async override Task OnInitializedAsync()
     {
-        await Test.InvokeAsync(new Carlton.Dashboard.Components.ToDo.ToDoEvent("Testingxxx"));
+
         await base.OnInitializedAsync();
     }
 
     private async Task OnCheck(int id)
     {
         this.ViewModel.ToDoList.SingleOrDefault(o => o.Id == id).IsCompleted = true;
+    }
+
+    private async Task OnClick()
+    {
+        await Test.InvokeAsync(new Carlton.Dashboard.Components.ToDo.ToDoEvent("Link Button Clicked", new { Test = "Test 1", Test2 = "Test 2" }));
     }
 }
 

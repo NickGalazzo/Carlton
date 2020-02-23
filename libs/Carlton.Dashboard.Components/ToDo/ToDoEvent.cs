@@ -7,11 +7,14 @@ namespace Carlton.Dashboard.Components.ToDo
 {
     public class ToDoEvent : IComponentEvent
     {
-        public string Test { get; set; }
+        public string EventName { get; set; }
 
-        public ToDoEvent(string test)
+        public object EventParams { get; set; }
+
+        public ToDoEvent(string eventName, object eventParams)
         {
-            this.Test = test;
+            EventName = eventName;
+            EventParams = eventParams;
         }
     }
 

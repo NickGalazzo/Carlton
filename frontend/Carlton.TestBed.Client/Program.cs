@@ -1,7 +1,7 @@
-﻿using Carlton.Base.Infrastructure.Client.Components.Tree;
-using Microsoft.AspNetCore.Blazor.Hosting;
+﻿using Microsoft.AspNetCore.Blazor.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
+using Carlton.Base.Infrastructure.Client.Components.TestBed;
 
 namespace Carlton.TestBed.Client
 {
@@ -12,7 +12,9 @@ namespace Carlton.TestBed.Client
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
             builder.Services.AddSingleton(TestBedBootstrapper.Bootstrap());
+            builder.Services.AddSingleton(new TestBedService());
             builder.RootComponents.Add<App>("app");
+
 
             await builder.Build().RunAsync().ConfigureAwait(true);
         }

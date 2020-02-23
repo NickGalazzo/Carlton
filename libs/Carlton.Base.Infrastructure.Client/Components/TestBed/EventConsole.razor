@@ -1,11 +1,25 @@
-﻿<h3>EventConsole</h3>
+﻿@using  Newtonsoft.Json
+@inject TestBedService TestBedService
 
 <div class="form-group">
-    <textarea readonly="readonly" rows="8">Button Clicked: This is a test
-Buttong Clicked: This is a test
-                        </textarea>
+    <textarea readonly="readonly" rows="8">@ConsoleText</textarea>
 </div>
 
 @code {
 
+    public string ConsoleText { get; set; } 
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        TestBedService.ComponentEventFired += (object sender, Carlton.Base.Infrastructure.Client.Events.IComponentEvent evt) =>
+        {
+            ConsoleText += Environment.NewLine;
+            ConsoleText += $"{evt.EventName}: {JsonConvert.SerializeObject(evt.EventParams)}";
+            StateHasChanged();
+        };
+    }
 }
+
+

@@ -25,7 +25,7 @@
 
     private object ViewModel { get; set; }
 
-    private delegate Task ComponentEventDel(IComponentEvent<IComponentEventResult> evt);
+    private delegate Task ComponentEventDel(IComponentEvent evt);
 
     protected override void OnInitialized()
     {
@@ -47,7 +47,7 @@
 
         //Wire-Up Child Event Callback
         ComponentEventDel del = ComponentEventHandler;
-        var eventCallback = new EventCallback<IComponentEvent<IComponentEventResult>>(this, del);
+        var eventCallback = new EventCallback<IComponentEvent>(this, del);
 
         //Render Child Component
         DynamicChild = builder =>
@@ -62,7 +62,7 @@
     }
 
 
-    private async Task ComponentEventHandler(IComponentEvent<IComponentEventResult> evt)
+    private async Task ComponentEventHandler(IComponentEvent evt)
     {
         var result = await Mediator.Send(evt);
 

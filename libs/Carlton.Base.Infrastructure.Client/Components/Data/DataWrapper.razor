@@ -38,7 +38,7 @@
     }
 
 
-    public async Task ComponentEventHandler(IComponentEvent<IComponentEventResult> evt)
+    public async Task ComponentEventHandler(IComponentEvent evt)
     {
         await Mediatr.Send(evt);
     }
