@@ -7,7 +7,7 @@ namespace Carlton.Base.Infrastructure.Client.Components.Tree
     {
         public string DisplayName { get;private set; }
         public Type Type { get; private set; }
-        public object ViewModel { get; private set; }
+        public object ViewModel { get; set; }
 
         public IEnumerable<TreeItem> Children { get; set; }
 

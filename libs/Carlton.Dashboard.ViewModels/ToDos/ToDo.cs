@@ -21,5 +21,10 @@ namespace Carlton.Dashboard.ViewModels.ToDos
             IsCompleted = isCompleted;
             ExpirationDate = expirationDate;
         }
+
+        public ToDo()
+        {
+
+        }
     }
 }

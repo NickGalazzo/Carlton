@@ -1,0 +1,62 @@
+﻿@using Newtonsoft.Json
+
+@inject TestBedService TestBedService
+
+<div class="view-model-viewer-component">
+    <div class="form-group">
+        <textarea class="@(ViewModelIsInvalid ? "error" : string.Empty)" rows="8" @bind="ViewModelJson"></textarea>
+    </div>
+</div>
+
+<style>
+    .view-model-viewer-component textarea {
+        color: greenyellow;
+    }
+
+        .view-model-viewer-component textarea.error {
+            color: red;
+        }
+</style>
+
+@code {
+
+    private bool ViewModelIsInvalid { get; set; }
+
+    private string _viewModelJson;
+    public string ViewModelJson
+    {
+        get { return _viewModelJson; }
+        set
+        {
+            try
+            {
+                var currentType = TestBedService.CarltonTreeViewModel.SelectedItem.ViewModel.GetType();
+                _viewModelJson = value;
+                var vm = JsonConvert.DeserializeObject(ViewModelJson, currentType);
+                TestBedService.UpdateComponentViewModel(vm);
+                ViewModelIsInvalid = false;
+            }
+            catch(Exception)
+            {
+                ViewModelIsInvalid = true;
+            }
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _viewModelJson = Newtonsoft.Json.JsonConvert.SerializeObject(this.TestBedService.CarltonTreeViewModel.SelectedItem.ViewModel, Formatting.Indented);
+    }
+
+
+    private void OnViewModelChanged()
+    {
+
+        var vm = JsonConvert.DeserializeObject<object>(ViewModelJson);
+        TestBedService.UpdateComponentViewModel(vm);
+        System.Console.WriteLine("Made it here, VM changed");
+        System.Console.WriteLine(vm.ToString());
+
+    }
+}

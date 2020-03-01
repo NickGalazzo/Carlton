@@ -27,7 +27,6 @@ namespace Carlton.Base.Infrastructure.Client.Components.Tree
         {
             TreeItems = treeItems;
             SelectedItem = treeItems.FirstOrDefault().Children.FirstOrDefault();
-            System.Console.WriteLine($"first {SelectedItem.DisplayName}");
         }
 
         public CarltonTreeViewModel()

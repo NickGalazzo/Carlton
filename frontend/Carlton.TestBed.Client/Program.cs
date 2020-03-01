@@ -12,7 +12,7 @@ namespace Carlton.TestBed.Client
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
             builder.Services.AddSingleton(TestBedBootstrapper.Bootstrap());
-            builder.Services.AddSingleton(new TestBedService());
+            builder.Services.AddSingleton(new TestBedService() { CarltonTreeViewModel = TestBedBootstrapper.Bootstrap() });
             builder.RootComponents.Add<App>("app");
 
 

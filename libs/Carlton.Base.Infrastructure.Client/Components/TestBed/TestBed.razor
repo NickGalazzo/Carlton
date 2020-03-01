@@ -1,5 +1,6 @@
 ﻿@namespace Carlton.Base.Infrastructure.Client.Components.TestBed
 @using  Carlton.Base.Infrastructure.Client.Events
+@using  Newtonsoft.Json
 @inject TestBedService TestBedService
 
 <div class="test-bed">
@@ -25,9 +26,22 @@
     [Parameter]
     public object ViewModel { get; set; }
 
+    [Parameter]
+    public EventCallback<object> ViewModelChanged { get; set; }
+
     private RenderFragment TestComponentFragment { get; set; }
 
     private delegate Task ComponentEventDel(IComponentEvent evt);
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        TestBedService.ComponentChanged += (sender, args) =>
+        {
+            ViewModel = TestBedService.ViewModel;
+            StateHasChanged();
+        };
+    }
 
     protected override void OnParametersSet()
     {
@@ -45,6 +59,8 @@
             builder.CloseComponent();
             builder.CloseElement();
         };
+
+        TestBedService.ViewModel = ViewModel;
     }
 
     private Task ComponentEventHandler(IComponentEvent evt)
