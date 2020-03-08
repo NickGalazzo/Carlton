@@ -26,10 +26,6 @@
     [Parameter]
     public object ViewModel { get; set; }
 
-    
-    [Parameter]
-    public EventCallback<object> ViewModelChanged { get; set; }
-
     [Parameter]
     public EventCallback<IComponentEvent> ComponentEventCallback { get; set; }
 
@@ -38,6 +34,7 @@
     protected override void OnParametersSet()
     {
         System.Console.WriteLine("OnParametersSet");
+        base.OnParametersSet();
         TestComponentFragment = builder =>
         {
             builder.OpenElement(1, "div");

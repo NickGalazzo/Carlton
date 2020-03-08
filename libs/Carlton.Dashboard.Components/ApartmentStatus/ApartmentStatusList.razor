@@ -1,5 +1,6 @@
 ﻿@using Carlton.Dashboard.ViewModels.ApartmentStatus
 @using Carlton.Base.Infrastructure.Client.Components.Cards
+@using Carlton.Base.Infrastructure.Client.Events;
 
 @namespace Carlton.Dashboard.Components.ApartmentStatus
 
@@ -11,13 +12,13 @@
                     <span class="status-icon mdi mdi-24px @status.StatusIcon"></span>
                 </div>
                 <div class="col-6 text-center">
-                    @if (status.StatusValue == ApartmentStatuses.Complete)
+                    @if(status.StatusValue == ApartmentStatuses.Complete)
                     {
-                    <span class="status-value-complete mdi mdi-24px mdi-check-circle"></span>
+                        <span class="status-value-complete mdi mdi-24px mdi-check-circle"></span>
                     }
                     else
                     {
-                    <span class="status-value-incomplete mdi mdi-24px mdi-alert"></span>
+                        <span class="status-value-incomplete mdi mdi-24px mdi-alert"></span>
                     }
                 </div>
             </div>
@@ -28,4 +29,7 @@
 @code {
     [Parameter]
     public ApartmentStatusesViewModel ViewModel { get; set; }
+
+    [Parameter]
+    public EventCallback<IComponentEvent> Test { get; set; }
 }

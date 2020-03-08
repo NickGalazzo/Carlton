@@ -6,7 +6,7 @@ using System;
 
 namespace Carlton.Base.Infrastructure.Client.Components.TestBed
 {
-    public class TestBedViewModel
+    public class TestBedService
     {
         private TreeItem _selectedItem;
         public IList<TreeItem> TreeItems { get; }
@@ -28,7 +28,7 @@ namespace Carlton.Base.Infrastructure.Client.Components.TestBed
 
         public IList<IComponentEvent> ComponentEvents { get; private set; }
 
-        public TestBedViewModel(IList<TreeItem> treeItems)
+        public TestBedService(IList<TreeItem> treeItems)
         {
             TreeItems = treeItems;
             ComponentEvents = new List<IComponentEvent>();
@@ -37,7 +37,6 @@ namespace Carlton.Base.Infrastructure.Client.Components.TestBed
 
         public void SelectItem(TreeItem item)
         {
-            System.Console.WriteLine("component selected");
             SelectedItem = item;
         }
 
@@ -49,6 +48,11 @@ namespace Carlton.Base.Infrastructure.Client.Components.TestBed
         public void AddComponentEvent(IComponentEvent evt)
         {
             ComponentEvents.Add(evt);
+        }
+
+        public void ClearEvents()
+        {
+            ComponentEvents.Clear();
         }
     }
 }

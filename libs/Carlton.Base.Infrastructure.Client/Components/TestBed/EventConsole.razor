@@ -10,23 +10,23 @@
 @code {
 
     [Parameter]
-    public TestBedViewModel ViewModel { get; set; }
+    public IList<IComponentEvent> ViewModel { get; set; }
 
     public string ConsoleText { get; set; }
 
     private void ClearEvents()
     {
         ConsoleText = string.Empty;
-        ViewModel.ComponentEvents.Clear();
-        this.StateHasChanged();
+        ViewModel.Clear();
     }
 
     protected override void OnParametersSet()
     {
+         System.Console.WriteLine("OnParametersSet");
         base.OnParametersSet();
         ConsoleText = string.Empty;
 
-        foreach(var evt in ViewModel.ComponentEvents)
+        foreach(var evt in ViewModel)
         {
             ConsoleText += Environment.NewLine;
             ConsoleText += $"{evt.EventName}: {JsonConvert.SerializeObject(evt.EventParams)}";

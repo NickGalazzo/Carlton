@@ -14,7 +14,7 @@ namespace Carlton.TestBed.Client
 {
     public static class TestBedBootstrapper
     {
-        public static TestBedViewModel Bootstrap()
+        public static TestBedService Bootstrap()
         {
             var builder = new TreeItemsBuilder()
               .AddTreeNode<ToDoListCard>("ToDoListCard", ToDoListViewModels.DefaultToDoList())
@@ -24,7 +24,7 @@ namespace Carlton.TestBed.Client
               .AddTreeNode<FeedListCard>("FeedListCard", FeedListViewModels.DefaultFeedViewModels());
              //  .AddTreeNode<ToDoOverviewCard>("ToDoOverviewCard", new ToDoOverviewCardViewModel(7));
             
-            return new TestBedViewModel(builder.Build().ToList());
+            return new TestBedService(builder.Build().ToList());
         }
     }
 }

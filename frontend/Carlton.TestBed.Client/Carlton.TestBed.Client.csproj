@@ -23,4 +23,8 @@
     <ProjectReference Include="..\..\libs\Carlton.Dashboard.ViewModels\Carlton.Dashboard.ViewModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\" />
+  </ItemGroup>
+
 </Project>

@@ -19,7 +19,7 @@
 @code {
 
     [Parameter]
-    public TestBedViewModel ViewModel { get; set; }
+    public object ViewModel { get; set; }
 
     [Parameter]
     public EventCallback<object> ViewModelChanged { get; set; }
@@ -36,9 +36,8 @@
             try
             {
                 _viewModelJson = value;
-                var currentType = ViewModel.TestComponentViewModel.GetType();
+                var currentType = ViewModel.GetType();
                 var newVM = JsonConvert.DeserializeObject(ViewModelJson, currentType);
-                ViewModel.UpdateTestComponentViewModel(newVM);
                 ViewModelChanged.InvokeAsync(newVM);
                 ViewModelIsInvalid = false;
             }
@@ -52,6 +51,6 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        ViewModelJson = Newtonsoft.Json.JsonConvert.SerializeObject(ViewModel.TestComponentViewModel, Formatting.Indented);
+        ViewModelJson = Newtonsoft.Json.JsonConvert.SerializeObject(ViewModel, Formatting.Indented);
     }
 }

@@ -1,22 +1,22 @@
 ﻿@inherits LayoutComponentBase
 
-@inject TestBedViewModel vm
+@inject TestBedService service
 
 <div class="sidebar">
-    <TestBedNavTree ViewModel="vm" />
+    <TestBedNavTree ViewModel="service.TreeItems" SelectedItemChanged="service.SelectItem"  />
 </div>
 
 <div class="main">
     <div class="content px-4">
-        <TestBed ComponentType="vm.TestComponentType" ViewModel="vm.TestComponentViewModel" ComponentEventCallback="vm.AddComponentEvent"/>
+        <TestBed ComponentType="service.TestComponentType"  ViewModel="service.TestComponentViewModel" ComponentEventCallback="service.AddComponentEvent" />
     </div>
     <footer class="footer">
         <TabControl>
             <Tab DisplayText="Component Events">
-               <EventConsole ViewModel="vm"></EventConsole>
+                <EventConsole ViewModel="service.ComponentEvents"></EventConsole>
             </Tab>
             <Tab DisplayText="JSON Payloads">
-                <ViewModelViewer ViewModel="vm" ViewModelChanged="vm.UpdateTestComponentViewModel"></ViewModelViewer>
+                <ViewModelViewer ViewModel="service.TestComponentViewModel" ViewModelChanged="service.UpdateTestComponentViewModel"></ViewModelViewer>
             </Tab>
         </TabControl>
     </footer>
@@ -39,4 +39,5 @@
         color: greenyellow;
     }
 </style>
+
 
