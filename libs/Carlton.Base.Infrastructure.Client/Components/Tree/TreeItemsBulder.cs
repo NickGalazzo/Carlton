@@ -16,7 +16,6 @@ namespace Carlton.Base.Infrastructure.Client.Components.Tree
         public TreeItemsBuilder AddTreeNode<T>(string nodeTitle, object viewModel)
         {
             _componentTestStates.Add((nodeTitle, typeof(T), viewModel));
-            Console.WriteLine("TypeOf:" + typeof(T).FullName);
             return this;
         }
 

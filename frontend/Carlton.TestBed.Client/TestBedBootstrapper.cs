@@ -8,13 +8,13 @@ using Carlton.TestBed.Client.TestViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Carlton.Base.Infrastructure.Client.Components.TestBed;
 
 namespace Carlton.TestBed.Client
 {
     public static class TestBedBootstrapper
     {
-        public static CarltonTreeViewModel Bootstrap()
+        public static TestBedViewModel Bootstrap()
         {
             var builder = new TreeItemsBuilder()
               .AddTreeNode<ToDoListCard>("ToDoListCard", ToDoListViewModels.DefaultToDoList())
@@ -24,7 +24,7 @@ namespace Carlton.TestBed.Client
               .AddTreeNode<FeedListCard>("FeedListCard", FeedListViewModels.DefaultFeedViewModels());
              //  .AddTreeNode<ToDoOverviewCard>("ToDoOverviewCard", new ToDoOverviewCardViewModel(7));
             
-            return new CarltonTreeViewModel(builder.Build().ToList());
+            return new TestBedViewModel(builder.Build().ToList());
         }
     }
 }

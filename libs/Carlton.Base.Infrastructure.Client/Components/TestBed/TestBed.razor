@@ -1,7 +1,6 @@
 ﻿@namespace Carlton.Base.Infrastructure.Client.Components.TestBed
 @using  Carlton.Base.Infrastructure.Client.Events
 @using  Newtonsoft.Json
-@inject TestBedService TestBedService
 
 <div class="test-bed">
     <div class="component">
@@ -10,62 +9,46 @@
 </div>
 
 @code {
+
+    private Type _componentType;
     [Parameter]
     public Type ComponentType
     {
-        get { return componentType; }
+        get { return _componentType; }
         set
         {
             if(!(typeof(ComponentBase).IsAssignableFrom(value)))
                 throw new InvalidOperationException("ComponentType is not a valid component type.");
-            componentType = value;
+            _componentType = value;
         }
     }
-    private Type componentType;
 
     [Parameter]
     public object ViewModel { get; set; }
 
+    
     [Parameter]
     public EventCallback<object> ViewModelChanged { get; set; }
 
+    [Parameter]
+    public EventCallback<IComponentEvent> ComponentEventCallback { get; set; }
+
     private RenderFragment TestComponentFragment { get; set; }
-
-    private delegate Task ComponentEventDel(IComponentEvent evt);
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        TestBedService.ComponentChanged += (sender, args) =>
-        {
-            ViewModel = TestBedService.ViewModel;
-            StateHasChanged();
-        };
-    }
 
     protected override void OnParametersSet()
     {
+        System.Console.WriteLine("OnParametersSet");
         TestComponentFragment = builder =>
         {
-            ComponentEventDel del = ComponentEventHandler;
-            var eventCallback = new EventCallback<IComponentEvent>(this, del);
-
-
             builder.OpenElement(1, "div");
             builder.OpenComponent(2, ComponentType);
             builder.AddAttribute(1, "ViewModel", ViewModel);
-            builder.AddAttribute(2, "Test", eventCallback);
+
+            if(ComponentEventCallback.HasDelegate)
+                builder.AddAttribute(2, "Test", ComponentEventCallback);
 
             builder.CloseComponent();
             builder.CloseElement();
         };
-
-        TestBedService.ViewModel = ViewModel;
-    }
-
-    private Task ComponentEventHandler(IComponentEvent evt)
-    {
-        TestBedService.FireEvent(this, evt);
-        return Task.CompletedTask;
     }
 }

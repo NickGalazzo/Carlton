@@ -1,8 +1,8 @@
-﻿@*@namespace Carlton.Base.Infrastructure.Client.Components.Tree
+﻿@namespace Carlton.Base.Infrastructure.Client.Components.Tree
 @using Carlton.Base.Infrastructure.Client.Components.TestBed
 
 <div class="carlton-tree">
-    <img src="https://paradisebound.org/wp-content/uploads/2016/09/paradise-bound-ministries-mission-teams-homes-built-and-dedicated-house-icon.png" height="50" width="50" alt="Image result for house icon" />
+    <img src="https://paradisebound.org/wp-content/uploads/2016/09/paradise-bound-ministries-mission-teams-homes-built-and-dedicated-house-icon.png" height="50" width="50" alt="Image result for house icon"/>
     <span>Carlton TestBed</span>
 
     <BaseTree Nodes="ViewModel.TreeItems"
@@ -26,11 +26,11 @@
     {
         set
         {
-            ViewModel.SelectedItem = value;
+            ViewModel.SelectItem(value);
         }
         get
         {
             return ViewModel.SelectedItem;
         }
     }
-}*@
+}

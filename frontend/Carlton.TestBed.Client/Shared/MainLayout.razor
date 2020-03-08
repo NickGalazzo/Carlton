@@ -1,23 +1,24 @@
 ﻿@inherits LayoutComponentBase
-@inject CarltonTreeViewModel vm
+
+@inject TestBedViewModel vm
 
 <div class="sidebar">
-    <CarltonTree ViewModel="vm" />
+    <TestBedNavTree ViewModel="vm" />
 </div>
 
 <div class="main">
     <div class="content px-4">
-        @Body
+        <TestBed ComponentType="vm.TestComponentType" ViewModel="vm.TestComponentViewModel" ComponentEventCallback="vm.AddComponentEvent"/>
     </div>
-    <footer class="footer"> 
-            <TabControl>
-                <Tab DisplayText="Component Events">
-                   <EventConsole></EventConsole>
-                </Tab>
-                <Tab DisplayText="JSON Payloads">
-                    <ViewModelViewer></ViewModelViewer>
-                </Tab>
-            </TabControl>
+    <footer class="footer">
+        <TabControl>
+            <Tab DisplayText="Component Events">
+               <EventConsole ViewModel="vm"></EventConsole>
+            </Tab>
+            <Tab DisplayText="JSON Payloads">
+                <ViewModelViewer ViewModel="vm" ViewModelChanged="vm.UpdateTestComponentViewModel"></ViewModelViewer>
+            </Tab>
+        </TabControl>
     </footer>
 </div>
 
@@ -28,27 +29,14 @@
     }
 
     .main .content {
-            resize: vertical;
-            overflow-y: hidden;
+        resize: vertical;
+        overflow-y: hidden;
     }
 
     textarea {
         width: 100%;
-        background-color:black;
+        background-color: black;
         color: greenyellow;
     }
 </style>
 
-
-
-@code{
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        vm.SelectedItemChanged += (sender, args) =>
-        {
-            this.StateHasChanged();
-        };
-    }
-}
