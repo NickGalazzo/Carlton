@@ -1,0 +1,51 @@
+﻿@namespace Carlton.Base.Infrastructure.Client.Components.TestBed
+@using  Carlton.Base.Infrastructure.Client.Events
+@using  Newtonsoft.Json
+
+<div class="test-bed">
+    <div class="component">
+        @TestComponentFragment
+    </div>
+</div>
+
+@code {
+
+    private Type _componentType;
+    [Parameter]
+    public Type ComponentType
+    {
+        get { return _componentType; }
+        set
+        {
+            if(!(typeof(ComponentBase).IsAssignableFrom(value)))
+                throw new InvalidOperationException("ComponentType is not a valid component type.");
+            _componentType = value;
+        }
+    }
+
+    [Parameter]
+    public object ViewModel { get; set; }
+
+    [Parameter]
+    public EventCallback<IComponentEvent> ComponentEventCallback { get; set; }
+
+    private RenderFragment TestComponentFragment { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        System.Console.WriteLine("OnParametersSet");
+        base.OnParametersSet();
+        TestComponentFragment = builder =>
+        {
+            builder.OpenElement(1, "div");
+            builder.OpenComponent(2, ComponentType);
+            builder.AddAttribute(1, "ViewModel", ViewModel);
+
+            if(ComponentEventCallback.HasDelegate)
+                builder.AddAttribute(2, "OnComponentEvent", ComponentEventCallback);
+
+            builder.CloseComponent();
+            builder.CloseElement();
+        };
+    }
+}

@@ -1,0 +1,40 @@
+﻿@using  Newtonsoft.Json
+@using  Carlton.Base.Infrastructure.Client.Events
+
+
+<div class="form-group">
+    <textarea readonly="readonly" rows="8">@ConsoleText</textarea>
+    <button @onclick="Clear">clear</button>
+</div>
+
+@code {
+
+    [Parameter]
+    public IEnumerable<IComponentEvent> ViewModel { get; set; }
+
+    [Parameter]
+    public EventCallback ClearEvents { get; set; }
+
+    public string ConsoleText { get; set; }
+
+    private void Clear()
+    {
+        ConsoleText = string.Empty;
+        ClearEvents.InvokeAsync(null);
+    }
+
+    protected override void OnParametersSet()
+    {
+        System.Console.WriteLine("OnParametersSet");
+        base.OnParametersSet();
+        ConsoleText = string.Empty;
+
+        foreach(var evt in ViewModel)
+        {
+            ConsoleText += Environment.NewLine;
+            ConsoleText += $"{evt.EventName}: {JsonConvert.SerializeObject(evt.EventParams)}";
+        }
+    }
+}
+
+
