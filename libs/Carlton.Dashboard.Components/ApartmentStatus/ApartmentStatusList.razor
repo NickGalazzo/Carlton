@@ -1,8 +1,7 @@
 ﻿@using Carlton.Dashboard.ViewModels.ApartmentStatus
 @using Carlton.Base.Infrastructure.Client.Components.Cards
-@using Carlton.Base.Infrastructure.Client.Events;
 
-@namespace Carlton.Dashboard.Components.ApartmentStatus
+@inherits CarltonParentComponent<ApartmentStatusesViewModel>
 
 <div class="apartment-status-list-card">
     <CarltonListCard CardTitle="Apartment Status" Items="ViewModel.Statuses">
@@ -27,9 +26,5 @@
 </div>
 
 @code {
-    [Parameter]
-    public ApartmentStatusesViewModel ViewModel { get; set; }
 
-    [Parameter]
-    public EventCallback<IComponentEvent> Test { get; set; }
 }

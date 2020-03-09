@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Blazor.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
-using Carlton.Base.Infrastructure.Client.Components.TestBed;
 
 namespace Carlton.TestBed.Client
 {

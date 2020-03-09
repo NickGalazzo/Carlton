@@ -1,12 +1,17 @@
-﻿using Carlton.Base.Infrastructure.Client.Components.Tree;
+﻿// Nicholas Galazzo
+// Instructions: This project is intended to be used by any 
+// application making use of the Carlton framework
+// Simply include references to the projects for both the components
+// being tested as well as the project containing the ViewModels for those components
+// The testbed can then be used by simply modifying this bootstrappper file
+
+using Carlton.Base.Infrastructure.Client.Components.Tree;
 using Carlton.Dashboard.Components.ApartmentStatus;
 using Carlton.Dashboard.Components.Feed;
 using Carlton.Dashboard.Components.HomeForDinner;
 using Carlton.Dashboard.Components.HouseholdItems;
 using Carlton.Dashboard.Components.ToDos;
 using Carlton.TestBed.Client.TestViewModels;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using Carlton.Base.Infrastructure.Client.Components.TestBed;
 
@@ -24,7 +29,7 @@ namespace Carlton.TestBed.Client
               .AddTreeNode<FeedListCard>("FeedListCard", FeedListViewModels.DefaultFeedViewModels());
              //  .AddTreeNode<ToDoOverviewCard>("ToDoOverviewCard", new ToDoOverviewCardViewModel(7));
             
-            return new TestBedService(builder.Build().ToList());
+            return new TestBedService(builder.Build());
         }
     }
 }

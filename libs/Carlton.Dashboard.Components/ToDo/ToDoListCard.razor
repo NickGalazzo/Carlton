@@ -1,5 +1,6 @@
 ﻿@namespace Carlton.Dashboard.Components.ToDos
-@using  Carlton.Dashboard.ViewModels.ToDos
+
+@inherits Carlton.Base.Infrastructure.Client.Components.Data.CarltonParentComponent<Carlton.Dashboard.ViewModels.ToDos.ToDoListViewModel>
 @using Carlton.Base.Infrastructure.Client.Components.Cards
 @using Carlton.Base.Infrastructure.Client.Components
 @using Carlton.Base.Infrastructure.Client.Events
@@ -22,19 +23,7 @@
     </CarltonListCard>
 </div>
 
-@code {
-    [Parameter]
-    public ToDoListViewModel ViewModel { get; set; }
-
-    [Parameter]
-    public EventCallback<IComponentEvent> Test { get; set; }
-
-    protected async override Task OnInitializedAsync()
-    {
-
-        await base.OnInitializedAsync();
-    }
-
+@code {   
     private async Task OnCheck(int id)
     {
         this.ViewModel.ToDoList.SingleOrDefault(o => o.Id == id).IsCompleted = true;
@@ -42,7 +31,7 @@
 
     private async Task OnClick()
     {
-        await Test.InvokeAsync(new Carlton.Dashboard.Components.ToDo.ToDoEvent("Link Button Clicked", new { Test = "Test 1", Test2 = "Test 2" }));
+        await OnComponentEvent.InvokeAsync(new Carlton.Dashboard.Components.ToDo.ToDoEvent("Link Button Clicked", new { Test = "Test 1", Test2 = "Test 2" }));
     }
 }
 
