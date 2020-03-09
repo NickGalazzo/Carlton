@@ -4,25 +4,28 @@
 
 <div class="form-group">
     <textarea readonly="readonly" rows="8">@ConsoleText</textarea>
-    <button @onclick="ClearEvents">clear</button>
+    <button @onclick="Clear">clear</button>
 </div>
 
 @code {
 
     [Parameter]
-    public IList<IComponentEvent> ViewModel { get; set; }
+    public IEnumerable<IComponentEvent> ViewModel { get; set; }
+
+    [Parameter]
+    public EventCallback ClearEvents { get; set; }
 
     public string ConsoleText { get; set; }
 
-    private void ClearEvents()
+    private void Clear()
     {
         ConsoleText = string.Empty;
-        ViewModel.Clear();
+        ClearEvents.InvokeAsync(null);
     }
 
     protected override void OnParametersSet()
     {
-         System.Console.WriteLine("OnParametersSet");
+        System.Console.WriteLine("OnParametersSet");
         base.OnParametersSet();
         ConsoleText = string.Empty;
 
