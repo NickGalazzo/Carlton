@@ -33,13 +33,9 @@ namespace Carlton.Base.Infrastructure.Client.Components.Tree
                 group.ToList().ForEach(tup =>
                 {
                     children.Add(TreeItem.CreateChildNode(tup.nodeTitle, tup.type, tup.viewModel));
-                    System.Console.WriteLine(tup.type);
                 });
                 
                 treeItems.Add(treeItem);
-             //   Console.WriteLine(group.FirstOrDefault().nodeTitle);
-              //  Console.WriteLine(children.FirstOrDefault()?.DisplayName);
-
             });
             return treeItems;
         }

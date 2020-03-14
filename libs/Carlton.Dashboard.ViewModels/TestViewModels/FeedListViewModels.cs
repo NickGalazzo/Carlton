@@ -12,30 +12,25 @@ namespace Carlton.TestBed.Client.TestViewModels
 
             const string TOOK_OUT_GARBAGE = "Took Out Garbage";
             feedViewModel.GroupedFeedItems.Add(
-                    new GroupedFeedItems
-                    {
-                        GroupName = "Today",
-                        Items = new List<FeedItem>
+                        "Today",
+                        new List<FeedItem>
                         {
                         new FeedItem("Garbage", TOOK_OUT_GARBAGE,
                             new FeedUser("Nick", string.Empty)),
                         new FeedItem("Household Items", "Purchahsed Household Items",
                             new FeedUser("Nick", string.Empty))
-                                }
                     });
 
             feedViewModel.GroupedFeedItems.Add(
-            new GroupedFeedItems
-            {
-                GroupName = "Yesterday",
-                Items = new List<FeedItem>
+                "Yesterday",
+                new List<FeedItem>
                 {
                     new FeedItem("Garbage", TOOK_OUT_GARBAGE,
                         new FeedUser("Nick", string.Empty)),
                     new FeedItem("Household Items", "Purchahsed Household Items",
                         new FeedUser("Nick", string.Empty))
-                        }
-            });
+                }
+            );
 
             return feedViewModel;
         }

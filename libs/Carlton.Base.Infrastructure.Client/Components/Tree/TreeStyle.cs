@@ -7,7 +7,7 @@
             ExpandNodeIconClass = "mdi mdi-24px mdi-chevron-right",
             CollapseNodeIconClass = "mdi mdi-24px mdi-chevron-down",
             NodeTitleClass = "p-1 curosr-pointer",
-            NodeTitleSelectedClass = "bg-primary text-white",
+            NodeTitleSelectedClass = "selected-tree-node",
         };
 
         public string ExpandNodeIconClass { get; set; }

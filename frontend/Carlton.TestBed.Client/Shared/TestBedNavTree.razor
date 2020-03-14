@@ -23,6 +23,12 @@
     [Parameter]
     public EventCallback<TreeItem> SelectedItemChanged { get; set; }
 
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        SelectAndExpandFirstNode();
+    }
+
     IList<TreeItem> ExpandedNodes = new List<TreeItem>();
 
     private TreeItem _selectedNode;
@@ -35,7 +41,13 @@
         }
         get
         {
-            return _selectedNode; 
+            return _selectedNode;
         }
+    }
+
+    private void SelectAndExpandFirstNode()
+    {
+        ExpandedNodes.Add(ViewModel.First());
+        SelectedNode = ViewModel.First().Children.First();
     }
 }

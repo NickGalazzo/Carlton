@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Carlton.Base.Infrastructure.Client.Components.Tree
@@ -10,6 +11,7 @@ namespace Carlton.Base.Infrastructure.Client.Components.Tree
         public object ViewModel { get; set; }
 
         public IEnumerable<TreeItem> Children { get; set; }
+        public bool IsParentNode { get { return Children.Any(); } }
 
         private TreeItem(string displayName, IEnumerable<TreeItem> children)
         {
