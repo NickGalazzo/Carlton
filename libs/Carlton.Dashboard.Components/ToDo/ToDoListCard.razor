@@ -1,16 +1,14 @@
-﻿@namespace Carlton.Dashboard.Components.ToDos
-
-@inherits CarltonParentComponent<ToDoListViewModel>
-@using Carlton.Base.Infrastructure.Client.Components.Cards
+﻿@using Carlton.Base.Infrastructure.Client.Components.Cards
 @using Carlton.Base.Infrastructure.Client.Components
 
+@inherits CarltonParentComponent<ToDoListViewModel>
 
 <div class="to-do-list-card">
     <CarltonListCard CardTitle="To-Do's" Items="ViewModel.ToDoList">
         <ItemTemplate Context="toDo">
             <div class="row">
                 <div class="col-8">
-                    <Checkbox CheckboxLabel="@toDo.Name" IsChecked="toDo.IsCompleted" />
+                    <Checkbox CheckboxLabel="@toDo.Name" IsChecked="@toDo.IsCompleted" OnCheckboxChangeCallback="(isChecked) => OnChange(toDo.Id, isChecked)" />
                 </div>
                 <div class="col-4">
                     <a href="#" @onclick="OnClick">
@@ -22,15 +20,17 @@
     </CarltonListCard>
 </div>
 
-@code {   
-    private async Task OnCheck(int id)
+@code {
+    private async Task OnChange(int id, bool isChecked)
     {
-        this.ViewModel.ToDoList.SingleOrDefault(o => o.Id == id).IsCompleted = true;
+        var x = new ToDoCompletedRequest(1);
+        await OnComponentEvent.InvokeAsync(new ToDoEvent(1));
     }
 
-    private async Task OnClick()
+    private Task OnClick()
     {
-        await OnComponentEvent.InvokeAsync(new Carlton.Dashboard.Components.ToDo.ToDoEvent("Link Button Clicked", new { Test = "Test 1", Test2 = "Test 2" }));
+        return Task.CompletedTask;
+        //await OnComponentEvent.InvokeAsync(new ToDoEvent("Link Button Clicked", new { Test = "Test 1", Test2 = "Test 2" }));
     }
 }
 

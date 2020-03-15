@@ -1,8 +1,7 @@
-﻿using System.Linq;
-using System.Collections.Generic;
-using Carlton.Base.Infrastructure.Client.Events;
-using Carlton.Base.Infrastructure.Client.Components.Tree;
+﻿using Carlton.Base.Infrastructure.Client.Components.Tree;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Carlton.Base.Infrastructure.Client.Components.TestBed
 {
@@ -26,12 +25,12 @@ namespace Carlton.Base.Infrastructure.Client.Components.TestBed
         public Type TestComponentType { get; private set; }
         public object TestComponentViewModel { get; private set; }
 
-        public IList<IComponentEvent> ComponentEvents { get; private set; }
+        public IList<object> ComponentEvents { get; private set; }
 
         public TestBedService(IEnumerable<TreeItem> treeItems)
         {
             TreeItems = treeItems;
-            ComponentEvents = new List<IComponentEvent>();
+            ComponentEvents = new List<object>();
             SelectedItem = treeItems.FirstOrDefault().Children.FirstOrDefault();
         }
 
@@ -45,7 +44,7 @@ namespace Carlton.Base.Infrastructure.Client.Components.TestBed
             TestComponentViewModel = viewModel;
         }
 
-        public void AddComponentEvent(IComponentEvent evt)
+        public void AddComponentEvent(object evt)
         {
             ComponentEvents.Add(evt);
         }

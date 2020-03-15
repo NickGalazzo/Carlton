@@ -15,4 +15,12 @@
     .feed-message {
         color: $textColor;
     }
+
+    .primary-content {
+        ul {
+            .row {
+                margin-top: 10px;
+            }
+        }
+    }
 }

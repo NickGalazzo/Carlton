@@ -8,10 +8,21 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <ToggleSwitch />
+        <ToggleSwitch ToggleChangedCallback="OnToggleChanged" />
     </div>
     <div class="row">
-        <input type="text" class="reason-label form-control col-8 justify-content-center" value="test" :disabled="isHomeForDinner==true" label="Where will you be?" v-model="reason" />
+        <input type="text" class="reason-label form-control col-8 justify-content-center" value="test" disabled="@(IsHomeForDinner)" label="Where will you be?" v-model="reason" />
     </div>
 </div>
+
+@code{
+
+    private bool IsHomeForDinner { get; set; } = true;
+
+    private void OnToggleChanged(bool value)
+    {
+        IsHomeForDinner = value;
+    }
+
+}
 

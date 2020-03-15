@@ -1,13 +1,13 @@
 ﻿@namespace Carlton.Base.Infrastructure.Client.Components
 
 <div class="carlton-checkbox">
-    @if (IsChecked)
+    @if(IsChecked)
     {
-        <span @onclick="OnCheckboxClick" class="to-do-completed align-middle mdi mdi-24px mdi-check-circle"></span>
+        <span @onclick="() => UserCheckChange(false)" class="to-do-completed align-middle mdi mdi-24px mdi-check-circle"></span>
     }
     else
     {
-        <span @onclick="OnCheckboxClick" class="to-do-completed align-middle mdi mdi-24px mdi-checkbox-blank-circle-outline"></span>
+        <span @onclick="() => UserCheckChange(true)" class="to-do-completed align-middle mdi mdi-24px mdi-checkbox-blank-circle-outline"></span>
     }
     <span class="to-do-name align-middle">@CheckboxLabel</span>
 </div>
@@ -17,10 +17,20 @@
     public string CheckboxLabel { get; set; }
 
     [Parameter]
+    public EventCallback<bool> OnCheckboxChangeCallback { get; set; }
+
+    [Parameter]
     public bool IsChecked { get; set; }
 
-    public void OnCheckboxClick()
+    public void SetCheckBox(bool value)
     {
-        IsChecked = !IsChecked;
+        IsChecked = value;
+        this.StateHasChanged();
+    }
+
+    private void UserCheckChange(bool value)
+    {
+        IsChecked = value;
+        OnCheckboxChangeCallback.InvokeAsync(value);
     }
 }

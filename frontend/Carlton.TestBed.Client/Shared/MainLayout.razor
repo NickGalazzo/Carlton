@@ -13,7 +13,7 @@
     <footer class="footer">
         <TabControl>
             <Tab DisplayText="Component Events">
-                <EventConsole ViewModel="service.ComponentEvents.ToArray()" ClearEvents="service.ClearEvents"></EventConsole>
+                <EventConsole ComponentEvents="service.ComponentEvents" ClearEvents="service.ClearEvents"></EventConsole>
             </Tab>
             <Tab DisplayText="JSON Payloads">
                 <ViewModelViewer ViewModel="service.TestComponentViewModel" ViewModelChanged="service.UpdateTestComponentViewModel"></ViewModelViewer>

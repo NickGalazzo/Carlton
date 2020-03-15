@@ -106,6 +106,9 @@ body {
 .home-for-dinner-card .feed-message {
   color: #757575; }
 
+.home-for-dinner-card .primary-content ul .row {
+  margin-top: 10px; }
+
 .home-for-dinner-toggle .reason-label {
   margin: auto; }
 

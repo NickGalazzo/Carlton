@@ -10,7 +10,7 @@ using Carlton.Dashboard.Components.ApartmentStatus;
 using Carlton.Dashboard.Components.Feed;
 using Carlton.Dashboard.Components.HomeForDinner;
 using Carlton.Dashboard.Components.HouseholdItems;
-using Carlton.Dashboard.Components.ToDos;
+using Carlton.Dashboard.Components.ToDo;
 using Carlton.TestBed.Client.TestViewModels;
 using System.Linq;
 using Carlton.Base.Infrastructure.Client.Components.TestBed;

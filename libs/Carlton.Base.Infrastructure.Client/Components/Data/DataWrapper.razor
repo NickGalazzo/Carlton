@@ -32,7 +32,7 @@
         DataService.ViewModelChanged += DataService_ViewModelChanged;
     }
 
-    private void DataService_ViewModelChanged(object sender, ViewModelChangedEventArgs e)
+    private void DataService_ViewModelChanged(object sender, EventArgs e)
     {
         ViewModel = DataService.GetViewModel();
     }

@@ -4,7 +4,7 @@ namespace Carlton.Base.Infrastructure.Client.Data
 {
     public interface IReadOnlyDataService<TViewModel> 
     {
-        event EventHandler<ViewModelChangedEventArgs> ViewModelChanged;
+        event EventHandler<EventArgs> ViewModelChanged;
         TViewModel GetViewModel();
     }
 }
