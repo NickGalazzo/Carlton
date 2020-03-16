@@ -5,25 +5,45 @@
 @inherits CarltonParentComponent<HomeForDinnerViewModel>
 
 
-<div class="home-for-dinner-card">
-    <CarltonListCard CardTitle="Home For Dinner" Items="ViewModel.DinnerGuests">
-        <ItemTemplate Context="guest">
-            <div class="row">
-                <div class="col-4">
-                    <img class="avatar-img" src="https://www.w3schools.com/w3images/avatar2.png" />
+    <div class="home-for-dinner-card">
+    
+      
+        <CarltonListCard CardTitle="Home For Dinner" Items="ViewModel.DinnerGuests">
+
+            <HeaderCardContent>
+                <div class="row my-dinner-status-row">
+                    <div class="col-4">
+                        <img class="avatar-img" src="https://www.w3schools.com/w3images/avatar2.png" />
+                    </div>
+                    <div class="col-4">
+                        <div class="feed-title">Nick Galazzo</div>
+                        <div class="feed-message"></div>
+                    </div>
+                    <div class="col-4">
+                        <span class="mdi mdi-24px mdi-food @(true ? "to-do-completed" : string.Empty)"></span>
+                    </div>
                 </div>
-                <div class="col-4">
-                    <div class="feed-title">@guest.Name</div>
-                    <div class="feed-message">@guest.Reason</div>
+
+                <div class="sub-title">Dinner Guests</div>
+            </HeaderCardContent>
+
+            <ItemTemplate Context="guest">
+                <div class="row">
+                    <div class="col-4">
+                        <img class="avatar-img" src="https://www.w3schools.com/w3images/avatar2.png" />
+                    </div>
+                    <div class="col-4">
+                        <div class="feed-title">@guest.Name</div>
+                        <div class="feed-message">@guest.Reason</div>
+                    </div>
+                    <div class="col-4">
+                        <span class="mdi mdi-24px mdi-food @(guest.IsHomeForDinner ? "to-do-completed" : string.Empty)"></span>
+                    </div>
                 </div>
-                <div class="col-4">
-                    <span class="to-do-completed mdi mdi-24px mdi-food"></span>
-                </div>
-            </div>
-        </ItemTemplate>
-        <SecondaryCardContent>
-            <HomeForDinnerToggle />
-        </SecondaryCardContent>
-    </CarltonListCard>
-</div>
+            </ItemTemplate>
+            <SecondaryCardContent>
+                <HomeForDinnerToggle IsHomeForDinner="ViewModel.DinnerGuests[0].IsHomeForDinner" />
+            </SecondaryCardContent>
+        </CarltonListCard>
+    </div>
 

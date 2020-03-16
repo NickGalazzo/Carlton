@@ -2,13 +2,16 @@
 
 <div class="toggle-switch">
     <label class="switch">
-        <input type="checkbox" checked @onchange="async (evt) => await ToggleChangedCallback.InvokeAsync((bool) evt.Value)">
+        <input type="checkbox" checked="@IsChecked" @onclick:preventDefault @onchange="(evt) => ToggleChangedCallback.InvokeAsync((bool) evt.Value)">
         <span class="slider round"></span>
     </label>
 </div>
 
 
 @code{
+    [Parameter]
+    public bool IsChecked { get; set; }
+
     [Parameter]
     public EventCallback<bool> ToggleChangedCallback { get; set; }
 }

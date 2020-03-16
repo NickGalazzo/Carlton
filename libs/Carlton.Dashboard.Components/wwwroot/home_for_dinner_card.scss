@@ -1,6 +1,19 @@
 ﻿@import "colors.scss";
 
 .home-for-dinner-card {
+
+    .my-dinner-status-row {
+        border-bottom-style: dashed;
+        border-bottom-color: $textColor;
+        border-bottom-width: thin;
+        padding-bottom: 10px;
+    }
+
+    .sub-title{
+        font-size: 10pt;
+        margin-top: 20px;
+    }
+
     img.avatar-img {
         height: 40px;
         width: 40px;
@@ -22,5 +35,9 @@
                 margin-top: 10px;
             }
         }
+    }
+
+    .to-do-completed {
+        color: $activeColor;
     }
 }

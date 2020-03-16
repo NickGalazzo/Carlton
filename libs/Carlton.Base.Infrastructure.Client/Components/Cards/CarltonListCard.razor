@@ -5,9 +5,12 @@
 
 <div class="carlton-list-card">
     <CarltonCard CardTitle="@CardTitle">
+        <HeaderCardContent>
+            @HeaderCardContent
+        </HeaderCardContent>
         <PrimaryCardContent>
             <ul>
-                @foreach (var item in Items)
+                @foreach(var item in Items)
                 {
                     @ItemTemplate(item)
                 }

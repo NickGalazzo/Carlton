@@ -5,6 +5,9 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">@CardTitle</h5>
+                <div class="header-content">
+                    @HeaderCardContent
+                </div>
                 <div class="primary-content">
                     @PrimaryCardContent
                 </div>
@@ -20,6 +23,8 @@
 @code{
     [Parameter]
     public string CardTitle { get; set; }
+    [Parameter]
+    public RenderFragment HeaderCardContent { get; set; }
     [Parameter]
     public RenderFragment PrimaryCardContent { get; set; }
     [Parameter]

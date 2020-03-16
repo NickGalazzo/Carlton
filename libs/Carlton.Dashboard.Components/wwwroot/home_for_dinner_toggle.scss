@@ -1,5 +1,11 @@
-﻿.home-for-dinner-toggle {
+﻿@import "colors.scss";
+
+.home-for-dinner-toggle {
     .reason-label{
         margin:auto;
+    }
+
+    .reason-label-disabled{
+        color: $textColor;
     }
 }
