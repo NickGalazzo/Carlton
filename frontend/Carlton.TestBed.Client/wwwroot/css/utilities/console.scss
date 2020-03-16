@@ -1,0 +1,11 @@
+﻿@mixin console-textarea {
+    textarea {
+        width: 100%;
+        background-color: black;
+        color: greenyellow;
+
+        &.error {
+            color: red;
+        }
+    }
+}

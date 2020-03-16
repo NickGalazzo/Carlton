@@ -3,12 +3,12 @@
 @inject TestBedService service
 
 <div class="sidebar">
-    <TestBedNavTree ViewModel="service.TreeItems" SelectedItemChanged="service.SelectItem"  />
+    <TestBedNavTree ViewModel="service.TreeItems" SelectedItemChanged="service.SelectItem" />
 </div>
 
 <div class="main">
     <div class="content px-4">
-        <TestBed ComponentType="service.TestComponentType"  ViewModel="service.TestComponentViewModel" ComponentEventCallback="service.AddComponentEvent" />
+        <TestBed ComponentType="service.TestComponentType" ViewModel="service.TestComponentViewModel" ComponentEventCallback="service.AddComponentEvent" />
     </div>
     <footer class="footer">
         <TabControl>
@@ -21,52 +21,4 @@
         </TabControl>
     </footer>
 </div>
-
-<style>
-
-    .app {
-    }
-
-    .test-bed {
-        height: 500px;
-    }
-
-    .sidebar {
-        background-color: #263238;
-        color: white;
-    }
-
-    .main .content {
-        resize: vertical;
-        overflow-y: hidden;
-    }
-
-    textarea {
-        width: 100%;
-        background-color: black;
-        color: greenyellow;
-    }
-
-    .footer {
-        overflow: hidden;
-    }
-
-    .footer .container {
-        margin-left: inherit;
-    }
-
-    .nav-tabs {
-        color: #757575;
-    }
-
-    .nav-tabs .nav-link.active{
-        color:   #68b7f6;
-        background-color: #f0f0f0;
-    }
-
-    .selected-tree-node{
-        color: #009688;
-    }
-</style>
-
 

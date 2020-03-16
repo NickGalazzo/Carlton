@@ -1,20 +1,11 @@
 ﻿@using Newtonsoft.Json
 
-<div class="view-model-viewer-component">
+<div class="view-model-viewer">
     <div class="form-group">
         <textarea class="@(ViewModelIsInvalid ? "error" : string.Empty)" rows="8" @bind="ViewModelJson"></textarea>
     </div>
 </div>
 
-<style>
-    .view-model-viewer-component textarea {
-        color: greenyellow;
-    }
-
-        .view-model-viewer-component textarea.error {
-            color: red;
-        }
-</style>
 
 @code {
 

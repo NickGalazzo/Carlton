@@ -1,0 +1,39 @@
+﻿.carlton-test-bed-nav-tree .selected-tree-node {
+  color: #009688; }
+
+.test-bed {
+  height: 500px; }
+
+.event-console textarea {
+  width: 100%;
+  background-color: black;
+  color: greenyellow; }
+  .event-console textarea.error {
+    color: red; }
+
+.view-model-viewer textarea {
+  width: 100%;
+  background-color: black;
+  color: greenyellow; }
+  .view-model-viewer textarea.error {
+    color: red; }
+
+.sidebar {
+  background-color: #263238;
+  color: white; }
+
+.main .content {
+  resize: vertical;
+  overflow-y: hidden; }
+
+.footer {
+  overflow: hidden; }
+  .footer .container {
+    margin-left: inherit; }
+
+/*Bootstrap Overrides*/
+.main .nav-tabs .nav-link {
+  color: #757575; }
+  .main .nav-tabs .nav-link.active {
+    color: #68b7f6;
+    background-color: #f0f0f0; }

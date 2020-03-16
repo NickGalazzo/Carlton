@@ -1,0 +1,39 @@
+﻿@import "components/testBedNavTree.scss";
+@import "components/testBed.scss";
+@import "components/eventConsole.scss";
+@import "components/viewModelViewer.scss";
+
+
+.sidebar {
+    background-color: #263238;
+    color: white;
+}
+
+.main {
+    .content {
+        resize: vertical;
+        overflow-y: hidden;
+    }
+}
+
+.footer {
+    overflow: hidden;
+
+    .container {
+        margin-left: inherit;
+    }
+}
+
+/*Bootstrap Overrides*/
+.main {
+    .nav-tabs {
+        .nav-link {
+            color: #757575;
+
+            &.active {
+                color: #68b7f6;
+                background-color: #f0f0f0;
+            }
+        }
+    }
+}

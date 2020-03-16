@@ -94,6 +94,16 @@ body {
 .feed-list-card .feed-message {
   color: #757575; }
 
+.home-for-dinner-card .my-dinner-status-row {
+  border-bottom-style: dashed;
+  border-bottom-color: #757575;
+  border-bottom-width: thin;
+  padding-bottom: 10px; }
+
+.home-for-dinner-card .sub-title {
+  font-size: 10pt;
+  margin-top: 20px; }
+
 .home-for-dinner-card img.avatar-img {
   height: 40px;
   width: 40px;
@@ -109,8 +119,14 @@ body {
 .home-for-dinner-card .primary-content ul .row {
   margin-top: 10px; }
 
+.home-for-dinner-card .to-do-completed {
+  color: #009688; }
+
 .home-for-dinner-toggle .reason-label {
   margin: auto; }
+
+.home-for-dinner-toggle .reason-label-disabled {
+  color: #757575; }
 
 .base-tree .base-tree {
   margin-left: 1.25rem; }

@@ -2,9 +2,11 @@
 @using  Carlton.Base.Infrastructure.Client.Events
 
 
-<div class="form-group">
-    <textarea readonly="readonly" rows="8">@ConsoleText</textarea>
-    <button @onclick="Clear">clear</button>
+<div class="event-console">
+    <div class="form-group">
+        <textarea readonly="readonly" rows="8">@ConsoleText</textarea>
+        <button @onclick="Clear">clear</button>
+    </div>
 </div>
 
 @code {
