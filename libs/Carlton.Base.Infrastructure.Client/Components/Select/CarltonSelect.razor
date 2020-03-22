@@ -1,0 +1,30 @@
+﻿
+
+<div class="carlton-select">
+    <input readonly placeholder=" " value="@_valueDisplay" />
+    <div class="label">@ViewModel.Label</div>
+    <div class="options">
+        @foreach(var opt in ViewModel.Options)
+        {
+            <div @onclick="() => Option_Click(opt)">@opt.Key</div>
+        }
+    </div>
+</div>
+
+
+@code{
+    [Parameter]
+    public CarltonSelectViewModel ViewModel { get; set; }
+
+    [Parameter]
+    public EventCallback<KeyValuePair<string, int>> ValueChangedCallback { get; set; }
+
+    private string _valueDisplay = null;
+
+    private void Option_Click(KeyValuePair<string, int> opt)
+    {
+        _valueDisplay = opt.Key;
+        ValueChangedCallback.InvokeAsync(opt);
+    }
+
+}

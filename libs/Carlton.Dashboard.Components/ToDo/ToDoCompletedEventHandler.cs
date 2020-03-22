@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Carlton.Dashboard.Components.ToDo
 {
-    public class ToDoCompletedEventHandler : IRequestHandler<ToDoCompletedRequest, ToDoListViewModel>
+    public class ToDoCompletedEventHandler : IRequestHandler<ToDoStatusChangedEvent, ToDoListViewModel>
     {
-        public Task<ToDoListViewModel> Handle(ToDoCompletedRequest request, CancellationToken cancellationToken)
+        public Task<ToDoListViewModel> Handle(ToDoStatusChangedEvent request, CancellationToken cancellationToken)
         {
             //Update server
             //_http.Post($"/CompleteEvent/{evt.ToDoId}");

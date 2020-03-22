@@ -9,13 +9,9 @@
     {
         <span @onclick="() => UserCheckChange(true)" class="to-do-completed align-middle mdi mdi-24px mdi-checkbox-blank-circle-outline"></span>
     }
-    <span class="to-do-name align-middle">@CheckboxLabel</span>
 </div>
 
 @code {
-    [Parameter]
-    public string CheckboxLabel { get; set; }
-
     [Parameter]
     public EventCallback<bool> OnCheckboxChangeCallback { get; set; }
 

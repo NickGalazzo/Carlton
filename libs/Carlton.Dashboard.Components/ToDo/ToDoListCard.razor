@@ -1,37 +1,15 @@
 ﻿@using Carlton.Base.Infrastructure.Client.Components.Cards
-@using Carlton.Base.Infrastructure.Client.Components
+
 
 @inherits CarltonParentComponent<ToDoListViewModel>
 
 <div class="to-do-list-card">
     <CarltonListCard CardTitle="To-Do's" Items="ViewModel.ToDoList">
         <ItemTemplate Context="toDo">
-            <div class="row">
-                <div class="col-8">
-                    <Checkbox CheckboxLabel="@toDo.Name" IsChecked="@toDo.IsCompleted" OnCheckboxChangeCallback="(isChecked) => OnChange(toDo.Id, isChecked)" />
-                </div>
-                <div class="col-4">
-                    <a href="#" @onclick="OnClick">
-                        <span class="to-do-link-btn glyphicon glyphicon-th-list">View</span>
-                    </a>
-                </div>
-            </div>
+            <ToDoListItem ViewModel="toDo" CheckboxChangedCallback="base.OnComponentEvent"  />  
         </ItemTemplate>
     </CarltonListCard>
 </div>
 
-@code {
-    private async Task OnChange(int id, bool isChecked)
-    {
-        var x = new ToDoCompletedRequest(1);
-        await OnComponentEvent.InvokeAsync(new ToDoEvent(1));
-    }
-
-    private Task OnClick()
-    {
-        return Task.CompletedTask;
-        //await OnComponentEvent.InvokeAsync(new ToDoEvent("Link Button Clicked", new { Test = "Test 1", Test2 = "Test 2" }));
-    }
-}
 
 

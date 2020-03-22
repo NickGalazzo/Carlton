@@ -3,7 +3,7 @@
 .to-do-list-card {
     label.to-do-label {
         color: $textColor;
-        font-size: 10pt;
+        font-size: 12pt;
     }
 
     span.to-do-link-btn {
@@ -12,7 +12,8 @@
 
     span.to-do-name{
         color: $textColor;
-        font-size:10pt;
+        font-size:12pt;
+        line-height: 2.3;
     }
 
     span.to-do-completed {

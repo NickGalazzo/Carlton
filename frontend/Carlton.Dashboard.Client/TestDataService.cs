@@ -28,10 +28,10 @@ namespace Carlton.Dashboard.Client
         {
             return new HomeForDinnerViewModel
             {
-                DinnerGuests = new List<DinnerGuests>
+                DinnerGuests = new List<DinnerGuest>
                 {
-                    new DinnerGuests("test", true, "asdfsd"),
-                    new DinnerGuests("test2", false, "dasdfsdf")
+                    new DinnerGuest("test", true, "asdfsd"),
+                    new DinnerGuest("test2", false, "dasdfsdf")
                 }
             };
         }

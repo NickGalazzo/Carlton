@@ -1,11 +1,56 @@
-﻿/*
+﻿.carlton-select input {
+  color: #555;
+  width: 100%;
+  border: none;
+  background: none;
+  border-bottom: 2px solid #999;
+  transition: 0.25s border-color ease-in-out; }
+  .carlton-select input:focus {
+    border-color: #009688; }
+
+.carlton-select .options {
+  background: #fff;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s opacity ease-in-out, 0.5s max-height ease-in-out;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14); }
+
+.carlton-select .label {
+  position: absolute;
+  transform: translateY(-1.8rem);
+  transition: 0.25s transform ease-in-out, 0.25s color ease-in-out; }
+
+.carlton-select input:focus ~ .label, .carlton-select input:not(:placeholder-shown) ~ .label {
+  color: #009688;
+  transform: translate(-0.8rem, -2.5rem) scale(0.6); }
+
+.carlton-select input:focus ~ .options {
+  opacity: 1;
+  max-height: 8rem; }
+
+.options > div {
+  padding: 0.5rem; }
+  .options > div:not(*:last-child) {
+    border-bottom: 1px solid #aaa; }
+
+.carlton-select {
+  background: none;
+  max-width: 12rem; }
+
+html, body {
+  background: #ccc;
+  color: #555; }
+
+*:focus {
+  outline: none; }
+
+/*
     This file is to show how CSS and other static resources (such as images) can be
     used from a library project/package.
 */
-
 .my-component {
-    border: 2px dashed red;
-    padding: 1em;
-    margin: 1em 0;
-    background-image: url('background.png');
-}
+  border: 2px dashed red;
+  padding: 1em;
+  margin: 1em 0;
+  background-image: url("background.png"); }

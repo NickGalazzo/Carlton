@@ -1,49 +1,45 @@
 ﻿@using Carlton.Dashboard.ViewModels.HomeForDinner
 @using Carlton.Base.Infrastructure.Client.Components.Cards
 @using Carlton.Base.Infrastructure.Client.Components.Data
+@using Carlton.Base.Infrastructure.Client.Components;
+@using Carlton.Base.Infrastructure.Client.Components.Select;
 
 @inherits CarltonParentComponent<HomeForDinnerViewModel>
 
 
-    <div class="home-for-dinner-card">
-    
-      
-        <CarltonListCard CardTitle="Home For Dinner" Items="ViewModel.DinnerGuests">
-
-            <HeaderCardContent>
-                <div class="row my-dinner-status-row">
-                    <div class="col-4">
-                        <img class="avatar-img" src="https://www.w3schools.com/w3images/avatar2.png" />
+<div class="home-for-dinner-card">
+    <CarltonListCard CardTitle="Home For Dinner" Items="ViewModel.DinnerGuests">
+        <HeaderCardContent>
+            <div class="my-dinner-status-row">
+                <DinnerGuestView Guest="ViewModel.MyGuestStatus" ShowIndicator="false" />
+                <div class="row home-for-dinner-row">
+                    <div class="col-9">
+                        <label>Are you home for dinner?</label>
                     </div>
-                    <div class="col-4">
-                        <div class="feed-title">Nick Galazzo</div>
-                        <div class="feed-message"></div>
-                    </div>
-                    <div class="col-4">
-                        <span class="mdi mdi-24px mdi-food @(true ? "to-do-completed" : string.Empty)"></span>
+                    <div class="col-3 text-center">
+                        <Checkbox IsChecked="true" />
                     </div>
                 </div>
 
-                <div class="sub-title">Dinner Guests</div>
-            </HeaderCardContent>
+                <CarltonSelect ViewModel="_selectVM" />
+            </div>
 
-            <ItemTemplate Context="guest">
-                <div class="row">
-                    <div class="col-4">
-                        <img class="avatar-img" src="https://www.w3schools.com/w3images/avatar2.png" />
-                    </div>
-                    <div class="col-4">
-                        <div class="feed-title">@guest.Name</div>
-                        <div class="feed-message">@guest.Reason</div>
-                    </div>
-                    <div class="col-4">
-                        <span class="mdi mdi-24px mdi-food @(guest.IsHomeForDinner ? "to-do-completed" : string.Empty)"></span>
-                    </div>
-                </div>
-            </ItemTemplate>
-            <SecondaryCardContent>
-                <HomeForDinnerToggle IsHomeForDinner="ViewModel.DinnerGuests[0].IsHomeForDinner" />
-            </SecondaryCardContent>
-        </CarltonListCard>
-    </div>
+            <div class="sub-title">Dinner Guests</div>
+        </HeaderCardContent>
+
+        <ItemTemplate Context="guest">
+            <DinnerGuestView Guest="guest" ShowIndicator="true" />
+        </ItemTemplate>
+    </CarltonListCard>
+</div>
+
+@code{
+    private CarltonSelectViewModel _selectVM;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _selectVM = new CarltonSelectViewModel("Reason?", ViewModel.MySavedReasons);
+    }
+}
 

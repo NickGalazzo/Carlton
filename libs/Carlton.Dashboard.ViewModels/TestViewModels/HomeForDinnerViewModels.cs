@@ -9,11 +9,16 @@ namespace Carlton.TestBed.Client.TestViewModels
         {
             return new HomeForDinnerViewModel()
             {
-                DinnerGuests = new List<DinnerGuests>()
-                  {
-                        new DinnerGuests("Nick", true, string.Empty),
-                        new DinnerGuests("Steve", false, "Japaneese Class")
-                  }
+                MyGuestStatus = new DinnerGuest("Nick", true, string.Empty),
+                DinnerGuests = new List<DinnerGuest>()
+                {
+                    new DinnerGuest("Nick", true, string.Empty),
+                    new DinnerGuest("Steve", false, "Japaneese Class")
+                },
+                MySavedReasons = new Dictionary<string, int>
+                {
+                    {"Japan School", 1}
+                }
             };
         }
     }

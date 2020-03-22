@@ -1,0 +1,25 @@
+﻿@using Carlton.Dashboard.ViewModels.HomeForDinner
+
+<div class="row">
+    <div class="col-3 text-center">
+        <img class="avatar-img text-center" src="https://www.w3schools.com/w3images/avatar2.png" />
+    </div>
+    <div class="col-6 text-center">
+        <div class="feed-title">@Guest.Name</div>
+        <div class="feed-message">@Guest.Reason</div>
+    </div>
+    <div class="col-3 text-center">
+        @if(ShowIndicator)
+        {
+            <span class="mdi mdi-24px mdi-food @(Guest.IsHomeForDinner ? "to-do-completed" : string.Empty)"></span>
+        }
+    </div>
+</div>
+
+@code  {
+    [Parameter]
+    public DinnerGuest Guest { get; set; }
+
+    [Parameter]
+    public bool ShowIndicator { get; set; }
+}
