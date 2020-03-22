@@ -1,9 +1,6 @@
-﻿
-@import "carlton_select.scss";
-/*
-    This file is to show how CSS and other static resources (such as images) can be
-    used from a library project/package.
-*/
+﻿@import "carlton_select.scss";
+@import "carlton_tabs.scss";
+
 
 .my-component {
     border: 2px dashed red;

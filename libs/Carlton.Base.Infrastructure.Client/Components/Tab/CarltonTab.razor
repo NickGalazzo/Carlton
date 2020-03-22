@@ -10,13 +10,15 @@
 
 @code {
     [CascadingParameter]
-    private TabControl Parent { get; set; }
+    private CarltonTabBar Parent { get; set; }
 
     [Parameter]
     public string DisplayText { get; set; }
 
     [Parameter]
     public RenderFragment ChildContent { get; set; }
+
+    public int TabIndex { get; set; }
 
     protected override void OnInitialized()
     {
