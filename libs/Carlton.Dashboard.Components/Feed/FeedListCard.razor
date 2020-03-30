@@ -4,20 +4,14 @@
 @inherits CarltonParentComponent<FeedViewModel>
 
 <div class="feed-list-card">
-    <CarltonGroupedListCard TItem="FeedItem" CardTitle="Feed" GroupedItems="GroupedItems">
+    <CarltonListCard TItem="FeedItem" Items="GroupedItems.SelectMany(o=>o.GroupItems)" CardTitle="Feed">
         <ItemTemplate Context="feedItem">
-            <div class="row">
-                <div class="col-4">
-                    <img class="avatar-img" src="https://www.w3schools.com/w3images/avatar2.png" />
-                </div>
-                <div class="col-8">
-                    <div class="feed-title">@feedItem.Title</div>
-                    <div class="feed-message">@feedItem.Message</div>
-                </div>
-            </div>
+            <FeedItemView ViewModel="feedItem" />
         </ItemTemplate>
-    </CarltonGroupedListCard>
+    </CarltonListCard>
 </div>
+
+
 
 @code {
     private IEnumerable<CarltonGroupedListCard<FeedItem>.GroupedItem> GroupedItems;

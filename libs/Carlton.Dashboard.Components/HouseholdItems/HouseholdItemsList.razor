@@ -6,21 +6,7 @@
 <div class="household-items-list-card">
     <CarltonListCard CardTitle="Household Items" Items="ViewModel.Items">
         <ItemTemplate Context="item">
-            <div><span class="item-name">@item.Name</span></div>
-            <div class="progress" style="height:5px">
-                @if (item.PercentRemaining >= 75)
-                {
-                    <div class="progress-bar bg-success" role="progressbar" style="width: @((item.PercentRemaining).ToString() + '%')" aria-valuenow="@item.PercentRemaining" aria-valuemin="0" aria-valuemax="100"></div>
-                }
-                else if (item.PercentRemaining >= 50 && item.PercentRemaining < 75)
-                {
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: @((item.PercentRemaining).ToString() + '%')" aria-valuenow="@item.PercentRemaining" aria-valuemin="0" aria-valuemax="100"></div>
-                }
-                else
-                {
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: @((item.PercentRemaining).ToString() + '%')" aria-valuenow="@item.PercentRemaining" aria-valuemin="0" aria-valuemax="100"></div>
-                }
-            </div>
+            <HouseholdItem ViewModel="item" />
         </ItemTemplate>
     </CarltonListCard>
 </div>

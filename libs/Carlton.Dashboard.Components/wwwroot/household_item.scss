@@ -1,0 +1,17 @@
+﻿@import "colors.scss";
+
+.household-item {
+    span.item-name {
+        color: $textColor;
+    }
+
+    .progress {
+        height: 8px;
+        background-color: transparent;
+    }
+
+    .progress-bar {
+        border-radius: 10px;
+        background-color: $activeColor;
+    }
+}

@@ -65,8 +65,16 @@ body {
 .apartment-status-list-card span.status-value-incomplete {
   color: #fec00a; }
 
-.household-items-list-card span.item-name {
+.household-item span.item-name {
   color: #757575; }
+
+.household-item .progress {
+  height: 8px;
+  background-color: transparent; }
+
+.household-item .progress-bar {
+  border-radius: 10px;
+  background-color: #009688; }
 
 .to-do-list-card label.to-do-label {
   color: #757575;
@@ -83,17 +91,30 @@ body {
 .to-do-list-card span.to-do-completed {
   color: #009688; }
 
+.feed-list-card .feed-item-row {
+  border-bottom-style: solid;
+  border-bottom-color: rgba(117, 117, 117, 0.25);
+  padding: 10px; }
+
 .feed-list-card img.avatar-img {
   height: 40px;
   width: 40px;
   border-radius: 20px; }
 
 .feed-list-card .feed-title {
-  color: #757575;
+  color: #009688;
   font-weight: bold; }
 
 .feed-list-card .feed-message {
-  color: #757575; }
+  color: #757575;
+  font-size: 10pt; }
+
+.feed-list-card .feed-date-col {
+  text-align: center; }
+  .feed-list-card .feed-date-col .feed-date {
+    font-size: 10px;
+    text-align: center;
+    line-height: 4.5; }
 
 .home-for-dinner-card .my-dinner-status-row {
   border-bottom-style: dashed;
