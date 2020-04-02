@@ -1,0 +1,18 @@
+﻿@using Carlton.Base.Infrastructure.Client.Components.Cards
+@using Carlton.Dashboard.ViewModels.CountCards
+
+<div class="carlton-count-card">
+    <CarltonCard>
+        <PrimaryCardContent>
+            <div class="row">
+                <div class="col-3 count-icon mdi mdi-36px @(ViewModel.Icon)"></div>
+                <span class="col-8 count-message">@ViewModel.Message</span>
+            </div>
+        </PrimaryCardContent>
+    </CarltonCard>
+</div>
+
+@code {
+    [Parameter]
+    public CarltonBaseCountCardViewModel ViewModel { get; set; }
+}

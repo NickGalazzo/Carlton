@@ -11,9 +11,10 @@ using Carlton.Dashboard.Components.Feed;
 using Carlton.Dashboard.Components.HomeForDinner;
 using Carlton.Dashboard.Components.HouseholdItems;
 using Carlton.Dashboard.Components.ToDo;
+using Carlton.Dashboard.Components.CountCards;
 using Carlton.TestBed.Client.TestViewModels;
-using System.Linq;
 using Carlton.Base.Infrastructure.Client.Components.TestBed;
+using Carlton.Dashboard.ViewModels.TestViewModels;
 
 namespace Carlton.TestBed.Client
 {
@@ -26,8 +27,11 @@ namespace Carlton.TestBed.Client
               .AddTreeNode<ApartmentStatusList>("Apartment Status", ApartmentStatusViewModels.DefaultApartmentStatusViewModel())
               .AddTreeNode<HomeForDinnerCard>("HomeForDinnerCard", HomeForDinnerViewModels.DefaultHomeForDinnerViewModel())
               .AddTreeNode<HouseholdItemsList>("HouseHoldItems", HouseholdItemsViewModels.DefaultHouseholdItemsViewModel())
-              .AddTreeNode<FeedListCard>("FeedListCard", FeedListViewModels.DefaultFeedViewModels());
-             //  .AddTreeNode<ToDoOverviewCard>("ToDoOverviewCard", new ToDoOverviewCardViewModel(7));
+              .AddTreeNode<FeedListCard>("FeedListCard", FeedListViewModels.DefaultFeedViewModels())
+              .AddTreeNode<ToDosCountCard>("Default", ToDosCountViewModels.DefaultToDoListViewModel())
+              .AddTreeNode<ApartmentStatusCountCard>("Default", ApartmentStatusCountCardViewModels.DefaultApartmentStatusCountCardViewModel()) 
+              .AddTreeNode<DinnerGuestsCountCard>("Default", DinnerGuestsCountCardViewModels.DefaultDinngerGuestsCountCardViewModel())
+              .AddTreeNode<HouseholdItemsCountCard>("Default", HouseholdItemsCountCardViewModels.DefaultHouseholdItemsCountCardViewModel());
             
             return new TestBedService(builder.Build());
         }
