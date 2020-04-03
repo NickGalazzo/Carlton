@@ -15,6 +15,7 @@ using Carlton.Dashboard.Components.CountCards;
 using Carlton.TestBed.Client.TestViewModels;
 using Carlton.Base.Infrastructure.Client.Components.TestBed;
 using Carlton.Dashboard.ViewModels.TestViewModels;
+using Carlton.Dashboard.Components.Notifications;
 
 namespace Carlton.TestBed.Client
 {
@@ -23,6 +24,10 @@ namespace Carlton.TestBed.Client
         public static TestBedService Bootstrap()
         {
             var builder = new TreeItemsBuilder()
+              .AddTreeNode<CarltonAlertNotification>("Default", new object())
+              .AddTreeNode<CarltonInfoNotification>("Default", new object())
+              .AddTreeNode<CarltonFailureNotification>("Default", new object())
+              .AddTreeNode<CarltonSuccessNotification>("Default", new object())
               .AddTreeNode<ToDoListCard>("ToDoListCard", ToDoListViewModels.DefaultToDoList())
               .AddTreeNode<ApartmentStatusList>("Apartment Status", ApartmentStatusViewModels.DefaultApartmentStatusViewModel())
               .AddTreeNode<HomeForDinnerCard>("HomeForDinnerCard", HomeForDinnerViewModels.DefaultHomeForDinnerViewModel())

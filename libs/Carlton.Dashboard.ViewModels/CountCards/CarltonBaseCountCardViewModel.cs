@@ -5,7 +5,7 @@
         public int Count { get; private set; }
         public string MessageTemplate { get; private set; }
         public string Icon { get; private set; }
-        public string AccentColor { get; private set; }
+        public string AccentColorClass { get; private set; }
         public string Message
         {
             get
@@ -14,12 +14,12 @@
             }
         }
 
-        public CarltonBaseCountCardViewModel(int count, string messageTemplate, string icon, string accentColor)
+        public CarltonBaseCountCardViewModel(int count, string messageTemplate, string icon, string accentColorClass)
         {
             Count = count;
             MessageTemplate = messageTemplate;
             Icon = icon;
-            AccentColor = accentColor;
+            AccentColorClass = accentColorClass;
         }
     }
 }

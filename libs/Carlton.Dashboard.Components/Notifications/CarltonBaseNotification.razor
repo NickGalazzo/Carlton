@@ -1,0 +1,102 @@
+﻿@inherits CarltonParentComponent<object>
+
+<div class="carlton-notification  @(BackgroundClass) @(IsDismissed ? "d-none" : string.Empty)">
+    <div class="container">
+        <div class="row">
+            <div class="col-2 icon-col">
+                <span class="icon mdi mdi-24px @IconClass"></span>
+            </div>
+            <div class="col-7 message-col">
+                <span class="message">@Message</span>
+            </div>
+            <div class="col-2 action-col">
+                <a href="#" @onclick="Dismiss">Dismiss</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .carlton-notification {
+        width: 300px;
+        color: white;
+        height: 75px;
+    }
+
+        .carlton-notification .container {
+            height: 100%;
+        }
+
+            .carlton-notification .container .row {
+                height: 100%
+            }
+
+    .icon-col, .message-col, .action-col {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .action-col {
+        padding-left: 0px;
+    }
+
+        .action-col a {
+            color: white;
+        }
+
+    .success {
+        background-color: #2aaba0;
+    }
+
+    .failure {
+        background-color: #ff7946;
+    }
+
+    .info {
+        background-color: #8e9eac;
+    }
+
+    .alert {
+        background-color: #45A8F8;
+    }
+
+
+    @@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .fadeOut {
+        -webkit-animation-name: fadeOut;
+        animation-name: fadeOut;
+        -webkit-animation-duration: 10s;
+        animation-duration: 5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        animation-delay: 5s;
+    }
+</style>
+
+@code{
+    [Parameter]
+    public string IconClass { get; set; }
+
+    [Parameter]
+    public string BackgroundClass { get; set; }
+
+    [Parameter]
+    public string Message { get; set; }
+
+    private bool IsDismissed { get; set; }
+
+    private void Dismiss()
+    {
+        IsDismissed = true;
+    }
+}

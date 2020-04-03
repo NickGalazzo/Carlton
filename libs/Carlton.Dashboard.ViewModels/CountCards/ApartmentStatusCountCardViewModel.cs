@@ -4,7 +4,7 @@
     {
         private const string MESSAGE_TEMPLATE = "Pending Statuses";
         private const string ICON = "mdi-home";
-        private const string ACCENT_COLOR = "#1dbfd4";
+        private const string ACCENT_COLOR = "accent-color-two";
 
         public ApartmentStatusCountCardViewModel(int count) :base(count, MESSAGE_TEMPLATE, ICON, ACCENT_COLOR)
         {
