@@ -1,4 +1,5 @@
 ﻿@namespace Carlton.Base.Infrastructure.Client.Components.TestBed
+
 @using  Carlton.Base.Infrastructure.Client.Events
 @using  Newtonsoft.Json
 
@@ -18,7 +19,7 @@
         set
         {
             if(!(typeof(ComponentBase).IsAssignableFrom(value)))
-                throw new InvalidOperationException("ComponentType is not a valid component type.");
+                throw new InvalidOperationException($"{value.GetType()} is not a valid component type.");
             _componentType = value;
         }
     }
@@ -29,20 +30,35 @@
     [Parameter]
     public EventCallback ComponentEventCallback { get; set; }
 
+    [Parameter]
+    public bool IsCarltonComponent { get; set; }
+
     private RenderFragment TestComponentFragment { get; set; }
 
     protected override void OnParametersSet()
     {
-        System.Console.WriteLine("OnParametersSet");
         base.OnParametersSet();
         TestComponentFragment = builder =>
         {
             builder.OpenElement(1, "div");
             builder.OpenComponent(2, ComponentType);
-            builder.AddAttribute(1, "ViewModel", ViewModel);
 
-            if(ComponentEventCallback.HasDelegate)
-                builder.AddAttribute(2, "OnComponentEvent", ComponentEventCallback);
+            if(IsCarltonComponent)
+            {
+                builder.AddAttribute(1, "ViewModel", ViewModel);
+
+                if(ComponentEventCallback.HasDelegate)
+                    builder.AddAttribute(2, "OnComponentEvent", ComponentEventCallback);
+            }
+            else
+            {
+                var i = 1;
+                var componentParameters = (IDictionary<string, object>)ViewModel;
+                foreach(var key in componentParameters.Keys)
+                {
+                    builder.AddAttribute(i, key, componentParameters[key]);
+                }
+            }
 
             builder.CloseComponent();
             builder.CloseElement();

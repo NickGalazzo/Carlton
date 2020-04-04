@@ -15,15 +15,17 @@ namespace Carlton.Base.Infrastructure.Client.Components.TestBed
 
             private set
             {
-
                 _selectedItem = value;
                 TestComponentType = value.Type;
                 TestComponentViewModel = value.ViewModel;
+                TestComponentIsCarltonComponent = value.IsCarltonComponent;
             }
         }
 
         public Type TestComponentType { get; private set; }
         public object TestComponentViewModel { get; private set; }
+
+        public bool TestComponentIsCarltonComponent { get; private set; }       
 
         public IList<object> ComponentEvents { get; private set; }
 

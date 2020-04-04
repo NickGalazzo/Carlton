@@ -1,0 +1,35 @@
+﻿<div class="carlton-notification @(BackgroundClass) @(IsDismissed ? "d-none" : string.Empty)">
+    <div class="container">
+        <div class="row">
+            <div class="col-2 icon-col">
+                <span class="icon mdi mdi-24px @IconClass"></span>
+            </div>
+            <div class="col-7 message-col">
+                <span class="message">@Message</span>
+            </div>
+            <div class="col-2 action-col">
+                <a href="#" @onclick="Dismiss">Dismiss</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@code{
+    [Parameter]
+    public string IconClass { get; set; }
+
+    [Parameter]
+    public string BackgroundClass { get; set; }
+
+    [Parameter]
+    public string Message { get; set; }
+
+    private bool IsDismissed { get; set; }
+
+    private void Dismiss()
+    {
+        IsDismissed = true;
+    }
+}

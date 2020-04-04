@@ -1,0 +1,54 @@
+﻿
+@mixin notification {
+    width: 300px;
+    border-radius: 5px;
+}
+
+.carlton-notification {
+    color: white;
+    height: 75px;
+
+    .container {
+        height: 100%;
+    }
+
+    .container .row {
+        height: 100%
+    }
+
+    .icon-col, .message-col, .action-col {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .action-col {
+        padding-left: 0px;
+    }
+
+    .action-col a {
+        color: white;
+    }
+}
+
+.success-notification {
+    @include notification;
+    background-color: #2aaba0;
+}
+
+.failure-notification {
+    @include notification;
+    background-color: #ff7946;
+}
+
+.info-notification {
+    @include notification;
+    background-color: #8e9eac;
+}
+
+.alert-notification {
+    @include notification;
+    background-color: #45A8F8;
+}
+
+
+

@@ -12,6 +12,7 @@ namespace Carlton.Base.Infrastructure.Client.Components.Tree
 
         public IEnumerable<TreeItem> Children { get; set; }
         public bool IsParentNode { get { return Children.Any(); } }
+        public bool IsCarltonComponent { get; private set; }
 
         private TreeItem(string displayName, IEnumerable<TreeItem> children)
         {
@@ -19,11 +20,12 @@ namespace Carlton.Base.Infrastructure.Client.Components.Tree
             Children = children;
         }
 
-        private TreeItem(string displayName, Type type, object viewModel)
+        private TreeItem(string displayName, Type type, object viewModel, bool isCarltonComponent)
         {
             DisplayName = displayName;
             Type = type;
             ViewModel = viewModel;
+            IsCarltonComponent = isCarltonComponent;
             Children = new List<TreeItem>();
         }
 
@@ -32,9 +34,19 @@ namespace Carlton.Base.Infrastructure.Client.Components.Tree
             return new TreeItem(displayName, children);
         }
 
-        public static TreeItem CreateChildNode(string displayName, Type type, object viewModel)
+        public static TreeItem CreateChildNode(string displayName, Type type, object componentParams, bool isCarltonComponent)
         {
-            return new TreeItem(displayName, type, viewModel);
+            return new TreeItem(displayName, type, componentParams, isCarltonComponent);
         }
+
+        //public static TreeItem CreateSimpleChildNode(string displayName, Type type, IDictionary<string, object> componentParams)
+        //{
+        //    return new TreeItem(displayName, type, componentParams, false);
+        //}
+
+        //public static TreeItem CreateCarltonChildNode(string displayName, Type type, object viewModel)
+        //{
+        //    return new TreeItem(displayName, type, viewModel, true);
+        //}
     }
 }

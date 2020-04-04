@@ -15,7 +15,9 @@ using Carlton.Dashboard.Components.CountCards;
 using Carlton.TestBed.Client.TestViewModels;
 using Carlton.Base.Infrastructure.Client.Components.TestBed;
 using Carlton.Dashboard.ViewModels.TestViewModels;
-using Carlton.Dashboard.Components.Notifications;
+using Carlton.Base.Infrastructure.Client.Components.Notifications;
+using Carlton.Base.Infrastructure.Client.Components;
+using System.Collections.Generic;
 
 namespace Carlton.TestBed.Client
 {
@@ -24,10 +26,18 @@ namespace Carlton.TestBed.Client
         public static TestBedService Bootstrap()
         {
             var builder = new TreeItemsBuilder()
-              .AddTreeNode<CarltonAlertNotification>("Default", new object())
-              .AddTreeNode<CarltonInfoNotification>("Default", new object())
-              .AddTreeNode<CarltonFailureNotification>("Default", new object())
-              .AddTreeNode<CarltonSuccessNotification>("Default", new object())
+              .AddSimpleComponent<Checkbox>("Checked", new Dictionary<string, object> 
+              {
+                  {"IsChecked", true}
+              })  
+              .AddSimpleComponent<Checkbox>("Unchecked", new Dictionary<string, object>
+              {
+                  {"IsChecked", false }
+              })
+              .AddSimpleComponent<CarltonAlertNotification>("Default")
+              .AddSimpleComponent<CarltonInfoNotification>("Default")
+              .AddSimpleComponent<CarltonFailureNotification>("Default")
+              .AddSimpleComponent<CarltonSuccessNotification>("Default")
               .AddTreeNode<ToDoListCard>("ToDoListCard", ToDoListViewModels.DefaultToDoList())
               .AddTreeNode<ApartmentStatusList>("Apartment Status", ApartmentStatusViewModels.DefaultApartmentStatusViewModel())
               .AddTreeNode<HomeForDinnerCard>("HomeForDinnerCard", HomeForDinnerViewModels.DefaultHomeForDinnerViewModel())

@@ -7,17 +7,21 @@
 
 <div class="main">
     <div class="content px-4">
-        <TestBed ComponentType="service.TestComponentType" ViewModel="service.TestComponentViewModel" ComponentEventCallback="service.AddComponentEvent" />
+        <TestBed ComponentType="service.TestComponentType" IsCarltonComponent="service.TestComponentIsCarltonComponent" ViewModel="service.TestComponentViewModel" ComponentEventCallback="service.AddComponentEvent" />
     </div>
-    <footer class="footer">
-        <Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTabBar>
-            <Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTab DisplayText="Component Events">
-                <EventConsole ComponentEvents="service.ComponentEvents" ClearEvents="service.ClearEvents"></EventConsole>
-            </Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTab>
-            <Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTab DisplayText="JSON Payloads">
-                <ViewModelViewer ViewModel="service.TestComponentViewModel" ViewModelChanged="service.UpdateTestComponentViewModel"></ViewModelViewer>
-            </Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTab>
-        </Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTabBar>
-    </footer>
+
+    @if(service.TestComponentIsCarltonComponent)
+    {
+        <footer class="footer">
+            <Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTabBar>
+                <Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTab DisplayText="Component Events">
+                    <EventConsole ComponentEvents="service.ComponentEvents" ClearEvents="service.ClearEvents"></EventConsole>
+                </Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTab>
+                <Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTab DisplayText="JSON Payloads">
+                    <ViewModelViewer ViewModel="service.TestComponentViewModel" ViewModelChanged="service.UpdateTestComponentViewModel"></ViewModelViewer>
+                </Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTab>
+            </Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTabBar>
+        </footer>
+    }
 </div>
 
