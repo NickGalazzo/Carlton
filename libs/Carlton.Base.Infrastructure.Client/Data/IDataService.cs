@@ -1,7 +1,4 @@
-﻿
-
-using Carlton.Base.Infrastructure.Client.Events;
-using MediatR;
+﻿using MediatR;
 using System.Threading.Tasks;
 
 namespace Carlton.Base.Infrastructure.Client.Data

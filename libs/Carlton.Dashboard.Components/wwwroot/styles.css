@@ -6,6 +6,27 @@ body ul {
 body {
   font-family: "Roboto", sans-serif !important; }
 
+/* width */
+::-webkit-scrollbar {
+  background-color: #edf1f0;
+  float: left;
+  height: 300px;
+  margin-bottom: 25px;
+  margin-left: 22px;
+  margin-top: 40px;
+  width: 15px;
+  overflow-y: scroll; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px; }
+
 .carlton-card {
   width: 400px; }
 

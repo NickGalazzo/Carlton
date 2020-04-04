@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using Carlton.Base.Client.Components.Tab
+
+@inherits LayoutComponentBase
 @inject TestBedService service
 
 <div class="sidebar">
@@ -13,14 +15,14 @@
     @if(service.TestComponentIsCarltonComponent)
     {
         <footer class="footer">
-            <Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTabBar>
-                <Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTab DisplayText="Component Events">
+            <CarltonTabBar>
+                <CarltonTab DisplayText="Component Events">
                     <EventConsole ComponentEvents="service.ComponentEvents" ClearEvents="service.ClearEvents"></EventConsole>
-                </Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTab>
-                <Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTab DisplayText="JSON Payloads">
+                </CarltonTab>
+                <CarltonTab DisplayText="JSON Payloads">
                     <ViewModelViewer ViewModel="service.TestComponentViewModel" ViewModelChanged="service.UpdateTestComponentViewModel"></ViewModelViewer>
-                </Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTab>
-            </Carlton.Base.Infrastructure.Client.Components.Tab.CarltonTabBar>
+                </CarltonTab>
+            </CarltonTabBar>
         </footer>
     }
 </div>

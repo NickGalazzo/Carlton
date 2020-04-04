@@ -5,7 +5,6 @@
 // being tested as well as the project containing the ViewModels for those components
 // The testbed can then be used by simply modifying this bootstrappper file
 
-using Carlton.Base.Infrastructure.Client.Components.Tree;
 using Carlton.Dashboard.Components.ApartmentStatus;
 using Carlton.Dashboard.Components.Feed;
 using Carlton.Dashboard.Components.HomeForDinner;
@@ -13,11 +12,11 @@ using Carlton.Dashboard.Components.HouseholdItems;
 using Carlton.Dashboard.Components.ToDo;
 using Carlton.Dashboard.Components.CountCards;
 using Carlton.TestBed.Client.TestViewModels;
-using Carlton.Base.Infrastructure.Client.Components.TestBed;
 using Carlton.Dashboard.ViewModels.TestViewModels;
-using Carlton.Base.Infrastructure.Client.Components.Notifications;
-using Carlton.Base.Infrastructure.Client.Components;
+using Carlton.Base.Client.Components.Notifications;
 using System.Collections.Generic;
+using Carlton.Base.Client.Components.Checkbox;
+using Carlton.TestBed.TestBedNavTree;
 
 namespace Carlton.TestBed.Client
 {
@@ -25,12 +24,12 @@ namespace Carlton.TestBed.Client
     {
         public static TestBedService Bootstrap()
         {
-            var builder = new TreeItemsBuilder()
-              .AddSimpleComponent<Checkbox>("Checked", new Dictionary<string, object> 
+            var builder = new TestBadNavTreeBuilder()
+              .AddSimpleComponent<CarltonCheckbox>("Checked", new Dictionary<string, object> 
               {
                   {"IsChecked", true}
               })  
-              .AddSimpleComponent<Checkbox>("Unchecked", new Dictionary<string, object>
+              .AddSimpleComponent<CarltonCheckbox>("Unchecked", new Dictionary<string, object>
               {
                   {"IsChecked", false }
               })

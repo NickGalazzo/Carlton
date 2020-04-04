@@ -1,0 +1,84 @@
+﻿
+<div class="carlton-card-sync-status">
+    @switch(DataSyncState)
+    {
+        case CardDataSyncState.PENDING:
+            <img class="spinner" src="https://www.mayerbrown.com/assets/Main/images/loading.gif" width="50" height="40" alt="" />
+            break;
+        case CardDataSyncState.COMPLETED:
+            <img class="spinner fadeOut" src="_content/Carlton.Base.Infrastructure.Client/completed-check.gif" width="50" height="41" />
+            @*<img class="col-2" src="https://i.pinimg.com/originals/77/9b/9d/779b9dc3928c2dbc304bcf6702bef6df.gif" alt="Image result for check mark completion gif" />*@
+            break;
+        case CardDataSyncState.ERROR:
+            <img class="spinner fadeOut" src="https://www.materialui.co/materialIcons/alert/warning_amber_384x384.png" width="45" height="40" />
+            @*<img class="spinner fadeOut" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSbIfeDV_cul3KyKgpfiL_XctGYy70gMhc8SlDC6DxpdU--09BF" width="45" height="40" />*@
+            break;
+    }
+</div>
+
+<style>
+    .spinner {
+        margin-top: -20px;
+        padding-right: 0px;
+    }
+
+    @@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .fadeOut {
+        -webkit-animation-name: fadeOut;
+        animation-name: fadeOut;
+        -webkit-animation-duration: 10s;
+        animation-duration: 5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        animation-delay: 5s;
+    }
+</style>
+
+
+
+@code {
+
+    private CardDataSyncState DataSyncState { get; set; } = CardDataSyncState.SYNCED;
+
+
+    public async Task ShowPending()
+    {
+        DataSyncState = CardDataSyncState.PENDING;
+        await SetAsSynced();
+    }
+
+     public async Task ShowCompleted()
+    {
+        DataSyncState = CardDataSyncState.COMPLETED;
+        await SetAsSynced();
+    }
+
+    public async Task ShowError()
+    {
+        DataSyncState = CardDataSyncState.ERROR;
+        await SetAsSynced();
+    }
+
+    private async Task SetAsSynced()
+    {
+        await System.Threading.Tasks.Task.Delay(10000);
+        DataSyncState = CardDataSyncState.SYNCED;
+    }
+
+    private enum CardDataSyncState
+    {
+        SYNCED = 0,
+        PENDING = 1,
+        COMPLETED = 2,
+        ERROR = 3
+    }
+}

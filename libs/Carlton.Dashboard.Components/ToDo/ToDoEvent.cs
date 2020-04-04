@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Carlton.Base.Infrastructure.Client.Events;
+using Carlton.Base.Client.Events;
 using Carlton.Dashboard.ViewModels.ToDos;
 using MediatR;
 

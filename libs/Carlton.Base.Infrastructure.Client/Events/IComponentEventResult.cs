@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Carlton.Base.Infrastructure.Client.Events
+namespace Carlton.Base.Client.Events
 {
     public interface IComponentEventResult
     {

@@ -1,8 +1,8 @@
-﻿@using Carlton.Dashboard.ViewModels.HomeForDinner
-@using Carlton.Base.Infrastructure.Client.Components.Cards
-@using Carlton.Base.Infrastructure.Client.Components.Data
-@using Carlton.Base.Infrastructure.Client.Components;
-@using Carlton.Base.Infrastructure.Client.Components.Select;
+﻿@using Carlton.Base.Client.Components.Cards
+@using Carlton.Base.Client.Components.Select
+@using Carlton.Base.Client.Components.Checkbox 
+@using Carlton.Dashboard.ViewModels.HomeForDinner
+
 
 @inherits CarltonParentComponent<HomeForDinnerViewModel>
 
@@ -21,7 +21,7 @@
                     </div>
                 </div>
 
-                <CarltonSelect ViewModel="_selectVM" />
+                <CarltonSelect Label="Reason?" Options="ViewModel.MySavedReasons" />
             </div>
 
             <div class="sub-title">Dinner Guests</div>
@@ -32,14 +32,4 @@
         </ItemTemplate>
     </CarltonListCard>
 </div>
-
-@code{
-    private CarltonSelectViewModel _selectVM;
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        _selectVM = new CarltonSelectViewModel("Reason?", ViewModel.MySavedReasons);
-    }
-}
 

@@ -1,5 +1,4 @@
-﻿using Carlton.Base.Infrastructure.Client.Events;
-using Carlton.Dashboard.ViewModels.ToDos;
+﻿using Carlton.Dashboard.ViewModels.ToDos;
 using MediatR;
 
 namespace Carlton.Dashboard.Components.ToDo

@@ -1,15 +1,15 @@
-﻿using Carlton.Base.Infrastructure.Client.Components.Tree;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Carlton.TestBed.TestBedNavTree;
 
-namespace Carlton.Base.Infrastructure.Client.Components.TestBed
+namespace Carlton.TestBed
 {
     public class TestBedService
     {
-        private TreeItem _selectedItem;
-        public IEnumerable<TreeItem> TreeItems { get; }
-        public TreeItem SelectedItem
+        private TestBadNavTreeItem _selectedItem;
+        public IEnumerable<TestBadNavTreeItem> TreeItems { get; }
+        public TestBadNavTreeItem SelectedItem
         {
             get { return _selectedItem; }
 
@@ -29,14 +29,14 @@ namespace Carlton.Base.Infrastructure.Client.Components.TestBed
 
         public IList<object> ComponentEvents { get; private set; }
 
-        public TestBedService(IEnumerable<TreeItem> treeItems)
+        public TestBedService(IEnumerable<TestBadNavTreeItem> treeItems)
         {
             TreeItems = treeItems;
             ComponentEvents = new List<object>();
             SelectedItem = treeItems.FirstOrDefault().Children.FirstOrDefault();
         }
 
-        public void SelectItem(TreeItem item)
+        public void SelectItem(TestBadNavTreeItem item)
         {
             SelectedItem = item;
         }

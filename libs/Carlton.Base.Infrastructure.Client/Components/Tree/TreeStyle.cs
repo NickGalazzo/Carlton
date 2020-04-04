@@ -1,4 +1,4 @@
-﻿namespace Carlton.Base.Infrastructure.Client.Components.Tree
+﻿namespace Carlton.Base.Client.Components.Tree
 {
     public class TreeStyle
     {

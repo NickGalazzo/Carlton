@@ -2,9 +2,9 @@
 
 <div class="carlton-select">
     <input readonly placeholder=" " value="@_valueDisplay" />
-    <div class="label">@ViewModel.Label</div>
+    <div class="label">@Label</div>
     <div class="options">
-        @foreach(var opt in ViewModel.Options)
+        @foreach(var opt in Options)
         {
             <div @onclick="() => Option_Click(opt)">@opt.Key</div>
         }
@@ -14,7 +14,10 @@
 
 @code{
     [Parameter]
-    public CarltonSelectViewModel ViewModel { get; set; }
+    public string Label { get; set; }
+    
+    [Parameter]
+    public IReadOnlyDictionary<string, int> Options { get; set; }
 
     [Parameter]
     public EventCallback<KeyValuePair<string, int>> ValueChangedCallback { get; set; }

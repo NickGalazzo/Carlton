@@ -66,7 +66,7 @@ html, body {
   .carlton-tabs > a.active {
     font-weight: 700;
     outline: none; }
-  .carlton-tabs > a:not(.active):hover {
+  .carlton-tabs > a:hover {
     background-color: inherit;
     color: #7c848a; }
   .carlton-tabs .tab-selected-bar {
@@ -74,7 +74,7 @@ html, body {
     z-index: 10;
     bottom: 0;
     height: 3px;
-    background: #458CFF;
+    background: #009688;
     display: block;
     left: 0;
     transition: left .2s ease;

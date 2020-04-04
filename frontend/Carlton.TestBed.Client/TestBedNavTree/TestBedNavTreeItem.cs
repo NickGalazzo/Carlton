@@ -2,41 +2,45 @@
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Carlton.Base.Infrastructure.Client.Components.Tree
+namespace Carlton.TestBed.TestBedNavTree
 {
-    public class TreeItem
+    public class TestBadNavTreeItem
     {
         public string DisplayName { get;private set; }
-        public Type Type { get; private set; }
-        public object ViewModel { get; set; }
-
-        public IEnumerable<TreeItem> Children { get; set; }
         public bool IsParentNode { get { return Children.Any(); } }
+
+        //Parent Properties
+        public IEnumerable<TestBadNavTreeItem> Children { get; set; }
+
+        //Child Properties
+        public Type Type { get; private set; }
+        public object ViewModel { get; private set; }
         public bool IsCarltonComponent { get; private set; }
 
-        private TreeItem(string displayName, IEnumerable<TreeItem> children)
+
+        private TestBadNavTreeItem(string displayName, IEnumerable<TestBadNavTreeItem> children)
         {
             DisplayName = displayName;
             Children = children;
         }
 
-        private TreeItem(string displayName, Type type, object viewModel, bool isCarltonComponent)
+        private TestBadNavTreeItem(string displayName, Type type, object viewModel, bool isCarltonComponent)
         {
             DisplayName = displayName;
             Type = type;
             ViewModel = viewModel;
             IsCarltonComponent = isCarltonComponent;
-            Children = new List<TreeItem>();
+            Children = new List<TestBadNavTreeItem>();
         }
 
-        public static TreeItem CreateParentNode(string displayName, IEnumerable<TreeItem> children)
+        public static TestBadNavTreeItem CreateParentNode(string displayName, IEnumerable<TestBadNavTreeItem> children)
         {
-            return new TreeItem(displayName, children);
+            return new TestBadNavTreeItem(displayName, children);
         }
 
-        public static TreeItem CreateChildNode(string displayName, Type type, object componentParams, bool isCarltonComponent)
+        public static TestBadNavTreeItem CreateChildNode(string displayName, Type type, object componentParams, bool isCarltonComponent)
         {
-            return new TreeItem(displayName, type, componentParams, isCarltonComponent);
+            return new TestBadNavTreeItem(displayName, type, componentParams, isCarltonComponent);
         }
 
         //public static TreeItem CreateSimpleChildNode(string displayName, Type type, IDictionary<string, object> componentParams)
