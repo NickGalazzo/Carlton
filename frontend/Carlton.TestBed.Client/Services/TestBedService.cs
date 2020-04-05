@@ -33,7 +33,7 @@ namespace Carlton.TestBed
         {
             TreeItems = treeItems;
             ComponentEvents = new List<object>();
-            SelectedItem = treeItems.FirstOrDefault().Children.FirstOrDefault();
+            SelectedItem = GetFirstAvailableTestState(treeItems);
         }
 
         public void SelectItem(TestBadNavTreeItem item)
@@ -54,6 +54,18 @@ namespace Carlton.TestBed
         public void ClearEvents()
         {
             ComponentEvents.Clear();
+        }
+
+        private TestBadNavTreeItem GetFirstAvailableTestState(IEnumerable<TestBadNavTreeItem> treeItems)
+        {
+            var item = treeItems.First();
+
+            while(item.Children.Any())
+            {
+                item = item.Children.First();
+            } 
+
+            return item;
         }
     }
 }

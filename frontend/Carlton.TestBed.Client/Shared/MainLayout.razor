@@ -4,7 +4,7 @@
 @inject TestBedService service
 
 <div class="sidebar">
-    <TestBedNavTree ViewModel="service.TreeItems" SelectedItemChanged="service.SelectItem" />
+    <TestBedNavTree ViewModel="service.TreeItems" SelectedItemChanged="service.SelectItem" InitialSelection="service.SelectedItem" />
 </div>
 
 <div class="main">

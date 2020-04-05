@@ -34,23 +34,47 @@ namespace Carlton.TestBed.TestBedNavTree
 
         public IEnumerable<TestBadNavTreeItem> Build()
         {
+            return GroupBySmartAndDumb(_componentTestStates);
+        }
+
+        private static IEnumerable<TestBadNavTreeItem> GroupBySmartAndDumb(List<(string nodeTitle, Type type, object viewModel, bool isCarltonComponent)> states)
+        {
             var treeItems = new List<TestBadNavTreeItem>();
 
-            var statesGroupedByComponent = _componentTestStates.GroupBy(o => o.type);
+            var statesGroupedBySmartAndDumb = states.GroupBy(o => o.isCarltonComponent);
+
+            statesGroupedBySmartAndDumb.ToList().ForEach(group =>
+            {
+                IEnumerable<TestBadNavTreeItem> children = new List<TestBadNavTreeItem>();
+                children = GroupByComponent(group.ToList());
+
+                var treeItem = TestBadNavTreeItem.CreateParentNode(group.Key ? "Carlton Components" : "Simple Components", children);
+
+
+                treeItems.Add(treeItem);
+            });
+
+            return treeItems;
+        }
+
+        public static IEnumerable<TestBadNavTreeItem> GroupByComponent(List<(string nodeTitle, Type type, object viewModel, bool isCarltonComponent)> states)
+        {
+            var treeItems = new List<TestBadNavTreeItem>();
+            var statesGroupedByComponent = states.GroupBy(o => o.type);
 
             statesGroupedByComponent.ToList().ForEach(group =>
             {
                 var children = new List<TestBadNavTreeItem>();
                 var treeItem = TestBadNavTreeItem.CreateParentNode(group.Key.Name, children);
-                
+
                 group.ToList().ForEach(tup =>
                 {
-                 
                     children.Add(TestBadNavTreeItem.CreateChildNode(tup.nodeTitle, tup.type, tup.viewModel, tup.isCarltonComponent));
                 });
-                
+
                 treeItems.Add(treeItem);
             });
+
             return treeItems;
         }
     }

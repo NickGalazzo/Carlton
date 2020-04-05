@@ -42,15 +42,5 @@ namespace Carlton.TestBed.TestBedNavTree
         {
             return new TestBadNavTreeItem(displayName, type, componentParams, isCarltonComponent);
         }
-
-        //public static TreeItem CreateSimpleChildNode(string displayName, Type type, IDictionary<string, object> componentParams)
-        //{
-        //    return new TreeItem(displayName, type, componentParams, false);
-        //}
-
-        //public static TreeItem CreateCarltonChildNode(string displayName, Type type, object viewModel)
-        //{
-        //    return new TreeItem(displayName, type, viewModel, true);
-        //}
     }
 }

@@ -1,8 +1,8 @@
-﻿@using Carlton.Base.Infrastructure.Client.Components
+﻿@using Carlton.Base.Client.Components.Checkbox
 
 <div class="row">
     <div class="col-1">
-        <Checkbox IsChecked="@ViewModel.IsCompleted" OnCheckboxChangeCallback="(isChecked) => CheckboxChangedCallback.InvokeAsync(new ToDoStatusChangedEvent(ViewModel.Id, isChecked))" />
+        <CarltonCheckbox IsChecked="@ViewModel.IsCompleted" OnCheckboxChangeCallback="(isChecked) => CheckboxChangedCallback.InvokeAsync(new ToDoStatusChangedEvent(ViewModel.Id, isChecked))" />
     </div>
     <span class="col-10">
         <span class="to-do-name align-middle">@ViewModel.Name</span>
