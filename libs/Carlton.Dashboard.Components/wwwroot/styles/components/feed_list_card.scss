@@ -1,0 +1,35 @@
+﻿@import "../variables/colors.scss";
+
+.feed-list-card {
+    .feed-item-row {
+        border-bottom-style: solid;
+        border-bottom-color: rgba($textColor, 0.25);
+        padding: 10px;
+    }
+
+    img.avatar-img {
+        height: 40px;
+        width: 40px;
+        border-radius: 20px;
+    }
+
+    .feed-title {
+        color: $activeColor;
+        font-weight: bold;
+    }
+
+    .feed-message {
+        color: $textColor;
+        font-size: 10pt;
+    }
+
+    .feed-date-col {
+        text-align: center;
+
+        .feed-date {
+            font-size: 10px;
+            text-align: center;
+            line-height: 4.5;
+        }
+    }
+}

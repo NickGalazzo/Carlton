@@ -1,0 +1,21 @@
+﻿@import "../variables/colors.scss";
+
+.to-do-list-card {
+    
+}
+
+.to-do-list-item {
+    span.to-do-name {
+        color: $textColor;
+        font-size: 12pt;
+        line-height: 2.3;
+
+        &.completed{
+            text-decoration: line-through;
+        }
+    }
+
+    span.to-do-completed {
+        color: $CompletedColor;
+    }
+}

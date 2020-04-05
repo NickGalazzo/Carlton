@@ -14,7 +14,7 @@ namespace Carlton.TestBed.TestBedNavTree
             _componentTestStates = new List<(string, Type, object viewModel, bool IsCarltonComponent)>();
         }
 
-        public TestBadNavTreeBuilder AddTreeNode<T>(string nodeTitle, object viewModel)
+        public TestBadNavTreeBuilder AddCarltonComponent<T>(string nodeTitle, object viewModel)
         {
             _componentTestStates.Add((nodeTitle, typeof(T), viewModel, true));
             return this;
@@ -32,9 +32,15 @@ namespace Carlton.TestBed.TestBedNavTree
             return this;
         }
 
-        public IEnumerable<TestBadNavTreeItem> Build()
+        public IEnumerable<TestBadNavTreeItem> Build(bool showSimpleComponents = false)
         {
-            return GroupBySmartAndDumb(_componentTestStates);
+            if(showSimpleComponents)
+                return GroupBySmartAndDumb(_componentTestStates);
+            else
+            {
+                _componentTestStates.RemoveAll(o => !o.isCarltonComponent);
+                return GroupByComponent(_componentTestStates);
+            }
         }
 
         private static IEnumerable<TestBadNavTreeItem> GroupBySmartAndDumb(List<(string nodeTitle, Type type, object viewModel, bool isCarltonComponent)> states)

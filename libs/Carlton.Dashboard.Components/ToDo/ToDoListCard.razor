@@ -6,7 +6,7 @@
 <div class="to-do-list-card">
     <CarltonListCard CardTitle="To-Do's" Items="ViewModel.ToDoList">
         <ItemTemplate Context="toDo">
-            <ToDoListItem ViewModel="toDo" CheckboxChangedCallback="base.OnComponentEvent"  />  
+            <ToDoListItem ViewModel="toDo"  OnComponentEvent="base.OnComponentEvent" />  
         </ItemTemplate>
     </CarltonListCard>
 </div>

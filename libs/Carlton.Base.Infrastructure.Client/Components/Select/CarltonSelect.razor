@@ -15,9 +15,9 @@
 @code{
     [Parameter]
     public string Label { get; set; }
-    
+
     [Parameter]
-    public IReadOnlyDictionary<string, int> Options { get; set; }
+    public IReadOnlyDictionary<string, int> Options { get; set; } = new Dictionary<string, int>();
 
     [Parameter]
     public EventCallback<KeyValuePair<string, int>> ValueChangedCallback { get; set; }

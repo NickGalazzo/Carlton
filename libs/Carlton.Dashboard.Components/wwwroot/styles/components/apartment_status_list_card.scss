@@ -1,0 +1,15 @@
+﻿@import "../variables/colors.scss";
+
+.apartment-status-list-card {
+    span.status-icon {
+        color: $statusIconColor;
+    }
+
+    span.status-value-complete {
+        color: $CompletedColor;
+    }
+
+    span.status-value-incomplete {
+        color: $IncompleteColor;
+    }
+}

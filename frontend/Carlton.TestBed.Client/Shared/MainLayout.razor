@@ -12,18 +12,15 @@
         <TestBed ComponentType="service.TestComponentType" IsCarltonComponent="service.TestComponentIsCarltonComponent" ViewModel="service.TestComponentViewModel" ComponentEventCallback="service.AddComponentEvent" />
     </div>
 
-    @if(service.TestComponentIsCarltonComponent)
-    {
-        <footer class="footer">
-            <CarltonTabBar>
-                <CarltonTab DisplayText="Component Events">
-                    <EventConsole ComponentEvents="service.ComponentEvents" ClearEvents="service.ClearEvents"></EventConsole>
-                </CarltonTab>
-                <CarltonTab DisplayText="JSON Payloads">
-                    <ViewModelViewer ViewModel="service.TestComponentViewModel" ViewModelChanged="service.UpdateTestComponentViewModel"></ViewModelViewer>
-                </CarltonTab>
-            </CarltonTabBar>
-        </footer>
-    }
+    <footer class="footer @(!service.TestComponentIsCarltonComponent ? "invisible" : string.Empty)">
+        <CarltonTabBar>
+            <CarltonTab DisplayText="Component Events">
+                <EventConsole ComponentEvents="service.ComponentEvents" ClearEvents="service.ClearEvents"></EventConsole>
+            </CarltonTab>
+            <CarltonTab DisplayText="JSON Payloads">
+                <ViewModelViewer ViewModel="service.TestComponentViewModel" ViewModelChanged="service.UpdateTestComponentViewModel"></ViewModelViewer>
+            </CarltonTab>
+        </CarltonTabBar>
+    </footer>
 </div>
 
