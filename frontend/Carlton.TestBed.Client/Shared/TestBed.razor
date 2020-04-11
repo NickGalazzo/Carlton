@@ -1,5 +1,6 @@
 ﻿@using  Carlton.Base.Client.Events
 @using  Newtonsoft.Json
+@using Carlton.Base.Client.Enums 
 
 <div class="test-bed">
     <div class="component">
@@ -8,6 +9,7 @@
 </div>
 
 @code {
+    private dynamic _component;
 
     private Type _componentType;
     [Parameter]
@@ -29,6 +31,9 @@
     public EventCallback ComponentEventCallback { get; set; }
 
     [Parameter]
+    public ComponentStatus ComponentStatus { get; set; } = ComponentStatus.SYNCED;
+
+    [Parameter]
     public bool IsCarltonComponent { get; set; }
 
     private RenderFragment TestComponentFragment { get; set; }
@@ -47,6 +52,9 @@
 
                 if(ComponentEventCallback.HasDelegate)
                     builder.AddAttribute(2, "OnComponentEvent", ComponentEventCallback);
+
+
+                builder.AddComponentReferenceCapture(3, (o) => _component = o);
             }
             else
             {
@@ -61,5 +69,11 @@
             builder.CloseComponent();
             builder.CloseElement();
         };
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        _component.SetComponentStatus(ComponentStatus);
     }
 }

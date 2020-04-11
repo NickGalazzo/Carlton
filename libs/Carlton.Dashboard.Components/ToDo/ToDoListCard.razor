@@ -4,12 +4,13 @@
 @inherits CarltonParentComponent<ToDoListViewModel>
 
 <div class="to-do-list-card">
-    <CarltonListCard CardTitle="To-Do's" Items="ViewModel.ToDoList">
+    <CarltonListCard CardTitle="To-Do's" Items="ViewModel.ToDoList" CardStatus="ComponentStatus">
         <ItemTemplate Context="toDo">
             <ToDoListItem ViewModel="toDo"  OnComponentEvent="base.OnComponentEvent" />  
         </ItemTemplate>
     </CarltonListCard>
 </div>
+
 
 
 

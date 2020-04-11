@@ -1,3 +1,23 @@
-﻿.carlton-card {
-    width: 400px;
+﻿
+@mixin card-invalid {
+    border-color: #ffc107;
+    border-width: thick;
 }
+
+
+.carlton-card {
+    width: 400px;
+
+    .status-icon {
+        height: 30px;
+        text-align: right;
+        padding-right: 0px;
+        padding-left: 40px;
+        margin-top: -15px;
+    }
+
+    .card-invalid {
+        @include card-invalid;
+    }
+}
+

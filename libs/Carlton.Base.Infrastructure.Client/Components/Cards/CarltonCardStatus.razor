@@ -1,0 +1,16 @@
+﻿
+@switch(CardStatus)
+{
+    case ComponentStatus.SYNCING:
+        <img height="30" src="_content/Carlton.Base.Client/images/spinner.gif" />
+        break;
+    case ComponentStatus.INVALID:
+        <img class="spinner fadeOut" src="_content/Carlton.Base.Infrastructure.Client/completed-check.gif" width="50" height="41" />
+        break;
+}
+
+
+@code {
+    [Parameter]
+    public ComponentStatus CardStatus { get; set; }
+}

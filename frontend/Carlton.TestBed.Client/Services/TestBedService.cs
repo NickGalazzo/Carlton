@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Carlton.TestBed.TestBedNavTree;
+using Carlton.Base.Client.Enums;
 
 namespace Carlton.TestBed
 {
@@ -29,6 +30,8 @@ namespace Carlton.TestBed
 
         public IList<object> ComponentEvents { get; private set; }
 
+        public ComponentStatus ComponentStatus { get; private set; }
+
         public TestBedService(IEnumerable<TestBadNavTreeItem> treeItems)
         {
             TreeItems = treeItems;
@@ -54,6 +57,11 @@ namespace Carlton.TestBed
         public void ClearEvents()
         {
             ComponentEvents.Clear();
+        }
+
+        public void UpdateComponentStatus(ComponentStatus status)
+        {
+            ComponentStatus = status;
         }
 
         private TestBadNavTreeItem GetFirstAvailableTestState(IEnumerable<TestBadNavTreeItem> treeItems)

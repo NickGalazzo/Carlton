@@ -4,7 +4,12 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">@CardTitle</h5>
+                <div class="row">
+                    <h5 class="col-9 cd-title">@CardTitle</h5>
+                    <div class="col-3 status-icon">
+                        <CarltonCardStatus CardStatus="CardStatus"/>
+                    </div>
+                </div>
                 <div class="header-content">
                     @HeaderCardContent
                 </div>
@@ -20,6 +25,7 @@
 </div>
 
 
+
 @code{
     [Parameter]
     public string CardTitle { get; set; }
@@ -29,4 +35,6 @@
     public RenderFragment PrimaryCardContent { get; set; }
     [Parameter]
     public RenderFragment SecondaryCardContent { get; set; }
+    [Parameter]
+    public ComponentStatus CardStatus { get; set; }
 }

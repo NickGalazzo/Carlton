@@ -9,16 +9,19 @@
 
 <div class="main">
     <div class="content px-4">
-        <TestBed ComponentType="service.TestComponentType" IsCarltonComponent="service.TestComponentIsCarltonComponent" ViewModel="service.TestComponentViewModel" ComponentEventCallback="service.AddComponentEvent" />
+        <TestBed ComponentType="service.TestComponentType" IsCarltonComponent="service.TestComponentIsCarltonComponent" ViewModel="service.TestComponentViewModel" ComponentStatus="service.ComponentStatus" ComponentEventCallback="service.AddComponentEvent" />
     </div>
 
     <footer class="footer @(!service.TestComponentIsCarltonComponent ? "invisible" : string.Empty)">
         <CarltonTabBar>
             <CarltonTab DisplayText="Component Events">
-                <EventConsole ComponentEvents="service.ComponentEvents" ClearEvents="service.ClearEvents"></EventConsole>
+                <EventConsole ComponentEvents="service.ComponentEvents" ClearEvents="service.ClearEvents"/>
             </CarltonTab>
             <CarltonTab DisplayText="JSON Payloads">
-                <ViewModelViewer ViewModel="service.TestComponentViewModel" ViewModelChanged="service.UpdateTestComponentViewModel"></ViewModelViewer>
+                <ViewModelViewer ViewModel="service.TestComponentViewModel" ViewModelChanged="service.UpdateTestComponentViewModel"/>
+            </CarltonTab>
+            <CarltonTab DisplayText="Component Status">
+                <ComponentStatusSwitch ComponentStatusChangeCallback="service.UpdateComponentStatus" />
             </CarltonTab>
         </CarltonTabBar>
     </footer>
