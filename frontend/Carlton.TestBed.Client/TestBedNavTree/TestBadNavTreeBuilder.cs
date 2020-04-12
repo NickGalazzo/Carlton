@@ -32,7 +32,7 @@ namespace Carlton.TestBed.TestBedNavTree
             return this;
         }
 
-        public IEnumerable<TestBadNavTreeItem> Build(bool showSimpleComponents = false)
+        public IEnumerable<TestBedNavTreeItem> Build(bool showSimpleComponents = false)
         {
             if(showSimpleComponents)
                 return GroupBySmartAndDumb(_componentTestStates);
@@ -43,18 +43,18 @@ namespace Carlton.TestBed.TestBedNavTree
             }
         }
 
-        private static IEnumerable<TestBadNavTreeItem> GroupBySmartAndDumb(List<(string nodeTitle, Type type, object viewModel, bool isCarltonComponent)> states)
+        private static IEnumerable<TestBedNavTreeItem> GroupBySmartAndDumb(List<(string nodeTitle, Type type, object viewModel, bool isCarltonComponent)> states)
         {
-            var treeItems = new List<TestBadNavTreeItem>();
+            var treeItems = new List<TestBedNavTreeItem>();
 
             var statesGroupedBySmartAndDumb = states.GroupBy(o => o.isCarltonComponent);
 
             statesGroupedBySmartAndDumb.ToList().ForEach(group =>
             {
-                IEnumerable<TestBadNavTreeItem> children = new List<TestBadNavTreeItem>();
+                IEnumerable<TestBedNavTreeItem> children = new List<TestBedNavTreeItem>();
                 children = GroupByComponent(group.ToList());
 
-                var treeItem = TestBadNavTreeItem.CreateParentNode(group.Key ? "Carlton Components" : "Simple Components", children);
+                var treeItem = TestBedNavTreeItem.CreateParentNode(group.Key ? "Carlton Components" : "Simple Components", children);
 
 
                 treeItems.Add(treeItem);
@@ -63,19 +63,19 @@ namespace Carlton.TestBed.TestBedNavTree
             return treeItems;
         }
 
-        public static IEnumerable<TestBadNavTreeItem> GroupByComponent(List<(string nodeTitle, Type type, object viewModel, bool isCarltonComponent)> states)
+        public static IEnumerable<TestBedNavTreeItem> GroupByComponent(List<(string nodeTitle, Type type, object viewModel, bool isCarltonComponent)> states)
         {
-            var treeItems = new List<TestBadNavTreeItem>();
+            var treeItems = new List<TestBedNavTreeItem>();
             var statesGroupedByComponent = states.GroupBy(o => o.type);
 
             statesGroupedByComponent.ToList().ForEach(group =>
             {
-                var children = new List<TestBadNavTreeItem>();
-                var treeItem = TestBadNavTreeItem.CreateParentNode(group.Key.Name, children);
+                var children = new List<TestBedNavTreeItem>();
+                var treeItem = TestBedNavTreeItem.CreateParentNode(group.Key.Name, children);
 
                 group.ToList().ForEach(tup =>
                 {
-                    children.Add(TestBadNavTreeItem.CreateChildNode(tup.nodeTitle, tup.type, tup.viewModel, tup.isCarltonComponent));
+                    children.Add(TestBedNavTreeItem.CreateChildNode(tup.nodeTitle, tup.type, tup.viewModel, tup.isCarltonComponent));
                 });
 
                 treeItems.Add(treeItem);

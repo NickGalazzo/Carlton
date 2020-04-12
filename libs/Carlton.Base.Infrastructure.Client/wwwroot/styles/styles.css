@@ -20,7 +20,7 @@
     padding-right: 0px;
     padding-left: 40px;
     margin-top: -15px; }
-  .carlton-card .card-invalid {
+  .carlton-card.card-invalid .card {
     border-color: #ffc107;
     border-width: thick; }
 

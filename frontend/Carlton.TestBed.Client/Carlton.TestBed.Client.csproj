@@ -35,4 +35,10 @@
     <None Include="compilerconfig.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\styles\components\test_bed_nav_tree.scss">
+      <CopyToOutputDirectory>t</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

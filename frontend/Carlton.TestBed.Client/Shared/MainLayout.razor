@@ -1,18 +1,23 @@
 ﻿@using Carlton.Base.Client.Components.Tab
+@using Carlton.TestBed.Client.Services
 
 @inherits LayoutComponentBase
+
 @inject TestBedService service
 
+
 <div class="sidebar">
-    <TestBedNavTree ViewModel="service.TreeItems" SelectedItemChanged="service.SelectItem" InitialSelection="service.SelectedItem" />
+    <TestBedNavTree TreeItems="service.TreeItems" SelectedItemChanged="service.SelectItem" />
 </div>
 
 <div class="main">
     <div class="content px-4">
-        <TestBed ComponentType="service.TestComponentType" IsCarltonComponent="service.TestComponentIsCarltonComponent" ViewModel="service.TestComponentViewModel" ComponentStatus="service.ComponentStatus" ComponentEventCallback="service.AddComponentEvent" />
+        <TestBed ComponentType="service.TestComponentType" IsCarltonComponent="service.IsTestComponentCarltonComponent"
+                 ViewModel="service.TestComponentViewModel" ComponentStatus="service.TestComponentStatus"
+                 ComponentEventCallback="service.AddComponentEvent" />
     </div>
 
-    <footer class="footer @(!service.TestComponentIsCarltonComponent ? "invisible" : string.Empty)">
+    <footer class="footer @(!service.IsTestComponentCarltonComponent ? "invisible" : string.Empty)">
         <CarltonTabBar>
             <CarltonTab DisplayText="Component Events">
                 <EventConsole ComponentEvents="service.ComponentEvents" ClearEvents="service.ClearEvents"/>

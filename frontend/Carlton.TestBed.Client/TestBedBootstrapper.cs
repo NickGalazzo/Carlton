@@ -18,12 +18,13 @@ using Carlton.Base.Client.Components.Checkbox;
 using Carlton.TestBed.TestBedNavTree;
 using Carlton.Base.Client.Components.Select;
 using Carlton.Base.Client.Components.Test;
+using Carlton.TestBed.Client.Services;
 
 namespace Carlton.TestBed.Client
 {
     public static class TestBedBootstrapper
     {
-        public static TestBedService Bootstrap()
+        public static TestBedNavService Bootstrap()
         {
             var builder = new TestBadNavTreeBuilder()
               .AddSimpleComponent<CarltonCheckbox>("Checked", CarltonCheckboxTestStates.CheckedState())
@@ -44,7 +45,7 @@ namespace Carlton.TestBed.Client
               .AddCarltonComponent<DinnerGuestsCountCard>("Default", DinnerGuestsCountCardTestViewModels.DefaultDinngerGuestsCountCardViewModel())
               .AddCarltonComponent<HouseholdItemsCountCard>("Default", HouseholdItemsCountCardTestViewModels.DefaultHouseholdItemsCountCardViewModel());
 
-            return new TestBedService(builder.Build());
+            return new TestBedNavService(builder.Build());
         }
     }
 }

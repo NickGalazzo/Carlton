@@ -8,10 +8,6 @@
     [Parameter]
     public EventCallback OnComponentEvent { get; set; }
 
-    public ComponentStatus ComponentStatus { get; private set; }
-
-    public void SetComponentStatus(ComponentStatus status)
-    {
-        ComponentStatus = status;
-    }
+    [Parameter]
+    public ComponentStatus ComponentStatus { get; set; }
 }

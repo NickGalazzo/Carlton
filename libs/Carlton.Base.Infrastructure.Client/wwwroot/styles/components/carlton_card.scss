@@ -1,9 +1,4 @@
 ﻿
-@mixin card-invalid {
-    border-color: #ffc107;
-    border-width: thick;
-}
-
 
 .carlton-card {
     width: 400px;
@@ -16,8 +11,9 @@
         margin-top: -15px;
     }
 
-    .card-invalid {
-        @include card-invalid;
+    &.card-invalid .card {
+        border-color: #ffc107;
+        border-width: thick;
     }
 }
 

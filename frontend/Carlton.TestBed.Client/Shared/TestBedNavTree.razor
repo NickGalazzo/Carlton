@@ -1,11 +1,12 @@
 ﻿@using Carlton.Base.Client.Components.Tree
 @using Carlton.TestBed.TestBedNavTree
+@using Carlton.TestBed.Client.Utils
  
 <div class="carlton-test-bed-nav-tree">
     <img src="https://paradisebound.org/wp-content/uploads/2016/09/paradise-bound-ministries-mission-teams-homes-built-and-dedicated-house-icon.png" height="50" width="50" alt="Image result for house icon" />
     <span>Carlton TestBed</span>
 
-    <CarltonBaseTree Nodes="ViewModel"
+    <CarltonBaseTree Nodes="TreeItems"
               ChildSelector="@(item => item.Children)"
               @bind-SelectedNode="SelectedNode"
               @bind-ExpandedNodes="ExpandedNodes"
@@ -18,24 +19,21 @@
 
 @code {
     [Parameter]
-    public IEnumerable<TestBadNavTreeItem> ViewModel { get; set; }
+    public IEnumerable<TestBedNavTreeItem> TreeItems { get; set; }
 
     [Parameter]
-    public EventCallback<TestBadNavTreeItem> SelectedItemChanged { get; set; }
-
-    [Parameter]
-    public TestBadNavTreeItem InitialSelection { get; set; }
+    public EventCallback<TestBedNavTreeItem> SelectedItemChanged { get; set; }
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        SelectedNode = InitialSelection;
+        SelectedNode = TreeItems.GetFirstSelectableTestState();
     }
 
-    IList<TestBadNavTreeItem> ExpandedNodes = new List<TestBadNavTreeItem>();
+    IList<TestBedNavTreeItem> ExpandedNodes = new List<TestBedNavTreeItem>();
 
-    private TestBadNavTreeItem _selectedNode;
-    private TestBadNavTreeItem SelectedNode
+    private TestBedNavTreeItem _selectedNode;
+    private TestBedNavTreeItem SelectedNode
     {
         set
         {

@@ -1,79 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Carlton.Base.Client.Enums;
 using Carlton.TestBed.TestBedNavTree;
-using Carlton.Base.Client.Enums;
+using System;
+using System.Collections.Generic;
 
-namespace Carlton.TestBed
+namespace Carlton.TestBed.Client.Services
 {
     public class TestBedService
     {
-        private TestBadNavTreeItem _selectedItem;
-        public IEnumerable<TestBadNavTreeItem> TreeItems { get; }
-        public TestBadNavTreeItem SelectedItem
-        {
-            get { return _selectedItem; }
+        private readonly TestBedNavService _navService;
+        private readonly TestBedViewModelService _vmService;
+        private readonly TestBedEventService _eventService;
+        private readonly TestBedStatusService _statusService;
 
-            private set
+
+        public IEnumerable<TestBedNavTreeItem> TreeItems { get { return _navService.TreeItems; } }
+        public Type TestComponentType { get { return _navService.TestComponentType; } }
+        public bool IsTestComponentCarltonComponent { get { return _navService.IsTestComponentCarltonComponent; } }
+        public ComponentStatus TestComponentStatus { get { return _statusService.TestComponentStatus; } }
+        public object TestComponentViewModel { get { return _vmService.TestComponentViewModel; } }
+        public IList<object> ComponentEvents { get { return _eventService.ComponentEvents; } }
+       
+
+        public Action<TestBedNavTreeItem> SelectItem { get { return _navService.SelectItem; } }
+        public Action<object> AddComponentEvent { get { return _eventService.AddComponentEvent; } }
+        public Action ClearEvents { get { return _eventService.ClearEvents; } }
+        public Action<ComponentStatus> UpdateComponentStatus { get { return _statusService.UpdateComponentStatus; } }
+        public Action<object> UpdateTestComponentViewModel { get { return _vmService.UpdateTestComponentViewModel; } }
+
+        public TestBedService(TestBedNavService navService, TestBedViewModelService vmService,
+            TestBedEventService eventService, TestBedStatusService statusService)
+        {
+            _navService = navService;
+            _vmService = vmService;
+            _eventService = eventService;
+            _statusService = statusService;
+
+            navService.SelectedItemChanged += (sender, newSelectedItem) =>
             {
-                _selectedItem = value;
-                TestComponentType = value.Type;
-                TestComponentViewModel = value.ViewModel;
-                TestComponentIsCarltonComponent = value.IsCarltonComponent;
-            }
-        }
-
-        public Type TestComponentType { get; private set; }
-        public object TestComponentViewModel { get; private set; }
-
-        public bool TestComponentIsCarltonComponent { get; private set; }       
-
-        public IList<object> ComponentEvents { get; private set; }
-
-        public ComponentStatus ComponentStatus { get; private set; }
-
-        public TestBedService(IEnumerable<TestBadNavTreeItem> treeItems)
-        {
-            TreeItems = treeItems;
-            ComponentEvents = new List<object>();
-            SelectedItem = GetFirstAvailableTestState(treeItems);
-        }
-
-        public void SelectItem(TestBadNavTreeItem item)
-        {
-            SelectedItem = item;
-        }
-
-        public void UpdateTestComponentViewModel(object viewModel)
-        {
-            TestComponentViewModel = viewModel;
-        }
-
-        public void AddComponentEvent(object evt)
-        {
-            ComponentEvents.Add(evt);
-        }
-
-        public void ClearEvents()
-        {
-            ComponentEvents.Clear();
-        }
-
-        public void UpdateComponentStatus(ComponentStatus status)
-        {
-            ComponentStatus = status;
-        }
-
-        private TestBadNavTreeItem GetFirstAvailableTestState(IEnumerable<TestBadNavTreeItem> treeItems)
-        {
-            var item = treeItems.First();
-
-            while(item.Children.Any())
-            {
-                item = item.Children.First();
-            } 
-
-            return item;
+                _vmService.UpdateTestComponentViewModel(newSelectedItem.ViewModel);
+            };
         }
     }
 }

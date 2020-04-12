@@ -1,12 +1,14 @@
 ﻿@using Carlton.Base.Client.Enums
 
-<div class="btn-group" role="group" aria-label="Basic example">
-    @foreach(var status in Enum.GetValues(typeof(ComponentStatus)))
-    {
-        <button type="button" class="btn btn-info" @onclick="() => ComponentStatusChangeCallback.InvokeAsync((ComponentStatus) status)">
-            @Enum.GetName(typeof(ComponentStatus), status)
-        </button>
-    }
+<div class="component-status-switch">
+    <div class="btn-group">
+        @foreach(var status in Enum.GetValues(typeof(ComponentStatus)))
+        {
+            <button type="button" class="btn btn-info" @onclick=" () => ComponentStatusChangeCallback.InvokeAsync((ComponentStatus) status)">
+                @Enum.GetName(typeof(ComponentStatus), status)
+            </button>
+        }
+    </div>
 </div>
 
 @code{

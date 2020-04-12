@@ -18,6 +18,9 @@
   .view-model-viewer textarea.error {
     color: red; }
 
+.component-status-switch {
+  padding: 20px; }
+
 .sidebar {
   background-color: #263238;
   color: white; }
