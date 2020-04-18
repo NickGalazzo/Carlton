@@ -38,7 +38,7 @@ namespace Carlton.TestBed.TestBedNavTree
             return new TestBedNavTreeItem(displayName, children);
         }
 
-        public static TestBedNavTreeItem CreateChildNode(string displayName, Type type, object componentParams, bool isCarltonComponent)
+        public static TestBedNavTreeItem CreateLeafNode(string displayName, Type type, object componentParams, bool isCarltonComponent)
         {
             return new TestBedNavTreeItem(displayName, type, componentParams, isCarltonComponent);
         }

@@ -19,6 +19,8 @@ using Carlton.TestBed.TestBedNavTree;
 using Carlton.Base.Client.Components.Select;
 using Carlton.Base.Client.Components.Test;
 using Carlton.TestBed.Client.Services;
+using Carlton.Base.Client.Components.Cards;
+using System.Collections.Generic;
 
 namespace Carlton.TestBed.Client
 {
@@ -27,23 +29,26 @@ namespace Carlton.TestBed.Client
         public static TestBedNavService Bootstrap()
         {
             var builder = new TestBadNavTreeBuilder()
-              .AddSimpleComponent<CarltonCheckbox>("Checked", CarltonCheckboxTestStates.CheckedState())
-              .AddSimpleComponent<CarltonCheckbox>("Unchecked", CarltonCheckboxTestStates.UncheckedState())
-              .AddSimpleComponent<CarltonSelect>("Default", CarltonSelectCheckboxTestStates.Default())
-              .AddSimpleComponent<CarltonAlertNotification>("Default")
-              .AddSimpleComponent<CarltonInfoNotification>("Default")
-              .AddSimpleComponent<CarltonFailureNotification>("Default")
-              .AddSimpleComponent<CarltonSuccessNotification>("Default")
-              .AddCarltonComponent<ToDoListCard>("ToDoListCard", ToDoListTestViewModels.DefaultToDoList())
-              .AddCarltonComponent<ToDoListItem>("Checked", ToDoListTestViewModels.DefaultToDoList().ToDoList[0])
-              .AddCarltonComponent<ApartmentStatusList>("Apartment Status", ApartmentStatusTestViewModels.DefaultApartmentStatusViewModel())
-              .AddCarltonComponent<HomeForDinnerCard>("HomeForDinnerCard", HomeForDinnerTestViewModels.DefaultHomeForDinnerViewModel())
-              .AddCarltonComponent<HouseholdItemsList>("HouseHoldItems", HouseholdItemsTestViewModels.DefaultHouseholdItemsViewModel())
-              .AddCarltonComponent<FeedListCard>("FeedListCard", FeedListTestViewModels.DefaultFeedViewModels())
-              .AddCarltonComponent<ToDosCountCard>("Default", ToDosCountTestViewModels.DefaultToDoListViewModel())
-              .AddCarltonComponent<ApartmentStatusCountCard>("Default", ApartmentStatusCountCardTestViewModels.DefaultApartmentStatusCountCardViewModel())
-              .AddCarltonComponent<DinnerGuestsCountCard>("Default", DinnerGuestsCountCardTestViewModels.DefaultDinngerGuestsCountCardViewModel())
-              .AddCarltonComponent<HouseholdItemsCountCard>("Default", HouseholdItemsCountCardTestViewModels.DefaultHouseholdItemsCountCardViewModel());
+              .AddComponent<CarltonCheckbox>("checkbox/Checked", CarltonCheckboxTestStates.CheckedState())
+              .AddComponent<CarltonCheckbox>("checkbox/Unchecked", CarltonCheckboxTestStates.UncheckedState())
+              .AddComponent<CarltonSelect>("Select/Default", CarltonSelectCheckboxTestStates.Default())
+
+              .AddComponent<CarltonAlertNotification>("Notifications/Alert/Default")
+              .AddComponent<CarltonInfoNotification>("Notifications/Info/Default")
+              .AddComponent<CarltonFailureNotification>("Notifications/Failure/Default")
+              .AddComponent<CarltonSuccessNotification>("Notifications/Success/Default")
+
+              .AddCarltonComponent<ToDoListCard>("ToDos/ToDoListCard", ToDoListTestViewModels.DefaultToDoList())
+              .AddCarltonComponent<ToDoListItem>("ToDos/ToDoListItem/Checked", ToDoListTestViewModels.DefaultToDoList().ToDoList[0])
+
+              .AddCarltonComponent<ApartmentStatusList>("ApartmentStatus/Apartment Status", ApartmentStatusTestViewModels.DefaultApartmentStatusViewModel())
+              .AddCarltonComponent<HomeForDinnerCard>("HomeForDinner/HomeForDinnerCard", HomeForDinnerTestViewModels.DefaultHomeForDinnerViewModel())
+              .AddCarltonComponent<HouseholdItemsList>("HouseHoldItems/HouseHoldItems", HouseholdItemsTestViewModels.DefaultHouseholdItemsViewModel())
+              .AddCarltonComponent<FeedListCard>("Feed/FeedListCard", FeedListTestViewModels.DefaultFeedViewModels())
+              .AddCarltonComponent<ToDosCountCard>("CountCards/ToDos/Default", ToDosCountTestViewModels.DefaultToDoListViewModel())
+              .AddCarltonComponent<ApartmentStatusCountCard>("CountCards/ApartmentStatus/Default", ApartmentStatusCountCardTestViewModels.DefaultApartmentStatusCountCardViewModel())
+              .AddCarltonComponent<DinnerGuestsCountCard>("CountCards/DinnerGuesets/Default", DinnerGuestsCountCardTestViewModels.DefaultDinngerGuestsCountCardViewModel())
+              .AddCarltonComponent<HouseholdItemsCountCard>("CountCards/HouseholdItems/Default", HouseholdItemsCountCardTestViewModels.DefaultHouseholdItemsCountCardViewModel());
 
             return new TestBedNavService(builder.Build());
         }

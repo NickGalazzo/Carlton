@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Carlton.TestBed.Client.Utils
 {
-    public static class Extensions
+    public static class TestBedNavTreeItemExtensions
     {
         public static TestBedNavTreeItem GetFirstSelectableTestState(this IEnumerable<TestBedNavTreeItem> treeItems)
         {
