@@ -1,4 +1,19 @@
-﻿.carlton-base-tree .base-tree {
+﻿@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+  -webkit-animation-duration: 10s;
+  animation-duration: 5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-delay: 5s; }
+
+.carlton-base-tree .base-tree {
   margin-left: 1.25rem; }
 
 .carlton-base-tree .base-tree-hidden {

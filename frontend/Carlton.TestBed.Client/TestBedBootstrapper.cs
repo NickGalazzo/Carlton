@@ -21,6 +21,7 @@ using Carlton.Base.Client.Components.Test;
 using Carlton.TestBed.Client.Services;
 using Carlton.Base.Client.Components.Cards;
 using System.Collections.Generic;
+using Carlton.Dashboard.Components.Header;
 
 namespace Carlton.TestBed.Client
 {
@@ -29,6 +30,9 @@ namespace Carlton.TestBed.Client
         public static TestBedNavService Bootstrap()
         {
             var builder = new TestBadNavTreeBuilder()
+
+              .AddComponent<Header>("header/default")
+
               .AddComponent<CarltonCheckbox>("checkbox/Checked", CarltonCheckboxTestStates.CheckedState())
               .AddComponent<CarltonCheckbox>("checkbox/Unchecked", CarltonCheckboxTestStates.UncheckedState())
               .AddComponent<CarltonSelect>("Select/Default", CarltonSelectCheckboxTestStates.Default())
@@ -37,6 +41,7 @@ namespace Carlton.TestBed.Client
               .AddComponent<CarltonInfoNotification>("Notifications/Info/Default")
               .AddComponent<CarltonFailureNotification>("Notifications/Failure/Default")
               .AddComponent<CarltonSuccessNotification>("Notifications/Success/Default")
+              .AddComponent<CarltonNotificationBar>("Notifications/NotificationBar/Default", new Dictionary<string, object> { { "NotificationType", CarltonNotificationBar.CarltonNotificationType.FAILURE } })
 
               .AddCarltonComponent<ToDoListCard>("ToDos/ToDoListCard", ToDoListTestViewModels.DefaultToDoList())
               .AddCarltonComponent<ToDoListItem>("ToDos/ToDoListItem/Checked", ToDoListTestViewModels.DefaultToDoList().ToDoList[0])

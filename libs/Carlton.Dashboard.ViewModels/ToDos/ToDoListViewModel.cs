@@ -4,6 +4,6 @@ namespace Carlton.Dashboard.ViewModels.ToDos
 {
     public class ToDoListViewModel
     {
-        public List<ToDoListItemViewModel> ToDoList { get; set; }
+        public List<ToDoListItemViewModel> ToDoList { get; internal set; }
     }
 }

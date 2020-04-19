@@ -1,4 +1,13 @@
-﻿.carlton-test-bed-nav-tree .selected-tree-node {
+﻿.carlton-test-bed-nav-tree .heading {
+  background-color: #009ca7;
+  margin-bottom: 20px;
+  height: 60px;
+  line-height: 60px; }
+  .carlton-test-bed-nav-tree .heading span {
+    display: inline-block;
+    font-size: 16pt; }
+
+.carlton-test-bed-nav-tree .selected-tree-node {
   color: #009688; }
 
 .test-bed {

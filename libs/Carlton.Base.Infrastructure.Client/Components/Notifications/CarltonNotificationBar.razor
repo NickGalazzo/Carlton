@@ -1,6 +1,45 @@
-﻿
+﻿@using System.Threading.Tasks
+ 
 <div class="carlton-notification-bar">
-    <carltonNotification></carltonNotification>
+    @switch(NotificationType)
+    {
+        case CarltonNotificationType.SUCCESS:
+            <CarltonSuccessNotification></CarltonSuccessNotification>
+            break;
+        case CarltonNotificationType.ALERT:
+            <CarltonAlertNotification></CarltonAlertNotification>
+            break;
+        case CarltonNotificationType.INFO:
+            <CarltonInfoNotification></CarltonInfoNotification>
+            break;
+        case CarltonNotificationType.FAILURE:
+            <CarltonFailureNotification></CarltonFailureNotification>
+            break;
+        default:
+           break;
+    }
 </div>
 
+
+@code{
+    [Parameter]
+    public CarltonNotificationType NotificationType { get; set; }
+
+
+    protected async override Task OnParametersSetAsync()
+    {
+        await base.OnParametersSetAsync();
+        await Task.Delay(5000);
+        NotificationType = CarltonNotificationType.DEFAULT;
+    }
+
+    public enum CarltonNotificationType
+    {
+        DEFAULT = 0,
+        SUCCESS = 1,
+        ALERT = 2,
+        INFO = 3,
+        FAILURE = 4
+    }
+}
 
