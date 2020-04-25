@@ -44,11 +44,15 @@ namespace Carlton.TestBed.Client
               .AddComponent<CarltonSuccessNotification>("Notifications/Success/Default")
               .AddComponent<CarltonNotificationBar>("Notifications/NotificationBar/Default", new Dictionary<string, object> { { "NotificationType", CarltonNotificationBar.CarltonNotificationType.FAILURE } })
 
-              .AddCarltonComponent<ToDoListCard>("ToDos/ToDoListCard", ToDoListTestViewModels.DefaultToDoList())
               .AddCarltonComponent<ToDoListItem>("ToDos/ToDoListItem/Checked", ToDoListTestViewModels.ToDoListItemChecked())
               .AddCarltonComponent<ToDoListItem>("ToDos/ToDoListItem/Unchecked", ToDoListTestViewModels.ToDoListItemUnchecked())
+              .AddCarltonComponent<ToDoListCard>("ToDos/ToDoListCard/Default", ToDoListTestViewModels.DefaultToDoList())
 
-              .AddCarltonComponent<ApartmentStatusList>("ApartmentStatus/Apartment Status", ApartmentStatusTestViewModels.DefaultApartmentStatusViewModel())
+              .AddCarltonComponent<ApartmentStatusListItem>("ApartmentStatus/ApartmentStatusListItem/Completed", ApartmentStatusTestViewModels.CompletedStatusViewModel())
+              .AddCarltonComponent<ApartmentStatusListItem>("ApartmentStatus/ApartmentStatusListItem/Incomplete", ApartmentStatusTestViewModels.InCompleteStatusViewModel())
+              .AddCarltonComponent<ApartmentStatusListCard>("ApartmentStatus/ApartmentStatusListCard/Default", ApartmentStatusTestViewModels.DefaultApartmentStatusViewModel())
+
+
               .AddCarltonComponent<HomeForDinnerCard>("HomeForDinner/HomeForDinnerCard", HomeForDinnerTestViewModels.DefaultHomeForDinnerViewModel())
               .AddCarltonComponent<HouseholdItemsList>("HouseHoldItems/HouseHoldItems", HouseholdItemsTestViewModels.DefaultHouseholdItemsViewModel())
               .AddCarltonComponent<FeedListCard>("Feed/FeedListCard", FeedListTestViewModels.DefaultFeedViewModels())
@@ -58,7 +62,7 @@ namespace Carlton.TestBed.Client
               .AddCarltonComponent<HouseholdItemsCountCard>("CountCards/HouseholdItems/Default", HouseholdItemsCountCardTestViewModels.DefaultHouseholdItemsCountCardViewModel());
 
             var navTree = builder.Build();
-            
+
             return new TestBedNavService(navTree);
         }
     }
