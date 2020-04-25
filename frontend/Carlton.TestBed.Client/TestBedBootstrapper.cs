@@ -23,6 +23,7 @@ using Carlton.TestBed.Client.Services;
 using System.Collections.Generic;
 
 
+
 namespace Carlton.TestBed.Client
 {
     public static class TestBedBootstrapper
@@ -44,7 +45,8 @@ namespace Carlton.TestBed.Client
               .AddComponent<CarltonNotificationBar>("Notifications/NotificationBar/Default", new Dictionary<string, object> { { "NotificationType", CarltonNotificationBar.CarltonNotificationType.FAILURE } })
 
               .AddCarltonComponent<ToDoListCard>("ToDos/ToDoListCard", ToDoListTestViewModels.DefaultToDoList())
-              .AddCarltonComponent<ToDoListItem>("ToDos/ToDoListItem/Checked", ToDoListTestViewModels.DefaultToDoList().ToDoList[0])
+              .AddCarltonComponent<ToDoListItem>("ToDos/ToDoListItem/Checked", ToDoListTestViewModels.ToDoListItemChecked())
+              .AddCarltonComponent<ToDoListItem>("ToDos/ToDoListItem/Unchecked", ToDoListTestViewModels.ToDoListItemUnchecked())
 
               .AddCarltonComponent<ApartmentStatusList>("ApartmentStatus/Apartment Status", ApartmentStatusTestViewModels.DefaultApartmentStatusViewModel())
               .AddCarltonComponent<HomeForDinnerCard>("HomeForDinner/HomeForDinnerCard", HomeForDinnerTestViewModels.DefaultHomeForDinnerViewModel())
@@ -55,7 +57,9 @@ namespace Carlton.TestBed.Client
               .AddCarltonComponent<DinnerGuestsCountCard>("CountCards/DinnerGuesets/Default", DinnerGuestsCountCardTestViewModels.DefaultDinngerGuestsCountCardViewModel())
               .AddCarltonComponent<HouseholdItemsCountCard>("CountCards/HouseholdItems/Default", HouseholdItemsCountCardTestViewModels.DefaultHouseholdItemsCountCardViewModel());
 
-            return new TestBedNavService(builder.Build());
+            var navTree = builder.Build();
+            
+            return new TestBedNavService(navTree);
         }
     }
 }

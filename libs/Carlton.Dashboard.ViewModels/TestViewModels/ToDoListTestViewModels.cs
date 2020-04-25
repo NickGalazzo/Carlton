@@ -20,5 +20,15 @@ namespace Carlton.TestBed.Client.TestViewModels
                    }
             };
         }
+
+        public static ToDoListItemViewModel ToDoListItemChecked()
+        {
+            return new ToDoListItemViewModel(1, "Take Out Garbage", true);
+        }
+
+        public static ToDoListItemViewModel ToDoListItemUnchecked()
+        {
+            return new ToDoListItemViewModel(1, "Take Out Garbage", false);
+        }
     }
 }

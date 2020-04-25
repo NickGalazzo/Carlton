@@ -20,13 +20,16 @@
     <footer class="footer @(!service.IsTestComponentCarltonComponent ? "invisible" : string.Empty)">
         <CarltonTabBar>
             <CarltonTab DisplayText="Component Events">
-                <EventConsole ComponentEvents="service.ComponentEvents" ClearEvents="service.ClearEvents"/>
+                <EventConsole ComponentEvents="service.ComponentEvents" ClearEvents="service.ClearEvents" />
             </CarltonTab>
             <CarltonTab DisplayText="JSON Payloads">
-                <ViewModelViewer ViewModel="service.TestComponentViewModel" ViewModelChanged="service.UpdateTestComponentViewModel"/>
+                <ViewModelViewer ViewModel="service.TestComponentViewModel" ViewModelChanged="service.UpdateTestComponentViewModel" />
             </CarltonTab>
             <CarltonTab DisplayText="Component Status">
                 <ComponentStatusSwitch ComponentStatusChangeCallback="service.UpdateComponentStatus" />
+            </CarltonTab>
+            <CarltonTab DisplayText="Source">
+                <TestComponentSource ComponentType="@service.TestComponentType"/>
             </CarltonTab>
         </CarltonTabBar>
     </footer>

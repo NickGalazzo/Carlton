@@ -13,7 +13,7 @@ namespace Carlton.TestBed.Client.Services
         private readonly TestBedStatusService _statusService;
 
 
-        public IEnumerable<TestBedNavTreeItem> TreeItems { get { return _navService.TreeItems; } }
+        public IEnumerable<TestBedNavTreeItem> TreeItems { get { return _navService.NavTree; } }
         public Type TestComponentType { get { return _navService.TestComponentType; } }
         public bool IsTestComponentCarltonComponent { get { return _navService.IsTestComponentCarltonComponent; } }
         public ComponentStatus TestComponentStatus { get { return _statusService.TestComponentStatus; } }
