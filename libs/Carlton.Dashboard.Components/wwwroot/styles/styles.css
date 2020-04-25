@@ -131,3 +131,20 @@ body {
 
 .carlton-count-card .count-icon::before {
   line-height: initial; }
+
+.header {
+  height: 60px;
+  background-color: #ffffff;
+  line-height: 60px; }
+  .header span {
+    color: #757575;
+    font-size: 16pt;
+    vertical-align: middle; }
+  .header img {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px; }
+  .header .logged-in-user {
+    text-align: right; }
+    .header .logged-in-user span {
+      font-size: 12pt; }

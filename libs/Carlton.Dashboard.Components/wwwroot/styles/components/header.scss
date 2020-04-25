@@ -1,0 +1,25 @@
+﻿.header {
+    height: 60px;
+    background-color: #ffffff;
+    line-height: 60px;
+
+    span {
+        color: #757575;
+        font-size: 16pt;
+        vertical-align: middle;
+    }
+
+    img {
+        height: 40px;
+        width: 40px;
+        border-radius: 20px;
+    }
+
+    .logged-in-user {
+        text-align: right;
+
+        span {
+            font-size: 12pt;
+        }
+    }
+}
