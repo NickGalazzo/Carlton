@@ -1,0 +1,14 @@
+﻿@using Carlton.Base.Client.Components.Cards
+@using Carlton.Dashboard.ViewModels.ApartmentStatus
+
+
+@inherits CarltonParentComponent<ApartmentStatusListViewModel>
+
+<div class="apartment-status-list-card">
+    <CarltonListCard CardTitle="Apartment Status" Items="ViewModel.Statuses" CardStatus="base.ComponentStatus">
+        <ItemTemplate Context="status">
+           <ApartmentStatusListItem ViewModel="status" OnComponentEvent="base.OnComponentEvent" />
+        </ItemTemplate>
+    </CarltonListCard>
+</div>
+

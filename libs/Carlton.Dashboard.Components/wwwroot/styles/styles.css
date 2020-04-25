@@ -6,14 +6,14 @@ body ul {
 body {
   font-family: "Roboto", sans-serif !important; }
 
-.apartment-status-list-card span.status-icon {
-  color: #47a8f4; }
-
-.apartment-status-list-card span.status-value-complete {
-  color: #009688; }
-
-.apartment-status-list-card span.status-value-incomplete {
-  color: #fec00a; }
+.apartment-status-list-item {
+  max-width: 500px; }
+  .apartment-status-list-item span.status-icon {
+    color: #47a8f4; }
+  .apartment-status-list-item span.status-value-complete {
+    color: #009688; }
+  .apartment-status-list-item span.status-value-incomplete {
+    color: #fec00a; }
 
 .household-item span.item-name {
   color: #757575; }

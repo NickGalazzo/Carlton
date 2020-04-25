@@ -1,27 +1,35 @@
 ﻿using Carlton.Dashboard.ViewModels.ApartmentStatus;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace Carlton.TestBed.Client.TestViewModels
 {
     public static class ApartmentStatusTestViewModels
     {
-        public static ApartmentStatusesViewModel DefaultApartmentStatusViewModel()
+        public static ApartmentStatusListViewModel DefaultApartmentStatusViewModel()
         {
-            return new ApartmentStatusesViewModel()
+            return new ApartmentStatusListViewModel()
             {
-                Statuses = new List<ApartmentStatus>
+                Statuses = new List<ApartmentStatusListItemViewModel>
                      {
-                            new ApartmentStatus("Garbage", ApartmentStatuses.Complete, "mdi-delete"),
-                            new ApartmentStatus("Recycle", ApartmentStatuses.Complete, "mdi-recycle"),
-                            new ApartmentStatus("Shopping", ApartmentStatuses.Complete, "mdi-cart"),
-                            new ApartmentStatus("Cleaning", ApartmentStatuses.Complete, "mdi-spray-bottle"),
-                            new ApartmentStatus("Laundry", ApartmentStatuses.Complete, "mdi-washing-machine"),
-                            new ApartmentStatus("Dry Cleaning", ApartmentStatuses.Incomplete, "mdi-tie")
-                             }
+                            new ApartmentGarbageStatusListItemViewModel(ApartmentStatuses.Complete),
+                            new ApartmentRecycleStatusListItemViewModel(ApartmentStatuses.Complete),
+                            new ApartmentShoppingStatusListItemViewModel(ApartmentStatuses.Complete),
+                            new ApartmentCleaningStatusListItemViewModel(ApartmentStatuses.Complete),
+                            new ApartmentLaundryStatusListItemViewModel(ApartmentStatuses.Complete),
+                            new ApartmentDryCleaningStatusListItemViewModel(ApartmentStatuses.Incomplete)
+                      }
             };
+        }
+
+        public static ApartmentStatusListItemViewModel CompletedStatusViewModel()
+        {
+            return new ApartmentStatusListItemViewModel("Garbage", ApartmentStatuses.Complete, "mdi-delete");
+        }
+
+        public static ApartmentStatusListItemViewModel InCompleteStatusViewModel()
+        {
+            return new ApartmentStatusListItemViewModel("Garbage", ApartmentStatuses.Incomplete, "mdi-delete");
         }
     }
 }

@@ -1,6 +1,12 @@
 ﻿@import "../variables/colors.scss";
 
 .apartment-status-list-card {
+   
+}
+
+.apartment-status-list-item {
+    max-width: 500px;
+
     span.status-icon {
         color: $statusIconColor;
     }

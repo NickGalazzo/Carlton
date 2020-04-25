@@ -1,0 +1,17 @@
+﻿@inherits CarltonParentComponent<ApartmentStatusListItemViewModel>
+
+<div class="row apartment-status-list-item">
+    <div class="col-6 text-center">
+        <span class="status-icon mdi mdi-24px @ViewModel.StatusIcon"></span>
+    </div>
+    <div class="col-6 text-center">
+        @if(ViewModel.StatusValue == ApartmentStatuses.Complete)
+        {
+            <span class="status-value-complete mdi mdi-24px mdi-check-circle"></span>
+        }
+        else
+        {
+            <span class="status-value-incomplete mdi mdi-24px mdi-alert"></span>
+        }
+    </div>
+</div>

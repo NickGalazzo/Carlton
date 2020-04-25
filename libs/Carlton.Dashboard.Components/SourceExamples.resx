@@ -117,7 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ApartmentStatusListCard" xml:space="preserve">
+    <value>&lt;pre style='color:#55cc66;background:#001800;'&gt;@&lt;span style='color:#508050; font-weight:bold; '&gt;using&lt;/span&gt; Carlton&lt;span style='color:#808030; '&gt;.&lt;/span&gt;Dashboard&lt;span style='color:#808030; '&gt;.&lt;/span&gt;Components&lt;span style='color:#808030; '&gt;.&lt;/span&gt;ApartmentStatus
+
+
+&lt;span style='color:#808030; '&gt;&amp;lt;&lt;/span&gt;ApartmentStatusListCard ViewModel&lt;span style='color:#808030; '&gt;=&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt;&lt;span style='color:#cc5555; '&gt;VM&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt; OnComponentEvent&lt;span style='color:#808030; '&gt;=&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt;&lt;span style='color:#cc5555; '&gt;Callback&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt; &lt;span style='color:#808030; '&gt;/&lt;/span&gt;&lt;span style='color:#808030; '&gt;&gt;&lt;/span&gt;
+
+@code&lt;span style='color:#800080; '&gt;{&lt;/span&gt;
+    &lt;span style='color:#808030; '&gt;[&lt;/span&gt;Parameter&lt;span style='color:#808030; '&gt;]&lt;/span&gt;
+    &lt;span style='color:#508050; font-weight:bold; '&gt;public&lt;/span&gt; ApartmentStatusListViewModel VM &lt;span style='color:#800080; '&gt;{&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;get&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;set&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#800080; '&gt;}&lt;/span&gt;
+
+    &lt;span style='color:#808030; '&gt;[&lt;/span&gt;Parameter&lt;span style='color:#808030; '&gt;]&lt;/span&gt;
+    &lt;span style='color:#508050; font-weight:bold; '&gt;public&lt;/span&gt; EventCallback Callback &lt;span style='color:#800080; '&gt;{&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;get&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;set&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#800080; '&gt;}&lt;/span&gt;
+&lt;span style='color:#800080; '&gt;}&lt;/span&gt;
+&lt;/pre&gt;</value>
+  </data>
+  <data name="ApartmentStatusListItem" xml:space="preserve">
+    <value>&lt;pre style='color:#55cc66;background:#001800;'&gt;@&lt;span style='color:#508050; font-weight:bold; '&gt;using&lt;/span&gt; Carlton&lt;span style='color:#808030; '&gt;.&lt;/span&gt;Dashboard&lt;span style='color:#808030; '&gt;.&lt;/span&gt;Components&lt;span style='color:#808030; '&gt;.&lt;/span&gt;ApartmentStatus
+
+
+&lt;span style='color:#808030; '&gt;&amp;lt;&lt;/span&gt;ApartmentStatusListItem ViewModel&lt;span style='color:#808030; '&gt;=&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt;&lt;span style='color:#cc5555; '&gt;VM&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt; OnComponentEvent&lt;span style='color:#808030; '&gt;=&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt;&lt;span style='color:#cc5555; '&gt;Callback&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt; &lt;span style='color:#808030; '&gt;/&lt;/span&gt;&lt;span style='color:#808030; '&gt;&gt;&lt;/span&gt;
+
+@code&lt;span style='color:#800080; '&gt;{&lt;/span&gt;
+    &lt;span style='color:#808030; '&gt;[&lt;/span&gt;Parameter&lt;span style='color:#808030; '&gt;]&lt;/span&gt;
+    &lt;span style='color:#508050; font-weight:bold; '&gt;public&lt;/span&gt; ApartmentStatusListItemViewModel VM &lt;span style='color:#800080; '&gt;{&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;get&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;set&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#800080; '&gt;}&lt;/span&gt;
+
+    &lt;span style='color:#808030; '&gt;[&lt;/span&gt;Parameter&lt;span style='color:#808030; '&gt;]&lt;/span&gt;
+    &lt;span style='color:#508050; font-weight:bold; '&gt;public&lt;/span&gt; EventCallback Callback &lt;span style='color:#800080; '&gt;{&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;get&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;set&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#800080; '&gt;}&lt;/span&gt;
+&lt;span style='color:#800080; '&gt;}&lt;/span&gt;
+&lt;/pre&gt;</value>
+  </data>
   <data name="ToDoListCard" xml:space="preserve">
+    <value>&lt;pre style='color:#55cc66;background:#001800;'&gt;@&lt;span style='color:#508050; font-weight:bold; '&gt;using&lt;/span&gt; Carlton&lt;span style='color:#808030; '&gt;.&lt;/span&gt;Dashboard&lt;span style='color:#808030; '&gt;.&lt;/span&gt;Components&lt;span style='color:#808030; '&gt;.&lt;/span&gt;ToDo
+
+
+&lt;span style='color:#808030; '&gt;&amp;lt;&lt;/span&gt;ToDoListCard ViewModel&lt;span style='color:#808030; '&gt;=&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt;&lt;span style='color:#cc5555; '&gt;VM&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt; OnComponentEvent&lt;span style='color:#808030; '&gt;=&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt;&lt;span style='color:#cc5555; '&gt;Callback&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt; &lt;span style='color:#808030; '&gt;/&lt;/span&gt;&lt;span style='color:#808030; '&gt;&gt;&lt;/span&gt;
+
+@code&lt;span style='color:#800080; '&gt;{&lt;/span&gt;
+    &lt;span style='color:#808030; '&gt;[&lt;/span&gt;Parameter&lt;span style='color:#808030; '&gt;]&lt;/span&gt;
+    &lt;span style='color:#508050; font-weight:bold; '&gt;public&lt;/span&gt; ToDoListCardViewModel VM &lt;span style='color:#800080; '&gt;{&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;get&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;set&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#800080; '&gt;}&lt;/span&gt;
+
+    &lt;span style='color:#808030; '&gt;[&lt;/span&gt;Parameter&lt;span style='color:#808030; '&gt;]&lt;/span&gt;
+    &lt;span style='color:#508050; font-weight:bold; '&gt;public&lt;/span&gt; EventCallback Callback &lt;span style='color:#800080; '&gt;{&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;get&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;set&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#800080; '&gt;}&lt;/span&gt;
+&lt;span style='color:#800080; '&gt;}&lt;/span&gt;
+&lt;/pre&gt;</value>
+  </data>
+  <data name="ToDoListItem" xml:space="preserve">
     <value>&lt;pre style='color:#55cc66;background:#001800;'&gt;@&lt;span style='color:#508050; font-weight:bold; '&gt;using&lt;/span&gt; Carlton&lt;span style='color:#808030; '&gt;.&lt;/span&gt;Dashboard&lt;span style='color:#808030; '&gt;.&lt;/span&gt;Components&lt;span style='color:#808030; '&gt;.&lt;/span&gt;ToDo
 
 
@@ -130,7 +175,6 @@
     &lt;span style='color:#808030; '&gt;[&lt;/span&gt;Parameter&lt;span style='color:#808030; '&gt;]&lt;/span&gt;
     &lt;span style='color:#508050; font-weight:bold; '&gt;public&lt;/span&gt; EventCallback Callback &lt;span style='color:#800080; '&gt;{&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;get&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;set&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#800080; '&gt;}&lt;/span&gt;
 &lt;span style='color:#800080; '&gt;}&lt;/span&gt;
-&lt;/pre&gt;
-</value>
+&lt;/pre&gt;</value>
   </data>
 </root>
