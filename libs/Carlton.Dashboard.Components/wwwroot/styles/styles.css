@@ -15,16 +15,21 @@ body {
   .apartment-status-list-item span.status-value-incomplete {
     color: #fec00a; }
 
-.household-item span.item-name {
-  color: #757575; }
-
-.household-item .progress {
-  height: 8px;
-  background-color: transparent; }
-
-.household-item .progress-bar {
-  border-radius: 10px;
-  background-color: #7ac29a; }
+.groceries-list-item {
+  max-width: 400px; }
+  .groceries-list-item span.item-name {
+    color: #757575; }
+  .groceries-list-item .progress {
+    height: 8px;
+    background-color: transparent; }
+  .groceries-list-item .progress-bar {
+    border-radius: 10px; }
+    .groceries-list-item .progress-bar.high {
+      background-color: #7ac29a; }
+    .groceries-list-item .progress-bar.medium {
+      background-color: #fec00a; }
+    .groceries-list-item .progress-bar.low {
+      background-color: #ff7946; }
 
 .to-do-list-item span.to-do-name {
   color: #757575;

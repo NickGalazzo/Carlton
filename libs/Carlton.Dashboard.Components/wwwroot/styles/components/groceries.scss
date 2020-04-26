@@ -1,0 +1,30 @@
+﻿@import "../variables/colors.scss";
+
+.groceries-list-item {
+    max-width: 400px;
+
+    span.item-name {
+        color: $textColor;
+    }
+
+    .progress {
+        height: 8px;
+        background-color: transparent;
+    }
+
+    .progress-bar {
+        border-radius: 10px;
+
+        &.high {
+            background-color: $highColor;
+        }
+
+        &.medium{
+            background-color: $mediumColor;
+        }
+
+        &.low{
+            background-color: $lowColor;
+        }
+    }
+}

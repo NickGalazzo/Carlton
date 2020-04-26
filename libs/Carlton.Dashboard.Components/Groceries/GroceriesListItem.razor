@@ -1,0 +1,30 @@
+﻿@using Carlton.Dashboard.ViewModels.Groceries
+
+@inherits CarltonParentComponent<GroceriesListItemViewModel>
+
+<div class="groceries-list-item">
+    <div>
+        <span class="item-name">@ViewModel.Name</span>
+    </div>
+    <div class="progress">
+        <div class="progress-bar @GetStatusClass()" role="progressbar" style="width: @((ViewModel.PercentRemaining).ToString() + '%')" aria-valuenow="@ViewModel.PercentRemaining" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+</div>
+
+@code{
+    private string GetStatusClass()
+    {
+        if(ViewModel.PercentRemaining >= 75)
+        {
+            return "high";
+        }
+        else if(ViewModel.PercentRemaining <= 35)
+        {
+            return "low";
+        }
+        else
+        {
+            return "medium";
+        }
+    }
+}

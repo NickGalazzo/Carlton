@@ -1,0 +1,14 @@
+﻿@using Carlton.Base.Client.Components.Cards
+@using Carlton.Dashboard.ViewModels.Groceries
+
+
+@inherits CarltonParentComponent<GroceriesListViewModel>
+
+<div class="groceries-list-items-card">
+    <CarltonListCard CardTitle="Groceries" Items="ViewModel.Items" CardStatus="base.ComponentStatus">
+        <ItemTemplate Context="item">
+            <GroceriesListItem ViewModel="item" />
+        </ItemTemplate>
+    </CarltonListCard>
+</div>
+
