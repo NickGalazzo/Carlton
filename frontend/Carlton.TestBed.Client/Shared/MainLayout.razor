@@ -12,9 +12,11 @@
 
 <div class="main">
     <div class="content px-4">
-        <TestBed ComponentType="service.TestComponentType" IsCarltonComponent="service.IsTestComponentCarltonComponent"
-                 ViewModel="service.TestComponentViewModel" ComponentStatus="service.TestComponentStatus"
-                 ComponentEventCallback="service.AddComponentEvent" />
+        <TestBed ComponentType="service.TestComponentType" 
+                 IsCarltonComponent="service.IsTestComponentCarltonComponent"
+                 ViewModel="service.TestComponentViewModel" 
+                 ComponentStatus="service.TestComponentStatus"
+                 ComponentEventCallback="service.AddComponentEvent"/>
     </div>
 
     <footer class="footer @(!service.IsTestComponentCarltonComponent ? "invisible" : string.Empty)">

@@ -3,11 +3,11 @@
 <div class="carlton-checkbox">
     @if(IsChecked)
     {
-        <span @onclick="() => UserCheckChange(false)" class="to-do-completed align-middle mdi mdi-24px mdi-check-circle"></span>
+        <span @onclick="() => UserCheckChange(false)" class="align-middle mdi mdi-24px mdi-check-circle"></span>
     }
     else
     {
-        <span @onclick="() => UserCheckChange(true)" class="to-do-completed align-middle mdi mdi-24px mdi-checkbox-blank-circle-outline"></span>
+        <span @onclick="() => UserCheckChange(true)" class="align-middle mdi mdi-24px mdi-checkbox-blank-circle-outline"></span>
     }
 </div>
 

@@ -16,12 +16,12 @@ namespace Carlton.TestBed.Client.TestViewModels
         {
             var dinnerGuests = new List<DinnerGuestsListItemViewModel>()
                 {
-                    DinnerGuestsListItemViewModel.CreateHomeForDinnerGuest("Nick"),
-                    DinnerGuestsListItemViewModel.CreateNotHomeForDinnerGuest("Steve", SampleReasons[0])
+                    DinnerGuestsListItemViewModel.CreateHomeForDinnerGuest(1, "Nick"),
+                    DinnerGuestsListItemViewModel.CreateNotHomeForDinnerGuest(2, "Steve", SampleReasons[0])
                 };
 
        
-            var myDinnerGuestStatus = DinnerGuestsListItemViewModel.CreateHomeForDinnerGuest("Nick");
+            var myDinnerGuestStatus = DinnerGuestsListItemViewModel.CreateHomeForDinnerGuest(1, "Nick");
 
             var dinnerGuestSelfViewModel = new DinnerGuestSelfStatusViewModel(myDinnerGuestStatus, SampleReasons);
 
@@ -31,13 +31,13 @@ namespace Carlton.TestBed.Client.TestViewModels
 
         public static DinnerGuestsListItemViewModel DinnerGuestHomeViewModel()
         {
-            return DinnerGuestsListItemViewModel.CreateHomeForDinnerGuest("Nick");
+            return DinnerGuestsListItemViewModel.CreateHomeForDinnerGuest(1, "Nick");
         }
 
         public static DinnerGuestsListItemViewModel DinnerGuestNotHomeViewModel()
         {
             var reason = new DinnerGuestReason(1, "Japan School");
-            return DinnerGuestsListItemViewModel.CreateNotHomeForDinnerGuest("Steve", reason);
+            return DinnerGuestsListItemViewModel.CreateNotHomeForDinnerGuest(2, "Steve", reason);
         }
 
         public static DinnerGuestSelfStatusViewModel DinnerGuestsSelfHomeViewModel()

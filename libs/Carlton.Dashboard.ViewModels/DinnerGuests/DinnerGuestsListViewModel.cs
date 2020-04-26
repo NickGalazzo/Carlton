@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Carlton.Dashboard.ViewModels.DinnerGuests
 {
@@ -13,13 +12,6 @@ namespace Carlton.Dashboard.ViewModels.DinnerGuests
         {
             MyDinnerGuestStatus = myDinnerGuestStatus;
             DinnerGuests = dinnerGuests;
-        }
-
-        [JsonConstructor]
-        private DinnerGuestsListViewModel()
-        {
-            DinnerGuests = new List<DinnerGuestsListItemViewModel>();
-
         }
     }
 }

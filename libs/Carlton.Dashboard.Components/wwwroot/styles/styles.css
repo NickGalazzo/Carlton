@@ -36,6 +36,9 @@ body {
 .to-do-list-item span.to-do-completed {
   color: #009688; }
 
+.to-do-list-item .carlton-checkbox span {
+  color: #009688; }
+
 .feed-list-card .feed-item-row {
   border-bottom-style: solid;
   border-bottom-color: rgba(117, 117, 117, 0.25);
@@ -78,6 +81,8 @@ body {
   .dinner-guests-self-status .carlton-select .label {
     font-size: 10pt;
     color: #757575; }
+  .dinner-guests-self-status .carlton-checkbox span {
+    color: #009688; }
 
 .dinner-guests-list-item {
   margin-top: 10px; }

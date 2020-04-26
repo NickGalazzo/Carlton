@@ -10,9 +10,14 @@
             <label>Are you home for dinner?</label>
         </div>
         <div class="col-3 text-center">
-            <CarltonCheckbox IsChecked="ViewModel.MyGuestStatus.IsHomeForDinner" />
+            <CarltonCheckbox IsChecked="ViewModel.MyGuestStatus.IsHomeForDinner"
+                             OnCheckboxChangeCallback="(isHomeForDinner) => 
+                                                       base.OnComponentEvent.InvokeAsync(new DinnerGuestsHomeForDinnerStatusChangeEvent(ViewModel.MyGuestStatus.GuestId, isHomeForDinner))" />
         </div>
     </div>
 
-    <CarltonSelect Label="Reason?" Options="ViewModel.MySavedReasons.ToDictionary(o => o.ReasonText, o => o.ReasonId)" SelectedValue="ViewModel.MyGuestStatus.Reason.ReasonId" />
+    <CarltonSelect Label="Reason?"
+                   Options="ViewModel.MySavedReasons.ToDictionary(o => o.ReasonText, o => o.ReasonId)"
+                   SelectedValue="ViewModel.MyGuestStatus.Reason.ReasonId"
+                   ValueChangedCallback="(kv) => base.OnComponentEvent.InvokeAsync(new DinnerGuestsReasonChangedEvent(ViewModel.MyGuestStatus.GuestId, kv.Value))"/>
 </div>
