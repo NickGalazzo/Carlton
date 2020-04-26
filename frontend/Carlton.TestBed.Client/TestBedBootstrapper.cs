@@ -53,10 +53,17 @@ namespace Carlton.TestBed.Client
               .AddCarltonComponent<ApartmentStatusListCard>("ApartmentStatus/ApartmentStatusListCard/Default", ApartmentStatusTestViewModels.DefaultApartmentStatusViewModel())
 
 
+              .AddCarltonComponent<DinnerGuestsSelfStatus>("DinnerGuests/DinnerGuestsSelfStatus/HomeForDinner", DinnerGuestsTestViewModels.DinnerGuestsSelfHomeViewModel())
+              .AddCarltonComponent<DinnerGuestsSelfStatus>("DinnerGuests/DinnerGuestsSelfStatus/NotHomeForDinner", DinnerGuestsTestViewModels.DinnerGuestsSelfNotHomeViewModel())
+
+              .AddCarltonComponent<DinnerGuestListItemWithIndicator>("DinnerGuests/DinnerGuestsListItem/WithIndicator/HomeForDinner", DinnerGuestsTestViewModels.DinnerGuestHomeViewModel())
+              .AddCarltonComponent<DinnerGuestListItemWithIndicator>("DinnerGuests/DinnerGuestsListItem/WithIndicator/NotHomeForDinner", DinnerGuestsTestViewModels.DinnerGuestNotHomeViewModel())
+              .AddCarltonComponent<DinnerGuestListItemWithoutIndicator>("DinnerGuests/DinnerGuestsListItem/WithoutIndicator/HomeForDinner", DinnerGuestsTestViewModels.DinnerGuestHomeViewModel())
+              .AddCarltonComponent<DinnerGuestListItemWithoutIndicator>("DinnerGuests/DinnerGuestsListItem/WithoutIndicator/NotHomeForDinner", DinnerGuestsTestViewModels.DinnerGuestNotHomeViewModel())
               
               .AddCarltonComponent<DinnerGuestsListCard>("DinnerGuests/DinnerGuestsListCard", DinnerGuestsTestViewModels.DefaultHomeForDinnerViewModel())
-              
-              
+
+
               .AddCarltonComponent<HouseholdItemsList>("HouseHoldItems/HouseHoldItems", HouseholdItemsTestViewModels.DefaultHouseholdItemsViewModel())
               .AddCarltonComponent<FeedListCard>("Feed/FeedListCard", FeedListTestViewModels.DefaultFeedViewModels())
               .AddCarltonComponent<ToDosCountCard>("CountCards/ToDos/Default", ToDosCountTestViewModels.DefaultToDoListViewModel())

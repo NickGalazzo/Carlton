@@ -3,18 +3,16 @@
 
 @inherits CarltonParentComponent<DinnerGuestSelfStatusViewModel>
 
-<div class="my-dinner-status-row">
-    <DinnerGuestsListItem Guest="ViewModel.MyGuestStatus" ShowIndicator="false" />
+<div class="dinner-guests-self-status">
+    <DinnerGuestListItemWithoutIndicator ViewModel="ViewModel.MyGuestStatus"/>
     <div class="row home-for-dinner-row">
         <div class="col-9">
             <label>Are you home for dinner?</label>
         </div>
         <div class="col-3 text-center">
-            <CarltonCheckbox IsChecked="true" />
+            <CarltonCheckbox IsChecked="ViewModel.MyGuestStatus.IsHomeForDinner" />
         </div>
     </div>
 
-    <CarltonSelect Label="Reason?" Options="ViewModel.MySavedReasons" />
+    <CarltonSelect Label="Reason?" Options="ViewModel.MySavedReasons.ToDictionary(o => o.ReasonText, o => o.ReasonId)" SelectedValue="ViewModel.MyGuestStatus.Reason.ReasonId" />
 </div>
-
-<div class="sub-title">Dinner Guests</div>

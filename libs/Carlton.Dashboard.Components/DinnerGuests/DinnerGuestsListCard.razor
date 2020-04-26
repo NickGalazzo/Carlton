@@ -5,15 +5,15 @@
 @inherits CarltonParentComponent<DinnerGuestsListViewModel>
 
 
-<div class="home-for-dinner-card">
-    <CarltonListCard CardTitle="Home For Dinner" Items="ViewModel.DinnerGuests">
+<div class="dinner-guests-list-card">
+    <CarltonListCard CardTitle="Dinner Guests" Items="ViewModel.DinnerGuests" CardStatus="base.ComponentStatus">
         <HeaderCardContent>
             <DinnerGuestsSelfStatus ViewModel="ViewModel.MyDinnerGuestStatus" OnComponentEvent="base.OnComponentEvent" />
-            <div class="sub-title">Dinner Guests</div>
+            <div class="sub-title">Guests</div>
         </HeaderCardContent>
 
         <ItemTemplate Context="guest">
-            <DinnerGuestsListItem Guest="guest" ShowIndicator="true" />
+            <DinnerGuestListItemWithIndicator ViewModel="guest" ShowIndicator="true" />
         </ItemTemplate>
     </CarltonListCard>
 </div>

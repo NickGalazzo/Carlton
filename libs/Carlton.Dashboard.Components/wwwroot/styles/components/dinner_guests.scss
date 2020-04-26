@@ -1,0 +1,53 @@
+﻿@import "../variables/colors.scss";
+
+
+.dinner-guests-list-card {
+    .sub-title {
+        font-size: 10pt;
+        margin-top: 20px;
+    }
+}
+
+.dinner-guests-self-status {
+    max-width: 500px;
+    border-bottom-style: dashed;
+    border-bottom-color: $textColor;
+    border-bottom-width: thin;
+    padding-bottom: 10px;
+
+    .home-for-dinner-row label {
+        font-size: 10pt;
+        color: $textColor;
+        margin-top: 10px;
+    }
+
+    .carlton-select .label {
+        font-size: 10pt;
+        color: $textColor;
+    }
+}
+
+
+.dinner-guests-list-item {
+    margin-top: 10px;
+
+    img.avatar-img {
+        height: 40px;
+        width: 40px;
+        border-radius: 20px;
+    }
+
+    .guest-name {
+        color: $textColor;
+        font-weight: bold;
+        font-size: 10pt
+    }
+
+    .guest-message {
+        color: $textColor;
+    }
+
+    .is-home-for-dinner {
+        color: $activeColor;
+    }
+}

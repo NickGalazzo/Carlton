@@ -61,45 +61,38 @@ body {
     text-align: center;
     line-height: 4.5; }
 
-.home-for-dinner-card .my-dinner-status-row {
+.dinner-guests-list-card .sub-title {
+  font-size: 10pt;
+  margin-top: 20px; }
+
+.dinner-guests-self-status {
+  max-width: 500px;
   border-bottom-style: dashed;
   border-bottom-color: #757575;
   border-bottom-width: thin;
   padding-bottom: 10px; }
+  .dinner-guests-self-status .home-for-dinner-row label {
+    font-size: 10pt;
+    color: #757575;
+    margin-top: 10px; }
+  .dinner-guests-self-status .carlton-select .label {
+    font-size: 10pt;
+    color: #757575; }
 
-.home-for-dinner-card .sub-title {
-  font-size: 10pt;
-  margin-top: 20px; }
-
-.home-for-dinner-card img.avatar-img {
-  height: 40px;
-  width: 40px;
-  border-radius: 20px; }
-
-.home-for-dinner-card .feed-title {
-  color: #757575;
-  font-weight: bold; }
-
-.home-for-dinner-card .feed-message {
-  color: #757575; }
-
-.home-for-dinner-card .primary-content ul .row {
+.dinner-guests-list-item {
   margin-top: 10px; }
-
-.home-for-dinner-card .to-do-completed {
-  color: #7ac29a; }
-
-.home-for-dinner-card .my-dinner-status-row {
-  margin-top: 15px; }
-
-.home-for-dinner-card .carlton-select .label {
-  font-size: 10pt;
-  color: #757575; }
-
-.home-for-dinner-card .home-for-dinner-row label {
-  font-size: 10pt;
-  color: #757575;
-  margin-top: 10px; }
+  .dinner-guests-list-item img.avatar-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px; }
+  .dinner-guests-list-item .guest-name {
+    color: #757575;
+    font-weight: bold;
+    font-size: 10pt; }
+  .dinner-guests-list-item .guest-message {
+    color: #757575; }
+  .dinner-guests-list-item .is-home-for-dinner {
+    color: #7ac29a; }
 
 .carlton-count-card .carlton-card {
   max-width: 250px; }

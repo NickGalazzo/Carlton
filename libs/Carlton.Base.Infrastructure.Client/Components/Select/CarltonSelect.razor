@@ -22,12 +22,29 @@
     [Parameter]
     public EventCallback<KeyValuePair<string, int>> ValueChangedCallback { get; set; }
 
+    [Parameter]
+    public int SelectedValue { get; set; }
+
     private string _valueDisplay = null;
 
     private void Option_Click(KeyValuePair<string, int> opt)
     {
         _valueDisplay = opt.Key;
+        SelectedValue = opt.Value;
         ValueChangedCallback.InvokeAsync(opt);
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        var selectedValue = Options.FirstOrDefault(o => o.Value == SelectedValue);
+        _valueDisplay = selectedValue.Key == null ? string.Empty : selectedValue.Key;
     }
 
 }

@@ -5,25 +5,54 @@ namespace Carlton.TestBed.Client.TestViewModels
 {
     public static class DinnerGuestsTestViewModels
     {
+        public static IList<DinnerGuestReason> SampleReasons = new List<DinnerGuestReason>
+                {
+                    new DinnerGuestReason(1, "Japan School"),
+                    new DinnerGuestReason(2, "Out With Friends")
+                };
+
+
         public static DinnerGuestsListViewModel DefaultHomeForDinnerViewModel()
         {
             var dinnerGuests = new List<DinnerGuestsListItemViewModel>()
                 {
-                    new DinnerGuestsListItemViewModel("Nick", true, string.Empty),
-                    new DinnerGuestsListItemViewModel("Steve", false, "Japaneese Class")
+                    DinnerGuestsListItemViewModel.CreateHomeForDinnerGuest("Nick"),
+                    DinnerGuestsListItemViewModel.CreateNotHomeForDinnerGuest("Steve", SampleReasons[0])
                 };
 
-            var mySavedReasons = new Dictionary<string, int>
-                    {
-                         {"Japan School", 1}
-                    };
+       
+            var myDinnerGuestStatus = DinnerGuestsListItemViewModel.CreateHomeForDinnerGuest("Nick");
 
-            var myDinnerGuestStatus = new DinnerGuestsListItemViewModel("Nick", true, string.Empty);
-
-            var dinnerGuestSelfViewModel = new DinnerGuestSelfStatusViewModel(myDinnerGuestStatus, mySavedReasons);
+            var dinnerGuestSelfViewModel = new DinnerGuestSelfStatusViewModel(myDinnerGuestStatus, SampleReasons);
 
 
             return new DinnerGuestsListViewModel(dinnerGuestSelfViewModel, dinnerGuests);
+        }
+
+        public static DinnerGuestsListItemViewModel DinnerGuestHomeViewModel()
+        {
+            return DinnerGuestsListItemViewModel.CreateHomeForDinnerGuest("Nick");
+        }
+
+        public static DinnerGuestsListItemViewModel DinnerGuestNotHomeViewModel()
+        {
+            var reason = new DinnerGuestReason(1, "Japan School");
+            return DinnerGuestsListItemViewModel.CreateNotHomeForDinnerGuest("Steve", reason);
+        }
+
+        public static DinnerGuestSelfStatusViewModel DinnerGuestsSelfHomeViewModel()
+        {
+            return new DinnerGuestSelfStatusViewModel(DinnerGuestHomeViewModel(),
+                new List<DinnerGuestReason>
+                {
+                    new DinnerGuestReason(1, "Japan School"),
+                    new DinnerGuestReason(2, "Out With Friends")
+                });
+        }
+
+        public static DinnerGuestSelfStatusViewModel DinnerGuestsSelfNotHomeViewModel()
+        {
+            return new DinnerGuestSelfStatusViewModel(DinnerGuestNotHomeViewModel(), SampleReasons);
         }
     }
 }
