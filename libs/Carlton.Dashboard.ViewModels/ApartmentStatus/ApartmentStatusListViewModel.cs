@@ -4,16 +4,11 @@ namespace Carlton.Dashboard.ViewModels.ApartmentStatus
 {
     public class ApartmentStatusListViewModel
     {
-        public List<ApartmentStatusListItemViewModel> Statuses { get; internal set; }
+        public IEnumerable<ApartmentStatusListItemViewModel> Statuses { get; private set; }
 
-        public ApartmentStatusListViewModel(List<ApartmentStatusListItemViewModel> statuses)
+        public ApartmentStatusListViewModel(IEnumerable<ApartmentStatusListItemViewModel> statuses)
         {
             Statuses = statuses;
-        }
-
-        public ApartmentStatusListViewModel()
-        {
-            Statuses = new List<ApartmentStatusListItemViewModel>();
         }
     }
 }

@@ -4,16 +4,11 @@ namespace Carlton.Dashboard.ViewModels.ToDos
 {
     public class ToDoListViewModel
     {
-        public List<ToDoListItemViewModel> ToDoList { get; internal set; }
+        public IEnumerable<ToDoListItemViewModel> ToDoList { get; private set; }
 
-        public ToDoListViewModel()
+        public ToDoListViewModel(IEnumerable<ToDoListItemViewModel> toDoList)
         {
-            ToDoList = new List<ToDoListItemViewModel>();
-        }
-
-        public ToDoListViewModel(List<ToDoListItemViewModel> toDos)
-        {
-            ToDoList = toDos;
-        }
+            ToDoList = toDoList;
+        }     
     }
 }

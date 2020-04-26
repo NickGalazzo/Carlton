@@ -1,5 +1,5 @@
 ﻿using Carlton.Base.Infrastructure.Client.Data;
-using Carlton.Dashboard.ViewModels.HomeForDinner;
+using Carlton.Dashboard.ViewModels.DinnerGuests;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Carlton.Dashboard.Client
 {
-    public class TestDataService : IDataService<HomeForDinnerViewModel>
+    public class TestDataService : IDataService<DinnerGuestsListViewModel>
     {
         public event EventHandler<ViewModelChangedEventArgs> ViewModelChanged;
 
-        event EventHandler<EventArgs> IReadOnlyDataService<HomeForDinnerViewModel>.ViewModelChanged
+        event EventHandler<EventArgs> IReadOnlyDataService<DinnerGuestsListViewModel>.ViewModelChanged
         {
             add
             {
@@ -24,24 +24,17 @@ namespace Carlton.Dashboard.Client
             }
         }
 
-        public HomeForDinnerViewModel GetViewModel()
+        public DinnerGuestsListViewModel GetViewModel()
         {
-            return new HomeForDinnerViewModel
-            {
-                DinnerGuests = new List<DinnerGuest>
-                {
-                    new DinnerGuest("test", true, "asdfsd"),
-                    new DinnerGuest("test2", false, "dasdfsdf")
-                }
-            };
+            return null;
         }
 
-        public Task HandleComponentEvent(IRequest<HomeForDinnerViewModel> evt)
+        public Task HandleComponentEvent(IRequest<DinnerGuestsListViewModel> evt)
         {
             throw new NotImplementedException();
         }
 
-        public void ReplaceSate(HomeForDinnerViewModel viewModel)
+        public void ReplaceSate(DinnerGuestsListViewModel viewModel)
         {
             throw new NotImplementedException();
         }

@@ -2,9 +2,9 @@
 {
     public class ApartmentStatusListItemViewModel
     {
-        public string StatusName { get; set; }
-        public ApartmentStatuses StatusValue { get; set; }
-        public string StatusIcon { get; set; }
+        public string StatusName { get; private set; }
+        public ApartmentStatuses StatusValue { get; private set; }
+        public string StatusIcon { get; private set; }
 
         public ApartmentStatusListItemViewModel(string statusName, ApartmentStatuses statusValue, string statusIcon)
         {

@@ -20,7 +20,7 @@ namespace Carlton.Dashboard.Components.ToDo
             //var newEvt = _http.Get($"/CompleteEvent/{evt.ToDoId}");
 
 
-            return Task.FromResult(new ToDoListViewModel());
+            return null;// Task.FromResult(new ToDoListViewModel());
         }
     }
 }

@@ -2,9 +2,9 @@
 {
     public class ToDoListItemViewModel
     {
-        public int Id { get; internal set; }
-        public string Name { get; internal set; }
-        public bool IsCompleted { get; internal set; }
+        public int Id { get; private set; }
+        public string Name { get; private set; }
+        public bool IsCompleted { get; private set; }
 
 
         public ToDoListItemViewModel(int id, string name, bool isCompleted)

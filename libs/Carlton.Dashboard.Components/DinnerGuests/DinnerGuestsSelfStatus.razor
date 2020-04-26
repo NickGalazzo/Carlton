@@ -1,0 +1,20 @@
+﻿@using Carlton.Base.Client.Components.Checkbox
+@using Carlton.Base.Client.Components.Select 
+
+@inherits CarltonParentComponent<DinnerGuestSelfStatusViewModel>
+
+<div class="my-dinner-status-row">
+    <DinnerGuestsListItem Guest="ViewModel.MyGuestStatus" ShowIndicator="false" />
+    <div class="row home-for-dinner-row">
+        <div class="col-9">
+            <label>Are you home for dinner?</label>
+        </div>
+        <div class="col-3 text-center">
+            <CarltonCheckbox IsChecked="true" />
+        </div>
+    </div>
+
+    <CarltonSelect Label="Reason?" Options="ViewModel.MySavedReasons" />
+</div>
+
+<div class="sub-title">Dinner Guests</div>

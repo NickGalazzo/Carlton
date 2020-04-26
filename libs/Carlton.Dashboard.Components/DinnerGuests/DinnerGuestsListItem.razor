@@ -1,4 +1,4 @@
-﻿@using Carlton.Dashboard.ViewModels.HomeForDinner
+﻿@using Carlton.Dashboard.ViewModels.DinnerGuests 
 
 <div class="row">
     <div class="col-3 text-center">
@@ -18,7 +18,7 @@
 
 @code  {
     [Parameter]
-    public DinnerGuest Guest { get; set; }
+    public DinnerGuestsListItemViewModel Guest { get; set; }
 
     [Parameter]
     public bool ShowIndicator { get; set; }

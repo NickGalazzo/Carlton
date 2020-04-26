@@ -8,9 +8,7 @@ namespace Carlton.TestBed.Client.TestViewModels
     {
         public static ApartmentStatusListViewModel DefaultApartmentStatusViewModel()
         {
-            return new ApartmentStatusListViewModel()
-            {
-                Statuses = new List<ApartmentStatusListItemViewModel>
+            var apartmentStatuses = new List<ApartmentStatusListItemViewModel>
                      {
                             new ApartmentGarbageStatusListItemViewModel(ApartmentStatuses.Complete),
                             new ApartmentRecycleStatusListItemViewModel(ApartmentStatuses.Complete),
@@ -18,18 +16,19 @@ namespace Carlton.TestBed.Client.TestViewModels
                             new ApartmentCleaningStatusListItemViewModel(ApartmentStatuses.Complete),
                             new ApartmentLaundryStatusListItemViewModel(ApartmentStatuses.Complete),
                             new ApartmentDryCleaningStatusListItemViewModel(ApartmentStatuses.Incomplete)
-                      }
-            };
+                      };
+
+            return new ApartmentStatusListViewModel(apartmentStatuses);
         }
 
         public static ApartmentStatusListItemViewModel CompletedStatusViewModel()
         {
-            return new ApartmentStatusListItemViewModel("Garbage", ApartmentStatuses.Complete, "mdi-delete");
+            return new ApartmentGarbageStatusListItemViewModel(ApartmentStatuses.Complete);
         }
 
         public static ApartmentStatusListItemViewModel InCompleteStatusViewModel()
         {
-            return new ApartmentStatusListItemViewModel("Garbage", ApartmentStatuses.Incomplete, "mdi-delete");
+            return new ApartmentGarbageStatusListItemViewModel(ApartmentStatuses.Incomplete);
         }
     }
 }

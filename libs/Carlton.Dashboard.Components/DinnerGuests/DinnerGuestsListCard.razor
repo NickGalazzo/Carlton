@@ -1,0 +1,20 @@
+﻿@using Carlton.Base.Client.Components.Cards
+@using Carlton.Dashboard.ViewModels.DinnerGuests
+
+
+@inherits CarltonParentComponent<DinnerGuestsListViewModel>
+
+
+<div class="home-for-dinner-card">
+    <CarltonListCard CardTitle="Home For Dinner" Items="ViewModel.DinnerGuests">
+        <HeaderCardContent>
+            <DinnerGuestsSelfStatus ViewModel="ViewModel.MyDinnerGuestStatus" OnComponentEvent="base.OnComponentEvent" />
+            <div class="sub-title">Dinner Guests</div>
+        </HeaderCardContent>
+
+        <ItemTemplate Context="guest">
+            <DinnerGuestsListItem Guest="guest" ShowIndicator="true" />
+        </ItemTemplate>
+    </CarltonListCard>
+</div>
+

@@ -7,7 +7,7 @@
 
 using Carlton.Dashboard.Components.ApartmentStatus;
 using Carlton.Dashboard.Components.Feed;
-using Carlton.Dashboard.Components.HomeForDinner;
+using Carlton.Dashboard.Components.DinnerGuests;
 using Carlton.Dashboard.Components.HouseholdItems;
 using Carlton.Dashboard.Components.ToDo;
 using Carlton.Dashboard.Components.CountCards;
@@ -53,7 +53,10 @@ namespace Carlton.TestBed.Client
               .AddCarltonComponent<ApartmentStatusListCard>("ApartmentStatus/ApartmentStatusListCard/Default", ApartmentStatusTestViewModels.DefaultApartmentStatusViewModel())
 
 
-              .AddCarltonComponent<HomeForDinnerCard>("HomeForDinner/HomeForDinnerCard", HomeForDinnerTestViewModels.DefaultHomeForDinnerViewModel())
+              
+              .AddCarltonComponent<DinnerGuestsListCard>("DinnerGuests/DinnerGuestsListCard", DinnerGuestsTestViewModels.DefaultHomeForDinnerViewModel())
+              
+              
               .AddCarltonComponent<HouseholdItemsList>("HouseHoldItems/HouseHoldItems", HouseholdItemsTestViewModels.DefaultHouseholdItemsViewModel())
               .AddCarltonComponent<FeedListCard>("Feed/FeedListCard", FeedListTestViewModels.DefaultFeedViewModels())
               .AddCarltonComponent<ToDosCountCard>("CountCards/ToDos/Default", ToDosCountTestViewModels.DefaultToDoListViewModel())
