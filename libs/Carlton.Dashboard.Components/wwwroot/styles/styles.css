@@ -44,30 +44,28 @@ body {
 .to-do-list-item .carlton-checkbox span {
   color: #009688; }
 
-.feed-list-card .feed-item-row {
-  border-bottom-style: solid;
-  border-bottom-color: rgba(117, 117, 117, 0.25);
-  padding: 10px; }
-
-.feed-list-card img.avatar-img {
-  height: 40px;
-  width: 40px;
-  border-radius: 20px; }
-
-.feed-list-card .feed-title {
-  color: #7ac29a;
-  font-weight: bold; }
-
-.feed-list-card .feed-message {
-  color: #757575;
-  font-size: 10pt; }
-
-.feed-list-card .feed-date-col {
-  text-align: center; }
-  .feed-list-card .feed-date-col .feed-date {
-    font-size: 10px;
-    text-align: center;
-    line-height: 4.5; }
+.feed-list-item {
+  max-width: 350px; }
+  .feed-list-item .feed-item-row {
+    border-bottom-style: solid;
+    border-bottom-color: rgba(117, 117, 117, 0.25);
+    padding: 10px; }
+  .feed-list-item img.avatar-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px; }
+  .feed-list-item .feed-title {
+    color: #7ac29a;
+    font-weight: bold; }
+  .feed-list-item .feed-message {
+    color: #757575;
+    font-size: 10pt; }
+  .feed-list-item .feed-date-col {
+    text-align: center; }
+    .feed-list-item .feed-date-col .feed-date {
+      font-size: 10px;
+      text-align: center;
+      line-height: 4.5; }
 
 .dinner-guests-list-card .sub-title {
   font-size: 10pt;

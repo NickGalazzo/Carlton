@@ -64,10 +64,14 @@ namespace Carlton.TestBed.Client
               .AddCarltonComponent<DinnerGuestsListCard>("DinnerGuests/DinnerGuestsListCard", DinnerGuestsTestViewModels.DefaultHomeForDinnerViewModel())
 
 
-              .AddCarltonComponent<GroceriesListItem>("Groceries/GroceriesListItems", GroceriesTestViewModels.GroceriesGreenListItemViewModel())
-              .AddCarltonComponent<GroceriesListCard>("Groceries/GroceriesListCard", GroceriesTestViewModels.DefaultGroceriesListViewModel())
-             
-              .AddCarltonComponent<FeedListCard>("Feed/FeedListCard", FeedListTestViewModels.DefaultFeedViewModels())
+              .AddCarltonComponent<GroceriesListItem>("Groceries/GroceriesListItems/Low", GroceriesTestViewModels.GroceriesLowListItemViewModel())
+              .AddCarltonComponent<GroceriesListItem>("Groceries/GroceriesListItems/Medium", GroceriesTestViewModels.GroceriesMediumListItemViewModel())
+              .AddCarltonComponent<GroceriesListItem>("Groceries/GroceriesListItems/High", GroceriesTestViewModels.GroceriesHighListItemViewModel())
+              .AddCarltonComponent<GroceriesListCard>("Groceries/GroceriesListCard/Default", GroceriesTestViewModels.DefaultGroceriesListViewModel())
+
+              .AddCarltonComponent<FeedListItem>("Feed/FeedListItem", FeedListTestViewModels.DefaultFeedListItemViewModel())
+              .AddCarltonComponent<FeedListCard>("Feed/FeedListCard", FeedListTestViewModels.DefaultFeedListViewModel())
+
               .AddCarltonComponent<ToDosCountCard>("CountCards/ToDos/Default", ToDosCountTestViewModels.DefaultToDoListViewModel())
               .AddCarltonComponent<ApartmentStatusCountCard>("CountCards/ApartmentStatus/Default", ApartmentStatusCountCardTestViewModels.DefaultApartmentStatusCountCardViewModel())
               .AddCarltonComponent<DinnerGuestsCountCard>("CountCards/DinnerGuesets/Default", DinnerGuestsCountCardTestViewModels.DefaultDinngerGuestsCountCardViewModel())

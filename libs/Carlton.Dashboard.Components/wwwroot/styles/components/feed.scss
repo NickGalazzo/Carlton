@@ -1,6 +1,9 @@
 ﻿@import "../variables/colors.scss";
+@import "../mixins/mixins.scss";
 
-.feed-list-card {
+.feed-list-item{
+    max-width: 350px;
+
     .feed-item-row {
         border-bottom-style: solid;
         border-bottom-color: rgba($textColor, 0.25);
@@ -8,9 +11,7 @@
     }
 
     img.avatar-img {
-        height: 40px;
-        width: 40px;
-        border-radius: 20px;
+        @include avatar-img;
     }
 
     .feed-title {

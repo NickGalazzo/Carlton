@@ -21,9 +21,19 @@ namespace Carlton.TestBed.Client.TestViewModels
             };
         }
 
-        public static GroceriesListItemViewModel GroceriesGreenListItemViewModel()
+        public static GroceriesListItemViewModel GroceriesLowListItemViewModel()
         {
-            return DefaultGroceriesListViewModel().Items[1];
+            return DefaultGroceriesListViewModel().Items[0];
+        }
+
+        public static GroceriesListItemViewModel GroceriesMediumListItemViewModel()
+        {
+            return DefaultGroceriesListViewModel().Items[2];
+        }
+
+        public static GroceriesListItemViewModel GroceriesHighListItemViewModel()
+        {
+            return DefaultGroceriesListViewModel().Items[3];
         }
     }
 }

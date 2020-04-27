@@ -1,4 +1,6 @@
-﻿.header {
+﻿@import "../mixins/mixins.scss";
+
+.header {
     height: 60px;
     background-color: #ffffff;
     line-height: 60px;
@@ -10,9 +12,7 @@
     }
 
     img {
-        height: 40px;
-        width: 40px;
-        border-radius: 20px;
+        @include avatar-img;
     }
 
     .logged-in-user {

@@ -1,38 +1,34 @@
 ﻿using Carlton.Dashboard.Components.Feed;
 using Carlton.Dashboard.ViewModels.Feed;
 using System.Collections.Generic;
+using System.Linq;
+using System;
 
 namespace Carlton.TestBed.Client.TestViewModels
 {
     public static class FeedListTestViewModels
     {
-        public static FeedViewModel DefaultFeedViewModels()
+        public static FeedListViewModel DefaultFeedListViewModel()
         {
-            var feedViewModel = new FeedViewModel();
-
             const string TOOK_OUT_GARBAGE = "Took Out Garbage";
-            feedViewModel.GroupedFeedItems.Add(
-                        "Today",
-                        new List<FeedItem>
-                        {
-                        new FeedItem("Garbage", TOOK_OUT_GARBAGE,
-                            new FeedUser("Nick", string.Empty)),
-                        new FeedItem("Household Items", "Purchahsed Household Items",
-                            new FeedUser("Nick", string.Empty))
-                    });
+            var feedItems = new List<FeedListItemViewModel>();
+            var feedUser = new FeedUser("Nick", string.Empty);
 
-            feedViewModel.GroupedFeedItems.Add(
-                "Yesterday",
-                new List<FeedItem>
-                {
-                    new FeedItem("Garbage", TOOK_OUT_GARBAGE,
-                        new FeedUser("Nick", string.Empty)),
-                    new FeedItem("Household Items", "Purchahsed Household Items",
-                        new FeedUser("Nick", string.Empty))
-                }
-            );
+         
+            feedItems.Add(new FeedListItemViewModel("Garbage", TOOK_OUT_GARBAGE, feedUser, DateTimeOffset.Now));
 
-            return feedViewModel;
+            feedItems.Add(new FeedListItemViewModel("Garbage", TOOK_OUT_GARBAGE, feedUser, DateTimeOffset.Now));
+
+            feedItems.Add(new FeedListItemViewModel("Household Items", "Purchahsed Household Items", feedUser, DateTime.Now));
+
+
+
+            return new FeedListViewModel(feedItems);
+        }
+    
+        public static FeedListItemViewModel DefaultFeedListItemViewModel()
+        {
+            return DefaultFeedListViewModel().FeedItems.First();
         }
     }
 }

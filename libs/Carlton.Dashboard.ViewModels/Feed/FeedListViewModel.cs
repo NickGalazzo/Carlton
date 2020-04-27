@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace Carlton.Dashboard.Components.Feed
 {
-    public class FeedViewModel 
+    public class FeedListViewModel 
     {
-        public IDictionary<string, IEnumerable<FeedItem>> GroupedFeedItems { get; set; }
+        public IEnumerable<FeedListItemViewModel> FeedItems { get; }
 
-        public FeedViewModel()
+        public FeedListViewModel(IEnumerable<FeedListItemViewModel> feedItems)
         {
-            GroupedFeedItems = new Dictionary<string, IEnumerable<FeedItem>>();
+            FeedItems = feedItems;
         }
     }
 }

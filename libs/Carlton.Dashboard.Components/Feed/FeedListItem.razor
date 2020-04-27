@@ -1,6 +1,8 @@
 ﻿@using Carlton.Dashboard.ViewModels.Feed
 
-<div class="feed-item">
+@inherits CarltonParentComponent<FeedListItemViewModel>
+
+<div class="feed-list-item">
     <div class="feed-item-row row">
         <div class="col-2">
             <img class="avatar-img" src="https://www.w3schools.com/w3images/avatar2.png" />
@@ -10,12 +12,8 @@
             <div class="feed-message">@ViewModel.Message</div>
         </div>
         <div class="col-2 align-middle feed-date-col">
-            <span class="feed-date">2h</span>
+            <span class="feed-date">@ViewModel.FeedDisplayDate</span>
         </div>
     </div>
 </div>
 
-@code {
-    [Parameter]
-    public FeedItem ViewModel { get; set; }
-}

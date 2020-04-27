@@ -1,24 +1,14 @@
-﻿@using Carlton.Base.Client.Components.Cards
-@using Carlton.Dashboard.ViewModels.Feed
+﻿@using Carlton.Dashboard.ViewModels.Feed
 
-@inherits CarltonParentComponent<FeedViewModel>
+
+@inherits CarltonParentComponent<FeedListViewModel>
 
 <div class="feed-list-card">
-    <CarltonListCard TItem="FeedItem" Items="GroupedItems.SelectMany(o=>o.GroupItems)" CardTitle="Feed">
+    <CarltonListCard TItem="FeedListItemViewModel" Items="ViewModel.FeedItems" CardTitle="Feed">
         <ItemTemplate Context="feedItem">
-            <FeedItemView ViewModel="feedItem" />
+            <FeedListItem ViewModel="feedItem" />
         </ItemTemplate>
     </CarltonListCard>
 </div>
 
 
-
-@code {
-    private IEnumerable<CarltonGroupedListCard<FeedItem>.GroupedItem> GroupedItems;
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        GroupedItems = ViewModel.GroupedFeedItems.Select(o => new CarltonGroupedListCard<FeedItem>.GroupedItem { GroupName = o.Key, GroupItems = o.Value });
-    }
-}

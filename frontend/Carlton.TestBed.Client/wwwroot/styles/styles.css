@@ -11,7 +11,8 @@
   color: #009688; }
 
 .test-bed {
-  height: 500px; }
+  height: 500px;
+  padding-top: 20px; }
 
 .event-console textarea {
   width: 100%;
