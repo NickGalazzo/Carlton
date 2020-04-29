@@ -25,12 +25,13 @@
     }
 
     .feed-date-col {
-        text-align: center;
+        text-align: right;
 
         .feed-date {
             font-size: 10px;
             text-align: center;
             line-height: 4.5;
+            color: $textColor;
         }
     }
 }

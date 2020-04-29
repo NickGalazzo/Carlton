@@ -1,6 +1,15 @@
 ﻿@import "../variables/colors.scss";
 
 .carlton-count-card {
+
+    .header-content{
+        display: none;
+    }
+
+    .status-row{
+        display: none;
+    }
+
     .carlton-card {
         max-width: 250px;
     }

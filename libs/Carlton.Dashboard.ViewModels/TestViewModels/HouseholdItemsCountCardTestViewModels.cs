@@ -2,11 +2,11 @@
 
 namespace Carlton.Dashboard.ViewModels.TestViewModels
 {
-    public static class HouseholdItemsCountCardTestViewModels
+    public static class GroceriesCountCardTestViewModels
     {
-        public static HouseholdItemsCountCardViewModel DefaultHouseholdItemsCountCardViewModel()
+        public static GroceriesCountCardViewModel DefaultGroceriesCountCardViewModel()
         {
-            return new HouseholdItemsCountCardViewModel(7);
+            return new GroceriesCountCardViewModel(7);
         }
     }
 }

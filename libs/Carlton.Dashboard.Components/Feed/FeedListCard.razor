@@ -4,7 +4,7 @@
 @inherits CarltonParentComponent<FeedListViewModel>
 
 <div class="feed-list-card">
-    <CarltonListCard TItem="FeedListItemViewModel" Items="ViewModel.FeedItems" CardTitle="Feed">
+    <CarltonListCard TItem="FeedListItemViewModel" Items="ViewModel.FeedItems" CardTitle="Feed" CardStatus="base.ComponentStatus">
         <ItemTemplate Context="feedItem">
             <FeedListItem ViewModel="feedItem" />
         </ItemTemplate>

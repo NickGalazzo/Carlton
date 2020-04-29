@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Globalization;
 
 namespace Carlton.Dashboard.ViewModels.Feed
 {
@@ -8,10 +9,37 @@ namespace Carlton.Dashboard.ViewModels.Feed
         public string Title { get; private set; }
         public string Message { get; private set; }
         public FeedUser User { get; private set; }
-        public DateTimeOffset FeedDate {get; private set;}
+        public DateTimeOffset FeedDate { get; private set; }
         public string FeedDisplayDate
         {
-            get { return FeedDate.ToLocalTime().Date.ToString("mm/dd/yyyy"); }
+            get
+            {
+
+                var timeDiff = FeedDate.Subtract(DateTimeOffset.UtcNow);
+
+
+                if(timeDiff < TimeSpan.FromSeconds(60))
+                {
+                    return $"moments ago";
+                }
+                else if(timeDiff < TimeSpan.FromMinutes(60))
+                {
+                    return $"{timeDiff.TotalMinutes} mins ago";
+                }
+                else if(timeDiff > TimeSpan.FromHours(1) && timeDiff < TimeSpan.FromHours(2))
+                {
+                    return "1 hr ago";
+                }
+                else if(timeDiff >= TimeSpan.FromHours(2) && timeDiff < TimeSpan.FromDays(1))
+                {
+                    return FeedDate.ToLocalTime().ToString("H:mm tt", new CultureInfo("en-US"));
+                }
+                else
+                {
+                    return FeedDate.ToLocalTime().Date.ToString("MMMM dd", new CultureInfo("en-US"));
+                }
+            }
+
         }
 
 

@@ -75,7 +75,7 @@ namespace Carlton.TestBed.Client
               .AddCarltonComponent<ToDosCountCard>("CountCards/ToDos/Default", ToDosCountTestViewModels.DefaultToDoListViewModel())
               .AddCarltonComponent<ApartmentStatusCountCard>("CountCards/ApartmentStatus/Default", ApartmentStatusCountCardTestViewModels.DefaultApartmentStatusCountCardViewModel())
               .AddCarltonComponent<DinnerGuestsCountCard>("CountCards/DinnerGuesets/Default", DinnerGuestsCountCardTestViewModels.DefaultDinngerGuestsCountCardViewModel())
-              .AddCarltonComponent<HouseholdItemsCountCard>("CountCards/HouseholdItems/Default", HouseholdItemsCountCardTestViewModels.DefaultHouseholdItemsCountCardViewModel());
+              .AddCarltonComponent<GroceriesCountCard>("CountCards/Groceries/Default", GroceriesCountCardTestViewModels.DefaultGroceriesCountCardViewModel());
 
             var navTree = builder.Build();
 
