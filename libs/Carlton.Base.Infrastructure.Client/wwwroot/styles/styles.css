@@ -60,48 +60,93 @@
   background: #c1c1c1;
   border-radius: 10px; }
 
-.carlton-select input {
-  color: #555;
-  width: 100%;
-  border: none;
-  background: none;
-  border-bottom: 2px solid #999;
-  transition: 0.25s border-color ease-in-out; }
-  .carlton-select input:focus {
-    border-color: #009688; }
-
-.carlton-select .options {
-  background: #fff;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: 0.5s opacity ease-in-out, 0.5s max-height ease-in-out;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14); }
-
-.carlton-select .label {
-  position: absolute;
-  transform: translateY(-1.8rem);
-  transition: 0.25s transform ease-in-out, 0.25s color ease-in-out; }
-
-.carlton-select input:focus ~ .label, .carlton-select input:not(:placeholder-shown) ~ .label {
-  color: #009688;
-  transform: translate(-0.8rem, -2.5rem) scale(0.6); }
-
-.carlton-select input:focus ~ .options {
-  opacity: 1;
-  max-height: 8rem; }
-
-.options > div {
-  padding: 0.5rem; }
-  .options > div:not(*:last-child) {
-    border-bottom: 1px solid #aaa; }
-
 .carlton-select {
   background: none;
   max-width: 12rem; }
+  .carlton-select input {
+    color: #555;
+    width: 100%;
+    border: none;
+    background: none;
+    border-bottom: 2px solid #999;
+    transition: 0.25s border-color ease-in-out; }
+    .carlton-select input:focus {
+      border-color: #009688; }
+  .carlton-select .options {
+    background: #fff;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s opacity ease-in-out, 0.5s max-height ease-in-out;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14); }
+  .carlton-select .options > div {
+    padding: 0.5rem; }
+    .carlton-select .options > div:not(*:last-child) {
+      border-bottom: 1px solid #aaa; }
+  .carlton-select .label {
+    position: absolute;
+    transform: translateY(-1.8rem);
+    transition: 0.25s transform ease-in-out, 0.25s color ease-in-out; }
+  .carlton-select input:focus ~ .label, .carlton-select input:not(:placeholder-shown) ~ .label {
+    color: #009688;
+    transform: translate(-0.8rem, -2.5rem) scale(0.6); }
+  .carlton-select input:focus ~ .options {
+    opacity: 1;
+    max-height: 8rem; }
+  .carlton-select *:focus {
+    outline: none; }
 
-*:focus {
-  outline: none; }
+.carlton-toggle-switch input.switch {
+  font-size: 1.25em;
+  /*<-  change size*/
+  height: 0.7em;
+  display: inline-flex;
+  align-items: center;
+  width: 1.65em;
+  position: relative;
+  margin: 0.3em 0;
+  cursor: pointer; }
+
+.carlton-toggle-switch .switch::before {
+  content: "";
+  display: inline-flex;
+  position: absolute;
+  height: 0.8em;
+  width: 1.8em;
+  padding: 0 0.2em;
+  background: #BDB9A6;
+  border-radius: 1em;
+  box-shadow: inset 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  transition: all 300ms; }
+
+.carlton-toggle-switch .switch::after {
+  content: "";
+  display: inline-flex;
+  position: absolute;
+  height: 1em;
+  width: 1em;
+  border-radius: 1em;
+  background: #FFF;
+  box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  transition: all 300ms; }
+
+.carlton-toggle-switch input.switch:checked::after {
+  background-color: #06998b;
+  -webkit-transform: translateX(80%);
+  -moz-transform: translateX(80%);
+  transform: translateX(80%); }
+
+.carlton-toggle-switch input.switch:checked::before {
+  background: #7ac29a; }
+
+.carlton-toggle-switch input.switch:disabled::before,
+.carlton-toggle-switch input.switch:disabled::after {
+  background: #ccc;
+  cursor: not-allowed; }
 
 .tab-content {
   padding: 25px; }
@@ -172,3 +217,31 @@
   width: 300px;
   border-radius: 5px;
   background-color: #45A8F8; }
+
+.carlton-menu {
+  background: none;
+  max-width: 12rem; }
+  .carlton-menu *:focus {
+    outline: none; }
+  .carlton-menu .dots {
+    transform: translate(-0.8rem, -2.5rem) scale(0.6);
+    cursor: pointer; }
+    .carlton-menu .dots span {
+      color: #757575; }
+  .carlton-menu .dots:focus ~ .options {
+    opacity: 1;
+    max-height: 8rem; }
+  .carlton-menu .options {
+    background: #fff;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s opacity ease-in-out, 0.5s max-height ease-in-out;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14); }
+    .carlton-menu .options li {
+      list-style: none;
+      padding: 10px;
+      margin-left: 20px;
+      cursor: pointer; }
+      .carlton-menu .options li a {
+        color: #555; }

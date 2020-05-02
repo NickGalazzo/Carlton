@@ -1,10 +1,6 @@
-﻿@namespace Carlton.Base.Infrastructure.Client.Components.Toggle
-
-<div class="toggle-switch">
-    <label class="switch">
-        <input type="checkbox" checked="@IsChecked" @onclick:preventDefault @onchange="(evt) => ToggleChangedCallback.InvokeAsync((bool) evt.Value)">
-        <span class="slider round"></span>
-    </label>
+﻿
+<div class="carlton-toggle-switch" style="font-size: 14px">
+    <input class="switch right" type="checkbox" @(IsChecked ? "checked" : string.empty) />
 </div>
 
 
@@ -13,5 +9,5 @@
     public bool IsChecked { get; set; }
 
     [Parameter]
-    public EventCallback<bool> ToggleChangedCallback { get; set; }
+    public EventCallback<bool> OnToggleChangedCallback { get; set; }
 }

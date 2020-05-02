@@ -1,13 +1,13 @@
 ﻿@using Carlton.Base.Client.Enums
 
-<div class="carlton-card @(CardStatus==ComponentStatus.INVALID ? "card-invalid" : string.Empty)">
+<div class="carlton-card @(CardStatus == ComponentStatus.INVALID ? "card-invalid" : string.Empty)">
     <div class="container">
         <div class="card">
             <div class="card-body">
                 <div class="row status-row">
                     <h5 class="col-9 cd-title">@CardTitle</h5>
                     <div class="col-3 status-icon">
-                        <CarltonCardStatus CardStatus="CardStatus"/>
+                        <CarltonCardStatus CardStatus="CardStatus" />
                     </div>
                 </div>
                 <div class="header-content">

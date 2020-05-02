@@ -21,8 +21,7 @@ using Carlton.Base.Client.Components.Select;
 using Carlton.Base.Client.Components.Test;
 using Carlton.TestBed.Client.Services;
 using System.Collections.Generic;
-
-
+using Carlton.Base.Client.Components.Menu;
 
 namespace Carlton.TestBed.Client
 {
@@ -31,6 +30,16 @@ namespace Carlton.TestBed.Client
         public static TestBedNavService Bootstrap()
         {
             var builder = new TestBadNavTreeBuilder()
+
+              .AddComponent<CarltonMenu>("Menu", new Dictionary<string, object> {
+                  { "Options", new Dictionary<string, string>
+                      {
+                          {"Option 1", "Option 1" },
+                          {"Option 2", "Option 2" },
+                          {"Option 3", "Option 3" }
+                      }
+                  }
+              })
 
               .AddComponent<Header>("header/default")
 
@@ -60,7 +69,7 @@ namespace Carlton.TestBed.Client
               .AddCarltonComponent<DinnerGuestListItemWithIndicator>("DinnerGuests/DinnerGuestsListItem/WithIndicator/NotHomeForDinner", DinnerGuestsTestViewModels.DinnerGuestNotHomeViewModel())
               .AddCarltonComponent<DinnerGuestListItemWithoutIndicator>("DinnerGuests/DinnerGuestsListItem/WithoutIndicator/HomeForDinner", DinnerGuestsTestViewModels.DinnerGuestHomeViewModel())
               .AddCarltonComponent<DinnerGuestListItemWithoutIndicator>("DinnerGuests/DinnerGuestsListItem/WithoutIndicator/NotHomeForDinner", DinnerGuestsTestViewModels.DinnerGuestNotHomeViewModel())
-              
+
               .AddCarltonComponent<DinnerGuestsListCard>("DinnerGuests/DinnerGuestsListCard", DinnerGuestsTestViewModels.DefaultHomeForDinnerViewModel())
 
 

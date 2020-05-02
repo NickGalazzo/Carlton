@@ -1,0 +1,44 @@
+﻿$duration: 0.25s;
+
+.carlton-menu {
+    background: none;
+    max-width: 12rem;
+
+    *:focus {
+        outline: none;
+    }
+
+    .dots {
+        transform: translate(-0.8rem, -2.5rem) scale(0.6);
+        cursor: pointer;
+
+        span {
+            color: #757575
+        }
+    }
+
+    .dots:focus ~ .options {
+        opacity: 1;
+        max-height: 8rem;
+    }
+
+    .options {
+        background: #fff;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: ($duration * 2) opacity ease-in-out, ($duration * 2) max-height ease-in-out;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+
+        li {
+            list-style: none;
+            padding: 10px;
+            margin-left: 20px;
+            cursor: pointer;
+
+            a {
+                color: #555;
+            }
+        }
+    }
+}

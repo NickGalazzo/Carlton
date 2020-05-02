@@ -1,6 +1,9 @@
 ﻿
 @switch(CardStatus)
 {
+    case ComponentStatus.SYNCED:
+        <span class="mdi mdi-24px mdi-dots-vertical"></span>
+        break;
     case ComponentStatus.SYNCING:
         <img height="30" src="_content/Carlton.Base.Client/images/spinner.gif" />
         break;

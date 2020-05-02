@@ -3,6 +3,9 @@ $brand: #009688;
 $duration: 0.25s;
 
 .carlton-select {
+    background: none;
+    max-width: 12rem;
+
     input {
         color: #555;
         width: 100%;
@@ -25,6 +28,14 @@ $duration: 0.25s;
         box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
     }
 
+    .options > div {
+        padding: 0.5rem;
+
+        &:not(*:last-child) {
+            border-bottom: 1px solid #aaa;
+        }
+    }
+
     .label {
         position: absolute;
         transform: translateY(-1.8rem);
@@ -42,22 +53,12 @@ $duration: 0.25s;
         opacity: 1;
         max-height: 8rem;
     }
-}
 
-.options > div {
-    padding: 0.5rem;
-
-    &:not(*:last-child) {
-        border-bottom: 1px solid #aaa;
+    *:focus {
+        outline: none;
     }
 }
 
-.carlton-select {
-    background: none;
-    max-width: 12rem;
-}
 
 
-*:focus {
-    outline: none;
-}
+
