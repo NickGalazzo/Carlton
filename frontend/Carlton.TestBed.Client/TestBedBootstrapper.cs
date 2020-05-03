@@ -31,15 +31,7 @@ namespace Carlton.TestBed.Client
         {
             var builder = new TestBadNavTreeBuilder()
 
-              .AddComponent<CarltonMenu>("Menu", new Dictionary<string, object> {
-                  { "Options", new Dictionary<string, string>
-                      {
-                          {"Option 1", "Option 1" },
-                          {"Option 2", "Option 2" },
-                          {"Option 3", "Option 3" }
-                      }
-                  }
-              })
+              .AddComponent<CarltonSimpleMenu>("SimpleMenu/Default", CarltonMenuTestStates.Default())
 
               .AddComponent<Header>("header/default")
 

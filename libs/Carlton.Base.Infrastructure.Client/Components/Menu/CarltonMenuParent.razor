@@ -1,0 +1,24 @@
+﻿
+<div class="carlton-menu">
+    <a href="#" class="dots">
+        <span class="mdi mdi-24px mdi-dots-vertical"></span>
+    </a>
+
+    <div class="options">
+        <ul>
+            @foreach(var item in MenuItems.Items)
+            {            
+                <li>
+                    @MenuItemTemplate(item)
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+@code{
+    [Parameter]
+    public CarltonMenuItems MenuItems { get; set; }
+    [Parameter]
+    public RenderFragment<CarltonMenuItem> MenuItemTemplate {get; set;}
+}

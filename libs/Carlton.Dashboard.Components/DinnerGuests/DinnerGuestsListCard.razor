@@ -6,7 +6,11 @@
 
 
 <div class="dinner-guests-list-card">
-    <CarltonListCard CardTitle="Dinner Guests" Items="ViewModel.DinnerGuests" CardStatus="base.ComponentStatus">
+    <CarltonListCard CardTitle="Dinner Guests"
+                     Items="ViewModel.DinnerGuests"
+                     CardStatus="base.ComponentStatus"
+                     MenuItems="base.MenuItems">
+
         <HeaderCardContent>
             <DinnerGuestsSelfStatus ViewModel="ViewModel.MyDinnerGuestStatus" OnComponentEvent="base.OnComponentEvent" />
             <div class="sub-title">Guests</div>
@@ -17,4 +21,5 @@
         </ItemTemplate>
     </CarltonListCard>
 </div>
+
 

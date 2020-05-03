@@ -38,6 +38,8 @@
   .carlton-card.card-invalid .card {
     border-color: #ffc107;
     border-width: thick; }
+  .carlton-card ul {
+    list-style: none; }
 
 /* width */
 ::-webkit-scrollbar {
@@ -232,9 +234,13 @@
     opacity: 1;
     max-height: 8rem; }
   .carlton-menu .options {
-    background: #fff;
-    opacity: 0;
+    position: relative;
+    z-index: 999 !important;
+    width: 200px;
     max-height: 0;
+    background: #fff;
+    text-align: left;
+    opacity: 0;
     overflow: hidden;
     transition: 0.5s opacity ease-in-out, 0.5s max-height ease-in-out;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14); }

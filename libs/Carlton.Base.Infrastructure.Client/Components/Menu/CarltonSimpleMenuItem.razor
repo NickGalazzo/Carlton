@@ -1,0 +1,10 @@
+﻿
+<a @onclick="Event">@Name</a>
+
+
+@code{
+    [Parameter]
+    public string Name { get; set; }
+    [Parameter]
+    public Func<Task> Event { get; set; }
+}

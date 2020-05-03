@@ -1,8 +1,9 @@
-﻿@inherits  CarltonCard
+﻿
+@inherits CarltonCard
 @typeparam TItem
 
 <div class="carlton-list-card">
-    <CarltonCard CardTitle="@CardTitle" CardStatus="CardStatus">
+    <CarltonCard CardTitle="@CardTitle" CardStatus="CardStatus" MenuItems="MenuItems">
         <HeaderCardContent>
             @HeaderCardContent
         </HeaderCardContent>
@@ -10,13 +11,12 @@
             <ul>
                 @foreach(var item in Items)
                 {
-                    @ItemTemplate(item)
+                    <li>
+                        @ItemTemplate(item)
+                    </li>
                 }
             </ul>
         </PrimaryCardContent>
-        <SecondaryCardContent>
-            @SecondaryCardContent
-        </SecondaryCardContent>
     </CarltonCard>
 </div>
 
@@ -27,5 +27,4 @@
     [Parameter]
     public IEnumerable<TItem> Items { get; set; }
 }
-
 
