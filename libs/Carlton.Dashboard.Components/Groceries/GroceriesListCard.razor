@@ -5,7 +5,14 @@
 @inherits CarltonParentComponent<GroceriesListViewModel>
 
 <div class="groceries-list-items-card">
-    <CarltonListCard CardTitle="Groceries" Items="ViewModel.Items" CardStatus="base.ComponentStatus">
+    <CarltonListCard CardTitle="Groceries"
+                     Items="ViewModel.Items"
+                     CardStatus="base.ComponentStatus">
+
+        <MenuCardContent>
+            <CarltonCardMenu TViewModel="GroceriesListViewModel" Callback="OnComponentEvent" />
+        </MenuCardContent>
+
         <ItemTemplate Context="item">
             <GroceriesListItem ViewModel="item" />
         </ItemTemplate>

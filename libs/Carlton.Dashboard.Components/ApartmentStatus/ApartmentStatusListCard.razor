@@ -4,9 +4,16 @@
 @inherits CarltonParentComponent<ApartmentStatusListViewModel>
 
 <div class="apartment-status-list-card">
-    <CarltonListCard CardTitle="Apartment Status" Items="ViewModel.Statuses" CardStatus="base.ComponentStatus">
+    <CarltonListCard CardTitle="Apartment Status"
+                     Items="ViewModel.Statuses"
+                     CardStatus="base.ComponentStatus">
+
+        <MenuCardContent>
+            <CarltonCardMenu TViewModel="ApartmentStatusListViewModel" Callback="OnComponentEvent" />
+        </MenuCardContent>
+
         <ItemTemplate Context="status">
-           <ApartmentStatusListItem ViewModel="status" OnComponentEvent="base.OnComponentEvent" />
+            <ApartmentStatusListItem ViewModel="status" OnComponentEvent="base.OnComponentEvent" />
         </ItemTemplate>
     </CarltonListCard>
 </div>

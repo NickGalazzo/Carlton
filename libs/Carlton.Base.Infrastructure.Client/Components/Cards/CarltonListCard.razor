@@ -3,10 +3,14 @@
 @typeparam TItem
 
 <div class="carlton-list-card">
-    <CarltonCard CardTitle="@CardTitle" CardStatus="CardStatus" MenuItems="MenuItems">
+    <CarltonCard CardTitle="@CardTitle" 
+                 CardStatus="CardStatus" 
+                 MenuCardContent="MenuCardContent">
+
         <HeaderCardContent>
             @HeaderCardContent
         </HeaderCardContent>
+
         <PrimaryCardContent>
             <ul>
                 @foreach(var item in Items)

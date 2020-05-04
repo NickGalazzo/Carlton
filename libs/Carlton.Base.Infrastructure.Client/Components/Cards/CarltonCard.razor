@@ -11,7 +11,7 @@
                         @switch(CardStatus)
                         {
                             case ComponentStatus.SYNCED:
-                                <CarltonSimpleMenu MenuItems="MenuItems" />
+                                @MenuCardContent
                                 break;
                             case ComponentStatus.SYNCING:
                                 <img height="30" src="_content/Carlton.Base.Client/images/spinner.gif" />
@@ -41,7 +41,7 @@
     [Parameter]
     public string CardTitle { get; set; }
     [Parameter]
-    public CarltonMenuItems MenuItems { get; set; }
+    public RenderFragment MenuCardContent { get; set; }
     [Parameter]
     public RenderFragment HeaderCardContent { get; set; }
     [Parameter]

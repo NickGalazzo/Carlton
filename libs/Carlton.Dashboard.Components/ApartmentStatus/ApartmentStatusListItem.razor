@@ -3,10 +3,10 @@
 @inherits CarltonParentComponent<ApartmentStatusListItemViewModel>
 
 <div class="row apartment-status-list-item">
-    <div class="col-6 text-center">
+    <div class="col-3 offset-1">
         <span class="status-icon mdi mdi-24px @ViewModel.StatusIcon"></span>
     </div>
-    <div class="col-6 text-center">
+    <div class="col-3 offset-4">
         @if(ViewModel.StatusValue == ApartmentStatuses.Complete)
         {
             <span class="status-value-complete mdi mdi-24px mdi-check-circle"></span>

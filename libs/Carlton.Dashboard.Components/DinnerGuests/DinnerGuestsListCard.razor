@@ -8,9 +8,12 @@
 <div class="dinner-guests-list-card">
     <CarltonListCard CardTitle="Dinner Guests"
                      Items="ViewModel.DinnerGuests"
-                     CardStatus="base.ComponentStatus"
-                     MenuItems="base.MenuItems">
+                     CardStatus="base.ComponentStatus">
 
+        <MenuCardContent>
+            <CarltonCardMenu  TViewModel="DinnerGuestsListViewModel" Callback="OnComponentEvent"/>
+        </MenuCardContent>
+  
         <HeaderCardContent>
             <DinnerGuestsSelfStatus ViewModel="ViewModel.MyDinnerGuestStatus" OnComponentEvent="base.OnComponentEvent" />
             <div class="sub-title">Guests</div>
