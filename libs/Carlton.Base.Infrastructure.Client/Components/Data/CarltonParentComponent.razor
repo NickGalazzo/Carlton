@@ -1,6 +1,4 @@
-﻿@using Carlton.Base.Client.Components.Menu
-
-@typeparam TViewModel
+﻿@typeparam TViewModel
 
 @code {
     [Parameter]
@@ -9,20 +7,5 @@
     public EventCallback OnComponentEvent { get; set; }
     [Parameter]
     public ComponentStatus ComponentStatus { get; set; }
-
-    protected virtual CarltonMenuItems MenuItems
-    {
-        get
-        {
-            return new CarltonMenuItems
-                (
-                    new List<CarltonMenuItem>
-                    { 
-                        new CarltonMenuItem("Refresh", () => OnComponentEvent.InvokeAsync(new CarltonComponentRefreshEvent<TViewModel>())),
-                        new CarltonMenuItem("View", () => OnComponentEvent.InvokeAsync(new CarltonComponentDetailViewNavigationEvent<TViewModel>()))
-                    }
-                );
-        }
-    }
 }
 

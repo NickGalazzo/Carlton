@@ -1,5 +1,4 @@
-﻿@using Carlton.Base.Client.Components.Menu
-@using Carlton.Base.Client.Enums
+﻿@using Carlton.Base.Client.Enums
 
 <div class="carlton-card @(CardStatus == ComponentStatus.INVALID ? "card-invalid" : string.Empty)">
     <div class="container">
@@ -8,20 +7,7 @@
                 <div class="row status-row">
                     <h5 class="col-9 cd-title">@CardTitle</h5>
                     <div class="col-3 status-icon">
-                        @switch(CardStatus)
-                        {
-                            case ComponentStatus.SYNCED:
-                                @MenuCardContent
-                                break;
-                            case ComponentStatus.SYNCING:
-                                <img height="30" src="_content/Carlton.Base.Client/images/spinner.gif" />
-                                break;
-                            case ComponentStatus.INVALID:
-                                <img src="_content/Carlton.Base.Client/images/warning.png" width="40" height="40" />
-                                break;
-                            default:
-                                break;
-                        }
+                        @MenuCardContent
                     </div>
                 </div>
                 <div class="header-content">
