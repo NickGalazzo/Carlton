@@ -1,13 +1,11 @@
 ﻿@using Carlton.Dashboard.ViewModels.Feed
 
-
-@inherits CarltonParentComponent<FeedListViewModel>
+@inherits DashboardBaseComponent<FeedListViewModel>
 
 <div class="feed-list-card">
     <CarltonListCard TItem="FeedListItemViewModel"
                      Items="ViewModel.FeedItems"
-                     CardTitle="Feed"
-                     CardStatus="base.ComponentStatus">
+                     CardTitle="Feed">
 
         <MenuCardContent>
             <DashboardCardMenu TViewModel="FeedListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
@@ -19,4 +17,8 @@
     </CarltonListCard>
 </div>
 
+
+@code{
+    public int x { get; set; }
+}
 

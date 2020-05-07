@@ -2,27 +2,28 @@
 @using Carlton.Dashboard.ViewModels.DinnerGuests
 
 
-@inherits CarltonParentComponent<DinnerGuestsListViewModel>
+@inherits DashboardBaseComponent<DinnerGuestsListViewModel>
 
+<CarltonCssWraper ComponentType="this.GetType()">
+    <Content>
+        <CarltonListCard CardTitle="Dinner Guests"
+                         Items="ViewModel.DinnerGuests">
 
-<div class="dinner-guests-list-card">
-    <CarltonListCard CardTitle="Dinner Guests"
-                     Items="ViewModel.DinnerGuests"
-                     CardStatus="base.ComponentStatus">
+            <MenuCardContent>
+                <DashboardCardMenu TViewModel="DinnerGuestsListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
+            </MenuCardContent>
 
-        <MenuCardContent>
-            <DashboardCardMenu TViewModel="DinnerGuestsListViewModel" Callback="OnComponentEvent" Status="ComponentStatus"/>
-        </MenuCardContent>
-  
-        <HeaderCardContent>
-            <DinnerGuestsSelfStatus ViewModel="ViewModel.MyDinnerGuestStatus" OnComponentEvent="base.OnComponentEvent" />
-            <div class="sub-title">Guests</div>
-        </HeaderCardContent>
+            <HeaderCardContent>
+                <DinnerGuestsSelfStatus ViewModel="ViewModel.MyDinnerGuestStatus" OnComponentEvent="base.OnComponentEvent" />
+                <div class="sub-title">Guests</div>
+            </HeaderCardContent>
 
-        <ItemTemplate Context="guest">
-            <DinnerGuestListItemWithIndicator ViewModel="guest" />
-        </ItemTemplate>
-    </CarltonListCard>
-</div>
+            <ItemTemplate Context="guest">
+                <DinnerGuestListItemWithIndicator ViewModel="guest" />
+            </ItemTemplate>
+        </CarltonListCard>
+    </Content>
+</CarltonCssWraper>
+
 
 

@@ -1,0 +1,23 @@
+﻿@using Carlton.Base.Infrastructure.Extensions
+ 
+<div class="@_className">
+    @Content
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment Content { get; set; }
+
+    [Parameter]
+    public Type ComponentType
+    {
+        get { return _componentType; }
+        set
+        {
+            _componentType = value;
+            _className = _componentType.Name.ToKebabCase();
+        }
+    }
+    private Type _componentType;
+    private string _className = string.Empty;
+}

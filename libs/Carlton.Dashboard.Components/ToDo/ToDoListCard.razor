@@ -1,12 +1,11 @@
 ﻿@using Carlton.Dashboard.ViewModels.ToDos
 
 
-@inherits CarltonParentComponent<ToDoListViewModel>
+@inherits DashboardBaseComponent<ToDoListViewModel>
 
 <div class="to-do-list-card">
     <CarltonListCard CardTitle="To-Do's"
-                     Items="ViewModel.ToDoList"
-                     CardStatus="base.ComponentStatus">
+                     Items="ViewModel.ToDoList">
 
         <MenuCardContent>
             <DashboardCardMenu TViewModel="ToDoListViewModel" Callback="OnComponentEvent" Status="ComponentStatus"/>

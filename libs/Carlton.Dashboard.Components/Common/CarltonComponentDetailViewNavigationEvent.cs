@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Carlton.Base.Client.Components.Data
+namespace Carlton.Dashboard.Components.Common
 {
     public class CarltonComponentDetailViewNavigationEvent<TViewModel>
     {

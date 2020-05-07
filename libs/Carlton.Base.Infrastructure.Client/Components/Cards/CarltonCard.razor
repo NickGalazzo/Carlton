@@ -1,6 +1,6 @@
-﻿@using Carlton.Base.Client.Enums
+﻿
 
-<div class="carlton-card @(CardStatus == ComponentStatus.INVALID ? "card-invalid" : string.Empty)">
+<div class="carlton-card">
     <div class="container">
         <div class="card">
             <div class="card-body">
@@ -32,6 +32,4 @@
     public RenderFragment HeaderCardContent { get; set; }
     [Parameter]
     public RenderFragment PrimaryCardContent { get; set; }
-    [Parameter]
-    public ComponentStatus CardStatus { get; set; }
 }

@@ -2,15 +2,16 @@
 @using Carlton.Dashboard.ViewModels.Groceries
 
 
-@inherits CarltonParentComponent<GroceriesListViewModel>
+@inherits DashboardBaseComponent<GroceriesListViewModel>
 
 <div class="groceries-list-items-card">
     <CarltonListCard CardTitle="Groceries"
-                     Items="ViewModel.Items"
-                     CardStatus="base.ComponentStatus">
+                     Items="ViewModel.Items">
 
         <MenuCardContent>
-            <DashboardCardMenu TViewModel="GroceriesListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
+            <DashboardCardMenu TViewModel="GroceriesListViewModel" 
+                               Callback="OnComponentEvent" 
+                               Status="ComponentStatus" />
         </MenuCardContent>
 
         <ItemTemplate Context="item">

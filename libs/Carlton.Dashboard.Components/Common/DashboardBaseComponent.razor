@@ -1,0 +1,15 @@
+﻿@typeparam TViewModel
+@implements ICarltonComponent<TViewModel>
+@implements IStatusComponent
+
+
+@code {
+    [Parameter]
+    public RenderFragment Content { get; set; }
+    [Parameter]
+    public TViewModel ViewModel { get; set; }
+    [Parameter]
+    public EventCallback OnComponentEvent { get; set; }
+    [Parameter]
+    public ComponentStatus ComponentStatus { get; set; }
+}

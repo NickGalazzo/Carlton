@@ -1,12 +1,11 @@
 ﻿@using Carlton.Dashboard.ViewModels.ApartmentStatus
 
 
-@inherits CarltonParentComponent<ApartmentStatusListViewModel>
+@inherits DashboardBaseComponent<ApartmentStatusListViewModel>
 
 <div class="apartment-status-list-card">
     <CarltonListCard CardTitle="Apartment Status"
-                     Items="ViewModel.Statuses"
-                     CardStatus="base.ComponentStatus">
+                     Items="ViewModel.Statuses">
 
         <MenuCardContent>
             <DashboardCardMenu TViewModel="ApartmentStatusListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
