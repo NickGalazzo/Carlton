@@ -4,7 +4,7 @@
 
 @inherits DashboardBaseComponent<DinnerGuestsListViewModel>
 
-<CarltonCssWraper ComponentType="this.GetType()">
+<CarltonCssWraper ComponentType="GetType()">
     <Content>
         <CarltonListCard CardTitle="Dinner Guests"
                          Items="ViewModel.DinnerGuests">
@@ -14,7 +14,7 @@
             </MenuCardContent>
 
             <HeaderCardContent>
-                <DinnerGuestsSelfStatus ViewModel="ViewModel.MyDinnerGuestStatus" OnComponentEvent="base.OnComponentEvent" />
+                <DinnerGuestsSelfStatus ViewModel="ViewModel.MyDinnerGuestStatus" OnComponentEvent="OnComponentEvent" />
                 <div class="sub-title">Guests</div>
             </HeaderCardContent>
 

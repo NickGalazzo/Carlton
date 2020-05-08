@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Carlton.Dashboard.Components.ToDo
+namespace Carlton.Dashboard.Components.ToDo.Events
 {
     public class ToDoCompletedEventHandler : IRequestHandler<ToDoStatusChangedEvent, ToDoListViewModel>
     {

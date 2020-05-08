@@ -1,22 +1,25 @@
 ﻿@using Carlton.Dashboard.ViewModels.DinnerGuests
+@using Carlton.Dashboard.Components.DinnerGuests.Events
 
-@inherits CarltonParentComponent<DinnerGuestSelfStatusViewModel>
+@inherits DashboardBaseComponent<DinnerGuestSelfStatusViewModel>
 
-<div class="dinner-guests-self-status">
-    <DinnerGuestListItemWithoutIndicator ViewModel="ViewModel.MyGuestStatus" />
-    <div class="row home-for-dinner-row">
-        <div class="col-9">
-            <label>Are you home for dinner?</label>
-        </div>
-        <div class="col-3 text-center">
-            <ToggleSwitch IsChecked="ViewModel.MyGuestStatus.IsHomeForDinner"
-                          OnToggleChangedCallback="(isHomeForDinner) =>
+<CarltonCssWraper ComponentType="GetType()">
+    <Content>
+        <DinnerGuestListItemWithoutIndicator ViewModel="ViewModel.MyGuestStatus" />
+        <div class="row home-for-dinner-row">
+            <div class="col-9">
+                <label>Are you home for dinner?</label>
+            </div>
+            <div class="col-3 text-center">
+                <ToggleSwitch IsChecked="ViewModel.MyGuestStatus.IsHomeForDinner"
+                              OnToggleChangedCallback="(isHomeForDinner) =>
                                                                      base.OnComponentEvent.InvokeAsync(new DinnerGuestsHomeForDinnerStatusChangeEvent(ViewModel.MyGuestStatus.GuestId, isHomeForDinner))" />
+            </div>
         </div>
-    </div>
 
-    <CarltonSelect Label="Reason?"
-                   Options="ViewModel.MySavedReasons.ToDictionary(o => o.ReasonText, o => o.ReasonId)"
-                   SelectedValue="ViewModel.MyGuestStatus.Reason.ReasonId"
-                   ValueChangedCallback="(kv) => base.OnComponentEvent.InvokeAsync(new DinnerGuestsReasonChangedEvent(ViewModel.MyGuestStatus.GuestId, kv.Value))" />
-</div>
+        <CarltonSelect Label="Reason?"
+                       Options="ViewModel.MySavedReasons.ToDictionary(o => o.ReasonText, o => o.ReasonId)"
+                       SelectedValue="ViewModel.MyGuestStatus.Reason.ReasonId"
+                       ValueChangedCallback="(kv) => base.OnComponentEvent.InvokeAsync(new DinnerGuestsReasonChangedEvent(ViewModel.MyGuestStatus.GuestId, kv.Value))" />
+    </Content>
+</CarltonCssWraper>

@@ -1,7 +1,9 @@
 ﻿@using Carlton.Dashboard.ViewModels.CountCards
 
-@inherits CarltonParentComponent<ApartmentStatusCountCardViewModel>
+@inherits DashboardBaseComponent<ApartmentStatusCountCardViewModel>
 
-<div class="apartment-status-count-card">
-    <CarltonBaseCountCard ViewModel="ViewModel" />
-</div>
+<CarltonCssWraper ComponentType="GetType()">
+    <Content>
+        <DashboardBaseComponent ViewModel="ViewModel" />
+    </Content>
+</CarltonCssWraper>

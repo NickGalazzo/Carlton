@@ -1,0 +1,15 @@
+﻿@using Carlton.Base.Client.Components.Cards
+@using Carlton.Dashboard.ViewModels.CountCards
+
+@inherits DashboardBaseComponent<CarltonBaseCountCardViewModel>
+
+<CarltonCssWraper ComponentType="GetType()">
+    <Content>
+        <CarltonCard>
+            <PrimaryCardContent>
+                <DashboardCountCardContent ViewModel="ViewModel" />
+            </PrimaryCardContent>
+        </CarltonCard>
+    </Content>
+</CarltonCssWraper>
+

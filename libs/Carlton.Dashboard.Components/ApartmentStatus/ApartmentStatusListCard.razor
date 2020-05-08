@@ -3,17 +3,19 @@
 
 @inherits DashboardBaseComponent<ApartmentStatusListViewModel>
 
-<div class="apartment-status-list-card">
-    <CarltonListCard CardTitle="Apartment Status"
-                     Items="ViewModel.Statuses">
+<CarltonCssWraper ComponentType="GetType()">
+    <Content>
+        <CarltonListCard CardTitle="Apartment Status"
+                         Items="ViewModel.Statuses">
 
-        <MenuCardContent>
-            <DashboardCardMenu TViewModel="ApartmentStatusListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
-        </MenuCardContent>
+            <MenuCardContent>
+                <DashboardCardMenu TViewModel="ApartmentStatusListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
+            </MenuCardContent>
 
-        <ItemTemplate Context="status">
-            <ApartmentStatusListItem ViewModel="status" OnComponentEvent="base.OnComponentEvent" />
-        </ItemTemplate>
-    </CarltonListCard>
-</div>
+            <ItemTemplate Context="status">
+                <ApartmentStatusListItem ViewModel="status" OnComponentEvent="base.OnComponentEvent" />
+            </ItemTemplate>
+        </CarltonListCard>
+    </Content>
+</CarltonCssWraper>
 

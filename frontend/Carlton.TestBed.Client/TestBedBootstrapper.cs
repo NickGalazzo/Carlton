@@ -9,7 +9,7 @@ using Carlton.Dashboard.Components.ApartmentStatus;
 using Carlton.Dashboard.Components.Feed;
 using Carlton.Dashboard.Components.DinnerGuests;
 using Carlton.Dashboard.Components.Groceries;
-using Carlton.Dashboard.Components.ToDo;
+using Carlton.Dashboard.Components.ToDos;
 using Carlton.Dashboard.Components.CountCards;
 using Carlton.Dashboard.Components.Header;
 using Carlton.TestBed.Client.TestViewModels;

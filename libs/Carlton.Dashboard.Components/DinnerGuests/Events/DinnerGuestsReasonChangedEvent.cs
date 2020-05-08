@@ -1,4 +1,4 @@
-﻿namespace Carlton.Dashboard.Components.DinnerGuests
+﻿namespace Carlton.Dashboard.Components.DinnerGuests.Events
 {
     public class DinnerGuestsReasonChangedEvent
     {

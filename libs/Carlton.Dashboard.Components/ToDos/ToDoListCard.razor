@@ -1,0 +1,22 @@
+﻿@using Carlton.Dashboard.ViewModels.ToDos
+
+@inherits DashboardBaseComponent<ToDoListViewModel>
+
+<CarltonCssWraper ComponentType="this.GetType()">
+    <Content>
+        <CarltonListCard CardTitle="To-Do's"
+                         Items="ViewModel.ToDoList">
+
+            <MenuCardContent>
+                <DashboardCardMenu TViewModel="ToDoListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
+            </MenuCardContent>
+
+            <ItemTemplate Context="toDo">
+                <ToDoListItem ViewModel="toDo" OnComponentEvent="OnComponentEvent" />
+            </ItemTemplate>
+        </CarltonListCard>
+    </Content>
+</CarltonCssWraper>
+
+
+

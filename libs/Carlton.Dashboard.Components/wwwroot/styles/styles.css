@@ -104,16 +104,16 @@ body {
   .dinner-guests-list-item .is-home-for-dinner {
     color: #7ac29a; }
 
-.carlton-count-card .header-content {
+.dashboard-count-card .header-content {
   display: none; }
 
-.carlton-count-card .status-row {
+.dashboard-count-card .status-row {
   display: none; }
 
-.carlton-count-card .carlton-card {
+.dashboard-count-card .carlton-card {
   max-width: 250px; }
 
-.carlton-count-card .count-icon {
+.dashboard-count-card .count-icon {
   color: white;
   border-radius: 50px;
   height: 50px;
@@ -121,16 +121,16 @@ body {
   padding-left: 8px;
   padding-right: 6px;
   padding-top: 6px; }
-  .carlton-count-card .count-icon.accent-color-one {
+  .dashboard-count-card .count-icon.accent-color-one {
     background-color: #a48adb; }
-  .carlton-count-card .count-icon.accent-color-two {
+  .dashboard-count-card .count-icon.accent-color-two {
     background-color: #1dbfd4; }
-  .carlton-count-card .count-icon.accent-color-three {
+  .dashboard-count-card .count-icon.accent-color-three {
     background-color: #fec00a; }
-  .carlton-count-card .count-icon.accent-color-four {
+  .dashboard-count-card .count-icon.accent-color-four {
     background-color: #7ac29a; }
 
-.carlton-count-card .count-message {
+.dashboard-count-card .count-message {
   color: #757575;
   padding: 0px;
   text-align: center;
@@ -138,7 +138,7 @@ body {
   margin-top: auto;
   margin-bottom: auto; }
 
-.carlton-count-card .count-icon::before {
+.dashboard-count-card .count-icon::before {
   line-height: initial; }
 
 .header {
