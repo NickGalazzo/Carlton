@@ -5,18 +5,20 @@
 @inherits DashboardBaseComponent<GroceriesListViewModel>
 
 <CarltonCssWraper ComponentType="GetType()">
-    <CarltonListCard CardTitle="Groceries"
-                     Items="ViewModel.Items">
+    <Content>
+        <CarltonListCard CardTitle="Groceries"
+                         Items="ViewModel.Items">
 
-        <MenuCardContent>
-            <DashboardCardMenu TViewModel="GroceriesListViewModel"
-                               Callback="OnComponentEvent"
-                               Status="ComponentStatus" />
-        </MenuCardContent>
+            <MenuCardContent>
+                <DashboardCardMenu TViewModel="GroceriesListViewModel"
+                                   Callback="OnComponentEvent"
+                                   Status="ComponentStatus" />
+            </MenuCardContent>
 
-        <ItemTemplate Context="item">
-            <GroceriesListItem ViewModel="item" />
-        </ItemTemplate>
-    </CarltonListCard>
+            <ItemTemplate Context="item">
+                <GroceriesListItem ViewModel="item" />
+            </ItemTemplate>
+        </CarltonListCard>
+    </Content>
 </CarltonCssWraper>
 

@@ -6,8 +6,7 @@
 
 <CarltonCssWraper ComponentType="GetType()">
     <Content>
-        <CarltonListCard CardTitle="Dinner Guests"
-                         Items="ViewModel.DinnerGuests">
+        <CarltonListCard CardTitle="Dinner Guests" SubTitle="Guests" Items="ViewModel.DinnerGuests">
 
             <MenuCardContent>
                 <DashboardCardMenu TViewModel="DinnerGuestsListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
@@ -15,7 +14,6 @@
 
             <HeaderCardContent>
                 <DinnerGuestsSelfStatus ViewModel="ViewModel.MyDinnerGuestStatus" OnComponentEvent="OnComponentEvent" />
-                <div class="sub-title">Guests</div>
             </HeaderCardContent>
 
             <ItemTemplate Context="guest">

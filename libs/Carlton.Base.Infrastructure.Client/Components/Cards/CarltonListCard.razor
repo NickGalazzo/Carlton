@@ -11,6 +11,8 @@
         </HeaderCardContent>
 
         <PrimaryCardContent>
+            <div class="sub-title">@SubTitle</div>
+
             <ul>
                 @foreach(var item in Items)
                 {
@@ -24,6 +26,8 @@
 </div>
 
 @code{
+    [Parameter]
+    public string SubTitle { get; set; }
     [Parameter]
     public RenderFragment<TItem> ItemTemplate { get; set; }
 
