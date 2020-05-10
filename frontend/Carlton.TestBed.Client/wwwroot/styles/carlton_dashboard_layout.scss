@@ -1,0 +1,27 @@
+﻿main {
+    background-color: #f5f6fa;
+}
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+
+    nav {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+
+nav.sidebar {
+    height: 100%;
+    position: fixed;
+    overflow-y: auto;
+}
+
+article {
+    width: 100%;
+    overflow: hidden;
+}

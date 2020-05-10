@@ -1,14 +1,12 @@
-﻿@using Carlton.Base.Client.Components.Tab
+﻿@using Carlton.Dashboard.Components.Header
 @using Carlton.TestBed.Client.Services
 
 @inherits LayoutComponentBase
-
 @inject TestBedService service
 
 
-<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <Carlton.Dashboard.Components.Header.Header />
-
+<nav class="sticky-top">
+    <Header />
 </nav>
 
 
@@ -20,29 +18,17 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10">
             <div class="row">
-                <TestBed ComponentType="service.TestComponentType"
-                         IsCarltonComponent="service.IsTestComponentCarltonComponent"
-                         ViewModel="service.TestComponentViewModel"
-                         ComponentStatus="service.TestComponentStatus"
-                         ComponentEventCallback="service.AddComponentEvent" />
+                <TestBedViewer ComponentType="service.TestComponentType"
+                               IsCarltonComponent="service.IsTestComponentCarltonComponent"
+                               ViewModel="service.TestComponentViewModel"
+                               ComponentStatus="service.TestComponentStatus"
+                               ComponentEventCallback="service.AddComponentEvent" />
             </div>
+
             <div class="row">
-                <footer class="footer @(!service.IsTestComponentCarltonComponent ? "invisible" : string.Empty)">
-                    <CarltonTabBar>
-                        <CarltonTab DisplayText="Component Events">
-                            <EventConsole ComponentEvents="service.ComponentEvents" ClearEvents="service.ClearEvents" />
-                        </CarltonTab>
-                        <CarltonTab DisplayText="JSON Payloads">
-                            <ViewModelViewer ViewModel="service.TestComponentViewModel" ViewModelChanged="service.UpdateTestComponentViewModel" />
-                        </CarltonTab>
-                        <CarltonTab DisplayText="Component Status">
-                            <ComponentStatusSwitch ComponentStatusChangeCallback="service.UpdateComponentStatus" />
-                        </CarltonTab>
-                        <CarltonTab DisplayText="Source">
-                            <TestComponentSource ComponentType="@service.TestComponentType" />
-                        </CarltonTab>
-                    </CarltonTabBar>
-                </footer>
+                <article class="@(!service.IsTestComponentCarltonComponent ? "invisible" : string.Empty)">
+                    <TestBedPanel Service="service" />
+                </article>
             </div>
         </main>
     </div>

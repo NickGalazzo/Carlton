@@ -1,0 +1,12 @@
+﻿.main {
+    .nav-tabs {
+        .nav-link {
+            color: #757575;
+
+            &.active {
+                color: #68b7f6;
+                background-color: #f0f0f0;
+            }
+        }
+    }
+}

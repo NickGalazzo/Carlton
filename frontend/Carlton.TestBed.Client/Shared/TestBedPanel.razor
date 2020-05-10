@@ -1,0 +1,22 @@
+﻿@using Carlton.Base.Client.Components.Tab
+ @using Carlton.TestBed.Client.Services
+
+<CarltonTabBar>
+    <CarltonTab DisplayText="Component Events">
+        <TestBedEventConsole ComponentEvents="Service.ComponentEvents" ClearEvents="Service.ClearEvents" />
+    </CarltonTab>
+    <CarltonTab DisplayText="JSON Payloads">
+        <TestBedViewModelViewer ViewModel="Service.TestComponentViewModel" ViewModelChanged="Service.UpdateTestComponentViewModel" />
+    </CarltonTab>
+    <CarltonTab DisplayText="Component Status">
+        <TestBedStatusSwitch ComponentStatusChangeCallback="Service.UpdateComponentStatus" />
+    </CarltonTab>
+    <CarltonTab DisplayText="Source">
+        <TestBedSourceViewer ComponentType="@Service.TestComponentType" />
+    </CarltonTab>
+</CarltonTabBar>
+
+@code {
+    [Parameter]
+    public TestBedService Service { get; set; }
+} 

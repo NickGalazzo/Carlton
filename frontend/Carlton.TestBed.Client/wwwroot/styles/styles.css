@@ -1,4 +1,32 @@
-﻿.carlton-test-bed-nav-tree {
+﻿@import url("open-iconic/font/css/open-iconic-bootstrap.min.css");
+.main .nav-tabs .nav-link {
+  color: #757575; }
+  .main .nav-tabs .nav-link.active {
+    color: #68b7f6;
+    background-color: #f0f0f0; }
+
+main {
+  background-color: #f5f6fa; }
+
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px; }
+  .container-fluid nav {
+    padding-left: 0px;
+    padding-right: 0px; }
+
+nav.sidebar {
+  height: 100%;
+  position: fixed;
+  overflow-y: auto; }
+
+article {
+  width: 100%;
+  overflow: hidden; }
+
+.carlton-test-bed-nav-tree {
   min-height: 100%;
   background-color: #263238;
   color: white; }
@@ -28,31 +56,3 @@
 
 .component-status-switch {
   padding: 20px; }
-
-main {
-  background-color: #f5f6fa; }
-
-.container-fluid {
-  padding-right: 0px;
-  padding-left: 0px;
-  margin-right: 0px;
-  margin-left: 0px; }
-  .container-fluid nav {
-    padding-left: 0px;
-    padding-right: 0px; }
-
-nav.sidebar {
-  height: 100%;
-  position: fixed;
-  overflow-y: auto; }
-
-footer {
-  width: 100%;
-  overflow: hidden; }
-
-/*Bootstrap Overrides*/
-.main .nav-tabs .nav-link {
-  color: #757575; }
-  .main .nav-tabs .nav-link.active {
-    color: #68b7f6;
-    background-color: #f0f0f0; }
