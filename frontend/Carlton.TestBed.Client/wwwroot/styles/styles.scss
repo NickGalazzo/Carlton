@@ -4,25 +4,32 @@
 @import "components/view_model_viewer.scss";
 @import "components/component_status_switch.scss";
 
-
-.sidebar {
-    background-color: #263238;
-    color: white;
+main {
+    background-color: #f5f6fa;
 }
 
-.main {
-    .content {
-        resize: vertical;
-        overflow-y: hidden;
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+
+    nav {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 
-.footer {
+
+nav.sidebar {
+    height: 100%;
+    position: fixed;
+    overflow-y: auto;
+}
+
+footer {
+    width: 100%;
     overflow: hidden;
-
-    .container {
-        margin-left: inherit;
-    }
 }
 
 /*Bootstrap Overrides*/

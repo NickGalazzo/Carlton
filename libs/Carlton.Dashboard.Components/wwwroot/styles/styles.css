@@ -9,12 +9,18 @@ body {
 
 .apartment-status-list-item {
   max-width: 500px; }
-  .apartment-status-list-item span.status-icon {
+  .theme-light .apartment-status-list-item span.status-icon {
     color: #47a8f4; }
-  .apartment-status-list-item span.status-value-complete {
-    color: #009688; }
-  .apartment-status-list-item span.status-value-incomplete {
-    color: #fec00a; }
+  .theme-dark .apartment-status-list-item span.status-icon {
+    color: #0090e7; }
+  .theme-light .apartment-status-list-item span.status-value-complete {
+    color: #47a8f4; }
+  .theme-dark .apartment-status-list-item span.status-value-complete {
+    color: #0090e7; }
+  .theme-light .apartment-status-list-item span.status-value-incomplete {
+    color: #47a8f4; }
+  .theme-dark .apartment-status-list-item span.status-value-incomplete {
+    color: #0090e7; }
 
 .groceries-list-item {
   max-width: 400px; }
@@ -142,11 +148,18 @@ body {
   line-height: initial; }
 
 .header {
+  width: 100%;
   height: 60px;
-  background-color: #ffffff;
+  background-color: #263238;
   line-height: 60px; }
+  .header .row {
+    margin-left: 0px;
+    margin-right: 0px; }
+    .header .row .title {
+      padding-left: 0px;
+      padding-right: 0px; }
   .header span {
-    color: #757575;
+    color: white;
     font-size: 16pt;
     vertical-align: middle; }
   .header img {
@@ -157,3 +170,12 @@ body {
     text-align: right; }
     .header .logged-in-user span {
       font-size: 12pt; }
+
+.logo {
+  background-color: #009ca7;
+  margin-bottom: 20px;
+  height: 60px;
+  line-height: 60px; }
+  .logo span {
+    display: inline-block;
+    font-size: 16pt; }
