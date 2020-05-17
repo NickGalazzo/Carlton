@@ -4,7 +4,7 @@
     {
         private const string MESSAGE_TEMPLATE = "Low Items";
         private const string ICON = "mdi-cart";
-        private const string ACCENT_COLOR = "accent-color-three";
+        private const string ACCENT_COLOR = "accent-color-3";
 
         public GroceriesCountCardViewModel(int count) : base(count, MESSAGE_TEMPLATE, ICON, ACCENT_COLOR)
         { }

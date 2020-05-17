@@ -4,7 +4,7 @@
     {
         private const string MESSAGE_TEMPLATE = "Open Tasks";
         private const string ICON = "mdi-clipboard-check";
-        private const string ACCENT_COLOR = "accent-color-one";
+        private const string ACCENT_COLOR = "accent-color-1";
 
         public ToDosCountCardViewModel(int count) :base(count, MESSAGE_TEMPLATE, ICON, ACCENT_COLOR)
         {

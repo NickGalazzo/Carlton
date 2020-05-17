@@ -1,10 +1,12 @@
-﻿@import "../variables/colors.scss";
+﻿@import "../themes/theme_defenitions.scss";
 
 .groceries-list-item {
     max-width: 400px;
 
     span.item-name {
-        color: $textColor;
+        @include themify($themes) {
+            color: themed('textColor');
+        }
     }
 
     .progress {
@@ -16,15 +18,21 @@
         border-radius: 10px;
 
         &.high {
-            background-color: $highColor;
+            @include themify($themes) {
+                background-color: themed('highColor');
+            }
         }
 
-        &.medium{
-            background-color: $mediumColor;
+        &.medium {
+            @include themify($themes) {
+                background-color: themed('mediumColor');
+            }
         }
 
-        &.low{
-            background-color: $lowColor;
+        &.low {
+            @include themify($themes) {
+                background-color: themed('lowColor');
+            }
         }
     }
 }

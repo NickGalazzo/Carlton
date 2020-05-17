@@ -1,5 +1,5 @@
 ﻿@using Carlton.Base.Infrastructure.Extensions
- 
+
 <div class="@_className">
     @Content
 </div>
@@ -9,15 +9,16 @@
     public RenderFragment Content { get; set; }
 
     [Parameter]
-    public Type ComponentType
-    {
-        get { return _componentType; }
-        set
-        {
-            _componentType = value;
-            _className = _componentType.Name.ToKebabCase();
-        }
-    }
-    private Type _componentType;
+    public string AdditionalClasses { get; set; }
+
+    [Parameter]
+    public Type ComponentType { get; set; }
+
     private string _className = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _className = $"{ComponentType.Name.ToKebabCase()} {AdditionalClasses}";
+    }
 }

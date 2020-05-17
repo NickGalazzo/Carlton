@@ -1,0 +1,35 @@
+﻿@import "./theme_utilities.scss";
+
+$themes: ( 
+    light: ( 
+        backgroundColor: #fff,
+        textColor: #757575,
+        cardBackgroundColor: #fff,
+        completedColor: #009688,
+        pendingColor: #fec00a,
+        iconColor: #47a8f4,
+        highColo: #7ac29a,
+        mediumColor: #fec00a,
+        lowColor: #ff7946,
+        accentColorOne: #a48adb,
+        accentColorTwo: #1dbfd4,
+        accentColorThree: #fec00a,
+        accentColorFour: #7ac29a
+        ),
+    dark: (
+        backgroundColor: #000,
+        textColor: #FFF,
+        cardBackgroundColor: #191c24,
+        completedColor: #00c689,
+        pendingColor: #ffab00,
+        iconColor: #0090e7,
+        highColor: #7ac29a,
+        mediumColor: #fec00a,
+        lowColor: #ff7946,
+        accentColorOne: #a48adb,
+        accentColorTwo: #1dbfd4,
+        accentColorThree: #fec00a,
+        accentColorFour: #7ac29a,
+    )
+);
+

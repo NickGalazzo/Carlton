@@ -1,12 +1,29 @@
-﻿@import "../variables/colors.scss";
+﻿@import "../themes/theme_defenitions.scss";
 
 .dashboard-count-card {
 
-    .header-content{
+    @for $i from 1 through 4 {
+        &.accent-color-#{$i} {
+            .count-icon {
+                @include themify($themes) {
+                    background-color: themed('countIconBgColor#{$i}');
+                    color: themed('countIconColor#{$i}');
+                }
+            }
+
+            .carlton-card .card {
+                @include themify($themes) {
+                    background-color: themed('countBgColor#{$i}');
+                }
+            }
+        }
+    }
+
+    .header-content {
         display: none;
     }
 
-    .status-row{
+    .status-row {
         display: none;
     }
 
@@ -15,38 +32,24 @@
     }
 
     .count-icon {
-        color: white;
         border-radius: 50px;
         height: 50px;
         width: 50px;
         padding-left: 8px;
         padding-right: 6px;
         padding-top: 6px;
-
-        &.accent-color-one {
-            background-color: $AccentColorOne;
-        }
-
-        &.accent-color-two {
-            background-color: $AccentColorTwo;
-        }
-
-        &.accent-color-three {
-            background-color: $AccentColorThree;
-        }
-
-        &.accent-color-four {
-            background-color: $AccentColorFour;
-        }
     }
 
     .count-message {
-        color: #757575;
         padding: 0px;
         text-align: center;
         font-size: 12pt;
         margin-top: auto;
         margin-bottom: auto;
+
+        @include themify($themes) {
+            color: themed('textColor');
+        }
     }
 
     .count-icon::before {

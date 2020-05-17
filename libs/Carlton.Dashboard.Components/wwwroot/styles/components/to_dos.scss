@@ -1,10 +1,13 @@
-﻿@import "../variables/colors.scss";
+﻿@import "../themes/theme_defenitions.scss";
 
 .to-do-list-item {
     span.to-do-name {
-        color: $textColor;
         font-size: 12pt;
         line-height: 2.3;
+
+        @include themify($themes) {
+            color: themed('textColor');
+        }
 
         &.completed {
             text-decoration: line-through;
@@ -12,10 +15,14 @@
     }
 
     span.to-do-completed {
-        color: $CompletedColor;
+        @include themify($themes) {
+            color: themed('completedColor');
+        }
     }
 
     .carlton-checkbox span {
-        color: $CompletedColor;
+        @include themify($themes) {
+            color: themed('completedColor');
+        }
     }
 }

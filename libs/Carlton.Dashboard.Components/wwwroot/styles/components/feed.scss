@@ -1,13 +1,16 @@
-﻿@import "../variables/colors.scss";
+﻿@import "../themes/theme_defenitions.scss";
 @import "../mixins/mixins.scss";
 
-.feed-list-item{
+.feed-list-item {
     max-width: 350px;
 
     .feed-item-row {
         border-bottom-style: solid;
-        border-bottom-color: rgba($textColor, 0.25);
         padding: 10px;
+
+        @include themify{
+            border-bottom-color: rgba(themed('textColor'), 0.25);
+        }
     }
 
     img.avatar-img {
@@ -15,13 +18,19 @@
     }
 
     .feed-title {
-        color: $activeColor;
         font-weight: bold;
+
+        @include themify($themes) {
+            color: themed('completedColor');
+        }
     }
 
     .feed-message {
-        color: $textColor;
         font-size: 10pt;
+
+        @include themify($themes) {
+            color: themed('textColor');
+        }
     }
 
     .feed-date-col {
@@ -31,7 +40,10 @@
             font-size: 10px;
             text-align: center;
             line-height: 4.5;
-            color: $textColor;
+
+            @include themify($themes) {
+                color: themed('textColor');
+            }
         }
     }
 }
