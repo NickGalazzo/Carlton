@@ -5,6 +5,7 @@
 // being tested as well as the project containing the ViewModels for those components
 // The testbed can then be used by simply modifying this bootstrappper file
 
+using Carlton.Dashboard.Components.Common;
 using Carlton.Dashboard.Components.ApartmentStatus;
 using Carlton.Dashboard.Components.Feed;
 using Carlton.Dashboard.Components.DinnerGuests;
@@ -31,7 +32,8 @@ namespace Carlton.TestBed.Client
         {
             var builder = new TestBadNavTreeBuilder()
 
-              .AddComponent<CarltonSimpleMenu>("SimpleMenu/Default", CarltonMenuTestStates.Default())
+              .AddComponent<DashboardCardMenu>("SimpleMenu/Default", CarltonMenuTestStates.Default())
+           //   .AddComponent<CarltonDropDownMenu>("DropdownMenu/Default", CarltonMenuTestStates.SubMenu())
 
               .AddComponent<Header>("header/default")
 

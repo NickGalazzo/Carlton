@@ -10,5 +10,10 @@ namespace Carlton.Base.Client.Components.Menu
         {
             Items = items;
         }
+
+        public CarltonMenuItems()
+        {
+            Items = new List<CarltonMenuItem>();
+        }
     }
 }

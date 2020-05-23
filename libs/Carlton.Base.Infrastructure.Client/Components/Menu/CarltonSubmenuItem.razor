@@ -1,0 +1,21 @@
+﻿
+    <div class="carlton-submenu">
+        <a href="#" class="submenu-root">@MenuItem.MenuItemName</a>
+        <i class="base-tree-icon  mdi mdi-24px mdi-chevron-right"></i>
+
+        <div class="options">
+            <ul>
+                @foreach(var item in MenuItem.Submenu.Items)
+                {
+                    <li>
+                        <CarltonSimpleMenuItem MenuItem="item" />
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+@code{
+    [Parameter]
+    public CarltonMenuItem MenuItem { get; set; }
+}

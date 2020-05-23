@@ -1,0 +1,15 @@
+﻿
+@if(MenuItem.IsSubmenu)
+{
+
+    <CarltonSubmenuItem MenuItem="MenuItem" />
+}
+else
+{
+    <CarltonSimpleMenuItem MenuItem="MenuItem" />
+}
+
+@code{
+    [Parameter]
+    public CarltonMenuItem MenuItem { get; set; }
+}

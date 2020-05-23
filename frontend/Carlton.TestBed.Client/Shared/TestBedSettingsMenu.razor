@@ -1,8 +1,10 @@
 ﻿@inherits CarltonMenuParent
- 
+
 <CarltonMenuParent MenuItems="MenuItems">
+    <MenuTemplate>
+        <span class="icon mdi mdi-24px mdi-settings"></span>
+    </MenuTemplate>
     <MenuItemTemplate Context="item">
-        <CarltonSimpleMenuItem Name="@item.MenuItemName" Event="item.MenuItemEvent" />
+        <CarltonConditionalMenuItem MenuItem="item"/>
     </MenuItemTemplate>
 </CarltonMenuParent>
-

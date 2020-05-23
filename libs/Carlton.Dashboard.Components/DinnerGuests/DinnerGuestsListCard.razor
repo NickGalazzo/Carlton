@@ -8,13 +8,13 @@
     <Content>
         <CarltonListCard CardTitle="Dinner Guests" SubTitle="Guests" Items="ViewModel.DinnerGuests">
 
-            <MenuCardContent>
-                <DashboardCardMenu TViewModel="DinnerGuestsListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
-            </MenuCardContent>
+            <ActionBarContent>
+                <DashboardCardActionBar TViewModel="DinnerGuestsListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
+            </ActionBarContent>
 
-            <HeaderCardContent>
+            <HeaderContent>
                 <DinnerGuestsSelfStatus ViewModel="ViewModel.MyDinnerGuestStatus" OnComponentEvent="OnComponentEvent" />
-            </HeaderCardContent>
+            </HeaderContent>
 
             <ItemTemplate Context="guest">
                 <DinnerGuestListItemWithIndicator ViewModel="guest" />

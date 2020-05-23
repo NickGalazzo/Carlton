@@ -1,38 +1,11 @@
-﻿@using Carlton.Base.Client.Components.Menu
-@using Carlton.Dashboard.Components.Common.Events
+﻿@inherits CarltonMenuParent
  
-@typeparam TViewModel
+<CarltonMenuParent MenuItems="MenuItems">
+    <MenuTemplate>
+        <span class="mdi mdi-24px mdi-dots-vertical"></span>
+    </MenuTemplate>
+    <MenuItemTemplate Context="item">
+        <CarltonSimpleMenuItem MenuItem="item" />
+    </MenuItemTemplate>
+</CarltonMenuParent>
 
-@switch(Status)
-{
-    case ComponentStatus.SYNCED:
-        <CarltonSimpleMenu MenuItems="MenuItems"/>
-        break;
-    case ComponentStatus.SYNCING:
-        <img height="30" src="_content/Carlton.Base.Client/images/spinner.gif" />
-        break;
-    case ComponentStatus.INVALID:
-        <img src="_content/Carlton.Base.Client/images/warning.png" width="40" height="40" />
-        break;
-    default:
-        break;
-}
-
-@code {
-    [Parameter]
-    public ComponentStatus Status { get; set; }
-    [Parameter]
-    public EventCallback Callback { get; set; }
-
-    private CarltonMenuItems MenuItems
-    {
-        get
-        {
-            return new CarltonMenuItems(new List<CarltonMenuItem>
-                {
-                        new CarltonMenuItem("Refresh", () => Callback.InvokeAsync(new CarltonComponentRefreshEvent<TViewModel>())),
-                        new CarltonMenuItem("View", () => Callback.InvokeAsync(new CarltonComponentDetailViewNavigationEvent<TViewModel>()))
-                });
-        }
-    }
-}

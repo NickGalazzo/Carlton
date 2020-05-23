@@ -1,10 +1,8 @@
 ﻿
-<a @onclick="Event">@Name</a>
+<a @onclick="MenuItem.MenuItemEvent">@MenuItem.MenuItemName</a>
 
 
 @code{
     [Parameter]
-    public string Name { get; set; }
-    [Parameter]
-    public Func<Task> Event { get; set; }
+    public CarltonMenuItem MenuItem { get; set; }
 }

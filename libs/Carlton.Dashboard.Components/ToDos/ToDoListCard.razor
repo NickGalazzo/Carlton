@@ -5,9 +5,9 @@
 <CarltonCssWraper ComponentType="this.GetType()">
     <Content>
         <CarltonListCard CardTitle="To-Do's" Items="ViewModel.ToDoList">
-            <MenuCardContent>
+            <ActionBarContent>
                 <DashboardCardMenu TViewModel="ToDoListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
-            </MenuCardContent>
+            </ActionBarContent>
 
             <ItemTemplate Context="toDo">
                 <ToDoListItem ViewModel="toDo" OnComponentEvent="OnComponentEvent" />

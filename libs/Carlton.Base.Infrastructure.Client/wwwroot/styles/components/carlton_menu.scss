@@ -1,6 +1,6 @@
 ﻿$duration: 0.25s;
 
-.carlton-menu {
+@mixin menu($menuRootSelector, $action) {
     background: none;
     max-width: 12rem;
 
@@ -8,7 +8,7 @@
         outline: none;
     }
 
-    .dots {
+    #{$menuRootSelector} {
         transform: translate(-0.8rem, -2.5rem) scale(0.6);
         cursor: pointer;
 
@@ -17,32 +17,66 @@
         }
     }
 
-    .dots:focus ~ .options {
+    #{$menuRootSelector}:#{$action} ~ .options {
         opacity: 1;
-        max-height: 8rem;
+        max-height: 15rem;
     }
 
     .options {
-        position: relative;
         z-index: 999 !important;
         width: 200px;
         max-height: 0;
         background: #fff;
         text-align: left;
         opacity: 0;
-        overflow: hidden;
+      
+      
         transition: ($duration * 2) opacity ease-in-out, ($duration * 2) max-height ease-in-out;
         box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
 
         li {
             list-style: none;
-            padding: 10px;
-            margin-left: 20px;
+            padding: 20px;
             cursor: pointer;
 
             a {
                 color: #555;
             }
         }
+
+        li:hover {
+            background-color: #ddd;
+        }
     }
 }
+
+.carlton-menu {
+    @include menu(".menu-root", "focus");
+
+    .options {
+        position: relative;
+    }
+}
+
+.carlton-submenu {
+    .options {
+        position: absolute;
+        left: 200px;
+        margin-top: -44px;
+    }
+
+
+    @include menu(".submenu-root", "hover");
+}
+
+li:hover {
+    .carlton-submenu {
+        .options{
+        opacity: 1;
+        max-height: 15rem;
+        }
+    }
+}
+
+
+

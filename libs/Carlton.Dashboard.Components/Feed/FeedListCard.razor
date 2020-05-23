@@ -6,9 +6,11 @@
         <CarltonListCard Items="ViewModel.FeedItems"
                          CardTitle="Feed">
 
-            <MenuCardContent>
-                <DashboardCardMenu TViewModel="FeedListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
-            </MenuCardContent>
+            <ActionBarContent>
+                <DashboardCardActionBar TViewModel="FeedListViewModel" 
+                                        Callback="OnComponentEvent" 
+                                        Status="ComponentStatus" />
+            </ActionBarContent>
 
             <ItemTemplate Context="feedItem">
                 <FeedListItem ViewModel="feedItem" />

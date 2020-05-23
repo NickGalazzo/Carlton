@@ -8,9 +8,11 @@
         <CarltonListCard CardTitle="Apartment Status"
                          Items="ViewModel.Statuses">
 
-            <MenuCardContent>
-                <DashboardCardMenu TViewModel="ApartmentStatusListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
-            </MenuCardContent>
+            <ActionBarContent>
+                <DashboardCardActionBar TViewModel="ApartmentStatusListViewModel" 
+                                        Callback="OnComponentEvent" 
+                                        Status="ComponentStatus" />
+            </ActionBarContent>
 
             <ItemTemplate Context="status">
                 <ApartmentStatusListItem ViewModel="status" OnComponentEvent="base.OnComponentEvent" />

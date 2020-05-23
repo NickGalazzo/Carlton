@@ -14,6 +14,14 @@ namespace Carlton.Base.Client.Components.Test
             };
         }
 
+        public static Dictionary<string, object> SubMenu()
+        {
+            return new Dictionary<string, object>
+            {
+                {"MenuItems", MenuItemsWithSubMenu() }
+            };
+        }
+
         private static CarltonMenuItems DefaultMenuItems()
         {
             return new CarltonMenuItems(new List<CarltonMenuItem>
@@ -21,6 +29,16 @@ namespace Carlton.Base.Client.Components.Test
                           new CarltonMenuItem("Option 1", () => Task.CompletedTask),
                           new CarltonMenuItem("Option 2", () => Task.CompletedTask),
                           new CarltonMenuItem("Option 3", () => Task.CompletedTask)
+                  });
+        }
+
+        private static CarltonMenuItems MenuItemsWithSubMenu()
+        {
+            return new CarltonMenuItems(new List<CarltonMenuItem>
+                  {
+                          new CarltonMenuItem("Option 1", () => Task.CompletedTask),
+                          new CarltonMenuItem("Option 2", () => Task.CompletedTask),
+                          new CarltonMenuItem("Option 3", () => Task.CompletedTask, DefaultMenuItems())
                   });
         }
     }

@@ -9,11 +9,11 @@
         <CarltonListCard CardTitle="Groceries"
                          Items="ViewModel.Items">
 
-            <MenuCardContent>
-                <DashboardCardMenu TViewModel="GroceriesListViewModel"
-                                   Callback="OnComponentEvent"
-                                   Status="ComponentStatus" />
-            </MenuCardContent>
+            <ActionBarContent>
+                <DashboardCardActionBar TViewModel="GroceriesListViewModel"
+                                        Callback="OnComponentEvent"
+                                        Status="ComponentStatus" />
+            </ActionBarContent>
 
             <ItemTemplate Context="item">
                 <GroceriesListItem ViewModel="item" />

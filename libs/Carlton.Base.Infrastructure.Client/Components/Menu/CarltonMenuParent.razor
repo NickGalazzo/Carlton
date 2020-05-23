@@ -1,7 +1,7 @@
 ﻿
 <div class="carlton-menu">
-    <a href="#" class="dots">
-        <span class="mdi mdi-24px mdi-dots-vertical"></span>
+    <a href="#" class="menu-root">
+        @MenuTemplate
     </a>
 
     <div class="options">
@@ -19,6 +19,8 @@
 @code{
     [Parameter]
     public CarltonMenuItems MenuItems { get; set; }
+    [Parameter]
+    public RenderFragment MenuTemplate { get; set; }
     [Parameter]
     public RenderFragment<CarltonMenuItem> MenuItemTemplate {get; set;}
 }
