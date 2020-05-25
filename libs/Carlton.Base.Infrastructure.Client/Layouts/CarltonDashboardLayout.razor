@@ -1,0 +1,40 @@
+﻿@inherits LayoutComponentBase
+
+
+<nav class="sticky-top">
+    @HeaderContent
+</nav>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 sidebar">
+            @NavContent
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10">
+            <div class="row">
+                @Body
+            </div>
+
+            <div class="row">
+               @PanelContent
+            </div>
+        </main>
+    </div>
+</div>
+
+@code{
+
+    [Parameter]
+    public RenderFragment HeaderContent { get; set; }
+
+    [Parameter]
+    public RenderFragment NavContent { get; set; }
+
+    [Parameter]
+    public RenderFragment PanelContent { get; set; }
+}
+
+
+

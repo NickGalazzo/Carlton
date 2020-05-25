@@ -1,0 +1,43 @@
+﻿@using Carlton.Base.Client.Layouts
+@using Carlton.TestBed.Client.Services
+
+@inherits LayoutComponentBase
+@inject TestBedService service
+
+<CarltonDashboardLayout>
+    <HeaderContent>
+        <TestBedHeader />
+    </HeaderContent>
+
+    <Body>
+        <TestBedViewer ComponentType="service.TestComponentType"
+                       IsCarltonComponent="service.IsTestComponentCarltonComponent"
+                       ViewModel="service.TestComponentViewModel"
+                       ComponentStatus="service.TestComponentStatus"
+                       ComponentEventCallback="service.AddComponentEvent" />
+    </Body>
+
+    <NavContent>
+        <TestBedNavTree TreeItems="service.TreeItems" SelectedItemChanged="service.SelectItem" />
+    </NavContent>
+
+    <PanelContent>
+        <article class="@(!service.IsTestComponentCarltonComponent ? "invisible" : string.Empty)">
+            <TestBedPanel Service="service" />
+        </article>
+    </PanelContent>
+</CarltonDashboardLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
