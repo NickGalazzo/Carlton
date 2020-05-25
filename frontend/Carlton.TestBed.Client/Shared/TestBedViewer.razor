@@ -39,6 +39,10 @@
     protected override void OnParametersSet()
     {
         base.OnParametersSet();
+
+        if(ComponentType == null || ViewModel == null)
+            return;
+
         TestComponentFragment = builder =>
         {
             builder.OpenElement(1, "div");

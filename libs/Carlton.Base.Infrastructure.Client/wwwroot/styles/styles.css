@@ -13,6 +13,27 @@
   animation-fill-mode: both;
   animation-delay: 5s; }
 
+main {
+  background-color: #f5f6fa; }
+
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px; }
+  .container-fluid nav {
+    padding-left: 0px;
+    padding-right: 0px; }
+
+nav.sidebar {
+  height: 100%;
+  position: fixed;
+  overflow-y: auto; }
+
+article {
+  width: 100%;
+  overflow: hidden; }
+
 .carlton-base-tree .base-tree {
   margin-left: 1.25rem; }
 

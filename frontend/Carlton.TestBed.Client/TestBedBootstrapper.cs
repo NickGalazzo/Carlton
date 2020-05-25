@@ -32,20 +32,20 @@ namespace Carlton.TestBed.Client
         {
             var builder = new TestBadNavTreeBuilder()
 
-              .AddComponent<DashboardCardMenu>("SimpleMenu/Default", CarltonMenuTestStates.Default())
-              .AddComponent<TestBedSettingsMenu>("DropdownMenu/Default", CarltonMenuTestStates.SubMenu())
+              //.AddComponent<DashboardCardMenu>("SimpleMenu/Default", CarltonMenuTestStates.Default())
+              //.AddComponent<TestBedSettingsMenu>("DropdownMenu/Default", CarltonMenuTestStates.SubMenu())
 
-              .AddComponent<Header>("header/default")
+              //.AddComponent<Header>("header/default")
 
-              .AddComponent<CarltonCheckbox>("checkbox/Checked", CarltonCheckboxTestStates.CheckedState())
-              .AddComponent<CarltonCheckbox>("checkbox/Unchecked", CarltonCheckboxTestStates.UncheckedState())
-              .AddComponent<CarltonSelect>("Select/Default", CarltonSelectCheckboxTestStates.Default())
+              //.AddComponent<CarltonCheckbox>("checkbox/Checked", CarltonCheckboxTestStates.CheckedState())
+              //.AddComponent<CarltonCheckbox>("checkbox/Unchecked", CarltonCheckboxTestStates.UncheckedState())
+              //.AddComponent<CarltonSelect>("Select/Default", CarltonSelectCheckboxTestStates.Default())
 
-              .AddComponent<CarltonAlertNotification>("Notifications/Alert/Default")
-              .AddComponent<CarltonInfoNotification>("Notifications/Info/Default")
-              .AddComponent<CarltonFailureNotification>("Notifications/Failure/Default")
-              .AddComponent<CarltonSuccessNotification>("Notifications/Success/Default")
-              .AddComponent<CarltonNotificationBar>("Notifications/NotificationBar/Default", new Dictionary<string, object> { { "NotificationType", CarltonNotificationBar.CarltonNotificationType.FAILURE } })
+              //.AddComponent<CarltonAlertNotification>("Notifications/Alert/Default")
+              //.AddComponent<CarltonInfoNotification>("Notifications/Info/Default")
+              //.AddComponent<CarltonFailureNotification>("Notifications/Failure/Default")
+              //.AddComponent<CarltonSuccessNotification>("Notifications/Success/Default")
+              //.AddComponent<CarltonNotificationBar>("Notifications/NotificationBar/Default", new Dictionary<string, object> { { "NotificationType", CarltonNotificationBar.CarltonNotificationType.FAILURE } })
 
               .AddCarltonComponent<ToDoListItem>("ToDos/ToDoListItem/Checked", ToDoListTestViewModels.ToDoListItemChecked())
               .AddCarltonComponent<ToDoListItem>("ToDos/ToDoListItem/Unchecked", ToDoListTestViewModels.ToDoListItemUnchecked())
