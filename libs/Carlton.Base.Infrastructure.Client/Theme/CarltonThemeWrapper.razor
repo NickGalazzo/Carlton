@@ -1,0 +1,32 @@
+﻿<div class="@ThemeClass">
+    @Contenet
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment Contenet { get; set; }
+
+    [Inject]
+    private CarltonThemeService service { get; set; }
+
+    [Parameter]
+    public string Theme { get; set; }
+
+    private string ThemeClass
+    {
+        get
+        {
+            return $"theme-{Theme}";
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        this.service.OnThemeChange += (theme) =>
+        {
+            Theme = theme;
+            StateHasChanged();
+        };
+    }
+}

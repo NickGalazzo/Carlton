@@ -1,6 +1,8 @@
-﻿<div class="row">
+﻿@using Carlton.Base.Client.Theme
+
+<div class="row">
     <div class="col-2 offset-7 text-right">
-        <TestBedSettingsMenu MenuItems="MenuItems" />
+        <TestBedSettingsMenu MenuItems="_menuItems" />
     </div>
     <div class="col-3 text-right user-col">
         <CarltonUserDisplay />
@@ -8,13 +10,24 @@
 </div>
 
 @code {
-    private IEnumerable<CarltonMenuItem> MenuItems = new List<CarltonMenuItem>()
+
+    [Inject]
+    private CarltonThemeService Theme { get; set; }
+
+    private List<CarltonMenuItem> _menuItems;
+
+    protected override void OnInitialized()
     {
-        new CarltonMenuItem("Test", () => Task.CompletedTask),
-        new CarltonMenuItem("Theme", new List<CarltonMenuItem>()
-            {
-                new CarltonMenuItem("Light", () => Task.CompletedTask),
-                new CarltonMenuItem("Dark", () => Task.CompletedTask)
-            })
-     };
+        base.OnInitialized();
+
+        _menuItems = new List<CarltonMenuItem>
+        {
+            new CarltonMenuItem("Theme", new List<CarltonMenuItem>
+                {
+                    new CarltonMenuItem("Light", () => {Theme.UpdateTheme("light"); return Task.CompletedTask; }),
+                    new CarltonMenuItem("Dark", () => {Theme.UpdateTheme("dark"); return Task.CompletedTask; })
+                }
+            )
+        };
+    }
 }

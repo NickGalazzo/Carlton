@@ -1,4 +1,5 @@
-﻿using Carlton.TestBed.Client.Services;
+﻿using Carlton.Base.Client.Theme;
+using Carlton.TestBed.Client.Services;
 using Microsoft.AspNetCore.Blazor.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace Carlton.TestBed.Client
             builder.Services.AddSingleton<TestBedEventService>();
             builder.Services.AddSingleton<TestBedStatusService>();
             builder.Services.AddSingleton<TestBedService>();
+            builder.Services.AddSingleton<CarltonThemeService>();
 
             builder.RootComponents.Add<App>("app");
 
