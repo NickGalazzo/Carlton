@@ -2,4 +2,8 @@
 
 .event-console {
     @include console-textarea;
+
+    button{
+        margin-left: 10px;
+    }
 }

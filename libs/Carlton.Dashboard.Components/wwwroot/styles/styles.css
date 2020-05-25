@@ -29,6 +29,24 @@ body {
   margin-left: 10px;
   padding: 10px; }
 
+.theme-light .carlton-card .carlton-menu span {
+  color: #757575; }
+
+.theme-dark .carlton-card .carlton-menu span {
+  color: #c2c2c2; }
+
+.theme-light .carlton-card .carlton-menu .options {
+  background-color: #fff; }
+
+.theme-dark .carlton-card .carlton-menu .options {
+  background-color: #191c24; }
+
+.theme-light .carlton-card .carlton-menu .options a {
+  color: #757575; }
+
+.theme-dark .carlton-card .carlton-menu .options a {
+  color: #c2c2c2; }
+
 .apartment-status-list-item {
   max-width: 500px; }
   .theme-light .apartment-status-list-item span.status-icon {

@@ -8,7 +8,22 @@
   background-color: #fff; }
 
 .theme-dark main {
-  background-color: #000; }
+  background-color: #191c20; }
+
+.theme-light .test-bed-panel .carlton-tabs a {
+  color: #757575; }
+
+.theme-dark .test-bed-panel .carlton-tabs a {
+  color: #c2c2c2; }
+
+.theme-light .test-bed-panel .tab-selected-bar {
+  background-color: #009688; }
+
+.theme-dark .test-bed-panel .tab-selected-bar {
+  background-color: #00c689; }
+
+.test-bed-panel textarea {
+  padding: 5px; }
 
 .test-bed-header .user-col {
   padding: 0px; }
@@ -21,6 +36,14 @@
   height: 75px;
   margin-left: 50px;
   top: -15px; }
+  .theme-light .test-bed-header .options {
+    background-color: #fff; }
+  .theme-dark .test-bed-header .options {
+    background-color: #191c24; }
+  .theme-light .test-bed-header .options a {
+    color: #757575; }
+  .theme-dark .test-bed-header .options a {
+    color: #c2c2c2; }
 
 .test-bed-header .carlton-menu .menu-root span {
   color: white; }
@@ -57,6 +80,9 @@
   color: greenyellow; }
   .event-console textarea.error {
     color: red; }
+
+.event-console button {
+  margin-left: 10px; }
 
 .view-model-viewer textarea {
   width: 100%;

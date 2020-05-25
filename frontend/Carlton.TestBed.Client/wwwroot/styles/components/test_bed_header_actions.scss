@@ -1,4 +1,6 @@
-﻿.test-bed-header {
+﻿@import "../themes/theme_defenitions.scss";
+
+.test-bed-header {
     .user-col {
         padding: 0px;
     }
@@ -11,6 +13,16 @@
         height: 75px;
         margin-left: 50px;
         top: -15px;
+
+        @include themify($themes) {
+            background-color: themed('cardBackgroundColor');
+        }
+
+        a {
+            @include themify($themes) {
+                color: themed('textColor');
+            }
+        }
     }
 
     .carlton-menu .menu-root span {
