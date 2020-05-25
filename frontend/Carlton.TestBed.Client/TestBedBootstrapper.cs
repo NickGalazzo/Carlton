@@ -22,7 +22,7 @@ using Carlton.Base.Client.Components.Select;
 using Carlton.Base.Client.Components.Test;
 using Carlton.TestBed.Client.Services;
 using System.Collections.Generic;
-using Carlton.Base.Client.Components.Menu;
+using Carlton.TestBed.Client.Shared;
 
 namespace Carlton.TestBed.Client
 {
@@ -33,7 +33,7 @@ namespace Carlton.TestBed.Client
             var builder = new TestBadNavTreeBuilder()
 
               .AddComponent<DashboardCardMenu>("SimpleMenu/Default", CarltonMenuTestStates.Default())
-           //   .AddComponent<CarltonDropDownMenu>("DropdownMenu/Default", CarltonMenuTestStates.SubMenu())
+              .AddComponent<TestBedSettingsMenu>("DropdownMenu/Default", CarltonMenuTestStates.SubMenu())
 
               .AddComponent<Header>("header/default")
 

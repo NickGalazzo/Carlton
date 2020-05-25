@@ -22,24 +22,24 @@ namespace Carlton.Base.Client.Components.Test
             };
         }
 
-        private static CarltonMenuItems DefaultMenuItems()
+        private static IEnumerable<CarltonMenuItem> DefaultMenuItems()
         {
-            return new CarltonMenuItems(new List<CarltonMenuItem>
+            return new List<CarltonMenuItem>
                   {
                           new CarltonMenuItem("Option 1", () => Task.CompletedTask),
                           new CarltonMenuItem("Option 2", () => Task.CompletedTask),
                           new CarltonMenuItem("Option 3", () => Task.CompletedTask)
-                  });
+                  };
         }
 
-        private static CarltonMenuItems MenuItemsWithSubMenu()
+        private static IEnumerable<CarltonMenuItem> MenuItemsWithSubMenu()
         {
-            return new CarltonMenuItems(new List<CarltonMenuItem>
+            return new List<CarltonMenuItem>
                   {
                           new CarltonMenuItem("Option 1", () => Task.CompletedTask),
                           new CarltonMenuItem("Option 2", () => Task.CompletedTask),
-                          new CarltonMenuItem("Option 3", () => Task.CompletedTask, DefaultMenuItems())
-                  });
+                          new CarltonMenuItem("Option 3", DefaultMenuItems())
+                  };
         }
     }
 }

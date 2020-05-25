@@ -241,7 +241,7 @@
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14); }
     .carlton-menu .options li {
       list-style: none;
-      padding: 20px;
+      margin-left: 10px;
       cursor: pointer; }
       .carlton-menu .options li a {
         color: #555; }
@@ -278,7 +278,7 @@
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14); }
     .carlton-submenu .options li {
       list-style: none;
-      padding: 20px;
+      margin-left: 10px;
       cursor: pointer; }
       .carlton-submenu .options li a {
         color: #555; }
@@ -288,3 +288,35 @@
 li:hover .carlton-submenu .options {
   opacity: 1;
   max-height: 15rem; }
+
+.carlton-header {
+  width: 100%;
+  height: 60px;
+  background-color: #263238;
+  line-height: 60px; }
+  .carlton-header .row {
+    margin-left: 0px;
+    margin-right: 0px; }
+    .carlton-header .row .title {
+      padding-left: 0px;
+      padding-right: 0px; }
+
+.carlton-logo {
+  background-color: #009ca7;
+  margin-bottom: 20px;
+  height: 60px;
+  line-height: 60px; }
+  .carlton-logo span {
+    display: inline-block;
+    color: white;
+    font-size: 16pt;
+    vertical-align: middle; }
+
+.carlton-user-display img {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px; }
+
+.carlton-user-display span {
+  color: white;
+  font-size: 12pt; }

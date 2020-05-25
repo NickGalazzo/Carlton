@@ -24,15 +24,15 @@
     [Parameter]
     public EventCallback Callback { get; set; }
 
-    private CarltonMenuItems MenuItems
+    private IEnumerable<CarltonMenuItem> MenuItems
     {
         get
         {
-            return new CarltonMenuItems(new List<CarltonMenuItem>
+            return new List<CarltonMenuItem>
                 {
                         new CarltonMenuItem("Refresh", () => Callback.InvokeAsync(new CarltonComponentRefreshEvent<TViewModel>())),
                         new CarltonMenuItem("View", () => Callback.InvokeAsync(new CarltonComponentDetailViewNavigationEvent<TViewModel>()))
-                });
+                };
         }
     }
 }

@@ -1,0 +1,38 @@
+﻿.test-bed-header {
+    .user-col {
+        padding: 0px;
+    }
+
+    .options {
+        padding-top: 10px;
+        line-height: initial;
+        font-size: 12pt;
+        width: 100px !important;
+        height: 75px;
+        margin-left: 50px;
+        top: -15px;
+    }
+
+    .carlton-menu .menu-root span {
+        color: white;
+    }
+
+    a {
+        vertical-align: middle
+    }
+
+    li {
+        height: 25px;
+    }
+
+    .carlton-submenu {
+        .options {
+            left: 50px;
+            top: 75px;
+        }
+
+        i {
+            vertical-align: middle;
+        }
+    }
+}

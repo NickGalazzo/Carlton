@@ -1,10 +1,11 @@
 ﻿@import "external.scss";
 @import "bootstrap_overrides.scss";
 @import "carlton_dashboard_layout.scss";
+@import "components/test_bed_header_actions.scss";
 @import "components/test_Bed_nav_tree.scss";
 @import "components/test_bed.scss";
-@import "components/event_console.scss";
-@import "components/view_model_viewer.scss";
-@import "components/component_status_switch.scss";
+@import "components/test_bed_event_console.scss";
+@import "components/test_bed_view_model_viewer.scss";
+@import "components/test_bed_status_switch.scss";
 
 

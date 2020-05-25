@@ -1,0 +1,13 @@
+﻿
+@import "../mixins/mixins.scss";
+
+.carlton-user-display {
+    img {
+        @include avatar-img;
+    }
+
+    span {
+        color: white;
+        font-size: 12pt;
+    }
+}

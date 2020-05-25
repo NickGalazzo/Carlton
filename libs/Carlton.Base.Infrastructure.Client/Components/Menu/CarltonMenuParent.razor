@@ -6,7 +6,7 @@
 
     <div class="options">
         <ul>
-            @foreach(var item in MenuItems.Items)
+            @foreach(var item in MenuItems)
             {            
                 <li>
                     @MenuItemTemplate(item)
@@ -18,7 +18,7 @@
 
 @code{
     [Parameter]
-    public CarltonMenuItems MenuItems { get; set; }
+    public IEnumerable<CarltonMenuItem> MenuItems { get; set; }
     [Parameter]
     public RenderFragment MenuTemplate { get; set; }
     [Parameter]

@@ -25,6 +25,10 @@ body {
 .theme-dark .carlton-card .card .card-title {
   color: #f2f2f3; }
 
+.carlton-card .carlton-menu li {
+  margin-left: 10px;
+  padding: 10px; }
+
 .apartment-status-list-item {
   max-width: 500px; }
   .theme-light .apartment-status-list-item span.status-icon {
@@ -289,4 +293,6 @@ body {
   line-height: 60px; }
   .logo span {
     display: inline-block;
-    font-size: 16pt; }
+    color: white;
+    font-size: 16pt;
+    vertical-align: middle; }

@@ -1,0 +1,17 @@
+﻿<div class="carlton-header">
+    <div class="row">
+        <div class="col-2 title">
+            @LogoContent
+        </div>
+        <div class="col-6 offset-4">
+            @ActionContent
+        </div>
+    </div>
+</div>
+
+@code{
+    [Parameter]
+    public RenderFragment LogoContent { get; set; }
+    [Parameter]
+    public RenderFragment ActionContent { get; set; }
+}
