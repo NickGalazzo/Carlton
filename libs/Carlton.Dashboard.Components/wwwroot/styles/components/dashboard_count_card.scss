@@ -15,6 +15,12 @@
                 @include themify($themes) {
                     background-color: themed('countBgColor#{$i}');
                 }
+
+                span{
+                    @include themify($themes){
+                        color: themed('titleColor');
+                    }
+                }
             }
         }
     }

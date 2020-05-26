@@ -11,7 +11,7 @@ body {
   background-color: #fff; }
 
 .theme-dark .carlton-card .card {
-  background-color: #191c24; }
+  background-color: #272c33; }
 
 .theme-light .carlton-card .card {
   color: #757575; }
@@ -39,7 +39,7 @@ body {
   background-color: #fff; }
 
 .theme-dark .carlton-card .carlton-menu .options {
-  background-color: #191c24; }
+  background-color: #272c33; }
 
 .theme-light .carlton-card .carlton-menu .options a {
   color: #757575; }
@@ -194,60 +194,84 @@ body {
     color: #00c689; }
 
 .theme-light .dashboard-count-card.accent-color-1 .count-icon {
-  background-color: #a48adb;
+  background-color: #1e88e5;
   color: #fff; }
 
 .theme-dark .dashboard-count-card.accent-color-1 .count-icon {
   background-color: #fff;
-  color: #20c95c; }
+  color: #1e88e5; }
 
 .theme-light .dashboard-count-card.accent-color-1 .carlton-card .card {
   background-color: #fff; }
 
 .theme-dark .dashboard-count-card.accent-color-1 .carlton-card .card {
-  background-color: #20c95c; }
+  background-color: #1e88e5; }
+
+.theme-light .dashboard-count-card.accent-color-1 .carlton-card .card span {
+  color: #000; }
+
+.theme-dark .dashboard-count-card.accent-color-1 .carlton-card .card span {
+  color: #f2f2f3; }
 
 .theme-light .dashboard-count-card.accent-color-2 .count-icon {
-  background-color: #1dbfd4;
+  background-color: #00897b;
   color: #fff; }
 
 .theme-dark .dashboard-count-card.accent-color-2 .count-icon {
   background-color: #fff;
-  color: #fe4c4f; }
+  color: #00897b; }
 
 .theme-light .dashboard-count-card.accent-color-2 .carlton-card .card {
   background-color: #fff; }
 
 .theme-dark .dashboard-count-card.accent-color-2 .carlton-card .card {
-  background-color: #fe4c4f; }
+  background-color: #00897b; }
+
+.theme-light .dashboard-count-card.accent-color-2 .carlton-card .card span {
+  color: #000; }
+
+.theme-dark .dashboard-count-card.accent-color-2 .carlton-card .card span {
+  color: #f2f2f3; }
 
 .theme-light .dashboard-count-card.accent-color-3 .count-icon {
-  background-color: #fec00a;
+  background-color: #e46a76;
   color: #fff; }
 
 .theme-dark .dashboard-count-card.accent-color-3 .count-icon {
   background-color: #fff;
-  color: #767bfe; }
+  color: #e46a76; }
 
 .theme-light .dashboard-count-card.accent-color-3 .carlton-card .card {
   background-color: #fff; }
 
 .theme-dark .dashboard-count-card.accent-color-3 .carlton-card .card {
-  background-color: #767bfe; }
+  background-color: #e46a76; }
+
+.theme-light .dashboard-count-card.accent-color-3 .carlton-card .card span {
+  color: #000; }
+
+.theme-dark .dashboard-count-card.accent-color-3 .carlton-card .card span {
+  color: #f2f2f3; }
 
 .theme-light .dashboard-count-card.accent-color-4 .count-icon {
-  background-color: #7ac29a;
+  background-color: #ab8ce4;
   color: #fff; }
 
 .theme-dark .dashboard-count-card.accent-color-4 .count-icon {
   background-color: #fff;
-  color: #ac65fe; }
+  color: #ab8ce4; }
 
 .theme-light .dashboard-count-card.accent-color-4 .carlton-card .card {
   background-color: #fff; }
 
 .theme-dark .dashboard-count-card.accent-color-4 .carlton-card .card {
-  background-color: #ac65fe; }
+  background-color: #ab8ce4; }
+
+.theme-light .dashboard-count-card.accent-color-4 .carlton-card .card span {
+  color: #000; }
+
+.theme-dark .dashboard-count-card.accent-color-4 .carlton-card .card span {
+  color: #f2f2f3; }
 
 .dashboard-count-card .header-content {
   display: none; }
@@ -305,7 +329,7 @@ body {
       font-size: 12pt; }
 
 .logo {
-  background-color: #009ca7;
+  background-color: #00897b;
   margin-bottom: 20px;
   height: 60px;
   line-height: 60px; }

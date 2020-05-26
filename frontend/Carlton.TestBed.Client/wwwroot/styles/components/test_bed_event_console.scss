@@ -3,7 +3,9 @@
 .event-console {
     @include console-textarea;
 
-    button{
+    button {
+        border-color: transparent;
+        background-color: #00897b;
         margin-left: 10px;
     }
 }

@@ -2,7 +2,7 @@
 
 $themes: ( 
     light: ( 
-        backgroundColor: #fff,
+        backgroundColor: #e9edf1,
         textColor: #757575,
         titleColor: #000,
         cardBackgroundColor: #fff,
@@ -16,38 +16,38 @@ $themes: (
         countBgColor2: #fff,
         countBgColor3: #fff,
         countBgColor4: #fff,
-        countIconBgColor1: #a48adb,
-        countIconBgColor2: #1dbfd4,
-        countIconBgColor3: #fec00a,
-        countIconBgColor4: #7ac29a,
+        countIconBgColor1: #1e88e5,
+        countIconBgColor2: #00897b,
+        countIconBgColor3: #e46a76,
+        countIconBgColor4: #ab8ce4,
         countIconColor1: #fff,
         countIconColor2: #fff,
         countIconColor3: #fff,
         countIconColor4: #fff
         ),
     dark: (
-        backgroundColor: #191c20,
+        backgroundColor: #383f48,
         textColor: #c2c2c2,
         titleColor: #f2f2f3,
-        cardBackgroundColor: #191c24,
+        cardBackgroundColor: #272c33,
         completedColor: #00c689,
         pendingColor: #ffab00,
         iconColor: #0090e7,
         highColor: #20c95c,
         mediumColor: #ed9c28,
         lowColor: #fe4c4f,
-        countBgColor1: #20c95c,
-        countBgColor2: #fe4c4f,
-        countBgColor3: #767bfe,
-        countBgColor4: #ac65fe,
+        countBgColor1: #1e88e5,	
+        countBgColor2: #00897b,	
+        countBgColor3: #e46a76,	
+        countBgColor4: #ab8ce4,
         countIconBgColor1: #fff,
         countIconBgColor2: #fff,
         countIconBgColor3: #fff,
         countIconBgColor4: #fff,
-        countIconColor1: #20c95c,
-        countIconColor2: #fe4c4f,
-        countIconColor3: #767bfe,
-        countIconColor4: #ac65fe
+        countIconColor1: #1e88e5,
+        countIconColor2: #00897b,	
+        countIconColor3: #e46a76,	
+        countIconColor4: #ab8ce4
     )
 );
 
