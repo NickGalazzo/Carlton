@@ -1,4 +1,5 @@
-﻿main {
+﻿
+main {
     background-color: #f5f6fa;
 }
 
@@ -25,3 +26,22 @@ article {
     width: 100%;
     overflow: hidden;
 }
+
+
+.collapsed {
+    max-width: 50px;
+    width: 50px;
+    transition: width .75s ease;
+
+
+    + main {
+        width: 100%;
+        margin-left: 50px;
+        overflow: hidden;
+    }
+
+    + main article {
+        margin-left: 15px;
+    }
+}
+

@@ -8,28 +8,26 @@
         var nodeSelected = node.Equals(SelectedNode);
         var hasChildren = HasChildNodes(node);
 
-        <div class="container">
-            <div class="row">
-                <span @onclick="@(() => OnToggleNode(node, !nodeExpanded))">
-                    <i class="base-tree-icon @(hasChildren ? "": "invisible") @(nodeExpanded ? Style.CollapseNodeIconClass : Style.ExpandNodeIconClass)"></i>
-                </span>
-                <span class="base-tree-title @Style.NodeTitleClass @(nodeSelected ? Style.NodeTitleSelectedClass : "") align-middle" @onclick="@(() => OnSelectNode(node))">
-                    @TitleTemplate(node)
-                </span>     
-            </div>
-            @if(hasChildren)
-            {
-                <CarltonBaseTree Nodes="ChildSelector(node)"
-                          TitleTemplate="TitleTemplate"
-                          ChildSelector="ChildSelector"
-                          ExpandedNodes="ExpandedNodes"
-                          ExpandedNodesChanged="ExpandedNodesChanged"
-                          SelectedNode="SelectedNode"
-                          SelectedNodeChanged="SelectedNodeChanged"
-                          Visible="nodeExpanded"
-                          HasChildNodes="HasChildNodes" />
-            }
+        <div class="row">
+            <span @onclick="@(() => OnToggleNode(node, !nodeExpanded))">
+                <i class="base-tree-icon @(hasChildren ? "": "invisible") @(nodeExpanded ? Style.CollapseNodeIconClass : Style.ExpandNodeIconClass)"></i>
+            </span>
+            <span class="base-tree-title @Style.NodeTitleClass @(nodeSelected ? Style.NodeTitleSelectedClass : "") align-middle" @onclick="@(() => OnSelectNode(node))">
+                @TitleTemplate(node)
+            </span>
         </div>
+        @if(hasChildren)
+        {
+            <CarltonBaseTree Nodes="ChildSelector(node)"
+                             TitleTemplate="TitleTemplate"
+                             ChildSelector="ChildSelector"
+                             ExpandedNodes="ExpandedNodes"
+                             ExpandedNodesChanged="ExpandedNodesChanged"
+                             SelectedNode="SelectedNode"
+                             SelectedNodeChanged="SelectedNodeChanged"
+                             Visible="nodeExpanded"
+                             HasChildNodes="HasChildNodes" />
+        }
     }
 </div>
 

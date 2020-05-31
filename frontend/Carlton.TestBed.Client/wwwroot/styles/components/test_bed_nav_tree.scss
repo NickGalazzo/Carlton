@@ -2,8 +2,13 @@
     min-height: 100%;
     background-color: #263238;
     color: white;
-    
+
     .selected-tree-node {
         color: #009688;
     }
+
+    .collapsed & .carlton-base-tree {
+        display: none;
+    }
 }
+

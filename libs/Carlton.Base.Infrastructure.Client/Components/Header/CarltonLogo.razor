@@ -1,6 +1,10 @@
-﻿<div class="carlton-logo">
+﻿<div class="carlton-logo @(IsCollapsed ? "collapsed" : string.Empty)">
     <span>
         <img src="https://paradisebound.org/wp-content/uploads/2016/09/paradise-bound-ministries-mission-teams-homes-built-and-dedicated-house-icon.png" height="50" width="50" alt="Image result for house icon" />
-        <span>Carlton Test Bed</span>
+        <span class="title">Carlton Test Bed</span>
     </span>
 </div>
+
+@code{
+    [CascadingParameter] bool IsCollapsed { get; set; }
+}

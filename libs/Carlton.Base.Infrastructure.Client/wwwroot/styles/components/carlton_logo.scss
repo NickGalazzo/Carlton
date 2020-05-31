@@ -1,13 +1,21 @@
 ﻿.carlton-logo {
     background-color: #00897b;
-    margin-bottom: 20px;
     height: 60px;
     line-height: 60px;
 
     span {
-        display: inline-block;
         color: white;
         font-size: 16pt;
         vertical-align: middle;
     }
+
+    @media (max-width: 767.98px) {
+        span.title {
+            display: none;
+        }
+    }
+}
+
+.collapsed.carlton-logo span.title {
+    display: none;
 }

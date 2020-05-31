@@ -2,30 +2,32 @@
 
 
 <nav class="sticky-top">
-    @HeaderContent
+    <CascadingValue Value="@IsCollapsed">
+        <CascadingValue TValue="Action" Value="@SetCollapsedStatus">
+            @HeaderContent
+        </CascadingValue>
+    </CascadingValue>
 </nav>
-
 
 <div class="container-fluid">
     <div class="row">
-        <nav class="col-md-2 sidebar">
+        <nav class="sidebar @(IsCollapsed ? "collapsed" : "col-md-2")">
             @NavContent
         </nav>
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10">
+        <main role="main" class="@(IsCollapsed ? string.Empty : "col-md-9 col-lg-10 ml-sm-auto")">
             <div class="row">
                 @Body
             </div>
 
             <div class="row">
-               @PanelContent
+                @PanelContent
             </div>
         </main>
     </div>
 </div>
 
 @code{
-
     [Parameter]
     public RenderFragment HeaderContent { get; set; }
 
@@ -34,6 +36,13 @@
 
     [Parameter]
     public RenderFragment PanelContent { get; set; }
+
+    private bool IsCollapsed { get; set; }
+
+    private void SetCollapsedStatus()
+    {
+        IsCollapsed = !IsCollapsed;
+    }
 }
 
 

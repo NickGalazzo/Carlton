@@ -4,6 +4,12 @@
     color: #68b7f6;
     background-color: #f0f0f0; }
 
+.theme-light .container-fluid > .row {
+  background-color: #e9edf1; }
+
+.theme-dark .container-fluid > .row {
+  background-color: #383f48; }
+
 .theme-light main {
   background-color: #e9edf1; }
 
@@ -67,6 +73,8 @@
   color: white; }
   .carlton-test-bed-nav-tree .selected-tree-node {
     color: #009688; }
+  .collapsed .carlton-test-bed-nav-tree .carlton-base-tree {
+    display: none; }
 
 .test-bed {
   height: 500px;

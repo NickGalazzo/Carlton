@@ -1,5 +1,7 @@
 ﻿
 .carlton-base-tree {
+    padding-left: 15px;
+
     .base-tree {
         margin-left: 1.25rem;
     }
@@ -16,5 +18,9 @@
 
     .curosr-pointer {
         cursor: pointer;
+    }
+
+    .tree-row {
+        margin-left: 5px;
     }
 }

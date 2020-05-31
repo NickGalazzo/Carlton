@@ -34,19 +34,31 @@ article {
   width: 100%;
   overflow: hidden; }
 
-.carlton-base-tree .base-tree {
-  margin-left: 1.25rem; }
+.collapsed {
+  max-width: 50px;
+  width: 50px;
+  transition: width .75s ease; }
+  .collapsed + main {
+    width: 100%;
+    margin-left: 50px;
+    overflow: hidden; }
+  .collapsed + main article {
+    margin-left: 15px; }
 
-.carlton-base-tree .base-tree-hidden {
-  display: none; }
-
-.carlton-base-tree .base-tree-title {
-  margin-top: auto;
-  margin-bottom: auto;
-  padding: 0px !important; }
-
-.carlton-base-tree .curosr-pointer {
-  cursor: pointer; }
+.carlton-base-tree {
+  padding-left: 15px; }
+  .carlton-base-tree .base-tree {
+    margin-left: 1.25rem; }
+  .carlton-base-tree .base-tree-hidden {
+    display: none; }
+  .carlton-base-tree .base-tree-title {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0px !important; }
+  .carlton-base-tree .curosr-pointer {
+    cursor: pointer; }
+  .carlton-base-tree .tree-row {
+    margin-left: 5px; }
 
 .carlton-card {
   width: 400px; }
@@ -63,7 +75,6 @@ article {
 ::-webkit-scrollbar {
   background-color: #edf1f0;
   float: left;
-  height: 300px;
   margin-bottom: 25px;
   margin-left: 22px;
   margin-top: 40px;
@@ -322,16 +333,23 @@ li:hover .carlton-submenu .options {
       padding-left: 0px;
       padding-right: 0px; }
 
+.carlton-collapsed-header span {
+  display: inline-block; }
+
 .carlton-logo {
   background-color: #00897b;
-  margin-bottom: 20px;
   height: 60px;
   line-height: 60px; }
   .carlton-logo span {
-    display: inline-block;
     color: white;
     font-size: 16pt;
     vertical-align: middle; }
+  @media (max-width: 767.98px) {
+    .carlton-logo span.title {
+      display: none; } }
+
+.collapsed.carlton-logo span.title {
+  display: none; }
 
 .carlton-user-display img {
   height: 40px;
@@ -341,3 +359,6 @@ li:hover .carlton-submenu .options {
 .carlton-user-display span {
   color: white;
   font-size: 12pt; }
+
+.carlton-menu-collapser span {
+  padding-left: 15px; }
