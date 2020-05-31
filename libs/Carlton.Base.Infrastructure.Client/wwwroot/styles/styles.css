@@ -261,10 +261,11 @@ article {
       color: #757575; }
   .carlton-menu .menu-root:focus ~ .options {
     opacity: 1;
-    max-height: 15rem; }
+    max-height: 15rem;
+    width: 100px; }
   .carlton-menu .options {
     z-index: 999 !important;
-    width: 200px;
+    width: 0px;
     max-height: 0;
     background: #fff;
     text-align: left;
@@ -273,53 +274,15 @@ article {
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14); }
     .carlton-menu .options li {
       list-style: none;
-      margin-left: 10px;
+      padding-left: 10px;
       cursor: pointer; }
       .carlton-menu .options li a {
-        color: #555; }
-    .carlton-menu .options li:hover {
+        color: #555;
+        text-decoration: none; }
+    .carlton-menu .options li:hover, .carlton-menu .options a:hover {
       background-color: #ddd; }
   .carlton-menu .options {
     position: relative; }
-
-.carlton-submenu {
-  background: none;
-  max-width: 12rem; }
-  .carlton-submenu .options {
-    position: absolute;
-    left: 200px;
-    margin-top: -44px; }
-  .carlton-submenu *:focus {
-    outline: none; }
-  .carlton-submenu .submenu-root {
-    transform: translate(-0.8rem, -2.5rem) scale(0.6);
-    cursor: pointer; }
-    .carlton-submenu .submenu-root span {
-      color: #757575; }
-  .carlton-submenu .submenu-root:hover ~ .options {
-    opacity: 1;
-    max-height: 15rem; }
-  .carlton-submenu .options {
-    z-index: 999 !important;
-    width: 200px;
-    max-height: 0;
-    background: #fff;
-    text-align: left;
-    opacity: 0;
-    transition: 0.5s opacity ease-in-out, 0.5s max-height ease-in-out;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14); }
-    .carlton-submenu .options li {
-      list-style: none;
-      margin-left: 10px;
-      cursor: pointer; }
-      .carlton-submenu .options li a {
-        color: #555; }
-    .carlton-submenu .options li:hover {
-      background-color: #ddd; }
-
-li:hover .carlton-submenu .options {
-  opacity: 1;
-  max-height: 15rem; }
 
 .carlton-header {
   width: 100%;
@@ -327,9 +290,11 @@ li:hover .carlton-submenu .options {
   background-color: #263238;
   line-height: 60px; }
   .carlton-header .row {
+    max-height: 60px;
     margin-left: 0px;
     margin-right: 0px; }
     .carlton-header .row .title {
+      max-height: 60px;
       padding-left: 0px;
       padding-right: 0px; }
 
@@ -342,7 +307,7 @@ li:hover .carlton-submenu .options {
   line-height: 60px; }
   .carlton-logo span {
     color: white;
-    font-size: 16pt;
+    font-size: 14pt;
     vertical-align: middle; }
   @media (max-width: 767.98px) {
     .carlton-logo span.title {

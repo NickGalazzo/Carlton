@@ -5,10 +5,12 @@
     line-height: 60px;
 
     .row {
+        max-height: 60px;
         margin-left: 0px;
         margin-right: 0px;
 
         .title {
+            max-height: 60px;
             padding-left: 0px;
             padding-right: 0px;
         }

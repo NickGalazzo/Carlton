@@ -6,12 +6,8 @@
     }
 
     .options {
-        padding-top: 10px;
         line-height: initial;
         font-size: 12pt;
-        width: 100px !important;
-        height: 75px;
-        margin-left: 50px;
         top: -15px;
 
         @include themify($themes) {

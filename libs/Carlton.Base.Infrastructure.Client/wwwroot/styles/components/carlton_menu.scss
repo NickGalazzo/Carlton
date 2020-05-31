@@ -20,31 +20,31 @@
     #{$menuRootSelector}:#{$action} ~ .options {
         opacity: 1;
         max-height: 15rem;
+        width: 100px;
     }
 
     .options {
         z-index: 999 !important;
-        width: 200px;
+        width: 0px;
         max-height: 0;
         background: #fff;
         text-align: left;
         opacity: 0;
-      
-      
         transition: ($duration * 2) opacity ease-in-out, ($duration * 2) max-height ease-in-out;
         box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
 
         li {
             list-style: none;
-            margin-left: 10px;
+            padding-left: 10px;
             cursor: pointer;
 
             a {
                 color: #555;
+                text-decoration: none;
             }
         }
 
-        li:hover {
+        li:hover, a:hover {
             background-color: #ddd;
         }
     }
@@ -53,28 +53,9 @@
 .carlton-menu {
     @include menu(".menu-root", "focus");
 
+
     .options {
         position: relative;
-    }
-}
-
-.carlton-submenu {
-    .options {
-        position: absolute;
-        left: 200px;
-        margin-top: -44px;
-    }
-
-
-    @include menu(".submenu-root", "hover");
-}
-
-li:hover {
-    .carlton-submenu {
-        .options{
-        opacity: 1;
-        max-height: 15rem;
-        }
     }
 }
 

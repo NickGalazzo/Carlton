@@ -1,33 +1,11 @@
 ﻿@using Carlton.Base.Client.Theme
 
 <div class="row">
-    <div class="col-2 offset-8 text-right">
-        <TestBedSettingsMenu MenuItems="_menuItems" />
+    <div class="col-3 offset-6 text-right">
+        <TestBedHeaderMenu />
     </div>
-    <div class="col-2 text-right user-col">
+    <div class="col-3 text-right user-col">
         <CarltonUserDisplay />
     </div>
 </div>
 
-@code {
-
-    [Inject]
-    private CarltonThemeService Theme { get; set; }
-
-    private List<CarltonMenuItem> _menuItems;
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        _menuItems = new List<CarltonMenuItem>
-        {
-            new CarltonMenuItem("Theme", new List<CarltonMenuItem>
-                {
-                    new CarltonMenuItem("Light", () => {Theme.UpdateTheme("light"); return Task.CompletedTask; }),
-                    new CarltonMenuItem("Dark", () => {Theme.UpdateTheme("dark"); return Task.CompletedTask; })
-                }
-            )
-        };
-    }
-}
