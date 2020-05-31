@@ -18,8 +18,12 @@
 
 @code{
 
-    [Inject]
-    private CarltonThemeService Theme { get; set; }
+    [CascadingParameter]
+    private string Theme { get; set; }
+
+    [CascadingParameter]
+    private Action<string> UpdateTheme { get; set; }
+
     private List<CarltonMenuItem> _menuItems;
 
     protected override void OnInitialized()
@@ -28,8 +32,8 @@
 
         _menuItems = new List<CarltonMenuItem>
         {
-            new CarltonMenuItem("Light", () => {Theme.UpdateTheme("light"); return Task.CompletedTask; }),
-            new CarltonMenuItem("Dark", () => {Theme.UpdateTheme("dark"); return Task.CompletedTask; })
+            new CarltonMenuItem("Light", () => {UpdateTheme("light"); return Task.CompletedTask; }),
+            new CarltonMenuItem("Dark", () => {UpdateTheme("dark"); return Task.CompletedTask; })
         };
     }
 }

@@ -1,13 +1,14 @@
 ﻿<div class="@ThemeClass">
-    @Content
+    <CascadingValue Value="@Theme">
+        <CascadingValue TValue="Action<string>" Value="@ChangeTheme">
+            @Content
+        </CascadingValue>
+    </CascadingValue>
 </div>
 
 @code {
     [Parameter]
     public RenderFragment Content { get; set; }
-
-    [Inject]
-    private CarltonThemeService service { get; set; }
 
     [Parameter]
     public string Theme { get; set; }
@@ -20,13 +21,9 @@
         }
     }
 
-    protected override void OnInitialized()
+    private void ChangeTheme(string theme)
     {
-        base.OnInitialized();
-        this.service.OnThemeChange += (theme) =>
-        {
-            Theme = theme;
-            StateHasChanged();
-        };
+        Theme = theme;
+        StateHasChanged();
     }
 }

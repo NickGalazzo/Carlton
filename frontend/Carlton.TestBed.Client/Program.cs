@@ -19,7 +19,6 @@ namespace Carlton.TestBed.Client
             builder.Services.AddSingleton<TestBedEventService>();
             builder.Services.AddSingleton<TestBedStatusService>();
             builder.Services.AddSingleton<TestBedService>();
-            builder.Services.AddSingleton<CarltonThemeService>();
 
             builder.RootComponents.Add<App>("app");
 
