@@ -1,4 +1,8 @@
 ﻿
+html,body,app > div,.container-fluid, .container-fluid > .row{
+    height: 100%
+}
+
 main {
     background-color: #f5f6fa;
 }
@@ -27,7 +31,6 @@ article {
     overflow: hidden;
 }
 
-
 .collapsed {
     max-width: 50px;
     width: 50px;
@@ -44,4 +47,3 @@ article {
         margin-left: 15px;
     }
 }
-

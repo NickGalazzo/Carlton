@@ -5,13 +5,31 @@
 
     span {
         color: white;
-        font-size: 14pt;
+        font-size: 12pt;
         vertical-align: middle;
     }
 
     @media (max-width: 767.98px) {
         span.title {
             display: none;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        span.title {
+            font-size: 18pt;
+        }
+    }
+
+    @media (min-width: 1366px) {
+        span.title {
+            font-size: 16pt;
+        }
+    }
+    
+    @media (min-width: 1367px) {
+        span.title {
+            font-size: 20pt;
         }
     }
 }

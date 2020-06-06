@@ -13,6 +13,9 @@
   animation-fill-mode: both;
   animation-delay: 5s; }
 
+html, body, app > div, .container-fluid, .container-fluid > .row {
+  height: 100%; }
+
 main {
   background-color: #f5f6fa; }
 
@@ -307,11 +310,20 @@ article {
   line-height: 60px; }
   .carlton-logo span {
     color: white;
-    font-size: 14pt;
+    font-size: 12pt;
     vertical-align: middle; }
   @media (max-width: 767.98px) {
     .carlton-logo span.title {
       display: none; } }
+  @media (min-width: 1024px) {
+    .carlton-logo span.title {
+      font-size: 18pt; } }
+  @media (min-width: 1366px) {
+    .carlton-logo span.title {
+      font-size: 16pt; } }
+  @media (min-width: 1367px) {
+    .carlton-logo span.title {
+      font-size: 20pt; } }
 
 .collapsed.carlton-logo span.title {
   display: none; }
@@ -324,6 +336,10 @@ article {
 .carlton-user-display span {
   color: white;
   font-size: 12pt; }
+
+@media (max-width: 768px) {
+  .carlton-user-display span {
+    display: none; } }
 
 .carlton-menu-collapser span {
   padding-left: 15px; }

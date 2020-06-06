@@ -1,5 +1,4 @@
-﻿using Carlton.Base.Client.Theme;
-using Carlton.TestBed.Client.Services;
+﻿using Carlton.TestBed.Client.Services;
 using Microsoft.AspNetCore.Blazor.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
