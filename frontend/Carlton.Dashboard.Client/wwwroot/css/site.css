@@ -148,6 +148,11 @@ app {
     .main .top-row a, .main .top-row .btn-link {
         margin-left: 0;
     }
+
+    .sidebar {
+        position: relative;
+        max-width: 250px;
+    }
 }
 
 @media (min-width: 768px) {

@@ -1,18 +1,20 @@
 ﻿@inherits CarltonHeader
 
-<div class="carlton-collapsed-header">
-    <div class="row">
-        <div class="col-2 title">
-            <span>
-                @LogoContent
-            </span>
-            <span>
-                @MenuContent
-            </span>
-        </div>
+<CarltonMobileWrapper>
+    <MobileContent>
+        <CarltonMobileCollapsedHeader
+                                      LogoContent="@LogoContent"
+                                      MenuContent="@MenuContent"
+                                      ActionContent="@ActionContent"/>
+    </MobileContent>
 
-        <div class="col-6 offset-4 action">
-            @ActionContent
-        </div>
-    </div>
-</div>
+    <DesktopContent>
+        <CarltonDesktopCollapsedHeader
+                                      LogoContent="@LogoContent"
+                                      MenuContent="@MenuContent"
+                                      ActionContent="@ActionContent"/>/>
+    </DesktopContent>
+</CarltonMobileWrapper>
+
+
+

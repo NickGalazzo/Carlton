@@ -83,6 +83,10 @@
   height: 500px;
   padding-top: 20px;
   margin-left: 50px; }
+  @media (max-width: 767.98px) {
+    .test-bed {
+      margin-left: auto;
+      margin-right: auto; } }
 
 .event-console textarea {
   width: 100%;

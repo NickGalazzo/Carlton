@@ -1,5 +1,5 @@
 ﻿
-html,body,app > div,.container-fluid, .container-fluid > .row{
+html, body, app > div, .container-fluid, .container-fluid > .row {
     height: 100%
 }
 
@@ -24,6 +24,11 @@ nav.sidebar {
     height: 100%;
     position: fixed;
     overflow-y: auto;
+    z-index: 999;
+
+    @media (max-width: 767.98px) {
+        max-width: 250px;
+    }
 }
 
 article {

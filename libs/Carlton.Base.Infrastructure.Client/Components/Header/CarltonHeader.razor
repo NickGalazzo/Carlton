@@ -8,8 +8,8 @@
     else
     {
         <CarltonExpandedHeader LogoContent="LogoContent"
-                                MenuContent="MenuContent"
-                                ActionContent="ActionContent" />
+                               MenuContent="MenuContent"
+                               ActionContent="ActionContent" />
     }
 </div>
 
@@ -21,7 +21,7 @@
     [Parameter]
     public RenderFragment MenuContent { get; set; }
     [Parameter]
-    public RenderFragment ActionContent { get; set; } 
-    [CascadingParameter] 
+    public RenderFragment ActionContent { get; set; }
+    [CascadingParameter]
     private bool IsCollapsed { get; set; }
 }

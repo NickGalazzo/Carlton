@@ -31,7 +31,11 @@ main {
 nav.sidebar {
   height: 100%;
   position: fixed;
-  overflow-y: auto; }
+  overflow-y: auto;
+  z-index: 999; }
+  @media (max-width: 767.98px) {
+    nav.sidebar {
+      max-width: 250px; } }
 
 article {
   width: 100%;
@@ -343,3 +347,19 @@ article {
 
 .carlton-menu-collapser span {
   padding-left: 15px; }
+
+@media (max-width: 767.98px) {
+  .carlton-mobile-wrapper .mobile {
+    display: inherit; } }
+
+@media (min-width: 767.98px) {
+  .carlton-mobile-wrapper .mobile {
+    display: none; } }
+
+@media (max-width: 767.98px) {
+  .carlton-mobile-wrapper .desktop {
+    display: none; } }
+
+@media (min-width: 767.98px) {
+  .carlton-mobile-wrapper .desktop {
+    display: inherit; } }
