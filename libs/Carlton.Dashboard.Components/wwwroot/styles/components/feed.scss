@@ -3,11 +3,11 @@
 
 .feed-list-item {
     max-width: 350px;
+    margin-top: 10px;
 
     .feed-item-row {
         border-bottom-style: solid;
-        padding: 10px;
-
+ 
         @include themify{
             border-bottom-color: rgba(themed('textColor'), 0.25);
         }
@@ -26,7 +26,7 @@
     }
 
     .feed-message {
-        font-size: 10pt;
+        font-size: 9pt;
 
         @include themify($themes) {
             color: themed('textColor');
@@ -34,13 +34,10 @@
     }
 
     .feed-date-col {
-        text-align: right;
-
         .feed-date {
-            font-size: 10px;
-            text-align: center;
-            line-height: 4.5;
-
+            font-size: 8px;
+            margin-top: 10px;
+            vertical-align: top;
             @include themify($themes) {
                 color: themed('textColor');
             }

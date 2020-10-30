@@ -48,10 +48,11 @@ body {
   color: #c2c2c2; }
 
 .apartment-status-list-item {
-  max-width: 500px; }
-  .theme-light .apartment-status-list-item span.status-icon {
+  max-width: 500px;
+  text-align: center; }
+  .theme-light .apartment-status-list-item span.apt-status-icon {
     color: #47a8f4; }
-  .theme-dark .apartment-status-list-item span.status-icon {
+  .theme-dark .apartment-status-list-item span.apt-status-icon {
     color: #0090e7; }
   .theme-light .apartment-status-list-item span.status-value-complete {
     color: #009688; }
@@ -109,10 +110,10 @@ body {
   color: #00c689; }
 
 .feed-list-item {
-  max-width: 350px; }
+  max-width: 350px;
+  margin-top: 10px; }
   .feed-list-item .feed-item-row {
-    border-bottom-style: solid;
-    padding: 10px; }
+    border-bottom-style: solid; }
     .theme-light .feed-list-item .feed-item-row {
       border-bottom-color: rgba(117, 117, 117, 0.25); }
     .theme-dark .feed-list-item .feed-item-row {
@@ -128,21 +129,19 @@ body {
     .theme-dark .feed-list-item .feed-title {
       color: #00c689; }
   .feed-list-item .feed-message {
-    font-size: 10pt; }
+    font-size: 9pt; }
     .theme-light .feed-list-item .feed-message {
       color: #757575; }
     .theme-dark .feed-list-item .feed-message {
       color: #c2c2c2; }
-  .feed-list-item .feed-date-col {
-    text-align: right; }
-    .feed-list-item .feed-date-col .feed-date {
-      font-size: 10px;
-      text-align: center;
-      line-height: 4.5; }
-      .theme-light .feed-list-item .feed-date-col .feed-date {
-        color: #757575; }
-      .theme-dark .feed-list-item .feed-date-col .feed-date {
-        color: #c2c2c2; }
+  .feed-list-item .feed-date-col .feed-date {
+    font-size: 8px;
+    margin-top: 10px;
+    vertical-align: top; }
+    .theme-light .feed-list-item .feed-date-col .feed-date {
+      color: #757575; }
+    .theme-dark .feed-list-item .feed-date-col .feed-date {
+      color: #c2c2c2; }
 
 .dinner-guests-list-card .sub-title {
   font-size: 10pt;

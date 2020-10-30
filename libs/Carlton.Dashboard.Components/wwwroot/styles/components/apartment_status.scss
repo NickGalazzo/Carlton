@@ -2,8 +2,9 @@
 
 .apartment-status-list-item {
     max-width: 500px;
+    text-align: center;
 
-    span.status-icon {
+    span.apt-status-icon {
         @include themify($themes) {
             color: themed('iconColor');
         }

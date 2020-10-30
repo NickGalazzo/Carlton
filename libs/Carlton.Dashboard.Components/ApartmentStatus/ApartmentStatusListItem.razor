@@ -1,12 +1,12 @@
 ﻿@using Carlton.Dashboard.ViewModels.ApartmentStatus
 
 @inherits DashboardBaseComponent<ApartmentStatusListItemViewModel>
-
 <div class="row apartment-status-list-item">
-    <div class="col-3 offset-1">
-        <span class="status-icon mdi mdi-24px @ViewModel.StatusIcon"></span>
+    <div class="col-3 offset-2">
+        <span class="apt-status-icon mdi mdi-24px @ViewModel.StatusIcon"></span>
     </div>
-    <div class="col-3 offset-4">
+    <div class="col-2"></div>
+    <div class="col-3">
         @if(ViewModel.StatusValue == ApartmentStatuses.Complete)
         {
             <span class="status-value-complete mdi mdi-24px mdi-check-circle"></span>

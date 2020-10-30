@@ -2,18 +2,20 @@
 
 @inherits DashboardBaseComponent<FeedListItemViewModel>
 
-<div class="feed-list-item">
-    <div class="feed-item-row row">
-        <div class="col-2">
-            <img class="avatar-img" src="https://www.w3schools.com/w3images/avatar2.png" />
+    <div class="feed-list-item">
+        <div class="row">
+            <div class="col-2">
+                <img class="avatar-img" src="https://www.w3schools.com/w3images/avatar2.png" />
+            </div>
+            <div class="col-8 offset-2">
+                <div class="feed-title">@ViewModel.User.UserName</div>
+                <div class="feed-message">@ViewModel.Message</div>
+            </div>
         </div>
-        <div class="col-6">
-            <div class="feed-title">@ViewModel.User.UserName</div>
-            <div class="feed-message">@ViewModel.Message</div>
-        </div>
-        <div class="col-4 align-middle feed-date-col">
-            <span class="feed-date">@ViewModel.FeedDisplayDate</span>
+        <div class="row feed-date-col feed-item-row">
+            <div class="col-8 offset-4">
+                <span class="feed-date">@ViewModel.FeedDisplayDate</span>
+            </div>
         </div>
     </div>
-</div>
 

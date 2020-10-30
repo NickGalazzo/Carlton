@@ -19,7 +19,7 @@ namespace Carlton.TestBed.Client.TestViewModels
 
             feedItems.Add(new FeedListItemViewModel("Garbage", TOOK_OUT_GARBAGE, feedUser, DateTimeOffset.Now));
 
-            feedItems.Add(new FeedListItemViewModel("Household Items", "Purchahsed Household Items", feedUser, DateTime.Now));
+            feedItems.Add(new FeedListItemViewModel("Groceries", "Purchahsed Groceries", feedUser, DateTime.Now));
 
 
 
