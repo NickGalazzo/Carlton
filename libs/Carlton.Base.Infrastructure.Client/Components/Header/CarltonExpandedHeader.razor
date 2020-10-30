@@ -1,13 +1,15 @@
 ﻿@inherits CarltonHeader
 
-<div class="row">
-    <div class="title col-md-3 col-xl-2">
-        @LogoContent
-    </div>
-    <div class="menu col-md-1 col-xl-2">
-        @MenuContent
-    </div>
-    <div class="action col-6 offset-2">
-        @ActionContent
-    </div>
-</div>
+<CarltonMediaQueryWrapper>
+    <MobileContent>
+        <CarltonMobileHeader LogoContent="@LogoContent"
+                             MenuContent="@MenuContent"
+                             ActionContent="@ActionContent" />
+    </MobileContent>
+
+    <DesktopContent>
+        <CarltonDesktopExpandedHeader LogoContent="@LogoContent"
+                                       MenuContent="@MenuContent"
+                                       ActionContent="@ActionContent" />/>
+    </DesktopContent>
+</CarltonMediaQueryWrapper>
