@@ -3,9 +3,6 @@ html, body, app > div, .container-fluid, .container-fluid > .row {
     height: 100%
 }
 
-main {
-    background-color: #f5f6fa;
-}
 
 .container-fluid {
     padding-right: 0px;
@@ -16,6 +13,49 @@ main {
     nav {
         padding-left: 0px;
         padding-right: 0px;
+    }
+
+    main {
+        background-color: #f5f6fa;
+    }
+
+    .collapsed {
+        nav {
+            max-width: 50px;
+            width: 50px;
+            transition: width .75s ease;
+        }
+
+        main {
+            width: 100%;
+            margin-left: 50px;
+            overflow: hidden;
+
+            article {
+                width: 100%;
+                overflow: hidden;
+                margin-left: 15px;
+            }
+        }
+    }
+
+    :not(.collapsed) {
+
+
+        main {
+            @media (max-width: 767.98px) {
+                background-color: darkgray;
+            }
+
+            article {
+                width: 100%;
+                overflow: hidden;
+
+                @media (max-width: 767.98px) {
+                    display: none;
+                }
+            }
+        }
     }
 }
 
@@ -28,27 +68,5 @@ nav.sidebar {
 
     @media (max-width: 767.98px) {
         max-width: 250px;
-    }
-}
-
-article {
-    width: 100%;
-    overflow: hidden;
-}
-
-.collapsed {
-    max-width: 50px;
-    width: 50px;
-    transition: width .75s ease;
-
-
-    + main {
-        width: 100%;
-        margin-left: 50px;
-        overflow: hidden;
-    }
-
-    + main article {
-        margin-left: 15px;
     }
 }

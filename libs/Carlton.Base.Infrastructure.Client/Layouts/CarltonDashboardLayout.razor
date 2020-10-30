@@ -8,12 +8,12 @@
         </CascadingValue>
     </CascadingValue>
 </nav>
-
 <div class="container-fluid">
-    <div class="row">
-        <nav class="sidebar @(IsCollapsed ? "collapsed" : "col-md-3 col-lg-3 col-xl-2")">
+    <div class="row @(IsCollapsed ? "collapsed" : string.Empty)">
+        <nav class="sidebar @(IsCollapsed ? string.Empty : "col-md-3 col-lg-3 col-xl-2")">
             @NavContent
         </nav>
+
 
         <main role="main" class="@(IsCollapsed ? string.Empty : "col-md-9 col-lg-9 col-xl-10 ml-auto")">
             <div class="row">
@@ -24,8 +24,10 @@
                 @PanelContent
             </footer>
         </main>
+
     </div>
 </div>
+
 
 @code{
     [Parameter]

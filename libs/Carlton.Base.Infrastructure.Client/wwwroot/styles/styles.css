@@ -16,9 +16,6 @@
 html, body, app > div, .container-fluid, .container-fluid > .row {
   height: 100%; }
 
-main {
-  background-color: #f5f6fa; }
-
 .container-fluid {
   padding-right: 0px;
   padding-left: 0px;
@@ -27,6 +24,29 @@ main {
   .container-fluid nav {
     padding-left: 0px;
     padding-right: 0px; }
+  .container-fluid main {
+    background-color: #f5f6fa; }
+  .container-fluid .collapsed nav {
+    max-width: 50px;
+    width: 50px;
+    transition: width .75s ease; }
+  .container-fluid .collapsed main {
+    width: 100%;
+    margin-left: 50px;
+    overflow: hidden; }
+    .container-fluid .collapsed main article {
+      width: 100%;
+      overflow: hidden;
+      margin-left: 15px; }
+  @media (max-width: 767.98px) {
+    .container-fluid :not(.collapsed) main {
+      background-color: darkgray; } }
+  .container-fluid :not(.collapsed) main article {
+    width: 100%;
+    overflow: hidden; }
+    @media (max-width: 767.98px) {
+      .container-fluid :not(.collapsed) main article {
+        display: none; } }
 
 nav.sidebar {
   height: 100%;
@@ -36,21 +56,6 @@ nav.sidebar {
   @media (max-width: 767.98px) {
     nav.sidebar {
       max-width: 250px; } }
-
-article {
-  width: 100%;
-  overflow: hidden; }
-
-.collapsed {
-  max-width: 50px;
-  width: 50px;
-  transition: width .75s ease; }
-  .collapsed + main {
-    width: 100%;
-    margin-left: 50px;
-    overflow: hidden; }
-  .collapsed + main article {
-    margin-left: 15px; }
 
 .carlton-base-tree {
   padding-left: 15px; }
