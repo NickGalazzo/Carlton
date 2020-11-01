@@ -10,10 +10,13 @@
 
 @code {
     [CascadingParameter]
-    private CarltonTabBar Parent { get; set; }
+    private CarltonBaseTabBar Parent { get; set; }
 
     [Parameter]
     public string DisplayText { get; set; }
+
+    [Parameter]
+    public string Icon { get; set; }
 
     [Parameter]
     public RenderFragment ChildContent { get; set; }

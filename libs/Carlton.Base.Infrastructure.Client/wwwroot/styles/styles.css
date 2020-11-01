@@ -226,6 +226,34 @@ nav.sidebar {
     transition: left .2s ease;
     -webkit-transition: left .2s ease; }
 
+.carlton-mobile-tabs {
+  margin-top: 100px; }
+  .carlton-mobile-tabs .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.8rem 0;
+    background-color: #252a32;
+    z-index: 99;
+    will-change: transform;
+    transform: translateZ(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24); }
+    .carlton-mobile-tabs .bottom-nav-item {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #f1f5f8; }
+    .carlton-mobile-tabs .bottom-nav-link {
+      display: flex;
+      flex-direction: column; }
+    .carlton-mobile-tabs .bottom-nav .active {
+      color: #d32f2f; }
+
 .carlton-notification {
   color: white;
   height: 75px; }

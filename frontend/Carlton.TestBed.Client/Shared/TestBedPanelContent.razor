@@ -1,0 +1,23 @@
+﻿@using Carlton.Base.Client.Components.Tab
+@using Carlton.TestBed.Client.Services
+
+<CarltonTab DisplayText="Component Events" Icon="mdi-flash">
+    <TestBedEventConsole ComponentEvents="Service.ComponentEvents" ClearEvents="Service.ClearEvents" />
+</CarltonTab>
+<CarltonTab DisplayText="JSON Payloads" Icon="mdi-code-braces">
+    <TestBedViewModelViewer ViewModel="Service.TestComponentViewModel" ViewModelChanged="Service.UpdateTestComponentViewModel" />
+</CarltonTab>
+<CarltonTab DisplayText="Component Status" Icon="mdi-traffic-light">
+    <TestBedStatusSwitch ComponentStatusChangeCallback="Service.UpdateComponentStatus" />
+</CarltonTab>
+<CarltonTab DisplayText="Source" Icon="mdi-source-branch">
+    <TestBedSourceViewer ComponentType="@Service.TestComponentType" />
+</CarltonTab>
+<CarltonTab DisplayText="Tests" Icon="mdi-test-tube">
+    <TestBedSourceViewer ComponentType="@Service.TestComponentType" />
+</CarltonTab>
+
+@code {
+    [Parameter]
+    public TestBedService Service { get; set; }
+}

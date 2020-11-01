@@ -1,4 +1,5 @@
-﻿
+﻿@inherits CarltonMobileTabBar
+
 <div class="carlton-tabs">
     @foreach(CarltonTab tab in _tabs)
     {
@@ -11,49 +12,15 @@
     @ChildContent
 </CascadingValue>
 
-
 <style>
-    .carlton-tab.active ~ span.tab-selected-bar {
-        left: @($"{CalculateTabBarOffset()}" + "px");
-        width: 190px;
-    }
+        .carlton-tab.active ~ span.tab-selected-bar {
+            left: @($"{CalculateTabBarOffset()}" + "px");
+            width: 190px;
+        }
 </style>
 
 
 @code {
-    [Parameter]
-    public RenderFragment ChildContent { get; set; }
-
-    public CarltonTab ActiveTab { get; set; }
-
-    private List<CarltonTab> _tabs = new List<CarltonTab>();
-
-    private int _tabCount;
-
-    private int _activeTabIndex;
-
-    internal void AddTab(CarltonTab tab)
-    {
-        _tabCount = _tabCount + 1;
-        tab.TabIndex = _tabCount - 1;
-
-        _tabs.Add(tab);
-        if(_tabs.Count == 1)
-            ActiveTab = tab;
-        StateHasChanged();
-    }
-
-    internal void ActivateTab(CarltonTab tab)
-    {
-        ActiveTab = tab;
-        _activeTabIndex = tab.TabIndex;
-    }
-
-    private string GetButtonClass(CarltonTab tab)
-    {
-        return tab == ActiveTab ? "btn-primary" : "btn-secondary";
-    }
-
     private int CalculateTabBarOffset()
     {
         return _activeTabIndex * 190;
