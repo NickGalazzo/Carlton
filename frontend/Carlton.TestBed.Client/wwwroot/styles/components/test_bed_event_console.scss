@@ -2,6 +2,7 @@
 
 .event-console {
     @include console-textarea;
+    text-align: center;
 
     button {
         border-color: transparent;

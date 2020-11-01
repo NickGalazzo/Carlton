@@ -252,6 +252,35 @@ nav.sidebar {
     .carlton-mobile-tabs .bottom-nav .active {
       color: #d32f2f; }
 
+.carlton-slide-tab {
+  position: fixed;
+  bottom: 80px;
+  width: 100%; }
+  .carlton-slide-tab .slide-button {
+    cursor: pointer;
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    padding: 15px 0;
+    background-color: #252a32;
+    color: #fff;
+    border: 0;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; }
+  .carlton-slide-tab .slide-container {
+    display: none;
+    background: #2d2d2a;
+    color: #fff;
+    width: 100%;
+    min-height: 50px;
+    text-align: left;
+    padding: 15px; }
+  .carlton-slide-tab .slide-container.expanded {
+    display: block;
+    overflow-y: scroll;
+    height: 150px; }
+
 .carlton-notification {
   color: white;
   height: 75px; }

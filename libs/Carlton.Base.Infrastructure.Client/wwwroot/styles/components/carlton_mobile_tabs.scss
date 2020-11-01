@@ -41,3 +41,41 @@ $box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
         }
     }
 }
+
+
+.carlton-slide-tab {
+    position: fixed;
+    bottom: 80px;
+    width: 100%;
+
+
+    .slide-button {
+        cursor: pointer;
+        display: block;
+        width: 100px;
+        margin: 0 auto;
+        padding: 15px 0;
+        background-color: #252a32;
+        color: #fff;
+        border: 0;
+        text-align: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .slide-container {
+        display: none;
+        background: #2d2d2a;
+        color: #fff;
+        width: 100%;
+        min-height: 50px;
+        text-align: left;
+        padding: 15px;
+    }
+
+    .slide-container.expanded {
+        display: block;
+        overflow-y: scroll;
+        height: 150px;
+    }
+}

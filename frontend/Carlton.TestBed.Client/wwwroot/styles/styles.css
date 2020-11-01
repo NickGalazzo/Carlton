@@ -88,21 +88,22 @@
       margin-left: auto;
       margin-right: auto; } }
 
-.event-console textarea {
-  width: 100%;
-  height: 500px;
-  background-color: black;
-  color: greenyellow; }
-  .event-console textarea.error {
-    color: red; }
-
-.event-console button {
-  border-color: transparent;
-  background-color: #00897b;
-  margin-left: 10px; }
+.event-console {
+  text-align: center; }
+  .event-console textarea {
+    width: 85%;
+    height: 500px;
+    background-color: black;
+    color: greenyellow; }
+    .event-console textarea.error {
+      color: red; }
+  .event-console button {
+    border-color: transparent;
+    background-color: #00897b;
+    margin-left: 10px; }
 
 .view-model-viewer textarea {
-  width: 100%;
+  width: 85%;
   height: 500px;
   background-color: black;
   color: greenyellow; }
