@@ -24,8 +24,6 @@ html, body, app > div, .container-fluid, .container-fluid > .row {
   .container-fluid nav {
     padding-left: 0px;
     padding-right: 0px; }
-  .container-fluid main {
-    background-color: #f5f6fa; }
   .container-fluid .collapsed nav {
     max-width: 50px;
     width: 50px;
@@ -358,9 +356,6 @@ nav.sidebar {
   @media (min-width: 1366px) {
     .carlton-logo span.title {
       font-size: 16pt; } }
-  @media (min-width: 1367px) {
-    .carlton-logo span.title {
-      font-size: 20pt; } }
 
 .collapsed.carlton-logo span.title {
   display: none; }
