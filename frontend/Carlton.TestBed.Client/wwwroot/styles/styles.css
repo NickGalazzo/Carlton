@@ -92,23 +92,31 @@
   text-align: center; }
   .event-console textarea {
     width: 85%;
-    height: 500px;
+    max-height: 300px;
     background-color: black;
-    color: greenyellow; }
+    color: greenyellow;
+    margin-left: auto;
+    margin-right: auto; }
     .event-console textarea.error {
       color: red; }
   .event-console button {
+    display: block;
     border-color: transparent;
     background-color: #00897b;
-    margin-left: 10px; }
+    margin-left: auto;
+    margin-right: auto; }
 
-.view-model-viewer textarea {
-  width: 85%;
-  height: 500px;
-  background-color: black;
-  color: greenyellow; }
-  .view-model-viewer textarea.error {
-    color: red; }
+.view-model-viewer {
+  text-align: center; }
+  .view-model-viewer textarea {
+    width: 85%;
+    max-height: 300px;
+    background-color: black;
+    color: greenyellow;
+    margin-left: auto;
+    margin-right: auto; }
+    .view-model-viewer textarea.error {
+      color: red; }
 
 .component-status-switch {
   padding: 20px; }

@@ -1,9 +1,11 @@
 ﻿@mixin console-textarea {
     textarea {
         width: 85%;
-        height: 500px;
+        max-height: 300px;
         background-color: black;
         color: greenyellow;
+        margin-left: auto;
+        margin-right: auto;
 
         &.error {
             color: red;
