@@ -30,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carlton.Dashboard.Components.Test", "frontend\Carlton.Dashboard.Components.Test\Carlton.Dashboard.Components.Test.csproj", "{A661E27F-A8D8-4330-A033-2D2465518532}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +78,10 @@ Global
 		{F3E1B498-CF25-4B38-8024-63B45989988F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3E1B498-CF25-4B38-8024-63B45989988F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3E1B498-CF25-4B38-8024-63B45989988F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A661E27F-A8D8-4330-A033-2D2465518532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A661E27F-A8D8-4330-A033-2D2465518532}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A661E27F-A8D8-4330-A033-2D2465518532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A661E27F-A8D8-4330-A033-2D2465518532}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

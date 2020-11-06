@@ -5,12 +5,12 @@ namespace Carlton.Dashboard.Components.ToDo.Events
 {
     public class ToDoStatusChangedEvent : IRequest<ToDoListViewModel>
     {
-        public int CompletedToDoId { get; }
+        public int ToDoID { get; }
         public bool ToDoCompleted { get; }
 
-        public ToDoStatusChangedEvent(int completedToDoId, bool toDoCompleted)
+        public ToDoStatusChangedEvent(int toDoID, bool toDoCompleted)
         {
-            CompletedToDoId = completedToDoId;
+            ToDoID = toDoID;
             ToDoCompleted = toDoCompleted;
         }
     }
