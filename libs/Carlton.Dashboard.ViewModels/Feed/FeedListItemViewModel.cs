@@ -15,7 +15,7 @@ namespace Carlton.Dashboard.ViewModels.Feed
             get
             {
 
-                var timeDiff = FeedDate.Subtract(DateTimeOffset.UtcNow);
+                var timeDiff = DateTimeOffset.UtcNow.Subtract(FeedDate);
 
 
                 if(timeDiff < TimeSpan.FromSeconds(60))
@@ -24,19 +24,15 @@ namespace Carlton.Dashboard.ViewModels.Feed
                 }
                 else if(timeDiff < TimeSpan.FromMinutes(60))
                 {
-                    return $"{timeDiff.TotalMinutes} mins ago";
+                    return $"{Math.Round(timeDiff.TotalMinutes)} min(s) ago";
                 }
-                else if(timeDiff > TimeSpan.FromHours(1) && timeDiff < TimeSpan.FromHours(2))
+                else if(timeDiff > TimeSpan.FromHours(1) && timeDiff < TimeSpan.FromHours(24))
                 {
-                    return "1 hr ago";
-                }
-                else if(timeDiff >= TimeSpan.FromHours(2) && timeDiff < TimeSpan.FromDays(1))
-                {
-                    return FeedDate.ToLocalTime().ToString("H:mm tt", new CultureInfo("en-US"));
+                    return $"{Math.Round(timeDiff.TotalHours)} hr(s) ago";
                 }
                 else
                 {
-                    return FeedDate.ToLocalTime().Date.ToString("MMMM dd", new CultureInfo("en-US"));
+                    return FeedDate.ToLocalTime().Date.ToString("MMM d", new CultureInfo("en-US"));
                 }
             }
 

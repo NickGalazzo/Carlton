@@ -107,5 +107,22 @@ namespace Carlton.Dashboard.Components.Test
                 <div class='progress-bar high' role='progressbar' style='width: 92%' aria-valuenow='92' aria-valuemin='0' aria-valuemax='100'></div>
             </div>
         </div>";
+
+        public static string FeedListItem = @"<div class='feed-list-item'>
+            <div class='row'>
+                <!--!--><div class='col-2'>
+                    <img class='avatar-img' src='https://www.w3schools.com/w3images/avatar2.png'>
+                </div>
+                <div class='col-8 offset-2'>
+                    <div class='feed-title'>Nick</div>
+                    <div class='feed-message'>Took Out Garbage</div>
+                </div>
+            </div>
+            <div class='row feed-date-col feed-item-row'>
+                <div class='col-8 offset-4'>
+                    <span class='feed-date'>moments ago</span>
+                </div>
+            </div>
+        </div>";
     }
 }

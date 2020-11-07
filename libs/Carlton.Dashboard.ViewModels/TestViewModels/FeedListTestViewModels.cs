@@ -17,10 +17,11 @@ namespace Carlton.TestBed.Client.TestViewModels
          
             feedItems.Add(new FeedListItemViewModel("Garbage", TOOK_OUT_GARBAGE, feedUser, DateTimeOffset.Now));
 
-            feedItems.Add(new FeedListItemViewModel("Garbage", TOOK_OUT_GARBAGE, feedUser, DateTimeOffset.Now));
+            feedItems.Add(new FeedListItemViewModel("Garbage", TOOK_OUT_GARBAGE, feedUser, DateTimeOffset.Now.AddMinutes(-10)));
 
-            feedItems.Add(new FeedListItemViewModel("Groceries", "Purchahsed Groceries", feedUser, DateTime.Now));
+            feedItems.Add(new FeedListItemViewModel("Groceries", "Purchahsed Groceries", feedUser, DateTimeOffset.Now.AddHours(-3)));
 
+            feedItems.Add(new FeedListItemViewModel("Groceries", "Purchahsed Groceries", feedUser, new DateTime(1989, 10, 9, 2, 7, 0, 0)));
 
 
             return new FeedListViewModel(feedItems);
@@ -29,6 +30,25 @@ namespace Carlton.TestBed.Client.TestViewModels
         public static FeedListItemViewModel DefaultFeedListItemViewModel()
         {
             return DefaultFeedListViewModel().FeedItems.First();
+        }
+
+        public static FeedListItemViewModel MomentsAgoFeedListItemViewModel()
+        {
+            return DefaultFeedListViewModel().FeedItems.First();
+        }
+        public static FeedListItemViewModel TenMinutesAgoFeedListItemViewModel()
+        {
+            return DefaultFeedListViewModel().FeedItems.ElementAt(1);
+        }
+
+        public static FeedListItemViewModel ThreeHoursAgoFeedListItemViewModel()
+        {
+            return DefaultFeedListViewModel().FeedItems.ElementAt(2);
+        }
+
+        public static FeedListItemViewModel PreviousDateFeedListItemViewModel()
+        {
+            return DefaultFeedListViewModel().FeedItems.ElementAt(3);
         }
     }
 }
