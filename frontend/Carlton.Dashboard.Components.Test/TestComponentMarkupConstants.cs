@@ -80,5 +80,32 @@ namespace Carlton.Dashboard.Components.Test
                         <span class='mdi mdi-24px mdi-food '></span>
                 </div>
             </div>";
+
+        public static string GroceriesListItem_Low = @"<div class='groceries-list-item'>
+                <div>
+                    <span class='item-name'>Toilet Paper</span>
+                </div>
+                <div class='progress'>
+                    <div class='progress-bar low' role='progressbar' style='width: 25%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>
+                </div>
+            </div>";
+
+        public static string GroceriesListItem_Medium = @"<div class='groceries-list-item'>
+            <div>
+                <span class='item-name'>Paper Towels</span>
+            </div>
+            <div class='progress'>
+                <div class='progress-bar medium' role='progressbar' style='width: 57%' aria-valuenow='57' aria-valuemin='0' aria-valuemax='100'></div>
+            </div>
+        </div>";
+
+        public static string GroceriesListItem_High = @"<div class='groceries-list-item'>
+            <div>
+                <span class='item-name'>Dish Soap</span>
+            </div>
+            <div class='progress'>
+                <div class='progress-bar high' role='progressbar' style='width: 92%' aria-valuenow='92' aria-valuemin='0' aria-valuemax='100'></div>
+            </div>
+        </div>";
     }
 }
