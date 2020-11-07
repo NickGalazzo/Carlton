@@ -1,10 +1,7 @@
 ﻿using Bunit;
 using Carlton.Dashboard.Components.ApartmentStatus;
 using Carlton.Dashboard.ViewModels.ApartmentStatus;
-using Carlton.Dashboard.ViewModels.CountCards;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Carlton.Dashboard.Components.Test

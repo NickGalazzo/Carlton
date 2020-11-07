@@ -4,6 +4,7 @@ using Carlton.Dashboard.Components.ToDos;
 using Carlton.Dashboard.ViewModels.ToDos;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace Carlton.Dashboard.Components.Test
@@ -110,7 +111,7 @@ namespace Carlton.Dashboard.Components.Test
             );
 
             //Act
-            var listItems = cut.FindAll("li .to-do-list-item");
+            var listItems = cut.FindComponents<ToDoListItem>();
 
             // Assert
             Assert.Equal(3, listItems.Count);
@@ -131,7 +132,7 @@ namespace Carlton.Dashboard.Components.Test
             );
 
             //Act
-            var item = cut.FindAll(".to-do-list-item")[0];
+            var item = cut.FindComponents<ToDoListItem>().First();
 
             // Assert
             item.MarkupMatches(TestComponentMarkupConstants.ToDoListItem_Unchecked);

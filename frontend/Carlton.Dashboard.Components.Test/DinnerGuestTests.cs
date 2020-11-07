@@ -162,7 +162,7 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("DinnerGuestsSelfStatus", "ComponentEvent")]
         public void DinnerGuests_SelfStatus_IsNotHome_StatusChangedEvent()
         {
-            //Arrange
+            //Act
             DinnerGuestsHomeForDinnerStatusChangeEvent result = null;
             var cut = RenderComponent<DinnerGuestsSelfStatus>(
                 ("ViewModel", new DinnerGuestSelfStatusViewModel(
@@ -187,7 +187,7 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("DinnerGuestsSelfStatus", "ComponentEvent")]
         public void DinnerGuests_SelfStatus_IsHome_StatusChangedEvent()
         {
-            //Arrange
+            //Act
             DinnerGuestsHomeForDinnerStatusChangeEvent result = null;
             var cut = RenderComponent<DinnerGuestsSelfStatus>(
                 ("ViewModel", new DinnerGuestSelfStatusViewModel(
@@ -211,7 +211,7 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("DinnerGuestsSelfStatus", "ComponentEvent")]
         public void DinnerGuests_SelfStatus_NotHome_ReasonChangedEvent()
         {
-            //Arrange
+            //Act
             DinnerGuestsReasonChangedEvent result = null;
             var cut = RenderComponent<DinnerGuestsSelfStatus>(
                 ("ViewModel", new DinnerGuestSelfStatusViewModel(
@@ -236,7 +236,7 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("DinnerGuestsListCard", "Snapshot")]
         public void DinnerGuestsListCard_TwoGuests_Markup()
         {
-            // Arrange
+            // Act
             var cut = RenderComponent<DinnerGuestsListCard>(
                 ("ViewModel",
                         new DinnerGuestsListViewModel(
@@ -265,7 +265,7 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("DinnerGuestsListCard", "Snapshot")]
         public void DinnerGuestsListCard_SelfStatus_Markup()
         {
-            // Arrange
+            // Act
             var cut = RenderComponent<DinnerGuestsListCard>(
                 ("ViewModel",
                         new DinnerGuestsListViewModel(
