@@ -1,8 +1,6 @@
 using Bunit;
-using Carlton.Dashboard.Components.ApartmentStatus;
 using Carlton.Dashboard.Components.ToDo.Events;
 using Carlton.Dashboard.Components.ToDos;
-using Carlton.Dashboard.ViewModels.ApartmentStatus;
 using Carlton.Dashboard.ViewModels.ToDos;
 using System;
 using System.Collections.Generic;
@@ -22,7 +20,7 @@ namespace Carlton.Dashboard.Components.Test
             );
 
             // Assert
-            cut.MarkupMatches(TestComponentMarkupConstants.ApartmentStatusListItem_Unchecked);
+            cut.MarkupMatches(TestComponentMarkupConstants.ToDoListItem_Unchecked);
         }
 
         [Fact]
@@ -35,7 +33,7 @@ namespace Carlton.Dashboard.Components.Test
             );
 
             // Assert
-            cut.MarkupMatches(TestComponentMarkupConstants.ApartmentStatusListItem_Checked);
+            cut.MarkupMatches(TestComponentMarkupConstants.ToDoListItem_Checked);
         }
 
         [Fact]
@@ -136,7 +134,7 @@ namespace Carlton.Dashboard.Components.Test
             var item = cut.FindAll(".to-do-list-item")[0];
 
             // Assert
-            item.MarkupMatches(TestComponentMarkupConstants.ApartmentStatusListItem_Unchecked);
+            item.MarkupMatches(TestComponentMarkupConstants.ToDoListItem_Unchecked);
         }
     }
 }

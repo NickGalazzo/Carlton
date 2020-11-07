@@ -2,12 +2,12 @@
 {
     public class DinnerGuestsReasonChangedEvent
     {
-        public int GuestId { get; }
+        public int DinnerGuestId { get; }
         public int ReasonId { get; }
 
-        public DinnerGuestsReasonChangedEvent(int guestId, int reasonId)
+        public DinnerGuestsReasonChangedEvent(int dinnerGuestId, int reasonId)
         {
-            GuestId = guestId;
+            DinnerGuestId = dinnerGuestId;
             ReasonId = reasonId;
         }
     }

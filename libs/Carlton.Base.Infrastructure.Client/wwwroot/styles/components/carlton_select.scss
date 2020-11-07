@@ -11,6 +11,7 @@ $duration: 0.25s;
         width: 100%;
         border: none;
         background: none;
+        cursor: pointer;
         border-bottom: 2px solid $color;
         transition: $duration border-color ease-in-out;
 
@@ -29,6 +30,7 @@ $duration: 0.25s;
     }
 
     .options > div {
+        cursor: pointer;
         padding: 0.5rem;
 
         &:not(*:last-child) {

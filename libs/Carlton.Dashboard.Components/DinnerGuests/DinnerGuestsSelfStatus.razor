@@ -17,9 +17,11 @@
             </div>
         </div>
 
-        <CarltonSelect Label="Reason?"
-                       Options="ViewModel.MySavedReasons.ToDictionary(o => o.ReasonText, o => o.ReasonId)"
+        <CarltonSelect 
+                       Disabled="ViewModel.MyGuestStatus.IsHomeForDinner"
+                       Label="Reason?" 
+                       Options="ViewModel.MySavedReasons.ToDictionary(o => o.ReasonId, o => o.ReasonText)"
                        SelectedValue="ViewModel.MyGuestStatus.Reason.ReasonId"
-                       ValueChangedCallback="(kv) => base.OnComponentEvent.InvokeAsync(new DinnerGuestsReasonChangedEvent(ViewModel.MyGuestStatus.GuestId, kv.Value))" />
+                       ValueChangedCallback="(kv) => base.OnComponentEvent.InvokeAsync(new DinnerGuestsReasonChangedEvent(ViewModel.MyGuestStatus.GuestId, kv.Key))" />
     </Content>
 </CarltonCssWraper>
