@@ -1,7 +1,6 @@
 ﻿using Bunit;
 using Carlton.Dashboard.Components.ApartmentStatus;
-using Carlton.Dashboard.ViewModels.ApartmentStatus;
-using System.Collections.Generic;
+using Carlton.TestBed.Client.TestViewModels;
 using Xunit;
 
 namespace Carlton.Dashboard.Components.Test
@@ -12,12 +11,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatus", "Snapshot")]
         public void ApartmentStatus_Complete_Markup()
         {
-            // Act
+            //Act
             var cut = RenderComponent<ApartmentStatusListItem>(
-                ("ViewModel", new ApartmentGarbageStatusListItemViewModel(ApartmentStatuses.Complete))
+                ("ViewModel", ApartmentStatusTestViewModels.CompletedStatusViewModel())
             );
 
-            // Assert
+            //Assert
             cut.MarkupMatches(TestComponentMarkupConstants.ApartmentStatusListItem_Complete);
         }
 
@@ -27,7 +26,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Act
             var cut = RenderComponent<ApartmentStatusListItem>(
-                ("ViewModel", new ApartmentGarbageStatusListItemViewModel(ApartmentStatuses.Incomplete))
+                ("ViewModel", ApartmentStatusTestViewModels.InCompleteStatusViewModel())
             );
 
             // Assert
@@ -35,25 +34,17 @@ namespace Carlton.Dashboard.Components.Test
         }
 
         [Fact]
-        [Trait("ApartmentStatus", "Snapshot")]
-        public void ApartmentStatusListCard_Markup()
+        [Trait("ApartmentStatus", "Unit")]
+        public void ApartmentStatusListCard_Child_Count_Verify()
         {
             // Act
             var cut = RenderComponent<ApartmentStatusListCard>(
-                ("ViewModel",
-                    new ApartmentStatusListViewModel(new List<ApartmentStatusListItemViewModel>
-                    {
-                        new ApartmentGarbageStatusListItemViewModel(ApartmentStatuses.Incomplete),
-                        new ApartmentRecycleStatusListItemViewModel(ApartmentStatuses.Incomplete),
-                        new ApartmentLaundryStatusListItemViewModel(ApartmentStatuses.Complete)
-                    })
-                 ));
+                ("ViewModel", ApartmentStatusTestViewModels.DefaultApartmentStatusViewModel()));
 
-            var items = cut.FindAll(".apartment-status-list-item");
-
+            var items = cut.FindComponents<ApartmentStatusListItem>();
 
             // Assert
-            Assert.Equal(3, items.Count);
+            Assert.Equal(6, items.Count);
         }
 
         [Fact]
@@ -62,20 +53,12 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Act
             var cut = RenderComponent<ApartmentStatusListCard>(
-                ("ViewModel",
-                    new ApartmentStatusListViewModel(new List<ApartmentStatusListItemViewModel>
-                    {
-                        new ApartmentGarbageStatusListItemViewModel(ApartmentStatuses.Incomplete),
-                        new ApartmentRecycleStatusListItemViewModel(ApartmentStatuses.Incomplete),
-                        new ApartmentLaundryStatusListItemViewModel(ApartmentStatuses.Complete)
-                    })
-                 ));
+                ("ViewModel", ApartmentStatusTestViewModels.DefaultApartmentStatusViewModel()));
 
-            var item = cut.FindAll(".apartment-status-list-item")[0];
-
+            var item = cut.FindComponent<ApartmentStatusListItem>();
 
             // Assert
-            item.MarkupMatches(TestComponentMarkupConstants.ApartmentStatusListItem_Incomplete);
+            item.MarkupMatches(TestComponentMarkupConstants.ApartmentStatusListItem_Complete);
         }
     }
 }

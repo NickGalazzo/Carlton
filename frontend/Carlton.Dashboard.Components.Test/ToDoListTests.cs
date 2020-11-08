@@ -1,9 +1,7 @@
 using Bunit;
 using Carlton.Dashboard.Components.ToDo.Events;
 using Carlton.Dashboard.Components.ToDos;
-using Carlton.Dashboard.ViewModels.ToDos;
-using System;
-using System.Collections.Generic;
+using Carlton.TestBed.Client.TestViewModels;
 using System.Linq;
 using Xunit;
 
@@ -17,7 +15,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Act
             var cut = RenderComponent<ToDoListItem>(
-                ("ViewModel", new ToDoListItemViewModel(1, "Take Out Garbage", false))
+                ("ViewModel", ToDoListTestViewModels.ToDoListItemUnchecked())
             );
 
             // Assert
@@ -30,7 +28,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Act
             var cut = RenderComponent<ToDoListItem>(
-                ("ViewModel", new ToDoListItemViewModel(1, "Take Out Garbage", true))
+                ("ViewModel", ToDoListTestViewModels.ToDoListItemChecked())
             );
 
             // Assert
@@ -38,13 +36,13 @@ namespace Carlton.Dashboard.Components.Test
         }
 
         [Fact]
-        [Trait("ToDo", "Event")]
-        public void ToDoListItem_CompnentEvent_ToDo_Check()
+        [Trait("ToDo", "ComponentEvent")]
+        public void ToDoListItem_Initial_Unchecked_ToDoStatusChangedEvent()
         {
             // Arrange
             ToDoStatusChangedEvent result = null;
             var cut = RenderComponent<ToDoListItem>(
-                ("ViewModel", new ToDoListItemViewModel(1, "Take out Garbage", false)),
+                ("ViewModel", ToDoListTestViewModels.ToDoListItemUnchecked()),
                 ComponentParameterFactory.EventCallback("OnComponentEvent", (evt) => result = (ToDoStatusChangedEvent)evt)
             );
 
@@ -58,13 +56,13 @@ namespace Carlton.Dashboard.Components.Test
         }
 
         [Fact]
-        [Trait("ToDo", "Event")]
-        public void ToDoListItem_CompnentEvent_ToDo_Uncheck()
+        [Trait("ToDo", "ComponentEvent")]
+        public void ToDoListItem_Initial_Checked_ToDoStatusChangedEvent()
         {
             // Arrange
             ToDoStatusChangedEvent result = null;
             var cut = RenderComponent<ToDoListItem>(
-                ("ViewModel", new ToDoListItemViewModel(1, "Take out Garbage", true)),
+                ("ViewModel", ToDoListTestViewModels.ToDoListItemChecked()),
                 ComponentParameterFactory.EventCallback("OnComponentEvent", (evt) => result = (ToDoStatusChangedEvent)evt)
             );
 
@@ -79,14 +77,14 @@ namespace Carlton.Dashboard.Components.Test
 
         [Fact]
         [Trait("ToDo", "Unit")]
-        public void ToDoListItem_Verify_Label()
+        public void ToDoListItem_Label_Verify()
         {
             //Arrange
             var ToDoLabelText = "Take Out Garbage";
 
             // Act
             var cut = RenderComponent<ToDoListItem>(
-                ("ViewModel", new ToDoListItemViewModel(1, ToDoLabelText, true))
+                ("ViewModel", ToDoListTestViewModels.ToDoListItemChecked())
             );
             var renderedText = cut.Find("span.to-do-name").TextContent;
 
@@ -95,19 +93,13 @@ namespace Carlton.Dashboard.Components.Test
             Assert.Equal(ToDoLabelText, renderedText);
         }
 
-
         [Fact]
-        [Trait("ToDoList", "Snapshot")]
-        public void ToDoList_Snapshot()
+        [Trait("ToDoList", "Unit")]
+        public void ToDoList_ToDoListItem_ChildCount_Verify()
         {
             // Arrange
             var cut = RenderComponent<ToDoListCard>(
-                ("ViewModel", new ToDoListViewModel(new List<ToDoListItemViewModel>
-                {
-                    new ToDoListItemViewModel(1, "Take Out Garbage", false),
-                    new ToDoListItemViewModel(2, "Go Shopping", false),
-                    new ToDoListItemViewModel(3, "Prepare Dinner", true)
-                }))
+                ("ViewModel", ToDoListTestViewModels.DefaultToDoList())
             );
 
             //Act
@@ -119,16 +111,11 @@ namespace Carlton.Dashboard.Components.Test
 
         [Fact]
         [Trait("ToDoList", "Snapshot")]
-        public void ToDoList_ToDoListItem_Snapshot()
+        public void ToDoList_ToDoListItem_Markup()
         {
             // Arrange
             var cut = RenderComponent<ToDoListCard>(
-                ("ViewModel", new ToDoListViewModel(new List<ToDoListItemViewModel>
-                {
-                    new ToDoListItemViewModel(1, "Take Out Garbage", false),
-                    new ToDoListItemViewModel(2, "Go Shopping", false),
-                    new ToDoListItemViewModel(3, "Prepare Dinner", true)
-                }))
+                ("ViewModel", ToDoListTestViewModels.DefaultToDoList())
             );
 
             //Act

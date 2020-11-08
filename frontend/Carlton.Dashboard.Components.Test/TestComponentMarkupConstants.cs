@@ -81,6 +81,18 @@ namespace Carlton.Dashboard.Components.Test
                 </div>
             </div>";
 
+        public static string DinnerGuestsListItem_SelfStatus_NotHome = @" <div class='row dinner-guests-list-item'>
+                <div class='col-3 text-center'>
+                    <img class='avatar-img text-center' src='https://www.w3schools.com/w3images/avatar2.png'>
+                </div>
+                <div class='col-6 text-center'>
+                    <div class='guest-name'>Steve</div>
+                        <div class='guest-message'>Japan School</div>
+                </div>
+                <div class='col-3 text-center'>
+                </div>
+            </div>";
+
         public static string GroceriesListItem_Low = @"<div class='groceries-list-item'>
                 <div>
                     <span class='item-name'>Toilet Paper</span>
@@ -124,5 +136,111 @@ namespace Carlton.Dashboard.Components.Test
                 </div>
             </div>
         </div>";
+
+        public static string ApartmentStatusCount = @"<div class='apartment-status-count-card '>
+           <div class='dashboard-count-card accent-color-2'>
+              <div class='carlton-card'>
+                 <div class='container'>
+                    <div class='card'>
+                       <div class='card-body'>
+                          <div class='row status-row'>
+                             <h5 class='col-9 card-title'></h5>
+                             <div class='col-3 status-icon'>
+                             </div>
+                          </div>
+                          <div class='header-content'>
+                          </div>
+                          <div class='primary-content'>
+                             <div class='row'>
+                                <div class='col-3 offset-1 count-icon mdi mdi-36px accent-color-2 mdi-home'></div>
+                                <span class='col-6 offset-1 count-message'>7 Pending Statuses</span>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>";
+
+        public static string ToDoCount = @"<div class='to-dos-count-card '>
+           <div class='dashboard-count-card accent-color-1'>
+              <div class='carlton-card'>
+                 <div class='container'>
+                    <div class='card'>
+                       <div class='card-body'>
+                          <div class='row status-row'>
+                             <h5 class='col-9 card-title'></h5>
+                             <div class='col-3 status-icon'>
+                             </div>
+                          </div>
+                          <div class='header-content'>
+                          </div>
+                          <div class='primary-content'>
+                             <div class='row'>
+                                <div class='col-3 offset-1 count-icon mdi mdi-36px accent-color-1 mdi-clipboard-check'></div>
+                                <span class='col-6 offset-1 count-message'>7 Open Tasks</span>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>";
+
+        public static string DinnerGuestsCount = @"
+        <div class='dinner-guests-count-card'>
+            <div class='dashboard-count-card accent-color-4'>
+               <div class='carlton-card'>
+                  <div class='container'>
+                     <div class='card'>
+                        <div class='card-body'>
+                           <div class='row status-row'>
+                              <h5 class='col-9 card-title'></h5>
+                              <div class='col-3 status-icon'>
+                              </div>
+                           </div>
+                           <div class='header-content'>
+                           </div>
+                           <div class='primary-content'>
+                              <div class='row'>
+                                 <div class='col-3 offset-1 count-icon mdi mdi-36px accent-color-4 mdi-silverware-fork-knife'></div>
+                                 <span class='col-6 offset-1 count-message'>7 Guests for Dinner</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            </div>";
+
+        public static string GroceriesCount = @"<div class='groceries-count-card '>
+           <div class='dashboard-count-card accent-color-3'>
+              <div class='carlton-card'>
+                 <div class='container'>
+                    <div class='card'>
+                       <div class='card-body'>
+                          <div class='row status-row'>
+                             <h5 class='col-9 card-title'></h5>
+                             <div class='col-3 status-icon'>
+                             </div>
+                          </div>
+                          <div class='header-content'>
+                          </div>
+                          <div class='primary-content'>
+                             <div class='row'>
+                                <div class='col-3 offset-1 count-icon mdi mdi-36px accent-color-3 mdi-cart'></div>
+                                <span class='col-6 offset-1 count-message'>7 Low Items</span>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>";
     }
 }
+

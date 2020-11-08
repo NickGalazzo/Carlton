@@ -22,7 +22,7 @@ namespace Carlton.Dashboard.Components.Test
 
         [Fact]
         [Trait("FeedItem", "Unit")]
-        public void FeedListItem_Verify_Name()
+        public void FeedListItem_Name_Verify()
         {
             // Act
             var cut = RenderComponent<FeedListItem>(
@@ -37,7 +37,7 @@ namespace Carlton.Dashboard.Components.Test
 
         [Fact]
         [Trait("FeedItem", "Unit")]
-        public void FeedListItem_Verify_Message()
+        public void FeedListItem_Message_Verify()
         {
             // Act
             var cut = RenderComponent<FeedListItem>(
@@ -52,7 +52,7 @@ namespace Carlton.Dashboard.Components.Test
 
         [Fact]
         [Trait("FeedItem", "Unit")]
-        public void FeedListItem_Verify_FeedDate_MomentsAgo()
+        public void FeedListItem_FeedDate_MomentsAgo_Verify()
         {
             // Act
             var cut = RenderComponent<FeedListItem>(
@@ -67,7 +67,7 @@ namespace Carlton.Dashboard.Components.Test
 
         [Fact]
         [Trait("FeedItem", "Unit")]
-        public void FeedListItem_Verify_FeedDate_MinutesAgo()
+        public void FeedListItem_FeedDate_MinutesAgo_Verify()
         {
             // Act
             var cut = RenderComponent<FeedListItem>(
@@ -80,10 +80,9 @@ namespace Carlton.Dashboard.Components.Test
             Assert.Equal("10 min(s) ago", feedDate.TextContent);
         }
 
-
         [Fact]
         [Trait("FeedItem", "Unit")]
-        public void FeedListItem_Verify_FeedDate_HoursAgo()
+        public void FeedListItem_FeedDate_HoursAgo_Verify()
         {
             // Act
             var cut = RenderComponent<FeedListItem>(
@@ -98,7 +97,7 @@ namespace Carlton.Dashboard.Components.Test
 
         [Fact]
         [Trait("FeedItem", "Unit")]
-        public void FeedListItem_Verify_FeedDate_PreviousDate()
+        public void FeedListItem_FeedDate_PreviousDate_Verify()
         {
             // Act
             var cut = RenderComponent<FeedListItem>(
@@ -113,7 +112,7 @@ namespace Carlton.Dashboard.Components.Test
 
         [Fact]
         [Trait("FeedItemListCard", "Unit")]
-        public void FeedListCard_Verify_Four_Items()
+        public void FeedListCard_FeedListItem_ChildCount_Verify()
         {
             // Act
             var cut = RenderComponent<FeedListCard>(
@@ -124,6 +123,21 @@ namespace Carlton.Dashboard.Components.Test
 
             // Assert
             Assert.Equal(4, feedItems.Count);
+        }
+
+        [Fact]
+        [Trait("FeedItemListCard", "Unit")]
+        public void FeedListCard_FeedListItem_Markup()
+        {
+            // Act
+            var cut = RenderComponent<FeedListCard>(
+                ("ViewModel", FeedListTestViewModels.DefaultFeedListViewModel())
+            );
+
+            var feedItem = cut.FindComponent<FeedListItem>();
+
+            // Assert
+            feedItem.MarkupMatches(TestComponentMarkupConstants.FeedListItem);
         }
     }
 }

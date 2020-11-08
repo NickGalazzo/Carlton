@@ -1,9 +1,6 @@
 ﻿using Bunit;
 using Carlton.Dashboard.Components.Groceries;
-using Carlton.Dashboard.ViewModels.Groceries;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Carlton.TestBed.Client.TestViewModels;
 using Xunit;
 
 namespace Carlton.Dashboard.Components.Test
@@ -16,7 +13,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Act
             var cut = RenderComponent<GroceriesListItem>(
-                ("ViewModel", new GroceriesListItemViewModel(1, "Toilet Paper", 25))
+                ("ViewModel", GroceriesTestViewModels.GroceriesLowListItemViewModel())
             );
 
             // Assert
@@ -29,7 +26,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Act
             var cut = RenderComponent<GroceriesListItem>(
-                ("ViewModel", new GroceriesListItemViewModel(1, "Paper Towels", 57))
+                ("ViewModel", GroceriesTestViewModels.GroceriesMediumListItemViewModel())
             );
 
             // Assert
@@ -42,7 +39,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Act
             var cut = RenderComponent<GroceriesListItem>(
-                ("ViewModel", new GroceriesListItemViewModel(1, "Dish Soap", 92))
+                ("ViewModel", GroceriesTestViewModels.GroceriesHighListItemViewModel())
             );
 
             // Assert
@@ -51,11 +48,11 @@ namespace Carlton.Dashboard.Components.Test
 
         [Fact]
         [Trait("GroceriesListItem", "Unit")]
-        public void GroceriesListItem_Verify_Label()
+        public void GroceriesListItem_Label_Verify()
         {
             // Act
             var cut = RenderComponent<GroceriesListItem>(
-                ("ViewModel", new GroceriesListItemViewModel(1, "Toilet Paper", 25))
+                ("ViewModel", GroceriesTestViewModels.GroceriesLowListItemViewModel())
             );
 
             var label = cut.Find(".item-name");
@@ -66,26 +63,26 @@ namespace Carlton.Dashboard.Components.Test
 
         [Fact]
         [Trait("GroceriesListItem", "Unit")]
-        public void GroceriesListItem_Verify_Progress()
+        public void GroceriesListItem_Progress_Verify()
         {
             // Act
             var cut = RenderComponent<GroceriesListItem>(
-                ("ViewModel", new GroceriesListItemViewModel(1, "Toilet Paper", 85))
+                ("ViewModel", GroceriesTestViewModels.GroceriesHighListItemViewModel())
             );
 
             var progressBar = cut.Find(".progress-bar");
 
             // Assert
-            Assert.Equal("85", progressBar.GetAttribute("aria-valuenow"));
+            Assert.Equal("92", progressBar.GetAttribute("aria-valuenow"));
         }
 
         [Fact]
         [Trait("GroceriesListItem", "Unit")]
-        public void GroceriesListItem_LessThan_35_Verify_LowClass()
+        public void GroceriesListItem_Given_Count_LessThan_35_Should_Contain_Class_Low()
         {
             // Act
             var cut = RenderComponent<GroceriesListItem>(
-                ("ViewModel", new GroceriesListItemViewModel(1, "Toilet Paper", 25))
+                ("ViewModel", GroceriesTestViewModels.GroceriesLowListItemViewModel())
             );
 
             var progressBar = cut.Find(".progress-bar");
@@ -96,11 +93,11 @@ namespace Carlton.Dashboard.Components.Test
 
         [Fact]
         [Trait("GroceriesListItem", "Unit")]
-        public void GroceriesListItem_GreaterThan_35_And_LessThan_75_Verify_MediumClass()
+        public void GroceriesListItem_Given_Count_GreaterThan_35_And_LessThan_75_Should_Contain_Class_Medium()
         {
             // Act
             var cut = RenderComponent<GroceriesListItem>(
-                ("ViewModel", new GroceriesListItemViewModel(1, "Toilet Paper", 45))
+                ("ViewModel", GroceriesTestViewModels.GroceriesMediumListItemViewModel())
             );
 
             var progressBar = cut.Find(".progress-bar");
@@ -111,11 +108,11 @@ namespace Carlton.Dashboard.Components.Test
 
         [Fact]
         [Trait("GroceriesListItem", "Unit")]
-        public void GroceriesListItem_GreaterThan_75_Verify_HighClass()
+        public void GroceriesListItem_Given_Count_GreaterThan_75_Should_Contain_Class_High()
         {
             // Act
             var cut = RenderComponent<GroceriesListItem>(
-                ("ViewModel", new GroceriesListItemViewModel(1, "Toilet Paper", 85))
+                ("ViewModel", GroceriesTestViewModels.GroceriesHighListItemViewModel())
             );
 
             var progressBar = cut.Find(".progress-bar");
@@ -126,25 +123,30 @@ namespace Carlton.Dashboard.Components.Test
 
         [Fact]
         [Trait("GroceriesListCard", "Unit")]
-        public void GroceriesListCard_ThreeItems_Verify()
+        public void GroceriesListCard_GroceriesListItem_ChildCount_Verify()
         {
             // Act
             var cut = RenderComponent<GroceriesListCard>(
-                ("ViewModel", new GroceriesListViewModel
-                    {
-                        Items = new List<GroceriesListItemViewModel>
-                        {
-                            new GroceriesListItemViewModel(1, "Toilet Paper", 25),
-                            new GroceriesListItemViewModel(1, "Toilet Paper", 45),
-                            new GroceriesListItemViewModel(1, "Toilet Paper", 85)
-                        }
-                    }
-                ));
+                ("ViewModel", GroceriesTestViewModels.DefaultGroceriesListViewModel()));
 
             var items = cut.FindComponents<GroceriesListItem>();
 
             // Assert
-            Assert.Equal(3, items.Count);
+            Assert.Equal(4, items.Count);
+        }
+
+        [Fact]
+        [Trait("GroceriesListCard", "Snapshot")]
+        public void GroceriesListCard_GroceryItem_Markup()
+        {
+            // Act
+            var cut = RenderComponent<GroceriesListCard>(
+                ("ViewModel", GroceriesTestViewModels.DefaultGroceriesListViewModel()));
+
+            var item= cut.FindComponent<GroceriesListItem>();
+
+            // Assert
+            item.MarkupMatches(TestComponentMarkupConstants.GroceriesListItem_Low);        
         }
     }
 }
