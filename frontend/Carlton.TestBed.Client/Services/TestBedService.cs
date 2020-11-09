@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Carlton.Base.Client.Components.Status;
+using Carlton.Base.Client.Status;
 using Carlton.TestBed.TestBedNavTree;
 
 namespace Carlton.TestBed.Client.Services

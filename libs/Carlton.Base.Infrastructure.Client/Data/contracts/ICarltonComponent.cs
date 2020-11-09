@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace Carlton.Base.Client.Components.Data
+namespace Carlton.Base.Client.Data
 {
     public interface ICarltonComponent<TViewModel>
     {

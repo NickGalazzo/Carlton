@@ -1,10 +1,10 @@
-﻿@using System
+﻿@typeparam TComponent
+@typeparam TViewModel
+
+@using System
 @using MediatR
-@using Carlton.Base.Infrastructure.Client.Data
-@using Carlton.Base.Client.Events
 @using Microsoft.AspNetCore.Components
 
-@typeparam TComponent
 
 <div class="carlton-data-component">
     @DynamicChild
@@ -12,7 +12,6 @@
 
 
 @code{
-
     [Parameter]
     public RenderFragment DynamicChild { get; set; }
 
@@ -22,6 +21,9 @@
     [Inject]
     private IMediator Mediator { get; set; }
 
+    [Inject]
+    private ICarltonEventRequestMapper<TViewModel> Mapper { get; set; }
+
     private object ViewModel { get; set; }
 
     private delegate Task ComponentEventDel(IComponentEvent evt);
@@ -29,20 +31,6 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-
-        //Get DataService
-        var viewModelType = typeof(TComponent).BaseType.GenericTypeArguments.First();
-        var dataServiceType = typeof(IDataService<>).MakeGenericType(viewModelType);
-        var dataService = (dynamic)ServiceProvider.GetService(dataServiceType);
-
-        //Initial Set of ViewModel
-        ViewModel = dataService.GetViewModel();
-
-        //Wire-Up ViewModel Changed Event
-        dataService.ViewModelChanged += new System.EventHandler<ViewModelChangedEventArgs>((object sender, ViewModelChangedEventArgs e) =>
-        {
-            dataService.GetViewModel();
-        });
 
         //Wire-Up Child Event Callback
         ComponentEventDel del = ComponentEventHandler;
@@ -60,11 +48,11 @@
         };
     }
 
-
     private async Task ComponentEventHandler(IComponentEvent evt)
     {
-        var result = await Mediator.Send(evt);
-
-        //Add Exception Handling Here
+        var request = Mapper.MapToRequest(evt);
+        var vm = await Mediator.Send<TViewModel>(request).ConfigureAwait(false);
+        ViewModel = vm;
+        base.StateHasChanged();
     }
 }

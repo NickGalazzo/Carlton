@@ -1,4 +1,4 @@
-﻿namespace Carlton.Base.Client.Components.Status
+﻿namespace Carlton.Base.Client.Status
 {
     public interface IStatusComponent
     {

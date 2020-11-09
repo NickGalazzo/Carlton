@@ -1,9 +1,5 @@
-
-using Carlton.Base.Infrastructure.Client.Data;
-using Carlton.Dashboard.ViewModels.DinnerGuests;
 using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
 
 namespace Carlton.Dashboard.Client
 {
@@ -11,7 +7,6 @@ namespace Carlton.Dashboard.Client
     {
         public static void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IDataService<DinnerGuestsListViewModel>, TestDataService>();
            // services.AddMediatR(Assembly.GetExecutingAssembly());
         }
 

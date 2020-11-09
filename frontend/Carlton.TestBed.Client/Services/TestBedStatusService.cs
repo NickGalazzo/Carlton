@@ -1,4 +1,4 @@
-﻿using Carlton.Base.Client.Components.Status;
+﻿using Carlton.Base.Client.Status;
 
 namespace Carlton.TestBed.Client.Services
 {

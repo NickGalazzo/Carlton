@@ -1,9 +1,10 @@
-﻿@using Carlton.Base.Client.Components.Cards
+﻿@using Carlton.Base.Client.Status 
+@using Carlton.Base.Client.Components.Cards
 @using Carlton.Dashboard.Components.Common
 @using Carlton.Dashboard.ViewModels.Groceries
 
 
-@inherits DashboardBaseComponent<GroceriesListViewModel>
+@inherits CarltonComponentBase<GroceriesListViewModel>
 
 <CarltonCssWraper ComponentType="GetType()">
     <Content>

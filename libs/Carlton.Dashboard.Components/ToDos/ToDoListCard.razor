@@ -1,6 +1,7 @@
-﻿@using Carlton.Dashboard.ViewModels.ToDos
+﻿@using Carlton.Base.Client.Status; 
+@using Carlton.Dashboard.ViewModels.ToDos
 
-@inherits DashboardBaseComponent<ToDoListViewModel>
+@inherits CarltonComponentBase<ToDoListViewModel>
 
 <CarltonCssWraper ComponentType="this.GetType()">
     <Content>
