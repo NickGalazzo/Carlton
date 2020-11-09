@@ -1,0 +1,59 @@
+﻿@typeparam TComponent
+@typeparam TViewModel
+
+@using System
+@using MediatR
+@using Microsoft.AspNetCore.Components
+@using Carlton.Base.Client.State.Contracts 
+
+
+<div class="carlton-data-component">
+    @DynamicChild
+</div>
+
+
+@code{
+    [Parameter]
+    public RenderFragment DynamicChild { get; set; }
+
+    [Inject]
+    private IServiceProvider ServiceProvider { get; set; }
+
+    [Inject]
+    private IMediator Mediator { get; set; }
+
+    [Inject]
+    private ICarltonEventRequestMapper<TViewModel> Mapper { get; set; }
+
+    private object ViewModel { get; set; }
+
+    private delegate Task ComponentEventDel(IComponentEvent evt);
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        //Wire-Up Child Event Callback
+        ComponentEventDel del = ComponentEventHandler;
+        var eventCallback = new EventCallback<IComponentEvent>(this, del);
+
+        //Render Child Component
+        DynamicChild = builder =>
+        {
+            builder.OpenElement(1, "div");
+            builder.OpenComponent(2, typeof(TComponent));
+            builder.AddAttribute(1, "ViewModel", ViewModel);
+            builder.AddAttribute(2, "OnComponentEvent", eventCallback);
+            builder.CloseComponent();
+            builder.CloseElement();
+        };
+    }
+
+    private async Task ComponentEventHandler(IComponentEvent evt)
+    {
+        var request = Mapper.MapToRequest(evt);
+        var vm = await Mediator.Send<TViewModel>(request).ConfigureAwait(false);
+        ViewModel = vm;
+        base.StateHasChanged();
+    }
+}
