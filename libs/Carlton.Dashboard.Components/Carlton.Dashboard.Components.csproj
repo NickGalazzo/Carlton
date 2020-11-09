@@ -15,7 +15,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.9" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.1" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
       <PrivateAssets>all</PrivateAssets>
@@ -26,6 +26,7 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Carlton.Base.Client.State\Carlton.Base.Client.State.csproj" />
     <ProjectReference Include="..\Carlton.Base.Infrastructure.Client\Carlton.Base.Client.csproj" />
     <ProjectReference Include="..\Carlton.Dashboard.ViewModels\Carlton.Dashboard.ViewModels.csproj" />
   </ItemGroup>
