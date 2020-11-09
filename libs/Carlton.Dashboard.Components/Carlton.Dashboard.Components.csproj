@@ -27,7 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Carlton.Base.Client.State\Carlton.Base.Client.State.csproj" />
-    <ProjectReference Include="..\Carlton.Base.Infrastructure.Client\Carlton.Base.Client.csproj" />
+    <ProjectReference Include="..\Carlton.Base.Infrastructure.Client\Carlton.Base.Client.Components.csproj" />
     <ProjectReference Include="..\Carlton.Dashboard.ViewModels\Carlton.Dashboard.ViewModels.csproj" />
   </ItemGroup>
 

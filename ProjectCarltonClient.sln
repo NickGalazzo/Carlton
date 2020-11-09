@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Dashboard.ViewModel
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.TestBed.Client", "frontend\Carlton.TestBed.Client\Carlton.TestBed.Client.csproj", "{B66E6D10-3DDC-44F2-9851-2F37A9A849C9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.Client", "libs\Carlton.Base.Infrastructure.Client\Carlton.Base.Client.csproj", "{9856B2E3-AA9E-4FE2-9F0D-3DB4EA6B5C3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.Client.Components", "libs\Carlton.Base.Infrastructure.Client\Carlton.Base.Client.Components.csproj", "{9856B2E3-AA9E-4FE2-9F0D-3DB4EA6B5C3E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{B9E0019C-401B-4C47-B8AF-0D9E13CD82FF}"
 EndProject
