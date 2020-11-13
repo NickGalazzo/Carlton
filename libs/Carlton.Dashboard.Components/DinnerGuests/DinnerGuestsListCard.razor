@@ -8,17 +8,16 @@
 <CarltonCssWraper ComponentType="GetType()">
     <Content>
         <CarltonListCard CardTitle="Dinner Guests" SubTitle="Guests" Items="ViewModel.Items">
-
             <ActionBarContent>
                 <DashboardCardActionBar TViewModel="DinnerGuests" Callback="OnComponentEvent" Status="ComponentStatus" />
             </ActionBarContent>
 
             <HeaderContent>
-                <DinnerGuestsSelfStatus ViewModel="ViewModel.MyDinnerGuestStatus" OnComponentEvent="OnComponentEvent" />
+                <DinnerGuestsSelfStatus ViewModel="ViewModel.MyDinnerGuestStatus" OnComponentEvent="OnComponentEvent"  />
             </HeaderContent>
 
             <ItemTemplate Context="guest">
-                <DinnerGuestsListItem ViewModel="guest" ShowIndicator="false"  />
+                <DinnerGuestsListItem ViewModel="guest" ShowIndicator="true"  />
             </ItemTemplate>
         </CarltonListCard>
     </Content>

@@ -4,11 +4,11 @@ namespace Carlton.Dashboard.ViewModels.DinnerGuests
 {
     public class DinnerGuests
     {
-        public DinnerGuestSelfStatusViewModel MyDinnerGuestStatus { get; private set; }
+        public DinnerGuestSelfStatus MyDinnerGuestStatus { get; private set; }
         public IEnumerable<DinnerGuest> Items { get; private set; }
 
 
-        public DinnerGuests(DinnerGuestSelfStatusViewModel myDinnerGuestStatus, IEnumerable<DinnerGuest> dinnerGuests)
+        public DinnerGuests(DinnerGuestSelfStatus myDinnerGuestStatus, IEnumerable<DinnerGuest> dinnerGuests)
         {
             MyDinnerGuestStatus = myDinnerGuestStatus;
             Items = dinnerGuests;

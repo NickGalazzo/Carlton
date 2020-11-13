@@ -22,9 +22,7 @@ namespace Carlton.TestBed.Client.TestViewModels
 
        
             var myDinnerGuestStatus = DinnerGuest.CreateHomeForDinnerGuest(1, "Nick");
-
-            var dinnerGuestSelfViewModel = new DinnerGuestSelfStatusViewModel(myDinnerGuestStatus, SampleReasons);
-
+            var dinnerGuestSelfViewModel = new DinnerGuestSelfStatus(myDinnerGuestStatus, SampleReasons);
 
             return new DinnerGuests(dinnerGuestSelfViewModel, dinnerGuests);
         }
@@ -40,9 +38,9 @@ namespace Carlton.TestBed.Client.TestViewModels
             return DinnerGuest.CreateNotHomeForDinnerGuest(2, "Steve", reason);
         }
 
-        public static DinnerGuestSelfStatusViewModel DinnerGuestsSelfHomeViewModel()
+        public static DinnerGuestSelfStatus DinnerGuestsSelfHomeViewModel()
         {
-            return new DinnerGuestSelfStatusViewModel(DinnerGuestHomeViewModel(),
+            return new DinnerGuestSelfStatus(DinnerGuestHomeViewModel(),
                 new List<DinnerGuestReason>
                 {
                     new DinnerGuestReason(1, "Japan School"),
@@ -50,9 +48,9 @@ namespace Carlton.TestBed.Client.TestViewModels
                 });
         }
 
-        public static DinnerGuestSelfStatusViewModel DinnerGuestsSelfNotHomeViewModel()
+        public static DinnerGuestSelfStatus DinnerGuestsSelfNotHomeViewModel()
         {
-            return new DinnerGuestSelfStatusViewModel(DinnerGuestNotHomeViewModel(), SampleReasons);
+            return new DinnerGuestSelfStatus(DinnerGuestNotHomeViewModel(), SampleReasons);
         }
     }
 }

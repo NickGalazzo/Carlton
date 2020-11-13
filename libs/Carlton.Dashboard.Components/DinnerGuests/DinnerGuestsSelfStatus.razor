@@ -1,12 +1,12 @@
 ﻿@using Carlton.Dashboard.ViewModels.DinnerGuests
 @using Carlton.Dashboard.Components.DinnerGuests.Events
 
-@inherits CarltonComponentBase<DinnerGuestSelfStatusViewModel>
+@inherits CarltonComponentBase<DinnerGuestSelfStatus>
 
 
 <CarltonCssWraper ComponentType="GetType()">
     <Content>
-        <DinnerGuestListItemWithoutIndicator ViewModel="ViewModel.MyGuestStatus" />
+        <DinnerGuestsListItem ViewModel="ViewModel.MyGuestStatus" ShowIndicator="false"/>
         <div class="row home-for-dinner-row">
             <div class="col-9">
                 <label>Are you home for dinner?</label>
