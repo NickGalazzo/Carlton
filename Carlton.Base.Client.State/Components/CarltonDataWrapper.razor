@@ -6,7 +6,6 @@
 
 
 @typeparam TViewModel
-@typeparam TState
 
 <div class="carlton-data-wrapper">
     @ChildComponent(Context)
@@ -15,7 +14,7 @@
 
 @code{
     [Parameter]
-    public RenderFragment<ComponentDataWrapperContext<TViewModel>> ChildComponent { get; set; }
+    public RenderFragment<CarltonDataWrapperContext<TViewModel>> ChildComponent { get; set; }
 
     [Inject]
     private IMediator Mediatr { get; set; }
@@ -23,44 +22,28 @@
     [Inject]
     private ICarltonEventRequestMapper<TViewModel> Mapper { get; set; }
 
-    [Inject]
-    private ICarltonRefreshCondition<TState, TViewModel> RefreshCondition { get; set; }
+    private TViewModel ViewModel { get; set; }
 
-    [Inject]
-    private ICarltonStateStore<TState> Store { get; set; }
-
-    private ComponentDataWrapperContext<TViewModel> Context { get; set; }
+    private CarltonDataWrapperContext<TViewModel> Context { get; set; }
 
     protected async override Task OnInitializedAsync()
     {
         //Get VM and initalize context for wrapped component
         var vm = await Mediatr.Send<TViewModel>(Mapper.GetViewModelRequest).ConfigureAwait(false);
-        Context = new ComponentDataWrapperContext<TViewModel>(vm, ComponentEventHandler);
-
-        //Register State Changed Handler
-        Store.StateChanged += OnStateChanged;
+        Context = new CarltonDataWrapperContext<TViewModel>(vm, ComponentEventHandler);
 
         //Continue initilization
         await base.OnInitializedAsync();
     }
 
-    private async void OnStateChanged(object sender, StateChangedEventArgs<TState> args)
+    protected async Task GetViewModel()
     {
-        if(!RefreshCondition.ShouldRefreshState(args))
-            return;
-
-        await SendAndReplace(Mapper.GetViewModelRequest);
+        ViewModel = await Mediatr.Send(Mapper.GetViewModelRequest).ConfigureAwait(false);
     }
 
-    public async Task ComponentEventHandler(IComponentEvent<TViewModel> evt)
+    private async Task ComponentEventHandler(IComponentEvent<TViewModel> evt)
     {
         var request = Mapper.MapToRequest(evt);
-        await SendAndReplace(request);
-    }
-
-    private async Task SendAndReplace(ICarltonComponentRequest<TViewModel> request)
-    {
-        var vm = await Mediatr.Send(request).ConfigureAwait(false);
-        Context.ReplaceViewModel(vm);
+        ViewModel = await Mediatr.Send(request).ConfigureAwait(false);
     }
 }

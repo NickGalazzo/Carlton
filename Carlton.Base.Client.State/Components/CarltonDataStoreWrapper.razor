@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNetCore.Components
+@using Carlton.Base.Client.State.Contracts
+
+@namespace Carlton.Base.Client.State.Components
+
+@typeparam TViewModel
+@typeparam TState
+
+@inherits CarltonDataWrapper<TViewModel>
+
+
+@code{
+    [Inject]
+    private ICarltonRefreshCondition<TState, TViewModel> RefreshCondition { get; set; }
+
+    [Inject]
+    private ICarltonStateStore<TState> Store { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        //Register State Changed Handler
+        Store.StateChanged += OnStateChanged;
+
+        //Continue initilization
+        await base.OnInitializedAsync();
+    }
+
+    private async void OnStateChanged(object sender, StateChangedEventArgs<TState> args)
+    {
+        if(!RefreshCondition.ShouldRefreshState(args))
+            return;
+
+        await base.GetViewModel();
+    }
+}
