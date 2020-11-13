@@ -5,24 +5,16 @@
 // being tested as well as the project containing the ViewModels for those components
 // The testbed can then be used by simply modifying this bootstrappper file
 
-using Carlton.Dashboard.Components.Common;
 using Carlton.Dashboard.Components.ApartmentStatus;
 using Carlton.Dashboard.Components.Feed;
 using Carlton.Dashboard.Components.DinnerGuests;
 using Carlton.Dashboard.Components.Groceries;
 using Carlton.Dashboard.Components.ToDos;
 using Carlton.Dashboard.Components.CountCards;
-using Carlton.Dashboard.Components.Header;
 using Carlton.TestBed.Client.TestViewModels;
 using Carlton.Dashboard.ViewModels.TestViewModels;
-using Carlton.Base.Client.Components.Notifications;
-using Carlton.Base.Client.Components.Checkbox;
 using Carlton.TestBed.TestBedNavTree;
-using Carlton.Base.Client.Components.Select;
-using Carlton.Base.Client.Components.Test;
 using Carlton.TestBed.Client.Services;
-using System.Collections.Generic;
-using Carlton.TestBed.Client.Shared;
 
 namespace Carlton.TestBed.Client
 {
@@ -57,24 +49,22 @@ namespace Carlton.TestBed.Client
 
               .AddCarltonComponent<DinnerGuestsSelfStatus>("DinnerGuests/SelfStatus/HomeForDinner", DinnerGuestsTestViewModels.DinnerGuestsSelfHomeViewModel())
               .AddCarltonComponent<DinnerGuestsSelfStatus>("DinnerGuests/SelfStatus/NotHomeForDinner", DinnerGuestsTestViewModels.DinnerGuestsSelfNotHomeViewModel())
-              .AddCarltonComponent<DinnerGuestListItemWithIndicator>("DinnerGuests/ListItem/WithIndicator/HomeForDinner", DinnerGuestsTestViewModels.DinnerGuestHomeViewModel())
-              .AddCarltonComponent<DinnerGuestListItemWithIndicator>("DinnerGuests/ListItem/WithIndicator/NotHomeForDinner", DinnerGuestsTestViewModels.DinnerGuestNotHomeViewModel())
-              .AddCarltonComponent<DinnerGuestListItemWithoutIndicator>("DinnerGuests/ListItem/WithoutIndicator/HomeForDinner", DinnerGuestsTestViewModels.DinnerGuestHomeViewModel())
-              .AddCarltonComponent<DinnerGuestListItemWithoutIndicator>("DinnerGuests/ListItem/WithoutIndicator/NotHomeForDinner", DinnerGuestsTestViewModels.DinnerGuestNotHomeViewModel())
+              .AddCarltonComponent<DinnerGuestsListItem>("DinnerGuests/ListItem/HomeForDinner", DinnerGuestsTestViewModels.DinnerGuestHomeViewModel())
+              .AddCarltonComponent<DinnerGuestsListItem>("DinnerGuests/ListItem/NotHomeForDinner", DinnerGuestsTestViewModels.DinnerGuestNotHomeViewModel())
               .AddCarltonComponent<DinnerGuestsListCard>("DinnerGuests/ListCard", DinnerGuestsTestViewModels.DefaultHomeForDinnerViewModel())
 
               .AddCarltonComponent<GroceriesListItem>("Groceries/ListItems/Low", GroceriesTestViewModels.GroceriesLowListItemViewModel())
               .AddCarltonComponent<GroceriesListItem>("Groceries/ListItems/Medium", GroceriesTestViewModels.GroceriesMediumListItemViewModel())
               .AddCarltonComponent<GroceriesListItem>("Groceries/ListItems/High", GroceriesTestViewModels.GroceriesHighListItemViewModel())
-              .AddCarltonComponent<GroceriesListCard>("Groceries/ListCard/Default", GroceriesTestViewModels.DefaultGroceriesListViewModel())
+              .AddCarltonComponent<GroceriesListCard>("Groceries/ListCard/Default", GroceriesTestViewModels.DefaultGroceriesList())
 
               .AddCarltonComponent<FeedListItem>("Feed/ListItem", FeedListTestViewModels.DefaultFeedListItemViewModel())
-              .AddCarltonComponent<FeedListCard>("Feed/ListCard", FeedListTestViewModels.DefaultFeedListViewModel())
+              .AddCarltonComponent<FeedListCard>("Feed/ListCard", FeedListTestViewModels.DefaultFeedItemList())
 
-              .AddCarltonComponent<ToDosCountCard>("CountCards/ToDos/Default", ToDosCountTestViewModels.DefaultToDoListViewModel())
-              .AddCarltonComponent<ApartmentStatusCountCard>("CountCards/ApartmentStatus/Default", ApartmentStatusCountCardTestViewModels.DefaultApartmentStatusCountCardViewModel())
-              .AddCarltonComponent<DinnerGuestsCountCard>("CountCards/DinnerGuesets/Default", DinnerGuestsCountCardTestViewModels.DefaultDinngerGuestsCountCardViewModel())
-              .AddCarltonComponent<GroceriesCountCard>("CountCards/Groceries/Default", GroceriesCountCardTestViewModels.DefaultGroceriesCountCardViewModel());
+              .AddCarltonComponent<ToDosCountCard>("CountCards/ToDos/Default", DashboardAggregationsTestViewModels.DefaultDashboardAggregation())
+              .AddCarltonComponent<ApartmentStatusCountCard>("CountCards/ApartmentStatus/Default", DashboardAggregationsTestViewModels.DefaultDashboardAggregation())
+              .AddCarltonComponent<DinnerGuestsCountCard>("CountCards/DinnerGuesets/Default", DashboardAggregationsTestViewModels.DefaultDashboardAggregation())
+              .AddCarltonComponent<GroceriesCountCard>("CountCards/Groceries/Default", DashboardAggregationsTestViewModels.DefaultDashboardAggregation());
 
             var navTree = builder.Build();
 

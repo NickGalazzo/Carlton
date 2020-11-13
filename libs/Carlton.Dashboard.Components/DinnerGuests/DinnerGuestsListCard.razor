@@ -3,14 +3,14 @@
 @using Carlton.Dashboard.ViewModels.DinnerGuests
 
 
-@inherits CarltonComponentBase<DinnerGuestsListViewModel>
+@inherits CarltonComponentBase<DinnerGuests>
 
 <CarltonCssWraper ComponentType="GetType()">
     <Content>
-        <CarltonListCard CardTitle="Dinner Guests" SubTitle="Guests" Items="ViewModel.DinnerGuests">
+        <CarltonListCard CardTitle="Dinner Guests" SubTitle="Guests" Items="ViewModel.Items">
 
             <ActionBarContent>
-                <DashboardCardActionBar TViewModel="DinnerGuestsListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
+                <DashboardCardActionBar TViewModel="DinnerGuests" Callback="OnComponentEvent" Status="ComponentStatus" />
             </ActionBarContent>
 
             <HeaderContent>
@@ -18,7 +18,7 @@
             </HeaderContent>
 
             <ItemTemplate Context="guest">
-                <DinnerGuestListItemWithIndicator ViewModel="guest" />
+                <DinnerGuestsListItem ViewModel="guest" ShowIndicator="false"  />
             </ItemTemplate>
         </CarltonListCard>
     </Content>

@@ -12,32 +12,32 @@ namespace Carlton.TestBed.Client.TestViewModels
                 };
 
 
-        public static DinnerGuestsListViewModel DefaultHomeForDinnerViewModel()
+        public static DinnerGuests DefaultHomeForDinnerViewModel()
         {
-            var dinnerGuests = new List<DinnerGuestsListItemViewModel>()
+            var dinnerGuests = new List<DinnerGuest>()
                 {
-                    DinnerGuestsListItemViewModel.CreateHomeForDinnerGuest(1, "Nick"),
-                    DinnerGuestsListItemViewModel.CreateNotHomeForDinnerGuest(2, "Steve", SampleReasons[0])
+                    DinnerGuest.CreateHomeForDinnerGuest(1, "Nick"),
+                    DinnerGuest.CreateNotHomeForDinnerGuest(2, "Steve", SampleReasons[0])
                 };
 
        
-            var myDinnerGuestStatus = DinnerGuestsListItemViewModel.CreateHomeForDinnerGuest(1, "Nick");
+            var myDinnerGuestStatus = DinnerGuest.CreateHomeForDinnerGuest(1, "Nick");
 
             var dinnerGuestSelfViewModel = new DinnerGuestSelfStatusViewModel(myDinnerGuestStatus, SampleReasons);
 
 
-            return new DinnerGuestsListViewModel(dinnerGuestSelfViewModel, dinnerGuests);
+            return new DinnerGuests(dinnerGuestSelfViewModel, dinnerGuests);
         }
 
-        public static DinnerGuestsListItemViewModel DinnerGuestHomeViewModel()
+        public static DinnerGuest DinnerGuestHomeViewModel()
         {
-            return DinnerGuestsListItemViewModel.CreateHomeForDinnerGuest(1, "Nick");
+            return DinnerGuest.CreateHomeForDinnerGuest(1, "Nick");
         }
 
-        public static DinnerGuestsListItemViewModel DinnerGuestNotHomeViewModel()
+        public static DinnerGuest DinnerGuestNotHomeViewModel()
         {
             var reason = new DinnerGuestReason(1, "Japan School");
-            return DinnerGuestsListItemViewModel.CreateNotHomeForDinnerGuest(2, "Steve", reason);
+            return DinnerGuest.CreateNotHomeForDinnerGuest(2, "Steve", reason);
         }
 
         public static DinnerGuestSelfStatusViewModel DinnerGuestsSelfHomeViewModel()

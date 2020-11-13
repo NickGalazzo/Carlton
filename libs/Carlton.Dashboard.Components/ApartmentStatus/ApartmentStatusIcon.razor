@@ -1,0 +1,32 @@
+﻿@using Carlton.Dashboard.ViewModels.ApartmentStatus
+
+<span class="apt-status-icon mdi mdi-24px @StatusIcon"></span>
+
+@code{
+    [Parameter]
+    public ApartmentStatusName Status { get; set; }
+
+    private string StatusIcon
+    {
+        get
+        {
+            switch(Status)
+            {
+                case ApartmentStatusName.Garbage:
+                    return "mdi-delete";
+                case ApartmentStatusName.Recycle:
+                    return "mdi-recycle";
+                case ApartmentStatusName.Groceries:
+                    return "mdi-cart";
+                case ApartmentStatusName.Cleaning:
+                    return "mdi-spray-bottle";
+                case ApartmentStatusName.Laundry:
+                    return "mdi-washing-machine";
+                case ApartmentStatusName.DryCleaning:
+                    return "mdi-tie";
+                default:
+                    throw new InvalidOperationException("Invalid Apartment Stats");
+            }
+        }
+    }
+}

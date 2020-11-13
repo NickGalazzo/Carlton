@@ -8,47 +8,47 @@ namespace Carlton.TestBed.Client.TestViewModels
 {
     public static class FeedListTestViewModels
     {
-        public static FeedListViewModel DefaultFeedListViewModel()
+        public static FeedItems DefaultFeedItemList()
         {
             const string TOOK_OUT_GARBAGE = "Took Out Garbage";
-            var feedItems = new List<FeedListItemViewModel>();
+            var feedItems = new List<FeedItem>();
             var feedUser = new FeedUser("Nick", string.Empty);
 
          
-            feedItems.Add(new FeedListItemViewModel("Garbage", TOOK_OUT_GARBAGE, feedUser, DateTimeOffset.Now));
+            feedItems.Add(new FeedItem("Garbage", TOOK_OUT_GARBAGE, feedUser, DateTimeOffset.Now));
 
-            feedItems.Add(new FeedListItemViewModel("Garbage", TOOK_OUT_GARBAGE, feedUser, DateTimeOffset.Now.AddMinutes(-10)));
+            feedItems.Add(new FeedItem("Garbage", TOOK_OUT_GARBAGE, feedUser, DateTimeOffset.Now.AddMinutes(-10)));
 
-            feedItems.Add(new FeedListItemViewModel("Groceries", "Purchahsed Groceries", feedUser, DateTimeOffset.Now.AddHours(-3)));
+            feedItems.Add(new FeedItem("Groceries", "Purchahsed Groceries", feedUser, DateTimeOffset.Now.AddHours(-3)));
 
-            feedItems.Add(new FeedListItemViewModel("Groceries", "Purchahsed Groceries", feedUser, new DateTime(1989, 10, 9, 2, 7, 0, 0)));
+            feedItems.Add(new FeedItem("Groceries", "Purchahsed Groceries", feedUser, new DateTime(1989, 10, 9, 2, 7, 0, 0)));
 
 
-            return new FeedListViewModel(feedItems);
+            return new FeedItems(feedItems);
         }
     
-        public static FeedListItemViewModel DefaultFeedListItemViewModel()
+        public static FeedItem DefaultFeedListItemViewModel()
         {
-            return DefaultFeedListViewModel().FeedItems.First();
+            return DefaultFeedItemList().Items.First();
         }
 
-        public static FeedListItemViewModel MomentsAgoFeedListItemViewModel()
+        public static FeedItem MomentsAgoFeedListItemViewModel()
         {
-            return DefaultFeedListViewModel().FeedItems.First();
+            return DefaultFeedItemList().Items.First();
         }
-        public static FeedListItemViewModel TenMinutesAgoFeedListItemViewModel()
+        public static FeedItem TenMinutesAgoFeedListItemViewModel()
         {
-            return DefaultFeedListViewModel().FeedItems.ElementAt(1);
-        }
-
-        public static FeedListItemViewModel ThreeHoursAgoFeedListItemViewModel()
-        {
-            return DefaultFeedListViewModel().FeedItems.ElementAt(2);
+            return DefaultFeedItemList().Items.ElementAt(1);
         }
 
-        public static FeedListItemViewModel PreviousDateFeedListItemViewModel()
+        public static FeedItem ThreeHoursAgoFeedListItemViewModel()
         {
-            return DefaultFeedListViewModel().FeedItems.ElementAt(3);
+            return DefaultFeedItemList().Items.ElementAt(2);
+        }
+
+        public static FeedItem PreviousDateFeedListItemViewModel()
+        {
+            return DefaultFeedItemList().Items.ElementAt(3);
         }
     }
 }

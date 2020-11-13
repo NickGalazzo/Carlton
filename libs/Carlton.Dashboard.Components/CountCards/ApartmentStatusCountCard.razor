@@ -1,10 +1,19 @@
 ﻿@using Carlton.Dashboard.ViewModels.CountCards
 
 
-@inherits CarltonComponentBase<ApartmentStatusCountCardViewModel>
+@inherits CarltonComponentBase<DashboardAggregation>
 
-<CarltonCssWraper ComponentType="GetType()">
+<CarltonCssWraper ComponentType="GetType()"AdditionalClasses="@ACCENT_COLOR">
     <Content>
-        <DashboardCountCard ViewModel="ViewModel" />
+        <DashboardCountCard Count="@ViewModel.Count"
+                            AccentColorClass="@ACCENT_COLOR"
+                            Icon="@ICON"
+                            MessageTemplate="@MESSAGE_TEMPLATE" />
     </Content>
 </CarltonCssWraper>
+
+@code{
+    private const string MESSAGE_TEMPLATE = "Pending Statuses";
+    private const string ICON = "mdi-home";
+    private const string ACCENT_COLOR = "accent-color-2";
+}

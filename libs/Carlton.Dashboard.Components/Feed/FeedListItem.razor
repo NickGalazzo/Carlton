@@ -1,6 +1,6 @@
 ﻿@using Carlton.Dashboard.ViewModels.Feed
 
-@inherits CarltonComponentBase<FeedListItemViewModel>
+@inherits CarltonComponentBase<FeedItem>
 
     <div class="feed-list-item">
         <div class="row">
@@ -14,7 +14,7 @@
         </div>
         <div class="row feed-date-col feed-item-row">
             <div class="col-8 offset-4">
-                <span class="feed-date">@ViewModel.FeedDisplayDate</span>
+                <FeedDisplayDate FeedDate="ViewModel.FeedDate" />
             </div>
         </div>
     </div>

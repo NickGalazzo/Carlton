@@ -1,5 +1,8 @@
 ﻿@inherits LayoutComponentBase
 
+@using Carlton.Base.Client.State.Components
+@using Carlton.Dashboard.Components.State
+
 <div class="sidebar">
     <NavMenu />
 </div>
@@ -8,6 +11,17 @@
     <div class="top-row px-4">
         <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
     </div>
+
+
+    <CarltonDataWrapper TViewModel="Carlton.Dashboard.ViewModels.ApartmentStatus.ApartmentStatus"
+                        TState="CarltonDashboardState">
+
+        <ChildComponent>
+
+
+        </ChildComponent>
+
+    </CarltonDataWrapper>
 
     <div class="content px-4">
         @Body

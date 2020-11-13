@@ -1,6 +1,6 @@
 ﻿@using Carlton.Dashboard.ViewModels.DinnerGuests
 
-@inherits CarltonComponentBase<DinnerGuestsListItemViewModel>
+@inherits CarltonComponentBase<DinnerGuest>
 
 <div class="row dinner-guests-list-item">
     <div class="col-3 text-center">
@@ -26,5 +26,5 @@
     private const string IS_HOME_FOR_DINNER_CLASS = "is-home-for-dinner";
 
     [Parameter]
-    public bool ShowIndicator { get; set; }
+    public bool ShowIndicator { get; set; } = true;
 }

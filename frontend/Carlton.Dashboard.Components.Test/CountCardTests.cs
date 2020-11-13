@@ -13,7 +13,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             //Act
             var cut = RenderComponent<ApartmentStatusCountCard>(
-             ("ViewModel", ApartmentStatusCountCardTestViewModels.DefaultApartmentStatusCountCardViewModel()));
+             ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregation()));
 
             //Assert
             cut.MarkupMatches(TestComponentMarkupConstants.ApartmentStatusCount);
@@ -25,7 +25,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             //Act
             var cut = RenderComponent<ApartmentStatusCountCard>(
-             ("ViewModel", ApartmentStatusCountCardTestViewModels.DefaultApartmentStatusCountCardViewModel()));
+             ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregation()));
 
             var count = cut.Find(".count-message").TextContent;
 
@@ -40,7 +40,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             //Act
             var cut = RenderComponent<ToDosCountCard>(
-             ("ViewModel", ToDosCountTestViewModels.DefaultToDoListViewModel()));
+             ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregation()));
 
             //Assert
             cut.MarkupMatches(TestComponentMarkupConstants.ToDoCount);
@@ -52,7 +52,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             //Act
             var cut = RenderComponent<ToDosCountCard>(
-             ("ViewModel", ToDosCountTestViewModels.DefaultToDoListViewModel()));
+             ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregation()));
 
             var count = cut.Find(".count-message").TextContent;
 
@@ -66,7 +66,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             //Act
             var cut = RenderComponent<GroceriesCountCard>(
-             ("ViewModel", GroceriesCountCardTestViewModels.DefaultGroceriesCountCardViewModel()));
+             ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregation()));
 
             //Assert
             cut.MarkupMatches(TestComponentMarkupConstants.GroceriesCount);
@@ -78,7 +78,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             //Act
             var cut = RenderComponent<GroceriesCountCard>(
-             ("ViewModel", GroceriesCountCardTestViewModels.DefaultGroceriesCountCardViewModel()));
+             ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregation()));
 
             var count = cut.Find(".count-message").TextContent;
 
@@ -92,7 +92,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             //Act
             var cut = RenderComponent<DinnerGuestsCountCard>(
-             ("ViewModel", DinnerGuestsCountCardTestViewModels.DefaultDinngerGuestsCountCardViewModel()));
+             ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregation()));
 
             //Assert
             cut.MarkupMatches(TestComponentMarkupConstants.DinnerGuestsCount);
@@ -104,7 +104,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             //Act
             var cut = RenderComponent<DinnerGuestsCountCard>(
-             ("ViewModel", DinnerGuestsCountCardTestViewModels.DefaultDinngerGuestsCountCardViewModel()));
+             ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregation()));
 
             var count = cut.Find(".count-message").TextContent;
 

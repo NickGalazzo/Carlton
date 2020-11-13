@@ -1,9 +1,18 @@
 ﻿@using Carlton.Dashboard.ViewModels.CountCards
 
-@inherits CarltonComponentBase<GroceriesCountCardViewModel>
+@inherits CarltonComponentBase<DashboardAggregation>
 
-<CarltonCssWraper ComponentType="GetType()">
+<CarltonCssWraper ComponentType="GetType()" AdditionalClasses="@ACCENT_COLOR">
     <Content>
-        <DashboardCountCard ViewModel="ViewModel" />
+        <DashboardCountCard Count="@ViewModel.Count"
+                            MessageTemplate="@MESSAGE_TEMPLATE"
+                            Icon="@ICON"
+                            AccentColorClass="@ACCENT_COLOR"/>
     </Content>
 </CarltonCssWraper>
+
+@code{
+    private const string MESSAGE_TEMPLATE = "Low Items";
+    private const string ICON = "mdi-cart";
+    private const string ACCENT_COLOR = "accent-color-3";
+}

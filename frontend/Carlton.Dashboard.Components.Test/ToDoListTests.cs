@@ -1,6 +1,6 @@
 using Bunit;
-using Carlton.Dashboard.Components.ToDo.Events;
 using Carlton.Dashboard.Components.ToDos;
+using Carlton.Dashboard.Components.ToDos.Events;
 using Carlton.TestBed.Client.TestViewModels;
 using System.Linq;
 using Xunit;

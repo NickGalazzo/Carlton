@@ -1,7 +1,7 @@
 ﻿@using Carlton.Dashboard.ViewModels.ApartmentStatus
 
 
-@inherits CarltonComponentBase<ApartmentStatusListViewModel>
+@inherits CarltonComponentBase<ApartmentStatuses>
 
 <CarltonCssWraper ComponentType="GetType()">
     <Content>
@@ -9,15 +9,21 @@
                          Items="ViewModel.Statuses">
 
             <ActionBarContent>
-                <DashboardCardActionBar TViewModel="ApartmentStatusListViewModel"
+                <DashboardCardActionBar TViewModel="ApartmentStatuses"
                                         Callback="OnComponentEvent"
                                         Status="ComponentStatus" />
             </ActionBarContent>
 
             <ItemTemplate Context="status">
-                <ApartmentStatusListItem ViewModel="status" OnComponentEvent="base.OnComponentEvent" />
+                <ApartmentStatusListItem ViewModel="status" 
+                                         OnComponentEvent="base.OnComponentEvent" />
             </ItemTemplate>
         </CarltonListCard>
     </Content>
 </CarltonCssWraper>
+
+
+
+
+
 

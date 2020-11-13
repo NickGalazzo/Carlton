@@ -1,9 +1,6 @@
-﻿using Carlton.Dashboard.ViewModels.ToDos;
-using MediatR;
-
-namespace Carlton.Dashboard.Components.ToDo.Events
+﻿namespace Carlton.Dashboard.Components.ToDos.Events
 {
-    public class ToDoStatusChangedEvent : IRequest<ToDoListViewModel>
+    public class ToDoStatusChangedEvent
     {
         public int ToDoID { get; }
         public bool ToDoCompleted { get; }

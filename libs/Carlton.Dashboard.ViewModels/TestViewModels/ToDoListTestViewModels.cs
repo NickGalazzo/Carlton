@@ -5,26 +5,26 @@ namespace Carlton.TestBed.Client.TestViewModels
 {
     public static class ToDoListTestViewModels
     {
-        public static ToDoListViewModel DefaultToDoList()
+        public static ToDos DefaultToDoList()
         {
-            var toDoList = new List<ToDoListItemViewModel>
+            var toDoList = new List<ToDo>
                    {
-                        new ToDoListItemViewModel(1, "Take Out Garbage", false),
-                        new ToDoListItemViewModel(2, "Go Shopping", false),
-                        new ToDoListItemViewModel(3, "Prepare Dinner", true)
+                        new ToDo(1, "Take Out Garbage", false),
+                        new ToDo(2, "Go Shopping", false),
+                        new ToDo(3, "Prepare Dinner", true)
                    };
 
-            return new ToDoListViewModel(toDoList);
+            return new ToDos(toDoList);
         }
 
-        public static ToDoListItemViewModel ToDoListItemChecked()
+        public static ToDo ToDoListItemChecked()
         {
-            return new ToDoListItemViewModel(1, "Take Out Garbage", true);
+            return new ToDo(1, "Take Out Garbage", true);
         }
 
-        public static ToDoListItemViewModel ToDoListItemUnchecked()
+        public static ToDo ToDoListItemUnchecked()
         {
-            return new ToDoListItemViewModel(1, "Take Out Garbage", false);
+            return new ToDo(1, "Take Out Garbage", false);
         }
     }
 }

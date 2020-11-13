@@ -1,13 +1,12 @@
-﻿
-@inherits CarltonComponentBase<FeedListViewModel>
+﻿@inherits CarltonComponentBase<FeedItems>
 
 <CarltonCssWraper ComponentType="GetType()">
     <Content>
-        <CarltonListCard Items="ViewModel.FeedItems"
+        <CarltonListCard Items="ViewModel.Items"
                          CardTitle="Feed">
 
             <ActionBarContent>
-                <DashboardCardActionBar TViewModel="FeedListViewModel" 
+                <DashboardCardActionBar TViewModel="FeedItems" 
                                         Callback="OnComponentEvent" 
                                         Status="ComponentStatus" />
             </ActionBarContent>

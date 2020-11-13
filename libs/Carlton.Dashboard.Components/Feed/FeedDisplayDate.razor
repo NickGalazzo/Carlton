@@ -1,0 +1,35 @@
+﻿@using System.Globalization;
+
+<span class="feed-date">@DisplayDate</span>
+
+@code{
+
+    [Parameter]
+    public DateTimeOffset FeedDate { get; set; }
+
+    private string DisplayDate
+    {
+        get
+        {
+            var timeDiff = DateTimeOffset.UtcNow.Subtract(FeedDate);
+
+
+            if(timeDiff < TimeSpan.FromSeconds(60))
+            {
+                return $"moments ago";
+            }
+            else if(timeDiff < TimeSpan.FromMinutes(60))
+            {
+                return $"{Math.Round(timeDiff.TotalMinutes)} min(s) ago";
+            }
+            else if(timeDiff > TimeSpan.FromHours(1) && timeDiff < TimeSpan.FromHours(24))
+            {
+                return $"{Math.Round(timeDiff.TotalHours)} hr(s) ago";
+            }
+            else
+            {
+                return FeedDate.ToLocalTime().Date.ToString("MMM d", new CultureInfo("en-US"));
+            }
+        }
+    }
+}

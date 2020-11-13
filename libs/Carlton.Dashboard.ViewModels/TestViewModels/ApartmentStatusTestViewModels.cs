@@ -6,29 +6,29 @@ namespace Carlton.TestBed.Client.TestViewModels
 {
     public static class ApartmentStatusTestViewModels
     {
-        public static ApartmentStatusListViewModel DefaultApartmentStatusViewModel()
+        public static ApartmentStatuses DefaultApartmentStatusViewModel()
         {
-            var apartmentStatuses = new List<ApartmentStatusListItemViewModel>
+            var apartmentStatuses = new List<ApartmentStatus>
                      {
-                            new ApartmentGarbageStatusListItemViewModel(ApartmentStatuses.Complete),
-                            new ApartmentRecycleStatusListItemViewModel(ApartmentStatuses.Complete),
-                            new ApartmentShoppingStatusListItemViewModel(ApartmentStatuses.Complete),
-                            new ApartmentCleaningStatusListItemViewModel(ApartmentStatuses.Complete),
-                            new ApartmentLaundryStatusListItemViewModel(ApartmentStatuses.Complete),
-                            new ApartmentDryCleaningStatusListItemViewModel(ApartmentStatuses.Incomplete)
+                            new ApartmentStatus(ApartmentStatusName.Garbage, ApartmentStatusValue.Complete),
+                            new ApartmentStatus(ApartmentStatusName.Recycle, ApartmentStatusValue.Complete),
+                            new ApartmentStatus(ApartmentStatusName.Groceries, ApartmentStatusValue.Complete),
+                            new ApartmentStatus(ApartmentStatusName.Cleaning, ApartmentStatusValue.Complete),
+                            new ApartmentStatus(ApartmentStatusName.Laundry, ApartmentStatusValue.Complete),
+                            new ApartmentStatus(ApartmentStatusName.DryCleaning, ApartmentStatusValue.Incomplete)
                       };
 
-            return new ApartmentStatusListViewModel(apartmentStatuses);
+            return new ApartmentStatuses(apartmentStatuses);
         }
 
-        public static ApartmentStatusListItemViewModel CompletedStatusViewModel()
+        public static ApartmentStatus CompletedStatusViewModel()
         {
-            return new ApartmentGarbageStatusListItemViewModel(ApartmentStatuses.Complete);
+            return new ApartmentStatus(ApartmentStatusName.Garbage, ApartmentStatusValue.Complete);
         }
 
-        public static ApartmentStatusListItemViewModel InCompleteStatusViewModel()
+        public static ApartmentStatus InCompleteStatusViewModel()
         {
-            return new ApartmentGarbageStatusListItemViewModel(ApartmentStatuses.Incomplete);
+            return new ApartmentStatus(ApartmentStatusName.Garbage, ApartmentStatusValue.Incomplete);
         }
     }
 }

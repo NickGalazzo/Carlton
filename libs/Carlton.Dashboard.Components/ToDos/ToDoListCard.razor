@@ -1,13 +1,13 @@
 ﻿@using Carlton.Base.Client.Status; 
 @using Carlton.Dashboard.ViewModels.ToDos
 
-@inherits CarltonComponentBase<ToDoListViewModel>
+@inherits CarltonComponentBase<ToDos>
 
 <CarltonCssWraper ComponentType="this.GetType()">
     <Content>
         <CarltonListCard CardTitle="To-Do's" Items="ViewModel.ToDoList">
             <ActionBarContent>
-                <DashboardCardActionBar TViewModel="ToDoListViewModel" Callback="OnComponentEvent" Status="ComponentStatus" />
+                <DashboardCardActionBar TViewModel="ToDos" Callback="OnComponentEvent" Status="ComponentStatus" />
             </ActionBarContent>
 
             <ItemTemplate Context="toDo">

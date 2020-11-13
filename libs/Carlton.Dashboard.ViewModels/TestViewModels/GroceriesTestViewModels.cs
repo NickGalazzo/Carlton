@@ -7,33 +7,33 @@ namespace Carlton.TestBed.Client.TestViewModels
 {
     public static class GroceriesTestViewModels
     {
-        public static GroceriesListViewModel DefaultGroceriesListViewModel()
+        public static Groceries DefaultGroceriesList()
         {
-            return new GroceriesListViewModel
+            return new Groceries
             {
-                Items = new List<GroceriesListItemViewModel>
+                Items = new List<GroceryItem>
                 {
-                    new GroceriesListItemViewModel(1, "Toilet Paper", 25),
-                    new GroceriesListItemViewModel(2, "Paper Towels", 57),
-                    new GroceriesListItemViewModel(3, "Dish Soap", 92),
-                    new GroceriesListItemViewModel(4, "Swiffers", 36)
+                    new GroceryItem(1, "Toilet Paper", 25),
+                    new GroceryItem(2, "Paper Towels", 57),
+                    new GroceryItem(3, "Dish Soap", 92),
+                    new GroceryItem(4, "Swiffers", 36)
                 }.OrderBy(o => o.PercentRemaining).ToList()
             };
         }
 
-        public static GroceriesListItemViewModel GroceriesLowListItemViewModel()
+        public static GroceryItem GroceriesLowListItemViewModel()
         {
-            return DefaultGroceriesListViewModel().Items[0];
+            return DefaultGroceriesList().Items.ElementAt(0);
         }
 
-        public static GroceriesListItemViewModel GroceriesMediumListItemViewModel()
+        public static GroceryItem GroceriesMediumListItemViewModel()
         {
-            return DefaultGroceriesListViewModel().Items[2];
+            return DefaultGroceriesList().Items.ElementAt(2);
         }
 
-        public static GroceriesListItemViewModel GroceriesHighListItemViewModel()
+        public static GroceryItem GroceriesHighListItemViewModel()
         {
-            return DefaultGroceriesListViewModel().Items[3];
+            return DefaultGroceriesList().Items.ElementAt(3);
         }
     }
 }

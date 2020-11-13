@@ -1,13 +1,13 @@
 ﻿namespace Carlton.Dashboard.ViewModels.ToDos
 {
-    public class ToDoListItemViewModel
+    public class ToDo
     {
         public int Id { get; private set; }
         public string Name { get; private set; }
         public bool IsCompleted { get; private set; }
 
 
-        public ToDoListItemViewModel(int id, string name, bool isCompleted)
+        public ToDo(int id, string name, bool isCompleted)
         {
             Id = id;
             Name = name;

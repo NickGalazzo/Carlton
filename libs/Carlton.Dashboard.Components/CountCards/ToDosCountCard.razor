@@ -1,9 +1,19 @@
 ﻿@using Carlton.Dashboard.ViewModels.CountCards
 
-@inherits CarltonComponentBase<ToDosCountCardViewModel>
+@inherits CarltonComponentBase<DashboardAggregation>
 
-<CarltonCssWraper ComponentType="GetType()">
+<CarltonCssWraper ComponentType="GetType()" AdditionalClasses="@ACCENT_COLOR">
     <Content>
-        <DashboardCountCard ViewModel="ViewModel" />
+        <DashboardCountCard Count="@ViewModel.Count"
+                            MessageTemplate="@MESSAGE_TEMPLATE"
+                            Icon="@ICON"
+                            AccentColorClass="@ACCENT_COLOR"/>
     </Content>
 </CarltonCssWraper>
+
+
+@code{
+    private const string MESSAGE_TEMPLATE = "Open Tasks";
+    private const string ICON = "mdi-clipboard-check";
+    private const string ACCENT_COLOR = "accent-color-1";
+}

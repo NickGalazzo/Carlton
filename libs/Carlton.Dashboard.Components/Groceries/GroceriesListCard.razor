@@ -4,7 +4,7 @@
 @using Carlton.Dashboard.ViewModels.Groceries
 
 
-@inherits CarltonComponentBase<GroceriesListViewModel>
+@inherits CarltonComponentBase<Groceries>
 
 <CarltonCssWraper ComponentType="GetType()">
     <Content>
@@ -12,7 +12,7 @@
                          Items="ViewModel.Items">
 
             <ActionBarContent>
-                <DashboardCardActionBar TViewModel="GroceriesListViewModel"
+                <DashboardCardActionBar TViewModel="Groceries"
                                         Callback="OnComponentEvent"
                                         Status="ComponentStatus" />
             </ActionBarContent>

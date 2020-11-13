@@ -2,9 +2,9 @@
 
 namespace Carlton.Base.Client.State.Contracts
 {
-    public interface IComponentEvent : IRequest
+    public interface IComponentEvent<TViewModel>
     {
-        string EventName { get; }
-        object EventParams { get; }
+        string ViewModelName { get { return nameof(TViewModel); } }
+        string EventName { get { return GetType().Name; } }
     }
 }

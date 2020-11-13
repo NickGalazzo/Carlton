@@ -127,7 +127,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Act
             var cut = RenderComponent<GroceriesListCard>(
-                ("ViewModel", GroceriesTestViewModels.DefaultGroceriesListViewModel()));
+                ("ViewModel", GroceriesTestViewModels.DefaultGroceriesList()));
 
             var items = cut.FindComponents<GroceriesListItem>();
 
@@ -141,7 +141,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Act
             var cut = RenderComponent<GroceriesListCard>(
-                ("ViewModel", GroceriesTestViewModels.DefaultGroceriesListViewModel()));
+                ("ViewModel", GroceriesTestViewModels.DefaultGroceriesList()));
 
             var item= cut.FindComponent<GroceriesListItem>();
 

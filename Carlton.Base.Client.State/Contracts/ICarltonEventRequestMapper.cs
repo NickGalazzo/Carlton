@@ -3,6 +3,11 @@ namespace Carlton.Base.Client.State.Contracts
 {
     public interface ICarltonEventRequestMapper<TViewModel>
     {
-        ICarltonComponentRequest<TViewModel> MapToRequest(IComponentEvent evt);
+        GetViewModelRequest<TViewModel> GetViewModelRequest { get; }
+        ICarltonComponentRequest<TViewModel> MapToRequest(IComponentEvent<TViewModel> evt);
+    }
+
+    public class GetViewModelRequest<TViwModel> : IGetViewModelRequest<TViwModel>
+    {
     }
 }

@@ -60,5 +60,7 @@ namespace Carlton.Dashboard.Components.Test
             // Assert
             item.MarkupMatches(TestComponentMarkupConstants.ApartmentStatusListItem_Complete);
         }
+
+        //ToDO Add More Tests for Icon
     }
 }

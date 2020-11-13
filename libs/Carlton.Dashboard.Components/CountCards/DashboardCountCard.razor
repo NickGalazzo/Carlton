@@ -1,15 +1,36 @@
 ﻿@using Carlton.Base.Client.Components.Cards
-@using Carlton.Dashboard.ViewModels.CountCards
 
-@inherits CarltonComponentBase<CarltonBaseCountCardViewModel>
-
-<CarltonCssWraper ComponentType="GetType()" AdditionalClasses="@ViewModel.AccentColorClass">
+<CarltonCssWraper ComponentType="GetType()" AdditionalClasses="@AccentColorClass">
     <Content>
         <CarltonCard>
             <PrimaryCardContent>
-                <DashboardCountCardContent ViewModel="ViewModel" />
+                <div class="row">
+                    <div class="col-3 offset-1 count-icon mdi mdi-36px @(AccentColorClass) @(Icon)"></div>
+                    <span class="col-6 offset-1 count-message">@Message</span>
+                </div>
             </PrimaryCardContent>
         </CarltonCard>
     </Content>
 </CarltonCssWraper>
+
+@code{
+    [Parameter]
+    public int Count { get; set; }
+    [Parameter]
+    public string MessageTemplate { get; set; }
+    [Parameter]
+    public string Icon { get; set; }
+    [Parameter]
+    public string AccentColorClass { get; set; }
+
+
+    public string Message
+    {
+        get
+        {
+            return $"{Count} {MessageTemplate}";
+        }
+    }
+
+}
 
