@@ -15,7 +15,7 @@
 
 @code{
     [Parameter]
-    public RenderFragment<ComponentDataWrapperContext> ChildComponent { get; set; }
+    public RenderFragment<ComponentDataWrapperContext<TViewModel>> ChildComponent { get; set; }
 
     [Inject]
     private IMediator Mediatr { get; set; }
@@ -24,18 +24,18 @@
     private ICarltonEventRequestMapper<TViewModel> Mapper { get; set; }
 
     [Inject]
-    private ICarltonStateStore<TState> Store { get; set; }
-
-    [Inject]
     private ICarltonRefreshCondition<TState, TViewModel> RefreshCondition { get; set; }
 
-    private ComponentDataWrapperContext Context { get; set; }
+    [Inject]
+    private ICarltonStateStore<TState> Store { get; set; }
+
+    private ComponentDataWrapperContext<TViewModel> Context { get; set; }
 
     protected async override Task OnInitializedAsync()
     {
         //Get VM and initalize context for wrapped component
         var vm = await Mediatr.Send<TViewModel>(Mapper.GetViewModelRequest).ConfigureAwait(false);
-        Context = new ComponentDataWrapperContext(vm, ComponentEventHandler, RefreshViewModel);
+        Context = new ComponentDataWrapperContext<TViewModel>(vm, ComponentEventHandler);
 
         //Register State Changed Handler
         Store.StateChanged += OnStateChanged;
@@ -52,41 +52,15 @@
         await SendAndReplace(Mapper.GetViewModelRequest);
     }
 
-
     public async Task ComponentEventHandler(IComponentEvent<TViewModel> evt)
     {
         var request = Mapper.MapToRequest(evt);
         await SendAndReplace(request);
     }
 
-    private async Task RefreshViewModel()
-    {
-        var vm = await Mediatr.Send(Mapper.GetViewModelRequest).ConfigureAwait(false);
-        Context.ReplaceViewModel(vm);
-    }
-
     private async Task SendAndReplace(ICarltonComponentRequest<TViewModel> request)
     {
         var vm = await Mediatr.Send(request).ConfigureAwait(false);
         Context.ReplaceViewModel(vm);
-    }
-
-    public class ComponentDataWrapperContext
-    {
-        public TViewModel ViewModel { get; private set; }
-        public Func<IComponentEvent<TViewModel>, Task> ComponentEventHandler { get; }
-
-        public ComponentDataWrapperContext(TViewModel vm,
-            Func<IComponentEvent<TViewModel>, Task> componentEventHandler,
-            Func<Task> refreshViewModel)
-        {
-            ViewModel = vm;
-            ComponentEventHandler = componentEventHandler;
-        }
-
-        public void ReplaceViewModel(TViewModel vm)
-        {
-            ViewModel = vm;
-        }
     }
 }

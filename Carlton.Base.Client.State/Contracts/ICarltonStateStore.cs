@@ -5,6 +5,10 @@ namespace Carlton.Base.Client.State.Contracts
     public interface ICarltonStateStore<TState>
     {
         event EventHandler<StateChangedEventArgs<TState>> StateChanged;
+    }
+
+    public interface ICarltonDataAccessStateStore<TState> : ICarltonStateStore<TState>
+    {
         TState GetState();
         void ReplaceState(TState state);
     }
