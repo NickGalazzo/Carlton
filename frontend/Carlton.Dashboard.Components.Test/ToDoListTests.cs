@@ -15,7 +15,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Act
             var cut = RenderComponent<ToDoListItem>(
-                ("ViewModel", ToDoListTestViewModels.ToDoListItemUnchecked())
+                ("ViewModel", ToDoListTestViewModels.ToDoListItemUncheckedViewModel())
             );
 
             // Assert
@@ -28,7 +28,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Act
             var cut = RenderComponent<ToDoListItem>(
-                ("ViewModel", ToDoListTestViewModels.ToDoListItemChecked())
+                ("ViewModel", ToDoListTestViewModels.ToDoListItemCheckedViewModel())
             );
 
             // Assert
@@ -42,7 +42,7 @@ namespace Carlton.Dashboard.Components.Test
             // Arrange
             ToDoStatusChangedEvent result = null;
             var cut = RenderComponent<ToDoListItem>(
-                ("ViewModel", ToDoListTestViewModels.ToDoListItemUnchecked()),
+                ("ViewModel", ToDoListTestViewModels.ToDoListItemUncheckedViewModel()),
                 ComponentParameterFactory.EventCallback("OnComponentEvent", (evt) => result = (ToDoStatusChangedEvent)evt)
             );
 
@@ -62,7 +62,7 @@ namespace Carlton.Dashboard.Components.Test
             // Arrange
             ToDoStatusChangedEvent result = null;
             var cut = RenderComponent<ToDoListItem>(
-                ("ViewModel", ToDoListTestViewModels.ToDoListItemChecked()),
+                ("ViewModel", ToDoListTestViewModels.ToDoListItemCheckedViewModel()),
                 ComponentParameterFactory.EventCallback("OnComponentEvent", (evt) => result = (ToDoStatusChangedEvent)evt)
             );
 
@@ -84,7 +84,7 @@ namespace Carlton.Dashboard.Components.Test
 
             // Act
             var cut = RenderComponent<ToDoListItem>(
-                ("ViewModel", ToDoListTestViewModels.ToDoListItemChecked())
+                ("ViewModel", ToDoListTestViewModels.ToDoListItemCheckedViewModel())
             );
             var renderedText = cut.Find("span.to-do-name").TextContent;
 
@@ -99,7 +99,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Arrange
             var cut = RenderComponent<ToDoListCard>(
-                ("ViewModel", ToDoListTestViewModels.DefaultToDoList())
+                ("ViewModel", ToDoListTestViewModels.DefaultToDoListViewModel())
             );
 
             //Act
@@ -115,7 +115,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Arrange
             var cut = RenderComponent<ToDoListCard>(
-                ("ViewModel", ToDoListTestViewModels.DefaultToDoList())
+                ("ViewModel", ToDoListTestViewModels.DefaultToDoListViewModel())
             );
 
             //Act

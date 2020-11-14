@@ -4,7 +4,7 @@ namespace Carlton.Dashboard.ViewModels.TestViewModels
 {
     public static class DashboardAggregationsTestViewModels
     {
-        public static DashboardAggregation DefaultDashboardAggregation()
+        public static DashboardAggregation DefaultDashboardAggregationViewModel()
         {
             return new DashboardAggregation(7);
         }

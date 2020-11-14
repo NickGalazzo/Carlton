@@ -8,7 +8,7 @@ namespace Carlton.TestBed.Client.TestViewModels
 {
     public static class FeedListTestViewModels
     {
-        public static FeedItems DefaultFeedItemList()
+        public static FeedItems DefaultFeedItemListViewModel()
         {
             const string TOOK_OUT_GARBAGE = "Took Out Garbage";
             var feedItems = new List<FeedItem>();
@@ -29,26 +29,26 @@ namespace Carlton.TestBed.Client.TestViewModels
     
         public static FeedItem DefaultFeedListItemViewModel()
         {
-            return DefaultFeedItemList().Items.First();
+            return DefaultFeedItemListViewModel().Items.First();
         }
 
         public static FeedItem MomentsAgoFeedListItemViewModel()
         {
-            return DefaultFeedItemList().Items.First();
+            return DefaultFeedItemListViewModel().Items.First();
         }
         public static FeedItem TenMinutesAgoFeedListItemViewModel()
         {
-            return DefaultFeedItemList().Items.ElementAt(1);
+            return DefaultFeedItemListViewModel().Items.ElementAt(1);
         }
 
         public static FeedItem ThreeHoursAgoFeedListItemViewModel()
         {
-            return DefaultFeedItemList().Items.ElementAt(2);
+            return DefaultFeedItemListViewModel().Items.ElementAt(2);
         }
 
         public static FeedItem PreviousDateFeedListItemViewModel()
         {
-            return DefaultFeedItemList().Items.ElementAt(3);
+            return DefaultFeedItemListViewModel().Items.ElementAt(3);
         }
     }
 }

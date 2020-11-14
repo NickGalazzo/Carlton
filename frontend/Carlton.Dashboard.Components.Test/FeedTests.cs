@@ -116,7 +116,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Act
             var cut = RenderComponent<FeedListCard>(
-                ("ViewModel", FeedListTestViewModels.DefaultFeedItemList())
+                ("ViewModel", FeedListTestViewModels.DefaultFeedItemListViewModel())
             );
 
             var feedItems = cut.FindComponents<FeedListItem>();
@@ -131,7 +131,7 @@ namespace Carlton.Dashboard.Components.Test
         {
             // Act
             var cut = RenderComponent<FeedListCard>(
-                ("ViewModel", FeedListTestViewModels.DefaultFeedItemList())
+                ("ViewModel", FeedListTestViewModels.DefaultFeedItemListViewModel())
             );
 
             var feedItem = cut.FindComponent<FeedListItem>();

@@ -5,7 +5,7 @@ namespace Carlton.TestBed.Client.TestViewModels
 {
     public static class DinnerGuestsTestViewModels
     {
-        public static IList<DinnerGuestReason> SampleReasons = new List<DinnerGuestReason>
+        private static readonly IList<DinnerGuestReason> SampleReasons = new List<DinnerGuestReason>
                 {
                     new DinnerGuestReason(1, "Japan School"),
                     new DinnerGuestReason(2, "Out With Friends")
@@ -20,7 +20,7 @@ namespace Carlton.TestBed.Client.TestViewModels
                     DinnerGuest.CreateNotHomeForDinnerGuest(2, "Steve", SampleReasons[0])
                 };
 
-       
+
             var myDinnerGuestStatus = DinnerGuest.CreateHomeForDinnerGuest(1, "Nick");
             var dinnerGuestSelfViewModel = new DinnerGuestSelfStatus(myDinnerGuestStatus, SampleReasons);
 

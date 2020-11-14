@@ -30,5 +30,35 @@ namespace Carlton.TestBed.Client.TestViewModels
         {
             return new ApartmentStatus(ApartmentStatusName.Garbage, ApartmentStatusValue.Incomplete);
         }
+
+        public static ApartmentStatus GarbageViewModel()
+        {
+            return new ApartmentStatus(ApartmentStatusName.Garbage, ApartmentStatusValue.Complete);
+        }
+
+        public static ApartmentStatus RecycleViewModel()
+        {
+            return new ApartmentStatus(ApartmentStatusName.Recycle, ApartmentStatusValue.Complete);
+        }
+
+        public static ApartmentStatus GroceriesViewModel()
+        {
+            return new ApartmentStatus(ApartmentStatusName.Groceries, ApartmentStatusValue.Complete);
+        }
+
+        public static ApartmentStatus CleaningViewModel()
+        {
+            return new ApartmentStatus(ApartmentStatusName.Cleaning, ApartmentStatusValue.Complete);
+        }
+
+        public static ApartmentStatus LaundryViewModel()
+        {
+            return new ApartmentStatus(ApartmentStatusName.Laundry, ApartmentStatusValue.Complete);
+        }
+
+        public static ApartmentStatus DryCleaningViewModel()
+        {
+            return new ApartmentStatus(ApartmentStatusName.DryCleaning, ApartmentStatusValue.Complete);
+        }
     }
 }

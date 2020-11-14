@@ -5,7 +5,7 @@ namespace Carlton.TestBed.Client.TestViewModels
 {
     public static class ToDoListTestViewModels
     {
-        public static ToDos DefaultToDoList()
+        public static ToDos DefaultToDoListViewModel()
         {
             var toDoList = new List<ToDo>
                    {
@@ -17,12 +17,12 @@ namespace Carlton.TestBed.Client.TestViewModels
             return new ToDos(toDoList);
         }
 
-        public static ToDo ToDoListItemChecked()
+        public static ToDo ToDoListItemCheckedViewModel()
         {
             return new ToDo(1, "Take Out Garbage", true);
         }
 
-        public static ToDo ToDoListItemUnchecked()
+        public static ToDo ToDoListItemUncheckedViewModel()
         {
             return new ToDo(1, "Take Out Garbage", false);
         }

@@ -7,7 +7,7 @@ namespace Carlton.TestBed.Client.TestViewModels
 {
     public static class GroceriesTestViewModels
     {
-        public static Groceries DefaultGroceriesList()
+        public static Groceries DefaultGroceriesListViewModel()
         {
             return new Groceries
             {
@@ -23,17 +23,17 @@ namespace Carlton.TestBed.Client.TestViewModels
 
         public static GroceryItem GroceriesLowListItemViewModel()
         {
-            return DefaultGroceriesList().Items.ElementAt(0);
+            return DefaultGroceriesListViewModel().Items.ElementAt(0);
         }
 
         public static GroceryItem GroceriesMediumListItemViewModel()
         {
-            return DefaultGroceriesList().Items.ElementAt(2);
+            return DefaultGroceriesListViewModel().Items.ElementAt(2);
         }
 
         public static GroceryItem GroceriesHighListItemViewModel()
         {
-            return DefaultGroceriesList().Items.ElementAt(3);
+            return DefaultGroceriesListViewModel().Items.ElementAt(3);
         }
     }
 }
