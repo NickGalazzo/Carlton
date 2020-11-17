@@ -13,15 +13,12 @@
     </div>
 
 
-    <CarltonDataWrapper TViewModel="Carlton.Dashboard.ViewModels.ApartmentStatus.ApartmentStatus"
-                        TState="CarltonDashboardState">
-
+    <CarltonDataStoreWrapper TViewModel="Carlton.Dashboard.ViewModels.ApartmentStatus.ApartmentStatus"
+                             StateEvents="@(new string[]{ "", "", ""})">
         <ChildComponent>
-
-
+            <div>@context.</div>
         </ChildComponent>
-
-    </CarltonDataWrapper>
+    </CarltonDataStoreWrapper>
 
     <div class="content px-4">
         @Body

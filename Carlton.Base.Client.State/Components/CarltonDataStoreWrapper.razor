@@ -4,17 +4,16 @@
 @namespace Carlton.Base.Client.State.Components
 
 @typeparam TViewModel
-@typeparam TState
 
 @inherits CarltonDataWrapper<TViewModel>
-
+@implements IDisposable
 
 @code{
-    [Inject]
-    private ICarltonRefreshCondition<TState, TViewModel> RefreshCondition { get; set; }
+    [Parameter]
+    public string[] StateEvents { get; set; }
 
     [Inject]
-    private ICarltonStateStore<TState> Store { get; set; }
+    private ICarltonStateStore Store { get; set; }
 
     protected async override Task OnInitializedAsync()
     {
@@ -25,11 +24,18 @@
         await base.OnInitializedAsync();
     }
 
-    private async void OnStateChanged(object sender, StateChangedEventArgs<TState> args)
+    public void Dispose()
     {
-        if(!RefreshCondition.ShouldRefreshState(args))
+        Store.StateChanged -= OnStateChanged;
+    }
+
+
+    private async void OnStateChanged(object sender, string stateEvent)
+    {
+        if(ChildComponent.Target == sender)
             return;
 
-        await base.GetViewModel();
+        if(StateEvents.Contains(stateEvent))
+            await base.GetViewModel();
     }
 }

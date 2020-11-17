@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Requests\" />
     <Folder Include="Pages\" />
   </ItemGroup>
 

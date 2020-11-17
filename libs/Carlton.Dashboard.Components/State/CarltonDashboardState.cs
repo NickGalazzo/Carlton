@@ -3,31 +3,25 @@ using Carlton.Dashboard.ViewModels.Groceries;
 using Carlton.Dashboard.ViewModels.ToDos;
 using Carlton.Dashboard.ViewModels.Feed;
 using System.Collections.Generic;
+using Carlton.Base.Client.State.Contracts;
+using System;
+using System.Threading.Tasks;
 
 namespace Carlton.Dashboard.Components.State
 {
-    public class CarltonDashboardState
+    public class CarltonDashboardState : ICarltonStateStore
     {
-        public IEnumerable<ToDo> ToDos { get; set; }
-        public IEnumerable<DinnerGuest> DinnerGuests { get; set; }
-        public IEnumerable<GroceryItem> Groceries { get; set; }
-        public IEnumerable<FeedItem> Feed { get; set; }
+        public const string TO_DOS_STATE_CHANGE_EVENT = "ToDosStateChanged";
+        public const string DINNER_GUESTS_STATE_CHANGE_EVENT = "DinnerGuestsStateChanged";
+        public const string GROCERIES_STATE_CHANGE_EVENT = "GroceriesStateChanged";
+        public const string FEED_STATE_CHANGE_EVENT = "FeedStateChanged";
 
+        public event Action<object, string> StateChanged;
 
-        public CarltonDashboardState(CarltonDashboardState existingState, IEnumerable<ToDo> toDos)
-            :this(toDos, existingState.DinnerGuests, existingState.Groceries, existingState.Feed)
-        {
-        }
-
-        public CarltonDashboardState(CarltonDashboardState existingState, IEnumerable<DinnerGuest> guests)
-          : this(existingState.ToDos, guests, existingState.Groceries, existingState.Feed)
-        {
-        }
-
-        public CarltonDashboardState(CarltonDashboardState existingState, IEnumerable<FeedItem> feed)
-    : this(existingState.ToDos, existingState.DinnerGuests, existingState.Groceries, feed)
-        {
-        }
+        public IEnumerable<ToDo> ToDos { get; private set; }
+        public IEnumerable<DinnerGuest> DinnerGuests { get; private set; }
+        public IEnumerable<GroceryItem> Groceries { get; private set; }
+        public IEnumerable<FeedItem> Feed { get; private set; }
 
         public CarltonDashboardState(IEnumerable<ToDo> toDos,
             IEnumerable<DinnerGuest> dinnerGuests,
@@ -38,6 +32,30 @@ namespace Carlton.Dashboard.Components.State
             DinnerGuests = dinnerGuests;
             Groceries = groceris;
             Feed = feed;
+        }
+
+        public void UpdateToDos(object sender, IEnumerable<ToDo> toDos)
+        {
+            ToDos = toDos;
+            StateChanged?.Invoke(sender, TO_DOS_STATE_CHANGE_EVENT);
+        }
+
+        public void UpdateDinnerGuests(object sender, IEnumerable<DinnerGuest> dinnerGuests)
+        {
+            DinnerGuests = dinnerGuests;
+            StateChanged?.Invoke(sender, DINNER_GUESTS_STATE_CHANGE_EVENT);
+        }
+
+        public void UpdateGroceries(object sender, IEnumerable<GroceryItem> groceries)
+        {
+            Groceries = groceries;
+            StateChanged?.Invoke(sender, GROCERIES_STATE_CHANGE_EVENT);
+        }
+
+        public void UpdateFeed(object sender, IEnumerable<FeedItem> feed)
+        {
+            Feed = feed;
+            StateChanged?.Invoke(sender, FEED_STATE_CHANGE_EVENT);
         }
     }
 }
