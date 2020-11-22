@@ -1,0 +1,56 @@
+﻿@using Carlton.Base.Client.Components.Layouts
+@using Carlton.TestBed.Client.Services
+@using Carlton.TestBed.Client.Shared.Header
+@using Carlton.TestBed.Client.Shared.NavTree
+@using Carlton.TestBed.Client.Shared.NavTree.Models
+@using Carlton.TestBed.Client.Shared.Panel
+@using Carlton.TestBed.Client.Shared.ComponentViewer
+@using Carlton.TestBed.Client.Shared.ComponentViewer.Models  
+@using Carlton.Base.Client.State.Components
+
+@inherits LayoutComponentBase
+
+<CarltonDashboardLayout>
+    <HeaderContent>
+        <TestBedHeader />
+    </HeaderContent>
+
+    <Body>
+        <CarltonDataStoreWrapper TViewModel="ComponentViewerViewModel">
+            <ChildComponent>
+                <TestBedComponentViewer 
+                               ViewModel="@context.ViewModel"
+                               OnComponentEvent="@context.ComponentEventHandler" />
+            </ChildComponent>
+        </CarltonDataStoreWrapper>
+    </Body>
+
+    <NavContent>
+
+        <CarltonDataStoreWrapper TViewModel="TestBedNavTreeViewModel">
+            <ChildComponent>
+                <TestBedNavTree TreeItems="@context.ViewModel"
+                                OnComponentEvent="@context.ComponentEventHandler" />
+            </ChildComponent>
+        </CarltonDataStoreWrapper>
+
+
+    </NavContent>
+
+    <PanelContent>
+        <!--TODO Remove article-->
+        <article class="test-bed-panel @(!true ? "invisible" : string.Empty)">
+            <TestBedPanel />
+        </article>
+    </PanelContent>
+</CarltonDashboardLayout>
+
+
+
+
+
+
+
+
+
+

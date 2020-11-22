@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Carlton.Base.Client.Status;
-using Carlton.TestBed.TestBedNavTree;
+using Carlton.TestBed.Client.Shared.NavTree.Models;
 
 namespace Carlton.TestBed.Client.Services
 {

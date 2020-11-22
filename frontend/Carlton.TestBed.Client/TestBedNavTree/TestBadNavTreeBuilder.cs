@@ -1,4 +1,5 @@
-﻿using Carlton.TestBed.Client.TestBedNavTree;
+﻿using Carlton.TestBed.Client.Shared.NavTree.Models;
+using Carlton.TestBed.Client.TestBedNavTree;
 using System;
 using System.Collections.Generic;
 using System.Linq;

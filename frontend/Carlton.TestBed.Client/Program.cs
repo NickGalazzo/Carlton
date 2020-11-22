@@ -1,4 +1,8 @@
-﻿using Carlton.TestBed.Client.Services;
+﻿using Carlton.Base.Client.State.Contracts;
+using Carlton.TestBed.Client.Services;
+using Carlton.TestBed.Client.State;
+using Carlton.TestBed.Client.TestBedNavTree;
+using MediatR;
 using Microsoft.AspNetCore.Blazor.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
@@ -14,6 +18,11 @@ namespace Carlton.TestBed.Client
             var testBedNavService = TestBedBootstrapper.Bootstrap();
   
             builder.Services.AddSingleton(testBedNavService);
+            builder.Services.AddMediatR(typeof(Program).Assembly);
+            builder.Services.AddSingleton<ICarltonStateStore>(new CarltonTestBedState());
+            builder.Services.AddScoped<ICarltonEventRequestMapper, TestBedRequestMapper>();
+
+
             builder.Services.AddSingleton<TestBedViewModelService>();
             builder.Services.AddSingleton<TestBedEventService>();
             builder.Services.AddSingleton<TestBedStatusService>();

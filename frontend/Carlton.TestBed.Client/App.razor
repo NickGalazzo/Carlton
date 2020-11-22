@@ -1,12 +1,13 @@
-﻿
+﻿@using Carlton.TestBed.Client.Pages
+
  <CarltonThemeWrapper Theme="light">
     <Content>
         <Router AppAssembly="@typeof(Program).Assembly">
             <Found Context="routeData">
-                <RouteView RouteData="@routeData" DefaultLayout="@typeof(TestBedLayout)" />
+                <RouteView RouteData="@routeData" DefaultLayout="@typeof(TestBed)" />
             </Found>
             <NotFound>
-                <LayoutView Layout="@typeof(TestBedLayout)">
+                <LayoutView Layout="@typeof(TestBed)">
                     <p>Sorry, there's nothing at this address.</p>
                 </LayoutView>
             </NotFound>

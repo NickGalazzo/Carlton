@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Carlton.TestBed.TestBedNavTree
+namespace Carlton.TestBed.Client.Shared.NavTree.Models
 {
     public class TestBedNavTreeItem
     {

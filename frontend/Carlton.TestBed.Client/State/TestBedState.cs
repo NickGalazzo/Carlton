@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Carlton.Base.Client.State.Contracts;
+using System;
 using System.Linq;
 
 namespace Carlton.TestBed.Client.TestBedNavTree
 {
-    internal class TestBedState
+    internal class TestBedState 
     {
         public string NodeTitle { get; private set; }
         public Type Type { get; private set; }

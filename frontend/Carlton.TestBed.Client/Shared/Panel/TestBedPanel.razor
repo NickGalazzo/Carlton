@@ -1,27 +1,20 @@
 ﻿@using Carlton.Base.Client.Components.Tab
-@using Carlton.TestBed.Client.Services
 
 <CarltonMediaQueryWrapper>
     <DesktopContent>
         <CarltonTabBar>
             <ChildContent>
-                <TestBedPanelContent Service="Service" />
+                <TestBedPanelContent />
             </ChildContent>
         </CarltonTabBar>
     </DesktopContent>
     <MobileContent>
         <CarltonMobileTabBar>
             <ChildContent>
-                <TestBedPanelContent Service="Service" />
+                <TestBedPanelContent />
             </ChildContent>
         </CarltonMobileTabBar>
     </MobileContent>
 </CarltonMediaQueryWrapper>
-
-
-@code {
-    [Parameter]
-    public TestBedService Service { get; set; }
-}
 
 

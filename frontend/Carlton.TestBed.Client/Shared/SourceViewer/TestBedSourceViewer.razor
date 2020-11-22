@@ -1,16 +1,16 @@
 ﻿@using System.Reflection;
 @using System.Resources; 
+@using Carlton.Base.Client.State.Components
+@using Carlton.TestBed.Client.Shared.SourceViewer.Models 
+
+@inherits CarltonComponentBase<TestBedSourceViewerViewModel>
 
 <div class="test-component-source">
     @((MarkupString) Source)
 </div>
 
 @code {
-
-    [Parameter]
-    public Type ComponentType { get; set; }
-
-    public string ComponentName { get { return ComponentType.Name; } }
+    public string ComponentName { get { return ViewModel.ComponentType.Name; } }
 
     public string Source { get; private set; }
 
@@ -18,7 +18,7 @@
     {
         base.OnInitialized();
 
-        var assembly = Assembly.GetAssembly(ComponentType);
+        var assembly = Assembly.GetAssembly(ViewModel.ComponentType);
 
         System.Console.WriteLine($"{assembly.GetName()}.SourceExamples");
 

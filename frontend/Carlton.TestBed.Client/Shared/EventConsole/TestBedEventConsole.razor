@@ -1,0 +1,34 @@
+﻿@using Newtonsoft.Json
+@using Carlton.Base.Client.State.Components
+@using Carlton.TestBed.Client.Shared.EventConsole.Models
+
+@inherits CarltonComponentBase<TestBedEventConsoleViewModel>
+
+<div class="event-console">
+    <div class="form-group">
+        <textarea readonly="readonly" rows="8">@ConsoleText</textarea>
+        <button type="button" class="btn btn-info"
+                @onclick="() => base.OnComponentEvent.InvokeAsync(new EventConsoleClearEvent())">
+            clear
+        </button>
+    </div>
+</div>
+
+@code {
+    private string ConsoleText { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        ConsoleText = string.Empty;
+
+        foreach(var evt in ViewModel.ComponentEvents)
+        {
+            ConsoleText += Environment.NewLine;
+            ConsoleText += $"{evt.GetType().Name}: {JsonConvert.SerializeObject(evt)}";
+        }
+
+        base.OnParametersSet();
+    }
+}
+
+

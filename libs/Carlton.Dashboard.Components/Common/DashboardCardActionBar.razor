@@ -22,7 +22,7 @@
     [Parameter]
     public ComponentStatus Status { get; set; }
     [Parameter]
-    public EventCallback Callback { get; set; }
+    public EventCallback<ICarltonComponentEvent> Callback { get; set; }
 
     private IEnumerable<CarltonMenuItem> MenuItems
     {

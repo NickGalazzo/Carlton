@@ -20,7 +20,7 @@
     private IMediator Mediatr { get; set; }
 
     [Inject]
-    private ICarltonEventRequestMapper<TViewModel> Mapper { get; set; }
+    private ICarltonEventRequestMapper Mapper { get; set; }
 
     private TViewModel ViewModel { get; set; }
 
@@ -29,7 +29,7 @@
     protected async override Task OnInitializedAsync()
     {
         //Get VM and initalize context for wrapped component
-        var vm = await Mediatr.Send<TViewModel>(Mapper.GetViewModelRequest).ConfigureAwait(false);
+        var vm = await Mediatr.Send<TViewModel>(Mapper.GetViewModelRequest<TViewModel>()).ConfigureAwait(false);
         Context = new CarltonDataWrapperContext<TViewModel>(vm, ComponentEventHandler);
 
         //Continue initilization
@@ -38,12 +38,12 @@
 
     protected async Task GetViewModel()
     {
-        ViewModel = await Mediatr.Send(Mapper.GetViewModelRequest).ConfigureAwait(false);
+        ViewModel = await Mediatr.Send(Mapper.GetViewModelRequest<TViewModel>()).ConfigureAwait(false);
     }
 
-    private async Task ComponentEventHandler(IComponentEvent<TViewModel> evt)
+    private async Task ComponentEventHandler(ICarltonComponentEvent evt)
     {
-        var request = Mapper.MapToRequest(evt);
+        var request = Mapper.MapToRequest<TViewModel>(evt);
         ViewModel = await Mediatr.Send(request).ConfigureAwait(false);
     }
 }

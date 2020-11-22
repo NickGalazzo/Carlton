@@ -26,3 +26,10 @@
                        ValueChangedCallback="(kv) => base.OnComponentEvent.InvokeAsync(new DinnerGuestsReasonChangedEvent(ViewModel.MyGuestStatus.GuestId, kv.Key))" />
     </Content>
 </CarltonCssWraper>
+
+@code{
+    private void x()
+    {
+        new DinnerGuestsReasonChangedEvent(1, 1) { EventData = new { x = 7, y = 3 } };
+    }
+}

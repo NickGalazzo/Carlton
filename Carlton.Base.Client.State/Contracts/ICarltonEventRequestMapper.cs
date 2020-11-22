@@ -1,13 +1,8 @@
-﻿
-namespace Carlton.Base.Client.State.Contracts
+﻿namespace Carlton.Base.Client.State.Contracts
 {
-    public interface ICarltonEventRequestMapper<TViewModel>
+    public interface ICarltonEventRequestMapper
     {
-        GetViewModelRequest<TViewModel> GetViewModelRequest { get; }
-        ICarltonComponentRequest<TViewModel> MapToRequest(IComponentEvent<TViewModel> evt);
-    }
-
-    public class GetViewModelRequest<TViwModel> : IGetViewModelRequest<TViwModel>
-    {
+        ICarltonComponentRequest<TViewModel> MapToRequest<TViewModel>(ICarltonComponentEvent evt);
+        ICarltonComponentRequest<TViewModel> GetViewModelRequest<TViewModel>();
     }
 }

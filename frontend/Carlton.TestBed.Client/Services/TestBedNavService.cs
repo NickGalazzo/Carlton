@@ -1,8 +1,7 @@
-﻿using Carlton.TestBed.TestBedNavTree;
-using System;
-using System.Reflection;
+﻿using System;
 using System.Collections.Generic;
 using Carlton.TestBed.Client.Utils;
+using Carlton.TestBed.Client.Shared.NavTree.Models;
 
 namespace Carlton.TestBed.Client.Services
 {
