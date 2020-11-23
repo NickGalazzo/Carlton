@@ -1,5 +1,5 @@
-﻿using Carlton.Base.Client.Status;
-using System;
+﻿using System;
+using Carlton.Base.Client.Status;
 
 namespace Carlton.TestBed.Client.Shared.ComponentViewer
 {

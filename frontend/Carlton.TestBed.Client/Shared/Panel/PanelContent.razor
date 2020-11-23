@@ -1,15 +1,16 @@
 ﻿@using Carlton.Base.Client.Components.Tab
+@using Carlton.Base.Client.State
 @using Carlton.TestBed.Client.Shared.EventConsole
 @using Carlton.TestBed.Client.Shared.SourceViewer
 @using Carlton.TestBed.Client.Shared.StatusSwitch
 @using Carlton.TestBed.Client.Shared.ModelViewer
-@using Carlton.Base.Client.State.Components
+
 
 <CarltonTab DisplayText="Component Events" Icon="mdi-flash">
     <CarltonDataStoreWrapper TViewModel="EventConsoleViewModel">
         <ChildComponent>
             <EventConsole ViewModel="@context.ViewModel"
-                                 OnComponentEvent="@context.ComponentEventHandler" />
+                          OnComponentEvent="@context.ComponentEventHandler" />
         </ChildComponent>
     </CarltonDataStoreWrapper>
 </CarltonTab>
@@ -25,7 +26,7 @@
     <CarltonDataStoreWrapper TViewModel="object">
         <ChildComponent>
             <StatusSwitch ViewModel="@context.ViewModel"
-                                 OnComponentEvent="@context.ComponentEventHandler" />
+                          OnComponentEvent="@context.ComponentEventHandler" />
         </ChildComponent>
     </CarltonDataStoreWrapper>
 </CarltonTab>
@@ -33,7 +34,7 @@
     <CarltonDataStoreWrapper TViewModel="SourceViewerViewModel">
         <ChildComponent>
             <SourceViewer ViewModel="@context.ViewModel"
-                                 OnComponentEvent="@context.ComponentEventHandler"/>
+                          OnComponentEvent="@context.ComponentEventHandler" />
         </ChildComponent>
     </CarltonDataStoreWrapper>
 </CarltonTab>

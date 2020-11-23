@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using Carlton.TestBed.Client.Shared.NavTree.Models;
 
 namespace Carlton.TestBed.Client.Shared.NavTree
 {
     public class NavTreeViewModel
     {
-        public IEnumerable<TestBedNavTreeItem> TreeItems { get; set; }
-        public TestBedNavTreeItem SelectedNode { get; set; }
-        public IEnumerable<TestBedNavTreeItem> ExpandedNodes { get; set; }
+        public IEnumerable<NavTreeItem> TreeItems { get; set; }
+        public NavTreeItem SelectedNode { get; set; }
+        public IEnumerable<NavTreeItem> ExpandedNodes { get; set; }
     }
 }

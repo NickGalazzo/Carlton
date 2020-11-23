@@ -1,5 +1,5 @@
-﻿using Carlton.Base.Client.State.Contracts;
-using System;
+﻿using System;
+using Carlton.Base.Client.State;
 
 namespace Carlton.Dashboard.Components.Common.Events
 {

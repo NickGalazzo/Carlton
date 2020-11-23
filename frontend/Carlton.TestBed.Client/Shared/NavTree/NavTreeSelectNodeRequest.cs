@@ -1,10 +1,9 @@
-﻿using Carlton.Base.Client.State.Contracts;
-using Carlton.TestBed.Client.Shared.NavTree.Models;
+﻿using Carlton.Base.Client.State;
 
-namespace Carlton.TestBed.Client.Shared.NavTree.Requests
+namespace Carlton.TestBed.Client.Shared.NavTree
 {
     public class NavTreeSelectNodeRequest : ICarltonComponentRequest<NavTreeViewModel>
     {
-        public TestBedNavTreeItem SelectedItem { get; set; }
+        public NavTreeItem SelectedItem { get; set; }
     }
 }

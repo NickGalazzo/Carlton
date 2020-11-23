@@ -1,4 +1,4 @@
-﻿using Carlton.Base.Client.State.Contracts;
+﻿using Carlton.Base.Client.State;
 using Carlton.Base.Client.Status;
 
 namespace Carlton.TestBed.Client.Shared.StatusSwitch.Models

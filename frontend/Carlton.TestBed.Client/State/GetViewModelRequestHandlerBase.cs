@@ -1,16 +1,15 @@
-﻿using Carlton.Base.Client.State;
-using MediatR;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using MediatR;
 
 namespace Carlton.TestBed.Client.State
 {
     public abstract class GetViewModelRequestHandlerBase<TRequest, TViewModel> : IRequestHandler<TRequest, TViewModel>
         where TRequest : IRequest<TViewModel>
     {
-        protected CarltonTestBedState State { get; private set; }
+        protected TestBedState State { get; private set; }
 
-        public GetViewModelRequestHandlerBase(CarltonTestBedState state)
+        public GetViewModelRequestHandlerBase(TestBedState state)
         {
             State = state;
         }

@@ -1,8 +1,7 @@
-﻿using Carlton.Base.Client.State.Contracts;
-using System;
+﻿using System;
 using System.Threading.Tasks;
 
-namespace Carlton.Base.Client.State.Components
+namespace Carlton.Base.Client.State
 {
     public class CarltonDataWrapperContext<TViewModel>
     {

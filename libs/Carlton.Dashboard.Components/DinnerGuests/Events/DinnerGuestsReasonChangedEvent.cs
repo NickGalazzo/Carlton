@@ -1,4 +1,4 @@
-﻿using Carlton.Base.Client.State.Contracts;
+﻿using Carlton.Base.Client.State;
 using Carlton.Dashboard.ViewModels.DinnerGuests;
 
 namespace Carlton.Dashboard.Components.DinnerGuests.Events

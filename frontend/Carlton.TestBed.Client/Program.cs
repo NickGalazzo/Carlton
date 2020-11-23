@@ -1,12 +1,11 @@
-﻿using AutoMapper;
-using Carlton.Base.Client.State.Contracts;
-using Carlton.TestBed.Client.State;
-using MediatR;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Blazor.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using System.Threading.Tasks;
-using System.Linq;
+using AutoMapper;
+using MediatR;
 using Carlton.Base.Client.State;
+using Carlton.TestBed.Client.State;
 
 namespace Carlton.TestBed.Client
 {
@@ -18,7 +17,7 @@ namespace Carlton.TestBed.Client
 
             var items = TestBedBootstrapper.Bootstrap();
 
-            var state = new CarltonTestBedState(items);
+            var state = new TestBedState(items);
 
             builder.Services.AddAutoMapper(typeof(Program));
 

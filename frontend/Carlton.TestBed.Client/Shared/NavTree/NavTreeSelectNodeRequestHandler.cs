@@ -1,17 +1,15 @@
-﻿using Carlton.TestBed.Client.Shared.NavTree.Models;
-using Carlton.TestBed.Client.Shared.NavTree.Requests;
-using Carlton.TestBed.Client.State;
-using MediatR;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using MediatR;
+using Carlton.TestBed.Client.State;
 
-namespace Carlton.TestBed.Client.Shared.NavTree.Handlers
+namespace Carlton.TestBed.Client.Shared.NavTree
 {
     public class NavTreeSelectNodeRequestHandler : IRequestHandler<NavTreeSelectNodeRequest, NavTreeViewModel>
     {
-        readonly CarltonTestBedState _state;
+        readonly TestBedState _state;
 
-        public NavTreeSelectNodeRequestHandler(CarltonTestBedState state)
+        public NavTreeSelectNodeRequestHandler(TestBedState state)
         {
             _state = state;
         }

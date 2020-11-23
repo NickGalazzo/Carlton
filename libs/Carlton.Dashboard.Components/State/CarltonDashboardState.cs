@@ -3,9 +3,8 @@ using Carlton.Dashboard.ViewModels.Groceries;
 using Carlton.Dashboard.ViewModels.ToDos;
 using Carlton.Dashboard.ViewModels.Feed;
 using System.Collections.Generic;
-using Carlton.Base.Client.State.Contracts;
 using System;
-using System.Threading.Tasks;
+using Carlton.Base.Client.State;
 
 namespace Carlton.Dashboard.Components.State
 {

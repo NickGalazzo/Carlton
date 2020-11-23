@@ -1,6 +1,5 @@
 ﻿using Carlton.Base.Client.State.Components;
-using Carlton.Base.Client.State.Contracts;
-using Carlton.Dashboard.ViewModels.ToDos;
+using Carlton.Base.Client.State;
 
 namespace Carlton.Dashboard.Components.ToDos.Events
 {

@@ -1,11 +1,8 @@
-﻿using AutoMapper;
-using Carlton.Base.Client.State.Contracts;
-using Carlton.TestBed.Client.Shared.NavTree.Models;
-using Carlton.TestBed.Client.Shared.NavTree.Requests;
-using Carlton.TestBed.Client.State;
-using MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using AutoMapper;
+using MediatR;
+using Carlton.Base.Client.State;
 
 namespace Carlton.TestBed.Client
 {
@@ -21,7 +18,7 @@ namespace Carlton.TestBed.Client
 
         private readonly Dictionary<Type, IBaseRequest> _data = new Dictionary<Type, IBaseRequest>
         {
-          //  {typeof(TestBedNavTreeViewModel), new GetTestBedNavTreeViewModelRequest()}
+            //  {typeof(TestBedNavTreeViewModel), new GetTestBedNavTreeViewModelRequest()}
         };
 
         private readonly IServiceProvider _provider;
@@ -42,7 +39,7 @@ namespace Carlton.TestBed.Client
 
         public IRequest<TViewModel> GetViewModelRequest<TViewModel>()
         {
-            return (IRequest<TViewModel>)_provider.GetService(typeof(IRequest<TViewModel>)); 
+            return (IRequest<TViewModel>)_provider.GetService(typeof(IRequest<TViewModel>));
         }
     }
 }

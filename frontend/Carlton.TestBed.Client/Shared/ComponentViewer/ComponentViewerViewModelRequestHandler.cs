@@ -1,13 +1,13 @@
-﻿using Carlton.TestBed.Client.State;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using Carlton.TestBed.Client.State;
 
 namespace Carlton.TestBed.Client.Shared.ComponentViewer
 {
     public class ComponentViewerViewModelRequestHandler : GetViewModelRequestHandlerBase<ComponentViewerViewModelRequest, ComponentViewerViewModel>
     {
        
-        public ComponentViewerViewModelRequestHandler(CarltonTestBedState state)
+        public ComponentViewerViewModelRequestHandler(TestBedState state)
             :base(state)
         {
         }

@@ -1,27 +1,32 @@
-﻿using Carlton.Base.Client.State.Contracts;
-using System;
-using System.Linq;
-
-namespace Carlton.TestBed.Client.TestBedNavTree
+﻿using System;
+using System.Collections.Generic;
+using Carlton.Base.Client.State;
+using Carlton.Base.Client.Status;
+using Carlton.TestBed.Client.Shared.NavTree;
+ 
+namespace Carlton.TestBed.Client.State
 {
-    internal class TestBedState 
+    public class TestBedState : ICarltonStateStore
     {
-        public string NodeTitle { get; private set; }
-        public Type Type { get; private set; }
-        public object ViewModel { get; private set; }
-        public bool IsCarltonComponent { get; private set; }
+        public event Action<object, string> StateChanged;
 
-        public TestBedState(string nodeTitle, Type type, object viewModel, bool isCarltonComponent)
-        {
-            NodeTitle = nodeTitle;
-            Type = type;
-            ViewModel = viewModel;
-            IsCarltonComponent = isCarltonComponent;
-        }
+        public IEnumerable<NavTreeItem> TreeItems { get; private set; }
+        public NavTreeItem SelectedItem { get; private set; }
+        public Type TestComponentType { get { return SelectedItem.Type; } }
+        public bool IsTestComponentCarltonComponent { get; private set; }
+        public ComponentStatus TestComponentStatus { get; private set; }
+        public object TestComponentViewModel { get { return SelectedItem.ViewModel; } }
+        public IList<object> ComponentEvents { get; private set; }
 
-        public void PopCurrentFromNodeTitle()
+        public TestBedState(IEnumerable<NavTreeItem> treeItems)
         {
-            NodeTitle = string.Join('/', NodeTitle.Split('/').Skip(1));
+            TreeItems = treeItems;
+            SelectedItem = TreeItems.GetFirstSelectableTestState();
         }
     }
 }
+
+
+
+
+

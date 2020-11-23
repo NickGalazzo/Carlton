@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Threading.Tasks;
 
-namespace Carlton.Base.Client.State.Contracts
+namespace Carlton.Base.Client.State
 {
     public interface ICarltonStateStore
     {

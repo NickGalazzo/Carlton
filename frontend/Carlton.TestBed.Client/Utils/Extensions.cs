@@ -1,13 +1,12 @@
-﻿using Carlton.TestBed.Client.Shared.NavTree.Models;
-using Carlton.TestBed.TestBedNavTree;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Carlton.TestBed.Client.Shared.NavTree;
 
 namespace Carlton.TestBed.Client
 {
-    public static class TestBedNavTreeItemExtensions
+    public static class NavTreeItemExtensions
     {
-        public static TestBedNavTreeItem GetFirstSelectableTestState(this IEnumerable<TestBedNavTreeItem> treeItems)
+        public static NavTreeItem GetFirstSelectableTestState(this IEnumerable<NavTreeItem> treeItems)
         {
             var item = treeItems.First();
 

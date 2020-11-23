@@ -1,12 +1,12 @@
-﻿using Carlton.TestBed.Client.State;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using Carlton.TestBed.Client.State;
 
 namespace Carlton.TestBed.Client.Shared.NavTree
 {
     public class NavTreeViewModelRequestHandler : GetViewModelRequestHandlerBase<NavTreeViewModelRequest, NavTreeViewModel>
     {
-        public NavTreeViewModelRequestHandler(CarltonTestBedState state)
+        public NavTreeViewModelRequestHandler(TestBedState state)
             :base(state)
         {
         }

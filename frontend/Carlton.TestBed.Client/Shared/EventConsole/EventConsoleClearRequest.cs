@@ -1,4 +1,4 @@
-﻿using Carlton.Base.Client.State.Contracts;
+﻿using Carlton.Base.Client.State;
 using Carlton.TestBed.Client.Shared.ComponentViewer;
 
 namespace Carlton.TestBed.Client.Shared.EventConsole
