@@ -1,0 +1,39 @@
+﻿@inherits CarltonMenuParent
+
+    <div class="test-bed-header-menu">
+        
+        <div>
+            <span class="icon mdi mdi-24px mdi-settings"></span>
+        </div>
+
+        <CarltonMenuParent MenuItems="_menuItems">
+            <MenuTemplate>
+                <span class="icon mdi mdi-24px mdi-format-paint"></span>
+            </MenuTemplate>
+            <MenuItemTemplate Context="item">
+                <CarltonSimpleMenuItem MenuItem="item" />
+            </MenuItemTemplate>
+        </CarltonMenuParent>
+    </div>
+
+@code{
+
+    [CascadingParameter]
+    private string Theme { get; set; }
+
+    [CascadingParameter]
+    private Action<string> UpdateTheme { get; set; }
+
+    private List<CarltonMenuItem> _menuItems;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        _menuItems = new List<CarltonMenuItem>
+        {
+            new CarltonMenuItem("Light", () => {UpdateTheme("light"); return Task.CompletedTask; }),
+            new CarltonMenuItem("Dark", () => {UpdateTheme("dark"); return Task.CompletedTask; })
+        };
+    }
+}
