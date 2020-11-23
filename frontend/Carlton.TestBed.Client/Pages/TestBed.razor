@@ -26,23 +26,21 @@
     </Body>
 
     <NavContent>
-
         <CarltonDataStoreWrapper TViewModel="TestBedNavTreeViewModel">
             <ChildComponent>
-                <TestBedNavTree TreeItems="@context.ViewModel"
-                                OnComponentEvent="@context.ComponentEventHandler" />
+                <TestBedNavTree ViewModel="@context.ViewModel"
+                                OnComponentEvent="@context.ComponentEventHandler"
+                                ComponentStatus="ComponentStatus.SYNCED"/>
             </ChildComponent>
         </CarltonDataStoreWrapper>
-
-
     </NavContent>
 
-    <PanelContent>
-        <!--TODO Remove article-->
+    @*<PanelContent>
+        TODO Remove article
         <article class="test-bed-panel @(!true ? "invisible" : string.Empty)">
             <TestBedPanel />
         </article>
-    </PanelContent>
+    </PanelContent>*@
 </CarltonDashboardLayout>
 
 

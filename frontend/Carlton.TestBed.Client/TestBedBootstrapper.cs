@@ -15,12 +15,14 @@ using Carlton.TestBed.Client.TestViewModels;
 using Carlton.Dashboard.ViewModels.TestViewModels;
 using Carlton.TestBed.TestBedNavTree;
 using Carlton.TestBed.Client.Services;
+using System.Collections.Generic;
+using Carlton.TestBed.Client.Shared.NavTree.Models;
 
 namespace Carlton.TestBed.Client
 {
     public static class TestBedBootstrapper
     {
-        public static TestBedNavService Bootstrap()
+        public static IEnumerable<TestBedNavTreeItem> Bootstrap()
         {
             var builder = new TestBadNavTreeBuilder()
 
@@ -66,9 +68,7 @@ namespace Carlton.TestBed.Client
               .AddCarltonComponent<DinnerGuestsCountCard>("CountCards/DinnerGuesets/Default", DashboardAggregationsTestViewModels.DefaultDashboardAggregationViewModel())
               .AddCarltonComponent<GroceriesCountCard>("CountCards/Groceries/Default", DashboardAggregationsTestViewModels.DefaultDashboardAggregationViewModel());
 
-            var navTree = builder.Build();
-
-            return new TestBedNavService(navTree);
+            return builder.Build();
         }
     }
 }

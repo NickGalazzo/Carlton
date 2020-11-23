@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
     <PackageReference Include="Dapper" Version="1.50.5" />
     <PackageReference Include="FluentValidation" Version="8.0.100" />
     <PackageReference Include="MediatR" Version="8.0.0" />
@@ -21,6 +23,8 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Polly" Version="7.2.0" />
     <PackageReference Include="Sentry" Version="1.0.0" />
+    <PackageReference Include="SimpleInjector" Version="5.1.0" />
+    <PackageReference Include="SimpleInjector.Integration.AspNetCore" Version="5.1.0" />
   </ItemGroup>
 
   <ItemGroup>

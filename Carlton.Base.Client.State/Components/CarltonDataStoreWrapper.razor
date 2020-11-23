@@ -8,6 +8,8 @@
 @inherits CarltonDataWrapper<TViewModel>
 @implements IDisposable
 
+@ChildComponent(Context)
+
 @code{
     [Parameter]
     public string[] StateEvents { get; set; }

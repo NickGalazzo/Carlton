@@ -1,6 +1,7 @@
 ﻿@using Carlton.Base.Client.Components.Tree
 @using Carlton.Base.Client.State.Components
 @using Carlton.TestBed.Client.Shared.NavTree.Models
+@using Carlton.TestBed.Client.Shared.NavTree.Events 
 
 @inherits CarltonComponentBase<TestBedNavTreeViewModel>
 
@@ -9,7 +10,7 @@
                      Nodes="ViewModel.TreeItems"
                      ChildSelector="@(item => item.Children)"
                      SelectedNode="@ViewModel.SelectedNode"
-                     SelectedNodeChanged="@(async (node) => await base.OnComponentEvent.InvokeAsync(new SelectedNodeChangedEvent(node.DisplayName)))"
+                     SelectedNodeChanged="@(async (node) => await base.OnComponentEvent.InvokeAsync(new SelectedNodeChangedEvent(node)))"
                      HasChildNodes="@(item => item.Children?.Any() == true)"
                      Style="TreeStyle.DefaultTreeStyle">
         <TitleTemplate>@context.DisplayName</TitleTemplate>
@@ -19,10 +20,3 @@
 @*ExpandedNodes="ViewModel.ExpandedNodes.ToList()"
     ExpandedNodesChanged="(nodes) => base.OnComponentEvent.InvokeAsync(new ExpandedNodesChangedEvent((IEnumerable<TestBedNavTreeItem>) nodes)"*@
 
-@code {
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        //SelectedNode = ViewModel.TreeItems.GetFirstSelectableTestState();
-    }
-}

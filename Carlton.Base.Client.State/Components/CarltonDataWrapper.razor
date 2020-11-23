@@ -20,11 +20,11 @@
     private IMediator Mediatr { get; set; }
 
     [Inject]
-    private ICarltonEventRequestMapper Mapper { get; set; }
+    private ICarltonRequestFactory Mapper { get; set; }
 
     private TViewModel ViewModel { get; set; }
 
-    private CarltonDataWrapperContext<TViewModel> Context { get; set; }
+    protected CarltonDataWrapperContext<TViewModel> Context { get; set; }
 
     protected async override Task OnInitializedAsync()
     {

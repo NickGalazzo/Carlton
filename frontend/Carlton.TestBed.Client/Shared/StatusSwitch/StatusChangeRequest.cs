@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Carlton.TestBed.Client.Shared.StatusSwitch
 {
-    public class StatusChangeRequest : ICarltonComponentRequest<object>
+    public class StatusChangeRequest : ICarltonComponentRequest<string>
     {
     }
 }
