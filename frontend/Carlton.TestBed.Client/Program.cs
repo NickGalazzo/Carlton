@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Carlton.Base.Client.State.Contracts;
-using Carlton.TestBed.Client.Services;
 using Carlton.TestBed.Client.State;
 using MediatR;
 using Microsoft.AspNetCore.Blazor.Hosting;
@@ -69,11 +68,6 @@ namespace Carlton.TestBed.Client
             builder.Services.AddMediatR(typeof(App).Assembly);
 
             // builder.Services.AddMediatR(typeof(TestBedNavTreeViewModel));
-
-            builder.Services.AddSingleton<TestBedViewModelService>();
-            builder.Services.AddSingleton<TestBedEventService>();
-            builder.Services.AddSingleton<TestBedStatusService>();
-            builder.Services.AddSingleton<TestBedService>();
 
             builder.RootComponents.Add<App>("app");
 

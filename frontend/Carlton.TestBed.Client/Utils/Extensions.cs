@@ -3,7 +3,7 @@ using Carlton.TestBed.TestBedNavTree;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Carlton.TestBed.Client.Utils
+namespace Carlton.TestBed.Client
 {
     public static class TestBedNavTreeItemExtensions
     {

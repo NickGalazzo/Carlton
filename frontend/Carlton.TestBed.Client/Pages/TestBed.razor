@@ -1,11 +1,7 @@
 ﻿@using Carlton.Base.Client.Components.Layouts
-@using Carlton.TestBed.Client.Services
 @using Carlton.TestBed.Client.Shared.Header
 @using Carlton.TestBed.Client.Shared.NavTree
-@using Carlton.TestBed.Client.Shared.NavTree.Models
-@using Carlton.TestBed.Client.Shared.Panel
-@using Carlton.TestBed.Client.Shared.ComponentViewer
-@using Carlton.TestBed.Client.Shared.ComponentViewer.Models  
+@using Carlton.TestBed.Client.Shared.ComponentViewer  
 @using Carlton.Base.Client.State.Components
 
 @inherits LayoutComponentBase
@@ -18,7 +14,7 @@
     <Body>
         <CarltonDataStoreWrapper TViewModel="ComponentViewerViewModel">
             <ChildComponent>
-                <TestBedComponentViewer 
+                <ComponentViewer 
                                ViewModel="@context.ViewModel"
                                OnComponentEvent="@context.ComponentEventHandler" />
             </ChildComponent>
@@ -26,9 +22,9 @@
     </Body>
 
     <NavContent>
-        <CarltonDataStoreWrapper TViewModel="TestBedNavTreeViewModel">
+        <CarltonDataStoreWrapper TViewModel="NavTreeViewModel">
             <ChildComponent>
-                <TestBedNavTree ViewModel="@context.ViewModel"
+                <NavTree ViewModel="@context.ViewModel"
                                 OnComponentEvent="@context.ComponentEventHandler"
                                 ComponentStatus="ComponentStatus.SYNCED"/>
             </ChildComponent>

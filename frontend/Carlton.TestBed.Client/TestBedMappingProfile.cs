@@ -1,7 +1,4 @@
 ﻿using AutoMapper;
-using Carlton.TestBed.Client.Shared.NavTree.Events;
-using Carlton.TestBed.Client.Shared.NavTree.Models;
-using Carlton.TestBed.Client.Shared.NavTree.Requests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +10,7 @@ namespace Carlton.TestBed.Client
     {
         public TestBedMappingProfile()
         {
-            CreateMap<SelectedNodeChangedEvent, SelectComponentRequest>();
-
+          //  CreateMap<SelectedNodeChangedEvent, SelectComponentRequest>();
         }
     }
 }
