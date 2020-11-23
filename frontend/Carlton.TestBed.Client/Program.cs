@@ -25,44 +25,8 @@ namespace Carlton.TestBed.Client
             builder.Services.AddSingleton<ICarltonStateStore>(state);
             builder.Services.AddScoped<ICarltonRequestFactory, TestBedRequestMapper>();
 
-
-            //Simplfy and move eto extension method
-            typeof(Program).Assembly.GetTypes()
-                                    .Where(o => o.BaseType.IsGenericType)
-                                    .Where(o => o.BaseType.GetGenericTypeDefinition() == typeof(GetViewModelRequestHandlerBase<,>))
-                                    .ToList()
-                                    .ForEach(o =>
-                                    {
-                                        System.Console.WriteLine(o);
-                                        var typeArgs = o.BaseType.GetGenericArguments();
-                                        var requestType = typeArgs[0];
-                                        var vmType = typeArgs[1];
-                                        var requestHandlerType = typeof(IRequestHandler<,>).MakeGenericType(requestType, vmType);
-                                        builder.Services.AddScoped(requestHandlerType, o);
-                                    });
-
-
-            System.Console.WriteLine("test");
-            typeof(Program).Assembly.GetTypes()
-                                    .Where(o => o.GetInterfaces()
-                                        .Any(o => o.IsGenericType && o.GetGenericTypeDefinition() == typeof(ICarltonViewModelRequest<>)))
-                                    .ToList()
-                                    .ForEach(o =>
-                                    {
-                                        System.Console.WriteLine(o);
-                                        var vmType = o.GetInterfaces().First(o => o.IsGenericType && o.GetGenericTypeDefinition() == typeof(ICarltonViewModelRequest<>))
-                                                                      .GetGenericArguments()[0];
-                                        builder.Services.AddScoped(typeof(IRequest<>).MakeGenericType(vmType), o);
-                                        System.Console.WriteLine(o);
-                                    });
-
-
-            //  builder.Services.AddScoped<IRequest<TestBedNavTreeViewModel>, GetTestBedNavTreeViewModelRequest>();
-            //  builder.Services.AddScoped<IRequestHandler<GetTestBedNavTreeViewModelRequest, TestBedNavTreeViewModel>, GetTestBedNavTreeViewModelRequestHandler>();
-
-            ///builder.Services.AddScoped<IRequest<ComponentViewerViewModel>, GetTestBedComponentViewerViewModelRequest>();
-            // builder.Services.AddScoped<IRequestHandler<GetTestBedComponentViewerViewModelRequest, ComponentViewerViewModel>, GetTestBedComponentViewModelRequestHandler>();
-
+            builder.Services.AddCarltonState();
+          
 
             builder.Services.AddMediatR(typeof(App).Assembly);
 

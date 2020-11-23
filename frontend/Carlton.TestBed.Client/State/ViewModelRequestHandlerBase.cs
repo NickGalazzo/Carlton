@@ -4,12 +4,12 @@ using MediatR;
 
 namespace Carlton.TestBed.Client.State
 {
-    public abstract class GetViewModelRequestHandlerBase<TRequest, TViewModel> : IRequestHandler<TRequest, TViewModel>
+    public abstract class ViewModelRequestHandlerBase<TRequest, TViewModel> : IRequestHandler<TRequest, TViewModel>
         where TRequest : IRequest<TViewModel>
     {
         protected TestBedState State { get; private set; }
 
-        public GetViewModelRequestHandlerBase(TestBedState state)
+        public ViewModelRequestHandlerBase(TestBedState state)
         {
             State = state;
         }
