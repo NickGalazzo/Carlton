@@ -2,7 +2,7 @@
 @using Carlton.Base.Client.State
 @using Carlton.TestBed.Client.Shared.ViewModelViewer.Models
 
-@inherits CarltonComponentBase<object>
+@inherits CarltonComponentBase<ModelViewerViewModel>
 
 <div class="view-model-viewer">
     <div class="form-group">
@@ -22,7 +22,7 @@
 
     protected override void OnParametersSet()
     {
-        ViewModelJson = JsonConvert.SerializeObject(ViewModel, Formatting.Indented);
+        ViewModelJson = JsonConvert.SerializeObject(ViewModel.ViewModel, Formatting.Indented);
         base.OnParametersSet();
     }
 

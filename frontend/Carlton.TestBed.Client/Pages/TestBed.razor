@@ -3,6 +3,7 @@
 @using Carlton.TestBed.Client.Shared.Header
 @using Carlton.TestBed.Client.Shared.NavTree
 @using Carlton.TestBed.Client.Shared.ComponentViewer
+@using Carlton.TestBed.Client.Shared.Panel 
 
 @inherits LayoutComponentBase
 
@@ -30,12 +31,12 @@
         </CarltonDataStoreWrapper>
     </NavContent>
 
-    @*<PanelContent>
-            TODO Remove article
+    <PanelContent>
+            @*TODO Remove article*@
             <article class="test-bed-panel @(!true ? "invisible" : string.Empty)">
-                <TestBedPanel />
+                <Panel />
             </article>
-        </PanelContent>*@
+        </PanelContent>
 </CarltonDashboardLayout>
 
 

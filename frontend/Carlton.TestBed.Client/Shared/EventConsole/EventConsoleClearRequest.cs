@@ -1,9 +1,9 @@
-﻿using Carlton.Base.Client.State;
-using Carlton.TestBed.Client.Shared.ComponentViewer;
+﻿using Carlton.TestBed.Client.Shared.ComponentViewer;
+using MediatR;
 
 namespace Carlton.TestBed.Client.Shared.EventConsole
 {
-    public class EventConsoleClearRequest : ICarltonComponentRequest<ComponentViewerViewModel>
+    public class EventConsoleClearRequest : IRequest<Unit>
     {
     }
 }

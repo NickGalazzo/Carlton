@@ -22,6 +22,8 @@ namespace Carlton.TestBed.Client.State
         {
             TreeItems = treeItems;
             SelectedItem = TreeItems.GetFirstSelectableTestState();
+            ComponentEvents = new List<object>();
+            TestComponentStatus = ComponentStatus.SYNCED;
         }
     }
 }

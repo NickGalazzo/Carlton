@@ -10,8 +10,8 @@ namespace Carlton.Base.Client.State
 {
     public static class ContainerExtensions
     {
-        private static readonly Func<Type, Type> getRequestInterface = o => o.GetInterfaces().FirstOrDefault(_ => _.IsGenericType && _.GetGenericTypeDefinition() == typeof(ICarltonViewModelRequest<>));
-        private static readonly Func<Type, Type> getHandlerInterface = o => o.GetInterfaces().FirstOrDefault(_ => _.IsGenericType && _.GetGenericTypeDefinition() == typeof(ICarltonViewModelRequestHandler<>));
+        private static readonly Func<Type, Type> getRequestInterface = o => o.GetInterfaces().FirstOrDefault(_ => _.IsGenericType && _.GetGenericTypeDefinition() == typeof(IRequest<>));
+        private static readonly Func<Type, Type> getHandlerInterface = o => o.GetInterfaces().FirstOrDefault(_ => _.IsGenericType && _.GetGenericTypeDefinition() == typeof(IRequestHandler<>));
 
         private static readonly Func<Type, bool> isRequest = o => getRequestInterface(o) != null;
         private static readonly Func<Type, bool> isHandler = o => getHandlerInterface(o) != null;

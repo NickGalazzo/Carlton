@@ -2,7 +2,7 @@
 
 namespace Carlton.TestBed.Client.Shared.StatusSwitch
 {
-    public class StatusSwitchStatusChangeRequest : IRequest<Unit>
+    public class StatusSwitchViewModelRequest : IRequest<StatusSwitchViewModel>
     {
     }
 }

@@ -9,7 +9,7 @@
 </div>
 
 @code {
-    public string ComponentName { get { return ViewModel.ComponentType.Name; } }
+    public string ComponentName { get { return ViewModel.TestComponentType.Name; } }
 
     public string Source { get; private set; }
 
@@ -17,7 +17,7 @@
     {
         base.OnInitialized();
 
-        var assembly = Assembly.GetAssembly(ViewModel.ComponentType);
+        var assembly = Assembly.GetAssembly(ViewModel.TestComponentType);
 
         System.Console.WriteLine($"{assembly.GetName()}.SourceExamples");
 

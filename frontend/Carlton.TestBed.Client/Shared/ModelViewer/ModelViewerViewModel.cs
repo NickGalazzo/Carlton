@@ -1,8 +1,11 @@
-﻿using Carlton.Base.Client.State;
-
-namespace Carlton.TestBed.Client.Shared.ViewModelViewer
+﻿namespace Carlton.TestBed.Client.Shared.ModelViewer
 {
-    public class ModelViewerViewModel : ICarltonComponentRequest<object>
+    public class ModelViewerViewModel 
     {
+        public object ViewModel { get; private set; }
+        public ModelViewerViewModel(object vm)
+        {
+            ViewModel = vm;
+        }
     }
 }

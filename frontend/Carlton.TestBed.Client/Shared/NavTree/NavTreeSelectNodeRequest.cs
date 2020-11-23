@@ -1,9 +1,12 @@
-﻿using Carlton.Base.Client.State;
+﻿using Carlton.TestBed.Client.State;
 
 namespace Carlton.TestBed.Client.Shared.NavTree
 {
-    public class NavTreeSelectNodeRequest : ICarltonComponentRequest<NavTreeViewModel>
+    public class NavTreeSelectNodeRequest : ComponentEventRequestBase<NavTreeSelectedNodeChangedEvent>
     {
-        public NavTreeItem SelectedItem { get; set; }
+        public NavTreeSelectNodeRequest(NavTreeSelectedNodeChangedEvent componentEvent)
+            :base(componentEvent)
+        {
+        }
     }
 }

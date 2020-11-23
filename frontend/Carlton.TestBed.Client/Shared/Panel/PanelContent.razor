@@ -15,7 +15,7 @@
     </CarltonDataStoreWrapper>
 </CarltonTab>
 <CarltonTab DisplayText="JSON Payloads" Icon="mdi-code-braces">
-    <CarltonDataStoreWrapper TViewModel="object">
+    <CarltonDataStoreWrapper TViewModel="ModelViewerViewModel">
         <ChildComponent>
             <ModelViewer ViewModel="@context.ViewModel"
                          OnComponentEvent="@context.ComponentEventHandler" />
@@ -23,7 +23,7 @@
     </CarltonDataStoreWrapper>
 </CarltonTab>
 <CarltonTab DisplayText="Component Status" Icon="mdi-traffic-light">
-    <CarltonDataStoreWrapper TViewModel="object">
+    <CarltonDataStoreWrapper TViewModel="StatusSwitchViewModel">
         <ChildComponent>
             <StatusSwitch ViewModel="@context.ViewModel"
                           OnComponentEvent="@context.ComponentEventHandler" />
@@ -38,7 +38,7 @@
         </ChildComponent>
     </CarltonDataStoreWrapper>
 </CarltonTab>
-<CarltonTab DisplayText="Tests" Icon="mdi-test-tube">
-    @*<TestBedSourceViewer ComponentType="@Service.TestComponentType" />*@
-</CarltonTab>
+@*<CarltonTab DisplayText="Tests" Icon="mdi-test-tube">
+    <TestBedSourceViewer ComponentType="@Service.TestComponentType" />
+</CarltonTab>*@
 

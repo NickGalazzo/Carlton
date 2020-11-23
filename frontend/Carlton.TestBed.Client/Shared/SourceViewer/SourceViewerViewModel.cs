@@ -4,6 +4,11 @@ namespace Carlton.TestBed.Client.Shared.SourceViewer
 {
     public class SourceViewerViewModel
     {
-        public Type ComponentType { get; set; }
+        public Type TestComponentType { get; }
+        
+        public SourceViewerViewModel(Type testComponentType)
+        {
+            TestComponentType = testComponentType;
+        }
     }
 }

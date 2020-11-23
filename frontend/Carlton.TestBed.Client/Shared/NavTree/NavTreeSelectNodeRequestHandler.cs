@@ -5,7 +5,7 @@ using Carlton.TestBed.Client.State;
 
 namespace Carlton.TestBed.Client.Shared.NavTree
 {
-    public class NavTreeSelectNodeRequestHandler : IRequestHandler<NavTreeSelectNodeRequest, NavTreeViewModel>
+    public class NavTreeSelectNodeRequestHandler : IRequestHandler<NavTreeSelectNodeRequest, Unit>
     {
         readonly TestBedState _state;
 
@@ -14,13 +14,9 @@ namespace Carlton.TestBed.Client.Shared.NavTree
             _state = state;
         }
 
-        public Task<NavTreeViewModel> Handle(NavTreeSelectNodeRequest request, CancellationToken cancellationToken)
+        Task<Unit> IRequestHandler<NavTreeSelectNodeRequest, Unit>.Handle(NavTreeSelectNodeRequest request, CancellationToken cancellationToken)
         {
-            return Task.FromResult(new NavTreeViewModel
-            {
-                TreeItems = _state.TreeItems,
-                //SelectedNode = _state.TreeItems
-            });
+            return Task.FromResult(Unit.Value);
         }
     }
 }
