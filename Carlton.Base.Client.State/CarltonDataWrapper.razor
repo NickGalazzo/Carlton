@@ -16,7 +16,7 @@
     private IMediator Mediatr { get; set; }
 
     [Inject]
-    private ICarltonRequestFactory Mapper { get; set; }
+    private ICarltonRequestFactory factory { get; set; }
 
     private TViewModel ViewModel { get; set; }
 
@@ -25,7 +25,7 @@
     protected async override Task OnInitializedAsync()
     {
         //Get VM and initalize context for wrapped component
-        var vm = await Mediatr.Send<TViewModel>(Mapper.GetViewModelRequest<TViewModel>()).ConfigureAwait(false);
+        var vm = await Mediatr.Send<TViewModel>(factory.GetViewModelRequest<TViewModel>()).ConfigureAwait(false);
         Context = new CarltonDataWrapperContext<TViewModel>(vm, ComponentEventHandler);
 
         //Continue initilization
@@ -34,12 +34,16 @@
 
     protected async Task GetViewModel()
     {
-        ViewModel = await Mediatr.Send(Mapper.GetViewModelRequest<TViewModel>()).ConfigureAwait(false);
+        ViewModel = await Mediatr.Send(factory.GetViewModelRequest<TViewModel>()).ConfigureAwait(false);
     }
 
-    private async Task ComponentEventHandler(ICarltonComponentEvent evt)
+    private async Task ComponentEventHandler<TComponentEvent>(TComponentEvent evt)
+        where TComponentEvent : ICarltonComponentEvent
     {
-        var request = Mapper.MapToRequest<TViewModel>(evt);
-        ViewModel = await Mediatr.Send(request).ConfigureAwait(false);
+
+        System.Console.WriteLine("The type in the wrapper: " + typeof(TComponentEvent) + " : " + evt.GetType());
+
+        var request = (IRequest<Unit>)factory.GetComponentEventRequest<TComponentEvent>(evt);
+        await Mediatr.Send(request).ConfigureAwait(false);
     }
 }

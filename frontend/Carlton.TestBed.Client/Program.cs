@@ -6,6 +6,7 @@ using AutoMapper;
 using MediatR;
 using Carlton.Base.Client.State;
 using Carlton.TestBed.Client.State;
+using System;
 
 namespace Carlton.TestBed.Client
 {
@@ -21,9 +22,10 @@ namespace Carlton.TestBed.Client
 
             builder.Services.AddAutoMapper(typeof(Program));
 
+ 
             builder.Services.AddSingleton(state);
             builder.Services.AddSingleton<ICarltonStateStore>(state);
-            builder.Services.AddScoped<ICarltonRequestFactory, TestBedRequestMapper>();
+            builder.Services.AddScoped<ICarltonRequestFactory, CarltonRequestFactory>();
 
             builder.Services.AddCarltonState();
           

@@ -1,8 +1,8 @@
-﻿using MediatR;
+﻿using Carlton.Base.Client.State;
 
 namespace Carlton.TestBed.Client.Shared.ComponentViewer
 {
-    public class ComponentViewerViewModelRequest : IRequest<ComponentViewerViewModel>
+    public class ComponentViewerViewModelRequest : ICarltonViewModelRequest<ComponentViewerViewModel>
     {
     }
 }

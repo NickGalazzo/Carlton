@@ -16,6 +16,7 @@ namespace Carlton.TestBed.Client.Shared.NavTree
 
         Task<Unit> IRequestHandler<NavTreeSelectNodeRequest, Unit>.Handle(NavTreeSelectNodeRequest request, CancellationToken cancellationToken)
         {
+            System.Console.WriteLine("WOOOOOOOW");
             return Task.FromResult(Unit.Value);
         }
     }

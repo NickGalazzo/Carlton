@@ -4,7 +4,8 @@ namespace Carlton.Base.Client.State
 {
     public interface ICarltonRequestFactory
     {
-        IRequest<TViewModel> MapToRequest<TViewModel>(ICarltonComponentEvent evt);
+        IRequest<Unit> GetComponentEventRequest<TComponentEvent>(ICarltonComponentEvent evt)
+              where TComponentEvent : ICarltonComponentEvent;
         IRequest<TViewModel> GetViewModelRequest<TViewModel>();
     }
 }

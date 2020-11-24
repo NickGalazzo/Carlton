@@ -1,8 +1,8 @@
-﻿using MediatR;
+﻿using Carlton.Base.Client.State;
 
 namespace Carlton.TestBed.Client.Shared.SourceViewer
 {
-    public class SourceViewerViewModelRequest : IRequest<SourceViewerViewModel>
+    public class SourceViewerViewModelRequest : ICarltonViewModelRequest<SourceViewerViewModel>
     {
     }
 }

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Carlton.Base.Client.State.Contracts
+namespace Carlton.Base.Client.State
 {
     public interface ICarltonComponentEventRequest<TComponentEvent> : IRequest<Unit>
         where TComponentEvent : ICarltonComponentEvent

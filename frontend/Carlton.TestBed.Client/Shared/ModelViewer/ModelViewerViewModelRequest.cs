@@ -1,9 +1,8 @@
-﻿using MediatR;
-using Carlton.TestBed.Client.Shared.ViewModelViewer;
+﻿using Carlton.Base.Client.State;
 
 namespace Carlton.TestBed.Client.Shared.ModelViewer
 {
-    public class ModelViewerViewModelRequest : IRequest<ModelViewerViewModel>
+    public class ModelViewerViewModelRequest : ICarltonViewModelRequest<ModelViewerViewModel>
     {
     }
 }
