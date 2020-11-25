@@ -1,5 +1,5 @@
 ﻿@using MediatR
-@using Microsoft.AspNetCore.Components
+
 
 @typeparam TViewModel
 
@@ -25,7 +25,8 @@
     protected async override Task OnInitializedAsync()
     {
         //Get VM and initalize context for wrapped component
-        var vm = await Mediatr.Send<TViewModel>(factory.GetViewModelRequest<TViewModel>()).ConfigureAwait(false);
+        var request = factory.GetViewModelRequest<TViewModel>();
+        var vm = await Mediatr.Send<TViewModel>(request).ConfigureAwait(false);
         Context = new CarltonDataWrapperContext<TViewModel>(vm, ComponentEventHandler);
 
         //Continue initilization
@@ -37,13 +38,9 @@
         ViewModel = await Mediatr.Send(factory.GetViewModelRequest<TViewModel>()).ConfigureAwait(false);
     }
 
-    private async Task ComponentEventHandler<TComponentEvent>(TComponentEvent evt)
-        where TComponentEvent : ICarltonComponentEvent
+    private async Task ComponentEventHandler(object evt)
     {
-
-        System.Console.WriteLine("The type in the wrapper: " + typeof(TComponentEvent) + " : " + evt.GetType());
-
-        var request = (IRequest<Unit>)factory.GetComponentEventRequest<TComponentEvent>(evt);
+        var request = (IRequest<Unit>)factory.GetComponentEventRequest(evt);
         await Mediatr.Send(request).ConfigureAwait(false);
     }
 }

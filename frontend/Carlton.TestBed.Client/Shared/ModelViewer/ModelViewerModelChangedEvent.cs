@@ -1,8 +1,6 @@
-﻿using Carlton.Base.Client.State;
-
-namespace Carlton.TestBed.Client.Shared.ViewModelViewer.Models
+﻿namespace Carlton.TestBed.Client.Shared.ViewModelViewer.Models
 {
-    public class ModelViewerModelChangedEvent : ICarltonComponentEvent
+    public class ModelViewerModelChangedEvent
     {
         public string EventName { get; private set; }
         public object ViewModel { get; private set; }

@@ -1,12 +1,9 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Blazor.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using AutoMapper;
 using MediatR;
 using Carlton.Base.Client.State;
 using Carlton.TestBed.Client.State;
-using System;
 
 namespace Carlton.TestBed.Client
 {
@@ -20,19 +17,13 @@ namespace Carlton.TestBed.Client
 
             var state = new TestBedState(items);
 
-            builder.Services.AddAutoMapper(typeof(Program));
-
- 
             builder.Services.AddSingleton(state);
             builder.Services.AddSingleton<ICarltonStateStore>(state);
             builder.Services.AddScoped<ICarltonRequestFactory, CarltonRequestFactory>();
 
-            builder.Services.AddCarltonState();
-          
-
             builder.Services.AddMediatR(typeof(App).Assembly);
+            builder.Services.AddCarltonState(typeof(App).Assembly);
 
-            // builder.Services.AddMediatR(typeof(TestBedNavTreeViewModel));
 
             builder.RootComponents.Add<App>("app");
 

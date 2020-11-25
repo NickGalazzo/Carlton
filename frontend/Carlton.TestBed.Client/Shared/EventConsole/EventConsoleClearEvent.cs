@@ -1,9 +1,6 @@
-﻿using Carlton.Base.Client.State;
-
-namespace Carlton.TestBed.Client.Shared.EventConsole
+﻿namespace Carlton.TestBed.Client.Shared.EventConsole
 {
-    public class EventConsoleClearEvent : ICarltonComponentEvent
+    public class EventConsoleClearEvent 
     {
-        public string EventName => throw new System.NotImplementedException();
     }
 }

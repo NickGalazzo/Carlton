@@ -5,6 +5,6 @@ namespace Carlton.Base.Client.State
     public interface ICarltonComponent<TViewModel>
     {
         TViewModel ViewModel { get; set; }
-        EventCallback<ICarltonComponentEvent> OnComponentEvent { get; set; }
+        EventCallback OnComponentEvent { get; set; }
     }
 }
