@@ -15,7 +15,7 @@ namespace Carlton.TestBed.Client.State
         public Type TestComponentType { get { return SelectedItem.Type; } }
         public bool IsTestComponentCarltonComponent { get; private set; }
         public ComponentStatus TestComponentStatus { get; private set; }
-        public object TestComponentViewModel { get { return SelectedItem.ViewModel; } }
+        public object TestComponentViewModel { get { return SelectedItem.ViewModel; } set { var x = 7; } }
         public IList<object> ComponentEvents { get; private set; }
 
         public TestBedState(IEnumerable<NavTreeItem> treeItems)

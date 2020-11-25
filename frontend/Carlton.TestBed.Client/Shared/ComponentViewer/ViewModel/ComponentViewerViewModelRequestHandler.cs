@@ -4,7 +4,7 @@ using Carlton.TestBed.Client.State;
 
 namespace Carlton.TestBed.Client.Shared.ComponentViewer
 {
-    public class ComponentViewerViewModelRequestHandler : ViewModelRequestHandlerBase<ComponentViewerViewModelRequest, ComponentViewerViewModel>
+    public class ComponentViewerViewModelRequestHandler : TestBedRequestHandlerViewModelBase<ComponentViewerViewModelRequest, ComponentViewerViewModel>
     {
        
         public ComponentViewerViewModelRequestHandler(TestBedState state)

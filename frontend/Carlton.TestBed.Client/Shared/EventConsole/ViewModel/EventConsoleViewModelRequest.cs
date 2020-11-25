@@ -1,5 +1,4 @@
-﻿using Carlton.Base.Client.State;
-using MediatR;
+﻿using MediatR;
 
 namespace Carlton.TestBed.Client.Shared.EventConsole
 {

@@ -8,7 +8,7 @@
                      Nodes="ViewModel.TreeItems"
                      ChildSelector="@(item => item.Children)"
                      SelectedNode="@ViewModel.SelectedNode"
-                     SelectedNodeChanged="@(async (node) => await base.OnComponentEvent.InvokeAsync(new NavTreeSelectedNodeChangedEvent(node)))"
+                     SelectedNodeChanged="@(async (node) => await base.OnComponentEvent.InvokeAsync(new NavTreeSelectedNodeEvent(node)))"
                      HasChildNodes="@(item => item.Children?.Any() == true)"
                      Style="TreeStyle.DefaultTreeStyle">
         <TitleTemplate>@context.DisplayName</TitleTemplate>

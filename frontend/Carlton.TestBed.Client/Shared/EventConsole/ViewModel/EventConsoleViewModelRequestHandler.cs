@@ -4,7 +4,7 @@ using Carlton.TestBed.Client.State;
 
 namespace Carlton.TestBed.Client.Shared.EventConsole
 {
-    public class EventConsoleViewModelRequestHandler : ViewModelRequestHandlerBase<EventConsoleViewModelRequest, EventConsoleViewModel>
+    public class EventConsoleViewModelRequestHandler : TestBedRequestHandlerViewModelBase<EventConsoleViewModelRequest, EventConsoleViewModel>
     {
         public EventConsoleViewModelRequestHandler(TestBedState state) : base(state)
         {

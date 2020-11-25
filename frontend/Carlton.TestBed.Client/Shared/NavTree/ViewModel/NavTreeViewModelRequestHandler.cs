@@ -4,7 +4,7 @@ using Carlton.TestBed.Client.State;
 
 namespace Carlton.TestBed.Client.Shared.NavTree
 {
-    public class NavTreeViewModelRequestHandler : ViewModelRequestHandlerBase<NavTreeViewModelRequest, NavTreeViewModel>
+    public class NavTreeViewModelRequestHandler : TestBedRequestHandlerViewModelBase<NavTreeViewModelRequest, NavTreeViewModel>
     {
         public NavTreeViewModelRequestHandler(TestBedState state)
             :base(state)

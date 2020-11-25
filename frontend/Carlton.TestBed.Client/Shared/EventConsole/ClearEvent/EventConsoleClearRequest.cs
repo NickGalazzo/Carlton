@@ -1,5 +1,4 @@
-﻿using Carlton.TestBed.Client.Shared.ComponentViewer;
-using MediatR;
+﻿using MediatR;
 
 namespace Carlton.TestBed.Client.Shared.EventConsole
 {

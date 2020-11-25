@@ -7,7 +7,7 @@ using Carlton.TestBed.Client.State;
 
 namespace Carlton.TestBed.Client.Shared.ModelViewer
 {
-    public class ModelViewerViewModelRequestHandler : ViewModelRequestHandlerBase<ModelViewerViewModelRequest, ModelViewerViewModel>
+    public class ModelViewerViewModelRequestHandler : TestBedRequestHandlerViewModelBase<ModelViewerViewModelRequest, ModelViewerViewModel>
     {
         public ModelViewerViewModelRequestHandler(TestBedState state) : base(state)
         {

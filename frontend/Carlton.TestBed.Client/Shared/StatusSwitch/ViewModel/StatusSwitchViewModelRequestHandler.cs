@@ -1,11 +1,10 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using Carlton.TestBed.Client.State;
 
 namespace Carlton.TestBed.Client.Shared.StatusSwitch
 {
-    public class StatusSwitchViewModelRequestHandler : ViewModelRequestHandlerBase<StatusSwitchViewModelRequest, StatusSwitchViewModel>
+    public class StatusSwitchViewModelRequestHandler : TestBedRequestHandlerViewModelBase<StatusSwitchViewModelRequest, StatusSwitchViewModel>
     {
         public StatusSwitchViewModelRequestHandler(TestBedState state) : base(state)
         {

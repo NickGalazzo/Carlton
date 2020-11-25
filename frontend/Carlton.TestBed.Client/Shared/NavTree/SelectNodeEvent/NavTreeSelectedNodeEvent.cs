@@ -1,10 +1,10 @@
 ﻿namespace Carlton.TestBed.Client.Shared.NavTree
 {
-    public class NavTreeSelectedNodeChangedEvent 
+    public class NavTreeSelectedNodeEvent 
     {
         public NavTreeItem SelectedItem { get; }
 
-        public NavTreeSelectedNodeChangedEvent(NavTreeItem selectedItem)
+        public NavTreeSelectedNodeEvent(NavTreeItem selectedItem)
         {
             SelectedItem = selectedItem;
         }

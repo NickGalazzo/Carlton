@@ -4,7 +4,7 @@ using Carlton.TestBed.Client.State;
 
 namespace Carlton.TestBed.Client.Shared.SourceViewer
 {
-    public class SourceViewerViewModelRequestHandler : ViewModelRequestHandlerBase<SourceViewerViewModelRequest, SourceViewerViewModel>
+    public class SourceViewerViewModelRequestHandler : TestBedRequestHandlerViewModelBase<SourceViewerViewModelRequest, SourceViewerViewModel>
     {
         public SourceViewerViewModelRequestHandler(TestBedState state) : base(state)
         {
