@@ -1,6 +1,8 @@
 ﻿@import "../themes/theme_defenitions.scss";
 
-.test-bed-panel {
+.carlton-media-query-wrapper {
+    width: 100%;
+
     .carlton-tabs a {
         @include themify($themes) {
             color: themed('textColor');
@@ -13,7 +15,7 @@
         }
     }
 
-    textarea{
+    textarea {
         padding: 5px;
     }
 }

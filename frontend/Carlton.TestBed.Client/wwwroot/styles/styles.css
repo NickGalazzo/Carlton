@@ -16,20 +16,18 @@
 .theme-dark main {
   background-color: #383f48; }
 
-.theme-light .test-bed-panel .carlton-tabs a {
-  color: #757575; }
-
-.theme-dark .test-bed-panel .carlton-tabs a {
-  color: #c2c2c2; }
-
-.theme-light .test-bed-panel .tab-selected-bar {
-  background-color: #009688; }
-
-.theme-dark .test-bed-panel .tab-selected-bar {
-  background-color: #00c689; }
-
-.test-bed-panel textarea {
-  padding: 5px; }
+.carlton-media-query-wrapper {
+  width: 100%; }
+  .theme-light .carlton-media-query-wrapper .carlton-tabs a {
+    color: #757575; }
+  .theme-dark .carlton-media-query-wrapper .carlton-tabs a {
+    color: #c2c2c2; }
+  .theme-light .carlton-media-query-wrapper .tab-selected-bar {
+    background-color: #009688; }
+  .theme-dark .carlton-media-query-wrapper .tab-selected-bar {
+    background-color: #00c689; }
+  .carlton-media-query-wrapper textarea {
+    padding: 5px; }
 
 .test-bed-header .user-col {
   padding: 0px; }
