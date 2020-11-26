@@ -14,9 +14,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.Client.Components", "libs\Carlton.Base.Infrastructure.Client\Carlton.Base.Client.Components.csproj", "{9856B2E3-AA9E-4FE2-9F0D-3DB4EA6B5C3E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{B9E0019C-401B-4C47-B8AF-0D9E13CD82FF}"
-	ProjectSection(SolutionItems) = preProject
-		frontend\Carlton.TestBed.Client\State\ViewModelRequestHandlerBase.cs = frontend\Carlton.TestBed.Client\State\ViewModelRequestHandlerBase.cs
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.Infrastructure", "libs\Carlton.Base.Infrastructure\Carlton.Base.Infrastructure.csproj", "{31D20A60-73FE-43FC-9F28-CDBCB26E7554}"
 EndProject

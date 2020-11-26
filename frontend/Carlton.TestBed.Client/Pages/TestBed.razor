@@ -9,14 +9,15 @@
 
 <CarltonDashboardLayout>
     <HeaderContent>
-        <TestBedHeader />
+        <Header />
     </HeaderContent>
 
     <Body>
         <CarltonDataStoreWrapper TViewModel="ComponentViewerViewModel">
             <ChildComponent>
                 <ComponentViewer ViewModel="@context.ViewModel"
-                                 OnComponentEvent="@context.ComponentEventHandler" />
+                                 OnComponentEvent="@context.ComponentEventHandler"
+                                 />
             </ChildComponent>
         </CarltonDataStoreWrapper>
     </Body>

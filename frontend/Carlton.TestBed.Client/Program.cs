@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Blazor.Hosting;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
 using Carlton.Base.Client.State;
@@ -12,7 +12,6 @@ namespace Carlton.TestBed.Client
         public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
-
             var items = TestBedBootstrapper.Bootstrap();
 
             var state = new TestBedState(items);
