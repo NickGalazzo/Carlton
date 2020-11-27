@@ -4,6 +4,7 @@
 @using Carlton.TestBed.Client.Shared.NavTree
 @using Carlton.TestBed.Client.Shared.ComponentViewer
 @using Carlton.TestBed.Client.Shared.Panel 
+@using Carlton.TestBed.Client.State
 
 @inherits LayoutComponentBase
 
@@ -13,11 +14,13 @@
     </HeaderContent>
 
     <Body>
-        <CarltonDataStoreWrapper TViewModel="ComponentViewerViewModel">
+        <CarltonDataStoreWrapper TViewModel="ComponentViewerViewModel"
+                                 StateEvents="@this.x">
             <ChildComponent>
+           
                 <ComponentViewer ViewModel="@context.ViewModel"
-                                 OnComponentEvent="@context.ComponentEventHandler"
-                                 />
+                                 OnComponentEvent="@context.OnComponentEvent"
+                                 ComponentStatus="ComponentStatus.SYNCED"/>
             </ChildComponent>
         </CarltonDataStoreWrapper>
     </Body>
@@ -26,7 +29,7 @@
         <CarltonDataStoreWrapper TViewModel="NavTreeViewModel">
             <ChildComponent>
                 <NavTree ViewModel="@context.ViewModel"
-                         OnComponentEvent="@context.ComponentEventHandler"
+                         OnComponentEvent="@context.OnComponentEvent"
                          ComponentStatus="ComponentStatus.SYNCED" />
             </ChildComponent>
         </CarltonDataStoreWrapper>
@@ -38,7 +41,9 @@
 </CarltonDashboardLayout>
 
 
-
+@code {
+        private string [] x = new string[] { TestBedState.SELECTED_ITEM };
+}
 
 
 

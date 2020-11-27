@@ -11,12 +11,7 @@
     [Parameter]
     public TViewModel ViewModel { get; set; }
     [Parameter]
-    public EventCallback OnComponentEvent { get; set; }
+    public EventCallback OnComponentEvent { get; init; }
     [Parameter]
     public ComponentStatus ComponentStatus { get; set; }
-
-    public void Update()
-    {
-        this.StateHasChanged();
-    }
 }

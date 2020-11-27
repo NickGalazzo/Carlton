@@ -5,15 +5,15 @@ namespace Carlton.Base.Client.State
 {
     public class CarltonDataWrapperContext<TViewModel>
     {
-        public TViewModel ViewModel { get; private set; }
-        public Func<object, Task> ComponentEventHandler { get; }
+        public TViewModel ViewModel { get; set; }
+        public Func<object, Task> OnComponentEvent { get; init; }
 
         public CarltonDataWrapperContext(
             TViewModel vm,
-            Func<object, Task> componentEventHandler)
+            Func<object, Task> onComponentEvent)
         {
             ViewModel = vm;
-            ComponentEventHandler = componentEventHandler;
+            OnComponentEvent = onComponentEvent;
         }
     }
 }

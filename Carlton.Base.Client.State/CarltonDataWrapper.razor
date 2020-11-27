@@ -1,12 +1,10 @@
 ﻿@using MediatR
 
-
 @typeparam TViewModel
 
 <div class="carlton-data-wrapper">
     @ChildComponent(Context)
 </div>
-
 
 @code{
     [Parameter]
@@ -18,29 +16,29 @@
     [Inject]
     private ICarltonRequestFactory factory { get; set; }
 
-    private TViewModel ViewModel { get; set; }
+    [Inject]
+    private ICarltonStateStore State { get; set; }
 
     protected CarltonDataWrapperContext<TViewModel> Context { get; set; }
 
     protected async override Task OnInitializedAsync()
     {
-        //Get VM and initalize context for wrapped component
-        var request = factory.GetViewModelRequest<TViewModel>();
-        var vm = await Mediatr.Send<TViewModel>(request).ConfigureAwait(false);
-        Context = new CarltonDataWrapperContext<TViewModel>(vm, ComponentEventHandler);
+        ////Get VM and initalize context for wrapped component
+        var vm = await GetViewModel();
+        Context = new CarltonDataWrapperContext<TViewModel>(vm, OnComponentEvent);
 
         //Continue initilization
         await base.OnInitializedAsync();
     }
 
-    protected async Task GetViewModel()
+    protected async Task<TViewModel> GetViewModel()
     {
-        ViewModel = await Mediatr.Send(factory.GetViewModelRequest<TViewModel>()).ConfigureAwait(false);
+        return await Mediatr.Send(factory.GetViewModelRequest<TViewModel>());
     }
 
-    private async Task ComponentEventHandler(object evt)
+    private async Task OnComponentEvent(object evt)
     {
-        var request = (IRequest<Unit>)factory.GetComponentEventRequest(evt);
+        var request = (IRequest<Unit>)factory.GetComponentEventRequest(ChildComponent.Target, evt);
         await Mediatr.Send(request).ConfigureAwait(false);
     }
 }

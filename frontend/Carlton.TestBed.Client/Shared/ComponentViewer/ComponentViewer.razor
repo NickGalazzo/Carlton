@@ -22,10 +22,11 @@
         TestComponentFragment = builder =>
         {
             builder.OpenElement(1, "div");
-            builder.OpenComponent(2, componentType);
+            builder.OpenComponent(2, ViewModel.ComponentType);
 
             Console.WriteLine("Made it to OnParameterSet");
             Console.WriteLine(ViewModel.ComponentType.Name);
+            Console.WriteLine(ViewModel.ComponentViewModel.GetType().Name);
 
             if(ViewModel.IsCarltonComponent)
             {
@@ -50,4 +51,6 @@
         };
     }
 }
+
+
 

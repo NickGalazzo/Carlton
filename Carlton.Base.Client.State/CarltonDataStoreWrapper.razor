@@ -5,9 +5,10 @@
 
 @ChildComponent(Context)
 
+
 @code{
     [Parameter]
-    public string StateEvents { get; set; }
+    public string[] StateEvents { get; set; } = new string[] { };
 
     [Inject]
     private ICarltonStateStore Store { get; set; }
@@ -26,13 +27,18 @@
         Store.StateChanged -= OnStateChanged;
     }
 
-
-    private async void OnStateChanged(object sender, string stateEvent)
+    private void OnStateChanged(object sender, string stateEvent)
     {
-        if(ChildComponent.Target == sender)
+        Console.WriteLine($"Maade it to onStateChanged: {sender},  {stateEvent}");
+
+        ////if(ChildComponent.Target == sender)
+        ////    return;
+
+        if(!StateEvents.Contains(stateEvent))
             return;
 
-        if(StateEvents.Contains(stateEvent))
-            await base.GetViewModel();
+
+        Context.ViewModel = GetViewModel().Result;
+        StateHasChanged();
     }
 }

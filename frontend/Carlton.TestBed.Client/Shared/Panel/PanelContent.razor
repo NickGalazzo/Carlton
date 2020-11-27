@@ -10,7 +10,7 @@
     <CarltonDataStoreWrapper TViewModel="EventConsoleViewModel">
         <ChildComponent>
             <EventConsole ViewModel="@context.ViewModel"
-                          OnComponentEvent="@context.ComponentEventHandler" />
+                          OnComponentEvent="@context.OnComponentEvent" />
         </ChildComponent>
     </CarltonDataStoreWrapper>
 </CarltonTab>
@@ -18,7 +18,7 @@
     <CarltonDataStoreWrapper TViewModel="ModelViewerViewModel">
         <ChildComponent>
             <ModelViewer ViewModel="@context.ViewModel"
-                         OnComponentEvent="@context.ComponentEventHandler" />
+                         OnComponentEvent="@context.OnComponentEvent" />
         </ChildComponent>
     </CarltonDataStoreWrapper>
 </CarltonTab>
@@ -26,7 +26,7 @@
     <CarltonDataStoreWrapper TViewModel="StatusSwitchViewModel">
         <ChildComponent>
             <StatusSwitch ViewModel="@context.ViewModel"
-                          OnComponentEvent="@context.ComponentEventHandler" />
+                          OnComponentEvent="@context.OnComponentEvent" />
         </ChildComponent>
     </CarltonDataStoreWrapper>
 </CarltonTab>
@@ -34,7 +34,7 @@
     <CarltonDataStoreWrapper TViewModel="SourceViewerViewModel">
         <ChildComponent>
             <SourceViewer ViewModel="@context.ViewModel"
-                          OnComponentEvent="@context.ComponentEventHandler" />
+                          OnComponentEvent="@context.OnComponentEvent" />
         </ChildComponent>
     </CarltonDataStoreWrapper>
 </CarltonTab>
