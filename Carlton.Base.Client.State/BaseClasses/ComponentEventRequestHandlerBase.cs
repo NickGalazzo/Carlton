@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Components;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -7,7 +8,7 @@ namespace Carlton.Base.Client.State
     public abstract class ComponentEventRequestHandlerBase<TRequest, TState> : IRequestHandler<TRequest, Unit>
         where TRequest : IRequest<Unit>
     {
-        protected TState State { get; private set; }
+        protected TState State { get; init; }
         
         public ComponentEventRequestHandlerBase(TState state) => State = state;
 

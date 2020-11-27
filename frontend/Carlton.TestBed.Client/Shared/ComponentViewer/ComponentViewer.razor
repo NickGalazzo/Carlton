@@ -15,7 +15,7 @@
     protected override void OnParametersSet()
     {
         var componentType = ViewModel.ComponentType;
-        
+
         if(!(typeof(ComponentBase).IsAssignableFrom(componentType)))
             throw new InvalidOperationException($"{componentType} is not a valid component type.");
 
@@ -23,6 +23,9 @@
         {
             builder.OpenElement(1, "div");
             builder.OpenComponent(2, componentType);
+
+            Console.WriteLine("Made it to OnParameterSet");
+            Console.WriteLine(ViewModel.ComponentType.Name);
 
             if(ViewModel.IsCarltonComponent)
             {

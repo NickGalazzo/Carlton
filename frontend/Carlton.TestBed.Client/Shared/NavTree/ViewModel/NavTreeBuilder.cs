@@ -34,6 +34,7 @@ namespace Carlton.TestBed.TestBedNavTree
 
         public IEnumerable<NavTreeItem> Build()
         {
+            var leafIndex = 1;
             var treeRootNode = NavTreeItem.CreateParentNode("root", Array.Empty<NavTreeItem>());
 
             foreach(var state in _internalState)
@@ -55,8 +56,9 @@ namespace Carlton.TestBed.TestBedNavTree
                 //Leaf Node
                 if(isLeafNode)
                 {
-                    var leafChild = NavTreeItem.CreateLeafNode(currentTitle, state.Type, state.ViewModel, state.IsCarltonComponent);
+                    var leafChild = NavTreeItem.CreateLeafNode(leafIndex, currentTitle, state.Type, state.ViewModel, state.IsCarltonComponent);
                     parentNode.Children = parentNode.Children.Append(leafChild);
+                    leafIndex++;
                     return;
                 }
 
@@ -74,25 +76,18 @@ namespace Carlton.TestBed.TestBedNavTree
             };
         }
 
-        private class InternalStateItem
+        private record InternalStateItem
         {
             public string NodeTitle { get; private set; }
-            public Type Type { get; private set; }
-            public object ViewModel { get; private set; }
-            public bool IsCarltonComponent { get; private set; }
-
+            public Type Type { get; init; }
+            public object ViewModel { get; init; }
+            public bool IsCarltonComponent { get; init; }
+            
             public InternalStateItem(string nodeTitle, Type type, object viewModel, bool isCarltonComponent)
-            {
-                NodeTitle = nodeTitle;
-                Type = type;
-                ViewModel = viewModel;
-                IsCarltonComponent = isCarltonComponent;
-            }
-
-            public void PopCurrentFromNodeTitle()
-            {
-                NodeTitle = string.Join('/', NodeTitle.Split('/').Skip(1));
-            }
+                => (NodeTitle, Type, ViewModel, IsCarltonComponent) = (nodeTitle, type, viewModel, isCarltonComponent);
+            
+            public void PopCurrentFromNodeTitle() 
+                => NodeTitle = string.Join('/', NodeTitle.Split('/').Skip(1));  
         }
     }
 }

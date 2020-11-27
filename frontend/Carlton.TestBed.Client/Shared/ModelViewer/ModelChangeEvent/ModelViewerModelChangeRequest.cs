@@ -5,7 +5,7 @@ namespace Carlton.TestBed.Client.Shared.ModelViewer
 {
     public class ModelViewerModelChangeRequest : ComponentEventRequestBase<ModelViewerModelChangedEvent>
     {
-        public ModelViewerModelChangeRequest(ModelViewerModelChangedEvent evt) : base(evt)
+        public ModelViewerModelChangeRequest(object sender, ModelViewerModelChangedEvent evt) : base(sender, evt)
         {
         }
     }

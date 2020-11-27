@@ -2,10 +2,12 @@
 {
     public class ComponentEventRequestBase<TComponentEvent> : ICarltonComponentEventRequest<TComponentEvent>
     {
-        public TComponentEvent ComponentEvent { get; private set; }
+        public object Sender { get; init; }
+        public TComponentEvent ComponentEvent { get; init; }
 
-        public ComponentEventRequestBase(TComponentEvent evt)
+        public ComponentEventRequestBase(object sender, TComponentEvent evt)
         {
+            Sender = sender;
             ComponentEvent = evt;
         }
     }

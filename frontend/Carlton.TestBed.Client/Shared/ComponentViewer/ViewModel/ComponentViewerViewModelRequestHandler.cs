@@ -19,8 +19,7 @@ namespace Carlton.TestBed.Client.Shared.ComponentViewer
                 ComponentType = State.TestComponentType,
                 ComponentViewModel = State.TestComponentViewModel,
                 ComponentStatus = State.TestComponentStatus,
-                IsCarltonComponent = true //_state.IsTestComponentCarltonComponent
-                //SelectedNode = _state.TreeItems
+                IsCarltonComponent = State.IsTestComponentCarltonComponent
             });
         }
     }

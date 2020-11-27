@@ -8,9 +8,9 @@ namespace Carlton.TestBed.Client.Shared.ComponentViewer
 {
     public class ComponentViewerViewModel
     {
-        public Type ComponentType { get; set; }
-        public object ComponentViewModel { get; set; }
-        public ComponentStatus ComponentStatus { get; set; }
-        public bool IsCarltonComponent { get; set; }
+        public Type ComponentType { get; init; }
+        public object ComponentViewModel { get; init; }
+        public ComponentStatus ComponentStatus { get; init; }
+        public bool IsCarltonComponent { get; init; }
     }
 }

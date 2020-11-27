@@ -4,8 +4,8 @@ namespace Carlton.TestBed.Client.Shared.NavTree
 {
     public class NavTreeSelectNodeRequest : ComponentEventRequestBase<NavTreeSelectedNodeEvent>
     {
-        public NavTreeSelectNodeRequest(NavTreeSelectedNodeEvent componentEvent)
-            :base(componentEvent)
+        public NavTreeSelectNodeRequest(object sender, NavTreeSelectedNodeEvent componentEvent)
+            :base(sender, componentEvent)
         {
         }
     }

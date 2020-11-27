@@ -14,4 +14,9 @@
     public EventCallback OnComponentEvent { get; set; }
     [Parameter]
     public ComponentStatus ComponentStatus { get; set; }
+
+    public void Update()
+    {
+        this.StateHasChanged();
+    }
 }

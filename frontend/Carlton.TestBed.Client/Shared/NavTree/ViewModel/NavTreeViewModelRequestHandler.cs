@@ -13,11 +13,7 @@ namespace Carlton.TestBed.Client.Shared.NavTree
 
         public override Task<NavTreeViewModel> Handle(NavTreeViewModelRequest request, CancellationToken cancellationToken)
         {
-            return Task.FromResult(new NavTreeViewModel
-            {
-                TreeItems = State.TreeItems,
-                //SelectedNode = _state.TreeItems
-            });
+            return Task.FromResult(new NavTreeViewModel(State.TreeItems, State.SelectedItem, null));
         }
     }
 }

@@ -4,18 +4,19 @@ using System.Collections.Generic;
 
 namespace Carlton.TestBed.Client.Shared.NavTree
 {
-    public class NavTreeItem
+    public record NavTreeItem
     {
-        public string DisplayName { get;private set; }
+        public string DisplayName { get; init; }
         public bool IsParentNode { get { return Children.Any(); } }
 
         //Parent Properties
         public IEnumerable<NavTreeItem> Children { get; set; }
 
         //Child Properties
-        public Type Type { get; private set; }
-        public object ViewModel { get; private set; }
-        public bool IsCarltonComponent { get; private set; }
+        public int LeafId { get; init; }
+        public Type Type { get; init; }
+        public object ViewModel { get; init; }
+        public bool IsCarltonComponent { get; init; }
 
 
         private NavTreeItem(string displayName, IEnumerable<NavTreeItem> children)
@@ -24,8 +25,9 @@ namespace Carlton.TestBed.Client.Shared.NavTree
             Children = children;
         }
 
-        private NavTreeItem(string displayName, Type type, object viewModel, bool isCarltonComponent)
+        private NavTreeItem(int leafId, string displayName, Type type, object viewModel, bool isCarltonComponent)
         {
+            LeafId = leafId;
             DisplayName = displayName;
             Type = type;
             ViewModel = viewModel;
@@ -38,9 +40,9 @@ namespace Carlton.TestBed.Client.Shared.NavTree
             return new NavTreeItem(displayName, children);
         }
 
-        public static NavTreeItem CreateLeafNode(string displayName, Type type, object componentParams, bool isCarltonComponent)
+        public static NavTreeItem CreateLeafNode(int leafId, string displayName, Type type, object componentParams, bool isCarltonComponent)
         {
-            return new NavTreeItem(displayName, type, componentParams, isCarltonComponent);
+            return new NavTreeItem(leafId, displayName, type, componentParams, isCarltonComponent);
         }
     }
 }

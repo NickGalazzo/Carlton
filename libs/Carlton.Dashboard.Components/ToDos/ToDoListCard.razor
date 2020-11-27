@@ -6,7 +6,7 @@
     <Content>
         <CarltonListCard CardTitle="To-Do's" Items="ViewModel.ToDoList">
             <ActionBarContent>
-                <DashboardCardActionBar TViewModel="ToDos" Callback="base.OnComponentEvent" Status="ComponentStatus" />
+                <DashboardCardActionBar TViewModel="ToDos" Callback="() => base.OnComponentEvent.InvokeAsync()" Status="ComponentStatus" />
             </ActionBarContent>
 
             <ItemTemplate Context="toDo">

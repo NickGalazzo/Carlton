@@ -14,10 +14,13 @@ namespace Carlton.TestBed.Client
             _provider = provider;
         }
 
-        public IRequest<Unit> GetComponentEventRequest(object evt)
+        public IRequest<Unit> GetComponentEventRequest(object sender, object evt)
         {
-            var func = (Func<object, IRequest<Unit>>)_provider.GetService(typeof(Func<object, IRequest<Unit>>));
-            var request = func(evt);
+            Console.WriteLine("Made it here");
+            var func = (Func<object, object, IRequest<Unit>>)_provider.GetService(typeof(Func<object, object, IRequest<Unit>>));
+            Console.WriteLine("Got Func" + ": is null" + func == null);
+            var request = func(sender, evt);
+            Console.WriteLine("Got request");
             return request;
         }
 

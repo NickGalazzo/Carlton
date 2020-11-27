@@ -13,11 +13,11 @@ namespace Carlton.Base.Client.State
         {
             var evtMap = new Dictionary<Type, Type>();
 
-            services.AddSingleton<Func<object, IRequest<Unit>>>(provider => (evt) =>
+            services.AddSingleton<Func<object, object, IRequest<Unit>>>(provider => (sender, evt) =>
             {
                 var map = (IDictionary<Type, Type>)provider.GetService(typeof(IDictionary<Type, Type>));
                 var typeToCreate = map[evt.GetType()];
-                return (IRequest<Unit>)Activator.CreateInstance(typeToCreate, evt);
+                return (IRequest<Unit>)Activator.CreateInstance(typeToCreate, sender, evt);
             });
 
             foreach(var type in assembly.GetTypes())
