@@ -1,14 +1,16 @@
 ﻿@using MediatR
 
+@implements IDisposable
 @typeparam TViewModel
 
-<div class="carlton-data-wrapper">
-    @ChildComponent(Context)
-</div>
+@ChildComponent(Context)
 
 @code{
     [Parameter]
     public RenderFragment<CarltonDataWrapperContext<TViewModel>> ChildComponent { get; set; }
+
+    [Parameter]
+    public string[] StateEvents { get; set; } = new string[] { };
 
     [Inject]
     private IMediator Mediatr { get; set; }
@@ -23,6 +25,9 @@
 
     protected async override Task OnInitializedAsync()
     {
+        //Register State Changed Handler
+        State.StateChanged += OnStateChanged;
+
         ////Get VM and initalize context for wrapped component
         var vm = await GetViewModel();
         Context = new CarltonDataWrapperContext<TViewModel>(vm, OnComponentEvent);
@@ -38,7 +43,27 @@
 
     private async Task OnComponentEvent(object evt)
     {
-        var request = (IRequest<Unit>)factory.GetComponentEventRequest(ChildComponent.Target, evt);
-        await Mediatr.Send(request).ConfigureAwait(false);
+        var request = (IRequest<Unit>)factory.GetComponentEventRequest(this, evt);
+        await Mediatr.Send(request);
+    }
+
+    private async Task OnStateChanged(object sender, string stateEvent)
+    {
+        Console.WriteLine($"Maade it to onStateChanged: {sender},  {stateEvent}");
+
+        if(sender == this)
+            return;
+
+        if(!StateEvents.Contains(stateEvent))
+            return;
+
+
+        Context.ViewModel = await GetViewModel();
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        State.StateChanged -= OnStateChanged;
     }
 }

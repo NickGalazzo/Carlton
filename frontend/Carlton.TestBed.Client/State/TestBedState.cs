@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Carlton.Base.Client.State;
 using Carlton.Base.Client.Status;
 using Carlton.TestBed.Client.Shared.NavTree;
-using Microsoft.AspNetCore.Components;
+
 
 namespace Carlton.TestBed.Client.State
 {
@@ -14,7 +15,7 @@ namespace Carlton.TestBed.Client.State
         public static string VIEW_MODEL_CHANGED = "ViewModelChanged";
         public static string STATUS_CHANGED = "StatusChanged";
 
-        public event Action<object, string> StateChanged;
+        public event Func<object, string, Task> StateChanged;
 
         private Dictionary<string, object> _defaultViewModels = new();
         public IEnumerable<NavTreeItem> TreeItems { get; init; }
@@ -34,19 +35,19 @@ namespace Carlton.TestBed.Client.State
             TestComponentStatus = ComponentStatus.SYNCED;
         }
 
-        public void UpdateTestComponentViewModel(object sender, object vm)
+        public async Task UpdateTestComponentViewModel(object sender, object vm)
         {
             TestComponentViewModel = vm;
-            StateChanged.Invoke(sender, VIEW_MODEL_CHANGED);
+            await StateChanged.Invoke(sender, VIEW_MODEL_CHANGED).ConfigureAwait(false);
         }
 
-        public void UpdateComponentStatus(object sender, ComponentStatus status)
+        public async Task UpdateComponentStatus(object sender, ComponentStatus status)
         {
             TestComponentStatus = status;
-            StateChanged.Invoke(sender, STATUS_CHANGED);
+            await StateChanged.Invoke(sender, STATUS_CHANGED).ConfigureAwait(false);
         }
 
-        public void UpdateSelectedItemId(object sender, int id)
+        public async Task UpdateSelectedItemId(object sender, int id)
         {
             Console.WriteLine($"count: {TreeItems.ToList().Where(_ => !_.IsParentNode).Count()}");
                 TreeItems.ToList().ForEach(_ => Console.WriteLine(_.LeafId));
@@ -54,7 +55,7 @@ namespace Carlton.TestBed.Client.State
             SelectedItem = TreeItems.GetLeafById(id);
             this.TestComponentViewModel = SelectedItem.ViewModel;
             Console.WriteLine($"selectedItem == null: {SelectedItem == null}");
-            StateChanged.Invoke(sender, SELECTED_ITEM);
+            await StateChanged.Invoke(sender, SELECTED_ITEM).ConfigureAwait(false);
         }
     }
 }

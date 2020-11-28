@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace Carlton.Base.Client.State
 {
     public interface ICarltonStateStore
     {
-        event Action<object, string> StateChanged;
+        event Func<object, string, Task> StateChanged;
     }
 }

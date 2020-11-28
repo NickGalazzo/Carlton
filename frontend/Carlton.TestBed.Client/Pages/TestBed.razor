@@ -14,25 +14,25 @@
     </HeaderContent>
 
     <Body>
-        <CarltonDataStoreWrapper TViewModel="ComponentViewerViewModel"
-                                 StateEvents="@this.x">
+        <CarltonDataWrapper TViewModel="ComponentViewerViewModel"
+                                 StateEvents="@x">
             <ChildComponent>
            
                 <ComponentViewer ViewModel="@context.ViewModel"
                                  OnComponentEvent="@context.OnComponentEvent"
                                  ComponentStatus="ComponentStatus.SYNCED"/>
             </ChildComponent>
-        </CarltonDataStoreWrapper>
+        </CarltonDataWrapper>
     </Body>
 
     <NavContent>
-        <CarltonDataStoreWrapper TViewModel="NavTreeViewModel">
+        <CarltonDataWrapper TViewModel="NavTreeViewModel">
             <ChildComponent>
                 <NavTree ViewModel="@context.ViewModel"
                          OnComponentEvent="@context.OnComponentEvent"
                          ComponentStatus="ComponentStatus.SYNCED" />
             </ChildComponent>
-        </CarltonDataStoreWrapper>
+        </CarltonDataWrapper>
     </NavContent>
 
     <PanelContent>

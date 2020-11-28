@@ -5,6 +5,7 @@ using Carlton.Dashboard.ViewModels.Feed;
 using System.Collections.Generic;
 using System;
 using Carlton.Base.Client.State;
+using System.Threading.Tasks;
 
 namespace Carlton.Dashboard.Components.State
 {
@@ -15,7 +16,7 @@ namespace Carlton.Dashboard.Components.State
         public const string GROCERIES_STATE_CHANGE_EVENT = "GroceriesStateChanged";
         public const string FEED_STATE_CHANGE_EVENT = "FeedStateChanged";
 
-        public event Action<object, string> StateChanged;
+        public event Func<object, string, Task> StateChanged;
 
         public IEnumerable<ToDo> ToDos { get; private set; }
         public IEnumerable<DinnerGuest> DinnerGuests { get; private set; }
