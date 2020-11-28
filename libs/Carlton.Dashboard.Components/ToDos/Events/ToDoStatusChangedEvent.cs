@@ -4,7 +4,6 @@
     {
         public int ToDoID { get; }
         public bool ToDoCompleted { get; }
-        public string EventName => "";
 
         public ToDoStatusChangedEvent(int toDoID, bool toDoCompleted)
         {

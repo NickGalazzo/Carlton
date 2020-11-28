@@ -11,10 +11,10 @@ namespace Carlton.TestBed.Client.Shared.EventConsole
         {
         }
 
-        public override Task<Unit> Handle(EventConsoleClearRequest request, CancellationToken cancellationToken)
+        public async override Task<Unit> Handle(EventConsoleClearRequest request, CancellationToken cancellationToken)
         {
-            State.ComponentEvents.Clear();
-            return Task.FromResult(Unit.Value);
+            await State.ClearComponentEvents(request.Sender);
+            return Unit.Value;
         }
     }
 }

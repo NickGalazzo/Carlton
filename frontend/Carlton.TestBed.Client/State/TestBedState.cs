@@ -14,25 +14,40 @@ namespace Carlton.TestBed.Client.State
         public static string SELECTED_ITEM = "SelectedItem";
         public static string VIEW_MODEL_CHANGED = "ViewModelChanged";
         public static string STATUS_CHANGED = "StatusChanged";
+        public static string COMPONENT_EVENT_ADDED = "ComponentEventAdded";
+        public static string COMPONENT_EVENTS_CLEARED = "COMPONENT_EVENTS_CLEARED";
 
         public event Func<object, string, Task> StateChanged;
 
-        private Dictionary<string, object> _defaultViewModels = new();
+        private IList<object> _componentEvents;
+
         public IEnumerable<NavTreeItem> TreeItems { get; init; }
         public NavTreeItem SelectedItem { get; private set; }
         public Type TestComponentType { get { return SelectedItem.Type; } }
         public bool IsTestComponentCarltonComponent { get { return SelectedItem.IsCarltonComponent; } }
         public object TestComponentViewModel { get; private set; }
         public ComponentStatus TestComponentStatus { get; private set; }
-        public IList<object> ComponentEvents { get; private set; }
+        public IEnumerable<object> ComponentEvents { get { return _componentEvents; } }
 
         public TestBedState(IEnumerable<NavTreeItem> treeItems)
         {
             TreeItems = treeItems;
             SelectedItem = TreeItems.GetFirstSelectableTestState();
             TestComponentViewModel = SelectedItem.ViewModel;
-            ComponentEvents = new List<object>();
+            _componentEvents = new List<object>();
             TestComponentStatus = ComponentStatus.SYNCED;
+        }
+
+        public async Task AddTestComponentEvents(object sender, object componentEvent)
+        {
+            _componentEvents.Add(componentEvent);
+            await StateChanged.Invoke(sender, COMPONENT_EVENT_ADDED).ConfigureAwait(false);
+        }
+
+        public async Task ClearComponentEvents(object sender)
+        {
+            _componentEvents.Clear();
+            await StateChanged.Invoke(sender, COMPONENT_EVENTS_CLEARED).ConfigureAwait(false);
         }
 
         public async Task UpdateTestComponentViewModel(object sender, object vm)

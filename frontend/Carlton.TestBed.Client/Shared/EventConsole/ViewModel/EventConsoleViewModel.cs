@@ -2,5 +2,5 @@
 
 namespace Carlton.TestBed.Client.Shared.EventConsole
 {
-    public record EventConsoleViewModel(IEnumerable<object> ComponentEvents);    
+    public record EventConsoleViewModel(IEnumerable<object> ComponentEvents);   
 }

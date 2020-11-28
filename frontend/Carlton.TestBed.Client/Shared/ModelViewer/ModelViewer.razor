@@ -8,11 +8,12 @@
     <div class="form-group">
         <textarea class="@(ViewModelIsValid ? string.Empty : "error")"
                   rows="8"
-                  @bind="ViewModelJson"
-                  @bind:event="OnViewModelChanged">
+                  @onchange="OnViewModelChanged">
+            @ViewModelJson
         </textarea>
     </div>
 </div>
+
 
 
 @code {
@@ -22,16 +23,16 @@
 
     protected override void OnParametersSet()
     {
-        ViewModelJson = JsonConvert.SerializeObject(ViewModel.ViewModel, Formatting.Indented);
+        ViewModelJson = JsonConvert.SerializeObject(ViewModel.TestComponentViewModel, Formatting.Indented);
         base.OnParametersSet();
     }
 
-    private async Task OnViewModelChanged()
+    private async Task OnViewModelChanged(ChangeEventArgs args)
     {
         try
         {
-            var currentType = ViewModel.GetType();
-            var newVM = JsonConvert.DeserializeObject(ViewModelJson, currentType);
+            var currentType = ViewModel.TestComponentViewModel.GetType();
+            var newVM = JsonConvert.DeserializeObject(args.Value.ToString(), currentType);
             ViewModelIsValid = true;
             await base.OnComponentEvent.InvokeAsync(new ModelViewerModelChangedEvent(newVM));
         }
