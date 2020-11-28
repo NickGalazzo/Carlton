@@ -14,9 +14,10 @@ namespace Carlton.TestBed.Client.Shared.StatusSwitch.StatusChangeEvent
         {
         }
 
-        public override Task<Unit> Handle(StatusSwitchStatusChangeRequest request, CancellationToken cancellationToken)
+        public async override Task<Unit> Handle(StatusSwitchStatusChangeRequest request, CancellationToken cancellationToken)
         {
-            return Task.FromResult(Unit.Value);
+            await State.UpdateComponentStatus(request.Sender, request.ComponentEvent.ComponentStatus);
+            return Unit.Value;
         }
     }
 }
