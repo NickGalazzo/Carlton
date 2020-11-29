@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\.editorconfig" Link=".editorconfig" />
+    <Content Remove="compilerconfig.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,10 +15,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\frontend\Carlton.Dashboard.Components\Carlton.Dashboard.Components.csproj" />
     <ProjectReference Include="..\..\libs\Carlton.Base.Client.State\Carlton.Base.Client.State.csproj" />
-    <ProjectReference Include="..\..\libs\Carlton.Base.Infrastructure.Client\Carlton.Base.Client.Components.csproj" />
-    <ProjectReference Include="..\Carlton.Dashboard.Components\Carlton.Dashboard.Components.csproj" />
-    <ProjectReference Include="..\Carlton.Dashboard.ViewModels\Carlton.Dashboard.ViewModels.csproj" />
+    <ProjectReference Include="..\..\libs\Carlton.Base.Client.Components\Carlton.Base.Client.Components.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\styles\components\test_bed_nav_tree.scss">
+      <CopyToOutputDirectory>t</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

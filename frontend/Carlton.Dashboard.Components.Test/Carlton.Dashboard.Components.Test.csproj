@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\libs\Carlton.Dashboard.Components\Carlton.Dashboard.Components.csproj" />
+    <ProjectReference Include="..\Carlton.Dashboard.Components\Carlton.Dashboard.Components.csproj" />
   </ItemGroup>
 
 </Project>
