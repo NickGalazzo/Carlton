@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Carlton.Base.Client.State;
 using Carlton.Dashboard.ViewModels;
 
 namespace Carlton.Dashboard.Components.State
 {
-    public class CarltonDashboardState : ICarltonStateStore
+    public class CarltonDashboardState //: ICarltonStateStore
     {
         public const string TO_DOS_STATE_CHANGE_EVENT = "ToDosStateChanged";
         public const string DINNER_GUESTS_STATE_CHANGE_EVENT = "DinnerGuestsStateChanged";

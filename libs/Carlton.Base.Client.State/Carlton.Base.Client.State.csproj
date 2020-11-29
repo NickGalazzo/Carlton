@@ -14,6 +14,7 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\Carlton.Base.Client.State.Abstractions\Carlton.Base.Client.State.Abstractions.csproj" />
     <ProjectReference Include="..\Carlton.Base.Infrastructure\Carlton.Base.Infrastructure.csproj" />
   </ItemGroup>
 

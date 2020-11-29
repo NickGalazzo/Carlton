@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\libs\Carlton.Base.Client.Components\Carlton.Base.Client.Components.csproj" />
-    <ProjectReference Include="..\..\libs\Carlton.Base.Client.State\Carlton.Base.Client.State.csproj" />
+    <ProjectReference Include="..\..\libs\Carlton.Base.Client.State.Abstractions\Carlton.Base.Client.State.Abstractions.csproj" />
     <ProjectReference Include="..\Carlton.Dashboard.ViewModels\Carlton.Dashboard.ViewModels.csproj" />
   </ItemGroup>
 
