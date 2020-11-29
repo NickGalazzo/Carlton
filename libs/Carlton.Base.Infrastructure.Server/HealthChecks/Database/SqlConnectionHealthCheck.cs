@@ -19,7 +19,7 @@ namespace Carlton.Base.Infrastructure.Server.HealthChecks.Database
 
         protected override DbConnection CreateConnection(string connectionString)
         {
-            return new SqlConnection(connectionString);
+            return null; // new SqlConnection(connectionString);
         }
     }
 }

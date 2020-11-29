@@ -6,8 +6,8 @@ namespace Carlton.Dashboard.ViewModels.TestViewModels
     {
         private static readonly IList<DinnerGuestReason> SampleReasons = new List<DinnerGuestReason>
                 {
-                    DinnerGuestReason.CreateReason(1, "Japan School"),
-                    DinnerGuestReason.CreateReason(2, "Out With Friends")
+                    new DinnerGuestReason(1, "Japan School"),
+                    new DinnerGuestReason(2, "Out With Friends")
                 };
 
 
@@ -33,7 +33,7 @@ namespace Carlton.Dashboard.ViewModels.TestViewModels
 
         public static DinnerGuest DinnerGuestNotHomeViewModel()
         {
-            var reason = DinnerGuestReason.CreateReason(1, "Japan School");
+            var reason = new DinnerGuestReason(1, "Japan School");
             return DinnerGuest.CreateNotHomeForDinnerGuest(2, "Steve", reason);
         }
 
@@ -42,8 +42,8 @@ namespace Carlton.Dashboard.ViewModels.TestViewModels
             return new DinnerGuestSelfStatus(DinnerGuestHomeViewModel(),
                 new List<DinnerGuestReason>
                 {
-                    DinnerGuestReason.CreateReason(1, "Japan School"),
-                    DinnerGuestReason.CreateReason(2, "Out With Friends")
+                    new DinnerGuestReason(1, "Japan School"),
+                    new DinnerGuestReason(2, "Out With Friends")
                 });
         }
 
