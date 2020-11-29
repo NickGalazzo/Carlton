@@ -1,14 +1,13 @@
-﻿using Carlton.Dashboard.ViewModels.DinnerGuests;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Carlton.TestBed.Client.TestViewModels
+namespace Carlton.Dashboard.ViewModels.TestViewModels
 {
     public static class DinnerGuestsTestViewModels
     {
         private static readonly IList<DinnerGuestReason> SampleReasons = new List<DinnerGuestReason>
                 {
-                    new DinnerGuestReason(1, "Japan School"),
-                    new DinnerGuestReason(2, "Out With Friends")
+                    DinnerGuestReason.CreateReason(1, "Japan School"),
+                    DinnerGuestReason.CreateReason(2, "Out With Friends")
                 };
 
 
@@ -34,7 +33,7 @@ namespace Carlton.TestBed.Client.TestViewModels
 
         public static DinnerGuest DinnerGuestNotHomeViewModel()
         {
-            var reason = new DinnerGuestReason(1, "Japan School");
+            var reason = DinnerGuestReason.CreateReason(1, "Japan School");
             return DinnerGuest.CreateNotHomeForDinnerGuest(2, "Steve", reason);
         }
 
@@ -43,8 +42,8 @@ namespace Carlton.TestBed.Client.TestViewModels
             return new DinnerGuestSelfStatus(DinnerGuestHomeViewModel(),
                 new List<DinnerGuestReason>
                 {
-                    new DinnerGuestReason(1, "Japan School"),
-                    new DinnerGuestReason(2, "Out With Friends")
+                    DinnerGuestReason.CreateReason(1, "Japan School"),
+                    DinnerGuestReason.CreateReason(2, "Out With Friends")
                 });
         }
 

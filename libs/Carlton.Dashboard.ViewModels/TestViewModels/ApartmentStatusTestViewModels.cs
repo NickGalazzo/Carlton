@@ -1,8 +1,6 @@
-﻿using Carlton.Dashboard.ViewModels.ApartmentStatus;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-
-namespace Carlton.TestBed.Client.TestViewModels
+namespace Carlton.Dashboard.ViewModels.TestViewModels
 {
     public static class ApartmentStatusTestViewModels
     {

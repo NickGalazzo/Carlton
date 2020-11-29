@@ -1,21 +1,22 @@
-﻿@using Carlton.Dashboard.ViewModels.Feed
+﻿@using Carlton.Dashboard.ViewModels
 
+@namespace Carlton.Dashboard.Components
 @inherits CarltonComponentBase<FeedItem>
 
-    <div class="feed-list-item">
-        <div class="row">
-            <div class="col-2">
-                <img class="avatar-img" src="https://www.w3schools.com/w3images/avatar2.png" />
-            </div>
-            <div class="col-8 offset-2">
-                <div class="feed-title">@ViewModel.User.UserName</div>
-                <div class="feed-message">@ViewModel.Message</div>
-            </div>
+<div class="feed-list-item">
+    <div class="row">
+        <div class="col-2">
+            <img class="avatar-img" src="https://www.w3schools.com/w3images/avatar2.png" />
         </div>
-        <div class="row feed-date-col feed-item-row">
-            <div class="col-8 offset-4">
-                <FeedDisplayDate FeedDate="ViewModel.FeedDate" />
-            </div>
+        <div class="col-8 offset-2">
+            <div class="feed-title">@ViewModel.User.UserName</div>
+            <div class="feed-message">@ViewModel.Message</div>
         </div>
     </div>
+    <div class="row feed-date-col feed-item-row">
+        <div class="col-8 offset-4">
+            <FeedDisplayDate FeedDate="ViewModel.FeedDate" />
+        </div>
+    </div>
+</div>
 

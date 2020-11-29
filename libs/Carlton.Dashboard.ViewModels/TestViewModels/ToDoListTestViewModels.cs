@@ -1,7 +1,6 @@
-﻿using Carlton.Dashboard.ViewModels.ToDos;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Carlton.TestBed.Client.TestViewModels
+namespace Carlton.Dashboard.ViewModels.TestViewModels
 {
     public static class ToDoListTestViewModels
     {

@@ -1,6 +1,4 @@
-﻿using Carlton.Dashboard.ViewModels.CountCards;
-
-namespace Carlton.Dashboard.ViewModels.TestViewModels
+﻿namespace Carlton.Dashboard.ViewModels.TestViewModels
 {
     public static class DashboardAggregationsTestViewModels
     {

@@ -1,11 +1,8 @@
-﻿using Carlton.Dashboard.ViewModels.DinnerGuests;
-using Carlton.Dashboard.ViewModels.Groceries;
-using Carlton.Dashboard.ViewModels.ToDos;
-using Carlton.Dashboard.ViewModels.Feed;
+﻿using System;
 using System.Collections.Generic;
-using System;
-using Carlton.Base.Client.State;
 using System.Threading.Tasks;
+using Carlton.Base.Client.State;
+using Carlton.Dashboard.ViewModels;
 
 namespace Carlton.Dashboard.Components.State
 {

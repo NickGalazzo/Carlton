@@ -1,10 +1,9 @@
-﻿using Carlton.Dashboard.Components.Feed;
-using Carlton.Dashboard.ViewModels.Feed;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
 
-namespace Carlton.TestBed.Client.TestViewModels
+
+namespace Carlton.Dashboard.ViewModels.TestViewModels
 {
     public static class FeedListTestViewModels
     {

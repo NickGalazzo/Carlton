@@ -1,7 +1,6 @@
 ﻿using Bunit;
-using Carlton.Dashboard.Components.CountCards;
-using Carlton.Dashboard.ViewModels.TestViewModels;
 using Xunit;
+using Carlton.Dashboard.ViewModels.TestViewModels;
 
 namespace Carlton.Dashboard.Components.Test
 {
@@ -11,11 +10,11 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatusCountCard", "Snapshot")]
         public void ApartmentStatusCountCard_Markup()
         {
-            //Act
+            // Arrange
             var cut = RenderComponent<ApartmentStatusCountCard>(
              ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregationViewModel()));
 
-            //Assert
+            // Assert
             cut.MarkupMatches(TestComponentMarkupConstants.ApartmentStatusCount);
         }
 
@@ -23,13 +22,14 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatusCountCard", "Unit")]
         public void ApartmentStatusCountCard_Count_Verify()
         {
-            //Act
+            // Arrange
             var cut = RenderComponent<ApartmentStatusCountCard>(
              ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregationViewModel()));
 
+            // Act
             var count = cut.Find(".count-message").TextContent;
 
-            //Assert
+            // Assert
             Assert.Contains("7", count);
         }
 
@@ -38,11 +38,11 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ToDosCountCard", "Snapshot")]
         public void ToDosCountCard_Markup()
         {
-            //Act
+            // Arrange
             var cut = RenderComponent<ToDosCountCard>(
              ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregationViewModel()));
 
-            //Assert
+            // Assert
             cut.MarkupMatches(TestComponentMarkupConstants.ToDoCount);
         }
 
@@ -50,13 +50,14 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ToDosCountCard", "Unit")]
         public void ToDosCountCard_Count_Verify()
         {
-            //Act
+            // Assert
             var cut = RenderComponent<ToDosCountCard>(
              ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregationViewModel()));
 
+            // Act
             var count = cut.Find(".count-message").TextContent;
 
-            //Assert
+            // Assert
             Assert.Contains("7", count);
         }
 
@@ -64,7 +65,7 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("GroceriesCountCard", "Snapshot")]
         public void GroceriesCountCard_Markup()
         {
-            //Act
+            //Arrange
             var cut = RenderComponent<GroceriesCountCard>(
              ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregationViewModel()));
 
@@ -76,13 +77,14 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("GroceriesCountCard", "Unit")]
         public void GroceriesCountCard_Count_Verify()
         {
-            //Act
+            // Arrange
             var cut = RenderComponent<GroceriesCountCard>(
              ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregationViewModel()));
 
+            // Act
             var count = cut.Find(".count-message").TextContent;
 
-            //Assert
+            // Assert
             Assert.Contains("7", count);
         }
 
@@ -90,11 +92,11 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("DinnerGuestsCountCard", "Snapshot")]
         public void DinnerGuestsCountCard_Markup()
         {
-            //Act
+            // Arrange
             var cut = RenderComponent<DinnerGuestsCountCard>(
              ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregationViewModel()));
 
-            //Assert
+            // Assert
             cut.MarkupMatches(TestComponentMarkupConstants.DinnerGuestsCount);
         }
 
@@ -102,13 +104,14 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("DinnerGuestsCountCard", "Unit")]
         public void DinnerGuestsCountCard_Count_Verify()
         {
-            //Act
+            // Arrange
             var cut = RenderComponent<DinnerGuestsCountCard>(
              ("ViewModel", DashboardAggregationsTestViewModels.DefaultDashboardAggregationViewModel()));
 
+            // Act
             var count = cut.Find(".count-message").TextContent;
 
-            //Assert
+            // Assert
             Assert.Contains("7", count);
         }
     }

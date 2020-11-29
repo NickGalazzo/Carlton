@@ -1,9 +1,8 @@
-using Bunit;
-using Carlton.Dashboard.Components.ToDos;
-using Carlton.Dashboard.Components.ToDos.Events;
-using Carlton.TestBed.Client.TestViewModels;
 using System.Linq;
 using Xunit;
+using Bunit;
+using Carlton.Dashboard.ViewModels;
+using Carlton.Dashboard.ViewModels.TestViewModels;
 
 namespace Carlton.Dashboard.Components.Test
 {
@@ -13,7 +12,7 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ToDo", "Snapshot")]
         public void ToDoListItem_Unchecked_Markup()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<ToDoListItem>(
                 ("ViewModel", ToDoListTestViewModels.ToDoListItemUncheckedViewModel())
             );
@@ -26,7 +25,7 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ToDo", "Snapshot")]
         public void ToDoListItem_Checked_Markup()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<ToDoListItem>(
                 ("ViewModel", ToDoListTestViewModels.ToDoListItemCheckedViewModel())
             );
@@ -40,19 +39,19 @@ namespace Carlton.Dashboard.Components.Test
         public void ToDoListItem_Initial_Unchecked_ToDoStatusChangedEvent()
         {
             // Arrange
+            var expected = new ToDoStatusChangedEvent(1, true);
             ToDoStatusChangedEvent result = null;
             var cut = RenderComponent<ToDoListItem>(
                 ("ViewModel", ToDoListTestViewModels.ToDoListItemUncheckedViewModel()),
                 ComponentParameterFactory.EventCallback("OnComponentEvent", (evt) => result = (ToDoStatusChangedEvent)evt)
             );
 
-            //Act
+            // Act
             cut.Find(".carlton-checkbox span").Click();
 
 
             // Assert
-            Assert.Equal(1, result.ToDoID);
-            Assert.True(result.ToDoCompleted);
+            Assert.Equal(expected, result);
         }
 
         [Fact]
@@ -60,34 +59,33 @@ namespace Carlton.Dashboard.Components.Test
         public void ToDoListItem_Initial_Checked_ToDoStatusChangedEvent()
         {
             // Arrange
+            var expected = new ToDoStatusChangedEvent(1, false);
             ToDoStatusChangedEvent result = null;
             var cut = RenderComponent<ToDoListItem>(
                 ("ViewModel", ToDoListTestViewModels.ToDoListItemCheckedViewModel()),
                 ComponentParameterFactory.EventCallback("OnComponentEvent", (evt) => result = (ToDoStatusChangedEvent)evt)
             );
 
-            //Act
+            // Act
             cut.Find(".carlton-checkbox span").Click();
 
 
             // Assert
-            Assert.Equal(1, result.ToDoID);
-            Assert.False(result.ToDoCompleted);
+            Assert.Equal(expected, result);
         }
 
         [Fact]
         [Trait("ToDo", "Unit")]
         public void ToDoListItem_Label_Verify()
         {
-            //Arrange
+            // Arrange
             var ToDoLabelText = "Take Out Garbage";
-
-            // Act
             var cut = RenderComponent<ToDoListItem>(
                 ("ViewModel", ToDoListTestViewModels.ToDoListItemCheckedViewModel())
             );
-            var renderedText = cut.Find("span.to-do-name").TextContent;
 
+            // Act
+            var renderedText = cut.Find("span.to-do-name").TextContent;
 
             // Assert
             Assert.Equal(ToDoLabelText, renderedText);
@@ -102,7 +100,7 @@ namespace Carlton.Dashboard.Components.Test
                 ("ViewModel", ToDoListTestViewModels.DefaultToDoListViewModel())
             );
 
-            //Act
+            // Act
             var listItems = cut.FindComponents<ToDoListItem>();
 
             // Assert
@@ -118,7 +116,7 @@ namespace Carlton.Dashboard.Components.Test
                 ("ViewModel", ToDoListTestViewModels.DefaultToDoListViewModel())
             );
 
-            //Act
+            // Act
             var item = cut.FindComponents<ToDoListItem>().First();
 
             // Assert

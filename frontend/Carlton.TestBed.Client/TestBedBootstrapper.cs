@@ -6,15 +6,9 @@
 // The testbed can then be used by simply modifying this bootstrappper file
 
 using System.Collections.Generic;
-using Carlton.Dashboard.Components.ApartmentStatus;
-using Carlton.Dashboard.Components.Feed;
-using Carlton.Dashboard.Components.DinnerGuests;
-using Carlton.Dashboard.Components.Groceries;
-using Carlton.Dashboard.Components.ToDos;
-using Carlton.Dashboard.Components.CountCards;
+using Carlton.Dashboard.Components;
 using Carlton.Dashboard.ViewModels.TestViewModels;
 using Carlton.TestBed.Client.Shared.NavTree;
-using Carlton.TestBed.Client.TestViewModels;
 using Carlton.TestBed.TestBedNavTree;
 
 

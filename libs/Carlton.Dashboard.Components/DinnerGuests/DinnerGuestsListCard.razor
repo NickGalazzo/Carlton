@@ -1,13 +1,14 @@
 ﻿@using Carlton.Base.Client.Components.Cards
 @using Carlton.Dashboard.Components.Common 
-@using Carlton.Dashboard.ViewModels.DinnerGuests
+@using Carlton.Dashboard.ViewModels;
 
+@namespace Carlton.Dashboard.Components
 
 @inherits CarltonComponentBase<DinnerGuests>
 
 <CarltonCssWraper ComponentType="GetType()">
     <Content>
-        <CarltonListCard CardTitle="Dinner Guests" SubTitle="Guests" Items="ViewModel.Items">
+        <CarltonListCard CardTitle="Dinner Guests" SubTitle="Guests" Items="ViewModel.Guests">
             <ActionBarContent>
                 <DashboardCardActionBar TViewModel="DinnerGuests" Callback="OnComponentEvent" Status="ComponentStatus" />
             </ActionBarContent>

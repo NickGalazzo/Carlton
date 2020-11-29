@@ -1,12 +1,13 @@
-﻿@using Carlton.Dashboard.ViewModels.DinnerGuests
-@using Carlton.Dashboard.Components.DinnerGuests.Events
+﻿@using Carlton.Dashboard.ViewModels
+
+@namespace Carlton.Dashboard.Components
 
 @inherits CarltonComponentBase<DinnerGuestSelfStatus>
 
 
 <CarltonCssWraper ComponentType="GetType()">
     <Content>
-        <DinnerGuestsListItem ViewModel="ViewModel.MyGuestStatus" ShowIndicator="false"/>
+        <DinnerGuestsListItem ViewModel="ViewModel.MyGuestStatus" ShowIndicator="false" />
         <div class="row home-for-dinner-row">
             <div class="col-9">
                 <label>Are you home for dinner?</label>
@@ -18,18 +19,12 @@
             </div>
         </div>
 
-        <CarltonSelect 
-                       Disabled="ViewModel.MyGuestStatus.IsHomeForDinner"
-                       Label="Reason?" 
+        <CarltonSelect Disabled="ViewModel.MyGuestStatus.IsHomeForDinner"
+                       Label="Reason?"
                        Options="ViewModel.MySavedReasons.ToDictionary(o => o.ReasonId, o => o.ReasonText)"
                        SelectedValue="ViewModel.MyGuestStatus.Reason.ReasonId"
                        ValueChangedCallback="(kv) => base.OnComponentEvent.InvokeAsync(new DinnerGuestsReasonChangedEvent(ViewModel.MyGuestStatus.GuestId, kv.Key))" />
     </Content>
 </CarltonCssWraper>
 
-@code{
-    private void x()
-    {
-        new DinnerGuestsReasonChangedEvent(1, 1) { EventData = new { x = 7, y = 3 } };
-    }
-}
+

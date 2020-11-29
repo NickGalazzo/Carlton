@@ -1,7 +1,6 @@
-﻿using Bunit;
-using Carlton.Dashboard.Components.Groceries;
-using Carlton.TestBed.Client.TestViewModels;
-using Xunit;
+﻿using Xunit;
+using Bunit;
+using Carlton.Dashboard.ViewModels.TestViewModels;
 
 namespace Carlton.Dashboard.Components.Test
 {
@@ -11,7 +10,7 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("GroceriesListItem", "Snapshot")]
         public void GroceriesListItem_Low_Markup()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<GroceriesListItem>(
                 ("ViewModel", GroceriesTestViewModels.GroceriesLowListItemViewModel())
             );
@@ -24,7 +23,7 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("GroceriesListItem", "Snapshot")]
         public void GroceriesListItem_Medium_Markup()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<GroceriesListItem>(
                 ("ViewModel", GroceriesTestViewModels.GroceriesMediumListItemViewModel())
             );
@@ -37,7 +36,7 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("GroceriesListItem", "Snapshot")]
         public void GroceriesListItem_High_Markup()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<GroceriesListItem>(
                 ("ViewModel", GroceriesTestViewModels.GroceriesHighListItemViewModel())
             );
@@ -50,11 +49,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("GroceriesListItem", "Unit")]
         public void GroceriesListItem_Label_Verify()
         {
-            // Act
+            // Assert
             var cut = RenderComponent<GroceriesListItem>(
                 ("ViewModel", GroceriesTestViewModels.GroceriesLowListItemViewModel())
             );
 
+            // Act
             var label = cut.Find(".item-name");
 
             // Assert
@@ -65,11 +65,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("GroceriesListItem", "Unit")]
         public void GroceriesListItem_Progress_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<GroceriesListItem>(
                 ("ViewModel", GroceriesTestViewModels.GroceriesHighListItemViewModel())
             );
 
+            // Act
             var progressBar = cut.Find(".progress-bar");
 
             // Assert
@@ -80,11 +81,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("GroceriesListItem", "Unit")]
         public void GroceriesListItem_Given_Count_LessThan_35_Should_Contain_Class_Low()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<GroceriesListItem>(
                 ("ViewModel", GroceriesTestViewModels.GroceriesLowListItemViewModel())
             );
 
+            // Act
             var progressBar = cut.Find(".progress-bar");
 
             // Assert
@@ -95,11 +97,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("GroceriesListItem", "Unit")]
         public void GroceriesListItem_Given_Count_GreaterThan_35_And_LessThan_75_Should_Contain_Class_Medium()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<GroceriesListItem>(
                 ("ViewModel", GroceriesTestViewModels.GroceriesMediumListItemViewModel())
             );
 
+            // Act
             var progressBar = cut.Find(".progress-bar");
 
             // Assert
@@ -110,11 +113,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("GroceriesListItem", "Unit")]
         public void GroceriesListItem_Given_Count_GreaterThan_75_Should_Contain_Class_High()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<GroceriesListItem>(
                 ("ViewModel", GroceriesTestViewModels.GroceriesHighListItemViewModel())
             );
 
+            // Act
             var progressBar = cut.Find(".progress-bar");
 
             // Assert
@@ -125,10 +129,11 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("GroceriesListCard", "Unit")]
         public void GroceriesListCard_GroceriesListItem_ChildCount_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<GroceriesListCard>(
                 ("ViewModel", GroceriesTestViewModels.DefaultGroceriesListViewModel()));
 
+            // Act
             var items = cut.FindComponents<GroceriesListItem>();
 
             // Assert
@@ -139,10 +144,11 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("GroceriesListCard", "Snapshot")]
         public void GroceriesListCard_GroceryItem_Markup()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<GroceriesListCard>(
                 ("ViewModel", GroceriesTestViewModels.DefaultGroceriesListViewModel()));
 
+            // Act
             var item= cut.FindComponent<GroceriesListItem>();
 
             // Assert

@@ -1,10 +1,11 @@
-﻿@using Carlton.Dashboard.ViewModels.ApartmentStatus
+﻿@using Carlton.Dashboard.ViewModels
 
+@namespace Carlton.Dashboard.Components
 @inherits CarltonComponentBase<ApartmentStatus>
 
 <div class="row apartment-status-list-item">
     <div class="col-3 offset-2">
-       <ApartmentStatusIcon Status="ViewModel.StatusName" />
+        <ApartmentStatusIcon Status="ViewModel.StatusName" />
     </div>
     <div class="col-2"></div>
     <div class="col-3">

@@ -1,5 +1,6 @@
-﻿@using Carlton.Dashboard.ViewModels.CountCards
+﻿@using Carlton.Dashboard.ViewModels
 
+@namespace Carlton.Dashboard.Components
 @inherits CarltonComponentBase<DashboardAggregation>
 
 <CarltonCssWraper ComponentType="GetType()">
@@ -7,7 +8,7 @@
         <DashboardCountCard Count="@ViewModel.Count"
                             MessageTemplate="@MESSAGE_TEMPLATE"
                             Icon="@ICON"
-                            AccentColorClass="@ACCENT_COLOR"/>
+                            AccentColorClass="@ACCENT_COLOR" />
     </Content>
 </CarltonCssWraper>
 

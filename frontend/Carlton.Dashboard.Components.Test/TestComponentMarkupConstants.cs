@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Carlton.Dashboard.Components.Test
+﻿namespace Carlton.Dashboard.Components.Test
 {
     public static class TestComponentMarkupConstants
     {
-        public static string ToDoListItem_Unchecked = @"<div class='to-do-list-item'>
+        public const string ToDoListItem_Unchecked = @"<div class='to-do-list-item'>
             <div class='row'>
                 <div class='col-1'>
                     <div class='carlton-checkbox'>
@@ -19,7 +15,7 @@ namespace Carlton.Dashboard.Components.Test
             </div>
         </div>";
 
-        public static string ToDoListItem_Checked = @"<div class='to-do-list-item'>
+        public const string ToDoListItem_Checked = @"<div class='to-do-list-item'>
             <div class='row'>
                 <div class='col-1'>
                     <div class='carlton-checkbox'>
@@ -32,7 +28,7 @@ namespace Carlton.Dashboard.Components.Test
             </div>
         </div>";
 
-        public static string ApartmentStatusListItem_Complete = @"
+        public const string ApartmentStatusListItem_Complete = @"
             <div class='row apartment-status-list-item'>
                 <div class='col-3 offset-2'>
                     <span class='apt-status-icon mdi mdi-24px mdi-delete'></span>
@@ -43,7 +39,7 @@ namespace Carlton.Dashboard.Components.Test
                 </div>
             </div>";
 
-        public static string ApartmentStatusListItem_Incomplete = @"
+        public const string ApartmentStatusListItem_Incomplete = @"
             <div class='row apartment-status-list-item'>
                 <div class='col-3 offset-2'>
                     <span class='apt-status-icon mdi mdi-24px mdi-delete'></span>
@@ -54,7 +50,7 @@ namespace Carlton.Dashboard.Components.Test
                 </div>
             </div>";
 
-        public static string DinnerGuestsListItem_Home = @"
+        public const string DinnerGuestsListItem_Home = @"
             <div class='row dinner-guests-list-item'>
                 <div class='col-3 text-center'>
                     <img class='avatar-img text-center' src='https://www.w3schools.com/w3images/avatar2.png'>
@@ -67,7 +63,7 @@ namespace Carlton.Dashboard.Components.Test
                 </div>
             </div>";
 
-        public static string DinnerGuestsListItem_NotHome = @"
+        public const string DinnerGuestsListItem_NotHome = @"
             <div class='row dinner-guests-list-item'>
                 <div class='col-3 text-center'>
                     <img class='avatar-img text-center' src='https://www.w3schools.com/w3images/avatar2.png'>
@@ -81,7 +77,7 @@ namespace Carlton.Dashboard.Components.Test
                 </div>
             </div>";
 
-        public static string DinnerGuestsListItem_SelfStatus_NotHome = @" <div class='row dinner-guests-list-item'>
+        public const string DinnerGuestsListItem_SelfStatus_NotHome = @" <div class='row dinner-guests-list-item'>
                 <div class='col-3 text-center'>
                     <img class='avatar-img text-center' src='https://www.w3schools.com/w3images/avatar2.png'>
                 </div>
@@ -93,7 +89,7 @@ namespace Carlton.Dashboard.Components.Test
                 </div>
             </div>";
 
-        public static string GroceriesListItem_Low = @"<div class='groceries-list-item'>
+        public const string GroceriesListItem_Low = @"<div class='groceries-list-item'>
                 <div>
                     <span class='item-name'>Toilet Paper</span>
                 </div>
@@ -102,7 +98,7 @@ namespace Carlton.Dashboard.Components.Test
                 </div>
             </div>";
 
-        public static string GroceriesListItem_Medium = @"<div class='groceries-list-item'>
+        public const string GroceriesListItem_Medium = @"<div class='groceries-list-item'>
             <div>
                 <span class='item-name'>Paper Towels</span>
             </div>
@@ -111,7 +107,7 @@ namespace Carlton.Dashboard.Components.Test
             </div>
         </div>";
 
-        public static string GroceriesListItem_High = @"<div class='groceries-list-item'>
+        public const string GroceriesListItem_High = @"<div class='groceries-list-item'>
             <div>
                 <span class='item-name'>Dish Soap</span>
             </div>
@@ -120,7 +116,7 @@ namespace Carlton.Dashboard.Components.Test
             </div>
         </div>";
 
-        public static string FeedListItem = @"<div class='feed-list-item'>
+        public const string FeedListItem = @"<div class='feed-list-item'>
             <div class='row'>
                 <!--!--><div class='col-2'>
                     <img class='avatar-img' src='https://www.w3schools.com/w3images/avatar2.png'>
@@ -137,7 +133,7 @@ namespace Carlton.Dashboard.Components.Test
             </div>
         </div>";
 
-        public static string ApartmentStatusCount = @"<div class='apartment-status-count-card '>
+        public const string ApartmentStatusCount = @"<div class='apartment-status-count-card '>
            <div class='dashboard-count-card accent-color-2'>
               <div class='carlton-card'>
                  <div class='container'>
@@ -163,7 +159,7 @@ namespace Carlton.Dashboard.Components.Test
            </div>
         </div>";
 
-        public static string ToDoCount = @"<div class='to-dos-count-card '>
+        public const string ToDoCount = @"<div class='to-dos-count-card '>
            <div class='dashboard-count-card accent-color-1'>
               <div class='carlton-card'>
                  <div class='container'>
@@ -189,7 +185,7 @@ namespace Carlton.Dashboard.Components.Test
            </div>
         </div>";
 
-        public static string DinnerGuestsCount = @"
+        public const string DinnerGuestsCount = @"
         <div class='dinner-guests-count-card'>
             <div class='dashboard-count-card accent-color-4'>
                <div class='carlton-card'>
@@ -216,7 +212,7 @@ namespace Carlton.Dashboard.Components.Test
             </div>
             </div>";
 
-        public static string GroceriesCount = @"<div class='groceries-count-card '>
+        public const string GroceriesCount = @"<div class='groceries-count-card '>
            <div class='dashboard-count-card accent-color-3'>
               <div class='carlton-card'>
                  <div class='container'>

@@ -1,7 +1,6 @@
-﻿using Bunit;
-using Carlton.Dashboard.Components.Feed;
-using Carlton.TestBed.Client.TestViewModels;
-using Xunit;
+﻿using Xunit;
+using Bunit;
+using Carlton.Dashboard.ViewModels.TestViewModels;
 
 namespace Carlton.Dashboard.Components.Test
 {
@@ -11,7 +10,7 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("FeedItem", "Snapshot")]
         public void FeedListItem_Markup()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<FeedListItem>(
                 ("ViewModel", FeedListTestViewModels.DefaultFeedListItemViewModel())
             );
@@ -24,11 +23,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("FeedItem", "Unit")]
         public void FeedListItem_Name_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<FeedListItem>(
                 ("ViewModel", FeedListTestViewModels.DefaultFeedListItemViewModel())
             );
 
+            // Act
             var feedName = cut.Find(".feed-title");
 
             // Assert
@@ -39,11 +39,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("FeedItem", "Unit")]
         public void FeedListItem_Message_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<FeedListItem>(
                 ("ViewModel", FeedListTestViewModels.DefaultFeedListItemViewModel())
             );
 
+            // Act
             var feedMessage = cut.Find(".feed-message");
 
             // Assert
@@ -54,11 +55,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("FeedItem", "Unit")]
         public void FeedListItem_FeedDate_MomentsAgo_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<FeedListItem>(
                 ("ViewModel", FeedListTestViewModels.DefaultFeedListItemViewModel())
             );
 
+            // Act
             var feedDate = cut.Find(".feed-date");
 
             // Assert
@@ -69,11 +71,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("FeedItem", "Unit")]
         public void FeedListItem_FeedDate_MinutesAgo_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<FeedListItem>(
                 ("ViewModel", FeedListTestViewModels.TenMinutesAgoFeedListItemViewModel())
             );
 
+            // Act
             var feedDate = cut.Find(".feed-date");
 
             // Assert
@@ -84,11 +87,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("FeedItem", "Unit")]
         public void FeedListItem_FeedDate_HoursAgo_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<FeedListItem>(
                 ("ViewModel", FeedListTestViewModels.ThreeHoursAgoFeedListItemViewModel())
             );
 
+            // Act
             var feedDate = cut.Find(".feed-date");
 
             // Assert
@@ -99,11 +103,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("FeedItem", "Unit")]
         public void FeedListItem_FeedDate_PreviousDate_Verify()
         {
-            // Act
+            // Assert
             var cut = RenderComponent<FeedListItem>(
                 ("ViewModel", FeedListTestViewModels.PreviousDateFeedListItemViewModel())
             );
 
+            // Act
             var feedDate = cut.Find(".feed-date");
 
             // Assert
@@ -114,11 +119,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("FeedItemListCard", "Unit")]
         public void FeedListCard_FeedListItem_ChildCount_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<FeedListCard>(
                 ("ViewModel", FeedListTestViewModels.DefaultFeedItemListViewModel())
             );
 
+            // Act
             var feedItems = cut.FindComponents<FeedListItem>();
 
             // Assert
@@ -129,11 +135,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("FeedItemListCard", "Unit")]
         public void FeedListCard_FeedListItem_Markup()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<FeedListCard>(
                 ("ViewModel", FeedListTestViewModels.DefaultFeedItemListViewModel())
             );
 
+            // Act
             var feedItem = cut.FindComponent<FeedListItem>();
 
             // Assert

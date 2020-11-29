@@ -1,7 +1,6 @@
-﻿using Bunit;
-using Carlton.Dashboard.Components.ApartmentStatus;
-using Carlton.TestBed.Client.TestViewModels;
-using Xunit;
+﻿using Xunit;
+using Bunit;
+using Carlton.Dashboard.ViewModels.TestViewModels;
 
 namespace Carlton.Dashboard.Components.Test
 {
@@ -11,12 +10,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatusItem", "Snapshot")]
         public void ApartmentStatus_Complete_Markup()
         {
-            //Act
+            // Arrange
             var cut = RenderComponent<ApartmentStatusListItem>(
                 ("ViewModel", ApartmentStatusTestViewModels.CompletedStatusViewModel())
             );
 
-            //Assert
+            // Assert
             cut.MarkupMatches(TestComponentMarkupConstants.ApartmentStatusListItem_Complete);
         }
 
@@ -24,7 +23,7 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatusItem", "Snapshot")]
         public void ApartmentStatus_Incomplete_Markup()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<ApartmentStatusListItem>(
                 ("ViewModel", ApartmentStatusTestViewModels.InCompleteStatusViewModel())
             );
@@ -37,11 +36,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatusItem", "Unit")]
         public void ApartmentStatus_Complete_Checked_Icon_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<ApartmentStatusListItem>(
                 ("ViewModel", ApartmentStatusTestViewModels.CompletedStatusViewModel())
             );
 
+            // Act
             var checkedSpan = cut.Find(".status-value-complete.mdi-check-circle");
 
             //Assert
@@ -52,14 +52,15 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatusItem", "Unit")]
         public void ApartmentStatus_Complete_Unchecked_Icon_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<ApartmentStatusListItem>(
                 ("ViewModel", ApartmentStatusTestViewModels.InCompleteStatusViewModel())
             );
 
+            // Act
             var uncheckedSpan = cut.Find(".status-value-incomplete.mdi-alert");
 
-            //Assert
+            // Assert
             Assert.NotNull(uncheckedSpan);
         }
 
@@ -67,11 +68,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatusItem", "Unit")]
         public void ApartmentStatus_Garbage_Icon_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<ApartmentStatusListItem>(
                 ("ViewModel", ApartmentStatusTestViewModels.GarbageViewModel())
             );
 
+            // Act
             var iconSpan = cut.Find("span.mdi-delete");
 
             //Assert
@@ -82,11 +84,12 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatusItem", "Unit")]
         public void ApartmentStatus_Recycle_Icon_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<ApartmentStatusListItem>(
                 ("ViewModel", ApartmentStatusTestViewModels.RecycleViewModel())
             );
 
+            // Act
             var iconSpan = cut.Find("span.mdi-recycle");
 
             //Assert
@@ -97,14 +100,15 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatusItem", "Unit")]
         public void ApartmentStatus_Groceries_Icon_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<ApartmentStatusListItem>(
                 ("ViewModel", ApartmentStatusTestViewModels.GroceriesViewModel())
             );
 
+            // Act
             var iconSpan = cut.Find("span.mdi-cart");
 
-            //Assert
+            // Assert
             Assert.NotNull(iconSpan);
         }
 
@@ -112,14 +116,15 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatusItem", "Unit")]
         public void ApartmentStatus_Cleaning_Icon_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<ApartmentStatusListItem>(
                 ("ViewModel", ApartmentStatusTestViewModels.CleaningViewModel())
             );
 
+            // Act
             var iconSpan = cut.Find("span.mdi-spray-bottle");
 
-            //Assert
+            // Assert
             Assert.NotNull(iconSpan);
         }
 
@@ -127,14 +132,15 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatusItem", "Unit")]
         public void ApartmentStatus_Laundry_Icon_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<ApartmentStatusListItem>(
                 ("ViewModel", ApartmentStatusTestViewModels.LaundryViewModel())
             );
 
+            // Act
             var iconSpan = cut.Find("span.mdi-washing-machine");
 
-            //Assert
+            // Assert
             Assert.NotNull(iconSpan);
         }
 
@@ -142,14 +148,15 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatusItem", "Unit")]
         public void ApartmentStatus_DryCleaning_Icon_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<ApartmentStatusListItem>(
                 ("ViewModel", ApartmentStatusTestViewModels.DryCleaningViewModel())
             );
 
+            // Act
             var iconSpan = cut.Find("span.mdi-tie");
 
-            //Assert
+            // Assert
             Assert.NotNull(iconSpan);
         }
 
@@ -157,10 +164,11 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatusList", "Unit")]
         public void ApartmentStatusListCard_Child_Count_Verify()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<ApartmentStatusListCard>(
                 ("ViewModel", ApartmentStatusTestViewModels.DefaultApartmentStatusViewModel()));
 
+            // Act
             var items = cut.FindComponents<ApartmentStatusListItem>();
 
             // Assert
@@ -171,10 +179,11 @@ namespace Carlton.Dashboard.Components.Test
         [Trait("ApartmentStatusList", "Snapshot")]
         public void ApartmentStatusListCard_ApartmentStatusListItem_Markup()
         {
-            // Act
+            // Arrange
             var cut = RenderComponent<ApartmentStatusListCard>(
                 ("ViewModel", ApartmentStatusTestViewModels.DefaultApartmentStatusViewModel()));
 
+            // Act
             var item = cut.FindComponent<ApartmentStatusListItem>();
 
             // Assert

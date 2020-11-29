@@ -1,6 +1,6 @@
-﻿@using Carlton.Dashboard.ViewModels.ApartmentStatus
+﻿@using Carlton.Dashboard.ViewModels
 
-
+@namespace Carlton.Dashboard.Components
 @inherits CarltonComponentBase<ApartmentStatuses>
 
 <CarltonCssWraper ComponentType="GetType()">
@@ -15,7 +15,7 @@
             </ActionBarContent>
 
             <ItemTemplate Context="status">
-                <ApartmentStatusListItem ViewModel="status" 
+                <ApartmentStatusListItem ViewModel="status"
                                          OnComponentEvent="base.OnComponentEvent" />
             </ItemTemplate>
         </CarltonListCard>

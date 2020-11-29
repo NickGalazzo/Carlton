@@ -1,4 +1,7 @@
-﻿@inherits CarltonComponentBase<FeedItems>
+﻿@using Carlton.Dashboard.ViewModels
+
+@namespace Carlton.Dashboard.Components
+@inherits CarltonComponentBase<FeedItems>
 
 <CarltonCssWraper ComponentType="GetType()">
     <Content>
@@ -6,8 +9,8 @@
                          CardTitle="Feed">
 
             <ActionBarContent>
-                <DashboardCardActionBar TViewModel="FeedItems" 
-                                        Callback="OnComponentEvent" 
+                <DashboardCardActionBar TViewModel="FeedItems"
+                                        Callback="OnComponentEvent"
                                         Status="ComponentStatus" />
             </ActionBarContent>
 
