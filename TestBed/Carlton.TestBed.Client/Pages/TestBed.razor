@@ -14,15 +14,24 @@
     </HeaderContent>
 
     <Body>
-        <CarltonDataWrapper TViewModel="ComponentViewerViewModel"
+
+        <Carlton.Base.Client.Components.ResizablePanel.ResizablePanel>
+            <TopContent>
+                <div>Top</div>
+            </TopContent>
+            <BottomContent>
+                <div>Bottom</div>
+            </BottomContent>
+        </Carlton.Base.Client.Components.ResizablePanel.ResizablePanel>
+        @*<CarltonDataWrapper TViewModel="ComponentViewerViewModel"
                                  StateEvents="@x">
             <ChildComponent>
-           
+
                 <ComponentViewer ViewModel="@context.ViewModel"
                                  OnComponentEvent="@context.OnComponentEvent"
                                  ComponentStatus="ComponentStatus.SYNCED"/>
             </ChildComponent>
-        </CarltonDataWrapper>
+        </CarltonDataWrapper>*@
     </Body>
 
     <NavContent>
@@ -35,14 +44,17 @@
         </CarltonDataWrapper>
     </NavContent>
 
-    <PanelContent>
+    @*<PanelContent>
         <Panel />
-    </PanelContent>
+    </PanelContent>*@
 </CarltonDashboardLayout>
 
 
 @code {
-        private string [] x = new string[] { 
+
+    ElementReference body;
+
+    private string [] x = new string[] {
                                              TestBedState.SELECTED_ITEM ,
                                              TestBedState.VIEW_MODEL_CHANGED,
                                              TestBedState.STATUS_CHANGED

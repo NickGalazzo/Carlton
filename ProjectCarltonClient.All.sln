@@ -32,7 +32,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Dashboard.ViewModel
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.Client.Components", "libs\Carlton.Base.Client.Components\Carlton.Base.Client.Components.csproj", "{2BAA2043-D431-409E-9EDD-7F6262735508}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carlton.Base.Client.State.Abstractions", "libs\Carlton.Base.Client.State.Abstractions\Carlton.Base.Client.State.Abstractions.csproj", "{7892EDF9-141B-44A9-A1A7-1378C760DA55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.Client.State.Abstractions", "libs\Carlton.Base.Client.State.Abstractions\Carlton.Base.Client.State.Abstractions.csproj", "{7892EDF9-141B-44A9-A1A7-1378C760DA55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
