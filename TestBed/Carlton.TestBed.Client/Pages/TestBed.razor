@@ -10,20 +10,20 @@
 
 <CarltonDashboardLayout>
     <HeaderContent>
-        <Header />
+        <TestBedHeader />
     </HeaderContent>
 
     <Body>
 
-        <Carlton.Base.Client.Components.ResizablePanel.ResizablePanel>
+        @*<Carlton.Base.Client.Components.ResizablePanel.ResizablePanel>
             <TopContent>
                 <div>Top</div>
             </TopContent>
             <BottomContent>
                 <div>Bottom</div>
             </BottomContent>
-        </Carlton.Base.Client.Components.ResizablePanel.ResizablePanel>
-        @*<CarltonDataWrapper TViewModel="ComponentViewerViewModel"
+        </Carlton.Base.Client.Components.ResizablePanel.ResizablePanel>*@
+        <CarltonDataWrapper TViewModel="ComponentViewerViewModel"
                                  StateEvents="@x">
             <ChildComponent>
 
@@ -31,7 +31,7 @@
                                  OnComponentEvent="@context.OnComponentEvent"
                                  ComponentStatus="ComponentStatus.SYNCED"/>
             </ChildComponent>
-        </CarltonDataWrapper>*@
+        </CarltonDataWrapper>
     </Body>
 
     <NavContent>

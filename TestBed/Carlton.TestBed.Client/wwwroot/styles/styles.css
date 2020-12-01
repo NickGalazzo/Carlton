@@ -74,7 +74,7 @@
   color: white; }
   .carlton-test-bed-nav-tree .selected-tree-node {
     color: #009688; }
-  .collapsed .carlton-test-bed-nav-tree .carlton-base-tree {
+  .collapsed .carlton-test-bed-nav-tree .base-tree {
     display: none; }
 
 .test-bed {

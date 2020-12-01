@@ -6,7 +6,7 @@
 <div class="to-do-list-item">
     <div class="row">
         <div class="col-1">
-            <CarltonCheckbox IsChecked="@ViewModel.IsCompleted" OnCheckboxChangeCallback="(isChecked) => base.OnComponentEvent.InvokeAsync(new ToDoStatusChangedEvent(ViewModel.Id , isChecked))" />
+            <Checkbox IsChecked="@ViewModel.IsCompleted" OnCheckboxChangeCallback="(isChecked) => base.OnComponentEvent.InvokeAsync(new ToDoStatusChangedEvent(ViewModel.Id , isChecked))" />
         </div>
         <span class="col-10">
             <span class="to-do-name align-middle @(ViewModel.IsCompleted ? "completed" : string.Empty)">@ViewModel.Name</span>

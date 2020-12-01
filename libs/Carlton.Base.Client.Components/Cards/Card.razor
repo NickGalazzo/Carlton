@@ -1,0 +1,36 @@
+﻿
+<div class="carlton-card">
+    <div class="container">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row status-row">
+                        <h5 class="col-9 card-title">@CardTitle</h5>
+                        <div class="col-3 status-icon">
+                            @ActionBarContent
+                        </div>
+                    </div>
+                    <div class="header-content">
+                        @HeaderContent
+                    </div>
+                    <div class="primary-content">
+                        @PrimaryCardContent
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@code{
+    [Parameter]
+    public string CardTitle { get; set; }
+    [Parameter]
+    public RenderFragment ActionBarContent { get; set; }
+    [Parameter]
+    public RenderFragment HeaderContent { get; set; }
+    [Parameter]
+    public RenderFragment PrimaryCardContent { get; set; }
+}

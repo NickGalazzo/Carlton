@@ -4,7 +4,7 @@
 @inherits CarltonComponentBase<NavTreeViewModel>
 
 <div class="carlton-test-bed-nav-tree">
-    <CarltonBaseTree TNode="NavTreeItem"
+    <Tree TNode="NavTreeItem"
                      Nodes="ViewModel.TreeItems"
                      ChildSelector="@(item => item.Children)"
                      SelectedNode="@ViewModel.SelectedNode"
@@ -12,7 +12,7 @@
                      HasChildNodes="@(item => item.Children?.Any() == true)"
                      Style="TreeStyle.DefaultTreeStyle">
         <TitleTemplate>@context.DisplayName</TitleTemplate>
-    </CarltonBaseTree>
+    </Tree>
 </div>
 
 @*ExpandedNodes="ViewModel.ExpandedNodes.ToList()"

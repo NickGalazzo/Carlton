@@ -1,6 +1,6 @@
 ﻿@typeparam TNode
 
-<div class="carlton-base-tree @(Visible ? "" : "base-tree-hidden")">
+<div class="base-tree @(Visible ? "" : "base-tree-hidden")">
 
     @foreach(var node in Nodes ?? Enumerable.Empty<TNode>())
     {
@@ -18,7 +18,7 @@
         </div>
         @if(hasChildren)
         {
-            <CarltonBaseTree Nodes="ChildSelector(node)"
+            <Tree Nodes="ChildSelector(node)"
                              TitleTemplate="TitleTemplate"
                              ChildSelector="ChildSelector"
                              ExpandedNodes="ExpandedNodes"

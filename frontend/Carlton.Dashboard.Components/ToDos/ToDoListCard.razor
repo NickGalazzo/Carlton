@@ -5,7 +5,7 @@
 
 <CarltonCssWraper ComponentType="this.GetType()">
     <Content>
-        <CarltonListCard CardTitle="To-Do's" Items="ViewModel.ToDoList">
+        <ListCard CardTitle="To-Do's" Items="ViewModel.ToDoList">
             <ActionBarContent>
                 <DashboardCardActionBar TViewModel="ToDos" Callback="() => base.OnComponentEvent.InvokeAsync()" Status="ComponentStatus" />
             </ActionBarContent>
@@ -13,7 +13,7 @@
             <ItemTemplate Context="toDo">
                 <ToDoListItem ViewModel="toDo" OnComponentEvent="base.OnComponentEvent" />
             </ItemTemplate>
-        </CarltonListCard>
+        </ListCard>
     </Content>
 </CarltonCssWraper>
 

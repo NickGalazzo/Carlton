@@ -1,9 +1,9 @@
 ﻿
-@inherits CarltonCard
+@inherits Card
 @typeparam TItem
 
 <div class="carlton-list-card">
-    <CarltonCard CardTitle="@CardTitle">
+    <Card CardTitle="@CardTitle">
 
         <HeaderContent>
             @HeaderContent
@@ -25,7 +25,7 @@
                 }
             </ul>
         </PrimaryCardContent>
-    </CarltonCard>
+    </Card>
 </div>
 
 @code{
@@ -33,7 +33,6 @@
     public string SubTitle { get; set; }
     [Parameter]
     public RenderFragment<TItem> ItemTemplate { get; set; }
-
     [Parameter]
     public IEnumerable<TItem> Items { get; set; }
 }

@@ -8,7 +8,7 @@
 
 <CarltonCssWraper ComponentType="GetType()">
     <Content>
-        <CarltonListCard CardTitle="Dinner Guests" SubTitle="Guests" Items="ViewModel.Guests">
+        <ListCard CardTitle="Dinner Guests" SubTitle="Guests" Items="ViewModel.Guests">
             <ActionBarContent>
                 <DashboardCardActionBar TViewModel="DinnerGuests" Callback="OnComponentEvent" Status="ComponentStatus" />
             </ActionBarContent>
@@ -20,7 +20,7 @@
             <ItemTemplate Context="guest">
                 <DinnerGuestsListItem ViewModel="guest" ShowIndicator="true"  />
             </ItemTemplate>
-        </CarltonListCard>
+        </ListCard>
     </Content>
 </CarltonCssWraper>
 

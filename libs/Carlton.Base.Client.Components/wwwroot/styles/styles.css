@@ -55,19 +55,19 @@ nav.sidebar {
     nav.sidebar {
       max-width: 250px; } }
 
-.carlton-base-tree {
+.base-tree {
   padding-left: 15px; }
-  .carlton-base-tree .base-tree {
+  .base-tree .base-tree {
     margin-left: 1.25rem; }
-  .carlton-base-tree .base-tree-hidden {
+  .base-tree .base-tree-hidden {
     display: none; }
-  .carlton-base-tree .base-tree-title {
+  .base-tree .base-tree-title {
     margin-top: auto;
     margin-bottom: auto;
     padding: 0px !important; }
-  .carlton-base-tree .curosr-pointer {
+  .base-tree .curosr-pointer {
     cursor: pointer; }
-  .carlton-base-tree .tree-row {
+  .base-tree .tree-row {
     margin-left: 5px; }
 
 .carlton-card {
