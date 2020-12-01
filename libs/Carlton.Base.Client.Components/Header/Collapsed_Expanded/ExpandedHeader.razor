@@ -1,0 +1,16 @@
+﻿@inherits Header
+@namespace Carlton.Base.Client.Components.Header
+
+<CarltonMediaQueryWrapper>
+    <MobileContent>
+        <MobileHeader LogoContent="@LogoContent"
+                      MenuContent="@MenuContent"
+                      ActionContent="@ActionContent" />
+    </MobileContent>
+
+    <DesktopContent>
+        <DesktopExpandedHeader LogoContent="@LogoContent"
+                               MenuContent="@MenuContent"
+                               ActionContent="@ActionContent" />
+    </DesktopContent>
+</CarltonMediaQueryWrapper>
