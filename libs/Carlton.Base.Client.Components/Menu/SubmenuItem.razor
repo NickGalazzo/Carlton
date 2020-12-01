@@ -8,7 +8,7 @@
             @foreach(var item in MenuItem.Submenu)
             {
                 <li>
-                    <CarltonSimpleMenuItem MenuItem="item" />
+                    <SimpleMenuItem MenuItem="item" />
                 </li>
             }
         </ul>
@@ -17,5 +17,5 @@
 
 @code{
     [Parameter]
-    public CarltonMenuItem MenuItem { get; set; }
+    public MenuItem MenuItem { get; set; }
 }

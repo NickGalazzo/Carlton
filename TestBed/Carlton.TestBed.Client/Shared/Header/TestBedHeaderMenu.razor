@@ -1,18 +1,18 @@
-﻿@inherits CarltonMenuParent
+﻿@inherits MenuParent
 
 <div class="test-bed-header-menu">
     <div>
         <span class="icon mdi mdi-24px mdi-settings"></span>
     </div>
 
-    <CarltonMenuParent MenuItems="_menuItems">
+    <MenuParent MenuItems="_menuItems">
         <MenuTemplate>
             <span class="icon mdi mdi-24px mdi-format-paint"></span>
         </MenuTemplate>
         <MenuItemTemplate Context="item">
-            <CarltonSimpleMenuItem MenuItem="item" />
+            <SimpleMenuItem MenuItem="item" />
         </MenuItemTemplate>
-    </CarltonMenuParent>
+    </MenuParent>
 </div>
 
 @code{
@@ -23,16 +23,16 @@
     [CascadingParameter]
     private Action<string> UpdateTheme { get; set; }
 
-    private List<CarltonMenuItem> _menuItems;
+    private List<MenuItem> _menuItems;
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
 
-        _menuItems = new List<CarltonMenuItem>
+        _menuItems = new List<MenuItem>
         {
-            new CarltonMenuItem("Light", () => {UpdateTheme("light"); return Task.CompletedTask; }),
-            new CarltonMenuItem("Dark", () => {UpdateTheme("dark"); return Task.CompletedTask; })
+            new MenuItem("Light", () => {UpdateTheme("light"); return Task.CompletedTask; }),
+            new MenuItem("Dark", () => {UpdateTheme("dark"); return Task.CompletedTask; })
         };
     }
 }

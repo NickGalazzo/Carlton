@@ -5,21 +5,21 @@ using System.Threading.Tasks;
 
 namespace Carlton.Base.Client.Components.Menu
 {
-    public class CarltonMenuItem
+    public class MenuItem
     {
         public string MenuItemName { get; }
         public Func<Task> MenuItemEvent { get; }
-        public IEnumerable<CarltonMenuItem> Submenu { get; }
+        public IEnumerable<MenuItem> Submenu { get; }
         public bool IsSubmenu { get { return Submenu.Any(); } }
 
-        public CarltonMenuItem(string menuItemName, Func<Task> menuItemEvent)
+        public MenuItem(string menuItemName, Func<Task> menuItemEvent)
         {
             MenuItemName = menuItemName;
             MenuItemEvent = menuItemEvent;
-            Submenu = new List<CarltonMenuItem>();
+            Submenu = new List<MenuItem>();
         }
 
-        public CarltonMenuItem(string menuItemName, IEnumerable<CarltonMenuItem> submenu)
+        public MenuItem(string menuItemName, IEnumerable<MenuItem> submenu)
         {
             MenuItemName = menuItemName;
             MenuItemEvent = () => Task.CompletedTask;

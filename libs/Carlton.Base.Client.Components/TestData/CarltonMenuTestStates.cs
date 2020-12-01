@@ -22,23 +22,23 @@ namespace Carlton.Base.Client.Components.Test
             };
         }
 
-        private static IEnumerable<CarltonMenuItem> DefaultMenuItems()
+        private static IEnumerable<MenuItem> DefaultMenuItems()
         {
-            return new List<CarltonMenuItem>
+            return new List<MenuItem>
                   {
-                          new CarltonMenuItem("Option 1", () => Task.CompletedTask),
-                          new CarltonMenuItem("Option 2", () => Task.CompletedTask),
-                          new CarltonMenuItem("Option 3", () => Task.CompletedTask)
+                          new MenuItem("Option 1", () => Task.CompletedTask),
+                          new MenuItem("Option 2", () => Task.CompletedTask),
+                          new MenuItem("Option 3", () => Task.CompletedTask)
                   };
         }
 
-        private static IEnumerable<CarltonMenuItem> MenuItemsWithSubMenu()
+        private static IEnumerable<MenuItem> MenuItemsWithSubMenu()
         {
-            return new List<CarltonMenuItem>
+            return new List<MenuItem>
                   {
-                          new CarltonMenuItem("Option 1", () => Task.CompletedTask),
-                          new CarltonMenuItem("Option 2", () => Task.CompletedTask),
-                          new CarltonMenuItem("Option 3", DefaultMenuItems())
+                          new MenuItem("Option 1", () => Task.CompletedTask),
+                          new MenuItem("Option 2", () => Task.CompletedTask),
+                          new MenuItem("Option 3", DefaultMenuItems())
                   };
         }
     }
