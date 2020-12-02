@@ -1,20 +1,18 @@
 ﻿
 
-
-
 @code {
     [Parameter]
     public RenderFragment ChildContent { get; set; }
 
-    public CarltonTab ActiveTab { get; set; }
+    public Tab ActiveTab { get; set; }
 
-    protected List<CarltonTab> _tabs = new List<CarltonTab>();
+    protected List<Tab> _tabs = new List<Tab>();
 
     protected int _tabCount;
 
     protected int _activeTabIndex;
 
-    internal void AddTab(CarltonTab tab)
+    internal void AddTab(Tab tab)
     {
         _tabCount = _tabCount + 1;
         tab.TabIndex = _tabCount - 1;
@@ -25,13 +23,13 @@
         StateHasChanged();
     }
 
-    internal void ActivateTab(CarltonTab tab)
+    internal void ActivateTab(Tab tab)
     {
         ActiveTab = tab;
         _activeTabIndex = tab.TabIndex;
     }
 
-    private string GetButtonClass(CarltonTab tab)
+    private string GetButtonClass(Tab tab)
     {
         return tab == ActiveTab ? "btn-primary" : "btn-secondary";
     }

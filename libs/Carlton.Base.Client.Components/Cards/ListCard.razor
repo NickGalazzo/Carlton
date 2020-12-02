@@ -1,32 +1,28 @@
-﻿
-@inherits Card
+﻿@inherits Card
 @typeparam TItem
 
-<div class="carlton-list-card">
-    <Card CardTitle="@CardTitle">
+<Card CardTitle="@CardTitle">
+    <HeaderContent>
+        @HeaderContent
+    </HeaderContent>
 
-        <HeaderContent>
-            @HeaderContent
-        </HeaderContent>
+    <ActionBarContent>
+        @ActionBarContent
+    </ActionBarContent>
 
-        <ActionBarContent>
-            @ActionBarContent
-        </ActionBarContent>
+    <PrimaryCardContent>
+        <div class="sub-title">@SubTitle</div>
 
-        <PrimaryCardContent>
-            <div class="sub-title">@SubTitle</div>
-
-            <ul>
-                @foreach(var item in Items)
-                {
-                    <li>
-                        @ItemTemplate(item)
-                    </li>
-                }
-            </ul>
-        </PrimaryCardContent>
-    </Card>
-</div>
+        <ul>
+            @foreach(var item in Items)
+            {
+                <li>
+                    @ItemTemplate(item)
+                </li>
+            }
+        </ul>
+    </PrimaryCardContent>
+</Card>
 
 @code{
     [Parameter]

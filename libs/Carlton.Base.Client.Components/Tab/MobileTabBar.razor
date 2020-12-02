@@ -1,5 +1,5 @@
 ﻿
-@inherits CarltonBaseTabBar
+@inherits TabBar
 
 <div class="carlton-mobile-tabs">
     <div class="carlton-slide-tab">
@@ -12,7 +12,7 @@
     </div>
 
     <div class="bottom-nav">
-        @foreach(CarltonTab tab in _tabs)
+        @foreach(Tab tab in _tabs)
         {
             <div class="bottom-nav-item @(tab==this.ActiveTab ? "active" : "")">
                 <div class="bottom-nav-link" @onclick=@(()=>ActivateTab(tab))>

@@ -5,7 +5,7 @@
 @inherits CarltonComponentBase<DinnerGuestSelfStatus>
 
 
-<CarltonCssWraper ComponentType="GetType()">
+<CssWraper ComponentType="GetType()">
     <Content>
         <DinnerGuestsListItem ViewModel="ViewModel.MyGuestStatus" ShowIndicator="false" />
         <div class="row home-for-dinner-row">
@@ -19,12 +19,12 @@
             </div>
         </div>
 
-        <CarltonSelect Disabled="ViewModel.MyGuestStatus.IsHomeForDinner"
+        <Select Disabled="ViewModel.MyGuestStatus.IsHomeForDinner"
                        Label="Reason?"
                        Options="ViewModel.MySavedReasons.ToDictionary(o => o.ReasonId, o => o.ReasonText)"
                        SelectedValue="ViewModel.MyGuestStatus.Reason.ReasonId"
                        ValueChangedCallback="(kv) => base.OnComponentEvent.InvokeAsync(new DinnerGuestsReasonChangedEvent(ViewModel.MyGuestStatus.GuestId, kv.Key))" />
     </Content>
-</CarltonCssWraper>
+</CssWraper>
 
 

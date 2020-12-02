@@ -1,5 +1,5 @@
 ﻿
-<div class="carlton-toggle-switch" style="font-size: 14px">
+<div class="carlton-toggle-switch">
     @if(IsChecked)
     {
         <input class="switch right" type="checkbox" @onclick="() => OnToggleChangedCallback.InvokeAsync(!IsChecked)" @onclick:preventDefault checked />

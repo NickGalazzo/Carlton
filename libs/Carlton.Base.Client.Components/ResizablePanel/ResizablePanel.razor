@@ -32,7 +32,7 @@
         if(firstRender)
         {
             _module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", $"./_content/{projectName}/js/resizablePanel.js");
-            await _module.InvokeAsync<Task>("initResizablePcanel");
+            await _module.InvokeAsync<Task>("initResizablePanel");
         }
         base.OnAfterRender(firstRender);
     }

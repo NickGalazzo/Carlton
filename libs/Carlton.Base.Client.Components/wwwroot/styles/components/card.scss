@@ -1,6 +1,4 @@
-﻿
-
-.carlton-card {
+﻿.carlton-card {
     width: 325px;
 
     .status-icon {
@@ -11,8 +9,12 @@
         margin-top: -15px;
     }
 
-    ul{
+    .sub-title {
+        font-size: 10pt;
+        margin-top: 20px;
+    }
+
+    ul {
         list-style: none;
     }
 }
-
