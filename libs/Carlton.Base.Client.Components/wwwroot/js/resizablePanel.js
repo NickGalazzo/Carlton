@@ -1,4 +1,4 @@
-﻿export function initResizablePcanel() {
+﻿export function initResizablePanel() {
     const bar = document.querySelector('.splitter-horizontal');
     const top = document.querySelector('.panel-top');
     let mouse_is_down = false;

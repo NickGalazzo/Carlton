@@ -2,7 +2,7 @@
 
 namespace Carlton.Base.Client.Components.Test
 {
-    public static class CarltonCheckboxTestStates
+    public static class CheckboxTestStates
     {
         public static Dictionary<string, object> CheckedState()
         {

@@ -23,11 +23,6 @@
         {
             builder.OpenElement(1, "div");
             builder.OpenComponent(2, ViewModel.ComponentType);
-
-            Console.WriteLine("Made it to OnParameterSet");
-            Console.WriteLine(ViewModel.ComponentType.Name);
-            Console.WriteLine(ViewModel.ComponentViewModel.GetType().Name);
-
             
             Func<object, Task> wrappedCallback  = async (evt) => await base.OnComponentEvent.InvokeAsync(new ComponentViewerAddEvent(evt));
             EventCallback eventCallback = EventCallback.Factory.Create(this, wrappedCallback);
@@ -42,11 +37,12 @@
             }
             else
             {
-                var i = 1;
-                var componentParameters = (IDictionary<string, object>)ViewModel;
+                var i = 1;            
+                var componentParameters = (IDictionary<string, object>)ViewModel.ComponentViewModel;
                 foreach(var key in componentParameters.Keys)
                 {
                     builder.AddAttribute(i, key, componentParameters[key]);
+                    i++;
                 }
             }
 

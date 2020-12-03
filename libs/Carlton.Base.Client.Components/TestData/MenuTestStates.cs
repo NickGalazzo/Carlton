@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Carlton.Base.Client.Components.Test
 {
-    public static class CarltonMenuTestStates
+    public static class MenuTestStates
     {
         public static Dictionary<string, object> Default()
         {
