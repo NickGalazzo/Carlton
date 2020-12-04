@@ -1,6 +1,6 @@
-﻿@inherits MobileTabBar
+﻿@inherits TabBarBase
 
-<div class="carlton-tabs">
+<div class="tabs">
     @foreach(Tab tab in _tabs)
     {
         <a class="carlton-tab @(tab==this.ActiveTab ? "active" : "")" @onclick=@(()=>ActivateTab(tab)) href="#">@tab.DisplayText</a>

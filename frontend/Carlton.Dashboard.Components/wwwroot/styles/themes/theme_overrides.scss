@@ -1,19 +1,18 @@
 ﻿@import "./theme_defenitions.scss";
 
-.carlton-card {
-    .card {
-        @include themify($themes) {
-            background-color: themed('cardBackgroundColor');
-        }
 
-        @include themify($themes) {
-            color: themed('textColor');
-        }
+.card {
+    @include themify($themes) {
+        background-color: themed('cardBackgroundColor');
+    }
 
-        .card-title{
-            @include themify($themes){
-                color: themed('titleColor');
-            }
+    @include themify($themes) {
+        color: themed('textColor');
+    }
+
+    .card-title {
+        @include themify($themes) {
+            color: themed('titleColor');
         }
     }
 }

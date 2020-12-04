@@ -49,24 +49,3 @@
         }
     }
 }
-
-.carlton-menu {
-    @include menu(".menu-root", "focus");
-
-
-    .options {
-        position: relative;
-    }
-}
-
-.carlton-menu-collapser {
-    span {
-        padding-left: 15px;
-        color:white;
-    }
-}
-
-
-
-
-

@@ -1,0 +1,16 @@
+﻿<div class="slide-tab">
+    <button class="slide-button" @onclick="() => IsExpanded = !IsExpanded">@Title</button>
+    <div class="slide-container @(IsExpanded ? "expanded" : string.Empty)">
+        @Content
+    </div>
+</div>
+
+@code{
+    [Parameter]
+    public string Title { get; set; }
+    [Parameter]
+    public RenderFragment Content { get; set; }
+    [Parameter]
+    public bool IsExpanded { get; set; }
+}
+

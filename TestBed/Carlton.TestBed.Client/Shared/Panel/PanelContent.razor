@@ -6,7 +6,7 @@
 @using Carlton.TestBed.Client.Shared.ModelViewer
 
 
-<CarltonTab DisplayText="Component Events" Icon="mdi-flash">
+<Tab DisplayText="Component Events" Icon="mdi-flash">
     <CarltonDataWrapper TViewModel="EventConsoleViewModel"
                         StateEvents="(new string[] {Carlton.TestBed.Client.State.TestBedState.COMPONENT_EVENT_ADDED })">
         <ChildComponent>
@@ -14,31 +14,31 @@
                           OnComponentEvent="@context.OnComponentEvent" />
         </ChildComponent>
     </CarltonDataWrapper>
-</CarltonTab>
-<CarltonTab DisplayText="JSON Payloads" Icon="mdi-code-braces">
+</Tab>
+<Tab DisplayText="JSON Payloads" Icon="mdi-code-braces">
     <CarltonDataWrapper TViewModel="ModelViewerViewModel">
         <ChildComponent>
             <ModelViewer ViewModel="@context.ViewModel"
                          OnComponentEvent="@context.OnComponentEvent" />
         </ChildComponent>
     </CarltonDataWrapper>
-</CarltonTab>
-<CarltonTab DisplayText="Component Status" Icon="mdi-traffic-light">
+</Tab>
+<Tab DisplayText="Component Status" Icon="mdi-traffic-light">
     <CarltonDataWrapper TViewModel="StatusSwitchViewModel">
         <ChildComponent>
             <StatusSwitch ViewModel="@context.ViewModel"
                           OnComponentEvent="@context.OnComponentEvent" />
         </ChildComponent>
     </CarltonDataWrapper>
-</CarltonTab>
-<CarltonTab DisplayText="Source" Icon="mdi-source-branch">
+</Tab>
+<Tab DisplayText="Source" Icon="mdi-source-branch">
     <CarltonDataWrapper TViewModel="SourceViewerViewModel">
         <ChildComponent>
             <SourceViewer ViewModel="@context.ViewModel"
                           OnComponentEvent="@context.OnComponentEvent" />
         </ChildComponent>
     </CarltonDataWrapper>
-</CarltonTab>
-<CarltonTab DisplayText="Tests" Icon="mdi-test-tube">
+</Tab>
+<Tab DisplayText="Tests" Icon="mdi-test-tube">
     @*<TestBedSourceViewer ComponentType="@Service.TestComponentType" />*@
-</CarltonTab>
+</Tab>

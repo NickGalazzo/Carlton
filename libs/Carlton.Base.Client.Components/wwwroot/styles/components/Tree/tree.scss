@@ -1,16 +1,12 @@
 ﻿
-.base-tree {
+.tree {
     padding-left: 15px;
 
-    .base-tree {
+    .tree {
         margin-left: 1.25rem;
     }
 
-    .base-tree-hidden {
-        display: none;
-    }
-
-    .base-tree-title {
+    .title {
         margin-top: auto;
         margin-bottom: auto;
         padding: 0px !important;
@@ -20,7 +16,7 @@
         cursor: pointer;
     }
 
-    .tree-row {
+    .row {
         margin-left: 5px;
     }
 }

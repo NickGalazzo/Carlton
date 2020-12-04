@@ -1,4 +1,4 @@
-﻿.carlton-header {
+﻿::deep .header {
     width: 100%;
     height: 60px;
     background-color: #263238;
@@ -17,7 +17,7 @@
     }
 }
 
-.carlton-collapsed-header {
+::deep .collapsed-header {
     span {
         display: inline-block;
     }

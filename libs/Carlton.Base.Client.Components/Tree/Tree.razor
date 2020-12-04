@@ -1,7 +1,6 @@
 ﻿@typeparam TNode
 
-<div class="base-tree @(Visible ? "" : "base-tree-hidden")">
-
+<div class="tree @(Visible ? "" : "d-none")">
     @foreach(var node in Nodes ?? Enumerable.Empty<TNode>())
     {
         var nodeExpanded = ExpandedNodes.Contains(node);
@@ -10,9 +9,9 @@
 
         <div class="row">
             <span @onclick="@(() => OnToggleNode(node, !nodeExpanded))">
-                <i class="base-tree-icon @(hasChildren ? "": "invisible") @(nodeExpanded ? Style.CollapseNodeIconClass : Style.ExpandNodeIconClass)"></i>
+                <i class="icon @(hasChildren ? "": "invisible") @(nodeExpanded ? Style.CollapseNodeIconClass : Style.ExpandNodeIconClass)"></i>
             </span>
-            <span class="base-tree-title @Style.NodeTitleClass @(nodeSelected ? Style.NodeTitleSelectedClass : "") align-middle" @onclick="@(() => OnSelectNode(node))">
+            <span class="title @Style.NodeTitleClass @(nodeSelected ? Style.NodeTitleSelectedClass : "") align-middle" @onclick="@(() => OnSelectNode(node))">
                 @TitleTemplate(node)
             </span>
         </div>

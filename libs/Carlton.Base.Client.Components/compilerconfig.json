@@ -10,5 +10,65 @@
   {
     "outputFile": "wwwroot/css/styles.css",
     "inputFile": "wwwroot/css/styles.scss"
+  },
+  {
+    "outputFile": "Cards/Card.razor.css",
+    "inputFile": "wwwroot/styles/components/Cards/card.scss"
+  },
+  {
+    "outputFile": "Cards/ListCard.razor.css",
+    "inputFile": "wwwroot/styles/components/Cards/list_card.scss"
+  },
+  {
+    "outputFile": "Header/Header.razor.css",
+    "inputFile": "wwwroot/styles/components/Header/header.scss"
+  },
+  {
+    "outputFile": "Logo/Logo.razor.css",
+    "inputFile": "wwwroot/styles/components/Logo/Logo.scss"
+  },
+  {
+    "outputFile": "Wrapper/MediaQueryWrapper.razor.css",
+    "inputFile": "wwwroot/styles/components/MediaQuery/media_query_wrapper.scss"
+  },
+  {
+    "outputFile": "UserProfile/UserProfile.razor.css",
+    "inputFile": "wwwroot/styles/components/UserProfile/user_profile.scss"
+  },
+  {
+    "outputFile": "ResizablePanel/ResizablePanel.razor.css",
+    "inputFile": "wwwroot/styles/components/ResizablePanel/resizable_panel.scss"
+  },
+  {
+    "outputFile": "Select/Select.razor.css",
+    "inputFile": "wwwroot/styles/components/Select/select.scss"
+  },
+  {
+    "outputFile": "Toggle/ToggleSwitch.razor.css",
+    "inputFile": "wwwroot/styles/components/ToggleSwitch/toggle_switch.scss"
+  },
+  {
+    "outputFile": "Collapser/HamburgerCollapser.razor.css",
+    "inputFile": "wwwroot/styles/components/Layout/hamburger_collapser.scss"
+  },
+  {
+    "outputFile": "Tree/Tree.razor.css",
+    "inputFile": "wwwroot/styles/components/Tree/tree.scss"
+  },
+  {
+    "outputFile": "Tab/DesktopTabBar.razor.css",
+    "inputFile": "wwwroot/styles/components/Tabs/desktop_tab_bar.scss"
+  },
+  {
+    "outputFile": "Tab/MobileTabBar.razor.css",
+    "inputFile": "wwwroot/styles/components/Tabs/mobile_tab_bar.scss"
+  },
+  {
+    "outputFile": "SlideTab/SlideTab.razor.css",
+    "inputFile": "wwwroot/styles/components/SlideTab/slide_tab.scss"
+  },
+  {
+    "outputFile": "Menu/MenuParent.razor.css",
+    "inputFile": "wwwroot/styles/components/Menu/menu.scss"
   }
 ]

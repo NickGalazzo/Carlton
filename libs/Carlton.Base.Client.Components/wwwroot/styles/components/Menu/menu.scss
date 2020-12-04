@@ -1,0 +1,13 @@
+﻿@import "./menu_base";
+
+.menu {
+    @include menu(".menu-root", "focus");
+
+
+    ::deep .options {
+        position: relative;
+    }
+}
+
+
+

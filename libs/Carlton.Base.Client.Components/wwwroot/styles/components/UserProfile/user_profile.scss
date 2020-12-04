@@ -1,7 +1,7 @@
 ﻿
-@import "../mixins/mixins.scss";
+@import "../../mixins/mixins.scss";
 
-.carlton-user-profile {
+.user-profile {
     img {
         @include avatar-img;
     }
@@ -10,11 +10,8 @@
         color: white;
         font-size: 12pt;
     }
-}
 
-
-@media (max-width: 768px) {
-    .carlton-user-profile {
+    @media (max-width: 768px) {
         span {
             display: none;
         }

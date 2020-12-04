@@ -1,0 +1,12 @@
+﻿.tree {
+  padding-left: 15px; }
+  .tree .tree {
+    margin-left: 1.25rem; }
+  .tree .title {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0px !important; }
+  .tree .curosr-pointer {
+    cursor: pointer; }
+  .tree .row {
+    margin-left: 5px; }

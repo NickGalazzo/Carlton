@@ -1,0 +1,12 @@
+﻿@import "./base.scss";
+
+
+.card {
+    @extend %card;
+
+    ul {
+        list-style: none;
+    }
+}
+
+

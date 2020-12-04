@@ -7,44 +7,44 @@ body ul {
 body {
   font-family: "Roboto", sans-serif !important; }
 
-.theme-light .carlton-card .card {
+.theme-light .card {
   background-color: #fff; }
 
-.theme-dark .carlton-card .card {
+.theme-dark .card {
   background-color: #272c33; }
 
-.theme-light .carlton-card .card {
+.theme-light .card {
   color: #757575; }
 
-.theme-dark .carlton-card .card {
+.theme-dark .card {
   color: #c2c2c2; }
 
-.theme-light .carlton-card .card .card-title {
+.theme-light .card .card-title {
   color: #000; }
 
-.theme-dark .carlton-card .card .card-title {
+.theme-dark .card .card-title {
   color: #f2f2f3; }
 
-.carlton-card .carlton-menu li {
+.card .menu li {
   margin-left: 10px;
   padding: 10px; }
 
-.theme-light .carlton-card .carlton-menu span {
+.theme-light .card .menu span {
   color: #757575; }
 
-.theme-dark .carlton-card .carlton-menu span {
+.theme-dark .card .menu span {
   color: #c2c2c2; }
 
-.theme-light .carlton-card .carlton-menu .options {
+.theme-light .card .menu .options {
   background-color: #fff; }
 
-.theme-dark .carlton-card .carlton-menu .options {
+.theme-dark .card .menu .options {
   background-color: #272c33; }
 
-.theme-light .carlton-card .carlton-menu .options a {
+.theme-light .card .menu .options a {
   color: #757575; }
 
-.theme-dark .carlton-card .carlton-menu .options a {
+.theme-dark .card .menu .options a {
   color: #c2c2c2; }
 
 .apartment-status-list-item {
@@ -142,10 +142,6 @@ body {
       color: #757575; }
     .theme-dark .feed-list-item .feed-date-col .feed-date {
       color: #c2c2c2; }
-
-.dinner-guests-list-card .sub-title {
-  font-size: 10pt;
-  margin-top: 20px; }
 
 .dinner-guests-self-status {
   max-width: 500px;
