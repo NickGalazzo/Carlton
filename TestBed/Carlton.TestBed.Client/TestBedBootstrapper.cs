@@ -8,10 +8,14 @@
 using System.Collections.Generic;
 using Carlton.Base.Client.Components.Cards;
 using Carlton.Base.Client.Components.Checkbox;
+using Carlton.Base.Client.Components.Collapser;
+using Carlton.Base.Client.Components.Header;
+using Carlton.Base.Client.Components.Logo;
 using Carlton.Base.Client.Components.ResizablePanel;
 using Carlton.Base.Client.Components.Select;
 using Carlton.Base.Client.Components.Test;
 using Carlton.Base.Client.Components.TestData;
+using Carlton.Base.Client.Components.UserProfile;
 using Carlton.Dashboard.Components;
 using Carlton.Dashboard.Components.Common;
 using Carlton.Dashboard.ViewModels.TestViewModels;
@@ -37,6 +41,8 @@ namespace Carlton.TestBed.Client
               .AddComponent<ListCard<string>>($"{BASE_COMPONENTS}/Cards/ListCard", CardTestStates.DefaultListState())
               .AddComponent<Header>($"{BASE_COMPONENTS}/Header")
               .AddComponent<Logo>($"{BASE_COMPONENTS}/Logo")
+              .AddComponent<HamburgerCollapser>($"{BASE_COMPONENTS}/HamburgerCollapser")
+              .AddComponent<UserProfile>($"{BASE_COMPONENTS}/UserProfile")
               .AddComponent<Checkbox>($"{BASE_COMPONENTS}/checkbox/Checked", CheckboxTestStates.CheckedState())
               .AddComponent<Checkbox>($"{BASE_COMPONENTS}/checkbox/Unchecked", CheckboxTestStates.UncheckedState())
               .AddComponent<Select>($"{BASE_COMPONENTS}/Select/Default", SelectTestStates.Default())

@@ -16,17 +16,17 @@
 .theme-dark main {
   background-color: #383f48; }
 
-.carlton-media-query-wrapper {
+.media-query-wrapper {
   width: 100%; }
-  .theme-light .carlton-media-query-wrapper .carlton-tabs a {
+  .theme-light .media-query-wrapper .tabs a {
     color: #757575; }
-  .theme-dark .carlton-media-query-wrapper .carlton-tabs a {
+  .theme-dark .media-query-wrapper .tabs a {
     color: #c2c2c2; }
-  .theme-light .carlton-media-query-wrapper .tab-selected-bar {
+  .theme-light .media-query-wrapper .tab-selected-bar {
     background-color: #009688; }
-  .theme-dark .carlton-media-query-wrapper .tab-selected-bar {
+  .theme-dark .media-query-wrapper .tab-selected-bar {
     background-color: #00c689; }
-  .carlton-media-query-wrapper textarea {
+  .media-query-wrapper textarea {
     padding: 5px; }
 
 .test-bed-header .user-col {

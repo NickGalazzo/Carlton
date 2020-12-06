@@ -299,30 +299,7 @@ body {
 .dashboard-count-card .count-icon::before {
   line-height: initial; }
 
-.header {
-  width: 100%;
-  height: 60px;
-  background-color: #263238;
-  line-height: 60px; }
-  .header .row {
-    margin-left: 0px;
-    margin-right: 0px; }
-    .header .row .title {
-      padding-left: 0px;
-      padding-right: 0px; }
-  .header span {
-    color: white;
-    font-size: 16pt;
-    vertical-align: middle; }
-  .header img {
-    height: 40px;
-    width: 40px;
-    border-radius: 20px; }
-  .header .logged-in-user {
-    text-align: right; }
-    .header .logged-in-user span {
-      font-size: 12pt; }
-
+/*@import "./components/header.scss";*/
 .logo {
   background-color: #00897b;
   margin-bottom: 20px;

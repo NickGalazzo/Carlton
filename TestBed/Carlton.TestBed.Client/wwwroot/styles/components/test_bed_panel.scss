@@ -1,9 +1,9 @@
 ﻿@import "../themes/theme_defenitions.scss";
 
-.carlton-media-query-wrapper {
+.media-query-wrapper {
     width: 100%;
 
-    .carlton-tabs a {
+    .tabs a {
         @include themify($themes) {
             color: themed('textColor');
         }

@@ -70,5 +70,9 @@
   {
     "outputFile": "Menu/MenuParent.razor.css",
     "inputFile": "wwwroot/styles/components/Menu/menu.scss"
+  },
+  {
+    "outputFile": "Layouts/DashboardLayout.razor.css",
+    "inputFile": "wwwroot/styles/layouts/dashboard_layout.scss"
   }
 ]
