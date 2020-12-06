@@ -1,4 +1,5 @@
-﻿@typeparam TNode
+﻿@namespace Carlton.Base.Client.Components
+@typeparam TNode
 
 <div class="tree @(Visible ? "" : "d-none")">
     @foreach(var node in Nodes ?? Enumerable.Empty<TNode>())
@@ -8,24 +9,24 @@
         var hasChildren = HasChildNodes(node);
 
         <div class="row">
-            <span @onclick="@(() => OnToggleNode(node, !nodeExpanded))">
+            <span  @onclick="@(e => OnToggleNode(node, !nodeExpanded))">
                 <i class="icon @(hasChildren ? "": "invisible") @(nodeExpanded ? Style.CollapseNodeIconClass : Style.ExpandNodeIconClass)"></i>
             </span>
-            <span class="title @Style.NodeTitleClass @(nodeSelected ? Style.NodeTitleSelectedClass : "") align-middle" @onclick="@(() => OnSelectNode(node))">
+            <span class="title @Style.NodeTitleClass @(nodeSelected ? Style.NodeTitleSelectedClass : "") align-middle" @onclick="@(e => OnSelectNode(node))">
                 @TitleTemplate(node)
             </span>
         </div>
         @if(hasChildren)
         {
             <Tree Nodes="ChildSelector(node)"
-                             TitleTemplate="TitleTemplate"
-                             ChildSelector="ChildSelector"
-                             ExpandedNodes="ExpandedNodes"
-                             ExpandedNodesChanged="ExpandedNodesChanged"
-                             SelectedNode="SelectedNode"
-                             SelectedNodeChanged="SelectedNodeChanged"
-                             Visible="nodeExpanded"
-                             HasChildNodes="HasChildNodes" />
+                  TitleTemplate="TitleTemplate"
+                  ChildSelector="ChildSelector"
+                  ExpandedNodes="ExpandedNodes"
+                  ExpandedNodesChanged="ExpandedNodesChanged"
+                  SelectedNode="SelectedNode"
+                  SelectedNodeChanged="SelectedNodeChanged"
+                  Visible="nodeExpanded"
+                  HasChildNodes="HasChildNodes" />
         }
     }
 </div>

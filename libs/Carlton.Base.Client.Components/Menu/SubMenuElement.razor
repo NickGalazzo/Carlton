@@ -1,4 +1,5 @@
-﻿
+﻿@namespace Carlton.Base.Client.Components
+
 <div class="submenu">
     <a href="#" class="submenu-root">@MenuItem.MenuItemName</a>
     <i class="base-tree-icon mdi mdi-24px mdi-chevron-right"></i>
@@ -8,7 +9,7 @@
             @foreach(var item in MenuItem.Submenu)
             {
                 <li>
-                    <SimpleMenuItem MenuItem="item" />
+                    <MenuElement MenuItem="item" />
                 </li>
             }
         </ul>

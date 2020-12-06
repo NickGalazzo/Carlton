@@ -1,4 +1,4 @@
-﻿@using Carlton.Base.Client.Components.Layouts
+﻿@using Carlton.Base.Client.Components
 @using Carlton.Base.Client.State
 @using Carlton.TestBed.Client.Shared.Header
 @using Carlton.TestBed.Client.Shared.NavTree
@@ -15,14 +15,14 @@
 
     <Body>
 
-        @*<Carlton.Base.Client.Components.ResizablePanel.ResizablePanel>
+        @*<ResizablePanel>
             <TopContent>
                 <div>Top</div>
             </TopContent>
             <BottomContent>
                 <div>Bottom</div>
             </BottomContent>
-        </Carlton.Base.Client.Components.ResizablePanel.ResizablePanel>*@
+        </ResizablePanel>*@
         <CarltonDataWrapper TViewModel="ComponentViewerViewModel"
                                  StateEvents="@x">
             <ChildComponent>

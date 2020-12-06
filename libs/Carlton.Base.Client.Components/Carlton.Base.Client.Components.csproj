@@ -9,6 +9,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Button\floating_action_button.scss" />
+    <Content Include="Cards\styles\base.scss" />
+    <Content Include="Logo\logo.scss" />
+    <Content Include="Menu\menu_base.scss" />
+    <Content Include="Notifications\notification.scss" />
+    <Content Include="Styles\animations\fade_out_animation.scss" />
+    <Content Include="Styles\Mixins\avatar_img.scss" />
+    <Content Include="Styles\Overrides\scrollbar.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="compilerconfig.json" />
   </ItemGroup>
 

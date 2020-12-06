@@ -1,15 +1,17 @@
-﻿<div class="header">
+﻿@namespace Carlton.Base.Client.Components
+
+<div class="header">
     @if(IsCollapsed)
     {
         <CollapsedHeader LogoContent="LogoContent"
-                                MenuContent="MenuContent"
-                                ActionContent="ActionContent" />
+                         MenuContent="MenuContent"
+                         ActionContent="ActionContent" />
     }
     else
     {
         <ExpandedHeader LogoContent="LogoContent"
-                               MenuContent="MenuContent"
-                               ActionContent="ActionContent" />
+                        MenuContent="MenuContent"
+                        ActionContent="ActionContent" />
     }
 </div>
 

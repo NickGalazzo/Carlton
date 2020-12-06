@@ -1,5 +1,6 @@
-﻿@using System.Threading.Tasks
- 
+﻿@namespace Carlton.Base.Client.Components
+@using System.Threading.Tasks
+
 <div class="carlton-notification-bar">
     @switch(NotificationType)
     {
@@ -16,7 +17,7 @@
             <FailureNotification></FailureNotification>
             break;
         default:
-           break;
+            break;
     }
 </div>
 

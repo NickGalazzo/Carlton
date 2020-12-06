@@ -1,12 +1,15 @@
-﻿.header {
+﻿$backgroundColor: #263238;
+
+
+.header {
     width: 100%;
     max-height: 60px;
-    background-color: #263238;
+    background-color: $backgroundColor;
     line-height: 60px;
 
     ::deep .row {
 
-        &.header-bar{
+        &.header-bar {
             max-height: 60px;
         }
 

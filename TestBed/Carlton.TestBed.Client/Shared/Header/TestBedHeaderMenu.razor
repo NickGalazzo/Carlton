@@ -1,18 +1,18 @@
-﻿@inherits MenuParent
+﻿@inherits Menu
 
 <div class="test-bed-header-menu">
     <div>
         <span class="icon mdi mdi-24px mdi-settings"></span>
     </div>
 
-    <MenuParent MenuItems="_menuItems">
+    <Menu MenuItems="_menuItems">
         <MenuTemplate>
             <span class="icon mdi mdi-24px mdi-format-paint"></span>
         </MenuTemplate>
         <MenuItemTemplate Context="item">
-            <SimpleMenuItem MenuItem="item" />
+            <MenuElement MenuItem="item" />
         </MenuItemTemplate>
-    </MenuParent>
+    </Menu>
 </div>
 
 @code{

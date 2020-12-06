@@ -1,9 +1,10 @@
-﻿@inherits TabBarBase
+﻿@namespace Carlton.Base.Client.Components
+@inherits TabBarBase
 
 <div class="tabs">
     @foreach(Tab tab in _tabs)
     {
-        <a class="carlton-tab @(tab==this.ActiveTab ? "active" : "")" @onclick=@(()=>ActivateTab(tab)) href="#">@tab.DisplayText</a>
+        <a class="carlton-tab @(tab==this.ActiveTab ? "active" : "")" @onclick="()=>ActivateTab(tab)" href="#">@tab.DisplayText</a>
     }
     <span class="tab-selected-bar"></span>
 </div>

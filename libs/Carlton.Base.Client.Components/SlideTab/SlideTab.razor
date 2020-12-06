@@ -1,4 +1,5 @@
-﻿<div class="slide-tab">
+﻿@namespace Carlton.Base.Client.Components
+<div class="slide-tab">
     <button class="slide-button" @onclick="() => IsExpanded = !IsExpanded">@Title</button>
     <div class="slide-container @(IsExpanded ? "expanded" : string.Empty)">
         @Content

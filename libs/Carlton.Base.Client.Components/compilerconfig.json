@@ -13,66 +13,70 @@
   },
   {
     "outputFile": "Cards/Card.razor.css",
-    "inputFile": "wwwroot/styles/components/Cards/card.scss"
+    "inputFile": "Cards/Card.razor.scss"
   },
   {
     "outputFile": "Cards/ListCard.razor.css",
-    "inputFile": "wwwroot/styles/components/Cards/list_card.scss"
+    "inputFile": "Cards/ListCard.razor.scss"
   },
   {
     "outputFile": "Header/Header.razor.css",
-    "inputFile": "wwwroot/styles/components/Header/header.scss"
+    "inputFile": "Header/Header.razor.scss"
   },
   {
     "outputFile": "Logo/Logo.razor.css",
-    "inputFile": "wwwroot/styles/components/Logo/Logo.scss"
+    "inputFile": "Logo/Logo.razor.scss"
   },
   {
-    "outputFile": "Wrapper/MediaQueryWrapper.razor.css",
-    "inputFile": "wwwroot/styles/components/MediaQuery/media_query_wrapper.scss"
+    "outputFile": "MediaQuery/MediaQueryWrapper.razor.css",
+    "inputFile": "MediaQuery/MediaQueryWrapper.razor.scss"
   },
   {
     "outputFile": "UserProfile/UserProfile.razor.css",
-    "inputFile": "wwwroot/styles/components/UserProfile/user_profile.scss"
+    "inputFile": "UserProfile/UserProfile.razor.scss"
   },
   {
     "outputFile": "ResizablePanel/ResizablePanel.razor.css",
-    "inputFile": "wwwroot/styles/components/ResizablePanel/resizable_panel.scss"
+    "inputFile": "ResizablePanel/ResizablePanel.razor.scss"
   },
   {
     "outputFile": "Select/Select.razor.css",
-    "inputFile": "wwwroot/styles/components/Select/select.scss"
+    "inputFile": "Select/Select.razor.scss"
   },
   {
     "outputFile": "Toggle/ToggleSwitch.razor.css",
-    "inputFile": "wwwroot/styles/components/ToggleSwitch/toggle_switch.scss"
+    "inputFile": "Toggle/ToggleSwitch.razor.scss"
   },
   {
     "outputFile": "Collapser/HamburgerCollapser.razor.css",
-    "inputFile": "wwwroot/styles/components/Layout/hamburger_collapser.scss"
+    "inputFile": "Collapser/HamburgerCollapser.razor.scss"
   },
   {
     "outputFile": "Tree/Tree.razor.css",
-    "inputFile": "wwwroot/styles/components/Tree/tree.scss"
+    "inputFile": "Tree/Tree.razor.scss"
   },
   {
     "outputFile": "Tab/DesktopTabBar.razor.css",
-    "inputFile": "wwwroot/styles/components/Tabs/desktop_tab_bar.scss"
+    "inputFile": "Tab/DesktopTabBar.razor.scss"
   },
   {
     "outputFile": "Tab/MobileTabBar.razor.css",
-    "inputFile": "wwwroot/styles/components/Tabs/mobile_tab_bar.scss"
+    "inputFile": "Tab/MobileTabBar.razor.scss"
   },
   {
     "outputFile": "SlideTab/SlideTab.razor.css",
-    "inputFile": "wwwroot/styles/components/SlideTab/slide_tab.scss"
+    "inputFile": "SlideTab/SlideTab.razor.scss"
   },
   {
     "outputFile": "Menu/MenuParent.razor.css",
-    "inputFile": "wwwroot/styles/components/Menu/menu.scss"
+    "inputFile": "Menu/MenuParent.razor.scss"
   },
   {
     "outputFile": "Layouts/DashboardLayout.razor.css",
-    "inputFile": "wwwroot/styles/layouts/dashboard_layout.scss"
+    "inputFile": "Layouts/DashboardLayout.razor.scss"
+  },
+  {
+    "outputFile": "Wrapper/MediaQueryWrapper.css",
+    "inputFile": "Wrapper/MediaQueryWrapper.scss"
   }
 ]

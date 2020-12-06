@@ -6,22 +6,14 @@
 // The testbed can then be used by simply modifying this bootstrappper file
 
 using System.Collections.Generic;
-using Carlton.Base.Client.Components.Cards;
-using Carlton.Base.Client.Components.Checkbox;
-using Carlton.Base.Client.Components.Collapser;
-using Carlton.Base.Client.Components.Header;
-using Carlton.Base.Client.Components.Logo;
-using Carlton.Base.Client.Components.ResizablePanel;
-using Carlton.Base.Client.Components.Select;
-using Carlton.Base.Client.Components.Test;
-using Carlton.Base.Client.Components.TestData;
-using Carlton.Base.Client.Components.UserProfile;
+using Carlton.Base.Client.Components;
 using Carlton.Dashboard.Components;
 using Carlton.Dashboard.Components.Common;
 using Carlton.Dashboard.ViewModels.TestViewModels;
 using Carlton.TestBed.Client.Shared.NavTree;
 using Carlton.TestBed.TestBedNavTree;
-
+using Carlton.Base.Client.Components.Test;
+using Carlton.Base.Client.Components.TestData;
 
 namespace Carlton.TestBed.Client
 {

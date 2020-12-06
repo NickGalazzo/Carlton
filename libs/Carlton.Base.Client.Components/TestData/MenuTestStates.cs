@@ -1,5 +1,4 @@
-﻿using Carlton.Base.Client.Components.Menu;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Carlton.Base.Client.Components.Test

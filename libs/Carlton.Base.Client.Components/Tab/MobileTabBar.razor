@@ -1,4 +1,4 @@
-﻿
+﻿@namespace Carlton.Base.Client.Components
 @inherits TabBarBase
 
 <div class="mobile-tabs">
@@ -14,7 +14,7 @@
         @foreach(Tab tab in _tabs)
         {
             <div class="bottom-nav-item @(tab==this.ActiveTab ? "active" : "")">
-                <div class="bottom-nav-link" @onclick=@(()=>ActivateTab(tab))>
+                <div class="bottom-nav-link" @onclick="(args)=>ActivateTab(tab)">
                     <i class="mdi mdi-24px @tab.Icon"></i>
                     <span>@tab.DisplayText</span>
                 </div>
