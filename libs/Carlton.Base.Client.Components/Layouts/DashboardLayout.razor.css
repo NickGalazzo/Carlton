@@ -6,6 +6,14 @@
   .container-fluid nav {
     padding-left: 0px;
     padding-right: 0px; }
+    .container-fluid nav.sidebar {
+      height: 100%;
+      position: fixed;
+      overflow-y: auto;
+      z-index: 999; }
+      @media (max-width: 767.98px) {
+        .container-fluid nav.sidebar {
+          max-width: 250px; } }
   .container-fluid .collapsed nav {
     max-width: 50px;
     width: 50px;
@@ -27,12 +35,3 @@
     @media (max-width: 767.98px) {
       .container-fluid :not(.collapsed) main article {
         display: none; } }
-
-nav.sidebar {
-  height: 100%;
-  position: fixed;
-  overflow-y: auto;
-  z-index: 999; }
-  @media (max-width: 767.98px) {
-    nav.sidebar {
-      max-width: 250px; } }

@@ -1,7 +1,10 @@
-﻿.logo {
-    background-color: #00897b;
-    height: 60px;
-    line-height: 60px;
+﻿$backgroundColor: #00897b;
+$headerHeight: 60px;
+
+.logo {
+    background-color: $backgroundColor;
+    height: $headerHeight;
+    line-height: $headerHeight;
 
     span {
         color: white;
@@ -26,8 +29,9 @@
             font-size: 16pt;
         }
     }
+
+    &.collapsed span.title {
+        display: none;
+    }
 }
 
-.collapsed.logo span.title {
-    display: none;
-}

@@ -8,6 +8,17 @@
     nav {
         padding-left: 0px;
         padding-right: 0px;
+
+        &.sidebar {
+            height: 100%;
+            position: fixed;
+            overflow-y: auto;
+            z-index: 999;
+
+            @media (max-width: 767.98px) {
+                max-width: 250px;
+            }
+        }
     }
 
     .collapsed {
@@ -47,17 +58,5 @@
                 }
             }
         }
-    }
-}
-
-
-nav.sidebar {
-    height: 100%;
-    position: fixed;
-    overflow-y: auto;
-    z-index: 999;
-
-    @media (max-width: 767.98px) {
-        max-width: 250px;
     }
 }

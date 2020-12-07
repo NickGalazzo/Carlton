@@ -1,32 +1,33 @@
 ﻿$backgroundColor: #263238;
-
+$headerHeight: 60px;
 
 .header {
     width: 100%;
-    max-height: 60px;
+    max-height: $headerHeight;
     background-color: $backgroundColor;
-    line-height: 60px;
+    line-height: $headerHeight;
 
     ::deep .row {
 
         &.header-bar {
-            max-height: 60px;
+            max-height: $headerHeight;
         }
 
-        max-height: 60px;
+        max-height: $headerHeight;
         margin-left: 0px;
         margin-right: 0px;
 
         .title {
-            max-height: 60px;
+            max-height: $headerHeight;
             padding-left: 0px;
             padding-right: 0px;
         }
     }
-}
 
-::deep .collapsed-header {
-    span {
-        display: inline-block;
+    ::deep .collapsed-header {
+        span {
+            display: inline-block;
+        }
     }
 }
+

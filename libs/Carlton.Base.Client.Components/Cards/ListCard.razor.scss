@@ -1,7 +1,8 @@
-﻿@import "./base.scss";
+﻿@import "./styles/card_base.scss";
 
 .card {
-    @extend %card;
+    width: $cardWidth;
+    @include card-mixin;
 
     ul {
         list-style: none;

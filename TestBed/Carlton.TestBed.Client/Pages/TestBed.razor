@@ -15,22 +15,22 @@
 
     <Body>
 
-        @*<ResizablePanel>
+        <ResizablePanel>
             <TopContent>
-                <div>Top</div>
+                <CarltonDataWrapper TViewModel="ComponentViewerViewModel"
+                                    StateEvents="@x">
+                    <ChildComponent>
+                        <ComponentViewer ViewModel="@context.ViewModel"
+                                         OnComponentEvent="@context.OnComponentEvent"
+                                         ComponentStatus="ComponentStatus.SYNCED" />
+                    </ChildComponent>
+                </CarltonDataWrapper>
             </TopContent>
             <BottomContent>
-                <div>Bottom</div>
+                <Panel/>
             </BottomContent>
-        </ResizablePanel>*@
-        <CarltonDataWrapper TViewModel="ComponentViewerViewModel"
-                                 StateEvents="@x">
-            <ChildComponent>
-                <ComponentViewer ViewModel="@context.ViewModel"
-                                 OnComponentEvent="@context.OnComponentEvent"
-                                 ComponentStatus="ComponentStatus.SYNCED"/>
-            </ChildComponent>
-        </CarltonDataWrapper>
+        </ResizablePanel>
+       
     </Body>
 
     <NavContent>
@@ -44,7 +44,7 @@
     </NavContent>
 
     <PanelContent>
-        <Panel />
+        @*<Panel />*@
     </PanelContent>
 </DashboardLayout>
 

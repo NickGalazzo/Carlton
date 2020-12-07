@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Content Include="Button\floating_action_button.scss" />
-    <Content Include="Cards\styles\base.scss" />
     <Content Include="Logo\logo.scss" />
     <Content Include="Menu\menu_base.scss" />
     <Content Include="Notifications\notification.scss" />
@@ -21,6 +20,8 @@
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
+    <None Include="wwwroot\styles\themes\theme_defenitions.scss" />
+    <None Include="wwwroot\styles\themes\theme_utilities.scss" />
   </ItemGroup>
 
 

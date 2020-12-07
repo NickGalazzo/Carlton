@@ -1,5 +1,7 @@
-﻿
-@import "../Styles/Mixins/avatar_img.scss";
+﻿@import "../Styles/Mixins/avatar_img.scss";
+
+$color: white;
+$font-size:12pt;
 
 .user-profile {
     img {
@@ -7,8 +9,8 @@
     }
 
     span {
-        color: white;
-        font-size: 12pt;
+        color: $color;
+        font-size: $font-size;
     }
 
     @media (max-width: 768px) {
