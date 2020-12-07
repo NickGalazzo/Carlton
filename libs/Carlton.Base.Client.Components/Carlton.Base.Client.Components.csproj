@@ -10,18 +10,17 @@
 
   <ItemGroup>
     <Content Include="Button\floating_action_button.scss" />
-    <Content Include="Logo\logo.scss" />
     <Content Include="Menu\menu_base.scss" />
     <Content Include="Notifications\notification.scss" />
     <Content Include="Styles\animations\fade_out_animation.scss" />
     <Content Include="Styles\Mixins\avatar_img.scss" />
     <Content Include="Styles\Overrides\scrollbar.scss" />
+    <Content Include="Styles\themes\theme_defenitions.scss" />
+    <Content Include="Styles\themes\theme_utilities.scss" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
-    <None Include="wwwroot\styles\themes\theme_defenitions.scss" />
-    <None Include="wwwroot\styles\themes\theme_utilities.scss" />
   </ItemGroup>
 
 

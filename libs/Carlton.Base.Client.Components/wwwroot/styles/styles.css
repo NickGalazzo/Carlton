@@ -2,7 +2,26 @@
 /*@import "./layouts/carlton_dashboard_layout.scss";*/
 /*@import "./components/tree.scss";*/
 /*@import "./components/card.scss";*/
-/*@import "./components/scrollbar.scss";*/
+/* width */
+::-webkit-scrollbar {
+  background-color: #edf1f0;
+  float: left;
+  margin-bottom: 25px;
+  margin-left: 22px;
+  margin-top: 40px;
+  width: 15px;
+  overflow-y: scroll; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px; }
+
 /*@import "./components/select.scss";*/
 /*@import "./components/toggle_switch.scss";*/
 /*@import "./components/tabs.scss";
@@ -14,3 +33,5 @@
 /*@import "./components/user_profile.scss";*/
 /*@import "./components/media_query_wrapper.scss";*/
 /*@import "./components/resizable_panel.scss";*/
+body {
+  overflow: hidden; }

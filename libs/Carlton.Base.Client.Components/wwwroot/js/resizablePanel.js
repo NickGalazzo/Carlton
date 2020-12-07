@@ -5,7 +5,6 @@
 
     bar.addEventListener('mousedown', (e) => {
         mouse_is_down = true;
-        document
     });
 
     document.addEventListener('mousemove', (e) => {

@@ -4,7 +4,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 500px;
+    min-height: 700px;
+    max-height: 550px;
+    overflow: hidden;
+    margin-bottom: 50px;
 
     .panel-top {
         flex: 0 0 auto; /* only manually resize */
@@ -13,13 +16,16 @@
         width: 100%;
         background: #838383;
         color: white;
+        overflow-y: scroll;
+        max-height: 600px;
     }
 
     .splitter-horizontal {
         flex: 0 0 auto;
-        height: 50px;
-        background: url(images/hsizegrip.png) center center no-repeat #535353;
+        height: 20px;
+        background: #535353;
         cursor: row-resize;
+        z-index: 9990;
     }
 
     .panel-bottom {
@@ -27,5 +33,6 @@
         padding: 10px;
         min-height: 200px;
         background: #eee;
+        z-index: 9990;
     }
 }

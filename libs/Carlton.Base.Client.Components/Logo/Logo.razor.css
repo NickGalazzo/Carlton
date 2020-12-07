@@ -1,7 +1,8 @@
 ﻿.logo {
   background-color: #00897b;
   height: 60px;
-  line-height: 60px; }
+  line-height: 60px;
+  margin-bottom: 0px; }
   .logo span {
     color: white;
     font-size: 12pt;
@@ -15,6 +16,5 @@
   @media (min-width: 1366px) {
     .logo span.title {
       font-size: 16pt; } }
-
-.collapsed.logo span.title {
-  display: none; }
+  .logo.collapsed span.title {
+    display: none; }
