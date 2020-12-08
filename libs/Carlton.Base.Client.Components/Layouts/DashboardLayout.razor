@@ -28,10 +28,8 @@
         </main>
     </div>
 </div>
-    <footer>
-        <div>
-            <span>Stuff Here</span>
-        </div>
+    <footer class="row offset-1">
+        @FooterContent
     </footer>
 
 
@@ -45,6 +43,9 @@
 
     [Parameter]
     public RenderFragment PanelContent { get; set; }
+
+    [Parameter]
+    public RenderFragment FooterContent { get; set; }
 
     private bool IsCollapsed { get; set; }
 

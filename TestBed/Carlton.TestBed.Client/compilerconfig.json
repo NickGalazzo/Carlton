@@ -6,5 +6,9 @@
   {
     "outputFile": "wwwroot/styles/styles.css",
     "inputFile": "wwwroot/styles/styles.scss"
+  },
+  {
+    "outputFile": "Shared/Footer/TestBedFooter.razor.css",
+    "inputFile": "Shared/Footer/TestBedFooter.razor.scss"
   }
 ]
