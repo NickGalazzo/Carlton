@@ -9,29 +9,27 @@
         </CascadingValue>
     </CascadingValue>
 </nav>
-<div class="container-fluid">
-    <div class="row @(IsCollapsed ? "collapsed" : string.Empty)">
-        <nav class="sidebar @(IsCollapsed ? string.Empty : "col-md-3 col-lg-3 col-xl-2")">
-            @NavContent
-        </nav>
+<div class="container-fluid @(IsCollapsed ? "collapsed" : string.Empty)">
+    <nav class="sidebar @(IsCollapsed ? string.Empty : "col-md-3 col-lg-3 col-xl-2")">
+        @NavContent
+    </nav>
+    <main role="main" class="@(IsCollapsed ? string.Empty : "col-md-9 col-lg-9 col-xl-10 ml-auto")">
+        <div class="row">
+            @Body
+        </div>
+    </main>
 
-
-        <main role="main" class="@(IsCollapsed ? string.Empty : "col-md-9 col-lg-9 col-xl-10 ml-auto")">
-            <div class="row">
-                @Body
-            </div>
-
-
-            <article class="row">
-                @PanelContent
-            </article>
-        </main>
-    </div>
+    <footer class="row offset-1">
+        @FooterContent
+    </footer>
 </div>
-<footer class="row offset-1">
-    @FooterContent
-</footer>
 
+
+<style>
+    html, body {
+        height: 100%;
+    }
+</style>
 
 
 @code{
@@ -40,9 +38,6 @@
 
     [Parameter]
     public RenderFragment NavContent { get; set; }
-
-    [Parameter]
-    public RenderFragment PanelContent { get; set; }
 
     [Parameter]
     public RenderFragment FooterContent { get; set; }

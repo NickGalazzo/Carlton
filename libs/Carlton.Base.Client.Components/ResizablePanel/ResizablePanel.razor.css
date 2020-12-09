@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 700px;
-  max-height: 550px;
+  /*    min-height: 700px;
+    max-height: 550px;*/
   overflow: hidden;
   margin-bottom: 50px; }
   .resizable-panel .panel-top {
@@ -13,10 +13,10 @@
     padding: 10px;
     height: 150px;
     width: 100%;
-    background: #838383;
-    color: white;
     overflow-y: scroll;
-    max-height: 600px; }
+    max-height: calc(100vh - 125px);
+    box-sizing: border-box;
+    /*   max-height: 600px;*/ }
   .resizable-panel .splitter-horizontal {
     flex: 0 0 auto;
     height: 20px;
@@ -28,5 +28,4 @@
     /* resizable */
     padding: 10px;
     min-height: 200px;
-    background: #eee;
     z-index: 9990; }
