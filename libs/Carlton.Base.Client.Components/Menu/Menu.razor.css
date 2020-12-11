@@ -1,9 +1,6 @@
 ﻿.menu {
   background: none;
-  max-width: 12rem;
-  /*  .options {
-        position: relative;
-    }*/ }
+  max-width: 12rem; }
   .menu *:focus {
     outline: none; }
   .menu .menu-root {
@@ -44,3 +41,5 @@
           color: #c2c2c2; }
     .menu .options li:hover, .menu .options a:hover {
       background-color: #ddd; }
+  .menu .options {
+    position: relative; }

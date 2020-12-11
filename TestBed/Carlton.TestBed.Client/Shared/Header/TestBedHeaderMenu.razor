@@ -5,7 +5,7 @@
         <span class="icon mdi mdi-24px mdi-settings"></span>
     </div>
 
-    <Menu MenuItems="_menuItems">
+    <Menu MenuItems="MenuItems">
         <MenuTemplate>
             <span class="icon mdi mdi-24px mdi-format-paint"></span>
         </MenuTemplate>
@@ -23,16 +23,15 @@
     [CascadingParameter]
     private Action<string> UpdateTheme { get; set; }
 
-    private List<MenuItem> _menuItems;
-
     protected override void OnInitialized()
     {
-        base.OnInitialized();
+        base.MenuItems = new MenuItems(
+            new List<MenuItem>
+            {
+                new MenuItem("Light", () => {UpdateTheme("light"); return Task.CompletedTask; }),
+                new MenuItem("Dark", () => {UpdateTheme("dark"); return Task.CompletedTask; })
+            });
 
-        _menuItems = new List<MenuItem>
-        {
-            new MenuItem("Light", () => {UpdateTheme("light"); return Task.CompletedTask; }),
-            new MenuItem("Dark", () => {UpdateTheme("dark"); return Task.CompletedTask; })
-        };
+        base.OnInitialized();
     }
 }

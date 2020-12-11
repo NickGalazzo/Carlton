@@ -1,0 +1,32 @@
+﻿@using Carlton.Base.Client.Components
+@namespace Carlton.Dashboard.Components
+@inherits CarltonComponentBase<MenuItems>
+
+@switch(ComponentStatus)
+{
+    case ComponentStatus.SYNCED:
+        <KebabMenu MenuItems="ViewModel" />
+        break;
+    case ComponentStatus.SYNCING:
+        <img height="30" src="_content/Carlton.Base.Client.Components/images/spinner.gif" />
+        break;
+    case ComponentStatus.INVALID:
+        <img src="_content/Carlton.Base.Client.Components/images/warning.png" width="40" height="40" />
+        break;
+    default:
+        break;
+}
+
+@code{
+    protected override void OnInitialized()
+    {
+        base.ViewModel = new MenuItems
+        (
+            new List<MenuItem>
+            {
+                new MenuItem("Refresh", async () => await base.OnComponentEvent.InvokeAsync(new DashboardCardMenuRefreshEvent())),
+                new MenuItem("View", async () => await base.OnComponentEvent.InvokeAsync(new DashboardCardDetailsNavEvent()))
+            }
+        );
+    }
+}

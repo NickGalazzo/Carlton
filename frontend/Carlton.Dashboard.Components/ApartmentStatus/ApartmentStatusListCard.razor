@@ -3,13 +3,9 @@
 @namespace Carlton.Dashboard.Components
 @inherits CarltonComponentBase<ApartmentStatuses>
 
-<ListCard CardTitle="Apartment Status"
-          Items="ViewModel.Statuses">
-
+<ListCard CardTitle="Apartment Status" Items="ViewModel.Statuses">
     <ActionBarContent>
-        <DashboardCardActionBar TViewModel="ApartmentStatuses"
-                                Callback="OnComponentEvent"
-                                Status="ComponentStatus" />
+        <DashboardCardActionBar OnComponentEvent="base.OnComponentEvent" ComponentStatus="base.ComponentStatus" />
     </ActionBarContent>
 
     <ItemTemplate Context="status">

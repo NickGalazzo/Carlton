@@ -1,18 +1,12 @@
-﻿@using Carlton.Base.Client.Components
-@using Carlton.Dashboard.ViewModels
-@using Carlton.Dashboard.Components.Common
+﻿@using Carlton.Dashboard.ViewModels
 
 @namespace Carlton.Dashboard.Components
 @inherits CarltonComponentBase<Groceries>
 
 
-<ListCard CardTitle="Groceries"
-          Items="ViewModel.Items">
-
+<ListCard CardTitle="Groceries" Items="ViewModel.Items">
     <ActionBarContent>
-        <DashboardCardActionBar TViewModel="Groceries"
-                                Callback="OnComponentEvent"
-                                Status="ComponentStatus" />
+        <DashboardCardActionBar OnComponentEvent="base.OnComponentEvent" ComponentStatus="base.ComponentStatus" />
     </ActionBarContent>
 
     <ItemTemplate Context="item">

@@ -69,7 +69,7 @@ $duration: 0.25s;
 .menu {
     @include menu(".menu-root", "focus");
 
-  /*  .options {
+    .options {
         position: relative;
-    }*/
+    }
 }

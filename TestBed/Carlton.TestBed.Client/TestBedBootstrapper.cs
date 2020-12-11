@@ -8,7 +8,6 @@
 using System.Collections.Generic;
 using Carlton.Base.Client.Components;
 using Carlton.Dashboard.Components;
-using Carlton.Dashboard.Components.Common;
 using Carlton.Dashboard.ViewModels.TestViewModels;
 using Carlton.TestBed.Client.Shared.NavTree;
 using Carlton.TestBed.TestBedNavTree;
@@ -39,6 +38,8 @@ namespace Carlton.TestBed.Client
               .AddComponent<Checkbox>($"{BASE_COMPONENTS}/checkbox/Unchecked", CheckboxTestStates.UncheckedState())
               .AddComponent<Select>($"{BASE_COMPONENTS}/Select/Default", SelectTestStates.Default())
               .AddComponent<ResizablePanel>($"{BASE_COMPONENTS}/ResizablePanel/Default")
+             
+              
               .AddCarltonComponent<ToDoListItem>("ToDos/ListItem/Checked", ToDoListTestViewModels.ToDoListItemCheckedViewModel())
               .AddCarltonComponent<ToDoListItem>("ToDos/ListItem/Unchecked", ToDoListTestViewModels.ToDoListItemUncheckedViewModel())
               .AddCarltonComponent<ToDoListCard>("ToDos/ListCard/Default", ToDoListTestViewModels.DefaultToDoListViewModel())

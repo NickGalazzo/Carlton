@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Styles\components\dashboard_card.scss" />
     <Content Include="Styles\mixins\mixins.scss" />
     <Content Include="Styles\themes\theme_defenitions.scss" />
     <Content Include="Styles\themes\theme_utilities.scss" />

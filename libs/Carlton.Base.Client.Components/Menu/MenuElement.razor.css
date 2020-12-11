@@ -1,0 +1,10 @@
+﻿span{
+    display: inline-block;
+    width: 100%;
+}
+
+span a{
+    display: inline-block;
+    width: 100%;
+    z-index: 99999;
+}
