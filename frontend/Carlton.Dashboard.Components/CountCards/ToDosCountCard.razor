@@ -3,14 +3,11 @@
 @namespace Carlton.Dashboard.Components
 @inherits CarltonComponentBase<DashboardAggregation>
 
-<CssWraper ComponentType="GetType()">
-    <Content>
-        <DashboardCountCard Count="@ViewModel.Count"
-                            MessageTemplate="@MESSAGE_TEMPLATE"
-                            Icon="@ICON"
-                            AccentColorClass="@ACCENT_COLOR" />
-    </Content>
-</CssWraper>
+<CountCard Count="@ViewModel.Count"
+                    MessageTemplate="@MESSAGE_TEMPLATE"
+                    Icon="@ICON"
+                    AccentColorClass="@ACCENT_COLOR" />
+
 
 
 @code{

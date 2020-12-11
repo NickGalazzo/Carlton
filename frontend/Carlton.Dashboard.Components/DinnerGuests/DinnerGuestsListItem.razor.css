@@ -1,0 +1,21 @@
+﻿.dinner-guests-list-item {
+  margin-top: 10px; }
+  .dinner-guests-list-item img.avatar-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px; }
+  .dinner-guests-list-item .guest-name {
+    font-weight: bold;
+    font-size: 10pt; }
+    .theme-light .dinner-guests-list-item .guest-name {
+      color: #757575; }
+    .theme-dark .dinner-guests-list-item .guest-name {
+      color: #c2c2c2; }
+  .theme-light .dinner-guests-list-item .guest-message {
+    color: #757575; }
+  .theme-dark .dinner-guests-list-item .guest-message {
+    color: #c2c2c2; }
+  .theme-light .dinner-guests-list-item .is-home-for-dinner {
+    color: #009688; }
+  .theme-dark .dinner-guests-list-item .is-home-for-dinner {
+    color: #00c689; }

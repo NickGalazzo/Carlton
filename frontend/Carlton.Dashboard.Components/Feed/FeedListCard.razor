@@ -3,23 +3,19 @@
 @namespace Carlton.Dashboard.Components
 @inherits CarltonComponentBase<FeedItems>
 
-<CarltonCssWraper ComponentType="GetType()">
-    <Content>
-        <ListCard Items="ViewModel.Items"
-                         CardTitle="Feed">
+<ListCard Items="ViewModel.Items"
+          CardTitle="Feed">
 
-            <ActionBarContent>
-                <DashboardCardActionBar TViewModel="FeedItems"
-                                        Callback="OnComponentEvent"
-                                        Status="ComponentStatus" />
-            </ActionBarContent>
+    <ActionBarContent>
+        <DashboardCardActionBar TViewModel="FeedItems"
+                                Callback="OnComponentEvent"
+                                Status="ComponentStatus" />
+    </ActionBarContent>
 
-            <ItemTemplate Context="feedItem">
-                <FeedListItem ViewModel="feedItem" />
-            </ItemTemplate>
-        </ListCard>
-    </Content>
-</CarltonCssWraper>
+    <ItemTemplate Context="feedItem">
+        <FeedListItem ViewModel="feedItem" />
+    </ItemTemplate>
+</ListCard>
 
 
 

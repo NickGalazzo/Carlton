@@ -1,0 +1,31 @@
+﻿@import "../Styles/themes/theme_defenitions.scss";
+
+.dinner-guests-self-status {
+    max-width: 500px;
+    border-bottom-style: dashed;
+    border-bottom-width: thin;
+    padding-bottom: 10px;
+
+    .home-for-dinner-row label {
+        font-size: 10pt;
+        margin-top: 10px;
+
+        @include themify($themes) {
+            color: themed('textColor');
+        }
+    }
+
+    .carlton-select .label {
+        font-size: 10pt;
+
+        @include themify($themes) {
+            color: themed('textColor');
+        }
+    }
+
+    .carlton-checkbox span {
+        @include themify($themes) {
+            color: themed('completedColor');
+        }
+    }
+}

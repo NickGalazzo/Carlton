@@ -9,6 +9,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Styles\browser_resets\browser_styles_reset.scss" />
+    <Content Include="Styles\components\dashboard_card.scss" />
+    <Content Include="Styles\libs\external_styles.scss" />
+    <Content Include="Styles\mixins\mixins.scss" />
+    <Content Include="Styles\themes\theme_defenitions.scss" />
+    <Content Include="Styles\themes\theme_overrides.scss" />
+    <Content Include="Styles\themes\theme_utilities.scss" />
+    <Content Include="Styles\variables\colors.scss" />
+    <Content Include="Styles\variables\fonts.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="compilerconfig.json" />
   </ItemGroup>
 

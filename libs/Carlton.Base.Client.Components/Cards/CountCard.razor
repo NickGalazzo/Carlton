@@ -1,0 +1,32 @@
+﻿@namespace Carlton.Base.Client.Components
+
+<div class="card @(AccentColorClass)">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-3 count-icon mdi mdi-36px @(Icon)"></div>
+            <span class="col-6 offset-2 count-message">@Message</span>
+        </div>
+    </div>
+</div>
+
+
+@code{
+    [Parameter]
+    public int Count { get; set; }
+    [Parameter]
+    public string MessageTemplate { get; set; }
+    [Parameter]
+    public string Icon { get; set; }
+    [Parameter]
+    public string AccentColorClass { get; set; }
+
+
+    public string Message
+    {
+        get
+        {
+            return $"{Count} {MessageTemplate}";
+        }
+    }
+}
+

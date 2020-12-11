@@ -1,6 +1,8 @@
 ﻿$cardWidth: 325px;
 
 @mixin card-mixin {
+    width: $cardWidth;
+
     .status-icon {
         height: 30px;
         text-align: right;

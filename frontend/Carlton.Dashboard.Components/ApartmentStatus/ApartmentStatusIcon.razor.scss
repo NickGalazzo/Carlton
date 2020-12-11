@@ -1,0 +1,7 @@
+﻿@import "../Styles/themes/theme_defenitions.scss";
+
+span.apt-status-icon {
+    @include themify($themes) {
+        color: themed('iconColor');
+    }
+}

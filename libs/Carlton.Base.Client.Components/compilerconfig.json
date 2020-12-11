@@ -82,5 +82,9 @@
   {
     "outputFile": "Theme/ThemeWrapper.razor.css",
     "inputFile": "Theme/ThemeWrapper.razor.scss"
+  },
+  {
+    "outputFile": "Cards/CountCard.razor.css",
+    "inputFile": "Cards/CountCard.razor.scss"
   }
 ]

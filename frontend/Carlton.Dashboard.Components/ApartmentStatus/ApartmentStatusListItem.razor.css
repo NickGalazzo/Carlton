@@ -1,0 +1,11 @@
+﻿.apartment-status-list-item {
+  max-width: 500px;
+  text-align: center; }
+  .theme-light .apartment-status-list-item span.status-value-complete {
+    color: #009688; }
+  .theme-dark .apartment-status-list-item span.status-value-complete {
+    color: #00c689; }
+  .theme-light .apartment-status-list-item span.status-value-incomplete {
+    color: #fec00a; }
+  .theme-dark .apartment-status-list-item span.status-value-incomplete {
+    color: #ffab00; }

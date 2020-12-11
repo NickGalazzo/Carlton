@@ -1,27 +1,23 @@
-﻿@using Carlton.Dashboard.Components.Common 
+﻿@using Carlton.Dashboard.Components.Common
 @using Carlton.Dashboard.ViewModels;
 
 @namespace Carlton.Dashboard.Components
-
 @inherits CarltonComponentBase<DinnerGuests>
 
-<CssWraper ComponentType="GetType()">
-    <Content>
-        <ListCard CardTitle="Dinner Guests" SubTitle="Guests" Items="ViewModel.Guests">
-            <ActionBarContent>
-                <DashboardCardActionBar TViewModel="DinnerGuests" Callback="OnComponentEvent" Status="ComponentStatus" />
-            </ActionBarContent>
+<ListCard CardTitle="Dinner Guests" SubTitle="Guests" Items="ViewModel.Guests">
+    <ActionBarContent>
+        <DashboardCardActionBar TViewModel="DinnerGuests" Callback="OnComponentEvent" Status="ComponentStatus" />
+    </ActionBarContent>
 
-            <HeaderContent>
-                <DinnerGuestsSelfStatus ViewModel="ViewModel.MyDinnerGuestStatus" OnComponentEvent="OnComponentEvent"  />
-            </HeaderContent>
+    <HeaderContent>
+        <DinnerGuestsSelfStatus ViewModel="ViewModel.MyDinnerGuestStatus" OnComponentEvent="OnComponentEvent" />
+    </HeaderContent>
 
-            <ItemTemplate Context="guest">
-                <DinnerGuestsListItem ViewModel="guest" ShowIndicator="true"  />
-            </ItemTemplate>
-        </ListCard>
-    </Content>
-</CssWraper>
+    <ItemTemplate Context="guest">
+        <DinnerGuestsListItem ViewModel="guest" ShowIndicator="true" />
+    </ItemTemplate>
+</ListCard>
+
 
 
 

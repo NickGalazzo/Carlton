@@ -6,5 +6,37 @@
   {
     "outputFile": "wwwroot/styles/styles.css",
     "inputFile": "wwwroot/styles/styles.scss"
+  },
+  {
+    "outputFile": "CountCards/DashboardCountCard.razor.css",
+    "inputFile": "CountCards/DashboardCountCard.razor.scss"
+  },
+  {
+    "outputFile": "DinnerGuests/DinnerGuestsSelfStatus.razor.css",
+    "inputFile": "DinnerGuests/DinnerGuestsSelfStatus.razor.scss"
+  },
+  {
+    "outputFile": "DinnerGuests/DinnerGuestsListItem.razor.css",
+    "inputFile": "DinnerGuests/DinnerGuestsListItem.razor.scss"
+  },
+  {
+    "outputFile": "ApartmentStatus/ApartmentStatusIcon.razor.css",
+    "inputFile": "ApartmentStatus/ApartmentStatusIcon.razor.scss"
+  },
+  {
+    "outputFile": "ApartmentStatus/ApartmentStatusListItem.razor.css",
+    "inputFile": "ApartmentStatus/ApartmentStatusListItem.razor.scss"
+  },
+  {
+    "outputFile": "Feed/FeedListItem.razor.css",
+    "inputFile": "Feed/FeedListItem.razor.scss"
+  },
+  {
+    "outputFile": "Groceries/GroceriesListItem.razor.css",
+    "inputFile": "Groceries/GroceriesListItem.razor.scss"
+  },
+  {
+    "outputFile": "ToDos/ToDoListItem.razor.css",
+    "inputFile": "ToDos/ToDoListItem.razor.scss"
   }
 ]

@@ -3,14 +3,11 @@
 @namespace Carlton.Dashboard.Components
 @inherits CarltonComponentBase<DashboardAggregation>
 
-<CarltonCssWraper ComponentType="GetType()">
-    <Content>
-        <DashboardCountCard Count="@ViewModel.Count"
-                            AccentColorClass="@ACCENT_COLOR"
-                            Icon="@ICON"
-                            MessageTemplate="@MESSAGE_TEMPLATE" />
-    </Content>
-</CarltonCssWraper>
+<CountCard Count="@ViewModel.Count"
+                    AccentColorClass="@ACCENT_COLOR"
+                    Icon="@ICON"
+                    MessageTemplate="@MESSAGE_TEMPLATE" />
+
 
 @code{
     private const string MESSAGE_TEMPLATE = "Pending Statuses";

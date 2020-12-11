@@ -5,21 +5,17 @@
 @namespace Carlton.Dashboard.Components
 @inherits CarltonComponentBase<Groceries>
 
-<CarltonCssWraper ComponentType="GetType()">
-    <Content>
-        <ListCard CardTitle="Groceries"
-                         Items="ViewModel.Items">
 
-            <ActionBarContent>
-                <DashboardCardActionBar TViewModel="Groceries"
-                                        Callback="OnComponentEvent"
-                                        Status="ComponentStatus" />
-            </ActionBarContent>
+<ListCard CardTitle="Groceries"
+          Items="ViewModel.Items">
 
-            <ItemTemplate Context="item">
-                <GroceriesListItem ViewModel="item" />
-            </ItemTemplate>
-        </ListCard>
-    </Content>
-</CarltonCssWraper>
+    <ActionBarContent>
+        <DashboardCardActionBar TViewModel="Groceries"
+                                Callback="OnComponentEvent"
+                                Status="ComponentStatus" />
+    </ActionBarContent>
 
+    <ItemTemplate Context="item">
+        <GroceriesListItem ViewModel="item" />
+    </ItemTemplate>
+</ListCard>

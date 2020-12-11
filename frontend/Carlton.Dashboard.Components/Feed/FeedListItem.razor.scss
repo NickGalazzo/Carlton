@@ -1,5 +1,5 @@
-﻿@import "../themes/theme_defenitions.scss";
-@import "../mixins/mixins.scss";
+﻿@import "../Styles/themes/theme_defenitions.scss";
+@import "../Styles/mixins/mixins.scss";
 
 .feed-list-item {
     max-width: 350px;
@@ -7,8 +7,8 @@
 
     .feed-item-row {
         border-bottom-style: solid;
- 
-        @include themify{
+
+        @include themify {
             border-bottom-color: rgba(themed('textColor'), 0.25);
         }
     }
@@ -38,6 +38,7 @@
             font-size: 8px;
             margin-top: 10px;
             vertical-align: top;
+
             @include themify($themes) {
                 color: themed('textColor');
             }

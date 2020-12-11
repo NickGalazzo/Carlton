@@ -5,26 +5,23 @@
 @inherits CarltonComponentBase<DinnerGuestSelfStatus>
 
 
-<CssWraper ComponentType="GetType()">
-    <Content>
-        <DinnerGuestsListItem ViewModel="ViewModel.MyGuestStatus" ShowIndicator="false" />
-        <div class="row home-for-dinner-row">
-            <div class="col-9">
-                <label>Are you home for dinner?</label>
-            </div>
-            <div class="col-3 text-center">
-                <ToggleSwitch IsChecked="ViewModel.MyGuestStatus.IsHomeForDinner"
-                              OnToggleChangedCallback="(isHomeForDinner) =>
+<DinnerGuestsListItem ViewModel="ViewModel.MyGuestStatus" ShowIndicator="false" />
+<div class="row home-for-dinner-row">
+    <div class="col-9">
+        <label>Are you home for dinner?</label>
+    </div>
+    <div class="col-3 text-center">
+        <ToggleSwitch IsChecked="ViewModel.MyGuestStatus.IsHomeForDinner"
+                      OnToggleChangedCallback="(isHomeForDinner) =>
                                                                      base.OnComponentEvent.InvokeAsync(new DinnerGuestsHomeForDinnerStatusChangeEvent(ViewModel.MyGuestStatus.GuestId, isHomeForDinner))" />
-            </div>
-        </div>
+    </div>
+</div>
 
-        <Select Disabled="ViewModel.MyGuestStatus.IsHomeForDinner"
-                       Label="Reason?"
-                       Options="ViewModel.MySavedReasons.ToDictionary(o => o.ReasonId, o => o.ReasonText)"
-                       SelectedValue="ViewModel.MyGuestStatus.Reason.ReasonId"
-                       ValueChangedCallback="(kv) => base.OnComponentEvent.InvokeAsync(new DinnerGuestsReasonChangedEvent(ViewModel.MyGuestStatus.GuestId, kv.Key))" />
-    </Content>
-</CssWraper>
+<Select Disabled="ViewModel.MyGuestStatus.IsHomeForDinner"
+        Label="Reason?"
+        Options="ViewModel.MySavedReasons.ToDictionary(o => o.ReasonId, o => o.ReasonText)"
+        SelectedValue="ViewModel.MyGuestStatus.Reason.ReasonId"
+        ValueChangedCallback="(kv) => base.OnComponentEvent.InvokeAsync(new DinnerGuestsReasonChangedEvent(ViewModel.MyGuestStatus.GuestId, kv.Key))" />
+
 
 

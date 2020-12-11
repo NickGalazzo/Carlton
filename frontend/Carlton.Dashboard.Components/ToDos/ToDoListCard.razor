@@ -3,19 +3,17 @@
 @namespace Carlton.Dashboard.Components
 @inherits CarltonComponentBase<ToDos>
 
-<CarltonCssWraper ComponentType="this.GetType()">
-    <Content>
-        <ListCard CardTitle="To-Do's" Items="ViewModel.ToDoList">
-            <ActionBarContent>
-                <DashboardCardActionBar TViewModel="ToDos" Callback="() => base.OnComponentEvent.InvokeAsync()" Status="ComponentStatus" />
-            </ActionBarContent>
 
-            <ItemTemplate Context="toDo">
-                <ToDoListItem ViewModel="toDo" OnComponentEvent="base.OnComponentEvent" />
-            </ItemTemplate>
-        </ListCard>
-    </Content>
-</CarltonCssWraper>
+<ListCard CardTitle="To-Do's" Items="ViewModel.ToDoList">
+    <ActionBarContent>
+        <DashboardCardActionBar TViewModel="ToDos" Callback="() => base.OnComponentEvent.InvokeAsync()" Status="ComponentStatus" />
+    </ActionBarContent>
+
+    <ItemTemplate Context="toDo">
+        <ToDoListItem ViewModel="toDo" OnComponentEvent="base.OnComponentEvent" />
+    </ItemTemplate>
+</ListCard>
+
 
 
 

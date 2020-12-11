@@ -1,0 +1,106 @@
+﻿.card {
+  width: 250px; }
+  .card .row {
+    margin: 0px; }
+  .card .count-message {
+    padding: 0px;
+    text-align: center;
+    font-size: 12pt;
+    margin-top: auto;
+    margin-bottom: auto; }
+    .theme-light .card .count-message {
+      color: #757575; }
+    .theme-dark .card .count-message {
+      color: #c2c2c2; }
+  .theme-light .card.accent-color-1 {
+    background-color: #fff; }
+  .theme-dark .card.accent-color-1 {
+    background-color: #1e88e5; }
+  .theme-light .card.accent-color-1 span {
+    color: #000; }
+  .theme-dark .card.accent-color-1 span {
+    color: #f2f2f3; }
+  .card.accent-color-1 .count-icon {
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    padding-left: 8px;
+    padding-right: 6px;
+    padding-top: 6px; }
+    .theme-light .card.accent-color-1 .count-icon {
+      background-color: #1e88e5;
+      color: #fff; }
+    .theme-dark .card.accent-color-1 .count-icon {
+      background-color: #fff;
+      color: #1e88e5; }
+    .card.accent-color-1 .count-icon::before {
+      line-height: initial; }
+  .theme-light .card.accent-color-2 {
+    background-color: #fff; }
+  .theme-dark .card.accent-color-2 {
+    background-color: #00897b; }
+  .theme-light .card.accent-color-2 span {
+    color: #000; }
+  .theme-dark .card.accent-color-2 span {
+    color: #f2f2f3; }
+  .card.accent-color-2 .count-icon {
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    padding-left: 8px;
+    padding-right: 6px;
+    padding-top: 6px; }
+    .theme-light .card.accent-color-2 .count-icon {
+      background-color: #00897b;
+      color: #fff; }
+    .theme-dark .card.accent-color-2 .count-icon {
+      background-color: #fff;
+      color: #00897b; }
+    .card.accent-color-2 .count-icon::before {
+      line-height: initial; }
+  .theme-light .card.accent-color-3 {
+    background-color: #fff; }
+  .theme-dark .card.accent-color-3 {
+    background-color: #e46a76; }
+  .theme-light .card.accent-color-3 span {
+    color: #000; }
+  .theme-dark .card.accent-color-3 span {
+    color: #f2f2f3; }
+  .card.accent-color-3 .count-icon {
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    padding-left: 8px;
+    padding-right: 6px;
+    padding-top: 6px; }
+    .theme-light .card.accent-color-3 .count-icon {
+      background-color: #e46a76;
+      color: #fff; }
+    .theme-dark .card.accent-color-3 .count-icon {
+      background-color: #fff;
+      color: #e46a76; }
+    .card.accent-color-3 .count-icon::before {
+      line-height: initial; }
+  .theme-light .card.accent-color-4 {
+    background-color: #fff; }
+  .theme-dark .card.accent-color-4 {
+    background-color: #ab8ce4; }
+  .theme-light .card.accent-color-4 span {
+    color: #000; }
+  .theme-dark .card.accent-color-4 span {
+    color: #f2f2f3; }
+  .card.accent-color-4 .count-icon {
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    padding-left: 8px;
+    padding-right: 6px;
+    padding-top: 6px; }
+    .theme-light .card.accent-color-4 .count-icon {
+      background-color: #ab8ce4;
+      color: #fff; }
+    .theme-dark .card.accent-color-4 .count-icon {
+      background-color: #fff;
+      color: #ab8ce4; }
+    .card.accent-color-4 .count-icon::before {
+      line-height: initial; }

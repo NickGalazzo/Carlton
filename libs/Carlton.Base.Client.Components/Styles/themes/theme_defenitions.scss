@@ -1,35 +1,52 @@
 ﻿@import "./theme_utilities.scss";
 
 $themes: ( 
-    light: ( 
-        backgroundColor: #fff,
+    light:
+    ( 
+        backgroundColor: #e9edf1,
         textColor: #757575,
+        titleColor: #000,
         cardBackgroundColor: #fff,
         completedColor: #009688,
         pendingColor: #fec00a,
         iconColor: #47a8f4,
-        highColo: #7ac29a,
-        mediumColor: #fec00a,
-        lowColor: #ff7946,
-        accentColorOne: #a48adb,
-        accentColorTwo: #1dbfd4,
-        accentColorThree: #fec00a,
-        accentColorFour: #7ac29a
-        ),
-    dark: (
-        backgroundColor: #000,
-        textColor: #FFF,
-        cardBackgroundColor: #191c24,
-        completedColor: #00c689,
-        pendingColor: #ffab00,
-        iconColor: #0090e7,
         highColor: #7ac29a,
         mediumColor: #fec00a,
         lowColor: #ff7946,
-        accentColorOne: #a48adb,
-        accentColorTwo: #1dbfd4,
-        accentColorThree: #fec00a,
-        accentColorFour: #7ac29a,
-    )
-);
-
+        countBgColor1: #fff,
+        countBgColor2: #fff,
+        countBgColor3: #fff,
+        countBgColor4: #fff,
+        countIconBgColor1: #1e88e5,
+        countIconBgColor2: #00897b,
+        countIconBgColor3: #e46a76,
+        countIconBgColor4: #ab8ce4,
+        countIconColor1: #fff,
+        countIconColor2: #fff,
+        countIconColor3: #fff,
+        countIconColor4: #fff 
+    ),
+    dark: (
+        backgroundColor: #383f48,
+        textColor: #c2c2c2,
+        titleColor: #f2f2f3,
+        cardBackgroundColor: #272c33,
+        completedColor: #00c689,
+        pendingColor: #ffab00,
+        iconColor: #0090e7,
+        highColor: #00897b,
+        mediumColor: #ed9c28,
+        lowColor: #fe4c4f,
+        countBgColor1: #1e88e5,
+        countBgColor2: #00897b,
+        countBgColor3: #e46a76,
+        countBgColor4: #ab8ce4,
+        countIconBgColor1: #fff,
+        countIconBgColor2: #fff,
+        countIconBgColor3: #fff,
+        countIconBgColor4: #fff,
+        countIconColor1: #1e88e5,
+        countIconColor2: #00897b,
+        countIconColor3: #e46a76,
+        countIconColor4: #ab8ce4
+) );

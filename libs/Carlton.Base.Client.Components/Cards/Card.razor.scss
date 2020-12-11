@@ -1,6 +1,5 @@
 ﻿@import "./styles/card_base.scss";
 
 .card {
-    width: $cardWidth;
     @include card-mixin;
 }
