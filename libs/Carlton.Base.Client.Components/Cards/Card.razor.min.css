@@ -1,1 +1,1 @@
-﻿.card{width:325px;}.card .status-icon{height:30px;text-align:right;padding-right:0;padding-left:40px;margin-top:-15px;}.card .sub-title{font-size:10pt;margin-top:20px;}
+﻿.card{width:325px;}.theme-light .card{background-color:#fff;}.theme-dark .card{background-color:#272c33;}.theme-light .card{color:#757575;}.theme-dark .card{color:#c2c2c2;}.theme-light .card .card-title{color:#000;}.theme-dark .card .card-title{color:#f2f2f3;}.card .status-icon{height:30px;text-align:right;padding-right:0;padding-left:40px;margin-top:-15px;}.card .sub-title{font-size:10pt;margin-top:20px;}

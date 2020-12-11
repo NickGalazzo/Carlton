@@ -86,5 +86,13 @@
   {
     "outputFile": "Cards/CountCard.razor.css",
     "inputFile": "Cards/CountCard.razor.scss"
+  },
+  {
+    "outputFile": "Menu/menu_base.css",
+    "inputFile": "Menu/menu_base.scss"
+  },
+  {
+    "outputFile": "Menu/Menu.razor.css",
+    "inputFile": "Menu/Menu.razor.scss"
   }
 ]

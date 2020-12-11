@@ -14,13 +14,13 @@
         }
     }
 
-    span.to-do-completed {
+    ::deep span.to-do-completed {
         @include themify($themes) {
             color: themed('completedColor');
         }
     }
 
-    .carlton-checkbox span {
+    ::deep .checkbox span {
         @include themify($themes) {
             color: themed('completedColor');
         }

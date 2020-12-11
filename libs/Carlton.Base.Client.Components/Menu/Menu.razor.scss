@@ -1,10 +1,75 @@
-﻿@import "./menu_base";
+﻿@import "../Styles/themes/theme_defenitions.scss";
+
+$duration: 0.25s;
+
+@mixin menu($menuRootSelector, $action) {
+    background: none;
+    max-width: 12rem;
+
+    *:focus {
+        outline: none;
+    }
+
+    #{$menuRootSelector} {
+        transform: translate(-0.8rem, -2.5rem) scale(0.6);
+        cursor: pointer;
+
+        li {
+            margin-left: 10px;
+            padding: 10px;
+        }
+
+        span {
+            @include themify($themes) {
+                color: themed('textColor');
+            }
+        }
+    }
+
+    #{$menuRootSelector}:#{$action} ~ .options {
+        opacity: 1;
+        max-height: 15rem;
+        width: 100px;
+    }
+
+    .options {
+        z-index: 999 !important;
+        width: 0px;
+        max-height: 0;
+        text-align: left;
+        opacity: 0;
+        transition: ($duration * 2) opacity ease-in-out, ($duration * 2) max-height ease-in-out;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+
+        @include themify($themes) {
+            background-color: themed('cardBackgroundColor');
+        }
+
+        li {
+            list-style: none;
+            padding-left: 10px;
+            cursor: pointer;
+
+            a {
+                text-decoration: none;
+
+                @include themify($themes) {
+                    color: themed('textColor');
+                }
+            }
+        }
+
+        li:hover, a:hover {
+            background-color: #ddd;
+        }
+    }
+}
+
 
 .menu {
     @include menu(".menu-root", "focus");
 
-
-    ::deep .options {
+  /*  .options {
         position: relative;
-    }
+    }*/
 }

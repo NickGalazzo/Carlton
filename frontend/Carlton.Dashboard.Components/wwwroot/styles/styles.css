@@ -1,5 +1,4 @@
-﻿@import "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
-@import "https://cdn.materialdesignicons.com/4.7.95/css/materialdesignicons.min.css";
+﻿/*@import "../../Styles/libs/external_styles.scss";*/
 body ul {
   padding-inline-start: 0px;
   margin-bottom: 0px; }
@@ -7,42 +6,5 @@ body ul {
 body {
   font-family: "Roboto", sans-serif !important; }
 
-.theme-light .card {
-  background-color: #fff; }
-
-.theme-dark .card {
-  background-color: #272c33; }
-
-.theme-light .card {
-  color: #757575; }
-
-.theme-dark .card {
-  color: #c2c2c2; }
-
-.theme-light .card .card-title {
-  color: #000; }
-
-.theme-dark .card .card-title {
-  color: #f2f2f3; }
-
-.card .menu li {
-  margin-left: 10px;
-  padding: 10px; }
-
-.theme-light .card .menu span {
-  color: #757575; }
-
-.theme-dark .card .menu span {
-  color: #c2c2c2; }
-
-.theme-light .card .menu .options {
-  background-color: #fff; }
-
-.theme-dark .card .menu .options {
-  background-color: #272c33; }
-
-.theme-light .card .menu .options a {
-  color: #757575; }
-
-.theme-dark .card .menu .options a {
-  color: #c2c2c2; }
+/*@import "../../Styles/themes/theme_overrides.scss";
+@import "../../Styles/components/dashboard_card.scss";*/

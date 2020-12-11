@@ -1,7 +1,12 @@
-﻿/*@import "./animations/fade_out_animation.scss";*/
-/*@import "./layouts/carlton_dashboard_layout.scss";*/
-/*@import "./components/tree.scss";*/
-/*@import "./components/card.scss";*/
+﻿@import "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
+@import "https://cdn.materialdesignicons.com/4.7.95/css/materialdesignicons.min.css";
+@import url(../Carlton.Client.Base.Client.Components.styles.css);
+body {
+  overflow: hidden; }
+  body ul {
+    padding-inline-start: 0px;
+    margin-bottom: 0px; }
+
 /* width */
 ::-webkit-scrollbar {
   background-color: #edf1f0;
@@ -21,17 +26,3 @@
 ::-webkit-scrollbar-thumb {
   background: #c1c1c1;
   border-radius: 10px; }
-
-/*@import "./components/select.scss";*/
-/*@import "./components/toggle_switch.scss";*/
-/*@import "./components/tabs.scss";
-@import "./components/tabs_mobile.scss";*/
-/*@import "./components/notification.scss";*/
-/*@import "./components/menu.scss";*/
-/*@import "./components/header.scss";*/
-/*@import "./components/logo.scss";*/
-/*@import "./components/user_profile.scss";*/
-/*@import "./components/media_query_wrapper.scss";*/
-/*@import "./components/resizable_panel.scss";*/
-body {
-  overflow: hidden; }
