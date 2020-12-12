@@ -63,12 +63,9 @@ namespace Carlton.TestBed.Client.State
 
         public async Task UpdateSelectedItemId(object sender, int id)
         {
-            Console.WriteLine($"count: {TreeItems.ToList().Where(_ => !_.IsParentNode).Count()}");
-                TreeItems.ToList().ForEach(_ => Console.WriteLine(_.LeafId));
-            Console.WriteLine($"Invoking Change {TreeItems.Select(_ => _.LeafId)}");
+            TreeItems.ToList().ForEach(_ => Console.WriteLine(_.LeafId));
             SelectedItem = TreeItems.GetLeafById(id);
             this.TestComponentViewModel = SelectedItem.ViewModel;
-            Console.WriteLine($"selectedItem == null: {SelectedItem == null}");
             await StateChanged.Invoke(sender, SELECTED_ITEM).ConfigureAwait(false);
         }
     }

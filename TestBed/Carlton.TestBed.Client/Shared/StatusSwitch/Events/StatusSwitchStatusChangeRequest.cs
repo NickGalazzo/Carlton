@@ -1,13 +1,20 @@
-﻿using Carlton.TestBed.Client.State;
+﻿using Carlton.Base.Client.State;
+using Carlton.TestBed.Client.State;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Carlton.TestBed.Client.Shared.StatusSwitch.StatusChangeEvent
+namespace Carlton.TestBed.Client.Shared.StatusSwitch
 {
+    public record StatusSwitchStatusChangedEvent(ComponentStatus ComponentStatus);
+
+    public class StatusSwitchStatusChangeRequest : ComponentEventRequestBase<StatusSwitchStatusChangedEvent>
+    {
+        public StatusSwitchStatusChangeRequest(object sender, StatusSwitchStatusChangedEvent evt) : base(sender, evt)
+        {
+        }
+    }
+
     public class StatusSwitchStatusChangeRequestHandler : TestBedEventRequestHandlerBase<StatusSwitchStatusChangeRequest>
     {
         public StatusSwitchStatusChangeRequestHandler(TestBedState state) : base(state)

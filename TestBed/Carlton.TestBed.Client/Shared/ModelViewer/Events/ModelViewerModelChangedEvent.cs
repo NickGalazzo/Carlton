@@ -1,12 +1,18 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
-using MediatR;
+﻿using Carlton.Base.Client.State;
 using Carlton.TestBed.Client.State;
-
+using MediatR;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Carlton.TestBed.Client.Shared.ModelViewer
 {
+    public record ModelViewerModelChangedEvent(object ComponentViewModel);
+    public class ModelViewerModelChangeRequest : ComponentEventRequestBase<ModelViewerModelChangedEvent>
+    {
+        public ModelViewerModelChangeRequest(object sender, ModelViewerModelChangedEvent evt) : base(sender, evt)
+        {
+        }
+    }
     public class ModelViewerModelChangeRequestHandler : TestBedEventRequestHandlerBase<ModelViewerModelChangeRequest>
     {
         public ModelViewerModelChangeRequestHandler(TestBedState state) : base(state)
