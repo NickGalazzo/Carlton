@@ -3,7 +3,7 @@
 @using Carlton.TestBed.Client.Shared.Header
 @using Carlton.TestBed.Client.Shared.NavTree
 @using Carlton.TestBed.Client.Shared.ComponentViewer
-@using Carlton.TestBed.Client.Shared.Panel 
+@using Carlton.TestBed.Client.Shared.Panel
 @using Carlton.TestBed.Client.State
 
 @inherits LayoutComponentBase
@@ -14,25 +14,19 @@
     </HeaderContent>
 
     <Body>
-
-        <ResizablePanel>
-            <TopContent>
-                <CarltonDataWrapper TViewModel="ComponentViewerViewModel"
-                                    StateEvents="@x">
-                    <ChildComponent>
-                        <ComponentViewer ViewModel="@context.ViewModel"
-                                         OnComponentEvent="@context.OnComponentEvent"
-                                         ComponentStatus="ComponentStatus.SYNCED" />
-                    </ChildComponent>
-                </CarltonDataWrapper>
-            </TopContent>
-            <BottomContent>
-                <Panel/>
-            </BottomContent>
-        </ResizablePanel>
-       
+        <CarltonDataWrapper TViewModel="ComponentViewerViewModel"
+                            StateEvents="@x">
+            <ChildComponent>
+                <ComponentViewer ViewModel="@context.ViewModel"
+                                 OnComponentEvent="@context.OnComponentEvent"
+                                 ComponentStatus="ComponentStatus.SYNCED" />
+            </ChildComponent>
+        </CarltonDataWrapper>
     </Body>
 
+    <PanelContent>
+        <Panel />
+    </PanelContent>
     <NavContent>
         <CarltonDataWrapper TViewModel="NavTreeViewModel">
             <ChildComponent>
@@ -42,9 +36,8 @@
             </ChildComponent>
         </CarltonDataWrapper>
     </NavContent>
-
     <FooterContent>
-        <Carlton.TestBed.Client.Shared.Footer.TestBedFooter/>
+        <Carlton.TestBed.Client.Shared.Footer.TestBedFooter />
     </FooterContent>
 </DashboardLayout>
 
@@ -53,7 +46,7 @@
 
     ElementReference body;
 
-    private string [] x = new string[] {
+    private string[] x = new string[] {
                                              TestBedState.SELECTED_ITEM ,
                                              TestBedState.VIEW_MODEL_CHANGED,
                                              TestBedState.STATUS_CHANGED

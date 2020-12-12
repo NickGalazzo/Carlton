@@ -15,10 +15,16 @@
     </nav>
     <main role="main" class="@(IsCollapsed ? string.Empty : "col-md-9 col-lg-9 col-xl-10 ml-auto")">
         <div class="row">
-            @Body
+            <ResizablePanel>
+                <TopContent>
+                    @Body
+                </TopContent>
+                <BottomContent>
+                    @PanelContent
+                </BottomContent>
+            </ResizablePanel>
         </div>
     </main>
-
     <footer class="row offset-1">
         @FooterContent
     </footer>
@@ -35,10 +41,10 @@
 @code{
     [Parameter]
     public RenderFragment HeaderContent { get; set; }
-
     [Parameter]
     public RenderFragment NavContent { get; set; }
-
+    [Parameter]
+    public RenderFragment PanelContent { get; set; }
     [Parameter]
     public RenderFragment FooterContent { get; set; }
 

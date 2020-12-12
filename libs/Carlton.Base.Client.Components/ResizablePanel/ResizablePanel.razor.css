@@ -3,8 +3,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  /*    min-height: 700px;
-    max-height: 550px;*/
   overflow: hidden;
   margin-bottom: 50px; }
   .resizable-panel .panel-top {
@@ -15,8 +13,7 @@
     width: 100%;
     overflow-y: scroll;
     max-height: calc(100vh - 125px);
-    box-sizing: border-box;
-    /*   max-height: 600px;*/ }
+    box-sizing: border-box; }
   .resizable-panel .splitter-horizontal {
     flex: 0 0 auto;
     height: 20px;

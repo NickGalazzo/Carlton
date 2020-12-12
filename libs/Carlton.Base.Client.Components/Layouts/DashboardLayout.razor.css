@@ -5,6 +5,10 @@
   margin-right: 0px;
   margin-left: 0px;
   overflow-x: hidden; }
+  .theme-light .container-fluid > .row {
+    background-color: #e9edf1; }
+  .theme-dark .container-fluid > .row {
+    background-color: #383f48; }
   .container-fluid nav {
     left: 0px;
     overflow-x: hidden;
@@ -22,6 +26,10 @@
   .container-fluid main {
     height: 100%;
     overflow: hidden; }
+    .theme-light .container-fluid main {
+      background-color: #e9edf1; }
+    .theme-dark .container-fluid main {
+      background-color: #383f48; }
   .container-fluid.collapsed nav {
     max-width: 50px;
     width: 50px;
