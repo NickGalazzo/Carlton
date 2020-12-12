@@ -1,4 +1,4 @@
-﻿@import "../themes/theme_defenitions.scss";
+﻿/*@import "../../wwwroot/styles/themes/theme_defenitions.scss";
 
 .test-bed-header {
     .user-col {
@@ -21,7 +21,7 @@
         }
     }
 
-    .carlton-menu .menu-root span {
+    .menu .menu-root span {
         color: white;
     }
 
@@ -32,15 +32,5 @@
     li {
         height: 25px;
     }
-
-    .carlton-submenu {
-        .options {
-            left: 50px;
-            top: 75px;
-        }
-
-        i {
-            vertical-align: middle;
-        }
-    }
 }
+*/

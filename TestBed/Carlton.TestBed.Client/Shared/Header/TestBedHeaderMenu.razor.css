@@ -1,0 +1,6 @@
+﻿.test-bed-header-menu {
+  display: inline-flex; }
+  .test-bed-header-menu > div {
+    width: 30px; }
+  .test-bed-header-menu span.mdi {
+    color: white; }

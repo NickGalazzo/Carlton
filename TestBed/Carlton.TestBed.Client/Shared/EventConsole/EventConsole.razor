@@ -5,7 +5,7 @@
 
 <div class="event-console">
     <div class="form-group">
-        <textarea readonly="readonly" rows="8">@ConsoleText</textarea>
+        <Console IsReadOnly="true" Text="@ConsoleText" />
         <button type="button" class="btn btn-info"@onclick="() => base.OnComponentEvent.InvokeAsync(new EventConsoleClearEvent())">
             clear
         </button>

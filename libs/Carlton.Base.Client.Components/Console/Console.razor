@@ -1,0 +1,36 @@
+﻿@namespace Carlton.Base.Client.Components
+
+<textarea disabled="@IsReadOnly"
+          class="@(IsValid ? string.Empty : "error")"
+          rows="8"
+          @onchange="OnViewModelChanged">
+    
+        @Text   
+    </textarea>
+
+@code{
+    [Parameter]
+    public string Text { get; set; }
+    [Parameter]
+    public bool IsReadOnly { get; set; }
+    [Parameter]
+    public Func<string, Task<bool>> ValidateFunc { get; set; } = (_) => Task.FromResult(true);
+    [Parameter]
+    public EventCallback<ChangeEventArgs> OnChangeCallback { get; set; }
+
+    private bool IsValid { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        IsValid = await ValidateFunc(Text);
+        base.OnInitialized();
+    }
+
+    private async Task OnViewModelChanged(ChangeEventArgs args)
+    {
+        IsValid = await ValidateFunc(args.Value.ToString());
+
+        if(IsValid)
+            await OnChangeCallback.InvokeAsync(args);
+    }
+}

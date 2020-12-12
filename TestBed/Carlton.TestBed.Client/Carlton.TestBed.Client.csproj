@@ -24,10 +24,4 @@
     <ProjectReference Include="..\..\libs\Carlton.Base.Client.Components\Carlton.Base.Client.Components.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Update="wwwroot\styles\components\test_bed_nav_tree.scss">
-      <CopyToOutputDirectory>t</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
 </Project>

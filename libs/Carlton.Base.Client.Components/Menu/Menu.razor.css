@@ -14,6 +14,7 @@
     .theme-dark .menu .menu-root span {
       color: #c2c2c2; }
   .menu .menu-root:focus ~ .options {
+    position: absolute;
     opacity: 1;
     max-height: 15rem;
     width: 100px; }

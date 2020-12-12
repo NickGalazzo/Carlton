@@ -5,18 +5,17 @@
 
 <div class="view-model-viewer">
     <div class="form-group">
-        <textarea class="@(ViewModelIsValid ? string.Empty : "error")"
-                  rows="8"
-                  @onchange="OnViewModelChanged">
-            @ViewModelJson
-        </textarea>
+        <Console Text="@ViewModelJson" 
+                 IsReadOnly="false" 
+                 ValidateFunc="ValidateViewModel"
+                 OnChangeCallback="async () => await base.OnComponentEvent.InvokeAsync(new ModelViewerModelChangedEvent(DesieralizedViewModel))"/>
     </div>
 </div>
 
-@code {
-    private bool ViewModelIsValid { get; set; } = true;
 
+@code {
     private string ViewModelJson { get; set; }
+    private object DesieralizedViewModel { get; set; }
 
     protected override void OnParametersSet()
     {
@@ -24,18 +23,17 @@
         base.OnParametersSet();
     }
 
-    private async Task OnViewModelChanged(ChangeEventArgs args)
+    private Task<bool> ValidateViewModel(string vm)
     {
         try
         {
             var currentType = ViewModel.TestComponentViewModel.GetType();
-            var newVM = JsonConvert.DeserializeObject(args.Value.ToString(), currentType);
-            ViewModelIsValid = true;
-            await base.OnComponentEvent.InvokeAsync(new ModelViewerModelChangedEvent(newVM));
+            DesieralizedViewModel = JsonConvert.DeserializeObject(vm, currentType);
+            return Task.FromResult(true);
         }
         catch(Exception)
         {
-            ViewModelIsValid = false;
+            return Task.FromResult(false);
         }
     }
 }

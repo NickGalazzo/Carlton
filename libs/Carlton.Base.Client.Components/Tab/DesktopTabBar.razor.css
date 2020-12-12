@@ -13,6 +13,10 @@
     font-weight: 600;
     color: #424f5a;
     text-align: center; }
+    .theme-light .tabs > a {
+      color: #757575; }
+    .theme-dark .tabs > a {
+      color: #c2c2c2; }
   .tabs > a.active {
     font-weight: 700;
     outline: none; }
@@ -29,3 +33,7 @@
     left: 0;
     transition: left .2s ease;
     -webkit-transition: left .2s ease; }
+    .theme-light .tabs .tab-selected-bar {
+      background-color: #009688; }
+    .theme-dark .tabs .tab-selected-bar {
+      background-color: #00c689; }

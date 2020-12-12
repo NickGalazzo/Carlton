@@ -10,5 +10,29 @@
   {
     "outputFile": "Shared/Footer/TestBedFooter.razor.css",
     "inputFile": "Shared/Footer/TestBedFooter.razor.scss"
+  },
+  {
+    "outputFile": "Shared/EventConsole/EventConsole.razor.css",
+    "inputFile": "Shared/EventConsole/EventConsole.razor.scss"
+  },
+  {
+    "outputFile": "Shared/ModelViewer/ModelViewer.razor.css",
+    "inputFile": "Shared/ModelViewer/ModelViewer.razor.scss"
+  },
+  {
+    "outputFile": "Shared/ComponentViewer/ComponentViewer.razor.css",
+    "inputFile": "Shared/ComponentViewer/ComponentViewer.razor.scss"
+  },
+  {
+    "outputFile": "Shared/StatusSwitch/StatusSwitch.razor.css",
+    "inputFile": "Shared/StatusSwitch/StatusSwitch.razor.scss"
+  },
+  {
+    "outputFile": "Shared/Header/TestBedHeaderMenu.razor.css",
+    "inputFile": "Shared/Header/TestBedHeaderMenu.razor.scss"
+  },
+  {
+    "outputFile": "Shared/Header/TestBedHeaderActions.razor.css",
+    "inputFile": "Shared/Header/TestBedHeaderActions.razor.scss"
   }
 ]

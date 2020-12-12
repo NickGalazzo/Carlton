@@ -3,17 +3,16 @@
 
 @inherits CarltonComponentBase<NavTreeViewModel>
 
-<div class="carlton-test-bed-nav-tree">
-    <Tree TNode="NavTreeItem"
-                     Nodes="ViewModel.TreeItems"
-                     ChildSelector="@(item => item.Children)"
-                     SelectedNode="@ViewModel.SelectedNode"
-                     SelectedNodeChanged="@(async (node) => await base.OnComponentEvent.InvokeAsync(new NavTreeSelectedNodeEvent(node.LeafId)))"
-                     HasChildNodes="@(item => item.Children?.Any() == true)"
-                     Style="TreeStyle.DefaultTreeStyle">
-        <TitleTemplate>@context.DisplayName</TitleTemplate>
-    </Tree>
-</div>
+<Tree TNode="NavTreeItem"
+      Nodes="ViewModel.TreeItems"
+      ChildSelector="@(item => item.Children)"
+      SelectedNode="@ViewModel.SelectedNode"
+      SelectedNodeChanged="@(async (node) => await base.OnComponentEvent.InvokeAsync(new NavTreeSelectedNodeEvent(node.LeafId)))"
+      HasChildNodes="@(item => item.Children?.Any() == true)"
+      Style="TreeStyle.DefaultTreeStyle">
+    <TitleTemplate>@context.DisplayName</TitleTemplate>
+</Tree>
+
 
 @*ExpandedNodes="ViewModel.ExpandedNodes.ToList()"
     ExpandedNodesChanged="(nodes) => base.OnComponentEvent.InvokeAsync(new ExpandedNodesChangedEvent((IEnumerable<TestBedNavTreeItem>) nodes)"*@

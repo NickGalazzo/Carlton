@@ -98,5 +98,9 @@
   {
     "outputFile": "Avatar/Avatar.razor.css",
     "inputFile": "Avatar/Avatar.razor.scss"
+  },
+  {
+    "outputFile": "Console/Console.razor.css",
+    "inputFile": "Console/Console.razor.scss"
   }
 ]

@@ -1,6 +1,16 @@
 ﻿
 .tree {
     padding-left: 15px;
+    background-color: #263238;
+    color: white;
+
+    &:first-of-type {
+        height: 100%;
+    }
+
+    .selected-tree-node {
+        color: #009688;
+    }
 
     .tree {
         margin-left: 1.25rem;
@@ -18,5 +28,9 @@
 
     .row {
         margin-left: 5px;
+    }
+
+    .collapsed & .tree, .collapsed & .row {
+        display: none;
     }
 }

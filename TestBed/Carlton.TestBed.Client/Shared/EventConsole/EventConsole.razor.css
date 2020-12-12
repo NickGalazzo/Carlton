@@ -1,0 +1,8 @@
+﻿.event-console {
+  text-align: center; }
+  .event-console button {
+    display: block;
+    border-color: transparent;
+    background-color: #00897b;
+    margin-left: auto;
+    margin-right: auto; }

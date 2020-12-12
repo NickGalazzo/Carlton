@@ -16,105 +16,11 @@
 .theme-dark main {
   background-color: #383f48; }
 
-.media-query-wrapper {
-  width: 100%; }
-  .theme-light .media-query-wrapper .tabs a {
-    color: #757575; }
-  .theme-dark .media-query-wrapper .tabs a {
-    color: #c2c2c2; }
-  .theme-light .media-query-wrapper .tab-selected-bar {
-    background-color: #009688; }
-  .theme-dark .media-query-wrapper .tab-selected-bar {
-    background-color: #00c689; }
-  .media-query-wrapper textarea {
-    padding: 5px; }
-
-.test-bed-header .user-col {
-  padding: 0px; }
-
-.test-bed-header .options {
-  line-height: initial;
-  font-size: 12pt;
-  top: -15px; }
-  .theme-light .test-bed-header .options {
-    background-color: #fff; }
-  .theme-dark .test-bed-header .options {
-    background-color: #272c33; }
-  .theme-light .test-bed-header .options a {
-    color: #757575; }
-  .theme-dark .test-bed-header .options a {
-    color: #c2c2c2; }
-
-.test-bed-header .carlton-menu .menu-root span {
-  color: white; }
-
-.test-bed-header a {
-  vertical-align: middle; }
-
-.test-bed-header li {
-  height: 25px; }
-
-.test-bed-header .carlton-submenu .options {
-  left: 50px;
-  top: 75px; }
-
-.test-bed-header .carlton-submenu i {
-  vertical-align: middle; }
-
-.test-bed-header-menu {
-  display: inline-flex; }
-  .test-bed-header-menu > div {
-    width: 30px; }
-  .test-bed-header-menu span.mdi {
-    color: white; }
-
-.carlton-test-bed-nav-tree {
-  min-height: 100%;
-  background-color: #263238;
-  color: white; }
-  .carlton-test-bed-nav-tree .selected-tree-node {
-    color: #009688; }
-  .collapsed .carlton-test-bed-nav-tree .tree {
-    display: none; }
-
-.test-bed {
-  height: 500px;
-  padding-top: 20px;
-  margin-left: 50px; }
-  @media (max-width: 767.98px) {
-    .test-bed {
-      margin-left: auto;
-      margin-right: auto; } }
-
-.event-console {
-  text-align: center; }
-  .event-console textarea {
-    width: 100%;
-    max-height: 300px;
-    background-color: black;
-    color: greenyellow;
-    margin-left: auto;
-    margin-right: auto; }
-    .event-console textarea.error {
-      color: red; }
-  .event-console button {
-    display: block;
-    border-color: transparent;
-    background-color: #00897b;
-    margin-left: auto;
-    margin-right: auto; }
-
-.view-model-viewer {
-  text-align: center; }
-  .view-model-viewer textarea {
-    width: 100%;
-    max-height: 300px;
-    background-color: black;
-    color: greenyellow;
-    margin-left: auto;
-    margin-right: auto; }
-    .view-model-viewer textarea.error {
-      color: red; }
-
-.component-status-switch {
-  padding: 20px; }
+/*@import "components/test_bed_panel.scss";*/
+/*@import "components/test_bed_header_actions.scss"; */
+/*@import "components/test_bed_header_menu.scss";*/
+/*@import "components/test_Bed_nav_tree.scss";*/
+/*@import "components/test_bed.scss";*/
+/*@import "components/test_bed_event_console.scss";*/
+/*@import "components/test_bed_view_model_viewer.scss";*/
+/*@import "components/test_bed_status_switch.scss";*/

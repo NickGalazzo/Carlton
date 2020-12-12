@@ -1,4 +1,6 @@
-﻿.tabs {
+﻿@import "../styles/themes/theme_defenitions.scss";
+
+.tabs {
     position: relative;
     display: block;
     padding: 0;
@@ -14,6 +16,10 @@
         font-weight: 600;
         color: #424f5a;
         text-align: center;
+
+        @include themify($themes) {
+            color: themed('textColor');
+        }
     }
 
     > a.active {
@@ -36,5 +42,10 @@
         left: 0;
         transition: left .2s ease;
         -webkit-transition: left .2s ease;
+
+        @include themify($themes) {
+            background-color: themed('completedColor');
+        }
     }
 }
+

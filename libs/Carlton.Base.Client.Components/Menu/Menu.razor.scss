@@ -27,6 +27,7 @@ $duration: 0.25s;
     }
 
     #{$menuRootSelector}:#{$action} ~ .options {
+        position: absolute;
         opacity: 1;
         max-height: 15rem;
         width: 100px;
