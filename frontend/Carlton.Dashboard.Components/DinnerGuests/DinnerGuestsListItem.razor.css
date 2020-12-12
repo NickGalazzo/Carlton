@@ -1,9 +1,5 @@
 ﻿.dinner-guests-list-item {
   margin-top: 10px; }
-  .dinner-guests-list-item img.avatar-img {
-    height: 40px;
-    width: 40px;
-    border-radius: 20px; }
   .dinner-guests-list-item .guest-name {
     font-weight: bold;
     font-size: 10pt; }

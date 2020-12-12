@@ -94,5 +94,9 @@
   {
     "outputFile": "Menu/Menu.razor.css",
     "inputFile": "Menu/Menu.razor.scss"
+  },
+  {
+    "outputFile": "Avatar/Avatar.razor.css",
+    "inputFile": "Avatar/Avatar.razor.scss"
   }
 ]

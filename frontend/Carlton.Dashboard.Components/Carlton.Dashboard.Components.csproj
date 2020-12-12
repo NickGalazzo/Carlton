@@ -9,14 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Styles\mixins\mixins.scss" />
-    <Content Include="Styles\themes\theme_defenitions.scss" />
-    <Content Include="Styles\themes\theme_utilities.scss" />
-    <Content Include="Styles\variables\colors.scss" />
-    <Content Include="Styles\variables\fonts.scss" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <None Include="..\..\libs\Carlton.Base.Client.Components\Styles\themes\theme_defenitions.scss" Link="Styles\themes\theme_defenitions.scss" />
+    <None Include="..\..\libs\Carlton.Base.Client.Components\Styles\themes\theme_utilities.scss" Link="Styles\themes\theme_utilities.scss" />
     <None Include="compilerconfig.json" />
   </ItemGroup>
 
@@ -35,7 +29,9 @@
 
 
   <ItemGroup>
+    <Folder Include="Styles\themes\" />
     <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\styles\" />
   </ItemGroup>
 
 </Project>

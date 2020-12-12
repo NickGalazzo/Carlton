@@ -1,13 +1,7 @@
-﻿@import "../Styles/Mixins/avatar_img.scss";
-
-$color: white;
-$font-size:12pt;
+﻿$color: white;
+$font-size: 12pt;
 
 .user-profile {
-    img {
-        @include avatar-img;
-    }
-
     span {
         color: $color;
         font-size: $font-size;

@@ -7,10 +7,6 @@
       border-bottom-color: rgba(117, 117, 117, 0.25); }
     .theme-dark .feed-list-item .feed-item-row {
       border-bottom-color: rgba(194, 194, 194, 0.25); }
-  .feed-list-item img.avatar-img {
-    height: 40px;
-    width: 40px;
-    border-radius: 20px; }
   .feed-list-item .feed-title {
     font-weight: bold; }
     .theme-light .feed-list-item .feed-title {
