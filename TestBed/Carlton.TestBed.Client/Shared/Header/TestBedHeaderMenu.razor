@@ -1,37 +1,8 @@
-﻿@inherits Menu
-
+﻿
 <div class="test-bed-header-menu">
     <div>
         <span class="icon mdi mdi-24px mdi-settings"></span>
     </div>
 
-    <Menu MenuItems="MenuItems">
-        <MenuTemplate>
-            <span class="icon mdi mdi-24px mdi-format-paint"></span>
-        </MenuTemplate>
-        <MenuItemTemplate Context="item">
-            <MenuElement MenuItem="item" />
-        </MenuItemTemplate>
-    </Menu>
+    <ThemeMenu />
 </div>
-
-@code{
-
-    [CascadingParameter]
-    private string Theme { get; set; }
-
-    [CascadingParameter]
-    private Action<string> UpdateTheme { get; set; }
-
-    protected override void OnInitialized()
-    {
-        base.MenuItems = new MenuItems(
-            new List<MenuItem>
-            {
-                new MenuItem("Light", () => {UpdateTheme("light"); return Task.CompletedTask; }),
-                new MenuItem("Dark", () => {UpdateTheme("dark"); return Task.CompletedTask; })
-            });
-
-        base.OnInitialized();
-    }
-}

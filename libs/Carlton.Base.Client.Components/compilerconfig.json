@@ -102,5 +102,21 @@
   {
     "outputFile": "Console/Console.razor.css",
     "inputFile": "Console/Console.razor.scss"
+  },
+  {
+    "outputFile": "Menu/KebabMenu.razor.css",
+    "inputFile": "Menu/KebabMenu.razor.scss"
+  },
+  {
+    "outputFile": "Menu/KebabMenu2.razor.css",
+    "inputFile": "Menu/KebabMenu2.razor.scss"
+  },
+  {
+    "outputFile": "Menu/MenuElement.razor.css",
+    "inputFile": "Menu/MenuElement.razor.scss"
+  },
+  {
+    "outputFile": "Menu/ThemeMenu.razor.css",
+    "inputFile": "Menu/ThemeMenu.razor.scss"
   }
 ]

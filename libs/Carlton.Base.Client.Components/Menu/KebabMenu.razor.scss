@@ -1,0 +1,46 @@
+﻿$cubic-out: cubic-bezier(.32,2.04,.85,.54);
+$cubic-in: cubic-bezier(.72,1.2,.71,.72);
+$nunito: 'Nunito', sans-serif;
+$cyan: #00bcd4;
+
+
+figure {
+    width: 6px;
+    height: 6px;
+    border-radius: 5px;
+    background: $cyan;
+    margin: 3px 0;
+}
+
+.middle {
+    transition: all 0.25s $cubic-in;
+    transform: scale(1);
+    position: relative;
+    box-shadow: 0 0.1px 0.1px 0 rgba(0, 0, 0, 0.16), 0 0.1px 0.3px 0 rgba(0, 0, 0, 0.12);
+    -webkit-filter: blur(.1px);
+    filter: blur(.1px);
+}
+
+.middle.active {
+    transform: scale(4.5);
+    transition: all 0.25s $cubic-out;
+    box-shadow: 0 0.1px 0.1px 0 rgba(0, 0, 0, 0.16), 0 0.1px 0.3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.cross {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    margin-top: -1px;
+    font-family: $nunito;
+    color: white;
+    transition: all 0.2s $cubic-in;
+    font-size: 22px;
+    user-select: none;
+}
+
+.cross.active {
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0.15s $cubic-out;
+}

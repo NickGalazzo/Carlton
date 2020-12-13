@@ -1,27 +1,28 @@
 ﻿@namespace Carlton.Base.Client.Components
 
-<div class="menu">
-    <a href="#" class="menu-root">
-        @MenuTemplate
-    </a>
+<div class="menu" @onclick="() => IsActive = !IsActive">
+    @MenuTemplate(IsActive)
+    <ul class="dropdown @(IsActive ? "active" : string.Empty)">
 
-    <div class="options">
-        <ul>
-            @foreach(var item in MenuItems.Items)
-            {
-                <li>
-                    @MenuItemTemplate(item)
-                </li>
-            }
-        </ul>
-    </div>
+        @foreach(var item in MenuItems.Items)
+        {
+            <li>
+                @MenuItemTemplate(item)
+            </li>
+        }
+    </ul>
+
 </div>
 
 @code{
     [Parameter]
     public MenuItems MenuItems { get; set; }
     [Parameter]
-    public RenderFragment MenuTemplate { get; set; }
+    public RenderFragment<bool> MenuTemplate { get; set; }
     [Parameter]
     public RenderFragment<MenuItem> MenuItemTemplate { get; set; }
+    private bool IsActive { get; set; }
 }
+
+
+

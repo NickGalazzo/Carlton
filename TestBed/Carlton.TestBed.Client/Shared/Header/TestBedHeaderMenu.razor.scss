@@ -8,4 +8,13 @@
     span.mdi {
         color: white;
     }
+
+    /*Override Menu Styles*/
+    ::deep .menu {
+        position: inherit;
+
+        .icon {
+            color: white;
+        }
+    }
 }

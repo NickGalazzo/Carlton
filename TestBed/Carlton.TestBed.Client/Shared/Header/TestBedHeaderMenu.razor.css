@@ -1,6 +1,11 @@
 ﻿.test-bed-header-menu {
-  display: inline-flex; }
+  display: inline-flex;
+  /*Override Menu Styles*/ }
   .test-bed-header-menu > div {
     width: 30px; }
   .test-bed-header-menu span.mdi {
     color: white; }
+  .test-bed-header-menu ::deep .menu {
+    position: inherit; }
+    .test-bed-header-menu ::deep .menu .icon {
+      color: white; }

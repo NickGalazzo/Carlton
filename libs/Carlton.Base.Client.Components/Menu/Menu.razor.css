@@ -1,46 +1,35 @@
 ﻿.menu {
-  background: none;
-  max-width: 12rem; }
-  .menu *:focus {
-    outline: none; }
-  .menu .menu-root {
-    transform: translate(-0.8rem, -2.5rem) scale(0.6);
-    cursor: pointer; }
-    .menu .menu-root li {
-      margin-left: 10px;
-      padding: 10px; }
-    .theme-light .menu .menu-root span {
-      color: #757575; }
-    .theme-dark .menu .menu-root span {
-      color: #c2c2c2; }
-  .menu .menu-root:focus ~ .options {
-    position: absolute;
-    opacity: 1;
-    max-height: 15rem;
-    width: 100px; }
-  .menu .options {
-    z-index: 999 !important;
-    width: 0px;
-    max-height: 0;
-    text-align: left;
-    opacity: 0;
-    transition: 0.5s opacity ease-in-out, 0.5s max-height ease-in-out;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14); }
-    .theme-light .menu .options {
-      background-color: #fff; }
-    .theme-dark .menu .options {
-      background-color: #272c33; }
-    .menu .options li {
-      list-style: none;
-      padding-left: 10px;
-      cursor: pointer; }
-      .menu .options li a {
-        text-decoration: none; }
-        .theme-light .menu .options li a {
-          color: #757575; }
-        .theme-dark .menu .options li a {
-          color: #c2c2c2; }
-    .menu .options li:hover, .menu .options a:hover {
-      background-color: #ddd; }
-  .menu .options {
-    position: relative; }
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 16px;
+  top: 12px; }
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 3em;
+  transition: all 0.25s ease-out;
+  transform: scale(0);
+  transform-origin: 100% 0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12); }
+  .dropdown li {
+    display: block;
+    width: 100%; }
+    .dropdown li a {
+      width: 100%;
+      padding: 1em 18px;
+      display: inline-block;
+      white-space: pre;
+      box-sizing: border-box;
+      text-align: left; }
+      .dropdown li a:hover {
+        background: #ebebeb; }
+  .dropdown:hover ul {
+    transform: scale(1); }
+
+.dropdown.active {
+  transform: scale(1);
+  transition: all 0.25s cubic-bezier(0.5, 1.8, 0.9, 0.8);
+  z-index: 9999; }

@@ -1,8 +1,8 @@
 ﻿@namespace Carlton.Base.Client.Components
 
-<span>
-    <a href="#" @onclick:preventDefault ="true" @onclick="MenuItem.MenuItemEvent">@MenuItem.MenuItemName</a>
-</span>
+
+<a href="#" @onclick:preventDefault ="true" @onclick="MenuItem.MenuItemEvent">@MenuItem.MenuItemName</a>
+
 @code{
     [Parameter]
     public MenuItem MenuItem { get; set; }

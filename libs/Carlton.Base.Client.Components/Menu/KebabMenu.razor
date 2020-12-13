@@ -1,13 +1,18 @@
 ﻿@namespace Carlton.Base.Client.Components
 
-@inherits Menu
-
-<Menu MenuItems="base.MenuItems">
-    <MenuTemplate>
-        <span class="mdi mdi-24px mdi-dots-vertical"></span>
+<Menu MenuItems="MenuItems">
+    <MenuTemplate Context="isActive">
+        <figure></figure>
+        <figure class="middle @(isActive ? "active" : string.Empty)"></figure>
+        <figure></figure>
+        <p class="cross @(isActive ? "active" : string.Empty)">x</p>
     </MenuTemplate>
     <MenuItemTemplate Context="item">
         <MenuElement MenuItem="item" />
     </MenuItemTemplate>
 </Menu>
 
+@code{
+    [Parameter]
+    public MenuItems MenuItems { get; set; }
+}
