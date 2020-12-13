@@ -1,6 +1,5 @@
 ﻿
 .tree {
-    padding-left: 15px;
     background-color: #263238;
     color: white;
 
@@ -10,6 +9,7 @@
 
     .selected-tree-node {
         color: #009688;
+        font-weight: bold;
     }
 
     .tree {

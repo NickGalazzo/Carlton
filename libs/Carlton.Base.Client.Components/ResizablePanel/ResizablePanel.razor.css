@@ -26,3 +26,7 @@
     padding: 10px;
     min-height: 200px;
     z-index: 9990; }
+    .theme-light .resizable-panel .panel-bottom {
+      background-color: #e9edf1; }
+    .theme-dark .resizable-panel .panel-bottom {
+      background-color: #383f48; }

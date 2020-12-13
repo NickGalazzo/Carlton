@@ -1,15 +1,19 @@
-﻿$cubic-out: cubic-bezier(.32,2.04,.85,.54);
+﻿@import "../styles/themes/theme_defenitions.scss";
+
+$cubic-out: cubic-bezier(.32,2.04,.85,.54);
 $cubic-in: cubic-bezier(.72,1.2,.71,.72);
 $nunito: 'Nunito', sans-serif;
-$cyan: #00bcd4;
 
 
 figure {
     width: 6px;
     height: 6px;
     border-radius: 5px;
-    background: $cyan;
     margin: 3px 0;
+
+    @include themify($themes) {
+        background-color: themed('cardMenuColor');
+    }
 }
 
 .middle {
@@ -34,13 +38,21 @@ figure {
     transform: translate(-50%, -50%) scale(0);
     margin-top: -1px;
     font-family: $nunito;
-    color: white;
     transition: all 0.2s $cubic-in;
     font-size: 22px;
     user-select: none;
+
+    @include themify($themes) {
+        background-color: themed('cardMenuCrossColor');
+    }
 }
 
 .cross.active {
+    background-color: transparent;
     transform: translate(-50%, -50%) scale(1);
     transition: all 0.15s $cubic-out;
+
+    @include themify($themes) {
+        color: themed('cardMenuCrossActiveColor');
+    }
 }

@@ -1,4 +1,5 @@
-﻿$cyan: #00bcd4;
+﻿@import "../styles/themes/theme_defenitions.scss";
+
 $grey: #9e9e9e;
 $shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
 
@@ -20,17 +21,29 @@ $shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
     transform-origin: 100% 0;
     box-shadow: $shadow;
 
+    @include themify($themes) {
+        background-color: themed('cardBackgroundColor');
+    }
+
     li {
         display: block;
         width: 100%;
 
-        a {
+        ::deep a {
             width: 100%;
-            padding: 1em 18px;
+            padding-top: 1em;
+            padding-right: 18px;
+            padding-bottom: 1em;
+            padding-left: 9px;
             display: inline-block;
             white-space: pre;
             box-sizing: border-box;
             text-align: left;
+            font-weight: bold;
+
+            @include themify($themes) {
+                color: themed('textColor');
+            }
 
             &:hover {
                 background: lighten($grey, 30%);

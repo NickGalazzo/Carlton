@@ -9,3 +9,7 @@
     position: inherit; }
     .test-bed-header-menu ::deep .menu .icon {
       color: white; }
+    .test-bed-header-menu ::deep .menu .dropdown {
+      margin-top: 10px; }
+      .test-bed-header-menu ::deep .menu .dropdown li {
+        line-height: initial; }

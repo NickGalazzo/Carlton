@@ -1,4 +1,5 @@
-﻿
+﻿@import "../styles/themes/theme_defenitions.scss";
+
 /* vertical panel */
 .resizable-panel {
     display: flex;
@@ -30,5 +31,10 @@
         padding: 10px;
         min-height: 200px;
         z-index: 9990;
+
+        @include themify($themes) {
+            background-color: themed('backgroundColor');
+        }
     }
 }
+

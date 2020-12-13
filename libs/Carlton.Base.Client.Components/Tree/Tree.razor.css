@@ -1,11 +1,11 @@
 ﻿.tree {
-  padding-left: 15px;
   background-color: #263238;
   color: white; }
   .tree:first-of-type {
     height: 100%; }
   .tree .selected-tree-node {
-    color: #009688; }
+    color: #009688;
+    font-weight: bold; }
   .tree .tree {
     margin-left: 1.25rem; }
   .tree .title {

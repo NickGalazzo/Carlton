@@ -25,7 +25,7 @@
             </ResizablePanel>
         </div>
     </main>
-    <footer class="row offset-1">
+    <footer class="row @(IsCollapsed ? string.Empty : "offset-1")">
         @FooterContent
     </footer>
 </div>
