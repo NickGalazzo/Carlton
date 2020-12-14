@@ -7,8 +7,7 @@
 
 
 <Tab DisplayText="Component Events" Icon="mdi-flash">
-    <CarltonDataWrapper TViewModel="EventConsoleViewModel"
-                        StateEvents="(new string[] {Carlton.TestBed.Client.State.TestBedState.COMPONENT_EVENT_ADDED })">
+    <CarltonDataWrapper TViewModel="EventConsoleViewModel">
         <ChildComponent>
             <EventConsole ViewModel="@context.ViewModel"
                           OnComponentEvent="@context.OnComponentEvent" />

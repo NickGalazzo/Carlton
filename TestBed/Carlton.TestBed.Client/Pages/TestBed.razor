@@ -14,8 +14,7 @@
     </HeaderContent>
 
     <Body>
-        <CarltonDataWrapper TViewModel="ComponentViewerViewModel"
-                            StateEvents="@x">
+        <CarltonDataWrapper TViewModel="ComponentViewerViewModel">
             <ChildComponent>
                 <ComponentViewer ViewModel="@context.ViewModel"
                                  OnComponentEvent="@context.OnComponentEvent"
@@ -31,8 +30,7 @@
         <CarltonDataWrapper TViewModel="NavTreeViewModel">
             <ChildComponent>
                 <NavTree ViewModel="@context.ViewModel"
-                         OnComponentEvent="@context.OnComponentEvent"
-                         ComponentStatus="ComponentStatus.SYNCED" />
+                         OnComponentEvent="@context.OnComponentEvent"/>
             </ChildComponent>
         </CarltonDataWrapper>
     </NavContent>
@@ -42,16 +40,6 @@
 </DashboardLayout>
 
 
-@code {
-
-    ElementReference body;
-
-    private string[] x = new string[] {
-                                             TestBedState.SELECTED_ITEM ,
-                                             TestBedState.VIEW_MODEL_CHANGED,
-                                             TestBedState.STATUS_CHANGED
-                                            };
-}
 
 
 

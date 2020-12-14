@@ -9,9 +9,6 @@
     [Parameter]
     public RenderFragment<CarltonDataWrapperContext<TViewModel>> ChildComponent { get; set; }
 
-    [Parameter]
-    public string[] StateEvents { get; set; } = new string[] { };
-
     [Inject]
     private IMediator Mediatr { get; set; }
 
@@ -20,6 +17,11 @@
 
     [Inject]
     private ICarltonStateStore State { get; set; }
+
+    [Inject]
+    public Func<Type, IEnumerable<string>> StateEventsFunc { get; set; }
+
+    private IEnumerable<string> _stateEvents;
 
     protected CarltonDataWrapperContext<TViewModel> Context { get; set; }
 
@@ -31,6 +33,9 @@
         ////Get VM and initalize context for wrapped component
         var vm = await GetViewModel();
         Context = new CarltonDataWrapperContext<TViewModel>(vm, OnComponentEvent);
+
+        //Get State Events
+        _stateEvents = StateEventsFunc == null ? _stateEvents = new string[0] : StateEventsFunc(typeof(TViewModel));
 
         //Continue initilization
         await base.OnInitializedAsync();
@@ -54,7 +59,7 @@
         if(sender == this)
             return;
 
-        if(!StateEvents.Contains(stateEvent))
+        if(!_stateEvents.Contains(stateEvent))
             return;
 
 
