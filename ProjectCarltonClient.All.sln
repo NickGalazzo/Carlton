@@ -34,6 +34,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.Client.Compone
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.Client.State.Abstractions", "libs\Carlton.Base.Client.State.Abstractions\Carlton.Base.Client.State.Abstractions.csproj", "{7892EDF9-141B-44A9-A1A7-1378C760DA55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carlton.TestBed", "Carlton.TestBed\Carlton.TestBed.csproj", "{1DEBD145-16C9-41FC-A0EC-9C153331CDEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +82,10 @@ Global
 		{7892EDF9-141B-44A9-A1A7-1378C760DA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7892EDF9-141B-44A9-A1A7-1378C760DA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7892EDF9-141B-44A9-A1A7-1378C760DA55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DEBD145-16C9-41FC-A0EC-9C153331CDEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DEBD145-16C9-41FC-A0EC-9C153331CDEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DEBD145-16C9-41FC-A0EC-9C153331CDEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DEBD145-16C9-41FC-A0EC-9C153331CDEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +101,7 @@ Global
 		{A1971418-28DF-4D4A-835C-EFC1152638D7} = {5418CF41-A556-4F22-95F3-A16DDDD9F04B}
 		{2BAA2043-D431-409E-9EDD-7F6262735508} = {B9E0019C-401B-4C47-B8AF-0D9E13CD82FF}
 		{7892EDF9-141B-44A9-A1A7-1378C760DA55} = {B9E0019C-401B-4C47-B8AF-0D9E13CD82FF}
+		{1DEBD145-16C9-41FC-A0EC-9C153331CDEF} = {E44C0D02-04CB-48B4-8667-FF13AFA29740}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBDE59CF-F00E-4E6B-893E-48336D0796B2}

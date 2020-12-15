@@ -5,23 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="compilerconfig.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.0" PrivateAssets="all" />
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="compilerconfig.json" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\..\Carlton.TestBed\Carlton.TestBed.csproj" />
     <ProjectReference Include="..\..\frontend\Carlton.Dashboard.Components\Carlton.Dashboard.Components.csproj" />
-    <ProjectReference Include="..\..\libs\Carlton.Base.Client.State\Carlton.Base.Client.State.csproj" />
-    <ProjectReference Include="..\..\libs\Carlton.Base.Client.Components\Carlton.Base.Client.Components.csproj" />
   </ItemGroup>
 
 </Project>

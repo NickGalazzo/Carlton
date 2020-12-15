@@ -1,0 +1,17 @@
+﻿@using Carlton.Base.Client.State
+@namespace Carlton.TestBed.Components
+@inherits CarltonComponentBase<StatusSwitchViewModel>
+
+<div class="component-status-switch">
+    <div class="btn-group">
+        @foreach(var status in Enum.GetValues(typeof(ComponentStatus)).Cast<ComponentStatus>())
+        {
+            <button type="button" class="btn btn-info 
+                    @(status == ViewModel.TestComponentStatus ? "active" : string.Empty)"
+                    @onclick="async () =>await base.OnComponentEvent.InvokeAsync(new StatusSwitchStatusChangedEvent(status))">
+                @Enum.GetName(typeof(ComponentStatus), status)
+            </button>
+        }
+    </div>
+</div>
+

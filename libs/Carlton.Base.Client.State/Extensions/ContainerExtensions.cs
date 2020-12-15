@@ -9,7 +9,7 @@ namespace Carlton.Base.Client.State
 {
     public static class ContainerExtensions
     {
-        public static void AddCarltonState(this IServiceCollection services, Assembly assembly, Action<StateEventMapperBuiler> builder)
+        public static void AddCarltonState(this IServiceCollection services, Action<StateEventMapperBuiler> builder, params Assembly[] assemblies)
         {
             var evtMap = new Dictionary<Type, Type>();
 
@@ -22,7 +22,7 @@ namespace Carlton.Base.Client.State
             });
 
             //Search assemblies and create a dictionary for 
-            foreach(var type in assembly.GetTypes())
+            foreach(var type in assemblies.SelectMany(_ => _.GetTypes()))
             {
                 if(type.IsInterface || type.IsAbstract)
                     continue;
@@ -90,10 +90,9 @@ namespace Carlton.Base.Client.State
         {
             private readonly IList<string> _stateEvents = new List<string>();
                         
-            public EventListBuider AddStateEvent(string stateEvent)
+            public void AddStateEvent(string stateEvent)
             {
                 _stateEvents.Add(stateEvent);
-                return this;
             }
 
             public IEnumerable<string> Build()

@@ -1,0 +1,40 @@
+﻿@using Newtonsoft.Json
+@using Carlton.Base.Client.Components 
+@using Carlton.Base.Client.State
+@namespace Carlton.TestBed.Components
+@inherits CarltonComponentBase<ModelViewerViewModel>
+
+<div class="view-model-viewer">
+    <div class="form-group">
+        <Console Text="@ViewModelJson"
+                 IsReadOnly="false"
+                 ValidateFunc="ValidateViewModel"
+                 OnChangeCallback="async () => await base.OnComponentEvent.InvokeAsync(new ModelViewerModelChangedEvent(DesieralizedViewModel))" />
+    </div>
+</div>
+
+
+@code {
+    private string ViewModelJson { get; set; }
+    private object DesieralizedViewModel { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        ViewModelJson = JsonConvert.SerializeObject(ViewModel.TestComponentViewModel, Formatting.Indented);
+        base.OnParametersSet();
+    }
+
+    private Task<bool> ValidateViewModel(string vm)
+    {
+        try
+        {
+            var currentType = ViewModel.TestComponentViewModel.GetType();
+            DesieralizedViewModel = JsonConvert.DeserializeObject(vm, currentType);
+            return Task.FromResult(true);
+        }
+        catch(Exception)
+        {
+            return Task.FromResult(false);
+        }
+    }
+}

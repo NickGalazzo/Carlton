@@ -1,0 +1,30 @@
+﻿[
+  {
+    "outputFile": "Components/Footer/TestBedFooter.razor.css",
+    "inputFile": "Components/Footer/TestBedFooter.razor.scss"
+  },
+  {
+    "outputFile": "Components/EventConsole/EventConsole.razor.css",
+    "inputFile": "Components/EventConsole/EventConsole.razor.scss"
+  },
+  {
+    "outputFile": "Components/ModelViewer/ModelViewer.razor.css",
+    "inputFile": "Components/ModelViewer/ModelViewer.razor.scss"
+  },
+  {
+    "outputFile": "Components/ComponentViewer/ComponentViewer.razor.css",
+    "inputFile": "Components/ComponentViewer/ComponentViewer.razor.scss"
+  },
+  {
+    "outputFile": "Components/StatusSwitch/StatusSwitch.razor.css",
+    "inputFile": "Components/StatusSwitch/StatusSwitch.razor.scss"
+  },
+  {
+    "outputFile": "Components/Header/TestBedHeaderMenu.razor.css",
+    "inputFile": "Components/Header/TestBedHeaderMenu.razor.scss"
+  },
+  {
+    "outputFile": "Components/Header/TestBedHeaderActions.razor.css",
+    "inputFile": "Components/Header/TestBedHeaderActions.razor.scss"
+  }
+]

@@ -1,0 +1,43 @@
+﻿@using Carlton.Base.Client.Components
+@using Carlton.Base.Client.State
+@using Carlton.TestBed.Components
+@namespace Carlton.TestBed.Pages
+@inherits LayoutComponentBase
+
+<DashboardLayout>
+    <HeaderContent>
+        <TestBedHeader />
+    </HeaderContent>
+    <Body>
+        <CarltonDataWrapper TViewModel="ComponentViewerViewModel">
+            <ChildComponent>
+                <ComponentViewer ViewModel="@context.ViewModel"
+                                 OnComponentEvent="@context.OnComponentEvent"
+                                 ComponentStatus="ComponentStatus.SYNCED" />
+            </ChildComponent>
+        </CarltonDataWrapper>
+    </Body>
+    <PanelContent>
+        <Panel />
+    </PanelContent>
+    <NavContent>
+        <CarltonDataWrapper TViewModel="NavTreeViewModel">
+            <ChildComponent>
+                <NavTree ViewModel="@context.ViewModel"
+                         OnComponentEvent="@context.OnComponentEvent"/>
+            </ChildComponent>
+        </CarltonDataWrapper>
+    </NavContent>
+    <FooterContent>
+        <TestBedFooter />
+    </FooterContent>
+</DashboardLayout>
+
+
+
+
+
+
+
+
+
