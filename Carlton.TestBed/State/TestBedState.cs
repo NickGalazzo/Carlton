@@ -28,11 +28,11 @@ namespace Carlton.TestBed.State
         public ComponentStatus TestComponentStatus { get; private set; }
         public IEnumerable<object> ComponentEvents { get { return _componentEvents; } }
 
-        public TestBedState(IEnumerable<NavTreeItem> treeItems)
+        public TestBedState(NavTreeViewModel navTreeVM)
         {
-            TreeItems = treeItems;
-            SelectedItem = TreeItems.GetFirstSelectableTestState();
-            TestComponentViewModel = SelectedItem.ViewModel;
+            TreeItems = navTreeVM.TreeItems;
+            SelectedItem = navTreeVM.TreeItems.GetFirstSelectableTestState();
+            TestComponentViewModel = navTreeVM.SelectedNode.ViewModel;
             _componentEvents = new List<object>();
             TestComponentStatus = ComponentStatus.SYNCED;
         }
