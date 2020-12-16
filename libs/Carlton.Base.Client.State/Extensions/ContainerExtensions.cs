@@ -1,104 +1,67 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using MediatR;
 
 namespace Carlton.Base.Client.State
 {
     public static class ContainerExtensions
     {
-        public static void AddCarltonState(this IServiceCollection services, Action<StateEventMapperBuiler> builder, params Assembly[] assemblies)
+        public static void AddCarltonState(this IServiceCollection services, Action<CarltonStateEventMapBuiler> builder, params Assembly[] assemblies)
         {
-            var evtMap = new Dictionary<Type, Type>();
-
-            //Register a utility function that creates the correct IRequest types for ViewModel requests
-            services.AddSingleton<Func<object, object, IRequest<Unit>>>(provider => (sender, evt) =>
-            {
-                var map = (IDictionary<Type, Type>)provider.GetService(typeof(IDictionary<Type, Type>));
-                var typeToCreate = map[evt.GetType()];
-                return (IRequest<Unit>)Activator.CreateInstance(typeToCreate, sender, evt);
-            });
-
-            //Search assemblies and create a dictionary for 
-            foreach(var type in assemblies.SelectMany(_ => _.GetTypes()))
-            {
-                if(type.IsInterface || type.IsAbstract)
-                    continue;
-
-                //Register ComponentEvent Requests
-                if(IsRequest(type))
-                    RegisterRequest(type, services);
-
-                //Create a dictionary of event types to requests
-                if(IsComponentEventRequest(type))
-                    evtMap.Add(GetInterface(type, typeof(ICarltonComponentEventRequest<>)).GetGenericArguments()[0], type);
-            };
-
-            //Register the Dictionary
-            services.AddSingleton<IDictionary<Type, Type>>(evtMap);
-
-            //Register the StateEventLookup
-            var semb = new StateEventMapperBuiler();
+            //Build StateEvents Map
+            var semb = new CarltonStateEventMapBuiler();
             builder(semb);
-            services.AddSingleton(semb.Build());
+            var componentEvtMap = semb.Build();
 
-            //Register the StateEventLookup Function
-            services.AddSingleton<Func<Type, IEnumerable<string>>>(provider => (Type t) =>
+            //Register StateEvents Map
+            services.AddSingleton(componentEvtMap);
+
+            //Register Requests
+            services.Scan(_ =>
+                {
+                    _.FromAssemblies(assemblies)
+                        .AddClasses(classes => classes.AssignableTo(typeof(IRequest<Unit>)))
+                        .AsImplementedInterfaces()
+                        .WithTransientLifetime();
+                    _.FromAssemblies(assemblies)
+                        .AddClasses(classes => classes.AssignableTo(typeof(IRequest<>)))
+                        .AsImplementedInterfaces()
+                        .WithTransientLifetime();                    
+                });
+
+            //Register factory
+            services.AddSingleton(CreateComponentRequestLookup());
+            services.AddSingleton<ICarltonStateFactory, CarltonStateFactory>();
+        }
+
+        private static ComponentEventRequestLookup CreateComponentRequestLookup()
+        {
+            var result = new ComponentEventRequestLookup();
+            
+            //Loop through Assemblies of types impementing ICarltonComponentEventRequest<>
+            var types = AppDomain.CurrentDomain.GetAssemblies()
+                                            .SelectMany(_ => _.GetTypes())
+                                            .Where(_ => _.GetInterfaces()
+                                                         .Any(expression));
+            foreach(Type type in types)
             {
-                var map = (IDictionary<Type, IEnumerable<string>>)provider.GetService(typeof(IDictionary<Type, IEnumerable<string>>));
-                return map[t];
-            });
-        }
+                System.Console.WriteLine($"Requet Type: {type}");
 
-        //Register IRequests for component events
-        private static void RegisterRequest(Type type, IServiceCollection services)
-        {
-            var componentEventType = GetInterface(type, typeof(IRequest<>)).GetGenericArguments()[0];
-            var componentEventRequestType = typeof(IRequest<>).MakeGenericType(componentEventType);
-            services.AddSingleton(componentEventRequestType, type);
-        }
+                //Get the ComponentEvent Type
+                var componentEventType = type.GetInterfaces()
+                                              .First(expression)
+                                              .GetGenericArguments()[0];
 
-        private static Type GetInterface(Type type, Type interfaceType)
-        {
-            bool predicate(Type _) => _.IsGenericType ? _.GetGenericTypeDefinition() == interfaceType : _ == interfaceType;
-            return type.GetInterfaces().FirstOrDefault(predicate);
-        }
-        private static bool IsRequest(Type t) => GetInterface(t, typeof(IRequest<>)) != null;
-        private static bool IsComponentEventRequest(Type t) => GetInterface(t, typeof(ICarltonComponentEventRequest<>)) != null;
-    }
-
-    public class StateEventMapperBuiler
-    {
-        private readonly IDictionary<Type, IEnumerable<string>> _stateMappings = new Dictionary<Type, IEnumerable<string>>();
-
-        public StateEventMapperBuiler ForComponent<TViewModel>(Action<EventListBuider> builder)
-        {
-            var eb = new EventListBuider();
-            builder(eb);
-            _stateMappings.Add(new KeyValuePair<Type, IEnumerable<string>>(typeof(TViewModel), eb.Build()));
-            return this;
-        }
-
-        public IDictionary<Type, IEnumerable<string>> Build()
-        {
-            return _stateMappings;
-        }
-
-        public class EventListBuider
-        {
-            private readonly IList<string> _stateEvents = new List<string>();
-                        
-            public void AddStateEvent(string stateEvent)
-            {
-                _stateEvents.Add(stateEvent);
+                //Map ComponentEvent => ComponentEventRequest
+                result[componentEventType] = type;
             }
 
-            public IEnumerable<string> Build()
-            {
-                return _stateEvents;
-            }
+            return result;
+
+            static bool expression(Type _) => _.IsGenericType && _.GetGenericTypeDefinition().Equals(typeof(ICarltonComponentEventRequest<>));
         }
     }
 }
+

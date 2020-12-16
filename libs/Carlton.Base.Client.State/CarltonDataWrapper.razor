@@ -13,13 +13,10 @@
     private IMediator Mediatr { get; set; }
 
     [Inject]
-    private ICarltonRequestFactory factory { get; set; }
+    private ICarltonStateFactory factory { get; set; }
 
     [Inject]
     private ICarltonStateStore State { get; set; }
-
-    [Inject]
-    public Func<Type, IEnumerable<string>> StateEventsFunc { get; set; }
 
     private IEnumerable<string> _stateEvents;
 
@@ -35,7 +32,7 @@
         Context = new CarltonDataWrapperContext<TViewModel>(vm, OnComponentEvent);
 
         //Get State Events
-        _stateEvents = StateEventsFunc == null ? _stateEvents = new string[0] : StateEventsFunc(typeof(TViewModel));
+        _stateEvents = factory.GetComponentStateEvents<TViewModel>();
 
         //Continue initilization
         await base.OnInitializedAsync();
@@ -43,12 +40,12 @@
 
     protected async Task<TViewModel> GetViewModel()
     {
-        return await Mediatr.Send(factory.GetViewModelRequest<TViewModel>());
+        return await Mediatr.Send(factory.CreateViewModelRequest<TViewModel>());
     }
 
     private async Task OnComponentEvent(object evt)
     {
-        var request = (IRequest<Unit>)factory.GetComponentEventRequest(this, evt);
+        var request = factory.CreateComponentEventRequest(this, evt);
         await Mediatr.Send(request);
     }
 

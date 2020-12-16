@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
 using Carlton.Base.Client.State;
-using Carlton.TestBed.Client;
 using Carlton.TestBed.Components;
 using Carlton.TestBed.State;
 
@@ -23,7 +22,6 @@ namespace Carlton.TestBed.Utils
 
             builder.Services.AddSingleton(state);
             builder.Services.AddSingleton<ICarltonStateStore>(state);
-            builder.Services.AddScoped<ICarltonRequestFactory, CarltonRequestFactory>();
             builder.Services.AddMediatR(assemblies);
 
             builder.Services.AddCarltonState(builder =>

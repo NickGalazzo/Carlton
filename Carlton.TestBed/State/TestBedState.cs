@@ -18,7 +18,7 @@ namespace Carlton.TestBed.State
 
         public event Func<object, string, Task> StateChanged;
 
-        private IList<object> _componentEvents;
+        private readonly IList<object> _componentEvents;
 
         public IEnumerable<NavTreeItem> TreeItems { get; init; }
         public NavTreeItem SelectedItem { get; private set; }
@@ -31,7 +31,7 @@ namespace Carlton.TestBed.State
         public TestBedState(NavTreeViewModel navTreeVM)
         {
             TreeItems = navTreeVM.TreeItems;
-            SelectedItem = navTreeVM.TreeItems.GetFirstSelectableTestState();
+            SelectedItem = navTreeVM.SelectedNode;
             TestComponentViewModel = navTreeVM.SelectedNode.ViewModel;
             _componentEvents = new List<object>();
             TestComponentStatus = ComponentStatus.SYNCED;
@@ -65,7 +65,7 @@ namespace Carlton.TestBed.State
         {
             TreeItems.ToList().ForEach(_ => Console.WriteLine(_.LeafId));
             SelectedItem = TreeItems.GetLeafById(id);
-            this.TestComponentViewModel = SelectedItem.ViewModel;
+            TestComponentViewModel = SelectedItem.ViewModel;
             await StateChanged.Invoke(sender, SELECTED_ITEM).ConfigureAwait(false);
         }
     }
