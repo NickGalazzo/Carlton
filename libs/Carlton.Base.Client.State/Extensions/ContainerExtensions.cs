@@ -22,6 +22,10 @@ namespace Carlton.Base.Client.State
             services.Scan(_ =>
                 {
                     _.FromAssemblies(assemblies)
+                        .AddClasses(classes => classes.AssignableTo(typeof(ICarltonComponent<>)))
+                        .AsImplementedInterfaces()
+                        .WithSingletonLifetime();
+                    _.FromAssemblies(assemblies)
                         .AddClasses(classes => classes.AssignableTo(typeof(IRequest<Unit>)))
                         .AsImplementedInterfaces()
                         .WithTransientLifetime();
@@ -33,7 +37,34 @@ namespace Carlton.Base.Client.State
 
             //Register factory
             services.AddSingleton(CreateComponentRequestLookup());
+            services.AddSingleton(CreateViewModelLookup());
             services.AddSingleton<ICarltonStateFactory, CarltonStateFactory>();
+        }
+
+        private static ViewModelLookup CreateViewModelLookup()
+        {
+            var result = new ViewModelLookup();
+
+            //Loop through Assemblies of types impementing ICarltonComponents<>
+            var types = AppDomain.CurrentDomain.GetAssemblies()
+                                            .SelectMany(_ => _.GetTypes())
+                                            .Where(_ => _.GetInterfaces()
+                                                         .Any(expression));
+
+            foreach(Type type in types)
+            {
+                //Get the ComponentEvent Type
+                var viewModelType = type.GetInterfaces()
+                                              .First(expression)
+                                              .GetGenericArguments()[0];
+
+                //Map ViewModel => Component
+                result[viewModelType] = type;
+            }
+
+            return result;
+
+            static bool expression(Type _) => _.IsGenericType && _.GetGenericTypeDefinition().Equals(typeof(ICarltonComponent<>));
         }
 
         private static ComponentEventRequestLookup CreateComponentRequestLookup()

@@ -28,7 +28,7 @@ namespace Carlton.TestBed.Components
             _internalState.Add(new InternalStateItem(nodeTitle, typeof(T), componentParams, false));;
         }
 
-        public IEnumerable<NavTreeItem> Build()
+        public NavTreeViewModel Build()
         {
             var leafIndex = 1;
             var treeRootNode = NavTreeItem.CreateParentNode("root", Array.Empty<NavTreeItem>());
@@ -38,7 +38,12 @@ namespace Carlton.TestBed.Components
                 AddNavTreeItem(state, treeRootNode);
             }
 
-            return treeRootNode.Children;
+            return new NavTreeViewModel
+            (
+                treeRootNode.Children,
+                treeRootNode.Children.GetFirstSelectableTestState(),
+                Enumerable.Empty<NavTreeItem>()
+            );
 
 
             void AddNavTreeItem(InternalStateItem state, NavTreeItem parentNode)

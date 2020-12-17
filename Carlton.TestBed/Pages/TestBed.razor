@@ -9,24 +9,26 @@
         <TestBedHeader />
     </HeaderContent>
     <Body>
-        <CarltonDataWrapper TViewModel="ComponentViewerViewModel">
+        <CarltonDataComponent TViewModel="ComponentViewerViewModel"/>
+                              @*<CarltonDataWrapper TViewModel="ComponentViewerViewModel">
             <ChildComponent>
                 <ComponentViewer ViewModel="@context.ViewModel"
                                  OnComponentEvent="@context.OnComponentEvent"
                                  ComponentStatus="ComponentStatus.SYNCED" />
             </ChildComponent>
-        </CarltonDataWrapper>
+        </CarltonDataWrapper>*@
     </Body>
     <PanelContent>
         <Panel />
     </PanelContent>
     <NavContent>
-        <CarltonDataWrapper TViewModel="NavTreeViewModel">
+        <CarltonDataComponent TViewModel="NavTreeViewModel" />
+        @*<CarltonDataWrapper TViewModel="NavTreeViewModel">
             <ChildComponent>
                 <NavTree ViewModel="@context.ViewModel"
                          OnComponentEvent="@context.OnComponentEvent"/>
             </ChildComponent>
-        </CarltonDataWrapper>
+        </CarltonDataWrapper>*@
     </NavContent>
     <FooterContent>
         <TestBedFooter />

@@ -9,17 +9,21 @@ namespace Carlton.Base.Client.State
     public class CarltonStateFactory : ICarltonStateFactory
     {
         private readonly IServiceProvider _provider;
-        private readonly ComponentEventRequestLookup _lookup;
+        private readonly ComponentEventRequestLookup _evtLookup;
+        private readonly ViewModelLookup _vmLookup;
 
-        public CarltonStateFactory(IServiceProvider provider, ComponentEventRequestLookup lookup)
+        public CarltonStateFactory(IServiceProvider provider,
+            ComponentEventRequestLookup evtLookup,
+            ViewModelLookup vmLookup)
         {
             _provider = provider;
-            _lookup = lookup;
+            _evtLookup = evtLookup;
+            _vmLookup = vmLookup;
         }
 
         public Type GetComponentType<TViewModel>()
         {
-            return null;
+            return _vmLookup[typeof(TViewModel)];
         }
 
         public IEnumerable<string> GetComponentStateEvents<TViewModel>()
@@ -37,7 +41,7 @@ namespace Carlton.Base.Client.State
 
         public IRequest<Unit> CreateComponentEventRequest(object sender, object componentEvent)
         {
-            var requestType = _lookup[componentEvent.GetType()];
+            var requestType = _evtLookup[componentEvent.GetType()];
             return (IRequest<Unit>)Activator.CreateInstance(requestType, sender, componentEvent);
         }
     }

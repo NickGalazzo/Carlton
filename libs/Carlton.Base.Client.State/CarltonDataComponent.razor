@@ -1,77 +1,37 @@
-﻿@*@typeparam TComponent
-    @typeparam TViewModel
-
-    @using System
-    @using MediatR
-    @using Microsoft.AspNetCore.Components
-    @using Carlton.Base.Client.State.Contracts
+﻿@typeparam TViewModel
 
 
-    <div class="carlton-data-component">
-        @DynamicChild
-    </div>
+<CarltonDataWrapper TViewModel="TViewModel">
+    <ChildComponent>
+        @DynamicChild(context)
+    </ChildComponent>
+</CarltonDataWrapper>
+
+@code{
+    private RenderFragment<CarltonDataWrapperContext<TViewModel>> DynamicChild { get; set; }
+
+    [Inject]
+    private ICarltonStateFactory factory { get; set; }
+
+    private delegate Task ComponentEventDel(object evt);
 
 
-    @code{
-        [Parameter]
-        public RenderFragment DynamicChild { get; set; }
-
-        [Inject]
-        private IServiceProvider ServiceProvider { get; set; }
-
-        [Inject]
-        private IMediator Mediator { get; set; }
-
-        [Inject]
-        private ICarltonEventRequestMapper<TViewModel> Mapper { get; set; }
-
-        [Inject]
-        private ICarltonStateStore<int> Store { get; set; }
-
-        private object ViewModel { get; set; }
-
-        private delegate Task ComponentEventDel(IComponentEvent<TViewModel> evt);
-
-        protected override void OnInitialized()
+    protected override void OnInitialized()
+    {
+        DynamicChild = (CarltonDataWrapperContext<TViewModel> context) =>
+        builder =>
         {
-            base.OnInitialized();
+            var viewModel = context.ViewModel;
+            var del = new ComponentEventDel(context.OnComponentEvent);
+            var eventCallback = new EventCallback(this, del);
 
-            //Wire-Up Child Event Callback
-            ComponentEventDel del = ComponentEventHandler;
-            var eventCallback = new EventCallback<IComponentEvent<TViewModel>>(this, del);
+            builder.OpenComponent(1, factory.GetComponentType<TViewModel>());
+            builder.AddAttribute(1, "ViewModel", viewModel);
+            builder.AddAttribute(2, "OnComponentEvent", eventCallback);
+            builder.CloseComponent();
+        };
 
-            Store.StateChanged += (sender, args) =>
-            {
-                ViewModel = args.ModifiedState;
-                StateHasChanged();
-            };
+        base.OnInitialized();
+    }
+}
 
-            //Render Child Component
-            DynamicChild = builder =>
-            {
-                builder.OpenElement(1, "div");
-                builder.OpenComponent(2, typeof(TComponent));
-                builder.AddAttribute(1, "ViewModel", ViewModel);
-                builder.AddAttribute(2, "OnComponentEvent", eventCallback);
-                builder.CloseComponent();
-                builder.CloseElement();
-            };
-        }
-
-        private async Task ComponentEventHandler(IComponentEvent<TViewModel> evt)
-        {
-            var request = Mapper.MapToRequest(evt);
-            var vm = await Mediator.Send<TViewModel>(request).ConfigureAwait(false);
-            ViewModel = vm;
-            base.StateHasChanged();
-        }
-    }*@
-
-   @*//protected override void BuildRenderTree(RenderTreeBuilder builder)
-        //{
-        //    base.BuildRenderTree(builder);
-        //    builder.OpenComponent<CarltonComponentBase<TViewModel>>(0);
-
-        //    builder.AddComponentReferenceCapture(1, inst => { _child = Convert.ChangeType(inst, typeof(CarltonComponentBase<TViewModel>)); });
-        //    builder.CloseComponent();
-        //}*@
