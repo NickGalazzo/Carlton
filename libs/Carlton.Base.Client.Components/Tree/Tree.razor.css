@@ -1,8 +1,6 @@
 ﻿.tree {
   background-color: #263238;
   color: white; }
-  .tree:first-of-type {
-    height: 100%; }
   .tree .selected-tree-node {
     color: #009688;
     font-weight: bold; }

@@ -51,11 +51,6 @@
 
     private async Task OnStateChanged(object sender, string stateEvent)
     {
-        Console.WriteLine($"Maade it to onStateChanged: {sender},  {stateEvent}");
-
-        if(sender == this)
-            return;
-
         if(!_stateEvents.Contains(stateEvent))
             return;
 
