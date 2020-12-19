@@ -2,11 +2,11 @@
 @typeparam TNode
 
 <div class="tree @(Visible ? "" : "d-none")">
-    @foreach(var node in Nodes ?? Enumerable.Empty<TNode>())
+    @foreach(var node in Nodes ?? Enumerable.Empty<TreeItem<TNode>>())
     {
         var nodeExpanded = ExpandedNodes.Contains(node);
         var nodeSelected = node.Equals(SelectedNode);
-        var hasChildren = HasChildNodes(node);
+        var hasChildren = node.Children.Any();
 
         <div class="row">
             <span  @onclick="@(e => OnToggleNode(node, !nodeExpanded))">
@@ -18,42 +18,44 @@
         </div>
         @if(hasChildren)
         {
-            <Tree Nodes="ChildSelector(node)"
+            <Tree TNode="TNode"
+                  Nodes="node.Children"
                   TitleTemplate="TitleTemplate"
-                  ChildSelector="ChildSelector"
                   ExpandedNodes="ExpandedNodes"
                   ExpandedNodesChanged="ExpandedNodesChanged"
                   SelectedNode="SelectedNode"
                   SelectedNodeChanged="SelectedNodeChanged"
-                  Visible="nodeExpanded"
-                  HasChildNodes="HasChildNodes" />
+                  Visible="nodeExpanded" />
         }
     }
 </div>
 
 @code {
+    [Parameter] 
+    public IEnumerable<TreeItem<TNode>> Nodes { get; set; }
 
-    [Parameter] public IEnumerable<TNode> Nodes { get; set; }
+    [Parameter] 
+    public RenderFragment<TreeItem<TNode>> TitleTemplate { get; set; }
 
-    [Parameter] public RenderFragment<TNode> TitleTemplate { get; set; }
+    [Parameter] 
+    public TreeItem<TNode> SelectedNode { get; set; }
 
-    [Parameter] public TNode SelectedNode { get; set; }
+    [Parameter] 
+    public EventCallback<TreeItem<TNode>> SelectedNodeChanged { get; set; }
 
-    [Parameter] public EventCallback<TNode> SelectedNodeChanged { get; set; }
+    [Parameter] 
+    public IList<TreeItem<TNode>> ExpandedNodes { get; set; } = new List<TreeItem<TNode>>();
 
-    [Parameter] public Func<TNode, IEnumerable<TNode>> ChildSelector { get; set; }
+    [Parameter] 
+    public EventCallback<IList<TreeItem<TNode>>> ExpandedNodesChanged { get; set; }
 
-    [Parameter] public IList<TNode> ExpandedNodes { get; set; } = new List<TNode>();
+    [Parameter] 
+    public TreeStyle Style { get; set; } = TreeStyle.DefaultTreeStyle;
 
-    [Parameter] public EventCallback<IList<TNode>> ExpandedNodesChanged { get; set; }
+    [Parameter] 
+    public bool Visible { get; set; } = true;
 
-    [Parameter] public TreeStyle Style { get; set; } = TreeStyle.DefaultTreeStyle;
-
-    [Parameter] public bool Visible { get; set; } = true;
-
-    [Parameter] public Func<TNode, bool> HasChildNodes { get; set; } = node => true;
-
-    private void OnToggleNode(TNode node, bool expand)
+    private void OnToggleNode(TreeItem<TNode> node, bool expand)
     {
         var expanded = ExpandedNodes.Contains(node);
 
@@ -69,9 +71,9 @@
         }
     }
 
-    private void OnSelectNode(TNode node)
+    private void OnSelectNode(TreeItem<TNode> node)
     {
-        if(HasChildNodes.Invoke(node))
+        if(node.Children.Any())
         {
             OnToggleNode(node, !ExpandedNodes.Contains(node));
         }

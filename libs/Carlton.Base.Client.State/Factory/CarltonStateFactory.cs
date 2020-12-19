@@ -30,8 +30,9 @@ namespace Carlton.Base.Client.State
         {
             Console.WriteLine("Count is =" +
                 _provider.GetServices<CarltonComponentStateEvents>().Count());
-            return ((IEnumerable<CarltonComponentStateEvents>)_provider.GetServices(typeof(CarltonComponentStateEvents)))
-                .FirstOrDefault(_ => _.ViewModelType == typeof(TViewModel));
+            var result = _provider.GetServices<CarltonComponentStateEvents>()
+                             .FirstOrDefault(_ => _.ViewModelType == typeof(TViewModel));
+            return result ?? Enumerable.Empty<string>();
         }
 
         public IRequest<TViewModel> CreateViewModelRequest<TViewModel>()

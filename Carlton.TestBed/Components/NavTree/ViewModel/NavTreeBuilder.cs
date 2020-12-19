@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Carlton.Base.Client.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -31,7 +32,7 @@ namespace Carlton.TestBed.Components
         public NavTreeViewModel Build()
         {
             var leafIndex = 1;
-            var treeRootNode = NavTreeItem.CreateParentNode("root", Array.Empty<NavTreeItem>());
+            var treeRootNode = TreeItem<NavTreeItemModel>.CreateParentNode("root", Array.Empty<TreeItem<NavTreeItemModel>>());
 
             foreach(var state in _internalState)
             {
@@ -42,11 +43,11 @@ namespace Carlton.TestBed.Components
             (
                 treeRootNode.Children,
                 treeRootNode.Children.GetFirstSelectableTestState(),
-                Enumerable.Empty<NavTreeItem>()
+                Enumerable.Empty<TreeItem<NavTreeItemModel>>()
             );
 
 
-            void AddNavTreeItem(InternalStateItem state, NavTreeItem parentNode)
+            void AddNavTreeItem(InternalStateItem state, TreeItem<NavTreeItemModel> parentNode)
             {
                 var nodes = state.NodeTitle.Split('/');
                 var currentTitle = nodes[0];
@@ -57,7 +58,7 @@ namespace Carlton.TestBed.Components
                 //Leaf Node
                 if(isLeafNode)
                 {
-                    var leafChild = NavTreeItem.CreateLeafNode(leafIndex, currentTitle, state.Type, state.ViewModel, state.IsCarltonComponent);
+                    var leafChild = TreeItem<NavTreeItemModel>.CreateLeafNode(leafIndex, currentTitle, state.Type, new NavTreeItemModel(state.ViewModel, state.IsCarltonComponent));
                     parentNode.Children = parentNode.Children.Append(leafChild);
                     leafIndex++;
                     return;
@@ -66,7 +67,7 @@ namespace Carlton.TestBed.Components
                 //Parent Does Not Exist
                 if(!currentNodeExists)
                 {
-                    var newNode = NavTreeItem.CreateParentNode(currentTitle, Array.Empty<NavTreeItem>());
+                    var newNode = TreeItem<NavTreeItemModel>.CreateParentNode(currentTitle, Array.Empty<TreeItem<NavTreeItemModel>>());
                     parentNode.Children = parentNode.Children.Append(newNode);
                     currentNode = newNode;
                 }

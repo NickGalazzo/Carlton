@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Carlton.Base.Client.Components;
 using Carlton.Base.Client.State;
 using Carlton.TestBed.Components;
 
@@ -20,10 +21,10 @@ namespace Carlton.TestBed.State
 
         private readonly IList<object> _componentEvents;
 
-        public IEnumerable<NavTreeItem> TreeItems { get; init; }
-        public NavTreeItem SelectedItem { get; private set; }
+        public IEnumerable<TreeItem<NavTreeItemModel>> TreeItems { get; init; }
+        public TreeItem<NavTreeItemModel> SelectedItem { get; private set; }
         public Type TestComponentType { get { return SelectedItem.Type; } }
-        public bool IsTestComponentCarltonComponent { get { return SelectedItem.IsCarltonComponent; } }
+        public bool IsTestComponentCarltonComponent { get { return SelectedItem.LeafNodeObj.IsCarltonComponent; } }
         public object TestComponentViewModel { get; private set; }
         public ComponentStatus TestComponentStatus { get; private set; }
         public IEnumerable<object> ComponentEvents { get { return _componentEvents; } }
@@ -32,7 +33,7 @@ namespace Carlton.TestBed.State
         {
             TreeItems = navTreeVM.TreeItems;
             SelectedItem = navTreeVM.SelectedNode;
-            TestComponentViewModel = navTreeVM.SelectedNode.ViewModel;
+            TestComponentViewModel = navTreeVM.SelectedNode.LeafNodeObj.ViewModel;
             _componentEvents = new List<object>();
             TestComponentStatus = ComponentStatus.SYNCED;
         }
@@ -63,9 +64,9 @@ namespace Carlton.TestBed.State
 
         public async Task UpdateSelectedItemId(object sender, int id)
         {
-            TreeItems.ToList().ForEach(_ => Console.WriteLine(_.LeafId));
+            TreeItems.ToList().ForEach(_ => System.Console.WriteLine(_.LeafId));
             SelectedItem = TreeItems.GetLeafById(id);
-            TestComponentViewModel = SelectedItem.ViewModel;
+            TestComponentViewModel = SelectedItem.LeafNodeObj.ViewModel;
             await StateChanged.Invoke(sender, SELECTED_ITEM).ConfigureAwait(false);
         }
     }

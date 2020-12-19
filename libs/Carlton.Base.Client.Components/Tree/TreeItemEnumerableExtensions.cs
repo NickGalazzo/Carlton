@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Carlton.TestBed.Components;
+using Carlton.Base.Client.Components;
 
 namespace Carlton.TestBed
 {
-    public static class NavTreeItemExtensions
+    public static class TreeItemEnumerableExtensions
     {
-        public static NavTreeItem GetFirstSelectableTestState(this IEnumerable<NavTreeItem> treeItems)
+        public static TreeItem<T> GetFirstSelectableTestState<T>(this IEnumerable<TreeItem<T>> treeItems)
         {
             var item = treeItems.First();
 
@@ -18,7 +18,7 @@ namespace Carlton.TestBed
             return item;
         }
 
-        public static NavTreeItem GetLeafById(this IEnumerable<NavTreeItem> treeItems, int leafId)
+        public static TreeItem<T> GetLeafById<T>(this IEnumerable<TreeItem<T>> treeItems, int leafId)
         {
             foreach(var item in treeItems)
             {

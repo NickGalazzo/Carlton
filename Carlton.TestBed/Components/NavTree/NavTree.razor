@@ -4,12 +4,10 @@
 
 @inherits CarltonComponentBase<NavTreeViewModel>
 
-<Tree TNode="NavTreeItem"
+<Tree TNode="NavTreeItemModel"
       Nodes="ViewModel.TreeItems"
-      ChildSelector="@(item => item.Children)"
       SelectedNode="@ViewModel.SelectedNode"
       SelectedNodeChanged="@(async (node) => await base.OnComponentEvent.InvokeAsync(new NavTreeSelectedNodeEvent(node.LeafId)))"
-      HasChildNodes="@(item => item.Children?.Any() == true)"
       Style="TreeStyle.DefaultTreeStyle">
     <TitleTemplate>@context.DisplayName</TitleTemplate>
 </Tree>
