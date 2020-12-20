@@ -163,18 +163,16 @@
 &lt;/pre&gt;</value>
   </data>
   <data name="ToDoListItem" xml:space="preserve">
-    <value>&lt;pre style='color:#55cc66;background:#001800;'&gt;@&lt;span style='color:#508050; font-weight:bold; '&gt;using&lt;/span&gt; Carlton&lt;span style='color:#808030; '&gt;.&lt;/span&gt;Dashboard&lt;span style='color:#808030; '&gt;.&lt;/span&gt;Components&lt;span style='color:#808030; '&gt;.&lt;/span&gt;ToDo
+    <value>@using Carlton.Dashboard.Components.ToDo
 
 
-&lt;span style='color:#808030; '&gt;&amp;lt;&lt;/span&gt;ToDoListItem ViewModel&lt;span style='color:#808030; '&gt;=&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt;&lt;span style='color:#cc5555; '&gt;VM&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt; OnComponentEvent&lt;span style='color:#808030; '&gt;=&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt;&lt;span style='color:#cc5555; '&gt;Callback&lt;/span&gt;&lt;span style='color:#800000; '&gt;"&lt;/span&gt; &lt;span style='color:#808030; '&gt;/&lt;/span&gt;&lt;span style='color:#808030; '&gt;&gt;&lt;/span&gt;
+&lt;ToDoListItem ViewModel="VM" OnComponentEvent="Callback"/&gt;
 
-@code&lt;span style='color:#800080; '&gt;{&lt;/span&gt;
-    &lt;span style='color:#808030; '&gt;[&lt;/span&gt;Parameter&lt;span style='color:#808030; '&gt;]&lt;/span&gt;
-    &lt;span style='color:#508050; font-weight:bold; '&gt;public&lt;/span&gt; ToDoListItemViewModel VM &lt;span style='color:#800080; '&gt;{&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;get&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;set&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#800080; '&gt;}&lt;/span&gt;
-
-    &lt;span style='color:#808030; '&gt;[&lt;/span&gt;Parameter&lt;span style='color:#808030; '&gt;]&lt;/span&gt;
-    &lt;span style='color:#508050; font-weight:bold; '&gt;public&lt;/span&gt; EventCallback Callback &lt;span style='color:#800080; '&gt;{&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;get&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#508050; font-weight:bold; '&gt;set&lt;/span&gt;&lt;span style='color:#800080; '&gt;;&lt;/span&gt; &lt;span style='color:#800080; '&gt;}&lt;/span&gt;
-&lt;span style='color:#800080; '&gt;}&lt;/span&gt;
-&lt;/pre&gt;</value>
+@code{
+		[Parameter]
+		public ToDoListItemViewModel VM {get; set;}
+		[Parameter]
+		public EventCallback Callback { get; set;}
+	}</value>
   </data>
 </root>

@@ -1,36 +1,40 @@
-﻿@using System.Reflection;
-@using System.Resources; 
+﻿@using System.Net.Http
+@using Microsoft.JSInterop;
+@using Microsoft.CodeAnalysis.CSharp
 @using Carlton.Base.Client.State
 
+@namespace Carlton.TestBed.Components
+@implements IAsyncDisposable
 @inherits CarltonComponentBase<SourceViewerViewModel>
+@inject IJSRuntime JSRuntime
+@inject HttpClient client
 
 <div class="test-component-source">
-    @((MarkupString) Source)
+    @((MarkupString) ParsedText)
 </div>
 
-@code {
-    public string ComponentName { get { return ViewModel.TestComponentType.Name; } }
+@code{
+    private IJSObjectReference _module;
 
-    public string Source { get; private set; }
+    private string ParsedText { get; set; } = "XXXX";
 
-    protected override void OnInitialized()
+
+    protected async override Task OnParametersSetAsync()
     {
-        base.OnInitialized();
+        ParsedText = $"<pre><code class='cshtml'>{ViewModel.ComponentSource}</code></pre>";
+        await base.OnParametersSetAsync();
+    }
 
-        var assembly = Assembly.GetAssembly(ViewModel.TestComponentType);
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        var projectName = "Carlton.TestBed";
+        _module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", $"./_content/{projectName}/js/sourceViewer.razor.js");
+        await _module.InvokeAsync<Task>("highlightCodeBlock");
+        await base.OnAfterRenderAsync(firstRender);
+    }
 
-        System.Console.WriteLine($"{assembly.GetName()}.SourceExamples");
-
-        var rm = new ResourceManager($"{assembly.GetName().Name}.SourceExamples", assembly);
-
-        Source = rm.GetString(ComponentName);
-
-        //using(var stream = Assembly.GetAssembly(typeof(Carlton.Dashboard.Components.ToDo.ToDoListCard)).GetManifestResourceStream("Carlton.Dashboard.Components.wwwroot.MarkupComponents.ToDoListSource.txt"))
-        //using(var reader = new System.IO.StreamReader(stream))
-        //{
-        //    Test = reader.ReadToEnd();
-        //}
-
+    public async ValueTask DisposeAsync()
+    {
+        await _module.DisposeAsync();
     }
 }
-

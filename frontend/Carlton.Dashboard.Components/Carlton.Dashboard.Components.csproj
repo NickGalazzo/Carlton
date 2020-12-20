@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
+    <Content Remove="wwwroot\ToDo.Test.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,7 +32,18 @@
   <ItemGroup>
     <Folder Include="Styles\themes\" />
     <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\js\" />
     <Folder Include="wwwroot\styles\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Resource Include="wwwroot\Test\ToDo.Test.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="wwwroot\ToDo.Test.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

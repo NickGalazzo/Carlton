@@ -1,0 +1,12 @@
+﻿@using Carlton.Dashboard.Components
+@using Carlton.Dashboard.ViewModels 
+
+
+<ToDoListItem ViewModel="ViewModel" OnComponentEvent="Callback" />
+
+@code{
+    [Parameter]
+    public ToDo ViewModel { get; set; }
+    [Parameter]
+    public EventCallback Callback { get; set; }
+}

@@ -34,7 +34,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.Client.Compone
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.Base.Client.State.Abstractions", "libs\Carlton.Base.Client.State.Abstractions\Carlton.Base.Client.State.Abstractions.csproj", "{7892EDF9-141B-44A9-A1A7-1378C760DA55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carlton.TestBed", "Carlton.TestBed\Carlton.TestBed.csproj", "{1DEBD145-16C9-41FC-A0EC-9C153331CDEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlton.TestBed", "Carlton.TestBed\Carlton.TestBed.csproj", "{1DEBD145-16C9-41FC-A0EC-9C153331CDEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

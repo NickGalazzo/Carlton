@@ -39,6 +39,10 @@ namespace Carlton.TestBed.Utils
                 .ForComponent<EventConsoleViewModel>(_ =>
                 {
                     _.AddStateEvent(TestBedState.COMPONENT_EVENT_ADDED);
+                })
+                .ForComponent<SourceViewerViewModel>(_ =>
+                {
+                    _.AddStateEvent(TestBedState.SELECTED_ITEM);
                 }),
                 assemblies);
         }
