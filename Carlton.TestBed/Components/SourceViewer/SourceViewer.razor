@@ -14,33 +14,50 @@
         @((MarkupString) ParsedText)
     </div>
 
-    <div class="col-6 test-component-source">
+    <div class="col-6 test-component-output-source">
         <label>Output</label>
-        @((MarkupString) ParsedText)
+        @((MarkupString) OutputMarkup)
     </div>
 </div>
 
-    @code{
-        private IJSObjectReference _module;
+@code{
+    private const string CODE_BLOCK_TEMPLATE = "<pre><code class='{0}'>{1}</code></pre>";
 
-        private string ParsedText { get; set; }
+    private IJSObjectReference _module;
 
-        protected override void OnParametersSet()
-        {
-            ParsedText = $"<pre><code class='cshtml'>{ViewModel.ComponentSource}</code></pre>";
-            base.OnParametersSet();
-        }
+    private string ParsedText { get; set; }
 
-        protected async override Task OnAfterRenderAsync(bool firstRender)
-        {
-            var projectName = "Carlton.TestBed";
-            _module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", $"./_content/{projectName}/js/sourceViewer.razor.js");
-            await _module.InvokeAsync<Task>("highlightCodeBlock");
-            await base.OnAfterRenderAsync(firstRender);
-        }
+    private string OutputMarkup { get; set; }
 
-        public async ValueTask DisposeAsync()
-        {
-            await _module.DisposeAsync();
-        }
+    protected async override Task OnInitializedAsync()
+    {
+        var projectName = "Carlton.TestBed";
+        _module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", $"./_content/{projectName}/js/sourceViewer.razor.js");
+        await base.OnInitializedAsync();
     }
+
+    protected async override Task OnParametersSetAsync()
+    {
+        //Set the Example Markup
+        ParsedText = string.Format(CODE_BLOCK_TEMPLATE, "cshtml", ViewModel?.ComponentSource);
+
+        //Set the Output Markup
+        OutputMarkup = string.Format(CODE_BLOCK_TEMPLATE, "html", string.Empty);
+
+        await base.OnParametersSetAsync();
+    }
+
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        var markup = await _module.InvokeAsync<string>("getOutputSource");
+
+        await _module.InvokeAsync<Task>("setOutputMarkup", markup.Replace("<!--!-->", string.Empty));
+        await _module.InvokeAsync<Task>("highlightCodeBlock");
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await _module.DisposeAsync();
+    }
+}
