@@ -1,6 +1,5 @@
 ﻿@using System.Net.Http
 @using Microsoft.JSInterop;
-@using Microsoft.CodeAnalysis.CSharp
 @using Carlton.Base.Client.State
 
 @namespace Carlton.TestBed.Components
@@ -9,32 +8,39 @@
 @inject IJSRuntime JSRuntime
 @inject HttpClient client
 
-<div class="test-component-source">
-    @((MarkupString) ParsedText)
+<div class="row">
+    <div class="col-6 test-component-source">
+        <label>Use</label>
+        @((MarkupString) ParsedText)
+    </div>
+
+    <div class="col-6 test-component-source">
+        <label>Output</label>
+        @((MarkupString) ParsedText)
+    </div>
 </div>
 
-@code{
-    private IJSObjectReference _module;
+    @code{
+        private IJSObjectReference _module;
 
-    private string ParsedText { get; set; } = "XXXX";
+        private string ParsedText { get; set; }
 
+        protected override void OnParametersSet()
+        {
+            ParsedText = $"<pre><code class='cshtml'>{ViewModel.ComponentSource}</code></pre>";
+            base.OnParametersSet();
+        }
 
-    protected async override Task OnParametersSetAsync()
-    {
-        ParsedText = $"<pre><code class='cshtml'>{ViewModel.ComponentSource}</code></pre>";
-        await base.OnParametersSetAsync();
+        protected async override Task OnAfterRenderAsync(bool firstRender)
+        {
+            var projectName = "Carlton.TestBed";
+            _module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", $"./_content/{projectName}/js/sourceViewer.razor.js");
+            await _module.InvokeAsync<Task>("highlightCodeBlock");
+            await base.OnAfterRenderAsync(firstRender);
+        }
+
+        public async ValueTask DisposeAsync()
+        {
+            await _module.DisposeAsync();
+        }
     }
-
-    protected async override Task OnAfterRenderAsync(bool firstRender)
-    {
-        var projectName = "Carlton.TestBed";
-        _module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", $"./_content/{projectName}/js/sourceViewer.razor.js");
-        await _module.InvokeAsync<Task>("highlightCodeBlock");
-        await base.OnAfterRenderAsync(firstRender);
-    }
-
-    public async ValueTask DisposeAsync()
-    {
-        await _module.DisposeAsync();
-    }
-}

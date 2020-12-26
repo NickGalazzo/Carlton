@@ -2,7 +2,7 @@
 
 @implements IDisposable
 @typeparam TViewModel
-
+@inject System.Net.Http.HttpClient _client;
 @ChildComponent(Context)
 
 @code{
@@ -21,6 +21,7 @@
     private IEnumerable<string> _stateEvents;
 
     protected CarltonDataWrapperContext<TViewModel> Context { get; set; }
+        = new CarltonDataWrapperContext<TViewModel>(default(TViewModel), (obj) => Task.CompletedTask);
 
     protected async override Task OnInitializedAsync()
     {
@@ -29,6 +30,7 @@
 
         ////Get VM and initalize context for wrapped component
         var vm = await GetViewModel();
+
         Context = new CarltonDataWrapperContext<TViewModel>(vm, OnComponentEvent);
 
         //Get State Events

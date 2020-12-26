@@ -5,8 +5,8 @@
 @inherits CarltonComponentBase<NavTreeViewModel>
 
 <Tree TNode="NavTreeItemModel"
-      Nodes="ViewModel.TreeItems"
-      SelectedNode="@ViewModel.SelectedNode"
+      Nodes="ViewModel?.TreeItems"
+      SelectedNode="@ViewModel?.SelectedNode"
       SelectedNodeChanged="@(async (node) => await base.OnComponentEvent.InvokeAsync(new NavTreeSelectedNodeEvent(node.LeafId)))"
       Style="TreeStyle.DefaultTreeStyle">
     <TitleTemplate>@context.DisplayName</TitleTemplate>

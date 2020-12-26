@@ -23,15 +23,10 @@ namespace Carlton.TestBed.Components
 
         public async override Task<SourceViewerViewModel> Handle(SourceViewerViewModelRequest request, CancellationToken cancellationToken)
         {
-            System.Console.WriteLine("Made it to SourceViewerViewModelRequestHandler");
-
             var projectName = "Carlton.Dashboard.Components";
             var path = $"_content/{projectName}/Test/ToDo.Test.txt";
-            await Task.Delay(10).ConfigureAwait(true); //_client.GetStringAsync(path, cancellationToken);
-
-            return new SourceViewerViewModel(@"@using Carlton.Dashboard.Components
-                    @using Carlton.Dashboard.ViewModels 
-                    <ToDoListItem ViewModel='ViewModel' OnComponentEvent='Callback' />");
+            var source = await _client.GetStringAsync(path, cancellationToken);
+            return new SourceViewerViewModel(source);
         }
     }
 }

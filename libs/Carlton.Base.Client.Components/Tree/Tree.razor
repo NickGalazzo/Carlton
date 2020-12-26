@@ -31,28 +31,28 @@
 </div>
 
 @code {
-    [Parameter] 
-    public IEnumerable<TreeItem<TNode>> Nodes { get; set; }
+    [Parameter]
+    public IEnumerable<TreeItem<TNode>> Nodes { get; set; } = Enumerable.Empty<TreeItem<TNode>>();
 
-    [Parameter] 
+    [Parameter]
     public RenderFragment<TreeItem<TNode>> TitleTemplate { get; set; }
 
-    [Parameter] 
+    [Parameter]
     public TreeItem<TNode> SelectedNode { get; set; }
 
-    [Parameter] 
+    [Parameter]
     public EventCallback<TreeItem<TNode>> SelectedNodeChanged { get; set; }
 
-    [Parameter] 
+    [Parameter]
     public IList<TreeItem<TNode>> ExpandedNodes { get; set; } = new List<TreeItem<TNode>>();
 
-    [Parameter] 
+    [Parameter]
     public EventCallback<IList<TreeItem<TNode>>> ExpandedNodesChanged { get; set; }
 
-    [Parameter] 
+    [Parameter]
     public TreeStyle Style { get; set; } = TreeStyle.DefaultTreeStyle;
 
-    [Parameter] 
+    [Parameter]
     public bool Visible { get; set; } = true;
 
     private void OnToggleNode(TreeItem<TNode> node, bool expand)
