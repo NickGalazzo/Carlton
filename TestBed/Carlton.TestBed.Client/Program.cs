@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration.Json;
 using MediatR;
 using Carlton.Base.Client.State;
 using Carlton.TestBed.State;
@@ -14,6 +15,7 @@ using Carlton.Base.Client.Components.TestData;
 using Carlton.Base.Client.Components.Test;
 using Carlton.Dashboard.ViewModels.TestViewModels;
 using Carlton.Dashboard.Components;
+using Microsoft.Extensions.Configuration;
 
 namespace Carlton.TestBed.Client
 {
@@ -23,7 +25,9 @@ namespace Carlton.TestBed.Client
 
         public static async Task Main(string[] args)
         {
-        var builder = WebAssemblyHostBuilder.CreateDefault(args);
+            var builder = WebAssemblyHostBuilder.CreateDefault(args);
+            var sourceBasePath = builder.Configuration.GetSection("sourceSamplesSettings").GetValue<string>("sourceBasePath");
+
             builder.AddCarltonTestBed(builder =>
             {
                 //Base Components
@@ -65,7 +69,9 @@ namespace Carlton.TestBed.Client
                 builder.AddCarltonComponent<ApartmentStatusCountCard>("CountCards/ApartmentStatus/Default", DashboardAggregationsTestViewModels.DefaultDashboardAggregationViewModel());
                 builder.AddCarltonComponent<DinnerGuestsCountCard>("CountCards/DinnerGuesets/Default", DashboardAggregationsTestViewModels.DefaultDashboardAggregationViewModel());
                 builder.AddCarltonComponent<GroceriesCountCard>("CountCards/Groceries/Default", DashboardAggregationsTestViewModels.DefaultDashboardAggregationViewModel());
-            }, typeof(TestBed.Pages.TestBed).Assembly);
+            },
+            sourceBasePath,
+            typeof(TestBed.Pages.TestBed).Assembly);
 
 
             builder.Services.AddScoped(sp =>
@@ -76,7 +82,7 @@ namespace Carlton.TestBed.Client
 
 
             builder.RootComponents.Add<App>("app");
-            
+
             await builder.Build().RunAsync().ConfigureAwait(true);
         }
     }

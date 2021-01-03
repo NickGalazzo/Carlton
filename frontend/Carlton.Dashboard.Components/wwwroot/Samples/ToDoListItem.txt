@@ -1,0 +1,3 @@
+﻿
+<ToDoListItem ViewModel="ViewModel" OnComponentEvent="Callback" />
+

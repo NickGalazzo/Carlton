@@ -9,8 +9,8 @@
 @inject HttpClient client
 
 <div class="row">
-    <div class="col-6 test-component-source">
-        <label>Use</label>
+    <div class="col-6 test-component-usage">
+        <label>Usage</label>
         @((MarkupString) ParsedText)
     </div>
 
@@ -39,7 +39,7 @@
     protected async override Task OnParametersSetAsync()
     {
         //Set the Example Markup
-        ParsedText = string.Format(CODE_BLOCK_TEMPLATE, "cshtml", ViewModel?.ComponentSource);
+        ParsedText = string.Format(CODE_BLOCK_TEMPLATE, "cshtml", string.Empty);
 
         //Set the Output Markup
         OutputMarkup = string.Format(CODE_BLOCK_TEMPLATE, "html", string.Empty);
@@ -49,10 +49,7 @@
 
     protected async override Task OnAfterRenderAsync(bool firstRender)
     {
-        var markup = await _module.InvokeAsync<string>("getOutputSource");
-
-        await _module.InvokeAsync<Task>("setOutputMarkup", markup.Replace("<!--!-->", string.Empty));
-        await _module.InvokeAsync<Task>("highlightCodeBlock");
+        await _module.InvokeAsync<Task>("postRender", ViewModel?.ComponentSource);
         await base.OnAfterRenderAsync(firstRender);
     }
 

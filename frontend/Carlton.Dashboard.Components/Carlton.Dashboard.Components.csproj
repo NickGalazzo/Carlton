@@ -38,7 +38,7 @@
 
 
   <ItemGroup>
-    <Resource Include="wwwroot\Test\ToDo.Test.txt">
+    <Resource Include="wwwroot\Samples\ToDoListItem.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="wwwroot\ToDo.Test.txt">

@@ -13,6 +13,7 @@ namespace Carlton.TestBed.Utils
     {
         public static void AddCarltonTestBed(this WebAssemblyHostBuilder builder,
             Action<NavTreeBuilder> navTreeAct,
+            string sourceBasePath,
             params Assembly[] assemblies)
         {
             var NavTreeBuilder = new NavTreeBuilder();
@@ -23,6 +24,8 @@ namespace Carlton.TestBed.Utils
             builder.Services.AddSingleton(state);
             builder.Services.AddSingleton<ICarltonStateStore>(state);
             builder.Services.AddMediatR(assemblies);
+
+            builder.Services.AddSingleton(new SourceConfig(sourceBasePath));
 
             builder.Services.AddCarltonState(builder =>
                 builder.ForComponent<NavTreeViewModel>(_ =>
