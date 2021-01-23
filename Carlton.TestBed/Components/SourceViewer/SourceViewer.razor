@@ -9,47 +9,35 @@
 @inject HttpClient client
 
 <div class="row">
-    <div class="col-6 test-component-usage">
-        <label>Usage</label>
-        @((MarkupString) ParsedText)
-    </div>
-
-    <div class="col-6 test-component-output-source">
-        <label>Output</label>
+    <div class="col-12 test-component-output-source">
         @((MarkupString) OutputMarkup)
     </div>
 </div>
 
 @code{
-    private const string CODE_BLOCK_TEMPLATE = "<pre><code class='{0}'>{1}</code></pre>";
-
+    private const string CODE_BLOCK_TEMPLATE = "<pre><code class='{0}'></code></pre>";
+    private const string PROJECT_NAME = "Carlton.TestBed";
     private IJSObjectReference _module;
-
-    private string ParsedText { get; set; }
 
     private string OutputMarkup { get; set; }
 
     protected async override Task OnInitializedAsync()
     {
-        var projectName = "Carlton.TestBed";
-        _module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", $"./_content/{projectName}/js/sourceViewer.razor.js");
+        _module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", $"./_content/{PROJECT_NAME}/js/sourceViewer.razor.js");
         await base.OnInitializedAsync();
     }
 
     protected async override Task OnParametersSetAsync()
     {
-        //Set the Example Markup
-        ParsedText = string.Format(CODE_BLOCK_TEMPLATE, "cshtml", string.Empty);
-
         //Set the Output Markup
-        OutputMarkup = string.Format(CODE_BLOCK_TEMPLATE, "html", string.Empty);
+        OutputMarkup = string.Format(CODE_BLOCK_TEMPLATE, "html");
 
         await base.OnParametersSetAsync();
     }
 
     protected async override Task OnAfterRenderAsync(bool firstRender)
     {
-        await _module.InvokeAsync<Task>("postRender", ViewModel?.ComponentSource);
+        await _module.InvokeAsync<Task>("postRender", ViewModel.ComponentSource);
         await base.OnAfterRenderAsync(firstRender);
     }
 

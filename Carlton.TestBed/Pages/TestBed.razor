@@ -10,25 +10,12 @@
     </HeaderContent>
     <Body>
         <CarltonDataComponent TViewModel="ComponentViewerViewModel" />
-                              @*<CarltonDataWrapper TViewModel="ComponentViewerViewModel">
-            <ChildComponent>
-                <ComponentViewer ViewModel="@context.ViewModel"
-                                 OnComponentEvent="@context.OnComponentEvent"
-                                 ComponentStatus="ComponentStatus.SYNCED" />
-            </ChildComponent>
-        </CarltonDataWrapper>*@
     </Body>
     <PanelContent>
         <Panel />
     </PanelContent>
     <NavContent>
         <CarltonDataComponent TViewModel="NavTreeViewModel" />
-        @*<CarltonDataWrapper TViewModel="NavTreeViewModel">
-            <ChildComponent>
-                <NavTree ViewModel="@context.ViewModel"
-                         OnComponentEvent="@context.OnComponentEvent"/>
-            </ChildComponent>
-        </CarltonDataWrapper>*@
     </NavContent>
     <FooterContent>
         <TestBedFooter />

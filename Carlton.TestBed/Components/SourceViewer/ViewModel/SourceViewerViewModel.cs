@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Carlton.TestBed.State;
+using Microsoft.JSInterop;
 
 namespace Carlton.TestBed.Components
 {
@@ -14,20 +15,20 @@ namespace Carlton.TestBed.Components
     
     public class SourceViewerViewModelRequestHandler : TestBedRequestHandlerViewModelBase<SourceViewerViewModelRequest, SourceViewerViewModel>
     {
-        private readonly HttpClient _client;
-        private readonly SourceConfig _config;
+        private const string PROJECT_NAME = "Carlton.TestBed";
+        private readonly IJSRuntime _jsRuntime; 
 
-        public SourceViewerViewModelRequestHandler(HttpClient client, SourceConfig config, TestBedState state) : base(state)
+        public SourceViewerViewModelRequestHandler(IJSRuntime jsRuntime, TestBedState state) : base(state)
         {
-            _client = client;
-            _config = config;
+            _jsRuntime = jsRuntime;
         }
 
         public async override Task<SourceViewerViewModel> Handle(SourceViewerViewModelRequest request, CancellationToken cancellationToken)
         {
-            var path = $"_content/{_config.SourceBasePath}/{State.SelectedItem.Type.Name}.txt";
-            var source = await _client.GetStringAsync(path, cancellationToken);
-            return new SourceViewerViewModel(source);
+            var module = await _jsRuntime.InvokeAsync<IJSObjectReference>("import", $"./_content/{PROJECT_NAME}/js/sourceViewer.razor.js");
+            var markup = await module.InvokeAsync<string>("getOutputSource");
+
+            return new SourceViewerViewModel(markup);
         }
     }
 }

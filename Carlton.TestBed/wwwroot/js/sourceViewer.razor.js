@@ -1,11 +1,4 @@
-﻿export function postRender(usage) {
-    var outputSource = getOutputSource();
-    setOutputMarkup(outputSource);
-    setUsageMarkup(usage);
-    highlightCodeBlock();
-}
-
-export function getOutputSource() {
+﻿export function getOutputSource() {
     var viewer = document.querySelector(".component-viewer");
     var markup = viewer.innerHTML;
     markup = markup.replaceAll("<!--!-->", "");
@@ -13,13 +6,13 @@ export function getOutputSource() {
     return format(markup);
 }
 
-function setOutputMarkup(markup) {
-    var block = document.querySelector('.test-component-output-source pre code');
-    block.textContent = markup;
+export function postRender(markup) {
+    setOutputMarkup(markup);
+    highlightCodeBlock();
 }
 
-function setUsageMarkup(markup) {
-    var block = document.querySelector('.test-component-usage pre code');
+function setOutputMarkup(markup) {
+    var block = document.querySelector('.test-component-output-source pre code');
     block.textContent = markup;
 }
 

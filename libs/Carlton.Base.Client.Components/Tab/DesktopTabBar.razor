@@ -16,7 +16,7 @@
 <style>
         .carlton-tab.active ~ span.tab-selected-bar {
             left: @($"{CalculateTabBarOffset()}" + "px");
-            width: 190px;
+            width: 175px;
         }
 </style>
 
@@ -24,6 +24,6 @@
 @code {
     private int CalculateTabBarOffset()
     {
-        return _activeTabIndex * 190;
+        return _activeTabIndex * 175;
     }
 }
