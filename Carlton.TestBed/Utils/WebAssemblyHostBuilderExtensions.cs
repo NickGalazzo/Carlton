@@ -38,6 +38,7 @@ namespace Carlton.TestBed.Utils
                 {
                     _.AddStateEvent(TestBedState.SELECTED_ITEM);
                     _.AddStateEvent(TestBedState.VIEW_MODEL_CHANGED);
+                    _.AddStateEvent(TestBedState.STATUS_CHANGED);
                 })
                 .ForComponent<EventConsoleViewModel>(_ =>
                 {
@@ -48,6 +49,10 @@ namespace Carlton.TestBed.Utils
                     _.AddStateEvent(TestBedState.SELECTED_ITEM);
                 })
                 .ForComponent<ModelViewerViewModel>(_ =>
+                {
+                    _.AddStateEvent(TestBedState.SELECTED_ITEM);
+                })
+                .ForComponent<StatusSwitchViewModel>(_ =>
                 {
                     _.AddStateEvent(TestBedState.SELECTED_ITEM);
                 }),
