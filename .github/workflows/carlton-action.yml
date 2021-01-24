@@ -4,9 +4,11 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Files
       - uses: actions/checkout@v2
+      - name: Setup dotnet
       - uses: actions/setup-dotnet@v1
-      - with:  
+        with:  
           dotnet-version: '5.0.101'
       - run: dotnet build
         
